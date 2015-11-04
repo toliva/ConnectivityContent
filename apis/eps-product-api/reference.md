@@ -4,7 +4,7 @@ The Product API will enable our hotels partners to create and edit their room ty
                                     definition of the room types and rate plans created in the system.
 
 ## Error codes
-### Renders the page describing the business error codes used by the API
+### Renders the page describing the business error codes  by the API
 - Method: `GET`
 - Url: https://ws.expediaquickconnect.com/v1/documentation/api/errors
 - Consumes: `application/json`
