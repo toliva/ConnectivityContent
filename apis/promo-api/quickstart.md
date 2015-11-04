@@ -7,3 +7,4 @@ The Promo Read operation allows partners to retrieve promotions created via the 
 
 The Promo Modify operation allows partner to modify existing promotions. Partner can deactivate an unused promotion or modify other promo attributes
 
+Test123
