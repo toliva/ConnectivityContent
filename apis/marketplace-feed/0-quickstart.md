@@ -18,7 +18,7 @@ The response contains a Json formatted list of message objects.
             "values": {
                 "currentRooms": 10,
                 "date": "2015-10-20",
-                "roomsToAdd": 5
+                "roomsToAdd": 51
             }
         },
         {
