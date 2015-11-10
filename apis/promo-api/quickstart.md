@@ -1,4 +1,4 @@
-# Quickstart for promo-api
+## Quickstart
 The Promo Create operation allows partners to create a new promotion.
 
 The Promo Score message allows partners to preview a promo score before a promotion is created.
