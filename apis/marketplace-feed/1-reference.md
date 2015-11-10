@@ -5,7 +5,7 @@ https://marketplace-feed.prod-p.expedia.com/v1/messages
 ```
 
 
-### Arguments
+### Request Arguments
 
 
 | Name                |Parameter Type |Data Type|Example           |
@@ -14,7 +14,7 @@ https://marketplace-feed.prod-p.expedia.com/v1/messages
 | ```Client-Id```     | Header        |String   | clientID=client1 |
 
 
-### Attributes
+### Response Attributes
 
 
 | Name                |Data Type| Description                                 | Example     |
