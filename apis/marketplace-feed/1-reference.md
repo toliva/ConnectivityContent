@@ -19,8 +19,8 @@ https://marketplace-feed.prod-p.expedia.com/v1/messages
 
 | Name                |Data Type| Description                                 | Example     |
 | ------------------- | --------| --------------------------------------------| ------------|
-| ```messages```      | Array   | A collection of message objects.            | ```[...]``` |
-| ```message```       | Object  | Contains the details of a single message.   | ```{...}``` |
+| ```messages```      | Array   | A collection of message objects.            | ```[]``` |
+| ```message```       | Object  | Contains the details of a single message.   | ```{}``` |
 | ```category```      | String  | The message type.                           | ```"Missing Inventory"``` |
 | ```hotelId```       | String  | The hotelId the message is for.             | ```"123"``` |
 | ```id```            | String  | A unique identifier for the message.        | ```"95fbaf423d3d6c5cb32a247aedc97d64b9ae1aff"``` |
