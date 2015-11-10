@@ -1,6 +1,3 @@
-# Marketplace Feed API
-
-
 ## Messages
 
 ```
