@@ -1,6 +1,8 @@
 # Quick Start
 
-The Marketplace Feed provides a list of messages for a given hotel.  Each request should include the hotel credentials in basic auth format, the Client-ID as a header parameter, and the hotelId as a query parameter.
+The Marketplace Feed provides a list of messages for a given hotel.  
+
+Each request should include the hotel credentials in basic auth format, the Client-ID as a header parameter, and the hotelId as a query parameter.
 ```
 curl -k -u 'username:password' -H'Client-ID: MyClientId' 'https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=123'
 ```
