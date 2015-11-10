@@ -38,9 +38,3 @@ The response contains a Json formatted list of message objects.
     ]
 }
 ```
-
-![myimage here](/images/epc-logo.png)
-
-+++iframe
-https://marketplace-feed.prod-p.expedia.com/swagger
-+++
