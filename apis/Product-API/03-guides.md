@@ -11,7 +11,8 @@ The Product API enables partners to first create a room type, and subsequently c
 - **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
 - **Secure HTTP** : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.
 - **REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
-- **HTTP Status Code** : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API:
+- **HTTP Status Code** : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: 
+
 | Status Code | Meaning |
 | ----------- | ------- |
 | 200 | Success for read and update operations |
