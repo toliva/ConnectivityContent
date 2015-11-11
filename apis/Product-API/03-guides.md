@@ -100,18 +100,25 @@ The Cancellation & Change Policy is applicable when a customer either wants to c
 
 | Attribute Name | Description |
 | -------------- | ----------- |
-| Deadline | Penalty window defined in hours. Min 0, max 999 hours. |
+| Deadline | Penalty window defined in hours. Hours are relative to checkin date and the property's cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours. |
 | Penalty | Value should match one of the defined values. No other values can be accepted by the API: - None - 1stNightRoomAndTax - 2NightsRoomAndTax - 10PercentCostOfStay - 20PercentCostOfStay - 30PercentCostOfStay - 40PercentCostOfStay - 50PercentCostOfStay - 60PercentCostOfStay - 70PercentCostOfStay - 80PercentCostOfStay - 90PercentCostOfStay - FullCostOfStay |
 | Amount | Flat amount that can be charged if customer cancels. |
 
 Cancellation and change policy is optional when creating a new rate plan.
 - If provided, please indicate the cancellation policy values including the deadline for cancellation in hours, and the cancellation penalty.
 - If no cancellation policy is provided in a create rate plan request, we will default to select the one which already exists, is refundable, and was most recently used by a standalone active rate plan.
-- If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline.
+- If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. 
+
+When providing a cancel policy, partners can provide one or more defaultPenalties object.
+- At least one defaultPenalty must be provided, with a deadline set to 0.
+- If no other default penalty is provided, there will be a single strategy applied, defined by that defaultPenalty per stay fee and amount.
+- In addition to the default penalty with a deadline set at 0, only one additional defaultPenalty can be provided (for a total of 2). 
+- If a second penalty is provided, its deadline must be greater than 0, and less than 1000.
+
 
 **Example 1** : Considering the following policy: 
-- If a customer cancels between 24h or less before check-in, he pays for one night.
-- If a customer cancels more than 24h before check-in, he pays no penalty.
+- If a customer cancels between 24h or less before property's cancellation time, he pays for one night.
+- If a customer cancels more than 24h before property's cancellation time, he pays no penalty.
 
 To reflect such terms, a partner should send:
 ```JSON
