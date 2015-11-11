@@ -109,12 +109,12 @@ Cancellation and change policy is optional when creating a new rate plan.
 - If no cancellation policy is provided in a create rate plan request, we will default to select the one which already exists, is refundable, and was most recently used by a standalone active rate plan.
 - If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. 
 
-When providing a cancel policy, partners can provide one or more defaultPenalties object.
+When providing a cancel policy, partners can provide one or two defaultPenalties object.
 - At least one defaultPenalty must be provided, with a deadline set to 0.
 - If no other default penalty is provided, there will be a single strategy applied, defined by that defaultPenalty per stay fee and amount.
 - In addition to the default penalty with a deadline set at 0, only one additional defaultPenalty can be provided (for a total of 2). 
 - If a second penalty is provided, its deadline must be greater than 0, and less than 1000.
-
+- It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation & change policy.
 
 **Example 1** : Considering the following policy: 
 - If a customer cancels between 24h or less before property's cancellation time, he pays for one night.
