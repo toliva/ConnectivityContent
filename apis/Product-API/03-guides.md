@@ -39,7 +39,7 @@ The Product API enables partners to first create a room type, and subsequently c
 | Content-Type | String | Required* | Content-Type: application/json |
 | Accept | String | Required | Accept: application/json |
 | Request-ID | String | Optional | Request-ID: UUID This request ID can be provided by the partner and can be referenced later on for troubleshooting purposes. If it is not provided in request, API will generate one and return it in the response. If provided, API will return the same header in the response. |
-* required for create and modify requests only
+*required for create and modify requests only
 
 ## Format – Response
 | Header | Type | Input Format |
@@ -94,4 +94,72 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
             HttpMethod.POST,
             entity,
             new ParameterizedTypeReference<ResponseWrapperDTO<ProductDTO>>() {});
+```
+# Understanding Cancellation & Change Policy
+The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the rate to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation & Change Policy is defined with the following attributes in the Expedia system:
+
+| Attribute Name | Description |
+| -------------- | ----------- |
+| Deadline | Penalty window defined in hours. Min 0, max 999 hours. |
+| Penalty | Value should match one of the defined values. No other values can be accepted by the API: - None - 1stNightRoomAndTax - 2NightsRoomAndTax - 10PercentCostOfStay - 20PercentCostOfStay - 30PercentCostOfStay - 40PercentCostOfStay - 50PercentCostOfStay - 60PercentCostOfStay - 70PercentCostOfStay - 80PercentCostOfStay - 90PercentCostOfStay - FullCostOfStay |
+| Amount | Flat amount that can be charged if customer cancels. |
+
+Cancellation and change policy is optional when creating a new rate plan.
+- If provided, please indicate the cancellation policy values including the deadline for cancellation in hours, and the cancellation penalty.
+- If no cancellation policy is provided in a create rate plan request, we will default to select the one which already exists, is refundable, and was most recently used by a standalone active rate plan.
+- If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline.
+
+**Example 1** : Considering the following policy: 
+- If a customer cancels between 24h or less before check-in, he pays for one night.
+- If a customer cancels more than 24h before check-in, he pays no penalty.
+
+To reflect such terms, a partner should send:
+```JSON
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "1stNightRoomAndTax",
+        "amount": 0.0
+      }, {
+        "deadline": 24,
+        "perStayFee": "None",
+        "amount": 0.0
+      }
+    ]
+  }
+```
+
+**Example 2** : variation of the above example, where 
+- cancellations within 24h of property cancellation time deadline should be charged 1 night room and tax
+- cancellations further out should incur a 5 unit of currency penalty (for example 5 GBP for a London, UK property, assuming property rate acquisition type is SellLAR)
+
+To reflect such terms, a partner should send:
+```JSON
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "1stNightRoomAndTax",
+        "amount": 0.0
+      }, {
+        "deadline": 24,
+        "perStayFee": "None",
+        "amount": 5.0
+      }
+    ]
+  }
+```
+  
+**Example 3** : if a policy is non-refundable, partner should send:
+```JSON
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "FullCostOfStay",
+        "amount": 0.0
+      }
+    ]
+  }
 ```
