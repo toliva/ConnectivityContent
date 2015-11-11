@@ -35,7 +35,7 @@ Accept: application/json
 Authorization: Basic [your encoded username:password in base64]
 ```
 ## Single Property Response
-```JSON
+```json
 {
   "entity": {
     "resourceId": 2268140,
