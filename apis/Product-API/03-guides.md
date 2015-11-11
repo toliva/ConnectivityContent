@@ -7,10 +7,11 @@ In the Expedia lodging data model, properties, room types and rate plans are sto
 The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.
 
 # API Principles & Standards
-**JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
-**Secure HTTP** : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.
-**REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
-**HTTP Status Code** : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API:
+
+- **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
+- **Secure HTTP** : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.
+- **REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
+- **HTTP Status Code** : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API:
 | Status Code | Meaning |
 | ----------- | ------- |
 | 200 | Success for read and update operations |
@@ -25,10 +26,9 @@ The Product API enables partners to first create a room type, and subsequently c
 | 415 | Unsupported media type (only JSON supported) |
 | 500 | Internal system error (shouldn’t be retried) |
 | 503 | Internal system error (should be retried, following logic specified in HTTP response header) |
-**MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. 
-**Entity** : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. 
-**Errors** : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
-
+- **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. 
+- **Entity** : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. 
+- **Errors** : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
 
 # HTTP Headers
 ## Format – Request
