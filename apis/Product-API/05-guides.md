@@ -170,3 +170,17 @@ To reflect such terms, a partner should send:
     ]
   }
 ```
+# How to use modify operation
+The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
+
+Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.
+
+For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.
+
+# How is Expedia Traveler Preference Reflected in the Rate Plan Resource
+
+Need to give some info on that - to complete.
+
+# Understanding Expedia's Logic Around Room Name Attributes
+
+Need to give some more info on that - to complete
