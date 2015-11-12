@@ -1,4 +1,6 @@
-# Property Read Examples
+# Intro
+This section contains examples on how to query the property resource of the product API.
+
 Property read allows partners to retrieve several important settings related to their properties’ configuration in Expedia system. It also enables partners to find out which properties are currently assigned to their accounts.
 A read request is a HTTP GET. There are two different read operations available:
 -	To get a specific property, the property ID needs to be specified on the URL: /properties/{propertyId}
@@ -27,14 +29,16 @@ When requesting all properties assigned to a user account, an array of propertie
   ]
 }
 ```
-## HTTP Headers – Single Property Request
+
+## Single Property Request / Response
+Request is a simple HTTP GET:
 ```HTTP
 GET https://services.expediapartnercentral.com/products/v1/properties/2268140
 Content-Type: application/json
 Accept: application/json
 Authorization: Basic [your encoded username:password in base64]
 ```
-## Single Property Response
+Response:
 ```json
 {
   "entity": {
@@ -67,13 +71,16 @@ Authorization: Basic [your encoded username:password in base64]
   }
 }
 ```
-## Multiple Properties Response
+## Multiple Properties Request/Response
 When using GET for multiple properties, additional parameters can be provided to navigate through the result set. By default, only 20 properties are returned at a time. Partners who have more than 20 properties assigned to their accounts and want to get through all their properties have to use offset and limit parameters.
-For example, a partner wanting to get 3 results at a time would do this:
+For example, a partner wanting to get 3 results at a time would do a request like this:
 ```HTTP
 GET https://services.expediapartnercentral.com/products/v1/properties?offset=0&limit=3
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic [your encoded username:password in base64]
 ```
-The Product API will sort all properties assigned to this account by resourceId, ascending, and return the 3 lowest property resource ids.
+The Product API will sort all properties assigned to this account by resourceId, ascending, and return the 3 lowest property resource ids. Response:
 ```JSON
 {
   "entity": [
