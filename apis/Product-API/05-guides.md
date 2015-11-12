@@ -184,3 +184,12 @@ Need to give some info on that - to complete.
 # Understanding Expedia's Logic Around Room Name Attributes
 
 Need to give some more info on that - to complete
+
+# Optional Fields in a Rate Plan Create Request
+In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in Section 4.4. Some of the fields cannot be set by the user; these will default to values defined by Expedia. 
+
+The create response will contain all the fields originally provided in the request. It also includes the default values of the fields that were not provided in the request. If an error occurred, the response contains one or more errors.
+
+*About optional fields*: some optional fields may not have any values defined in the Expedia system. In this case the fields are omitted completely in the response.
+
+*About fields documented as not accepted in request, but returned in response*: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not. 
