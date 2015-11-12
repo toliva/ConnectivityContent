@@ -1,6 +1,8 @@
+# Marketplace Feed API
+
 ## Authentication
 
-marketplace-feed requires HTTP basic auth credentials to be supplied with every request.
+The Marketplace Feed API requires HTTP basic auth credentials to be supplied with every request.
 
 Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to acess data for those hotels.
 
