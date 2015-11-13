@@ -1,4 +1,5 @@
 # Understanding Expedia Lodging Data Model
+**NOTE**: add a diagram
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
 - Each property has 0 or more room types
 - Each room type has one or more rate plans
@@ -30,6 +31,9 @@ The Product API enables partners to first create a room type, and subsequently c
 - **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. 
 - **Entity** : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. 
 - **Errors** : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
+
+# Basic Connectivity Requirements
+Need a paragraph to cover our basic requirements. TLS v1.1 is one, HTTP 1.1 is one as well. TBD.
 
 # HTTP Headers
 ## Format – Request
