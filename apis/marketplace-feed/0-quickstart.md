@@ -83,15 +83,17 @@ The response contains a JSON list of message objects.
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
         },
         {
-            "id": "ff303dc6de6da2b25bfcc9b19724ccfb69edff3a",
+            "id": "fc58dbb7e4ce17c79d0a54fec74eea613e1bd01b",
             "hotelId": "test",
             "category": "Hotel Review",
             "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
             "longMessage": "Great view!",
             "values": {
-                "rating": "4",
+                "reviewId": "123",
+                "itineraryId": "456",
+                "rating": 4,
                 "comment": "Great view!",
-                "createDate": "2015-11-11T01:22:10.126Z"
+                "createDate": "2015-11-12T05:03:52.138Z"
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test"
         }
