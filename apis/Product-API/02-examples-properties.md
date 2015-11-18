@@ -1,34 +1,9 @@
 # Intro
 This section contains examples on how to query the property resource of the product API.
 
-Property read allows partners to retrieve several important settings related to their properties’ configuration in Expedia system. It also enables partners to find out which properties are currently assigned to their accounts.
-A read request is a HTTP GET. There are two different read operations available:
--	To get a specific property, the property ID needs to be specified on the URL: /properties/{propertyId}
--	To get all the properties assigned to a specific user account, omit the property resource ID on the URL: /properties/. 
-By default, only active properties are returned. To get all properties assigned to an account, including ones that might not be active at the moment, an optional status parameter can be added, with value all: /properties?status=all.
-When requesting a single property, EPS Product API will return the property resource information as part of an Entity object:
-```JSON
-{
-  "entity": {
-    "resourceId": 1,
-    ...
-  }
-}
-```
-When requesting all properties assigned to a user account, an array of properties is returned:
-```JSON
-{
-  "entity": [
-    {
-      "resourceId": 1,
-      …
-    }, {
-      "resourceId": 2,
-      …
-    }
-  ]
-}
-```
+Property read allows partners to retrieve several important settings related to their properties’ configuration in Expedia system. Some of these settings will help partners better understand how to manage room type and rate plan resources. 
+
+It also enables partners to find out which properties are currently assigned to their accounts, by simply calling the /properties endpoint and iterating through all the properties returned.
 
 ## Single Property Request / Response
 Request is a simple HTTP GET:
