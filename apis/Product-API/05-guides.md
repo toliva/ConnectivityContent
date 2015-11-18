@@ -1,11 +1,14 @@
 # Understanding Expedia Lodging Data Model
-**NOTE**: add a diagram
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
 - Each property has 0 or more room types
 - Each room type has one or more rate plans
 - Each rate plan belongs to a single room type
 - Each rate plan is associated with a single cancellation policy and a single set of additional guest amounts.
 The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.
+- Additionally, for most of our partners, their contract requires that they offer a package rate plan for each standalone rate plan made available to Expedia.
+
+The following example illustrates the model and gives an overview of the type of data that needs to be set at various levels.
+![Data Model Overview with an Example](/images/ExpDataModelToday.png)
 
 # API Principles & Standards
 
