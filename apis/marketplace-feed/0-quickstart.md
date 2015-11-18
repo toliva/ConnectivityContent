@@ -18,28 +18,30 @@ The response contains a JSON list of message objects.
 {
     "messages": [
         {
-            "id": "d387b4e9a5e23175d6c48073af4ea4c565287272",
+            "id": "2379cce04a79d3669717de302c8a45bf20f0cf5e",
             "hotelId": "test",
             "category": "Missing Inventory",
-            "shortMessage": "On 2015-11-12 you can sell 5 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On 2015-11-12 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
+            "shortMessage": "On Nov 19, 2015 you can sell 5 more rooms with Expedia. Add inventory now.",
+            "longMessage": "On Nov 19, 2015 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
             "values": {
-                "date": "2015-11-12",
+                "date": "2015-11-19",
                 "currentRooms": 10,
-                "roomsToAdd": 5
+                "roomsToAdd": 5,
+                "roomTypeId": "12345"
             },
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "3ceb023491e7df13f067ab8667202f165f81cac3",
+            "id": "1cc8106e1621b68c3375a98dbc8778afe47fc20a",
             "hotelId": "test",
             "category": "Missing Inventory",
-            "shortMessage": "On 2015-11-16 you can sell 7 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On 2015-11-16 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.",
+            "shortMessage": "On Nov 23, 2015 you can sell 7 more rooms with Expedia. Add inventory now.",
+            "longMessage": "On Nov 23, 2015 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.",
             "values": {
-                "date": "2015-11-16",
+                "date": "2015-11-23",
                 "currentRooms": 12,
-                "roomsToAdd": 7
+                "roomsToAdd": 7,
+                "roomTypeId": "12345"
             },
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
@@ -67,23 +69,23 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "b7b215a395d3267c92c2c6e3562fa09c11f6454c",
+            "id": "e88d79e268ea2b97b9d434dd825d9593fca99862",
             "hotelId": "test",
             "category": "Real-Time Feedback",
             "shortMessage": "A guest at your property is giving real-time feedback.",
             "longMessage": "Bed was not made :(",
             "values": {
                 "itineraryId": "12345",
-                "startDate": "2015-11-11T01:22:10.126Z",
-                "endDate": "2015-11-14T01:22:10.126Z",
-                "createDate": "2015-11-12T01:22:10.126Z",
-                "updateDate": "2015-11-13T01:22:10.126Z",
+                "startDate": "2015-11-18T05:30:04.891Z",
+                "endDate": "2015-11-21T05:30:04.891Z",
+                "createDate": "2015-11-19T05:30:04.891Z",
+                "updateDate": "2015-11-20T05:30:04.891Z",
                 "isHappy": false
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
         },
         {
-            "id": "fc58dbb7e4ce17c79d0a54fec74eea613e1bd01b",
+            "id": "9d082a1038790d239a5558f924cd6d6d42127267",
             "hotelId": "test",
             "category": "Hotel Review",
             "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
@@ -93,7 +95,7 @@ The response contains a JSON list of message objects.
                 "itineraryId": "456",
                 "rating": 4,
                 "comment": "Great view!",
-                "createDate": "2015-11-12T05:03:52.138Z"
+                "createDate": "2015-11-18T05:30:04.894Z"
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test"
         }
