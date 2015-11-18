@@ -77,20 +77,22 @@ Our sales forecast indicates that we can sell more inventory for the requested h
 | `date`         | String    | The date the forecast applies to (YYYY-MM-DD).                         | `"2016-07-10"` |
 | `currentRooms` | Integer   | The current number of rooms available when the forecast was generated. | `3`            |
 | `roomsToAdd`   | Integer   | The number of extra rooms the forecast suggests we could sell.         | `5`            |
+| `roomTypeId`   | String    | The Expedia room type ID we suggest adding rooms to.                   | `"12345"`      |
 
 ###### Example Missing Inventory Message
 
 ```
 {
-    "id": "d387b4e9a5e23175d6c48073af4ea4c565287272",
+    "id": "2379cce04a79d3669717de302c8a45bf20f0cf5e",
     "hotelId": "test",
     "category": "Missing Inventory",
-    "shortMessage": "On 2015-11-12 you can sell 5 more rooms with Expedia. Add inventory now.",
-    "longMessage": "On 2015-11-12 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
+    "shortMessage": "On Nov 19, 2015 you can sell 5 more rooms with Expedia. Add inventory now.",
+    "longMessage": "On Nov 19, 2015 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
     "values": {
-        "date": "2015-11-12",
+        "date": "2015-11-19",
         "currentRooms": 10,
-        "roomsToAdd": 5
+        "roomsToAdd": 5,
+        "roomTypeId": "12345"
     },
     "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
 }
