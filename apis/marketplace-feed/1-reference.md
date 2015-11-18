@@ -74,7 +74,7 @@ Our sales forecast indicates that we can sell more inventory for the requested h
 
 | Property       | Data Type | Description                                                            | Example        |
 |----------------|-----------|------------------------------------------------------------------------|----------------|
-| `date`         | String    | The date the forecast applies to (YYYY-MM-DD).                         | `"2016-07-10"` |
+| `date`         | String    | The stay date the forecast applies to (YYYY-MM-DD).                    | `"2016-07-10"` |
 | `currentRooms` | Integer   | The current number of rooms available when the forecast was generated. | `3`            |
 | `roomsToAdd`   | Integer   | The number of extra rooms the forecast suggests we could sell.         | `5`            |
 | `roomTypeId`   | String    | The Expedia room type ID we suggest adding rooms to.                   | `"12345"`      |
@@ -100,44 +100,72 @@ Our sales forecast indicates that we can sell more inventory for the requested h
 
 ##### Missed Opportunities
 
-Travelers viewed the requested hotel, but booked elsewhere.
+Travelers viewed the requested hotel today, but booked elsewhere.
 
 ###### `values` Properties
 
 | Property              | Data Type | Description                                                            | Example |
 |-----------------------|-----------|------------------------------------------------------------------------|---------|
-| `count`               | Integer   | The number of travelers checking in today with another hotel.          | `3`     |
-| `missedOpportunities` | Array     | A collection of `Missed Opportunity` objects.                          | []      |
+| `count`               | Integer   | The total number of lost bookings.                                     | `3`     |
+| `missedOpportunities` | Array     | A collection of `Missed Opportunities` objects.                        | []      |
 
-`Missed Opportunity` objects have the following properties:
+`Missed Opportunities` objects have the following properties:
 
 | Property              | Data Type | Description                                                                                             | Example            |
 |-----------------------|-----------|---------------------------------------------------------------------------------------------------------|--------------------|
 | `hotelId`             | String    | The ID of the hotel the guest booked with.                                                              | `"25280"`          |
 | `hotelName`           | String    | The name of the hotel the guest booked with.                                                            | `"The Verb Hotel"` |
-| `bookings`            | Integer   | The number of travelers checking in today who booked with this hotel after viewing the requested hotel. | `2`                |
+| `lostBookings`        | Integer   | The number of travelers who booked with this hotel after viewing the requested hotel today.             | `2`                |
+| `details`             | Array     | A collection of `Missed Opportunity Details` objects.                                                   | []                 |
+
+`Missed Opportunity Details` objects have the following properties:
+
+| Property              | Data Type | Description                                                                                             | Example            |
+|-----------------------|-----------|---------------------------------------------------------------------------------------------------------|--------------------|
+| `viewedPrice`         | Float     | The price of the requested hotel the customer viewed.                                                   | `123.45`           |
+| `bookedPrice`         | Float     | The price of the hotel the customer ended up booking.                                                   | `100.0`            |
+| `checkInDate`         | String    | The check-in date of the customer's booking (YYYY-MM-DD).                                               | `"2016-10-03"`     |
 
 ###### Example Missed Opportunities Message
 
 ```
 {
-    "id": "9c16e2adf1734b253e405f5d6e3a42c035dab81c",
+    "id": "d3a0077c59741f2f03b78f20e63ef61be6b4cec3",
     "hotelId": "test",
     "category": "Missed Opportunities",
     "shortMessage": "So far, you lost 3 bookings today.",
-    "longMessage": "3 travelers arriving in your market today viewed your property but booked elsewhere.",
+    "longMessage": "3 travelers viewed your property today but booked elsewhere.",
     "values": {
         "count": 3,
         "missedOpportunities": [
             {
                 "hotelId": "25280",
                 "hotelName": "The Verb Hotel",
-                "bookings": 2
+                "lostBookings": 2,
+                "details": [
+                    {
+                        "viewedPrice": 123.45,
+                        "bookedPrice": 100.0,
+                        "checkInDate": "2015-11-27"
+                    },
+                    {
+                        "viewedPrice": 200.0,
+                        "bookedPrice": 149.99,
+                        "checkInDate": "2015-11-22"
+                    }
+                ]
             },
             {
                 "hotelId": "119162",
                 "hotelName": "Le Meridien Cambridge-MIT",
-                "bookings": 1
+                "lostBookings": 1,
+                "details": [
+                    {
+                        "viewedPrice": 123.45,
+                        "bookedPrice": 150.0,
+                        "checkInDate": "2015-11-24"
+                    }
+                ]
             }
         ]
     },

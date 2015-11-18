@@ -46,46 +46,65 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "9c16e2adf1734b253e405f5d6e3a42c035dab81c",
+            "id": "c108c0365de10a4e3127253bbf30facb75f6f32d",
             "hotelId": "test",
             "category": "Missed Opportunities",
             "shortMessage": "So far, you lost 3 bookings today.",
-            "longMessage": "3 travelers arriving in your market today viewed your property but booked elsewhere.",
+            "longMessage": "3 travelers viewed your property today but booked elsewhere.",
             "values": {
                 "count": 3,
                 "missedOpportunities": [
                     {
                         "hotelId": "25280",
                         "hotelName": "The Verb Hotel",
-                        "bookings": 2
+                        "lostBookings": 2,
+                        "details": [
+                            {
+                                "viewedPrice": 123.45,
+                                "bookedPrice": 100.0,
+                                "checkInDate": "2015-11-28"
+                            },
+                            {
+                                "viewedPrice": 200.0,
+                                "bookedPrice": 149.99,
+                                "checkInDate": "2015-11-23"
+                            }
+                        ]
                     },
                     {
                         "hotelId": "119162",
                         "hotelName": "Le Meridien Cambridge-MIT",
-                        "bookings": 1
+                        "lostBookings": 1,
+                        "details": [
+                            {
+                                "viewedPrice": 123.45,
+                                "bookedPrice": 150.0,
+                                "checkInDate": "2015-11-25"
+                            }
+                        ]
                     }
                 ]
             },
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "e88d79e268ea2b97b9d434dd825d9593fca99862",
+            "id": "cddd12b911fbf508aabb7b07960b6f7706beefb0",
             "hotelId": "test",
             "category": "Real-Time Feedback",
             "shortMessage": "A guest at your property is giving real-time feedback.",
             "longMessage": "Bed was not made :(",
             "values": {
                 "itineraryId": "12345",
-                "startDate": "2015-11-18T05:30:04.891Z",
-                "endDate": "2015-11-21T05:30:04.891Z",
-                "createDate": "2015-11-19T05:30:04.891Z",
-                "updateDate": "2015-11-20T05:30:04.891Z",
+                "startDate": "2015-11-18T05:59:44.813Z",
+                "endDate": "2015-11-21T05:59:44.813Z",
+                "createDate": "2015-11-19T05:59:44.813Z",
+                "updateDate": "2015-11-20T05:59:44.813Z",
                 "isHappy": false
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
         },
         {
-            "id": "9d082a1038790d239a5558f924cd6d6d42127267",
+            "id": "c7f3324750a36e033692d5783305f71975215a1c",
             "hotelId": "test",
             "category": "Hotel Review",
             "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
@@ -95,7 +114,7 @@ The response contains a JSON list of message objects.
                 "itineraryId": "456",
                 "rating": 4,
                 "comment": "Great view!",
-                "createDate": "2015-11-18T05:30:04.894Z"
+                "createDate": "2015-11-18T05:59:44.817Z"
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test"
         }
