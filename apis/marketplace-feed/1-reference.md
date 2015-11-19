@@ -64,7 +64,7 @@ When successful, the `/v1/messages` endpoint responds with a JSON object with `C
 
 #### Message Categories
 
-Each message may belong to one of the following categories (as indicated its `category` property).
+Each message may belong to one of the following categories (as indicated by its `category` property).
 
 ##### Missing Inventory
 
