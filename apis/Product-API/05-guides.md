@@ -313,7 +313,63 @@ When naming their room types, partners using the room type resource are required
 - Use one of the predefined room names
 - Building a name from room-level attributes
 
-TO COMPLETE
+Expedia is unable to accept free text room names from its partners. Because Expedia has points of sale in more than 45 languages, and want to offer the best experience to all its customers around the world, it requires to receive names in a structured way, to enable instant availability in all languages.
+
+## Using Predefined Names
+When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is providing one of these predefined names under the value element:
+```JSON
+{
+...
+  "name": {
+    "value": "Junior Suite"
+  },
+...
+}
+```
+
+Available predefined room names can be found in the Reference section.
+
+## Using Room Name Attributes
+For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.
+
+It is recommended for our partners to provide all the attributes they would like to be part of the name. Expedia will then only use the ones deemed more relevant if too many attributes are received. Example with all attributes selected:
+```JSON
+{
+...
+  "name": {
+    "attributes": {
+      "typeOfRoom": "Studio",
+      "roomClass": "Basic",
+      "includeBedType": true,
+      "bedroomDetails": "1 Bedroom",
+      "includeSmokingPref": true,
+      "accessibility": true,
+      "view": "Beach View",
+      "featuredAmenity": "Hot Tub",
+      "area": "Corner",
+      "customLabel": "Blue Room"
+    }
+  },
+...
+}
+```
+
+For partners who want more control over their names and which attributes get used, they can refer to the table below indicating our groupings and what is the maximum number of attributes Expedia will use from each group.
+
+| Attribute name | Group | Optional | Explanation |
+| -------------- | ----- | -------- | ----------- |
+| typeOfRoom | - | No | Required and always used. |
+| roomClass | - | Yes |  Always used in name if provided. |
+| includeBedType | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can defautl to use "Multiple Beds". |
+| bedroomDetails | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. |
+| includeSmokingPref | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| accessibility | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. Indicate if room is accessible to wheelchairs. |
+| view | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| featuredAmenity | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| area | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| customLabel | - | Yes | Always used in name if provided. |
+
+For more information about the various possible values and constraints on each of these attributes, please refer to the Reference section.
 
 # Optional Fields in a Rate Plan Create Request
 In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the reference section. 
