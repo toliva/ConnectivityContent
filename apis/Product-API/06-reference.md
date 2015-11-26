@@ -6,7 +6,7 @@ The Product API will enable our hotels partners to create and edit their room ty
 ## Error codes
 ### Renders the page describing the business error codes used by the API
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/documentation/api/errors
+- Url: https://services.expediapartnercentral.com/v1/documentation/api/errors
 - Consumes: `application/json`
 - Produces: `text/html`
 
@@ -18,7 +18,7 @@ Status Code | Description | Response Model
 ## Property
 ### Obtain a list of properties
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties
+- Url: https://services.expediapartnercentral.com/v1/properties
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -44,7 +44,7 @@ Status Code | Description | Response Model
 
 ### Read a single property
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -68,7 +68,7 @@ Status Code | Description | Response Model
 ## Room type
 ### Obtain a list of room types
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -92,7 +92,7 @@ Status Code | Description | Response Model
 
 ### Creates a new room type
 - Method: `POST`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -142,7 +142,11 @@ body | body | JSON message describing the new room type | true | [RoomTypeDTO](#
       "id": "2.1 (Non-Smoking) and 2.2 (Smoking)",
       "name": "string"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 0,
+    "squareMeters": 0
+  }
 }
 ```
 
@@ -160,7 +164,7 @@ Status Code | Description | Response Model
 
 ### Read a single room type
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -184,7 +188,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing room type
 - Method: `PUT`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -235,7 +239,11 @@ body | body | JSON message with modified room type | true | [RoomTypeDTO](#/defi
       "id": "2.1 (Non-Smoking) and 2.2 (Smoking)",
       "name": "string"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 0,
+    "squareMeters": 0
+  }
 }
 ```
 
@@ -254,7 +262,7 @@ Status Code | Description | Response Model
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -279,7 +287,7 @@ Status Code | Description | Response Model
 
 ### Creates a new rate plan
 - Method: `POST`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -365,70 +373,10 @@ body | body | JSON message describing the new rate plan | true | [RatePlanDTO](#
   "maxLOSDefault": 0,
   "minAdvBookDays": 0,
   "maxAdvBookDays": 0,
-  "bookDateStart": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "bookDateEnd": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "travelDateStart": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "travelDateEnd": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
+  "bookDateStart": "2015-11-25",
+  "bookDateEnd": "2015-11-25",
+  "travelDateStart": "2015-11-25",
+  "travelDateEnd": "2015-11-25",
   "mobileOnly": false
 }
 ```
@@ -447,7 +395,7 @@ Status Code | Description | Response Model
 
 ### Read a single rate plan
 - Method: `GET`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -472,7 +420,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing rate plan
 - Method: `PUT`
-- Url: https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -559,70 +507,10 @@ body | body | JSON message of modified rate plan | true | [RatePlanDTO](#/defini
   "maxLOSDefault": 0,
   "minAdvBookDays": 0,
   "maxAdvBookDays": 0,
-  "bookDateStart": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "bookDateEnd": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "travelDateStart": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
-  "travelDateEnd": {
-    "year": 0,
-    "month": "JANUARY",
-    "monthValue": 0,
-    "chronology": {
-      "calendarType": "string",
-      "id": "string"
-    },
-    "dayOfMonth": 0,
-    "dayOfWeek": "MONDAY",
-    "era": {
-      "value": 0
-    },
-    "dayOfYear": 0,
-    "leapYear": false
-  },
+  "bookDateStart": "2015-11-25",
+  "bookDateEnd": "2015-11-25",
+  "travelDateStart": "2015-11-25",
+  "travelDateEnd": "2015-11-25",
   "mobileOnly": false
 }
 ```
@@ -712,39 +600,12 @@ distributionModel | string | Distribution model adopted by the rate plan, matchi
 manageable | boolean | Cannot be provided in a create request. Default to yes for HotelCollect-only or ExpediaCollect-only rate plans. For ExpediaTravelerPreference rate plans, if rate acquisition type is net, ExpediaCollect will default to true; if rate acquisition type is Sell/LAR, HotelCollect will default to true.
 compensation | [CompensationRuleDTO](#/definitions/CompensationRuleDTO) | Applicable compensation rules for this distribution model. Defaults to the value defined on the contract with the partner
 
-- <a name="/definitions/Era"></a>Era
-
-Property Name | Type | Description
-------------- | ---- | -----------
-value | integer | 
-
 - <a name="/definitions/ErrorDTO"></a>ErrorDTO
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 code | integer | 
 message | string | 
-
-- <a name="/definitions/IsoChronology"></a>IsoChronology
-
-Property Name | Type | Description
-------------- | ---- | -----------
-calendarType | string | 
-id | string | 
-
-- <a name="/definitions/LocalDate"></a>LocalDate
-
-Property Name | Type | Description
-------------- | ---- | -----------
-year | integer | 
-month | string | 
-monthValue | integer | 
-chronology | [IsoChronology](#/definitions/IsoChronology) | 
-dayOfMonth | integer | 
-dayOfWeek | string | 
-era | [Era](#/definitions/Era) | 
-dayOfYear | integer | 
-leapYear | boolean | 
 
 - <a name="/definitions/OccupancyByAgeDTO"></a>OccupancyByAgeDTO
 
@@ -812,10 +673,10 @@ minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 2
 maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500
 maxAdvBookDays | integer | The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500
-bookDateStart | [LocalDate](#/definitions/LocalDate) | Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01
-bookDateEnd | [LocalDate](#/definitions/LocalDate) | Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted
-travelDateStart | [LocalDate](#/definitions/LocalDate) | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
-travelDateEnd | [LocalDate](#/definitions/LocalDate) | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
+bookDateStart | string | Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01
+bookDateEnd | string | Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted
+travelDateStart | string | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
+travelDateEnd | string | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
 
 - <a name="/definitions/ResponseWrapperDTO"></a>ResponseWrapperDTO
@@ -840,6 +701,13 @@ featuredAmenity | string | Attribute used to highlight a feature of the room on 
 area | string | Attributed used to highlight the location of the room
 customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
 
+- <a name="/definitions/RoomSizeDTO"></a>RoomSizeDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+squareFeet | integer | Room size in square feet. No decimals.
+squareMeters | integer | Room size in square meters. No decimals.
+
 - <a name="/definitions/RoomTypeDTO"></a>RoomTypeDTO
 
 Property Name | Type | Description
@@ -852,6 +720,7 @@ maxOccupants | integer | Min 1, max 20. Maximum number of people the room can ac
 occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line.
 bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking.
 smokingPreferences | Array[[SmokingPreferenceDTO](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
+roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
 
 - <a name="/definitions/RoomTypeNameDTO"></a>RoomTypeNameDTO
 
