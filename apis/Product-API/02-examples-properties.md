@@ -1,9 +1,11 @@
-# Intro
+# Property Examples
 This section contains examples on how to query the property resource of the product API.
 
 Property read allows partners to retrieve several important settings related to their properties’ configuration in Expedia system. Some of these settings will help partners better understand how to manage room type and rate plan resources. 
 
 It also enables partners to find out which properties are currently assigned to their accounts, by simply calling the /properties endpoint and iterating through all the properties returned.
+
+---
 
 ## Single Property Request / Response
 Request is a simple HTTP GET:
@@ -46,8 +48,10 @@ Response:
   }
 }
 ```
+
 ## Multiple Properties Request/Response
-When using GET for multiple properties, additional parameters can be provided to navigate through the result set. By default, only 20 properties are returned at a time. Partners who have more than 20 properties assigned to their accounts and want to get through all their properties have to use offset and limit parameters.
+When using GET for multiple properties, additional parameters can be provided to navigate through the result set. By default, 
+only 20 properties are returned at a time. Partners who have more than 20 properties assigned to their accounts and want to get through all their properties have to use offset and limit parameters.
 For example, a partner wanting to get 3 results at a time would do a request like this:
 ```HTTP
 GET https://services.expediapartnercentral.com/products/v1/properties?offset=0&limit=3
