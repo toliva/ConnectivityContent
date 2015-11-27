@@ -534,7 +534,7 @@ roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. 
 Property Name | Type | Description
 ------------- | ---- | -----------
 attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Defines the attributes used to compose the common name for the room. You should not provide a custom name when using these attributes
-value | string | Name provided for the room. In a Read Message, will contain name of the room, in EN-US. In a create or update message, it should only be used if partners want to use a predefined room name. If partners want to have a name built from room name attributes, it should be left blank. List of predefined room name can be found in the [PredefinedRoomNamesEnum(#/definitions/PredefinedRoomNamesEnum)] section.
+value | string | Name provided for the room. In a Read Message, will contain name of the room, in EN-US. In a create or update message, it should only be used if partners want to use a predefined room name. If partners want to have a name built from room name attributes, it should be left blank. List of predefined room name can be found in the [PredefinedRoomNamesEnum](#/definitions/PredefinedRoomNamesEnum) section.
 
 - <a name="/definitions/BedTypeDTO"></a>BedTypeDTO
 
