@@ -726,7 +726,7 @@ message | string |
 | Triple Room |
 | Twin Room  |
 
-<a name="/definitions/typeOfRoomEmum"></a>
+<a name="/definitions/typeOfRoomEnum"></a>
 ### typeOfRoomEmum
 | typeOfRoom |
 | ---------- |
@@ -758,7 +758,7 @@ message | string |
 | Twin Room |
 | Villa |
 
-<a name="/definitions/roomClassEmum"></a>
+<a name="/definitions/roomClassEnum"></a>
 ### roomClassEnum
 | roomClass |
 | --------- |
@@ -792,7 +792,7 @@ message | string |
 | Superior |
 | Traditional |
 
-<a name="/definitions/bedroomDetailsEmum"></a>
+<a name="/definitions/bedroomDetailsEnum"></a>
 ### bedroomDetailsEnum
 | bedroomDetails |
 | -------------- |
@@ -807,7 +807,7 @@ message | string |
 | Mixed Dorm |
 | Women only |
 
-<a name="/definitions/featuredAmenityEmum"></a>
+<a name="/definitions/featuredAmenityEnum"></a>
 ### featuredAmenityEnum
 | featuredAmenity |
 | --------------- |
@@ -837,7 +837,7 @@ message | string |
 | Shared Bathroom |
 | Terrace |
 
-<a name="/definitions/viewEmum"></a>
+<a name="/definitions/viewEnum"></a>
 ### viewEnum
 | view |
 | ---- |
@@ -870,7 +870,7 @@ message | string |
 | View |
 | Vineyard View |
 
-<a name="/definitions/areaEmum"></a>
+<a name="/definitions/areaEnum"></a>
 ### areaEnum
 
 | area |
@@ -894,7 +894,7 @@ message | string |
 | Slope side |
 | Tower |
 
-<a name="/definitions/bedTypeIdEmum"></a>
+<a name="/definitions/bedTypeIdEnum"></a>
 ### bedTypeIdEnum
 
 | bedTypeName | bedTypeId |
@@ -1125,7 +1125,7 @@ message | string |
 | 4 single and 1 double bed | 1.254 |
 | 2 king and 1 double bed | 1.255 |
 
-<a name="/definitions/valueAddInclusionsEmum"></a>
+<a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
 
 | valueAddInclusions |
