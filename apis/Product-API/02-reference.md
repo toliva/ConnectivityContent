@@ -726,10 +726,8 @@ message | string |
 | Triple Room |
 | Twin Room  |
 
-### Room Name Attributes Enums
-
 <a name="/definitions/typeOfRoomEmum"/>
-#### typeOfRoomEmum
+### typeOfRoomEmum
 | typeOfRoom |
 | ---------- |
 | Apartment |
@@ -761,7 +759,7 @@ message | string |
 | Villa |
 
 <a name="/definitions/roomClassEmum"/>
-#### roomClassEnum
+### roomClassEnum
 | roomClass |
 | --------- |
 | Basic |
@@ -795,7 +793,7 @@ message | string |
 | Traditional |
 
 <a name="/definitions/bedroomDetailsEmum"/>
-#### bedroomDetailsEnum
+### bedroomDetailsEnum
 | bedroomDetails |
 | -------------- |
 | 1 Bedroom |
@@ -810,7 +808,7 @@ message | string |
 | Women only |
 
 <a name="/definitions/featuredAmenityEmum"/>
-#### featuredAmenityEnum
+### featuredAmenityEnum
 | featuredAmenity |
 | --------------- |
 | 2 Bathrooms |
@@ -840,7 +838,7 @@ message | string |
 | Terrace |
 
 <a name="/definitions/viewEmum"/>
-#### viewEnum
+### viewEnum
 | view |
 | ---- |
 | Bay View |
@@ -873,7 +871,7 @@ message | string |
 | Vineyard View |
 
 <a name="/definitions/areaEmum"/>
-#### areaEnum
+### areaEnum
 
 | area |
 | ---- |
