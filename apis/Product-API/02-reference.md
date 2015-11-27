@@ -870,6 +870,7 @@ message | string |
 | Vineyard View |
 
 #### areaEnum
+
 | area |
 | ---- |
 | Attribute |
@@ -891,9 +892,10 @@ message | string |
 | Slope side |
 | Tower |
 
-#### bedTypeIdEnum
-| Name | Id |
-| ---- | -- |
+### bedTypeIdEnum
+
+| bedTypeName | bedTypeId |
+| ----------- | --------- |
 | 7 beds | 1.1 |
 | 9 beds | 1.2 |
 | 10 beds | 1.3 |
@@ -1120,8 +1122,10 @@ message | string |
 | 4 single and 1 double bed | 1.254 |
 | 2 king and 1 double bed | 1.255 |
 
-#### valueAddInclusionsEnum
+### valueAddInclusionsEnum
+
 | valueAddInclusions |
+| ------------------ |
 | Free Internet |
 | Free Parking |
 | Free Breakfast |
