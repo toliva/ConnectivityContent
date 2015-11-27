@@ -1,4 +1,4 @@
-# EPS Product API
+# API Reference
 The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs, without having to use EPC or contact their market manager. The API also enables our partners to read the definition of the room types and rate plans created in the system.
 
 ## API Principles & Standards
