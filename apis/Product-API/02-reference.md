@@ -540,7 +540,7 @@ Status Code | Description | Response Model
 
 
 ## Error codes
-### Renders the page describing the business error codes used by the API
+Renders the page describing the business error codes used by the API
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/documentation/api/errors
 - Consumes: `HTTP Request (GET)`
