@@ -195,7 +195,7 @@ Expedia Traveler Preference (ETP) is a program allowing customer to decide wheth
 
 In order to be able to offer this option to their customers, Expedia requires from the participating properties that they allow their rate plans to be sold either as ExpediaCollect, where Expedia will collect payment from customer at time of booking, or HotelCollect, where the property will collect payment from the customer at time of check out.
 
-## Identifying ExpediaTravelerPreference Properties
+### Identifying ExpediaTravelerPreference Properties
 
 To identify if a property is enabled on the program, the property resource will return an array of 2 distributionModels: ExpediaCollect and HotelCollect:
 ```JSON
@@ -328,7 +328,7 @@ For partners who want more control over their names and which attributes get use
 
 For more information about the various possible values and constraints on each of these attributes, please refer to the Reference section.
 
-### Optional Fields in a Rate Plan Create Request
+## Optional Fields in a Rate Plan Create Request
 In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the reference section. 
 
 Some of the fields cannot be set by the user; these will default to values defined by Expedia. 
