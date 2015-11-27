@@ -53,13 +53,13 @@ Headers are slightly different between a request made to the EPS Product API, an
 ### Obtain a list of properties
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/properties
-- Consumes: `application/json`
+- Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-status | query | Status filter. String. Only supported value is "all". | false | string | active
+status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active properties.
 offset | query | Pagination offset. Integer starting at 0 | false | string | 0
 limit | query | Pagination limit. Integer between 1 and 200. | false | string | 20
 
@@ -72,7 +72,7 @@ Status Code | Description | Response Model
 ### Read a single property
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}
-- Consumes: HTTP Request (GET)
+- Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
 #### Parameters
@@ -89,14 +89,14 @@ Status Code | Description | Response Model
 ### Obtain a list of room types
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
-- Consumes: HTTP Request (GET)
+- Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
-status | query | Status filter. String. Only supported value is "all". | false | string | 
+status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active room types (meaning room type with at least one active rate plan, as room type status can't be directly controlled, but is rather inferred from its rate plans statuses).
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -118,48 +118,46 @@ body | body | JSON message describing the new room type | true | [RoomTypeDTO](#
 **Examples**
 ```
 {
-  "resourceId": 0,
-  "partnerCode": "string",
-  "name": {
-    "attributes": {
-      "typeOfRoom": "string",
-      "roomClass": "string",
-      "includeBedType": false,
-      "bedroomDetails": "string",
-      "includeSmokingPref": false,
-      "accessibility": false,
-      "view": "string",
-      "featuredAmenity": "string",
-      "area": "string",
-      "customLabel": "string"
-    },
-    "value": "string"
-  },
-  "status": "Active",
-  "maxOccupants": 0,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 0,
-      "maxOccupants": 0
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "string",
-      "name": "string"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1 (Non-Smoking) and 2.2 (Smoking)",
-      "name": "string"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 0,
-    "squareMeters": 0
-  }
+        "partnerCode": "MyStringCode",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Penthouse",
+                "roomClass": "Executive",
+                "includeBedType": true,
+                "view": "City View",
+                "featuredAmenity": "Jetted Tub",
+                "customLabel": "Rooftop Terrace"
+            }
+        },
+        "maxOccupants": 4,
+        "occupancyByAge": [
+            {
+                "ageCategory": "Adult",
+                "minAge": 18,
+                "maxOccupants": 4
+            },
+            {
+                "ageCategory": "ChildAgeA",
+                "minAge": 0,
+                "maxOccupants": 3
+            }
+        ],
+        "bedTypes": [
+            {
+                "id": "1.67",
+                "name": "1 king and 1 sofa bed"
+            }
+        ],
+        "smokingPreferences": [
+            {
+                "id": "2.1",
+                "name": "Non-Smoking"
+            }
+        ],
+        "roomSize": {
+            "squareFeet": 1200,
+            "squareMeters": 111
+        }
 }
 ```
 
@@ -172,7 +170,7 @@ Status Code | Description | Response Model
 ### Read a single room type
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
-- Consumes: HTTP Request (GET)
+- Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
 #### Parameters
@@ -203,48 +201,49 @@ body | body | JSON message with modified room type | true | [RoomTypeDTO](#/defi
 **Examples**
 ```
 {
-  "resourceId": 0,
-  "partnerCode": "string",
-  "name": {
-    "attributes": {
-      "typeOfRoom": "string",
-      "roomClass": "string",
-      "includeBedType": false,
-      "bedroomDetails": "string",
-      "includeSmokingPref": false,
-      "accessibility": false,
-      "view": "string",
-      "featuredAmenity": "string",
-      "area": "string",
-      "customLabel": "string"
-    },
-    "value": "string"
-  },
-  "status": "Active",
-  "maxOccupants": 0,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 0,
-      "maxOccupants": 0
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "string",
-      "name": "string"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1 (Non-Smoking) and 2.2 (Smoking)",
-      "name": "string"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 0,
-    "squareMeters": 0
-  }
+        "resourceId": 200142893,
+        "partnerCode": "MyStringCode",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Penthouse",
+                "roomClass": "Executive",
+                "includeBedType": true,
+                "view": "City View",
+                "featuredAmenity": "Jetted Tub",
+                "customLabel": "Rooftop Terrace"
+            },
+            "value": "Executive Penthouse, 1 King Bed with Sofabed, Jetted Tub, City View (Rooftop Terrace)"
+        },
+        "status": "Active",
+        "maxOccupants": 4,
+        "occupancyByAge": [
+            {
+                "ageCategory": "Adult",
+                "minAge": 18,
+                "maxOccupants": 4
+            },
+            {
+                "ageCategory": "ChildAgeA",
+                "minAge": 0,
+                "maxOccupants": 3
+            }
+        ],
+        "bedTypes": [
+            {
+                "id": "1.67",
+                "name": "1 king and 1 sofa bed"
+            }
+        ],
+        "smokingPreferences": [
+            {
+                "id": "2.1",
+                "name": "Non-Smoking"
+            }
+        ],
+        "roomSize": {
+            "squareFeet": 1200,
+            "squareMeters": 111
+        }
 }
 ```
 
@@ -258,7 +257,7 @@ Status Code | Description | Response Model
 ### Obtain a list of rate plans
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
-- Consumes: HTTP Request (GET)
+- Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
 #### Parameters
@@ -290,83 +289,56 @@ body | body | JSON message describing the new rate plan | true | [RatePlanDTO](#
 **Examples**
 ```
 {
-  "resourceId": 0,
-  "name": "string",
-  "rateAcquisitionType": "string",
-  "distributionRules": [
-    {
-      "expediaId": "string",
-      "partnerCode": "string",
-      "distributionModel": "HotelCollect",
-      "manageable": false,
-      "compensation": {
-        "percent": 0,
-        "minAmount": 0,
-        "exceptions": [
-          {
-            "dateStart": "2015-11-25",
-            "dateEnd": "2015-11-25",
-            "minAmount": 0,
-            "percent": 0,
-            "mon": false,
-            "tue": false,
-            "wed": false,
-            "thu": false,
-            "fri": false,
-            "sat": false,
-            "sun": false
-          }
-        ]
-      }
-    }
-  ],
-  "status": "Active",
-  "type": "Standalone",
-  "pricingModel": "PerDayPricing",
-  "occupantsForBaseRate": 0,
-  "taxInclusive": false,
-  "cancelPolicy": {
-    "defaultPenalties": [
-      {
-        "deadline": 0,
-        "perStayFee": "string",
-        "amount": 0
-      }
-    ],
-    "exceptions": [
-      {
-        "startDate": "2015-11-25",
-        "endDate": "2015-11-25",
-        "penalties": [
-          {
-            "deadline": 0,
-            "perStayFee": "string",
-            "amount": 0
-          }
-        ]
-      }
-    ]
-  },
-  "additionalGuestAmounts": [
-    {
-      "dateStart": "2015-11-25",
-      "dateEnd": "2015-11-25",
-      "ageCategory": "Adult",
-      "amount": 0
-    }
-  ],
-  "valueAddInclusions": [
-    "string"
-  ],
-  "minLOSDefault": 0,
-  "maxLOSDefault": 0,
-  "minAdvBookDays": 0,
-  "maxAdvBookDays": 0,
-  "bookDateStart": "2015-11-25",
-  "bookDateEnd": "2015-11-25",
-  "travelDateStart": "2015-11-25",
-  "travelDateEnd": "2015-11-25",
-  "mobileOnly": false
+	"name": "My Rate Plan Name",
+	"rateAcquisitionType": "NetRate",
+	"distributionRules": [
+		{
+			"partnerCode": "ECCode",
+			"distributionModel": "ExpediaCollect"
+		}, {
+			"partnerCode": "HCCode",
+			"distributionModel": "HotelCollect"
+		}
+	],
+	"status": "Active",
+	"type": "Standalone",
+	"pricingModel": "PerDayPricing",
+	"occupantsForBaseRate": 2,
+	"taxInclusive": false,
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			}, {
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		]
+	},
+	"additionalGuestAmounts": [
+		{
+			"ageCategory": "Adult",
+			"amount": 8.73
+		}, {
+			"ageCategory": "ChildAgeA",
+			"amount": 5
+		}
+	],
+	"valueAddInclusions": [
+		"Free Parking", "Free Breakfast", "Free Internet"
+	],
+	"minLOSDefault": 1,
+	"maxLOSDefault": 28,
+	"minAdvBookDays": 0,
+	"maxAdvBookDays": 500,
+	"bookDateStart": "1900-01-01",
+	"bookDateEnd": "2079-06-06",
+	"travelDateStart": "1901-01-01",
+	"travelDateEnd": "2079-06-06",
+	"mobileOnly": false
 }
 ```
 
@@ -412,83 +384,72 @@ body | body | JSON message of modified rate plan | true | [RatePlanDTO](#/defini
 **Examples**
 ```
 {
-  "resourceId": 0,
-  "name": "string",
-  "rateAcquisitionType": "string",
-  "distributionRules": [
-    {
-      "expediaId": "string",
-      "partnerCode": "string",
-      "distributionModel": "HotelCollect",
-      "manageable": false,
-      "compensation": {
-        "percent": 0,
-        "minAmount": 0,
-        "exceptions": [
-          {
-            "dateStart": "2015-11-25",
-            "dateEnd": "2015-11-25",
-            "minAmount": 0,
-            "percent": 0,
-            "mon": false,
-            "tue": false,
-            "wed": false,
-            "thu": false,
-            "fri": false,
-            "sat": false,
-            "sun": false
-          }
-        ]
-      }
-    }
-  ],
-  "status": "Active",
-  "type": "Standalone",
-  "pricingModel": "PerDayPricing",
-  "occupantsForBaseRate": 0,
-  "taxInclusive": false,
-  "cancelPolicy": {
-    "defaultPenalties": [
-      {
-        "deadline": 0,
-        "perStayFee": "string",
-        "amount": 0
-      }
-    ],
-    "exceptions": [
-      {
-        "startDate": "2015-11-25",
-        "endDate": "2015-11-25",
-        "penalties": [
-          {
-            "deadline": 0,
-            "perStayFee": "string",
-            "amount": 0
-          }
-        ]
-      }
-    ]
-  },
-  "additionalGuestAmounts": [
-    {
-      "dateStart": "2015-11-25",
-      "dateEnd": "2015-11-25",
-      "ageCategory": "Adult",
-      "amount": 0
-    }
-  ],
-  "valueAddInclusions": [
-    "string"
-  ],
-  "minLOSDefault": 0,
-  "maxLOSDefault": 0,
-  "minAdvBookDays": 0,
-  "maxAdvBookDays": 0,
-  "bookDateStart": "2015-11-25",
-  "bookDateEnd": "2015-11-25",
-  "travelDateStart": "2015-11-25",
-  "travelDateEnd": "2015-11-25",
-  "mobileOnly": false
+	"resourceId": 205020307,
+	"name": "My Rate Plan Name",
+	"rateAcquisitionType": "NetRate",
+	"distributionRules": [
+		{
+			"expediaId": "205020307",
+			"partnerCode": "ECCode",
+			"distributionModel": "ExpediaCollect",
+			"manageable": true,
+			"compensation": {
+				"percent": 0.23,
+				"minAmount": 0
+			}
+		}, {
+			"expediaId": "205020307A",
+			"partnerCode": "HCCode",
+			"distributionModel": "HotelCollect",
+			"manageable": true,
+			"compensation": {
+				"percent": 0.23
+			}
+		}
+	],
+	"status": "Active",
+	"type": "Standalone",
+	"pricingModel": "PerDayPricing",
+	"occupantsForBaseRate": 2,
+	"taxInclusive": false,
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			}, {
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		]
+	},
+	"additionalGuestAmounts": [
+		{
+			"dateStart": "2015-11-27",
+			"dateEnd": "2079-06-06",
+			"ageCategory": "Adult",
+			"amount": 8.73
+		}, {
+			"dateStart": "2015-11-27",
+			"dateEnd": "2079-06-06",
+			"ageCategory": "ChildAgeA",
+			"amount": 5
+		}
+	],
+	"valueAddInclusions": [
+		"Free Parking", "Free Breakfast", "Free Internet"
+	],
+	"minLOSDefault": 1,
+	"maxLOSDefault": 28,
+	"minAdvBookDays": 0,
+	"maxAdvBookDays": 500,
+	"bookDateStart": "1900-01-01",
+	"bookDateEnd": "2079-06-06",
+	"travelDateStart": "1901-01-01",
+	"travelDateEnd": "2079-06-06",
+	"mobileOnly": false
 }
 ```
 
@@ -502,7 +463,7 @@ Status Code | Description | Response Model
 ### Renders the page describing the business error codes used by the API
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/v1/documentation/api/errors
-- Consumes: HTTP Request (GET)
+- Consumes: `HTTP Request (GET)`
 - Produces: `text/html`
 
 #### Success Responses
@@ -511,6 +472,134 @@ Status Code | Description | Response Model
 200 | successful operation | HTML Page
 
 ## Definitions
+### <a name="/definitions/PropertyDTO"></a>PropertyDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
+name | string | Name describing the property. Max. 255 characters
+status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion
+currency | string | Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.
+address | [PropertyAddressDTO](#/definitions/PropertyAddressDTO) | Property address details
+distributionModels | Array[string] | Distribution model(s) under which the property is configured to work with Expedia
+rateAcquisitionType | string | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs.
+taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.
+pricingModel | string | Configuration of the property when it comes to pricing rooms and rates.
+baseAllocationEnabled | boolean | Boolean to indicate whether this property has a base allocation contract with Expedia.
+minLOSThreshold | integer | This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.
+cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration
+timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name.
+reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations.
+
+#### <a name="/definitions/CutOffDTO"></a>CutOffDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+time | string | Indicates at which time we’ll stop making inventory available for same day reservations
+day | string | Can be of same day or next day. Complements the time attribute
+
+#### <a name="/definitions/PropertyAddressDTO"></a>PropertyAddressDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+line1 | string | First line of address
+line2 | string | Second line of address, not always available
+city | string | City in which the property is located
+state | string | State/Province, which is optional and thus might not be available
+postalCode | string | Postal or State Code, might not be available
+countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where the property is located
+
+#### <a name="/definitions/RnsAttributesDTO"></a>RnsAttributesDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+typeOfRoom | string | Attribute that determines the type of room, which is used to compose the name
+roomClass | string | Attribute that described the class of room, which is used to compose the name
+includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
+bedroomDetails | string | Attribute that describes details of the bedroom used to compose the name of the room
+includeSmokingPref | boolean | Attribute that determines if room has smoking preference
+accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
+view | string | Attribute that gives additional information about the view of the room
+featuredAmenity | string | Attribute used to highlight a feature of the room on its name
+area | string | Attributed used to highlight the location of the room
+customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
+
+#### <a name="/definitions/RoomSizeDTO"></a>RoomSizeDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+squareFeet | integer | Room size in square feet. No decimals.
+squareMeters | integer | Room size in square meters. No decimals.
+
+### <a name="/definitions/RoomTypeDTO"></a>RoomTypeDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
+partnerCode | string | Partner room type code/identifier. Max. 40 characters
+name | [RoomTypeNameDTO](#/definitions/RoomTypeNameDTO) | Formed by a [ISO 639-1]-[ISO-3166-1]. If applicable, it contains the RNS attributes used to generate the value. Max 255 characters
+status | string | Room type status is derived from the rate plans under the room type: if at least 1 rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well.
+maxOccupants | integer | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
+occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line.
+bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking.
+smokingPreferences | Array[[SmokingPreferenceDTO](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
+roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
+
+- <a name="/definitions/RoomTypeNameDTO"></a>RoomTypeNameDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Defines the attributes used to compose the common name for the room. You should not provide a custom name when using these attributes
+value | string | The custom name provided for the room. Max. 255 characters. Not to be used in conjunction with the attributes
+
+- <a name="/definitions/BedTypeDTO"></a>BedTypeDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+id | string | The code identifying the bed type. These ids are pre-defined (see full spec)
+name | string | Name identifying the bed type, provided here for information purposes only
+
+- <a name="/definitions/OccupancyByAgeDTO"></a>OccupancyByAgeDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+ageCategory | string | The age category whose occupancy is being defined
+minAge | integer | Minimum age allowed for the category. Min 0, max 99
+maxOccupants | integer | Max number of occupants on the category. Min 0, max 20
+
+- <a name="/definitions/SmokingPreferenceDTO"></a>SmokingPreferenceDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+id | string | Id identifying the smoking preference.
+name | string | Name identifying the smoking preference.
+
+### <a name="/definitions/RatePlanDTO"></a>RatePlanDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
+name | string | Name of the rate plan, for information/identification purposes. Min 1, Max 40 characters. If not provided, defaults to the manageable rate plan partner code.
+rateAcquisitionType | string | Rate acquisition type, inherited from the Property
+distributionRules | Array[[DistributionRuleDTO](#/definitions/DistributionRuleDTO)] | Used to provide information about how this rate plan can be sold (ExpediaCollect, HotelCollect or both).
+status | string | Defaults to active if not provided during creation
+type | string | Rate Plan type. Only Standalone type can be managed through the Product API. Defaults to Standalone if not provided during creation
+pricingModel | string | Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model
+occupantsForBaseRate | integer | Max occupants allowed for the base rate. Min 1, Max 20. This is only applicable for per day pricing properties, and required in create requests. It indicates how many occupants the per day price applies to
+taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property's configuration
+cancelPolicy | [CancelPolicyDTO](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property
+additionalGuestAmounts | Array[[AdditionalGuestAmountDTO](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates
+valueAddInclusions | Array[string] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
+minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
+maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
+minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500
+maxAdvBookDays | integer | The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500
+bookDateStart | string | Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01
+bookDateEnd | string | Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted
+travelDateStart | string | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
+travelDateEnd | string | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
+mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
+
 - <a name="/definitions/AdditionalGuestAmountDTO"></a>AdditionalGuestAmountDTO
 
 Property Name | Type | Description
@@ -520,12 +609,6 @@ dateEnd | string | Date at which this amount will not be effective anymore. If n
 ageCategory | string | The age category for the additional guests
 amount | number | Min value 0.000, accepts up to 3 decimal points
 
-- <a name="/definitions/BedTypeDTO"></a>BedTypeDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-id | string | The code identifying the bed type. These ids are pre-defined (see full spec)
-name | string | Name identifying the bed type, provided here for information purposes only
 
 - <a name="/definitions/CancelPenaltyExceptionRuleDTO"></a>CancelPenaltyExceptionRuleDTO
 
@@ -566,13 +649,6 @@ percent | number | Compensation percentage applied by default. Expressed as a va
 minAmount | number | Minimum amount. Accepts up to 3 decimal points. Only applicable to ExpediaCollect distribution rules
 exceptions | Array[[CompensationExceptionRuleDTO](#/definitions/CompensationExceptionRuleDTO)] | Depending on the contractual agreement between Expedia and the partner, compensation can vary based on different criteria. This array of exceptions will reflect this
 
-- <a name="/definitions/CutOffDTO"></a>CutOffDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-time | string | Indicates at which time we’ll stop making inventory available for same day reservations
-day | string | Can be of same day or next day. Complements the time attribute
-
 - <a name="/definitions/DistributionRuleDTO"></a>DistributionRuleDTO
 
 Property Name | Type | Description
@@ -583,20 +659,7 @@ distributionModel | string | Distribution model adopted by the rate plan, matchi
 manageable | boolean | Cannot be provided in a create request. Default to yes for HotelCollect-only or ExpediaCollect-only rate plans. For ExpediaTravelerPreference rate plans, if rate acquisition type is net, ExpediaCollect will default to true; if rate acquisition type is Sell/LAR, HotelCollect will default to true.
 compensation | [CompensationRuleDTO](#/definitions/CompensationRuleDTO) | Applicable compensation rules for this distribution model. Defaults to the value defined on the contract with the partner
 
-- <a name="/definitions/ErrorDTO"></a>ErrorDTO
 
-Property Name | Type | Description
-------------- | ---- | -----------
-code | integer | 
-message | string | 
-
-- <a name="/definitions/OccupancyByAgeDTO"></a>OccupancyByAgeDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-ageCategory | string | The age category whose occupancy is being defined
-minAge | integer | Minimum age allowed for the category. Min 0, max 99
-maxOccupants | integer | Max number of occupants on the category. Min 0, max 20
 
 - <a name="/definitions/PenaltyDTO"></a>PenaltyDTO
 
@@ -606,115 +669,17 @@ deadline | integer | Number of hours prior to the arrival of the guest. When set
 perStayFee | string | Fee that will be charged if the customer cancels within the specified deadline.
 amount | number | Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires
 
-- <a name="/definitions/PropertyAddressDTO"></a>PropertyAddressDTO
 
-Property Name | Type | Description
-------------- | ---- | -----------
-line1 | string | First line of address
-line2 | string | Second line of address, not always available
-city | string | City in which the property is located
-state | string | State/Province, which is optional and thus might not be available
-postalCode | string | Postal or State Code, might not be available
-countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where the property is located
-
-- <a name="/definitions/PropertyDTO"></a>PropertyDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-name | string | Name describing the property. Max. 255 characters
-status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion
-currency | string | Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.
-address | [PropertyAddressDTO](#/definitions/PropertyAddressDTO) | Property address details
-distributionModels | Array[string] | Distribution model(s) under which the property is configured to work with Expedia
-rateAcquisitionType | string | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs.
-taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.
-pricingModel | string | Configuration of the property when it comes to pricing rooms and rates.
-baseAllocationEnabled | boolean | Boolean to indicate whether this property has a base allocation contract with Expedia.
-minLOSThreshold | integer | This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.
-cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration
-timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name.
-reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations.
-
-- <a name="/definitions/RatePlanDTO"></a>RatePlanDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-name | string | Name of the rate plan, for information/identification purposes. Min 1, Max 40 characters. If not provided, defaults to the manageable rate plan partner code.
-rateAcquisitionType | string | Rate acquisition type, inherited from the Property
-distributionRules | Array[[DistributionRuleDTO](#/definitions/DistributionRuleDTO)] | Used to provide information about how this rate plan can be sold (ExpediaCollect, HotelCollect or both).
-status | string | Defaults to active if not provided during creation
-type | string | Rate Plan type. Only Standalone type can be managed through the Product API. Defaults to Standalone if not provided during creation
-pricingModel | string | Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model
-occupantsForBaseRate | integer | Max occupants allowed for the base rate. Min 1, Max 20. This is only applicable for per day pricing properties, and required in create requests. It indicates how many occupants the per day price applies to
-taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property's configuration
-cancelPolicy | [CancelPolicyDTO](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property
-additionalGuestAmounts | Array[[AdditionalGuestAmountDTO](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates
-valueAddInclusions | Array[string] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
-minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
-maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
-minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500
-maxAdvBookDays | integer | The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500
-bookDateStart | string | Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01
-bookDateEnd | string | Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted
-travelDateStart | string | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
-travelDateEnd | string | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
-mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
-
-- <a name="/definitions/ResponseWrapperDTO"></a>ResponseWrapperDTO
+### <a name="/definitions/ResponseWrapperDTO"></a>ResponseWrapperDTO
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 entity | object | 
 errors | Array[[ErrorDTO](#/definitions/ErrorDTO)] | 
 
-- <a name="/definitions/RnsAttributesDTO"></a>RnsAttributesDTO
+### <a name="/definitions/ErrorDTO"></a>ErrorDTO
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-typeOfRoom | string | Attribute that determines the type of room, which is used to compose the name
-roomClass | string | Attribute that described the class of room, which is used to compose the name
-includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
-bedroomDetails | string | Attribute that describes details of the bedroom used to compose the name of the room
-includeSmokingPref | boolean | Attribute that determines if room has smoking preference
-accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
-view | string | Attribute that gives additional information about the view of the room
-featuredAmenity | string | Attribute used to highlight a feature of the room on its name
-area | string | Attributed used to highlight the location of the room
-customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
-
-- <a name="/definitions/RoomSizeDTO"></a>RoomSizeDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-squareFeet | integer | Room size in square feet. No decimals.
-squareMeters | integer | Room size in square meters. No decimals.
-
-- <a name="/definitions/RoomTypeDTO"></a>RoomTypeDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-partnerCode | string | Partner room type code/identifier. Max. 40 characters
-name | [RoomTypeNameDTO](#/definitions/RoomTypeNameDTO) | Formed by a [ISO 639-1]-[ISO-3166-1]. If applicable, it contains the RNS attributes used to generate the value. Max 255 characters
-status | string | Room type status is derived from the rate plans under the room type: if at least 1 rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well.
-maxOccupants | integer | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
-occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line.
-bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking.
-smokingPreferences | Array[[SmokingPreferenceDTO](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
-roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
-
-- <a name="/definitions/RoomTypeNameDTO"></a>RoomTypeNameDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Defines the attributes used to compose the common name for the room. You should not provide a custom name when using these attributes
-value | string | The custom name provided for the room. Max. 255 characters. Not to be used in conjunction with the attributes
-
-- <a name="/definitions/SmokingPreferenceDTO"></a>SmokingPreferenceDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-id | string | Id identifying the smoking preference.
-name | string | Name identifying the smoking preference.
+code | integer | 
+message | string | 
