@@ -478,20 +478,20 @@ Status Code | Description | Response Model
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-name | string | Name describing the property. Max. 255 characters
-status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion
+resourceId | integer | Expedia property ID.
+name | string | Name describing the property. Max. 255 characters.
+status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.
 currency | string | Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.
-address | [PropertyAddressDTO](#/definitions/PropertyAddressDTO) | Property address details
-distributionModels | Array[string] | Distribution model(s) under which the property is configured to work with Expedia
-rateAcquisitionType | string | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs.
+address | [PropertyAddressDTO](#/definitions/PropertyAddressDTO) | Property address details.
+distributionModels | Array[Enum] | Distribution model(s) under which the property is configured to work with Expedia. Possible values are: ExpediaCollect, HotelCollect. Properties that opted in the ExpediaTravelerPreference program will have both.
+rateAcquisitionType | Enum | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs. Possible value s are NetRate (rate net of Expedia’s compensation) and SellLAR (rate inclusive of compensation).
 taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.
-pricingModel | string | Configuration of the property when it comes to pricing rooms and rates.
+pricingModel | Enum | Configuration of the property when it comes to pricing rooms and rates. Possible values are PerDayPricing and OccupancyBasedPricing.
 baseAllocationEnabled | boolean | Boolean to indicate whether this property has a base allocation contract with Expedia.
 minLOSThreshold | integer | This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.
-cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration
-timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name.
-reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations.
+cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration.
+timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.
+reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).
 
 <a name="/definitions/CutOffDTO"/>
 #### CutOffDTO
@@ -499,19 +499,19 @@ reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when
 Property Name | Type | Description
 ------------- | ---- | -----------
 time | string | Indicates at which time we’ll stop making inventory available for same day reservations
-day | string | Can be of same day or next day. Complements the time attribute
+day | string | Can take one of 2 values: sameDay or nextDay. It complements the time attribute.
 
 <a name="/definitions/PropertyAddressDTO"/>
 #### PropertyAddressDTO
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-line1 | string | First line of address
-line2 | string | Second line of address, not always available
-city | string | City in which the property is located
-state | string | State/Province, which is optional and thus might not be available
-postalCode | string | Postal or State Code, might not be available
-countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where the property is located
+line1 | string | First line of address.
+line2 | string | Optional. Second line of address.
+city | string | City in which the property is located.
+state | string | Optional. State/Province.
+postalCode | string | Optional. Postal or State Code.
+countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where the property is located.
 
 
 <a name="/definitions/RoomTypeDTO"/>
@@ -519,13 +519,13 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-partnerCode | string | Partner room type code/identifier. Max. 40 characters
-name | [RoomTypeNameDTO](#/definitions/RoomTypeNameDTO) | Formed by a [ISO 639-1]-[ISO-3166-1]. If applicable, it contains the RNS attributes used to generate the value. Max 255 characters
-status | string | Room type status is derived from the rate plans under the room type: if at least 1 rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well.
+resourceId | integer | Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.
+partnerCode | string | Partner room type code/identifier. Max. 40 characters. Required in create or modify request, and has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.
+name | [RoomTypeNameDTO](#/definitions/RoomTypeNameDTO) | Name object. Collection of elements/attributes related the name of a room.
+status | enum | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
 maxOccupants | integer | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
-occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line.
-bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking.
+occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
+bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
 smokingPreferences | Array[[SmokingPreferenceDTO](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
 roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
 
@@ -533,8 +533,24 @@ roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. 
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Defines the attributes used to compose the common name for the room. You should not provide a custom name when using these attributes
-value | string | Name provided for the room. In a Read Message, will contain name of the room, in EN-US. In a create or update message, it should only be used if partners want to use a predefined room name. If partners want to have a name built from room name attributes, it should be left blank. List of predefined room name can be found in the [PredefinedRoomNamesEnum](#/definitions/PredefinedRoomNamesEnum) section.
+attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Collection of attributes that can be used to build a room type name. Should only be provided if partner doesn’t want to use one of the predefined names Expedia supports.
+value | string | For create and modify requests, optional and ignored if name attributes are used. Required if name attributes are not provided. When provided in create or update requests, without any name attributes, value provided needs to be one of the predefined room names found in  [PredefinedRoomNamesEnum](#/definitions/PredefinedRoomNamesEnum) section. For read, create and modify responses, if partner is making use of room name attributes, this field will contain the auto-generated name based off the attributes that were provided, in English-US language. If partner is using a predefined name, this field will contain the predefined name value, as provided in the create or update request.
+
+<a name="/definitions/RnsAttributesDTO"/>
+- RnsAttributesDTO
+
+Property Name | Type | Description
+------------- | ---- | -----------
+typeOfRoom | string | Attribute that determines the type of room, which is used to compose the name
+roomClass | string | Attribute that described the class of room, which is used to compose the name
+includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
+bedroomDetails | string | Attribute that describes details of the bedroom used to compose the name of the room
+includeSmokingPref | boolean | Attribute that determines if room has smoking preference
+accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
+view | string | Attribute that gives additional information about the view of the room
+featuredAmenity | string | Attribute used to highlight a feature of the room on its name
+area | string | Attributed used to highlight the location of the room
+customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
 
 - <a name="/definitions/BedTypeDTO"></a>BedTypeDTO
 
@@ -557,22 +573,6 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 id | string | Id identifying the smoking preference.
 name | string | Name identifying the smoking preference.
-
-<a name="/definitions/RnsAttributesDTO"/>
-- RnsAttributesDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-typeOfRoom | string | Attribute that determines the type of room, which is used to compose the name
-roomClass | string | Attribute that described the class of room, which is used to compose the name
-includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
-bedroomDetails | string | Attribute that describes details of the bedroom used to compose the name of the room
-includeSmokingPref | boolean | Attribute that determines if room has smoking preference
-accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
-view | string | Attribute that gives additional information about the view of the room
-featuredAmenity | string | Attribute used to highlight a feature of the room on its name
-area | string | Attributed used to highlight the location of the room
-customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
 
 <a name="/definitions/RoomSizeDTO"/>
 - RoomSizeDTO
