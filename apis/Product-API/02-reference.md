@@ -545,7 +545,7 @@ Property Name | Type | Description
 typeOfRoom | [typeOfRoomEnum](#/definitions/typeOfRoomEnum) | Attribute that determines the type of room, which is used to compose the name
 roomClass | [roomClassEnum](#/definitions/roomClassEnum) | Attribute that described the class of room, which is used to compose the name
 includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
-bedroomDetails | [bedroomDetailsEnum](#/definitions/bedroomDetailsEnum)  | Attribute that describes details of the bedroom used to compose the name of the room
+bedroomDetails | [bedroomDetailsEnum](#/definitions/bedroomDetailsEnum) | Attribute that describes details of the bedroom used to compose the name of the room
 includeSmokingPref | boolean | Attribute that determines if room has smoking preference
 accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
 view | [viewEnum](#/definitions/viewEnum) | Attribute that gives additional information about the view of the room
