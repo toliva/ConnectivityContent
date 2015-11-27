@@ -727,3 +727,435 @@ message | string |
 | Superior Twin Room  |
 | Triple Room |
 | Twin Room  |
+
+### Room Name Attributes Enums
+
+#### typeOfRoomEmum
+| typeOfRoom |
+| ---------- |
+| Apartment |
+| Bungalow |
+| Cabin |
+| Chalet |
+| Condo |
+| Cottage |
+| Double or Twin Room |
+| Double Room |
+| Double Room Single Use |
+| Duplex |
+| House |
+| Loft |
+| Mobile Home |
+| Penthouse |
+| Quadruple Room |
+| Room |
+| Shared Dormitory |
+| Single Room |
+| Studio |
+| Studio Suite |
+| Suite |
+| Tent |
+| Townhome |
+| Tree House |
+| Triple Room |
+| Twin Room |
+| Villa |
+
+#### roomClassEnum
+| roomClass |
+| --------- |
+| Basic |
+| Business |
+| City |
+| Classic |
+| Club |
+| Comfort |
+| Deluxe |
+| Design |
+| Economy |
+| Elite |
+| Exclusive |
+| Executive |
+| Family |
+| Gallery |
+| Grand |
+| Honeymoon |
+| Junior |
+| Luxury |
+| Panoramic |
+| Premier |
+| Premium |
+| Presidential |
+| Romantic |
+| Royal |
+| Senior |
+| Signature |
+| Standard |
+| Superior |
+| Traditional |
+
+#### bedroomDetailsEnum
+| bedroomDetails |
+| -------------- |
+| 1 Bedroom |
+| 2 Bedrooms |
+| 3 Bedrooms |
+| 4 Bedrooms |
+| 5 Bedrooms |
+| 6 Bedrooms |
+| Multiple Bedrooms |
+| Men only |
+| Mixed Dorm |
+| Women only |
+
+#### featuredAmenityEnum
+| featuredAmenity |
+| --------------- |
+| 2 Bathrooms |
+| Allergy Friendly |
+| Balcony |
+| Bathtub |
+| Business Lounge Access |
+| Concierge Service |
+| Connecting Rooms |
+| Ensuite |
+| Fireplace |
+| Hot Tub |
+| Jetted Tub |
+| Kitchen |
+| Kitchenette |
+| Lanai |
+| Microwave |
+| No Windows |
+| Patio |
+| Pool Access |
+| Private Bathroom |
+| Private Pool |
+| Refrigerator |
+| Refrigerator & Microwave |
+| Sauna |
+| Shared Bathroom |
+| Terrace |
+
+#### viewEnum
+| view |
+| ---- |
+| Bay View |
+| Beach View |
+| Canal View |
+| City View |
+| Courtyard View |
+| Garden View |
+| Golf View |
+| Harbor View |
+| Hill View |
+| Lagoon View |
+| Lake View |
+| Marina View |
+| Mountain View |
+| Multiple View |
+| No View |
+| Ocean View |
+| Park View |
+| Partial Lake View |
+| Partial Ocean View |
+| Partial Sea View |
+| Partial View |
+| Pool View |
+| Resort View |
+| River View |
+| Sea View |
+| Valley View |
+| View |
+| Vineyard View |
+
+#### areaEnum
+| area |
+| ---- |
+| Attribute |
+| Annex Building |
+| Beachfront |
+| Beachside |
+| Corner |
+| Courtyard Area |
+| Executive Level |
+| Garden Area |
+| Ground Floor |
+| Lakeside |
+| Mezzanine |
+| Mountainside |
+| Oceanfront |
+| Overwater |
+| Poolside |
+| Sea Facing |
+| Slope side |
+| Tower |
+
+#### bedTypeIdEnum
+| Name | Id |
+| ---- | -- |
+| 7 beds | 1.1 |
+| 9 beds | 1.2 |
+| 10 beds | 1.3 |
+| 11 beds | 1.4 |
+| 1 double bed | 1.13 |
+| 1 king bed | 1.14 |
+| 1 queen bed | 1.15 |
+| 1 twin bed | 1.18 |
+| 2 double beds | 1.21 |
+| 2 king beds | 1.22 |
+| 2 queen beds | 1.23 |
+| 2 twin beds | 1.25 |
+| 3 twin beds | 1.3 |
+| 4 twin beds | 1.34 |
+| 1 bed | 1.4 |
+| 2 beds | 1.41 |
+| 1 single bed | 1.42 |
+| 2 single beds | 1.43 |
+| 3 single beds | 1.44 |
+| 4 single beds | 1.45 |
+| 1 full bed | 1.46 |
+| 2 full beds | 1.47 |
+| 1 trundle bed | 1.48 |
+| 1 murphy bed | 1.49 |
+| 1 bunk bed | 1.5 |
+| 1 sofa bed | 1.51 |
+| 2 sofa beds | 1.52 |
+| 3 sofa beds | 1.53 |
+| 1 Japanese futon | 1.54 |
+| 3 beds | 1.55 |
+| 3 king beds | 1.56 |
+| 3 queen beds | 1.57 |
+| 4 beds | 1.58 |
+| 4 king beds | 1.59 |
+| 4 queen beds | 1.6 |
+| 1 king and 1 single bed | 1.61 |
+| 1 queen and 1 single bed | 1.62 |
+| 1 double and 1 single bed | 1.63 |
+| 1 king and 2 single beds | 1.64 |
+| 1 queen and 2 single beds | 1.65 |
+| 1 double and 2 single beds | 1.66 |
+| 1 king and 1 sofa bed | 1.67 |
+| 1 queen and 1 sofa bed | 1.68 |
+| 1 double and 1 sofa bed | 1.69 |
+| 2 twin and 1 sofa bed | 1.7 |
+| 2 single and 1 sofa bed | 1.71 |
+| 1 king and 1 queen bed | 1.72 |
+| 2 double and 1 single bed | 1.73 |
+| 2 king and 1 single bed | 1.74 |
+| 1 double and 1 twin bed | 1.75 |
+| 6 beds | 1.76 |
+| 5 beds | 1.77 |
+| 2 extra-long double bed | 1.78 |
+| 1 semi-double bed | 1.79 |
+| 1 pullout bed | 1.8 |
+| 4 double and 1 queen sofa bed | 1.81 |
+| 2 king and 1 queen sofa bed | 1.82 |
+| 2 double and 1 sofa bed | 1.83 |
+| 4 double beds | 1.84 |
+| 3 double beds | 1.85 |
+| 2 double and 2 single beds | 1.86 |
+| 1 queen and 1 double bed | 1.87 |
+| 2 queen and 1 sofa bed | 1.88 |
+| 4 double and 1 sofa bed | 1.89 |
+| 2 king and 1  sofa bed | 1.9 |
+| Quadruple Occupancy | 1.91 |
+| Triple Occupancy | 1.92 |
+| Double Occupancy | 1.93 |
+| Single Occupancy | 1.94 |
+| 1 double or 2 twin beds | 1.96 |
+| 1 double or 1 twin bed | 1.97 |
+| 1 king and 1 double bed | 1.98 |
+| 1 double and 1 bunk bed | 1.99 |
+| 1 double and 2 bunk beds | 1.1 |
+| 1 double and 2 single sofa beds | 1.101 |
+| 1 double and 2 sofa beds | 1.102 |
+| 1 double and 3 single beds | 1.103 |
+| 1 double and 3 sofa beds | 1.104 |
+| 1 double, 1 single, and 1 bunk bed | 1.105 |
+| 1 double, 1 single, and 1 sofa bed | 1.106 |
+| 1 double, 1 sofa bed, and 1 bunk bed | 1.107 |
+| 1 double, 2 single, and 1 double sofa bed | 1.108 |
+| 1 double, 2 single, and 1 sofa bed | 1.109 |
+| 1 double, 3 single, and 1 sofa bed | 1.11 |
+| 1 double, 3 twin, and 3 queen beds | 1.111 |
+| 1 king and 1 bunk bed | 1.112 |
+| 1 king and 2 queen beds | 1.113 |
+| 1 king and 4 single beds | 1.114 |
+| 1 king, 1 queen, and 1 sofa bed | 1.115 |
+| 1 king, 1 queen, and 3 single beds | 1.116 |
+| 1 king, 1 sofa bed, and 1 murphy bed | 1.117 |
+| 1 king, 2 double, and 1 sofa bed | 1.118 |
+| 1 king, 2 single, and 1 sofa bed | 1.119 |
+| 1 queen and 1 bunk bed | 1.12 |
+| 1 queen and 1 murphy bed | 1.121 |
+| 1 queen and 2 bunk beds | 1.122 |
+| 1 queen and 2 double beds | 1.123 |
+| 1 queen and 2 sofa beds | 1.124 |
+| 1 queen and 3 single beds | 1.125 |
+| 1 queen and 4 single beds | 1.126 |
+| 1 queen, 1 bunk bed, and 1 sofa bed | 1.127 |
+| 1 queen, 1 murphy bed, and 1 sofa bed | 1.128 |
+| 1 single and 1 sofa bed | 1.129 |
+| 1 sofa bed and 1 bunk bed | 1.13 |
+| 2 bunk beds | 1.131 |
+| 2 double and 2 sofa beds | 1.133 |
+| 2 Japanese futons | 1.134 |
+| 2 king and 1 sofa bed | 1.135 |
+| 2 king and 2 queen beds | 1.136 |
+| 2 king, 2 single, and 1 bunk bed | 1.137 |
+| 2 king, 2 single, and 1 sofa bed | 1.138 |
+| 2 queen and 1 bunk bed | 1.139 |
+| 2 queen and 1 single bed | 1.14 |
+| 2 queen and 1 trundle bed | 1.142 |
+| 2 queen and 2 single beds | 1.143 |
+| 2 single and 1 bunk bed | 1.144 |
+| 2 single and 2 bunk beds | 1.146 |
+| 2 single and 2 sofa beds | 1.147 |
+| 2 single and 3 sofa beds | 1.148 |
+| 3 double and 1 sofa bed | 1.149 |
+| 3 Japanese futons | 1.15 |
+| 3 queen and 1 sofa bed | 1.151 |
+| 3 queen and 2 single beds | 1.152 |
+| 3 queen, 2 single, and 2 bunk beds | 1.153 |
+| 4 Japanese futons | 1.154 |
+| 4 single and 1 sofa bed | 1.155 |
+| 4 single and 2 sofa beds | 1.156 |
+| 5 Japanese futons | 1.157 |
+| 5 queen and 4 single beds | 1.158 |
+| 6 Japanese futons | 1.159 |
+| 7 Japanese futons | 1.16 |
+| 8 Japanese futons | 1.161 |
+| 3 queen, 1 double, and 3 single beds | 1.163 |
+| 3 bunk beds | 1.164 |
+| 4 bunk beds | 1.165 |
+| 1 queen, 1 double, and 1 sofa bed | 1.166 |
+| 1 queen, 2 single, and 2 sofa beds | 1.167 |
+| 1 king, 1 queen, and 1 twin bed | 1.168 |
+| 1 king, 1 queen, and 2 twin beds | 1.169 |
+| 1 king, 2 queen, and 2 twin beds | 1.17 |
+| 1 king, 4 single, and 1 sofa bed | 1.171 |
+| 2 king, 4 single, and 1 sofa bed | 1.172 |
+| 2 king, 2 queen, and 2 twin beds | 1.173 |
+| 2 king, 2 double, and 1 sofa bed | 1.174 |
+| 1 king, 1 queen, 4 single, and 1 sofa bed | 1.175 |
+| 1 king, 2 double, 1 twin, and 2 sofa beds | 1.176 |
+| 1 double, 2 single, and 1 bunk bed | 1.177 |
+| 1 king, 1 queen, and 6 twin beds | 1.178 |
+| 1 king, 2 queen, 2 full, 3 twin, and 1 bunk bed | 1.179 |
+| 1 king, 3 queen, and 1 sofa bed | 1.18 |
+| 2 double, 2 single, and 1 sofa bed | 1.181 |
+| 2 king and 4 single beds | 1.182 |
+| 2 king, 2 queen, and 1 sofa bed | 1.183 |
+| 2 queen, 2 single, and 2 sofa beds | 1.184 |
+| 8 beds | 1.185 |
+| 1 double and 4 bunk beds | 1.186 |
+| 1 double, 1 bunk, and 1 sofa bed | 1.187 |
+| 1 double, 1 sofa bed, and 1 trundle bed | 1.188 |
+| 1 double, 2 single, 1 sofa bed, and 1 trundle bed | 1.189 |
+| 1 king and 1 murphy bed | 1.19 |
+| 1 king, 1 queen, 2 full, and 1 bunk bed | 1.191 |
+| 1 king, 1 single, and 1 sofa bed | 1.192 |
+| 1 queen, 1 full, and 2 sofa beds | 1.193 |
+| 1 queen, 1 full, 1 single, and 1 sofa bed | 1.194 |
+| 1 single and 1 bunk bed | 1.195 |
+| 2 queen, 1 full, and 1 bunk bed | 1.196 |
+| 2 queen, 2 full, 4 bunk beds, and 1 sofa bed | 1.197 |
+| 3 queen and 1 single bed | 1.198 |
+| 3 single and 1 sofa bed | 1.199 |
+| 4 single and 3 double beds | 1.2 |
+| 2 king and 2 sofa beds | 1.201 |
+| 1 king and 2 full beds | 1.202 |
+| 1 single and 1 trundle bed | 1.203 |
+| 1 double and 12 single beds | 1.204 |
+| 1 double, 2 bunk, and 1 sofa bed | 1.205 |
+| 1 double, 2 single, and 4 sofa beds | 1.206 |
+| 1 double, 4 single, and 1 sofa bed | 1.207 |
+| 1 double, 5 single, and 2 sofa beds | 1.208 |
+| 1 king and 2 double beds | 1.209 |
+| 1 king and 3 bunk beds | 1.21 |
+| 1 king and 3 queen beds | 1.211 |
+| 1 king, 1 full, and 2 bunk beds | 1.212 |
+| 1 king, 1 full, 1 single, and 1 sofa bed | 1.213 |
+| 1 king, 2 full, 2 single, and 1 sofa bed | 1.214 |
+| 1 king, 2 queen, and 1 murphy bed | 1.215 |
+| 1 king, 2 queen, 2 single, and 2 sofa beds | 1.216 |
+| 1 queen, 1 full, 2 single, and 1 sofa bed | 1.217 |
+| 1 queen, 1 single, and 1 sofa bed | 1.218 |
+| 1 queen, 2 double, and 1 single bed | 1.219 |
+| 1 queen, 2 single, and 1 sofa bed | 1.22 |
+| 1 sofa bed and 1 murphy bed | 1.221 |
+| 12 beds | 1.222 |
+| 2 double and 2 bunk beds | 1.223 |
+| 2 double, 1 single, and 1 sofa bed | 1.224 |
+| 2 king, 1 queen, and 1 sofa bed | 1.225 |
+| 2 king, 1 queen, and 4 single beds | 1.226 |
+| 2 king, 2 queen, and 1 single bed | 1.227 |
+| 2 king, 2 queen, and 4 single beds | 1.228 |
+| 2 queen , 2 single, and 1 sofa bed | 1.229 |
+| 2 queen and 1 murphy bed | 1.23 |
+| 2 queen and 2 sofa beds | 1.231 |
+| 2 queen, 2 double, and 2 single beds | 1.232 |
+| 3 double and 1 single bed | 1.233 |
+| 3 king, 4 single and 3 sofa beds | 1.234 |
+| 4 double and 1 bunk bed | 1.235 |
+| 4 double and 1 single bed | 1.236 |
+| 4 single and 2 bunk beds | 1.237 |
+| 1 queen, 1 double, and 1 murphy bed | 1.238 |
+| 1 queen, 1 sofa bed, and 1 Japanese futon | 1.239 |
+| 1 queen and 1 Japanese futon | 1.24 |
+| 1 king and 3 double beds | 1.241 |
+| 2 king and 3 double beds | 1.242 |
+| 2 king and 5 double beds | 1.243 |
+| 2 king, 5 double, and 2 single beds | 1.244 |
+| 2 king, 6 double, and 2 single beds | 1.245 |
+| 4 double, 2 single, and 1 sofa bed | 1.246 |
+| 2 double, 2 single, and 2 sofa beds | 1.247 |
+| 3 double and 2 sofa beds | 1.248 |
+| 3 double, 5 single, and 1 sofa bed | 1.249 |
+| 3 single and 1 bunk bed | 1.25 |
+| 2 double and 3 single beds | 1.251 |
+| 2 queen and 4 single beds | 1.252 |
+| 3 queen and 4 single beds | 1.253 |
+| 4 single and 1 double bed | 1.254 |
+| 2 king and 1 double bed | 1.255 |
+
+#### valueAddInclusionsEnum
+| valueAddInclusions |
+| Free Internet |
+| Free Parking |
+| Free Breakfast |
+| Free Wireless Internet |
+| Breakfast Buffet |
+| Free High-Speed Internet |
+| Continental Breakfast |
+| Full Breakfast |
+| Half Board |
+| Breakfast for 2 |
+| All-Inclusive |
+| Full Kitchen |
+| Free Airport Shuttle |
+| Full Board |
+| Free Dinner |
+| English Breakfast |
+| Resort Credit Included |
+| Spa Credit |
+| Free Valet Parking |
+| Welcome Gift Upon Arrival |
+| Free welcome drink |
+| Food/Beverage Credit |
+| Spa access |
+| All Meals |
+| Drinks and hors doeuvres |
+| Continental Breakfast for 2 |
+| Free Lunch |
+| Free Room Upgrade |
+| Free Airport Parking |
+| Golf Credit |
+| Disney Park tickets |
+| Casino Credit |
+| Match Play |
+| 2-for-1 Buffet |
+| VIP Line Access to Nightclub(s) |
+| Slot Play |
+| Free Ski Lift Ticket & Rental |
