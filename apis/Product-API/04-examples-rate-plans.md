@@ -1,6 +1,8 @@
-#	Intro
+#	Rate Plan Examples
 The rate plan resource defines the configuration of a rate that a partner would like to make available to Expedia customers. It contains the more static information about the rate, for example its name, code, cancellation and change policy, what is the base compensation, what are the additional guest amounts to charge, etc.
 More dynamic information like availability and rate information per stay date is exchanged via another API, EQC AR.
+
+---
 
 ## Single Rate Plan Read Request/Response
 This example is for a Per Day Pricing, ExpediaCollect, Net Rate Rate Plan.

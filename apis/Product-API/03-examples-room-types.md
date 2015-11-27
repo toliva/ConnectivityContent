@@ -1,7 +1,9 @@
-#	Intro
+#	Room Type Examples
 The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to hotels, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.
 
 Against the room type resource, partners can retrieve a list of room types or a specific room type. Partners can also create new room types (one at a time), and edit an existing room type (one at a time, full overlay operation).
+
+---
 
 ##	Single Room Type Read Request/Response
 This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bed types, and supporting both smoking and non-smoking
