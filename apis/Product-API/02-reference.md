@@ -132,7 +132,7 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
 ## Property
 ### Obtain a list of properties
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties
+- Url: https://services.expediapartnercentral.com/products/v1/properties
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -151,7 +151,7 @@ Status Code | Description | Response Model
 
 ### Read a single property
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -168,7 +168,7 @@ Status Code | Description | Response Model
 ## Room type
 ### Obtain a list of room types
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -185,7 +185,7 @@ Status Code | Description | Response Model
 
 ### Creates a new room type
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -249,7 +249,7 @@ Status Code | Description | Response Model
 
 ### Read a single room type
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -267,7 +267,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -336,7 +336,7 @@ Status Code | Description | Response Model
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -355,7 +355,7 @@ Status Code | Description | Response Model
 
 ### Creates a new rate plan
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -430,7 +430,7 @@ Status Code | Description | Response Model
 
 ### Read a single rate plan
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (GET)
 - Produces: `application/json`
 
@@ -449,7 +449,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing rate plan
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -542,7 +542,7 @@ Status Code | Description | Response Model
 ## Error codes
 Renders the page describing the business error codes used by the API
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/documentation/api/errors
+- Url: https://services.expediapartnercentral.com/products/v1/documentation/api/errors
 - Consumes: `HTTP Request (GET)`
 - Produces: `text/html`
 
