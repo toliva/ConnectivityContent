@@ -168,8 +168,8 @@ The result will be an array of active rate plans under this property. For exampl
   ]
 }
 ```
-
-To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on `https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans` with this payload:
+## Add a Rate Plan
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on `https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans` with this payload to create an ExpediaTravelerPreference-enabled rate plan:
 ```JSON
 {
   "distributionRules": [
