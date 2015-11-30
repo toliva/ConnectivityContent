@@ -12,6 +12,80 @@ The following example illustrates the model and gives an overview of the type of
 
 ![Data Model Overview with an Example](/images/ExpDataModelToday.png)
 
+## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
+
+Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.
+
+In order to be able to offer this option to their customers, Expedia requires from the participating properties that they allow their rate plans to be sold either as ExpediaCollect, where Expedia will collect payment from customer at time of booking, or HotelCollect, where the property will collect payment from the customer at time of check out.
+
+### Identifying ExpediaTravelerPreference Properties
+
+To identify if a property is enabled on the program, the property resource will return an array of 2 distributionModels: ExpediaCollect and HotelCollect:
+```JSON
+        "distributionModels": [
+            "ExpediaCollect",
+            "HotelCollect"
+        ],
+```
+### Identifying ExpediaTravelerPreference Rate Plans
+
+When properties have opted in the program, all their standalone rate plans are required to be enabled for the ExpediaTravelerPreference program. It will translate in having 2 different distribution rules configured for each rate plan. For example, when doing a GET on a rate plan enabled for the program, something like this would be returned:
+```JSON
+ {
+    "entity": 
+        {
+            "resourceId": 200086494,
+            ...
+            "distributionRules": [
+                {
+                    "expediaId": "200086494",
+                    "partnerCode": "ABC123",
+                    "distributionModel": "ExpediaCollect",
+                    "manageable": true,
+                    "compensation": {
+                        "percent": 0.25,
+                        "minAmount": 20
+                    }
+                },
+                {
+                    "expediaId": "200086494A",
+                    "partnerCode": "DEF123",
+                    "distributionModel": "HotelCollect",
+                    "manageable": false,
+                    "compensation": {
+                        "percent": 0.25
+                    }
+                }
+            ],
+            ...
+                }
+}
+```
+
+### Creating ExpediaTravelerPreference Rate Plans
+
+When a property opted in the program, all its standalone rate plans are requirement to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn't have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique to this specific rate plan. Example:
+
+```JSON
+{
+        "distributionRules": [
+            {
+                "partnerCode": "A123",
+                "distributionModel": "ExpediaCollect"
+            },
+            {
+                "partnerCode": "D123",
+                "distributionModel": "HotelCollect"
+            }
+        ]
+    }
+}
+```
+This will create a rate plan with these 2 codes, and will default everything else.
+
+### What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?
+
+For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreferenceProgram, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
 
 ## Getting Active or All resources when calling a list endpoint
 By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:
@@ -24,6 +98,79 @@ This becomes quite important to understand when partners are in the process of c
 ```HTML
 /products/v1/properties/123/roomTypes?status=all
 ```
+
+## Modify as a full overlay
+The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
+
+Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.
+
+For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.
+
+It is currently not possible to make partial updates to a resource.
+
+## Understanding Expedia's Logic Around Room Names
+
+When naming their room types, partners using the room type resource are required to provide the name in one of 2 ways:
+- Use one of the predefined room names
+- Building a name from room-level attributes
+
+Expedia is unable to accept free text room names from its partners. Because Expedia has points of sale in more than 45 languages, and want to offer the best experience to all its customers around the world, it requires to receive names in a structured way, to enable instant availability in all languages.
+
+### Using Predefined Names
+When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is providing one of these predefined names under the value element:
+```JSON
+{
+...
+  "name": {
+    "value": "Junior Suite"
+  },
+...
+}
+```
+
+Available predefined room names can be found in the Reference section.
+
+### Using Room Name Attributes
+For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.
+
+It is recommended for our partners to provide all the attributes they would like to be part of the name. Expedia will then only use the ones deemed more relevant if too many attributes are received. Example with all attributes selected:
+```JSON
+{
+...
+  "name": {
+    "attributes": {
+      "typeOfRoom": "Studio",
+      "roomClass": "Basic",
+      "includeBedType": true,
+      "bedroomDetails": "1 Bedroom",
+      "includeSmokingPref": true,
+      "accessibility": true,
+      "view": "Beach View",
+      "featuredAmenity": "Hot Tub",
+      "area": "Corner",
+      "customLabel": "Blue Room"
+    }
+  },
+...
+}
+```
+
+For partners who want more control over their names and which attributes get used, they can refer to the table below indicating our groupings and what is the maximum number of attributes Expedia will use from each group.
+
+| Attribute name | Group | Optional | Explanation |
+| -------------- | ----- | -------- | ----------- |
+| typeOfRoom | - | No | Required and always used. |
+| roomClass | - | Yes |  Always used in name if provided. |
+| includeBedType | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can defautl to use "Multiple Beds". |
+| bedroomDetails | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. |
+| includeSmokingPref | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| accessibility | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. Indicate if room is accessible to wheelchairs. |
+| view | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| featuredAmenity | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| area | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
+| customLabel | - | Yes | Always used in name if provided. |
+
+For more information about the various possible values and constraints on each of these attributes, please refer to the Reference section.
 
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation & Change Policy is defined with the following attributes in the Expedia system:
@@ -100,153 +247,6 @@ To reflect such terms, a partner should send:
     ]
   }
 ```
-## Modify as a full overlay
-The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
-
-Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.
-
-For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.
-
-It is currently not possible to make partial updates to a resource.
-
-## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
-
-Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.
-
-In order to be able to offer this option to their customers, Expedia requires from the participating properties that they allow their rate plans to be sold either as ExpediaCollect, where Expedia will collect payment from customer at time of booking, or HotelCollect, where the property will collect payment from the customer at time of check out.
-
-### Identifying ExpediaTravelerPreference Properties
-
-To identify if a property is enabled on the program, the property resource will return an array of 2 distributionModels: ExpediaCollect and HotelCollect:
-```JSON
-        "distributionModels": [
-            "ExpediaCollect",
-            "HotelCollect"
-        ],
-```
-### Identifying ExpediaTravelerPreference Rate Plans
-
-When properties have opted in the program, all their standalone rate plans are required to be enabled for the ExpediaTravelerPreference program. It will translate in having 2 different distribution rules configured for each rate plan. For example, when doing a GET on a rate plan enabled for the program, something like this would be returned:
-```JSON
- {
-    "entity": 
-        {
-            "resourceId": 200086494,
-            ...
-            "distributionRules": [
-                {
-                    "expediaId": "200086494",
-                    "partnerCode": "ABC123",
-                    "distributionModel": "ExpediaCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.25,
-                        "minAmount": 20
-                    }
-                },
-                {
-                    "expediaId": "200086494A",
-                    "partnerCode": "DEF123",
-                    "distributionModel": "HotelCollect",
-                    "manageable": false,
-                    "compensation": {
-                        "percent": 0.25
-                    }
-                }
-            ],
-            ...
-                }
-}
-```
-
-### Creating ExpediaTravelerPreference Rate Plans
-
-When a property opted in the program, all its standalone rate plans are requirement to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn't have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique to this specific rate plan. Example:
-
-```JSON
-{
-        "distributionRules": [
-            {
-                "partnerCode": "A123",
-                "distributionModel": "ExpediaCollect"
-            },
-            {
-                "partnerCode": "D123",
-                "distributionModel": "HotelCollect"
-            }
-        ]
-    }
-}
-```
-This will create a rate plan with these 2 codes, and will default everything else.
-
-### What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?
-
-For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreferenceProgram, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
-
-## Understanding Expedia's Logic Around Room Names
-
-When naming their room types, partners using the room type resource are required to provide the name in one of 2 ways:
-- Use one of the predefined room names
-- Building a name from room-level attributes
-
-Expedia is unable to accept free text room names from its partners. Because Expedia has points of sale in more than 45 languages, and want to offer the best experience to all its customers around the world, it requires to receive names in a structured way, to enable instant availability in all languages.
-
-### Using Predefined Names
-When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is providing one of these predefined names under the value element:
-```JSON
-{
-...
-  "name": {
-    "value": "Junior Suite"
-  },
-...
-}
-```
-
-Available predefined room names can be found in the Reference section.
-
-### Using Room Name Attributes
-For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.
-
-It is recommended for our partners to provide all the attributes they would like to be part of the name. Expedia will then only use the ones deemed more relevant if too many attributes are received. Example with all attributes selected:
-```JSON
-{
-...
-  "name": {
-    "attributes": {
-      "typeOfRoom": "Studio",
-      "roomClass": "Basic",
-      "includeBedType": true,
-      "bedroomDetails": "1 Bedroom",
-      "includeSmokingPref": true,
-      "accessibility": true,
-      "view": "Beach View",
-      "featuredAmenity": "Hot Tub",
-      "area": "Corner",
-      "customLabel": "Blue Room"
-    }
-  },
-...
-}
-```
-
-For partners who want more control over their names and which attributes get used, they can refer to the table below indicating our groupings and what is the maximum number of attributes Expedia will use from each group.
-
-| Attribute name | Group | Optional | Explanation |
-| -------------- | ----- | -------- | ----------- |
-| typeOfRoom | - | No | Required and always used. |
-| roomClass | - | Yes |  Always used in name if provided. |
-| includeBedType | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can defautl to use "Multiple Beds". |
-| bedroomDetails | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. |
-| includeSmokingPref | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
-| accessibility | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. Indicate if room is accessible to wheelchairs. |
-| view | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
-| featuredAmenity | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
-| area | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
-| customLabel | - | Yes | Always used in name if provided. |
-
-For more information about the various possible values and constraints on each of these attributes, please refer to the Reference section.
 
 ## Optional Fields in a Rate Plan Create Request
 In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the reference section. 
