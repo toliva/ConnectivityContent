@@ -716,7 +716,7 @@ defaultPenalties | Array[[PenaltyDTO](#/definitions/PenaltyDTO)] | Default penal
 Property Name | Type | Description
 ------------- | ---- | -----------
 deadline | integer | Number of hours prior to the arrival of the guest. When set to 0, it means up until end of the day of arrival. Min 0, Max 999
-perStayFee | string | Fee that will be charged if the customer cancels within the specified deadline.
+perStayFee | [perStayFeeEnum](#/definitions/perStayFeeEnum) | Fee that will be charged if the customer cancels within the specified deadline.
 amount | number | Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires
 
 <a name="/definitions/DistributionRuleDTO"></a>
@@ -1247,3 +1247,22 @@ message | string |
 | VIP Line Access to Nightclub(s) |
 | Slot Play |
 | Free Ski Lift Ticket & Rental |
+
+<a name="/definitions/perStayFeeEnum"></a>
+### perStayFeeEnum
+
+| perStayFee |
+| ------------------ |
+| None |
+| 1stNightRoomAndTax |
+| 2NightsRoomAndTax |
+| 10PercentCostOfStay |
+| 20PercentCostOfStay |
+| 30PercentCostOfStay |
+| 40PercentCostOfStay |
+| 50PercentCostOfStay |
+| 60PercentCostOfStay |
+| 70PercentCostOfStay |
+| 80PercentCostOfStay |
+| 90PercentCostOfStay |
+| FullCostOfStay |
