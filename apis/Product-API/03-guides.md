@@ -1,4 +1,5 @@
-# Guides
+# FAQ & Guides
+This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner's intent when managing room types and rate plans.
 
 ## Understanding Expedia Lodging Data Model
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
