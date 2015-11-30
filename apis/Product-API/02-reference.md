@@ -5,11 +5,11 @@ The Product API will enable our hotels partners to create and edit their room ty
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
 - **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
-- **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocol.
+- **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocols.
 - **REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
 - **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. Partners should also be able to serve the additional data back in an update request, as our update requests are full overlay, and failure to provide additional data back in update requests could cause data to be removed.
-- **Entity** : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. 
-- **Errors** : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
+- **Entity** : All successful responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make successful responses generic across different resources and operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. 
+- **Errors** : If a request produces one or more errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
 
 ## HTTP Status Code
 
@@ -24,14 +24,14 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 403 | Authorization error |
 | 404 | Invalid resource |
 | 405 | Invalid/unsupported method on resource |
-| 406 | Unsupported media type for response (only JSON supported) |
+| 406 | Unsupported media type for response (only application/json is supported) |
 | 409 | Conflicting data |
-| 415 | Unsupported media type (only JSON is supported) |
+| 415 | Unsupported media type for requests (only application/json is supported) |
 | 500 | Internal system error (shouldn’t be retried) |
 | 503 | Internal system error (should be retried) |
 
 ## HTTP Headers
-Headers are slightly different between a request made to the EPS Product API, and responses returned.
+HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.
 
 ### Format – Request
 | Header | Type | Required | Input Format |
@@ -55,7 +55,7 @@ All responses provided by the API will either contain an HTTP Entity element, wh
 ### Entity
 The entities supported by the product API are rate plans, room types and properties.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS-Product and EPS-Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
 
 Consider the following code in Java:
 ```Java
@@ -132,7 +132,7 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
 ## Property
 ### Obtain a list of properties
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties
+- Url: https://services.expediapartnercentral.com/products/v1/properties
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -151,7 +151,7 @@ Status Code | Description | Response Model
 
 ### Read a single property
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -168,7 +168,7 @@ Status Code | Description | Response Model
 ## Room type
 ### Obtain a list of room types
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -185,7 +185,7 @@ Status Code | Description | Response Model
 
 ### Creates a new room type
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -249,7 +249,7 @@ Status Code | Description | Response Model
 
 ### Read a single room type
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -267,7 +267,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -336,7 +336,7 @@ Status Code | Description | Response Model
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/json`
 
@@ -355,7 +355,7 @@ Status Code | Description | Response Model
 
 ### Creates a new rate plan
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -430,7 +430,7 @@ Status Code | Description | Response Model
 
 ### Read a single rate plan
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (GET)
 - Produces: `application/json`
 
@@ -449,7 +449,7 @@ Status Code | Description | Response Model
 
 ### Modify an existing rate plan
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -542,7 +542,7 @@ Status Code | Description | Response Model
 ## Error codes
 Renders the page describing the business error codes used by the API
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/documentation/api/errors
+- Url: https://services.expediapartnercentral.com/products/v1/documentation/api/errors
 - Consumes: `HTTP Request (GET)`
 - Produces: `text/html`
 
@@ -716,7 +716,7 @@ defaultPenalties | Array[[PenaltyDTO](#/definitions/PenaltyDTO)] | Default penal
 Property Name | Type | Description
 ------------- | ---- | -----------
 deadline | integer | Number of hours prior to the arrival of the guest. When set to 0, it means up until end of the day of arrival. Min 0, Max 999
-perStayFee | string | Fee that will be charged if the customer cancels within the specified deadline.
+perStayFee | [perStayFeeEnum](#/definitions/perStayFeeEnum) | Fee that will be charged if the customer cancels within the specified deadline.
 amount | number | Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires
 
 <a name="/definitions/DistributionRuleDTO"></a>
@@ -1247,3 +1247,22 @@ message | string |
 | VIP Line Access to Nightclub(s) |
 | Slot Play |
 | Free Ski Lift Ticket & Rental |
+
+<a name="/definitions/perStayFeeEnum"></a>
+### perStayFeeEnum
+
+| perStayFee |
+| ------------------ |
+| None |
+| 1stNightRoomAndTax |
+| 2NightsRoomAndTax |
+| 10PercentCostOfStay |
+| 20PercentCostOfStay |
+| 30PercentCostOfStay |
+| 40PercentCostOfStay |
+| 50PercentCostOfStay |
+| 60PercentCostOfStay |
+| 70PercentCostOfStay |
+| 80PercentCostOfStay |
+| 90PercentCostOfStay |
+| FullCostOfStay |
