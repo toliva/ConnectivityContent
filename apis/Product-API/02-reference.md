@@ -5,11 +5,11 @@ The Product API will enable our hotels partners to create and edit their room ty
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
 - **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
-- **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocol.
+- **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocols.
 - **REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
 - **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. Partners should also be able to serve the additional data back in an update request, as our update requests are full overlay, and failure to provide additional data back in update requests could cause data to be removed.
-- **Entity** : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. 
-- **Errors** : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
+- **Entity** : All successful responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make successful responses generic across different resources and operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. 
+- **Errors** : If a request produces one or more errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
 
 ## HTTP Status Code
 
@@ -24,14 +24,14 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 403 | Authorization error |
 | 404 | Invalid resource |
 | 405 | Invalid/unsupported method on resource |
-| 406 | Unsupported media type for response (only JSON supported) |
+| 406 | Unsupported media type for response (only application/json is supported) |
 | 409 | Conflicting data |
-| 415 | Unsupported media type (only JSON is supported) |
+| 415 | Unsupported media type for requests (only application/json is supported) |
 | 500 | Internal system error (shouldn’t be retried) |
 | 503 | Internal system error (should be retried) |
 
 ## HTTP Headers
-Headers are slightly different between a request made to the EPS Product API, and responses returned.
+HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.
 
 ### Format – Request
 | Header | Type | Required | Input Format |
@@ -55,7 +55,7 @@ All responses provided by the API will either contain an HTTP Entity element, wh
 ### Entity
 The entities supported by the product API are rate plans, room types and properties.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS-Product and EPS-Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
 
 Consider the following code in Java:
 ```Java
