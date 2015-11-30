@@ -17,20 +17,44 @@ Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCUser:eQcPa$$worD (u
 
 ----
 
-## Supported operations by resource & endpoints
-* In order to access property information: /product/properties/{propertyResourceId}. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
-* Room types can be accessed in the context of a property: /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
-* Rate plans can be accessed as part of a room type (they belong to a room type): /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
+## Reading property, room type or rate plan information
+The simplest way to start interacting with the Product API is to access the `https://services.expediapartnercentral.com/products/v1/properties` endpoint in a browser, and input EQC API username and password when prompted for it.
 
-| Resource | Supported Operations | Production Endpoint | Parameters |
-| -------- | -------------------- | ------------------- | ---------- |
-| Property | Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided | GET https://services.expediapartnercentral.com/products/v1/properties/ | status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default) |
-| Property | Read a single property (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{PropertyID} | None |
-| Room Type | Read multiple room types (GET) belonging to a single property | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/ | status=all (optional) If status is not provided, only active room types are returned.|
-| Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/ | None |
-| Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
-| Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
-| Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
-| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+The result will be an array of properties assigned to your account. For example:
+```JSON
+{"entity":[{"resourceId":1780041,"name":"EQC Hotel 9","status":"Active","currency":"USD","address":{"line1":"123 Main St","line2":"","city":"Region Test","state":"","postalCode":"","countryCode":"USA"},"distributionModels":["ExpediaCollect","HotelCollect"],"rateAcquisitionType":"SellLAR","taxInclusive":false,"pricingModel":"PerDayPricing","baseAllocationEnabled":true,"minLOSThreshold":1,"cancellationTime":"18:00","timezone":"(GMT-08:00) Pacific Time (US & Canada); Tijuana","reservationCutOff":{"time":"05:00","day":"nextDay"}}]}
+```
+Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
+`https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes`
+
+The result will be an array of active room types under this property. For example:
+```JSON
+{"entity":[{"resourceId":209857,"partnerCode":"Deluxe Suite","name":{"attributes":{"typeOfRoom":"Suite","roomClass":"Deluxe"},"value":"Deluxe Suite"},"status":"Active","maxOccupants":3,"occupancyByAge":[{"ageCategory":"Adult","minAge":17,"maxOccupants":2},{"ageCategory":"ChildAgeA","minAge":0,"maxOccupants":2}],"bedTypes":[{"id":"1.14","name":"1 king bed"},{"id":"1.21","name":"2 double beds"}],"smokingPreferences":[{"id":"2.1","name":"Non-Smoking"},{"id":"2.2","name":"Smoking"}]}]}
+```
+Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
+`https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans`
+
+The result will be an array of active rate plans under this property. For example:
+```JSON
+{"entity":[{"resourceId":205020299,"name":"RoomOnly22","rateAcquisitionType":"SellLAR","distributionRules":[{"expediaId":"205020299A","partnerCode":"RoomOnly22","distributionModel":"HotelCollect","manageable":true,"compensation":{"percent":0.1}}],"status":"Active","type":"Standalone","pricingModel":"PerDayPricing","occupantsForBaseRate":2,"taxInclusive":false,"cancelPolicy":{"defaultPenalties":[{"deadline":0,"perStayFee":"1stNightRoomAndTax","amount":0.0},{"deadline":24,"perStayFee":"None","amount":0.0}]},"additionalGuestAmounts":[{"dateStart":"2015-07-10","dateEnd":"2079-06-06","ageCategory":"Adult","amount":0.0}],"minLOSDefault":1,"maxLOSDefault":28,"minAdvBookDays":0,"maxAdvBookDays":500,"bookDateStart":"1900-01-01","bookDateEnd":"2079-06-06","travelDateStart":"1901-01-01","travelDateEnd":"2079-06-06","mobileOnly":false}]}
+```
+
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on `https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans` with this payload:
+```JSON
+{
+  "distributionRules": [
+    {
+			"partnerCode": "HCollect1",
+			"distributionModel": "HotelCollect"
+		},
+       {
+			"partnerCode": "ECollect1",
+			"distributionModel": "ExpediaCollect"
+		}
+	]
+}
+```
+The response returned by the product API will contain all the default values used:
+```JSON
+{"entity":{"resourceId":206773289,"name":"ECollect1","rateAcquisitionType":"SellLAR","distributionRules":[{"expediaId":"206773289","partnerCode":"ECollect1","distributionModel":"ExpediaCollect","manageable":false,"compensation":{"percent":0.2,"minAmount":0.0}},{"expediaId":"206773289A","partnerCode":"HCollect1","distributionModel":"HotelCollect","manageable":true,"compensation":{"percent":0.2}}],"status":"Active","type":"Standalone","pricingModel":"PerDayPricing","occupantsForBaseRate":1,"taxInclusive":false,"cancelPolicy":{"defaultPenalties":[{"deadline":0,"perStayFee":"1stNightRoomAndTax","amount":0.0},{"deadline":24,"perStayFee":"None","amount":0.0}]},"additionalGuestAmounts":[{"dateStart":"2015-04-08","dateEnd":"2079-06-06","ageCategory":"Adult","amount":0.0}],"minLOSDefault":1,"maxLOSDefault":28,"minAdvBookDays":0,"maxAdvBookDays":500,"bookDateStart":"2015-11-30","bookDateEnd":"2079-06-06","travelDateStart":"2015-11-30","travelDateEnd":"2079-06-06","mobileOnly":false}}
+```
