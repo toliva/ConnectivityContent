@@ -1,4 +1,5 @@
 # Guides
+
 ## Understanding Expedia Lodging Data Model
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
 - Each property has 0 or more room types
@@ -11,6 +12,17 @@ The Product API enables partners to first create a room type, and subsequently c
 The following example illustrates the model and gives an overview of the type of data that needs to be set at various levels.
 
 ![Data Model Overview with an Example](/images/ExpDataModelToday.png)
+
+## Simplified mapping process with Product API
+In order to be able to start sending inventory and rates to Expedia, time consuming manual steps used to be required:
+- Contact Expedia via either phone or email to make sure the right room types and rate plans are created
+- Work with the connectivity system provider to acquire the room types and rate plans loaded in the Expedia system, through either a CSV spreadsheet or an API call
+- Manually look at the room types and rate plans in the connectivity system, and map them to the corresponding Expedia room types and rate plan IDs
+
+With the new product API, these steps can go away. Once the room types and rate plans are defined and exist in the partner connectivity system, the partner simply needs to automatically call the product API to create the room types and rate plans. In the responses returned by the API, the IDs required for mapping are included. The system will know right away what are the IDs to be subsequently used and should be able to map them automatically, right away, using the product API response.
+
+![Simplified Mapping Process Overview](/images/mapping-process.png)
+
 
 ## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
 
