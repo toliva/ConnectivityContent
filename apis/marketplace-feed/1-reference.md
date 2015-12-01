@@ -24,9 +24,9 @@ Addition of new message categories (and their corresponding new `values` propert
 
 | Name                | Parameter Type | Data Type | Example              |
 |---------------------|----------------|-----------|----------------------|
-| `hotelId`           | Query          | String    | `123`                |
 | `Authorization`     | Header         | String    | `Basic dGVzdDp0ZXN0` |
-| `Client-Id`         | Header         | String    | `YourOrganization`   |
+| `hotelId`           | Query          | String    | `123`                |
+| `clientId`          | Query          | String    | `YourOrganization`   |
 
 ### Response
 
@@ -38,7 +38,7 @@ Addition of new message categories (and their corresponding new `values` propert
 | 401 Unauthorized        | Invalid username or password.                                                   |
 | 403 Forbidden           | Auth credentials are valid, but user is not authorized for the requested hotel. |
 | 406 Not Acceptable      | Request does not indicate acceptance of an `application/json` response.         |
-| 412 Precondition Failed | Client-Id header or hotelId query parameter is invalid/missing.                 |
+| 412 Precondition Failed | clientId and/or hotelId query parameters are invalid/missing.                   |
 
 #### Response Content
 
