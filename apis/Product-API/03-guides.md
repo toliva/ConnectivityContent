@@ -141,7 +141,7 @@ When using a predefined room name, creating a room type is quite straightforward
 }
 ```
 
-Available predefined room names can be found in the Reference section.
+[Available predefined room names](reference.html#/definitions/PredefinedRoomNamesEnum) can be found in the Reference section.
 
 ### Using Room Name Attributes
 For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.
