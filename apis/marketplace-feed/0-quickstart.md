@@ -2,14 +2,14 @@
 
 The Marketplace Feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel's availability and rates are, as well as feedback provided by Expedia guests.
 
-Each request should include hotelier credentials in HTTP basic auth format, a Client-Id HTTP header, and a hotelId query parameter.
+Each request should include hotelier credentials in HTTP basic auth format, a `clientId` query parameter, and a `hotelId` query parameter.
 
 For more information, check out the [reference documentation](reference.html), or try it out live with [swagger](swagger.html).
 
-For an example request/response, you can send a `hotelId=test` query parameter.  Valid auth credentials are not required for `hotelId=test`, but you must still provide a `Client-Id` header.
+For an example request/response, you can send a `hotelId=test` query parameter.  Valid auth credentials are not required for `hotelId=test`, but you must still provide a `clientId` parameter.
 
 ```
-curl -u 'username:password' -H'Client-Id: MyClientId' 'https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test'
+curl -u 'username:password' 'https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test&clientId=YourOrganization'
 ```
 
 The response contains a JSON list of message objects.
