@@ -8,7 +8,7 @@ In order to get started with using the API, it is required to register with Expe
 ## How to Get Authorized to Access Specific Properties
 In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.
 
-After a partner is registered with Expedia successfully, properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email informing him that the partner authorized him for access. The email will either contain a specific set of credentials for this property, or will indicate that the partner's unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.
+After a partner is registered with Expedia successfully, properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email notification. The email will contain the confirmation that the partner is now authorized to manage this hotel via API calls. It will also either contain a specific set of credentials for this property, or will indicate that the partner's unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.
 
 ## Understanding Expedia Lodging Data Model
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
