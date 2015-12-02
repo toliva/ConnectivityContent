@@ -8,7 +8,7 @@ Product API uses a Basic Authorization scheme. The same credentials used to mana
 
 For more details, please review the [Authentication section](/apis/product-api/reference.html#authentication) of the API Definition section.
 
-For partners starting using Expedia APIs for the first time, please refer to the [FAQ & Guides section](/apis/product-api/guides.html#howtogetstarted) for instructions on how to obtain credentials.
+For partners using Expedia APIs for the first time, please refer to the [FAQ & Guides section](/apis/product-api/guides.html#howtogetstarted) for instructions on how to obtain credentials.
 
 ----
 
@@ -284,6 +284,9 @@ The result will be an array of active rate plans under this property and room ty
     ]
 }
 ```
+
+----
+
 ## Add a Rate Plan
 To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan:
 ```JSON
