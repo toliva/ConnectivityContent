@@ -588,7 +588,7 @@ When successful, the API will respond with what Expedia created. Please note tha
 }
 ```
 ### Room Type Create (Ignored Room Name Attributes)
-When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our Guides section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.
+When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our API Definition section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.
 
 Request:
 ```JSON
@@ -1641,7 +1641,7 @@ Response would look like:
 }
 ```
 ### Rate Plan Modify (Name, Additional Guest Amount, Value Adds)
-In this example, the rate plan created in section 4.2.2 is modified to have a more meaningful name, lower additional guest amounts and free Internet.
+In this example, the rate plan created in a previous example is modified to have a more meaningful name, lower additional guest amounts and free Internet.
 ```HTTP
 PUT https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/204309700 
 Content-Type: application/json
