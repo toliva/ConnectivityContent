@@ -86,7 +86,7 @@ When properties have opted in the program, all their standalone rate plans are r
 
 ### Creating ExpediaTravelerPreference Rate Plans
 
-When a property opted in the program, all its standalone rate plans are requirement to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn't have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique to this specific rate plan. Example:
+When a property opted in the program, all its standalone rate plans are required to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn't have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique across all the rate plans under the room type it is created under. Example:
 
 ```JSON
 {
@@ -105,7 +105,7 @@ When a property opted in the program, all its standalone rate plans are requirem
 ```
 This will create a rate plan with these 2 codes, and will default everything else.
 
-### What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?
+### What if a Partner System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerPreference Program?
 
 Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference program will need to combine these into 1 rate plan creation request to Expedia. Partners should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
 
