@@ -1,6 +1,17 @@
 # API Definition
 The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs, without having to use EPC or contact their market manager. The API also enables our partners to read the definition of the room types and rate plans created in the system.
 
+## Authentication
+Partner must include a valid username/password in the HTTP header of the request using the below format: 
+```
+Authorization: Basic <username and password encoded by Base64>
+```
+Example: 
+```
+Authorization: Basic RVFDVXNlcjplUWNQYSQkd29yRA==
+```
+Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCtest12933873:cc47an46 (username:password) Base64-encoded.
+
 ## API Principles & Standards
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
