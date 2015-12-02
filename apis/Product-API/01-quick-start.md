@@ -1,4 +1,4 @@
-# Quick Start
+﻿# Quick Start
 The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.
 
 ----
@@ -20,12 +20,6 @@ Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCUser:eQcPa$$worD (u
 ## Reading property, room type or rate plan information
 The simplest way to start interacting with the Product API is to access the 
 <https://services.expediapartnercentral.com/products/v1/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
-
-+++demo
-method: get
-endpoint: https://services.expediapartnercentral.com/products/v1/properties
-header_param: Request-ID, Accept
-+++
 
 The result will be an array of properties assigned to your account. For example:
 ```JSON
