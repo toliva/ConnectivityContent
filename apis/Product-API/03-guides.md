@@ -1,6 +1,15 @@
 # FAQ & Guides
 This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner's intent when managing room types and rate plans.
 
+<a name="/howtogetstarted"></a>
+## How to Get Started for First Time API Users
+In order to get started with using the API, it is required to register with Expedia and obtain API credentials. It is also possible to obtain the rights to use a test property to run some tests before going to production with a new integration. To get started, new partners need to send an email to eqcss@expedia.com.
+
+## How to Get Authorized to Access Specific Properties
+In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.
+
+After a partner is registered with Expedia successfully, properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email informing him that the partner authorized him for access. The email will either contain a specific set of credentials for this property, or will indicate that the partner's unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.
+
 ## Understanding Expedia Lodging Data Model
 In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:
 - Each property has 0 or more room types
@@ -98,7 +107,7 @@ This will create a rate plan with these 2 codes, and will default everything els
 
 ### What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?
 
-For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreference program, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
+Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference program will need to combine these into 1 rate plan creation request to Expedia. Partners should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
 
 ## Getting Active or All resources when calling a list endpoint
 By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:
@@ -183,7 +192,7 @@ For partners who want more control over their names and which attributes get use
 | area | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
 | customLabel | - | Yes | Always used in name if provided. |
 
-For more information about the various possible values and constraints on each of these attributes, please refer to the API Definition section.
+For more information about the various possible values and constraints on each of these attributes, please refer to the [API Definition section](reference.html#/definitions/RnsAttributesDTO).
 
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation & Change Policy is defined with the following attributes in the Expedia system:
@@ -191,7 +200,7 @@ The Cancellation & Change Policy is applicable when a customer either wants to c
 | Attribute Name | Description |
 | -------------- | ----------- |
 | Deadline | Penalty window defined in hours. Hours are relative to checkin date and the property's cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours. |
-| Penalty | Value should match one of the defined values. No other values can be accepted by the API: - None - 1stNightRoomAndTax - 2NightsRoomAndTax - 10PercentCostOfStay - 20PercentCostOfStay - 30PercentCostOfStay - 40PercentCostOfStay - 50PercentCostOfStay - 60PercentCostOfStay - 70PercentCostOfStay - 80PercentCostOfStay - 90PercentCostOfStay - FullCostOfStay |
+| Penalty | Value should match one of the [predefined values](reference.html#/definitions/perStayFeeEnum). |
 | Amount | Flat amount that can be charged if customer cancels. |
 
 Cancellation and change policy is optional when creating a new rate plan.
@@ -207,8 +216,8 @@ When providing a cancel policy, partners can provide one or two defaultPenalties
 - It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation & change policy.
 
 **Example 1** : Considering the following policy: 
-- If a customer cancels between 24h or less before property's cancellation time, he pays for one night.
-- If a customer cancels more than 24h before property's cancellation time, he pays no penalty.
+- If a customer cancels between 24h or less before property's cancellation time, the customer pays for one night.
+- If a customer cancels more than 24h before property's cancellation time, the customer pays no penalty.
 
 To reflect such terms, a partner should send:
 ```JSON
