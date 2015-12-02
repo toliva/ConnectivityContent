@@ -1,10 +1,10 @@
-# Quickstart
-The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use ExpediaPartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.
+# Quick Start
+The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.
 
 ----
 
 ## Authentication
-The same credentials used to manage properties via EQC today are compatible with the EPS Product API.
+The same credentials used to manage properties via EQC today are compatible with the Product API.
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
 Authorization: Basic <username and password encoded by Base64>
@@ -18,7 +18,8 @@ Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCUser:eQcPa$$worD (u
 ----
 
 ## Reading property, room type or rate plan information
-The simplest way to start interacting with the Product API is to access the `https://services.expediapartnercentral.com/products/v1/properties` endpoint in a browser, and input EQC API username and password when prompted for it.
+The simplest way to start interacting with the Product API is to access the 
+<https://services.expediapartnercentral.com/products/v1/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
 
 The result will be an array of properties assigned to your account. For example:
 ```JSON
@@ -56,7 +57,7 @@ The result will be an array of properties assigned to your account. For example:
 }
 ```
 Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-`https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes`
+<https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes>
 
 The result will be an array of active room types under this property. For example:
 ```JSON
@@ -108,7 +109,7 @@ The result will be an array of active room types under this property. For exampl
 }
 ```
 Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-`https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans`
+<https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans>
 
 The result will be an array of active rate plans under this property. For example:
 ```JSON
@@ -169,7 +170,7 @@ The result will be an array of active rate plans under this property. For exampl
 }
 ```
 ## Add a Rate Plan
-To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on `https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans` with this payload to create an ExpediaTravelerPreference-enabled rate plan:
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/209857/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan:
 ```JSON
 {
   "distributionRules": [

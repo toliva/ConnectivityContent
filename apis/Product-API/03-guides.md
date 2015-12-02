@@ -98,7 +98,7 @@ This will create a rate plan with these 2 codes, and will default everything els
 
 ### What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?
 
-For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreferenceProgram, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
+For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreference program, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.
 
 ## Getting Active or All resources when calling a list endpoint
 By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:
@@ -130,7 +130,7 @@ When naming their room types, partners using the room type resource are required
 Expedia is unable to accept free text room names from its partners. Because Expedia has points of sale in more than 45 languages, and want to offer the best experience to all its customers around the world, it requires to receive names in a structured way, to enable instant availability in all languages.
 
 ### Using Predefined Names
-When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is providing one of these predefined names under the value element:
+When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is provide one of these predefined names under the value element:
 ```JSON
 {
 ...
@@ -141,7 +141,7 @@ When using a predefined room name, creating a room type is quite straightforward
 }
 ```
 
-[Available predefined room names](reference.html#/definitions/PredefinedRoomNamesEnum) can be found in the Reference section.
+[Available predefined room names](reference.html#/definitions/PredefinedRoomNamesEnum) can be found in the API Definition section.
 
 ### Using Room Name Attributes
 For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.
@@ -183,7 +183,7 @@ For partners who want more control over their names and which attributes get use
 | area | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
 | customLabel | - | Yes | Always used in name if provided. |
 
-For more information about the various possible values and constraints on each of these attributes, please refer to the Reference section.
+For more information about the various possible values and constraints on each of these attributes, please refer to the API Definition section.
 
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation & Change Policy is defined with the following attributes in the Expedia system:
@@ -262,7 +262,7 @@ To reflect such terms, a partner should send:
 ```
 
 ## Optional Fields in a Rate Plan Create Request
-In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the reference section. 
+In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the API Definition section. 
 
 Some of the fields cannot be set by the user; these will default to values defined by Expedia. 
 
