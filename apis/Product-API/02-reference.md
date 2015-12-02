@@ -70,14 +70,6 @@ HTTP headers are slightly different between a request made to the EPS Product AP
 ## Basic Response Wrapper Structure with Entity and Errors
 All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. 
 
-### ResponseWrapperDTO
-
-Property Name | Type | Description
-------------- | ---- | -----------
-entity | object | 
-errors | Array[[ErrorDTO](#/definitions/ErrorDTO)] | 
-
-
 ### Entity
 The entities supported by the product API are rate plans, room types and properties.
 
@@ -90,7 +82,7 @@ public class ResponseWrapperDTO<T> implements Serializable {
     private List<ErrorDTO> errors;
 }
 ```
-Entities can be ProductDTO/RatePlanDTO/RoomTypeDTO/PropertyDTO etc.
+Entities can be Product/RatePlan/RoomType/Property etc.
 Simple entity response:
 ```JSON
 {
@@ -145,7 +137,7 @@ If a response doesn’t contain an Entity, it will contain Errors:
 ```
 
 <a name="/definitions/ErrorDTO"></a>
-#### ErrorDTO
+#### Error
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -183,7 +175,7 @@ limit | query | Pagination limit. Integer between 1 and 200. | false | string | 
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [PropertyDTO](#/definitions/PropertyDTO)
+200 | OK | [Property](#/definitions/PropertyDTO)
 
 
 ### Read a single property
@@ -200,10 +192,10 @@ propertyId | path | Expedia Property ID | true | string |
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [PropertyDTO](#/definitions/PropertyDTO)
+200 | OK | [Property](#/definitions/PropertyDTO)
 
 <a name="/definitions/PropertyDTO"></a>
-### PropertyDTO Definition
+### Property Resource Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -211,7 +203,7 @@ resourceId | integer | Expedia property ID.
 name | string | Name describing the property. Max. 255 characters.
 status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.
 currency | string | Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.
-address | [PropertyAddressDTO](#/definitions/PropertyAddressDTO) | Property address details.
+address | [PropertyAddress](#/definitions/PropertyAddressDTO) | Property address details.
 distributionModels | Array[Enum] | Distribution model(s) under which the property is configured to work with Expedia. Possible values are: ExpediaCollect, HotelCollect. Properties that opted in the ExpediaTravelerPreference program will have both.
 rateAcquisitionType | Enum | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs. Possible value s are NetRate (rate net of Expedia’s compensation) and SellLAR (rate inclusive of compensation).
 taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.
@@ -220,10 +212,10 @@ baseAllocationEnabled | boolean | Boolean to indicate whether this property has 
 minLOSThreshold | integer | This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.
 cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration.
 timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.
-reservationCutOff | [CutOffDTO](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).
+reservationCutOff | [CutOff](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).
 
 <a name="/definitions/CutOffDTO"></a>
-#### CutOffDTO
+#### CutOff
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -231,7 +223,7 @@ time | string | Indicates at which time we’ll stop making inventory available 
 day | string | Can take one of 2 values: sameDay or nextDay. It complements the time attribute.
 
 <a name="/definitions/PropertyAddressDTO"></a>
-#### PropertyAddressDTO
+#### PropertyAddress
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -258,7 +250,7 @@ status | query | Status filter. String. Only supported value is "all". | false |
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RoomTypeDTO](#/definitions/RoomTypeDTO)
+200 | OK | [RoomType](#/definitions/RoomTypeDTO)
 
 ### Creates a new room type
 - Method: `POST`
@@ -270,7 +262,7 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property Id | true | string | 
-body | body | JSON message describing the new room type | true | [RoomTypeDTO](#/definitions/RoomTypeDTO) | 
+body | body | JSON message describing the new room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
 
 **Examples**
 ```
@@ -321,7 +313,7 @@ body | body | JSON message describing the new room type | true | [RoomTypeDTO](#
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-201 | Created | [RoomTypeDTO](#/definitions/RoomTypeDTO)
+201 | Created | [RoomType](#/definitions/RoomTypeDTO)
 
 
 ### Read a single room type
@@ -339,7 +331,7 @@ roomTypeId | path | Room type resource ID. Integer | true | string |
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RoomTypeDTO](#/definitions/RoomTypeDTO)
+200 | OK | [RoomType](#/definitions/RoomTypeDTO)
 
 
 ### Modify an existing room type
@@ -353,7 +345,7 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property Id | true | string | 
 roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message with modified room type | true | [RoomTypeDTO](#/definitions/RoomTypeDTO) | 
+body | body | JSON message with modified room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
 
 **Examples**
 ```
@@ -407,34 +399,34 @@ body | body | JSON message with modified room type | true | [RoomTypeDTO](#/defi
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RoomTypeDTO](#/definitions/RoomTypeDTO)
+200 | OK | [RoomType](#/definitions/RoomTypeDTO)
 
 
 <a name="/definitions/RoomTypeDTO"></a>
-### RoomTypeDTO Definition
+### RoomType Resource Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 resourceId | integer | Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.
 partnerCode | string | Partner room type code/identifier. Max. 40 characters. Required in create or modify request, and has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.
-name | [RoomTypeNameDTO](#/definitions/RoomTypeNameDTO) | Name object. Collection of elements/attributes related the name of a room.
+name | [RoomTypeName](#/definitions/RoomTypeNameDTO) | Name object. Collection of elements/attributes related the name of a room.
 status | enum | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
 maxOccupants | integer | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
-occupancyByAge | Array[[OccupancyByAgeDTO](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
-bedTypes | Array[[BedTypeDTO](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
-smokingPreferences | Array[[SmokingPreferenceDTO](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
-roomSize | [RoomSizeDTO](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
+occupancyByAge | Array[[OccupancyByAge](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
+bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
+smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
+roomSize | [RoomSize](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
 
 <a name="/definitions/RoomTypeNameDTO"></a>
-#### RoomTypeNameDTO
+#### RoomTypeName
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-attributes | [RnsAttributesDTO](#/definitions/RnsAttributesDTO) | Collection of attributes that can be used to build a room type name. Should only be provided if partner doesn’t want to use one of the predefined names Expedia supports.
+attributes | [RoomNameAttributes](#/definitions/RnsAttributesDTO) | Collection of attributes that can be used to build a room type name. Should only be provided if partner doesn’t want to use one of the predefined names Expedia supports.
 value | string | For create and modify requests, optional and ignored if name attributes are used. Required if name attributes are not provided. When provided in create or update requests, without any name attributes, value provided needs to be one of the predefined room names found in  [PredefinedRoomNamesEnum](#/definitions/PredefinedRoomNamesEnum) section. For read, create and modify responses, if partner is making use of room name attributes, this field will contain the auto-generated name based off the attributes that were provided, in English-US language. If partner is using a predefined name, this field will contain the predefined name value, as provided in the create or update request.
 
 <a name="/definitions/RnsAttributesDTO"></a>
-#### RnsAttributesDTO
+#### RoomNameAttributes
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -450,7 +442,7 @@ area | [areaEnum](#/definitions/areaEnum) | Attributed used to highlight the loc
 customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
 
 <a name="/definitions/BedTypeDTO"></a>
-#### BedTypeDTO
+#### BedType
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -458,7 +450,7 @@ id | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | The code identifying the bed
 name | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | Name identifying the bed type. This is provided as informational data, and will be ignored during create or update operations.
 
 <a name="/definitions/OccupancyByAgeDTO"></a>
-#### OccupancyByAgeDTO
+#### OccupancyByAge
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -467,7 +459,7 @@ minAge | integer | Minimum age allowed for the category. Min 0, max 99
 maxOccupants | integer | Max number of occupants on the category. Min 0, max 20
 
 <a name="/definitions/SmokingPreferenceDTO"></a>
-#### SmokingPreferenceDTO
+#### SmokingPreference
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -475,7 +467,7 @@ id | enum | Id identifying the smoking preference. Possible values are 2.1 (Non-
 name | string | Name identifying the smoking preference.
 
 <a name="/definitions/RoomSizeDTO"></a>
-#### RoomSizeDTO
+#### RoomSize
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -499,7 +491,7 @@ status | query | Status filter. String. Only supported value is "all". | false |
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RatePlanDTO](#/definitions/RatePlanDTO)
+200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
 
 ### Creates a new rate plan
@@ -513,7 +505,7 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
 roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message describing the new rate plan | true | [RatePlanDTO](#/definitions/RatePlanDTO) | 
+body | body | JSON message describing the new rate plan | true | [RatePlan](#/definitions/RatePlanDTO) | 
 
 **Examples**
 ```
@@ -574,7 +566,7 @@ body | body | JSON message describing the new rate plan | true | [RatePlanDTO](#
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-201 | Created | [RatePlanDTO](#/definitions/RatePlanDTO)
+201 | Created | [RatePlan](#/definitions/RatePlanDTO)
 
 
 ### Read a single rate plan
@@ -593,7 +585,7 @@ ratePlanId | path | Rate plan resource ID | true | string |
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RatePlanDTO](#/definitions/RatePlanDTO)
+200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
 
 ### Modify an existing rate plan
@@ -608,7 +600,7 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 propertyId | path | Expedia Property ID | true | string | 
 roomTypeId | path | Room type resource ID | true | string | 
 ratePlanId | path | Rate plan resource ID | true | string | 
-body | body | JSON message of modified rate plan | true | [RatePlanDTO](#/definitions/RatePlanDTO) | 
+body | body | JSON message of modified rate plan | true | [RatePlan](#/definitions/RatePlanDTO) | 
 
 **Examples**
 ```
@@ -685,24 +677,24 @@ body | body | JSON message of modified rate plan | true | [RatePlanDTO](#/defini
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [RatePlanDTO](#/definitions/RatePlanDTO)
+200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
 <a name="/definitions/RatePlanDTO"></a>
-### RatePlanDTO Definition
+### RatePlan Resource Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 resourceId | integer | Uniquely describes the rate plan resource. Cannot be provided in a create request, will be assigned by Expedia after successful rate plan creation.
 name | string | Name of the rate plan, for information/identification purposes. Min 1, Max 40 characters. If not provided, defaults to the manageable rate plan partner code.
 rateAcquisitionType | enum | Rate acquisition type, inherited from the Property. Possible values are NetRate (rate without compensation) and SellLAR (rate inclusive of compensation).
-distributionRules | Array[[DistributionRuleDTO](#/definitions/DistributionRuleDTO)] | Used to provide information about how this rate plan can be sold (ExpediaCollect, HotelCollect or both). Also contain the IDs and Codes that need to be mapped to push avail/rates and identify the right rate plans in booking messages. When a rate plan has a single Distribution Rule with Distribution Model set as HotelCollect, the rate plan will only be sold as HotelCollect and the property is expected to collect the payment at the time customers check in. When a rate plan has a single Distribution Rule with Distribution Model set to ExpediaCollectm it indicates that this rate plan will be sold as ExpediaCollect and the property will collect payment from Expedia. If two distinct Distribution Rules are set, one for ExpediaCollect, one for HotelCollect, it indicates that the rate plan can be sold as either ExpediaCollect or HotelCollect. In this case, only one of them can be used to manage avail/rate but both can be used in booking messages, to indicate which option (ExpediaCollect or HotelCollect) the customer selected. Any other combination of distribution rules cannot exist. For properties that participate in the ExpediaTravelerPreference (ETP) program, it is required for all their standalone rate plans to support both ExpediaCollect and HotelCollect.
+distributionRules | Array[[DistributionRule](#/definitions/DistributionRuleDTO)] | Used to provide information about how this rate plan can be sold (ExpediaCollect, HotelCollect or both). Also contain the IDs and Codes that need to be mapped to push avail/rates and identify the right rate plans in booking messages. When a rate plan has a single Distribution Rule with Distribution Model set as HotelCollect, the rate plan will only be sold as HotelCollect and the property is expected to collect the payment at the time customers check in. When a rate plan has a single Distribution Rule with Distribution Model set to ExpediaCollectm it indicates that this rate plan will be sold as ExpediaCollect and the property will collect payment from Expedia. If two distinct Distribution Rules are set, one for ExpediaCollect, one for HotelCollect, it indicates that the rate plan can be sold as either ExpediaCollect or HotelCollect. In this case, only one of them can be used to manage avail/rate but both can be used in booking messages, to indicate which option (ExpediaCollect or HotelCollect) the customer selected. Any other combination of distribution rules cannot exist. For properties that participate in the ExpediaTravelerPreference (ETP) program, it is required for all their standalone rate plans to support both ExpediaCollect and HotelCollect.
 status | string | Defaults to active if not provided during creation.
 type | string | Rate Plan type. Defaults to Standalone if not provided during creation.
 pricingModel | string | Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model.
 occupantsForBaseRate | integer | Max occupants allowed for the base rate. Min 1, Max 20. This is only applicable for per day pricing properties, and required in create requests. It indicates how many occupants the per day price applies to.
 taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property's configuration.
-cancelPolicy | [CancelPolicyDTO](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property.
-additionalGuestAmounts | Array[[AdditionalGuestAmountDTO](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates.
+cancelPolicy | [CancelPolicy](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property.
+additionalGuestAmounts | Array[[AdditionalGuestAmount](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates.
 valueAddInclusions | Array[string] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
 minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
@@ -715,7 +707,7 @@ travelDateEnd | date | Latest date at which customers can checkout for a stay in
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
-#### AdditionalGuestAmountDTO
+#### AdditionalGuestAmount
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -725,14 +717,14 @@ ageCategory | enum | The age category for the additional guests. Possible valueS
 amount | number | Min value 0.000, accepts up to 3 decimal points
 
 <a name="/definitions/CancelPolicyDTO"></a>
-#### CancelPolicyDTO
+#### CancelPolicy
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-defaultPenalties | Array[[PenaltyDTO](#/definitions/PenaltyDTO)] | Default penalties' definition. Min 1, Max 2 penalties defined
+defaultPenalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Default penalties' definition. Min 1, Max 2 penalties defined
 
 <a name="/definitions/PenaltyDTO"></a>
-#### PenaltyDTO
+#### Penalty
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -741,7 +733,7 @@ perStayFee | [perStayFeeEnum](#/definitions/perStayFeeEnum) | Fee that will be c
 amount | number | Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires
 
 <a name="/definitions/DistributionRuleDTO"></a>
-#### DistributionRuleDTO
+#### DistributionRule
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -749,19 +741,19 @@ expediaId | string | String, min 1, max 50 characters. Expedia rate plan ID that
 partnerCode | string | Unique partner identifier for the rate plan. For a given room type, this code has to be unique per distribution model (e.g. for all ExpediaCollect rate plan distribution rules under this room, this code has to be unique). Uniqueness will be validated by Expedia during create or update operations.
 distributionModel | string | Distribution model adopted by the rate plan, matching property configuration.
 manageable | boolean | Cannot be provided in a create request. Default to yes for HotelCollect-only or ExpediaCollect-only rate plans. For ExpediaTravelerPreference rate plans, if rate acquisition type is net, ExpediaCollect will default to true; if rate acquisition type is Sell/LAR, HotelCollect will default to true.
-compensation | [CompensationRuleDTO](#/definitions/CompensationRuleDTO) | Applicable compensation rules for this distribution model. Defaults to the value defined on the contract with the partner. Cannot be provided in a create request, and cannot be modified in update operation.
+compensation | [CompensationRule](#/definitions/CompensationRuleDTO) | Applicable compensation rules for this distribution model. Defaults to the value defined on the contract with the partner. Cannot be provided in a create request, and cannot be modified in update operation.
 
 <a name="/definitions/CompensationRuleDTO"></a>
-#### CompensationRuleDTO
+#### CompensationRule
 
 Property Name | Type | Description
 ------------- | ---- | -----------
 percent | number | Compensation percentage applied by default. Expressed as a value. Between 0 and 1, will return up to 4 decimal points
 minAmount | number | Minimum amount. Accepts up to 3 decimal points. Only applicable to ExpediaCollect distribution rules
-exceptions | Array[[CompensationExceptionRuleDTO](#/definitions/CompensationExceptionRuleDTO)] | Depending on the contractual agreement between Expedia and the partner, compensation can vary based on different criteria. This array of exceptions will reflect this
+exceptions | Array[[CompensationExceptionRule](#/definitions/CompensationExceptionRuleDTO)] | Depending on the contractual agreement between Expedia and the partner, compensation can vary based on different criteria. This array of exceptions will reflect this
 
 <a name="/definitions/CompensationExceptionRuleDTO"></a>
-#### CompensationExceptionRuleDTO
+#### CompensationExceptionRule
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -828,7 +820,7 @@ Status Code | Description | Response Model
 | Twin Room  |
 
 <a name="/definitions/typeOfRoomEnum"></a>
-### typeOfRoomEmum
+### typeOfRoomEnum
 | typeOfRoom |
 | ---------- |
 | Apartment |
