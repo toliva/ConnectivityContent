@@ -13,6 +13,8 @@ Authorization: Basic RVFDVXNlcjplUWNQYSQkd29yRA==
 ```
 Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCtest12933873:cc47an46 (username:password) Base64-encoded.
 
+For more information about getting started for the first time, and authorization, please refer to the [FAQ & Guides section](guides.html#/howtogetstarted)
+
 ## API Principles & Standards
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
