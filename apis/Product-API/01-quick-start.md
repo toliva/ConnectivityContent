@@ -21,6 +21,12 @@ Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCUser:eQcPa$$worD (u
 The simplest way to start interacting with the Product API is to access the 
 <https://services.expediapartnercentral.com/products/v1/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
 
++++demo
+method: get
+endpoint: https://services.expediapartnercentral.com/products/v1/properties
+header_param: Request-ID, Accept
++++
+
 The result will be an array of properties assigned to your account. For example:
 ```JSON
 {
