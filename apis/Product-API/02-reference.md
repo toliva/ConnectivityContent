@@ -727,7 +727,7 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 dateStart | date | Date at which this amount started being applicable, can be in the past
 dateEnd | date | Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06.
-ageCategory | enum | The age category for the additional guests. Possible valueS: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
+ageCategory | enum | The age category for the additional guests. Possible values: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
 amount | number | Min value 0.000, accepts up to 3 decimal points
 
 <a name="/definitions/CancelPolicyDTO"></a>
