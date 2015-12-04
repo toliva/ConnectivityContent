@@ -183,7 +183,7 @@ For partners who want more control over their names and which attributes get use
 | -------------- | ----- | -------- | ----------- |
 | typeOfRoom | - | No | Required and always used. |
 | roomClass | - | Yes |  Always used in name if provided. |
-| includeBedType | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can defautl to use "Multiple Beds". |
+| includeBedType | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can default to use "Multiple Beds". |
 | bedroomDetails | Bedding | Yes | Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. |
 | includeSmokingPref | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. |
 | accessibility | Key Features | Yes | Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. Indicate if room is accessible to wheelchairs. |
