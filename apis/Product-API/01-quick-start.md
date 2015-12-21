@@ -64,94 +64,108 @@ Partners can then navigate down to room types and rate plans. To find room types
 The result will be an array of active room types under this property. For example:
 ```JSON
 {
-    "entity": [
+  "entity": [
+    {
+      "resourceId": 201357991,
+      "partnerCode": "DLXRM",
+      "name": {
+        "attributes": {
+          "typeOfRoom": "Room",
+          "roomClass": "Deluxe",
+          "view": "Mountain View",
+          "featuredAmenity": "Jetted Tub"
+        },
+        "value": "Deluxe Room, Jetted Tub, Mountain View"
+      },
+      "status": "Active",
+      "maxOccupants": 4,
+      "occupancyByAge": [
         {
-            "resourceId": 201357991,
-            "partnerCode": "DLXRM",
-            "name": {
-                "attributes": {
-                    "typeOfRoom": "Room",
-                    "roomClass": "Deluxe",
-                    "includeBedType": true,
-                    "view": "Mountain View",
-                    "featuredAmenity": "Jetted Tub"
-                },
-                "value": "Deluxe Room, Multiple Beds, Jetted Tub, Mountain View"
-            },
-            "status": "Active",
-            "maxOccupants": 4,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 18,
-                    "maxOccupants": 4
-                },
-                {
-                    "ageCategory": "ChildAgeA",
-                    "minAge": 2,
-                    "maxOccupants": 3
-                },
-                {
-                    "ageCategory": "Infant",
-                    "minAge": 0,
-                    "maxOccupants": 3
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.66",
-                    "name": "1 double and 2 single beds"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ]
+          "ageCategory": "Adult",
+          "minAge": 18,
+          "maxOccupants": 4
         },
         {
-            "resourceId": 201357992,
-            "partnerCode": "Executive Room",
-            "name": {
-                "value": "Executive Suite"
-            },
-            "status": "Active",
-            "maxOccupants": 6,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 18,
-                    "maxOccupants": 6
-                },
-                {
-                    "ageCategory": "Infant",
-                    "minAge": 0,
-                    "maxOccupants": 5
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.100",
-                    "name": "1 double and 2 bunk beds"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ]
+          "ageCategory": "ChildAgeA",
+          "minAge": 2,
+          "maxOccupants": 3
+        },
+        {
+          "ageCategory": "Infant",
+          "minAge": 0,
+          "maxOccupants": 3
         }
-    ]
+      ],
+      "bedTypes": [
+        {
+          "id": "1.66",
+          "name": "1 double and 2 single beds"
+        }
+      ],
+      "smokingPreferences": [
+        {
+          "id": "2.1",
+          "name": "Non-Smoking"
+        },
+        {
+          "id": "2.2",
+          "name": "Smoking"
+        }
+      ],
+      "roomSize": {
+        "squareFeet": 915,
+        "squareMeters": 85
+      },
+      "views": [
+        "Mountain View"
+      ]
+    },
+    {
+      "resourceId": 201357992,
+      "partnerCode": "Executive Room",
+      "name": {
+        "value": "Executive Suite"
+      },
+      "status": "Active",
+      "maxOccupants": 6,
+      "occupancyByAge": [
+        {
+          "ageCategory": "Adult",
+          "minAge": 18,
+          "maxOccupants": 6
+        },
+        {
+          "ageCategory": "Infant",
+          "minAge": 0,
+          "maxOccupants": 5
+        }
+      ],
+      "bedTypes": [
+        {
+          "id": "1.100",
+          "name": "1 double and 2 bunk beds"
+        }
+      ],
+      "smokingPreferences": [
+        {
+          "id": "2.1",
+          "name": "Non-Smoking"
+        },
+        {
+          "id": "2.2",
+          "name": "Smoking"
+        }
+      ],
+      "roomSize": {
+        "squareFeet": 1023,
+        "squareMeters": 95
+      },
+      "views": [
+        "Ocean View",
+        "Beach View"
+      ]
+    }
+  ]
 }
 ```
 Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
