@@ -208,6 +208,14 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Ocean View",
+              "Beach View"
             ]
         },
         {
@@ -254,6 +262,13 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Ocean View"
             ]
         },
         {
@@ -299,6 +314,13 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Beach View"
             ]
         },
         {
@@ -340,7 +362,11 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
-            ]
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            }
         }
     ]
 }
@@ -399,6 +425,14 @@ Response:
         "id": "2.2",
         "name": "Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
@@ -446,6 +480,14 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
   ]
 }
 ```
@@ -486,6 +528,14 @@ When successful, the API will respond with what Expedia created. Please note tha
         "id": "2.1",
         "name": "Non-Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
@@ -538,6 +588,14 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
   ]
 }
 ```
@@ -583,6 +641,14 @@ When successful, the API will respond with what Expedia created. Please note tha
         "id": "2.1",
         "name": "Non-Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
@@ -635,6 +701,14 @@ Request:
       "id": "2.1",
       "name": "Non-Smoking"
     }
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
   ]
 }
 ```
@@ -683,6 +757,14 @@ The response will not include bedroom details, view, featured amenity and area a
         "id": "2.1",
         "name": "Non-Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
@@ -727,6 +809,14 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
   ]
 }
 ```
@@ -763,6 +853,14 @@ Response look like
         "id": "2.1",
         "name": "Non-Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
@@ -814,6 +912,14 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
   ]
 }
 ```
@@ -857,6 +963,14 @@ Response looks like
         "id": "2.1",
         "name": "Non-Smoking"
       }
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
     ]
   }
 }
