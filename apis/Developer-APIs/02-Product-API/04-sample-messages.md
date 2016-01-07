@@ -208,7 +208,16 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
-            ]
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Ocean View",
+              "Beach View"
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 204832,
@@ -254,7 +263,15 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
-            ]
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Ocean View"
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 209857,
@@ -299,7 +316,15 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
-            ]
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "views": [
+              "Beach View"
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 211705,
@@ -340,7 +365,12 @@ Response:
                     "id": "2.2",
                     "name": "Smoking"
                 }
-            ]
+            ],
+            "roomSize": {
+              "squareFeet": 1023,
+              "squareMeters": 95
+            },
+            "wheelchairAccessibility": false
         }
     ]
 }
@@ -399,7 +429,16 @@ Response:
         "id": "2.2",
         "name": "Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -446,7 +485,16 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
@@ -486,7 +534,16 @@ When successful, the API will respond with what Expedia created. Please note tha
         "id": "2.1",
         "name": "Non-Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -538,7 +595,16 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
@@ -583,7 +649,16 @@ When successful, the API will respond with what Expedia created. Please note tha
         "id": "2.1",
         "name": "Non-Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -635,7 +710,16 @@ Request:
       "id": "2.1",
       "name": "Non-Smoking"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 
@@ -683,7 +767,16 @@ The response will not include bedroom details, view, featured amenity and area a
         "id": "2.1",
         "name": "Non-Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -727,7 +820,16 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 Response look like
@@ -763,7 +865,16 @@ Response look like
         "id": "2.1",
         "name": "Non-Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -814,7 +925,16 @@ Content-Type: application/json
       "id": "2.1",
       "name": "Non-Smoking"
     }
-  ]
+  ],
+  "roomSize": {
+    "squareFeet": 1023,
+    "squareMeters": 95
+  },
+  "views": [
+    "Ocean View",
+    "Beach View"
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 Response looks like
@@ -857,7 +977,16 @@ Response looks like
         "id": "2.1",
         "name": "Non-Smoking"
       }
-    ]
+    ],
+    "roomSize": {
+      "squareFeet": 1023,
+      "squareMeters": 95
+    },
+    "views": [
+      "Ocean View",
+      "Beach View"
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```

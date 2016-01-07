@@ -320,7 +320,11 @@ body | body | JSON message describing the new room type | true | [RoomType](#/de
         "roomSize": {
             "squareFeet": 1200,
             "squareMeters": 111
-        }
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ]
 }
 ```
 
@@ -406,7 +410,12 @@ body | body | JSON message with modified room type | true | [RoomType](#/definit
         "roomSize": {
             "squareFeet": 1200,
             "squareMeters": 111
-        }
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ],
+        "wheelchairAccessibility": true
 }
 ```
 
@@ -429,7 +438,9 @@ maxOccupants | integer | Min 1, max 20. Maximum number of people the room can ac
 occupancyByAge | Array[[OccupancyByAge](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
 bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
 smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
-roomSize | [RoomSize](#/definitions/RoomSizeDTO) | Used to define room size. When used, both size in square feet and in square meters must be specified.
+roomSize | [RoomSize](#/definitions/RoomSizeDTO) | Optional. Used to define room size. When used, both size in square feet and in square meters must be specified.
+views | Array[[viewEnum](#/definitions/viewEnum)] | Optional. Used to define view(s) from the room. There can be up to 2 different views defined per room type.
+wheelchairAccessibility | boolean | Optional. Used to indicate whether the room is configured to be wheelchair accessible or not.
 
 <a name="/definitions/RoomTypeNameDTO"></a>
 #### RoomTypeName
@@ -709,7 +720,7 @@ occupantsForBaseRate | integer | Max occupants allowed for the base rate. Min 1,
 taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property's configuration.
 cancelPolicy | [CancelPolicy](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property.
 additionalGuestAmounts | Array[[AdditionalGuestAmount](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates.
-valueAddInclusions | Array[string] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
+valueAddInclusions | Array[[valueAddInclusionsEnum](#/definitions/valueAddInclusionsEnum)] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
 minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500
