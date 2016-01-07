@@ -216,7 +216,8 @@ Response:
             "views": [
               "Ocean View",
               "Beach View"
-            ]
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 204832,
@@ -269,7 +270,8 @@ Response:
             },
             "views": [
               "Ocean View"
-            ]
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 209857,
@@ -321,7 +323,8 @@ Response:
             },
             "views": [
               "Beach View"
-            ]
+            ],
+            "wheelchairAccessibility": false
         },
         {
             "resourceId": 211705,
@@ -366,7 +369,8 @@ Response:
             "roomSize": {
               "squareFeet": 1023,
               "squareMeters": 95
-            }
+            },
+            "wheelchairAccessibility": false
         }
     ]
 }
@@ -433,7 +437,8 @@ Response:
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -488,7 +493,8 @@ Content-Type: application/json
   "views": [
     "Ocean View",
     "Beach View"
-  ]
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
@@ -536,7 +542,8 @@ When successful, the API will respond with what Expedia created. Please note tha
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -596,7 +603,8 @@ Content-Type: application/json
   "views": [
     "Ocean View",
     "Beach View"
-  ]
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
@@ -649,7 +657,8 @@ When successful, the API will respond with what Expedia created. Please note tha
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -709,7 +718,8 @@ Request:
   "views": [
     "Ocean View",
     "Beach View"
-  ]
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 
@@ -765,7 +775,8 @@ The response will not include bedroom details, view, featured amenity and area a
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -817,7 +828,8 @@ Content-Type: application/json
   "views": [
     "Ocean View",
     "Beach View"
-  ]
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 Response look like
@@ -861,7 +873,8 @@ Response look like
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```
@@ -920,7 +933,8 @@ Content-Type: application/json
   "views": [
     "Ocean View",
     "Beach View"
-  ]
+  ],
+  "wheelchairAccessibility": false
 }
 ```
 Response looks like
@@ -971,7 +985,8 @@ Response looks like
     "views": [
       "Ocean View",
       "Beach View"
-    ]
+    ],
+    "wheelchairAccessibility": false
   }
 }
 ```

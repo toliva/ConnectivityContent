@@ -414,7 +414,8 @@ body | body | JSON message with modified room type | true | [RoomType](#/definit
         "views": [
             "Ocean View",
             "Beach View"
-        ]
+        ],
+        "wheelchairAccessibility": true
 }
 ```
 
@@ -439,6 +440,7 @@ bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Used to define bed type 
 smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
 roomSize | [RoomSize](#/definitions/RoomSizeDTO) | Optional. Used to define room size. When used, both size in square feet and in square meters must be specified.
 views | Array[[viewEnum](#/definitions/viewEnum)] | Optional. Used to define view(s) from the room. There can be up to 2 different views defined per room type.
+wheelchairAccessibility | boolean | Optional. Used to indicate whether the room is configured to be wheelchair accessible or not.
 
 <a name="/definitions/RoomTypeNameDTO"></a>
 #### RoomTypeName
