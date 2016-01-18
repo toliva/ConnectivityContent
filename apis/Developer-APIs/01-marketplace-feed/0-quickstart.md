@@ -88,23 +88,24 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "cddd12b911fbf508aabb7b07960b6f7706beefb0",
+            "id": "6cb0849556ffe8eb0b18397a80982f8a50960a9e",
             "hotelId": "test",
             "category": "Real-Time Feedback",
             "shortMessage": "A guest at your property is giving real-time feedback.",
             "longMessage": "Bed was not made :(",
             "values": {
                 "itineraryId": "12345",
-                "startDate": "2015-11-18T05:59:44.813Z",
-                "endDate": "2015-11-21T05:59:44.813Z",
-                "createDate": "2015-11-19T05:59:44.813Z",
-                "updateDate": "2015-11-20T05:59:44.813Z",
+                "name": "Joe Bloggs",
+                "startDate": "2016-01-18T05:27:38.675Z",
+                "endDate": "2016-01-21T05:27:38.675Z",
+                "createDate": "2016-01-19T05:27:38.675Z",
+                "updateDate": "2016-01-20T05:27:38.675Z",
                 "isHappy": false
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
         },
         {
-            "id": "c7f3324750a36e033692d5783305f71975215a1c",
+            "id": "2ca5a62a93bcae5da08dc5bfdee0c53a4352577a",
             "hotelId": "test",
             "category": "Hotel Review",
             "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
@@ -112,11 +113,12 @@ The response contains a JSON list of message objects.
             "values": {
                 "reviewId": "123",
                 "itineraryId": "456",
+                "name": "Anonymous",
                 "rating": 4,
                 "comment": "Great view!",
-                "createDate": "2015-11-18T05:59:44.817Z"
+                "createDate": "2016-01-18T05:27:38.675Z"
             },
-            "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test"
+            "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123"
         }
     ]
 }
