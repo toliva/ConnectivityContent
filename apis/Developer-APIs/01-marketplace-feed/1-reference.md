@@ -182,6 +182,7 @@ A guest currently staying at the requested hotel has provided real-time feedback
 | Property              | Data Type | Description                                                                                                | Example                      |
 |-----------------------|-----------|------------------------------------------------------------------------------------------------------------|------------------------------|
 | `itineraryId`         | String    | The Expedia itineraty ID of the guest's booking.                                                           | `"12345"`                    |
+| `name`                | String    | The name the guest used when booking.                                                                      | `"Joe Bloggs"`               |
 | `startDate`           | String    | The guest's checkin date/time, in ISO-8601 format.                                                         | `"2015-11-11T01:00:00.000Z"` |
 | `endDate`             | String    | The guest's checkout date/time, in ISO-8601 format.                                                        | `"2015-11-13T05:00:00.000Z"` |
 | `createDate`          | String    | The date/time the feedback was created, in ISO-8601 format.                                                | `"2015-11-11T02:16:13.456Z"` |
@@ -192,17 +193,18 @@ A guest currently staying at the requested hotel has provided real-time feedback
 
 ```
 {
-    "id": "b7b215a395d3267c92c2c6e3562fa09c11f6454c",
+    "id": "6cb0849556ffe8eb0b18397a80982f8a50960a9e",
     "hotelId": "test",
     "category": "Real-Time Feedback",
     "shortMessage": "A guest at your property is giving real-time feedback.",
     "longMessage": "Bed was not made :(",
     "values": {
         "itineraryId": "12345",
-        "startDate": "2015-11-11T01:22:10.126Z",
-        "endDate": "2015-11-14T01:22:10.126Z",
-        "createDate": "2015-11-12T01:22:10.126Z",
-        "updateDate": "2015-11-13T01:22:10.126Z",
+        "name": "Joe Bloggs",
+        "startDate": "2016-01-18T05:27:38.675Z",
+        "endDate": "2016-01-21T05:27:38.675Z",
+        "createDate": "2016-01-19T05:27:38.675Z",
+        "updateDate": "2016-01-20T05:27:38.675Z",
         "isHappy": false
     },
     "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
@@ -215,19 +217,20 @@ A guest has provided a review for the requested hotel that management has not ye
 
 ###### `values` Properties
 
-| Property              | Data Type | Description                                               | Example                      |
-|-----------------------|-----------|-----------------------------------------------------------|------------------------------|
-| `reviewId`            | String    | The Expedia review ID.                                    | `"123abc"`                   |
-| `itineraryId`         | String    | The Expedia itineraty ID of the guest's booking.          | `"12345"`                    |
-| `rating`              | Integer   | The rating out of five.                                   | `4`                          |
-| `comment`             | String    | The review comment.                                       | `"2015-11-11T01:00:00.000Z"` |
-| `createDate`          | String    | The date/time the review was created, in ISO-8601 format. | `"2015-11-11T02:16:13.456Z"` |
+| Property              | Data Type | Description                                                               | Example                      |
+|-----------------------|-----------|---------------------------------------------------------------------------|------------------------------|
+| `reviewId`            | String    | The Expedia review ID.                                                    | `"123abc"`                   |
+| `itineraryId`         | String    | The Expedia itineraty ID of the guest's booking.                          | `"12345"`                    |
+| `name`                | String    | The nickname the guest used when submitting the review, or `"Anonymous"`. | `"Joe Bloggs"`               |
+| `rating`              | Integer   | The rating out of five.                                                   | `4`                          |
+| `comment`             | String    | The review comment.                                                       | `"2015-11-11T01:00:00.000Z"` |
+| `createDate`          | String    | The date/time the review was created, in ISO-8601 format.                 | `"2015-11-11T02:16:13.456Z"` |
 
 ###### Example Hotel Review Message
 
 ```
 {
-    "id": "fc58dbb7e4ce17c79d0a54fec74eea613e1bd01b",
+    "id": "2ca5a62a93bcae5da08dc5bfdee0c53a4352577a",
     "hotelId": "test",
     "category": "Hotel Review",
     "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
@@ -235,10 +238,11 @@ A guest has provided a review for the requested hotel that management has not ye
     "values": {
         "reviewId": "123",
         "itineraryId": "456",
+        "name": "Anonymous",
         "rating": 4,
         "comment": "Great view!",
-        "createDate": "2015-11-12T05:03:52.138Z"
+        "createDate": "2016-01-18T05:27:38.675Z"
     },
-    "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test"
+    "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123"
 }
 ```
