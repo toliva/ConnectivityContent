@@ -18,13 +18,13 @@ The response contains a JSON list of message objects.
 {
     "messages": [
         {
-            "id": "2379cce04a79d3669717de302c8a45bf20f0cf5e",
+            "id": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw",
             "hotelId": "test",
             "category": "Missing Inventory",
-            "shortMessage": "On Nov 19, 2015 you can sell 5 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On Nov 19, 2015 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
+            "shortMessage": "On Jan 29, 2016 you can sell 5 more rooms with Expedia. Add inventory now.",
+            "longMessage": "On Jan 29, 2016 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
             "values": {
-                "date": "2015-11-19",
+                "date": "2016-01-29",
                 "currentRooms": 10,
                 "roomsToAdd": 5,
                 "roomTypeId": "12345"
@@ -32,13 +32,13 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "1cc8106e1621b68c3375a98dbc8778afe47fc20a",
+            "id": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94",
             "hotelId": "test",
             "category": "Missing Inventory",
-            "shortMessage": "On Nov 23, 2015 you can sell 7 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On Nov 23, 2015 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.",
+            "shortMessage": "On Feb 2, 2016 you can sell 7 more rooms with Expedia. Add inventory now.",
+            "longMessage": "On Feb 2, 2016 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.",
             "values": {
-                "date": "2015-11-23",
+                "date": "2016-02-02",
                 "currentRooms": 12,
                 "roomsToAdd": 7,
                 "roomTypeId": "12345"
@@ -46,7 +46,7 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "c108c0365de10a4e3127253bbf30facb75f6f32d",
+            "id": "1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE",
             "hotelId": "test",
             "category": "Missed Opportunities",
             "shortMessage": "So far, you lost 3 bookings today.",
@@ -62,12 +62,12 @@ The response contains a JSON list of message objects.
                             {
                                 "viewedPrice": 123.45,
                                 "bookedPrice": 100.0,
-                                "checkInDate": "2015-11-28"
+                                "checkInDate": "2016-02-07"
                             },
                             {
                                 "viewedPrice": 200.0,
                                 "bookedPrice": 149.99,
-                                "checkInDate": "2015-11-23"
+                                "checkInDate": "2016-02-02"
                             }
                         ]
                     },
@@ -79,7 +79,7 @@ The response contains a JSON list of message objects.
                             {
                                 "viewedPrice": 123.45,
                                 "bookedPrice": 150.0,
-                                "checkInDate": "2015-11-25"
+                                "checkInDate": "2016-02-04"
                             }
                         ]
                     }
@@ -88,7 +88,7 @@ The response contains a JSON list of message objects.
             "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
         },
         {
-            "id": "6cb0849556ffe8eb0b18397a80982f8a50960a9e",
+            "id": "1.RiZ0ZXN0JjQwNmQwZmY4JmExYjJjM2Q0.FrIsoe4PMpoJJZx3md-ah_049CY",
             "hotelId": "test",
             "category": "Real-Time Feedback",
             "shortMessage": "A guest at your property is giving real-time feedback.",
@@ -96,16 +96,16 @@ The response contains a JSON list of message objects.
             "values": {
                 "itineraryId": "12345",
                 "name": "Joe Bloggs",
-                "startDate": "2016-01-18T05:27:38.675Z",
-                "endDate": "2016-01-21T05:27:38.675Z",
-                "createDate": "2016-01-19T05:27:38.675Z",
-                "updateDate": "2016-01-20T05:27:38.675Z",
+                "startDate": "2016-01-28T01:19:05.600Z",
+                "endDate": "2016-01-31T01:19:05.600Z",
+                "createDate": "2016-01-29T01:19:05.600Z",
+                "updateDate": "2016-01-30T01:19:05.600Z",
                 "isHappy": false
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test"
         },
         {
-            "id": "2ca5a62a93bcae5da08dc5bfdee0c53a4352577a",
+            "id": "1.UiZ0ZXN0JmIzNmY4ZTM3JjEyMw.5OsCyCg5xL_3Dco5seJCbEMinRQ",
             "hotelId": "test",
             "category": "Hotel Review",
             "shortMessage": "A guest just reviewed your property and rated you 4 out of 5 stars.",
@@ -116,7 +116,7 @@ The response contains a JSON list of message objects.
                 "name": "Anonymous",
                 "rating": 4,
                 "comment": "Great view!",
-                "createDate": "2016-01-18T05:27:38.675Z"
+                "createDate": "2016-01-28T01:19:05.600Z"
             },
             "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123"
         }
