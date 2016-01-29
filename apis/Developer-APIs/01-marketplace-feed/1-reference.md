@@ -38,7 +38,7 @@ Addition of new message categories (and their corresponding new `values` propert
 | 401 Unauthorized        | Invalid username or password.                                                   |
 | 403 Forbidden           | Auth credentials are valid, but user is not authorized for the requested hotel. |
 | 406 Not Acceptable      | Request does not indicate acceptance of an `application/json` response.         |
-| 412 Precondition Failed | clientId and/or hotelId query parameters are invalid/missing.                   |
+| 412 Precondition Failed | `clientId` and/or `hotelId` query parameters are invalid/missing.               |
 
 #### Response Content
 
@@ -246,3 +246,77 @@ A guest has provided a review for the requested hotel that management has not ye
     "actionURL": "https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123"
 }
 ```
+
+
+## Events Endpoint
+
+```
+POST https://marketplace-feed.prod-p.expedia.com/v1/events
+```
+
+The `/v1/events` endpoint provides a mechanism for partners to report analytics events back to Expedia.
+
+### Request
+
+#### Request Parameters
+
+| Name                | Parameter Type | Data Type | Example              |
+|---------------------|----------------|-----------|----------------------|
+| `clientId`          | Query          | String    | `YourOrganization`   |
+
+#### Request Body
+
+The `/v1/events` endpoint requires a JSON request body with `Content-Type: application/json`.
+
+The top-level request object has the following properties:
+
+| Name       | Data Type | Description                                   | Example                                                                                                      |
+|------------|-----------|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| `events`   | Array     | A list of between 1 and 1000 `Event` objects. | `[{ "messageId": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw", "action": "viewed" }]` |
+
+`Event` objects have the following properties:
+
+| Name        | Data Type | Description                                                   | Example                                                               |
+|-------------|-----------|---------------------------------------------------------------|-----------------------------------------------------------------------|
+| `messageId` | String    | A valid message ID.                                           | `"1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw"` |
+| `action`    | String    | The user action being reported.                               | `"viewed"`                                                            |
+| `timestamp` | String    | An optional event timestanp, in ISO-8601 format.              | `"2015-11-11T01:00:00.000Z"`                                          |
+| `userId`    | String    | An optional identifier for the user who performed the action. | `"a1b2c3d4"`                                                          |
+
+###### Valid User Actions
+
+The `action` property can have one of the following values:
+
+- `viewed` - A user viewed the message.
+- `dismissed` - A user dismissed the message.
+- `actioned` - A user performed an action associated with the message, on on your platform.
+- `clickthrough` - A user followed a link from your platform to the `actionURL` associated with the message.
+
+###### Example Request Body
+
+```
+{
+  "events": [
+    { "messageId": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw", "action": "viewed" },
+    { "messageId": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94", "action": "clickthrough" },
+    { "messageId": "1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE", "action": "dismissed" }
+  ]
+}
+```
+
+### Response
+
+#### HTTP Status Codes
+
+| Code                    | Reason                                                                          |
+|-------------------------|---------------------------------------------------------------------------------|
+| 202 Accepted            | Request was successfully validated and has been queued for processing.          |
+| 412 Precondition Failed | `clientId` query parameter and/or request body is invalid.                      |
+
+If a HTTP 4XX response status (such as `412 Precondition Failed`) is returned, the entire request is ignored and none of the events are queued for processing.
+
+Specific reasons for a `412 Precondition Failed` response status include:
+- The `clientId` query parameter is missing or invalid.
+- The `events` array is missing or does not have between 1 and 1000 events.
+- A `messageId` for one of the events is invalid.
+- An `action` for one of the events is missing or invalid.
