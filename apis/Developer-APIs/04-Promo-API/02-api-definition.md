@@ -1,11 +1,11 @@
 # API Definition
 The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering on the Expedia marketplace.
 
-<a name="authentication"></a>
+{a name="authentication"}{/a}
 ## Authentication
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
-Authorization: Basic <username and password encoded by Base64>
+Authorization: Basic {username and password encoded by Base64}
 ```
 Example: 
 ```
@@ -19,7 +19,7 @@ For more information about getting started for the first time, and authorization
 
 | Header | Type | Required | Input Format |
 | ------ | ---- | -------- | ------------ |
-| Authorization | String | Yes | Authorization: Basic <username: password encoded by Base64> |
+| Authorization | String | Yes | Authorization: Basic {username: password encoded by Base64} |
 | Content-Type | String | - Yes for Promo Create and Modify - No for Promo Read | Content-Type: application/json |
 | Accept | String | Yes | Accept: application/json |
 | Request-ID | UUID | No | Tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response. |
@@ -36,6 +36,8 @@ The following HTTP status code may be returned by the Promo API.
 | 403 | Forbidden | Authorization error. Username/password was not authorized to create promotion or username/password not associated with the hotel. Error code range (1100, 1999). |
 | 409 | Conflict | Duplicate error. The same promo create request is sent more than once. Error code 3729 or 3730. |
 | 500 | Internal Server Error | System error. Error code range (4000, 9999). |
+
+----
 
 ##	Promo Create Operation
 The Promo Create Operation supports two types of promotions.
@@ -92,6 +94,9 @@ In case of error, the service generates an HTTP 4xx or 5xx in the response heade
 
 In case of a successful response, the service generates an HTTP 2xx in the response header and a payload containing the resource data being processed by the promo API. 
 
+----
+
+
 ## Promo Score Preview
 The Promo service allows partner to get a promo score prior to actually creating the promotion.
 
@@ -121,6 +126,8 @@ In the preview mode, there is no promo ID returned in the response. If the reque
 | ---------- | ---- | -------- | ----------- |
 | score | Decimal | No | The promo score represents how your promotion may perform based on our analysis of the promo strength. The range is between 0.0 and 10.0 inclusively. This is a computed field that can be returned in the response to validate your promotion before it gets created. This field can also be returned after a promotion is created. |
 
+----
+
 ## Promo Read Operation
 The Promo Read operation allows partner to retrieve promotions created previously via the Promo API.
 
@@ -131,20 +138,25 @@ Partner can add filter on promo status to get only active promotions. Partner ca
 ### Request
 The promo GET request is sent to one of the following endpoints.
 
-Retrieve list of promos by Hotel ID
+Retrieve list of promos by Hotel ID:
+```HTML
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?activeOnly=true
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?returnScore=true
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?returnScore=true&activeOnly=true
+```
 
 Retrieve single promo by Hotel ID and Promo ID
+```HTML
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}?returnScore=true
+```
 
 Additionally user can specify the following query parameters in the URL:
+
 | JSON Field | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
-| activeOnly | Boolean | No | When set to "true" it indicates the service should only return active promotions. "Active" promotion means its status is active and its book end date is not in the past (>= today -1 day). Optional, by default the service return both active and inactive promotions. This parameter is ignored when get promo by promo ID. |
+| activeOnly | Boolean | No | When set to "true" it indicates the service should only return active promotions. "Active" promotion means its status is active and its book end date is not in the past (less than or equal to today -1 day). Optional, by default the service return both active and inactive promotions. This parameter is ignored when get promo by promo ID. |
 | returnScore | Boolean | No | When set to "true" it indicates the service should return promo score in the response. Optional, by default the service does not return promo score in the response. |
 
 ### Response
@@ -181,6 +193,8 @@ The promo read API will return HTTP status code 200 in the response header and a
 Retrieval scenario 3: hotel ID is invalid or promo ID is invalid
 The promo read API will return HTTP status code 500 in the response header and an error message in the response payload.
 
+----
+
 ## Promo Modify Operation
 The Promo Modify Operation allows partner to modify a single promotion created previously via the Promo API.
 
@@ -212,58 +226,62 @@ A Request-ID is returned in the response header. If a Request-ID is provided in 
 
 The response payload for promo modify is identical to what is defined above for promo create. 
 
+----
+
 ## Error Codes
 In case something is wrong, the Promo API will return an error response back to the partner.
 The error response may contain a negative HTTP status code and one of the following error codes.
+
 | HTTP Status Code | Error Code | Error Message |
+| ---------------- | ---------- | ------------- |
 | 400 | 2002 | Parsing error: {error detail} |
 | 400 | 2010 | The namespace specified is invalid. {error detail} |
-| 400 | 3010 | Validation against schema failed because a value exceeds its defined length, or the format is wrong, or another validation enforced by schema. <validation error detail> |
+| 400 | 3010 | Validation against schema failed because a value exceeds its defined length, or the format is wrong, or another validation enforced by schema. {validation error detail} |
 | 400 | 3701 | Hotel ID not found. You specified an invalid hotel ID. |
-| 400 | 3702 | Hotel <hotel id> must be Active or Inactive, current status is <hotel status>.One of the following messages will be returned. - For Promo Create API: Hotel <hotel id> must be Active or Inactive for promo create, current status is <hotel status>. - For Promo Modify API: Hotel <hotel id> must be Active or Inactive for promo update. - For Promo Read API: Hotel <hotel id> must be Active or Inactive for promo read. |
-| 400 | 3703 | The promo <promo id> does not exist. |
-| 400 | 3704 | The promo <promo id> does not belong to hotel {hotel id}. |
-| 400 | 3705 | The promo <promo id> has been deleted |
+| 400 | 3702 | Hotel {hotel id} must be Active or Inactive, current status is {hotel status}.One of the following messages will be returned. - For Promo Create API: Hotel {hotel id} must be Active or Inactive for promo create, current status is {hotel status}. - For Promo Modify API: Hotel {hotel id} must be Active or Inactive for promo update. - For Promo Read API: Hotel {hotel id} must be Active or Inactive for promo read. |
+| 400 | 3703 | The promo {promo id} does not exist. |
+| 400 | 3704 | The promo {promo id} does not belong to hotel {hotel id}. |
+| 400 | 3705 | The promo {promo id} has been deleted |
 | 400 | 3707 | The travel start date {Travel start dateStart} must be current or in the future. |
 | 400 | 3708 | The travel end date {Travel end dateEnd} cannot be earlier than the travel start date {travel start dateTravelDateStart}. |
 | 400 | 3709 | The travel end date {travel end dateTravelDateEnd} cannot be later than two years (730 days). |
 | 400 | 3710 | The book start date {book start dateDateTimeStart} must be current or in the future. |
-| 400 | 3711 | The book end date <book end dateBookDateTimeEnd> cannot be earlier than the book start date <book start dateBookDateTimeStart>. |
-| 400 | 3712 | The book end date <book end dateBookDateTimeEnd> cannot be later than two years (730 days) |
-| 400 | 3713 | The travel start date <travel start dateTravelDateStart> cannot be prior to the book start date <book start dateBookDateTimeStart>. |
-| 400 | 3714 | The book end date <book end dateBookDateTimeEnd> cannot be later than the travel end date <travel end dateTravelDateEnd>. |
-| 400 | 3715 | The travel start date <travel start dateTravelStartDate> does not occur after <book start dateBookDateTimeStart  + minimum advance booking daysMinAdvBookDays> date. |
-| 400 | 3716 | The effective booking window is less than a minute due to effective booking start date <book start dateBookDateTimeStart> is equal to effective booking end date <book end dateBookDateTimeEnd>. |
-| 400 | 3717 | The restriction for blackout date is invalid and does not have any overlap with travel dates. TravelDateBlackout <TravelDatebBlackout date> only can be between travel start date<travel start dateTravelDateStart> and travel end date <travel end dateTravelDateEnd>. |
-| 400 | 3718 | The restriction for blackout date is incorrect that the blackout start date <blackout start dateBlackOutDateStart> is later than blackout end date <blackout end dateBlackOutDateEnd>. |
-| 400 | 3719 | The promo name <promo name> must not contain the character '<The first found invalid character>'. |
-| 400 | 3720 | The percent value <percent> must be a number with no more than two decimal places. |
+| 400 | 3711 | The book end date {book end dateBookDateTimeEnd} cannot be earlier than the book start date {book start dateBookDateTimeStart}. |
+| 400 | 3712 | The book end date {book end dateBookDateTimeEnd} cannot be later than two years (730 days) |
+| 400 | 3713 | The travel start date {travel start dateTravelDateStart} cannot be prior to the book start date {book start dateBookDateTimeStart}. |
+| 400 | 3714 | The book end date {book end dateBookDateTimeEnd} cannot be later than the travel end date {travel end dateTravelDateEnd}. |
+| 400 | 3715 | The travel start date {travel start dateTravelStartDate} does not occur after {book start dateBookDateTimeStart  + minimum advance booking daysMinAdvBookDays} date. |
+| 400 | 3716 | The effective booking window is less than a minute due to effective booking start date {book start dateBookDateTimeStart} is equal to effective booking end date {BookDateTimeEnd}. |
+| 400 | 3717 | The restriction for blackout date is invalid and does not have any overlap with travel dates. TravelDateBlackout {TravelDatebBlackout} only can be between travel start date{dateTravelDateStart} and travel end date {dateTravelDateEnd}. |
+| 400 | 3718 | The restriction for blackout date is incorrect that the blackout start date {dateBlackOutDateStart} is later than blackout end date {dateBlackOutDateEnd}. |
+| 400 | 3719 | The promo name {promo name} must not contain the character {The first found invalid character}. |
+| 400 | 3720 | The percent value {percent} must be a number with no more than two decimal places. |
 | 400 | 3721 | The 100% free discount cannot apply to all nights. |
 | 400 | 3722 | Request should contain either amount or percent discount. |
 | 400 | 3723 | Request cannot contain both amount and percent discount at the same time. |
 | 400 | 3724 | Amount discount can be used only by agency hotels. |
-| 400 | 3725 | One of the following messages will be returned. For Promo Create API:  The promo cannot be created due to invalid travel window, the travel start date <travel start date> does not occur before <book end date + maximum advance booking days> date. For Promo Modify API:  Invalid travel window, the travel start date <tTravel Sstart dDate> does not occur before < Bbook end Ddate TimeEnd + Mmaximum advance booking daysaxAdvBookDays> date. |
+| 400 | 3725 | One of the following messages will be returned. For Promo Create API:  The promo cannot be created due to invalid travel window, the travel start date {travel start date} does not occur before {book end date + maximum advance booking days} date. For Promo Modify API:  Invalid travel window, the travel start date {tTravel Sstart dDate} does not occur before { Bbook end Ddate TimeEnd + Mmaximum advance booking daysaxAdvBookDays} date. |
 | 400 | 3726 | Rate Plan status is not Active. |
 | 400 | 3727 | Hotel ID or Rate Plan Id is invalid. |
 | 400 | 3728 | There are no active rate plans in your request. |
-| 400 | 3729 | An identical promotion was already created on <creation date>: promotion ID <promo id>. No changes were made. |
+| 400 | 3729 | An identical promotion was already created on {creation date}: promotion ID {promo id}. No changes were made. |
 | 400 | 3730 | Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time. |
 | 400 | 3731 | Updating on this promotion is in process. |
-| 400 | 3732 | The travel end date <travel end date> must be current or in the future. |
-| 400 | 3733 | The book end date <book end date>must be current or in the future. |
-| 400 | 3740 | Rate Plan <rate plan Id> doesn't belong to hotel <hotel Id>. |
+| 400 | 3732 | The travel end date {travel end date} must be current or in the future. |
+| 400 | 3733 | The book end date {book end date}must be current or in the future. |
+| 400 | 3740 | Rate Plan {rate plan Id} doesn't belong to hotel {hotel Id}. |
 | 400 | 3741 | Invalid travel window, one of the following messages will be returned. The travel start date {0} does not occur after {1} date. Travel end date shouldn't be earlier than travel start date, the travel end date is {0} and the travel start date is {1}. The travel start date {0} shouldn't be after {1}. The travel end date {0} shouldn't be after {1}. The travel end date {0} is before the end of the booking window, the effective booking end date is {1}. The travel start date {0} is before when the promo can be available for booking, the effective booking start date is {1}. The travel end date is in the past and before when promo can be available for booking, the effective booking start date is {0}. |
 | 400 | 3742 | Invalid booking window, one of the following messages will be returned. The effective booking window is incorrect due to effective booking start date {0} is later than effective booking end date {1}. The effective booking window is less than a minute due to effective booking start date and time {0} is equal to effective booking end date and time {1}. The effective booking start date {0} is beyond maximum advance purchase window of 2 years. The effective booking end date {0} is beyond maximum advance purchase window of 2 years. The effective booking end date cannot be in the past.  |
 | 400 | 3743 | Invalid blackout date, one of the following messages will be returned. The promo cannot be edited as the restriction for black out date is incorrect. The blackout start date {0} is later than blackout end date {1}. The promo cannot be edited as the blackout start date is {0}, it must occur on or before {1}. The promo cannot be edited as the blackout end date is {0}, it must occur on or before {1}. The promo cannot be edited as the restriction for black out start date {0} is in the past. The promo cannot be edited as the restriction is invalid and does not have any overlap with travel dates, the blackout dates are {0} to {1} and travel dates are {2} to {3}. The blackout start date {0} shouldn't be in the past. The blackout start date {0} shouldn't be after blackout end date {1}. The blackout start date {0} should occur on or before {1}. The blackout end date {0} should occur on or before {1}. The blackout start date {0} shouldn't be in the past. No overlap between the blackout date range from {0} to {1} and travel date range from {2} to {3}. |
-| 400 | 3744 | The promo <promo -id> is NOT supported in Promo API. Only basic promo is supported. |
-| 400 | 3745 | The promo <promo -id> cannot be retrieved since it is NOT created by Promo API. |
-| 400 | 3746 | The promo <promo id> cannot be modified since it is NOT created by Promo API. |
+| 400 | 3744 | The promo {promo -id} is NOT supported in Promo API. Only basic promo is supported. |
+| 400 | 3745 | The promo {promo -id} cannot be retrieved since it is NOT created by Promo API. |
+| 400 | 3746 | The promo {promo id} cannot be modified since it is NOT created by Promo API. |
 | 400 | 3747 | Date ranges of blackout must not overlap |
 | 401 | 1001 | Authentication error: invalid username or password. |
 | 401 | 1002 | Authentication error: username and password is not found in HTTP header. Please set the Authorization header for HTTP basic authentication. |
-| 403 | 1101 | The promo cannot be created as the user: <user name> is not associated with the hotel <hotel id>. |
-| 403 | 1102 | The promo cannot be created due to user:<user name> doesn't has permission to create. |
-| 409 | 3729 | An identical promotion was already created on <creation date>: promotion ID <promo-id>. No changes were made. |
+| 403 | 1101 | The promo cannot be created as the user: {user name} is not associated with the hotel {hotel id}. |
+| 403 | 1102 | The promo cannot be created due to user:{user name} doesn't has permission to create. |
+| 409 | 3729 | An identical promotion was already created on {creation date}: promotion ID {promo-id}. No changes were made. |
 | 409 | 3730 | Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time. |
 | 409 | 3731 | Updating on this promotion is in process. |
 | 500 | 4000 | Internal system error, please try again in a few minutes. |

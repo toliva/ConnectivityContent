@@ -74,7 +74,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-Error case – Duplicate creation
+Error case - Duplicate creation
 ```HTML
 HTTP/1.1 409 Conflict
 Request-ID: 24083915-ed72-11e3-98cb-a4896a57b8ab
@@ -89,7 +89,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-Error case – system error
+Error case - system error
 ```HTML
 HTTP/1.1 500 Internal Server Error
 Request-ID: 5dbf2dca-6672-49a3-a5f1-1bba0a6171d1
@@ -149,7 +149,7 @@ Content-Type: application/json;charset=UTF-8
         "minLOS": "3",
         "percent": "40",
         "mobileOnly": true,
-        "score": “8.5”,
+        "score": 8.5,
         "RatePlan": [
             {"id": "201246465"},
             {"id": "201845338"}
@@ -159,7 +159,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
-Error case – Invalid data in request
+Error case - Invalid data in request
 ```HTML
 HTTP/1.1 400 Bad request
 Request-ID: 162fa2c4-4ca6-11e4-98f1-965f8a3b6159
@@ -235,7 +235,7 @@ Content-Type: application/json;charset=UTF-8
         }]
 }
 ```
-Error case – Invalid hotel ID
+Error case - Invalid hotel ID
 ```HTML
 HTTP/1.1 400 Bad Request
 Request-ID: 19c5834e-970c-44b0-85de-a6375a6d4d6c
