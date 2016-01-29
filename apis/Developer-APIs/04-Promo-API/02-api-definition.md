@@ -22,7 +22,7 @@ For more information about getting started for the first time, and authorization
 | Authorization | String | Yes | Authorization: Basic <username: password encoded by Base64> |
 | Content-Type | String | - Yes for Promo Create and Modify - No for Promo Read | Content-Type: application/json |
 | Accept | String | Yes | Accept: application/json |
-| Request-ID | String | No | Request-ID: UUID It is a tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response. |
+| Request-ID | UUID | No | Tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response. |
 
 ## HTTPS Status Codes
 The following HTTP status code may be returned by the Promo API.
