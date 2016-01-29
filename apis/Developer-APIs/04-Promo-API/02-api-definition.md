@@ -27,8 +27,8 @@ For more information about getting started for the first time, and authorization
 ## HTTPS Status Codes
 The following HTTP status code may be returned by the Promo API.
 
-| HTTP | Status | Code | Text | Description |
-| ---- | ------ | ---- | ---- | ----------- |
+| HTTP | Status Code |  Description |
+| ---- | ------ | ----  |
 | 200 | OK | Success! This code is returned after a promo score is successfully retrieved or after a promo is successfully modified. |
 | 201 | Created | Created! This code is returned after a promo is successfully created. |
 | 400 | Bad Request | Parsing error. The request was invalid or other client side error. Error code range (2001, 3999). |
