@@ -1,7 +1,6 @@
 # API Definition
 The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering on the Expedia marketplace.
 
-{a name="authentication"}{/a}
 ## Authentication
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
@@ -20,7 +19,7 @@ For more information about getting started for the first time, and authorization
 | Header | Type | Required | Input Format |
 | ------ | ---- | -------- | ------------ |
 | Authorization | String | Yes | Authorization: Basic {username: password encoded by Base64} |
-| Content-Type | String | - Yes for Promo Create and Modify - No for Promo Read | Content-Type: application/json |
+| Content-Type | String | Yes for Promo Create and Modify. No for Promo Read | Content-Type: application/json |
 | Accept | String | Yes | Accept: application/json |
 | Request-ID | UUID | No | Tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response. |
 
@@ -29,8 +28,8 @@ The following HTTP status code may be returned by the Promo API.
 
 | HTTP Status Code | Text |  Description |
 | ---- | ------ | ----  |
-| 200 | OK | Success! This code is returned after a promo score is successfully retrieved or after a promo is successfully modified. |
-| 201 | Created | Created! This code is returned after a promo is successfully created. |
+| 200 | OK | Success. This code is returned after a promo score is successfully retrieved or after a promo is successfully modified. |
+| 201 | Created | Created. This code is returned after a promo is successfully created. |
 | 400 | Bad Request | Parsing error. The request was invalid or other client side error. Error code range (2001, 3999). |
 | 401 | Unauthorized | Authentication error. Username/password was missing or invalid. Error code range (1001, 1099). |
 | 403 | Forbidden | Authorization error. Username/password was not authorized to create promotion or username/password not associated with the hotel. Error code range (1100, 1999). |
@@ -41,8 +40,8 @@ The following HTTP status code may be returned by the Promo API.
 
 ##	Promo Create Operation
 The Promo Create Operation supports two types of promotions.
-- Promotion with percent (%) discount
-- Promotion with amount ($) discount
+- Promotion with percent (%) discount: applicable to any type of hotel/product.
+- Promotion with amount ($) discount: only applicable to HotelCollect-only properties.
 
 Each create request is for a single promotion. The API performs duplicate check based on all fields in the request. In other words if the same request is sent twice by the partner, the second request is considered a duplicate.
 
@@ -62,7 +61,7 @@ The request consists of the full URL including the header and the payload.
 | bookDateTimeStart | DateTime | Yes | The start date and time when this promotion becomes available for booking. It must be current or in the future and cannot be later than the travel start date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00). Time portion is required. Promo API will return error code 3010 if the time portion is missing. The date time is in the hotel local time zone. Time zone offset is not accepted. Promo API will return error code 3010 (schema validation error) if the request contains time zone offset (e.g. 2014-09-16T18:00:00+02:00). |
 | bookDateTimeEnd | DateTime | Yes | The end date and time when this promotion is no longer available for booking. It must be later than the effective start date and cannot be later than the travel end date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00). Same as for the bookDateTimeStart field: - Time portion is required. - Time zone offset is not allowed. |
 | percent | positiveInteger | Yes | Used for percent (%) discount. The percentage discount applies to all nights of stay. The range must be between 10 and 75 inclusively, in increments of 1%. Request should contain either the percent field or the amount field, but not both at the same time. |
-| amount | Decimal | No | Used for amount ($) discount. The amount discount applies to all nights of stay. The range must be between 1 and 12,000,000 inclusive. Limitation: amount discount can be used only by agency hotels. Request should contain either the percent field or the amount field, but not both at the same time. |
+| amount | Decimal | No | Used for amount ($) discount. The amount discount applies to all nights of stay. The range must be between 1 and 12,000,000 inclusive. Limitation: amount discount can be used only by HotelCollect-only properties. Request should contain either the percent field or the amount field, but not both at the same time. |
 | minLOS | positiveInteger | Yes | The minimum night(s) that guest must stay. The range must be between 1 and 4 inclusively. |
 | minAdvBookDays | Int | No | The minimum days before a travel date that the booking can be made. Optional, if not provided, means bookings can be made up until check-in day, assuming other constraints are met. Value between 0 and 500. |
 | mobileOnly | Boolean | Yes | Should this promotion only be displayed on mobile devices (available through smart phones and tablets) |
@@ -115,6 +114,7 @@ The request contains the same header and same payload information plus one addit
 
 | JSON Field | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
+| promo  payload | See Promo create request above | yes | A full payload with the promotion information needs to be provided for a score preview request. The only difference is that an additional field, called preview, also needs to be provided. |
 | preview | Boolean | No | When the value is set to true in the request, the service will try to retrieve a promo score without creating the promotion. Optional field. Default to false when it is not provided in the request. In this case the promotion will be created and a promo score, when available, will be returned as part of the response. |
 
 ### Response
@@ -154,7 +154,7 @@ GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/p
 
 Additionally user can specify the following query parameters in the URL:
 
-| JSON Field | Type | Required | Description |
+| Query Param | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
 | activeOnly | Boolean | No | When set to "true" it indicates the service should only return active promotions. "Active" promotion means its status is active and its book end date is not in the past (less than or equal to today -1 day). Optional, by default the service return both active and inactive promotions. This parameter is ignored when get promo by promo ID. |
 | returnScore | Boolean | No | When set to "true" it indicates the service should return promo score in the response. Optional, by default the service does not return promo score in the response. |

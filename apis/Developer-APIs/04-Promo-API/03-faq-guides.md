@@ -1,7 +1,6 @@
 # FAQ & Guides
 This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner's intent when managing room types and rate plans.
 
-{a name="/howtogetstarted"}{/a}
 ## How to Get Started for First Time API Users
 In order to get started with using the API, it is required to register with Expedia and obtain API credentials. It is also possible to obtain the rights to use a test property to run some tests before going to production with a new integration. To get started, new partners need to send an email to eqcss@expedia.com.
 
