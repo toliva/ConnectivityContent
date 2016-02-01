@@ -1,7 +1,6 @@
 # API Definition
 The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering on the Expedia marketplace.
 
-{a name="authentication"}{/a}
 ## Authentication
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
