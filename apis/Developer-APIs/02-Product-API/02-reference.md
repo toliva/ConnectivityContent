@@ -1433,7 +1433,7 @@ Bedding and linens | ROOM_DAY_BED |  | - | - |
 Bedding and linens | ROOM_DOWN_COMFORTER |  | - | - | 
 Bedding and linens | ROOM_PILLOW_MENU |  | - | - | 
 Bedding and linens | ROOM_PREMIUM_BEDDING |  | - | - | 
-Room Layout | ROOM_NUMBER_OF_SEPARATE_ BEDROOMS |  | - | Integer between 1 and 10 inclusively. | 
+Room Layout | ROOM_NUMBER_OF_SEPARATE_BEDROOMS |  | - | Integer between 1 and 10 inclusively. | 
 Room Layout | ROOM_DINING_AREA |  | - | - | 
 Room Layout | ROOM_LIVING_ROOM |  | - | - | 
 Room Layout | ROOM_SITTING_AREA |  | - | - | 
