@@ -205,7 +205,7 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string  
+propertyId | path | Expedia Property ID | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -263,7 +263,7 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 Parameter | Parameter Type | Description | Required | Data Type | Default
 --------- | -------------- | ----------- | -------- | --------- | -------------
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string | 
+propertyId | path | Expedia Property ID | Yes | string | 
 status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active room types (meaning room type with at least one active rate plan, as room type status can't be directly controlled, but is rather inferred from its rate plans statuses).
 
 #### Success Responses
@@ -281,8 +281,8 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property Id | true | string  
-body | body | JSON message describing the new room type | true | [RoomType](#/definitions/RoomTypeDTO) 
+propertyId | path | Expedia Property Id | Yes | string  
+body | body | JSON message describing the new room type | Yes | [RoomType](#/definitions/RoomTypeDTO) 
 
 **Examples**
 ```
@@ -350,8 +350,8 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string  
-roomTypeId | path | Room type resource ID. Integer | true | string  
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID. Integer | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -369,9 +369,9 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property Id | true | string  
-roomTypeId | path | Room type resource ID | true | string  
-body | body | JSON message with modified room type | true | [RoomType](#/definitions/RoomTypeDTO)  
+propertyId | path | Expedia Property Id | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+body | body | JSON message with modified room type | Yes | [RoomType](#/definitions/RoomTypeDTO)  
 
 **Examples**
 ```
@@ -538,9 +538,9 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property Id | true | string  
-roomTypeId | path | Room type resource ID | true | string  
-body | body | JSON message with the room type amenities | true | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+propertyId | path | Expedia Property Id | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+body | body | JSON message with the room type amenities | Yes | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
 
 **Examples**
 ```
@@ -599,8 +599,8 @@ value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to 
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string | 
 status | query | Status filter. String. Only supported value is "all". | false | string | active
 
 #### Success Responses
@@ -619,9 +619,9 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message describing the new rate plan | true | [RatePlan](#/definitions/RatePlanDTO) | 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string | 
+body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO) | 
 
 **Examples**
 ```
@@ -695,9 +695,9 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string  
-roomTypeId | path | Room type resource ID | true | string  
-ratePlanId | path | Rate plan resource ID | true | string  
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+ratePlanId | path | Rate plan resource ID | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -715,10 +715,10 @@ Status Code | Description | Response Model
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
-propertyId | path | Expedia Property ID | true | string  
-roomTypeId | path | Room type resource ID | true | string  
-ratePlanId | path | Rate plan resource ID | true | string  
-body | body | JSON message of modified rate plan | true | [RatePlan](#/definitions/RatePlanDTO)  
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+ratePlanId | path | Rate plan resource ID | Yes | string  
+body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO)  
 
 **Examples**
 ```
