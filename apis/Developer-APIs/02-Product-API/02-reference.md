@@ -38,6 +38,8 @@ For more information about getting started for the first time, and authorization
 | Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
 | Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/ | None |
 | Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
 | Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
 | Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
@@ -68,7 +70,7 @@ HTTP headers are slightly different between a request made to the EPS Product AP
 ### Format – Request
 | Header | Type | Required | Input Format |
 | ------ | ---- | -------- | ------------ |
-| Authorization | String | Required | Authorization: Basic <username:password encoded by Base64> |
+| Authorization | String | Required | Authorization: Basic [username:password encoded by Base64] |
 | Content-Type | String | Required* | Content-Type: application/json |
 | Accept | String | Required | Accept: application/json |
 | Request-ID | String | Optional | Can be provided by the partner and can be referenced later on for troubleshooting purposes. When provided by the partner, it can be anything, and no validations will be performed to insure uniqueness of this ID. If it is not provided in request, API will generate a UUID and return it in the response.  |
@@ -182,6 +184,7 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
 status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active properties.
 offset | query | Pagination offset. Integer starting at 0 | false | string | 0
 limit | query | Pagination limit. Integer between 1 and 200. | false | string | 20
@@ -199,9 +202,10 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -256,9 +260,10 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
+Parameter | Parameter Type | Description | Required | Data Type | Default
 --------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string | 
 status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active room types (meaning room type with at least one active rate plan, as room type status can't be directly controlled, but is rather inferred from its rate plans statuses).
 
 #### Success Responses
@@ -273,10 +278,11 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property Id | true | string | 
-body | body | JSON message describing the new room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property Id | Yes | string  
+body | body | JSON message describing the new room type | Yes | [RoomType](#/definitions/RoomTypeDTO) 
 
 **Examples**
 ```
@@ -341,10 +347,11 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID. Integer | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID. Integer | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -359,11 +366,12 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property Id | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message with modified room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property Id | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+body | body | JSON message with modified room type | Yes | [RoomType](#/definitions/RoomTypeDTO)  
 
 **Examples**
 ```
@@ -499,6 +507,87 @@ Property Name | Type | Description
 squareFeet | integer | Room size in square feet.
 squareMeters | integer | Room size in square meters.
 
+## Room Type Amenities
+Amenities of a given room type can be accessed as a sub resource of a specific room type any time after it was created. By default, for newly created room types, there will be no amenities. The only operations available are GET to read amenities, and PUT to set amenities (as a full overlay, all currently supported amenities have to be passed in a PUT).
+
+### Read a single room type's amenities
+- Method: `GET`
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Consumes: `HTTP Request (GET)`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string 
+roomTypeId | path | Room type resource ID. Integer | Yes | string 
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+### Set room type amenities to an existing room type
+- Method: `PUT`
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Consumes: `application/json`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property Id | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+body | body | JSON message with the room type amenities | Yes | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+**Examples**
+```
+[
+  {
+    "code": "ROOM_WIFI_INTERNET",
+    "detailCode": "SURCHARGE"
+  }, {
+    "code": "ROOM_BATHTUB_TYPE",
+    "detailCode": "DEEP_SOAKING"
+  }, {
+    "code": "ROOM_TV",
+    "detailCode": "FLAT_PANEL"
+  }, {
+    "code": "ROOM_TV_SIZE",
+    "detailCode": "SIZE_INCH",
+    "value": 42
+  }, {
+    "code": "ROOM_NUMBER_OF_SEPARATE_BEDROOMS",
+    "value": 2
+  }, {
+    "code": "ROOM_RECENT_RENOVATION_MONTH",
+    "value": 5
+  }, {
+    "code": "ROOM_RECENT_RENOVATION_YEAR",
+    "value": 2011
+  }, {
+    "code": "ROOM_PET_FRIENDLY"
+  }
+]
+```
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+<a name="/definitions/RoomTypeAmenityDTO"></a>
+#### RoomTypeAmenity Definition
+
+For a full list of supported amenity codes, detail codes and values, see [amenityCodes](#/definitions/amenityCodes).
+
+Property Name | Type | Description
+------------- | ---- | -----------
+code | [amenityCodes](#/definitions/amenityCodes) | Uniquely identifies an amenity. A given code can only ever be specified once for a room type. 
+detailCode | [amenityCodes](#/definitions/amenityCodes) | Adds precision or qualifies the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
+value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
+
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
@@ -509,8 +598,9 @@ squareMeters | integer | Room size in square meters.
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string | 
 status | query | Status filter. String. Only supported value is "all". | false | string | active
 
 #### Success Responses
@@ -528,9 +618,10 @@ Status Code | Description | Response Model
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message describing the new rate plan | true | [RatePlan](#/definitions/RatePlanDTO) | 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string | 
+body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO) | 
 
 **Examples**
 ```
@@ -601,11 +692,12 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-ratePlanId | path | Rate plan resource ID | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+ratePlanId | path | Rate plan resource ID | Yes | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -620,12 +712,13 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-ratePlanId | path | Rate plan resource ID | true | string | 
-body | body | JSON message of modified rate plan | true | [RatePlan](#/definitions/RatePlanDTO) | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+ratePlanId | path | Rate plan resource ID | Yes | string  
+body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO)  
 
 **Examples**
 ```
@@ -1304,3 +1397,146 @@ Status Code | Description | Response Model
 | 80PercentCostOfStay |
 | 90PercentCostOfStay |
 | FullCostOfStay |
+
+<a name="/definitions/amenityCodes"></a>
+### amenityCodes, detailCodes and Values
+The amenity codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding.
+
+#### Internet Access
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_WIRED_INTERNET | FREE, SURCHARGE | Yes | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+ROOM_WIFI_INTERNET | FREE, SURCHARGE | Yes | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+
+#### Bathroom
+
+Code | DetailCodes Permitted |  | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_BATHROOM_TYPE | PRIVATE_BATHROOM , PRIVATE_BATHROOM_NOT_IN_ROOM, SHARED_BATHROOM, SHARED_BATHROOM_SINK_IN_ROOM, PARTIALLY_OPEN_BATHROOM | Yes | - | 
+ROOM_FREE_TOILETRIES |  | - | - | 
+ROOM_SHOWER_TYPE | SHOWER_ONLY, BATHTUB_ONLY, BATHTUB_OR_SHOWER, SEPARATE_BATHTUB_AND_SHOWER, SHOWER_AND_BATHTUB_COMBO | Yes | - | 
+ROOM_BATHTUB_TYPE | DEEP_SOAKING, JETTED, SPRING_WATER | Yes | - | 
+ROOM_SECOND_BATHROOM | - | - | - | 
+ROOM_BATHROBES | - | - | - | 
+ROOM_BIDET | - | - | - | 
+ROOM_DESIGNER_TOILETRIES | - | - | - | 
+ROOM_HYDROMASSAGE_SHOWERHEAD | - | - | - | 
+ROOM_RAINFALL_SHOWERHEAD | - | - | - | 
+ROOM_SLIPPERS | - | - | - | 
+ROOM_HAIR_DRYER | IN_ROOM, ON_REQUEST | Yes | - | 
+
+#### Food-related 
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_COFFEE_TEA | COFFEE_AND_TEA_MAKER, ESPRESSO_MAKER | Yes | - | 
+ROOM_FREE_BOTTLED_WATER | - | 0 | - | 
+ROOM_KITCHEN | KITCHEN, KITCHENETTE, SHARED_KITCHEN | Yes | - | 
+ROOM_MICROWAVE | IN_ROOM, ON_REQUEST | Yes | - | 
+ROOM_REFRIGERATOR | IN_ROOM, FULL_ SIZE_IN_ROOM, ON_REQUEST | Yes | - | 
+ROOM_MINIBAR | STOCKED_WITH_FREE_ITEMS, STOCKED_WITH_SOME_FREE_ITEMS, STOCKED_NO_FREE_ITEMS | Yes | - | 
+ROOM_DISHWARE | - | - | - | 
+ROOM_DISHWASHER | - | - | - | 
+ROOM_STOVETOP |  | - | - | 
+
+#### Entertainement
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_TV_SERVICE | CABLE, SATELLITE, DIGITAL | Yes | - | 
+ROOM_PREMIUM_TV_CHANNELS | - | - | - | 
+ROOM_PAY_MOVIES | - | - | - | 
+ROOM_TV | LCD, LED, PLASMA, FLAT_PANEL, GENERIC | Yes | - | 
+ROOM_TV_SIZE | SIZE_INCH, SIZE_CM | Yes | Integer between 1 and 1000 inclusively. | When specifying this amenity, the actual size needs to be provided as the value of the amenity. The unit of measure is defined by the detailCode.
+ROOM_DVD_PLAYER | - | - | - | 
+ROOM_FIRST_RUN_MOVIES | - | - | - | 
+ROOM_VIDEO_GAME | - | - | - | 
+ROOM_ELECTRONIC_DEVICE | COMPUTER, TABLET, IPAD | Yes | - | 
+ROOM_IPOD_DOCK | - | - | - | 
+ROOM_MP3_PLAYER_DOCK | - | - | - | 
+
+#### Bedding and Linens
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_CRIBS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+ROOM_EXTRA_BEDS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+ROOM_SOFA_BED | SINGLE, TWIN, DOUBLE, QUEEN, KING | No | - | 
+ROOM_PREMIUM_LINENS | EGYPTIAN_COTTON_SHEETS , FRETTE_ITALIAN_SHEETS | Yes | - | 
+ROOM_HYPO_BED_AVAIL | - | - | - | 
+ROOM_PREMIUM_MATTRESS | MEMORY_FOAM, PILLOW_TOP, SLEEP_NUMBER, TEMPURPEDIC | Yes | - | 
+ROOM_DAY_BED | - | - | - | 
+ROOM_DOWN_COMFORTER | - | - | - | 
+ROOM_PILLOW_MENU | - | - | - | 
+ROOM_PREMIUM_BEDDING | - | - | - | 
+
+#### Room Layout 
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_NUMBER_OF_SEPARATE_BEDROOMS | - | - | Integer between 1 and 10 inclusively. | 
+ROOM_DINING_AREA | - | - | - | 
+ROOM_LIVING_ROOM | - | - | - | 
+ROOM_SITTING_AREA | - | - | - | 
+ROOM_BALCONY | FURNISHED_BALCONY, FURNISHED_BALCONY_OR_PATIO, FURNISHED_LANAI, FURNISHED_PATIO, BALCONY, BALCONY_OR_PATIO, LANAI, PATIO | Yes | - | 
+ROOM_PRIVATE_POOL | - | - | - | 
+ROOM_PRIVATE_PLUNGE_POOL | - | - | - | 
+ROOM_PRIVATE_SPA | - | - | - | 
+ROOM_EXT_ACCESS | - | - | - | 
+ROOM_CONNECTED_ROOMS | - | - | - | 
+ROOM_SOUND_ISOLATION | SOUNDPROOFED, NOISE_DISCLAIMER | Yes | - | 
+ROOM_YARD | - | - | - | 
+ROOM_NO_WINDOWS | - | - | - | 
+
+#### Services
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_HOUSEKEEPING | DAILY , LIMITED, ONCE_PER_STAY, WEEKENDS_ONLY, WEEKDAYS_ONLY, WEEKLY | Yes | - | 
+ROOM_NEWSPAPER_FREE | DAILY , WEEKDAY | Yes | - | 
+ROOM_CHILDCARE | - | - | - | 
+ROOM_MASSAGE | - | - | - | 
+ROOM_TURNDOWN | - | - | - | 
+
+#### Room Features
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_AIR_CONDITIONING | - | - | - | 
+ROOM_CLIMATE_CONTROL | - | - | - | 
+ROOM_CEILING_FAN | - | - | - | 
+ROOM_DESK | - | - | - | 
+ROOM_IRON | IN_ROOM, ON_REQUEST | Yes | - | 
+ROOM_SAFE | STANDARD_SIZE, LAPTOP_COMPATIBLE, SURCHARGE | Yes | - | 
+ROOM_FIREPLACE | - | - | - | 
+ROOM_BLACKOUT_DRAPES | - | - | - | 
+ROOM_DECOR | - | - | - | 
+ROOM_FURNISHING | - | - | - | 
+ROOM_SHARED_ACCOMODATIONS | - | - | - | 
+ROOM_WASHER | - | - | - | 
+ROOM_FREE_LOCAL_CALLS | - | - | - | 
+ROOM_FREE_LONG_DISTANCE_CALLS | - | - | - | 
+ROOM_FREE_INTERNATIONAL_CALLS | - | - | - | 
+ROOM_PLAYPEN | - | - | - | 
+ROOM_PHONE | - | - | - | 
+ROOM_RECENT_RENOVATION_MONTH | - | - | Integer between 1 and 12. | 
+ROOM_RECENT_RENOVATION_YEAR | - | - | Integer between 2000 and current year. | 
+ROOM_LIMITED_FACILITY_ACCESS | - | - | - | 
+ROOM_RUN_OF_HOUSE | - | - | - | 
+ROOM_PET_FRIENDLY | - | - | - | 
+
+#### Club/Executive Level
+
+Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
+---- | --------------------- | --------------------- | --------------- | -----
+ROOM_CLUB_EXEC_LEVEL | CLUB_LEVEL, EXEC_LEVEL | Yes | - | 
+ROOM_CLUB_EXEC_LOUNGE_ACCESS | CLUB_LOUNGE, EXEC_LOUNGE | Yes | - | 
+ROOM_CLUB_EXEC_MEET_ROOM | - | - | - | 
+ROOM_CLUB_EXEC_MEET_ROOM_TIME_LIMIT_HOURS | - | - | Integer between 1 and 24. | 
+ROOM_CLUB_EXEC_BREAKFAST | BREAKFAST_BUFFET, BREAKFAST_CONTINENTAL, BREAKFAST_COOKED, BREAKFAST_ENGLISH, BREAKFAST_FULL | Yes | - | 
+ROOM_CLUB_EXEC_REFRESHMENTS | - | - | - | 
+ROOM_CLUB_EXEC_LOUNGE_INTERNET | - | - | - | 
+ROOM_CLUB_EXEC_LUNCH | - | - | - | 
+ROOM_CLUB_EXEC_SEPARATE_CHECKIN | - | - | - | 
+ROOM_CLUB_EXEC_DINNER | - | - | - | 
