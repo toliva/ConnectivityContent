@@ -199,9 +199,9 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+propertyId | path | Expedia Property ID | true | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -256,7 +256,7 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
+Parameter | Parameter Type | Description | Required | Data Type | Default
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
 status | query | Status filter. String. Only supported value is "all". | false | string | If not provided, API will only return active room types (meaning room type with at least one active rate plan, as room type status can't be directly controlled, but is rather inferred from its rate plans statuses).
@@ -273,10 +273,10 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property Id | true | string | 
-body | body | JSON message describing the new room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+propertyId | path | Expedia Property Id | true | string  
+body | body | JSON message describing the new room type | true | [RoomType](#/definitions/RoomTypeDTO) 
 
 **Examples**
 ```
@@ -341,10 +341,10 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-roomTypeId | path | Room type resource ID. Integer | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+propertyId | path | Expedia Property ID | true | string  
+roomTypeId | path | Room type resource ID. Integer | true | string  
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -359,11 +359,11 @@ Status Code | Description | Response Model
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property Id | true | string | 
-roomTypeId | path | Room type resource ID | true | string | 
-body | body | JSON message with modified room type | true | [RoomType](#/definitions/RoomTypeDTO) | 
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+propertyId | path | Expedia Property Id | true | string  
+roomTypeId | path | Room type resource ID | true | string  
+body | body | JSON message with modified room type | true | [RoomType](#/definitions/RoomTypeDTO)  
 
 **Examples**
 ```
@@ -498,6 +498,86 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 squareFeet | integer | Room size in square feet.
 squareMeters | integer | Room size in square meters.
+
+## Room Type Amenities
+Amenities of a given room type can be accessed as a sub resource of a specific room type any time after it was created. By default, for newly created room types, there will be no amenities. The only operations available are GET to read amenities, and PUT to set amenities (as a full overlay, all currently supported amenities have to be passed in a PUT).
+
+### Read a single room type's amenities
+- Method: `GET`
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Consumes: `HTTP Request (GET)`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header |  | true | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | true | string 
+roomTypeId | path | Room type resource ID. Integer | true | string 
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+### Set room type amenities to an existing room type
+- Method: `PUT`
+- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Consumes: `application/json`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+propertyId | path | Expedia Property Id | true | string  
+roomTypeId | path | Room type resource ID | true | string  
+body | body | JSON message with the room type amenities | true | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+**Examples**
+```
+[
+  {
+    "code": "ROOM_WIFI_INTERNET",
+    "detailCode": "SURCHARGE"
+  }, {
+    "code": "ROOM_BATHTUB_TYPE",
+    "detailCode": "DEEP_SOAKING"
+  }, {
+    "code": "ROOM_TV",
+    "detailCode": "FLAT_PANEL"
+  }, {
+    "code": "ROOM_TV_SIZE",
+    "detailCode": "SIZE_INCH",
+    "value": 42
+  }, {
+    "code": "ROOM_NUMBER_OF_SEPARATE_BEDROOMS",
+    "value": 2
+  }, {
+    "code": "ROOM_RECENT_RENOVATION_MONTH",
+    "value": 5
+  }, {
+    "code": "ROOM_RECENT_RENOVATION_YEAR",
+    "value": 2011
+  }, {
+    "code": "ROOM_PET_FRIENDLY"
+  }
+]
+```
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | Array[[RoomTypeAmenityDTO](#/definitions/RoomTypeAmenityDTO)] 
+
+<a name="/definitions/RoomTypeAmenityDTO"></a>
+#### RoomTypeAmenity Definition
+
+For a full list of supported amenity codes, detail codes and values, see [amenityCodes](#/definitions/amenityCodes).
+
+Property Name | Type | Description
+------------- | ---- | -----------
+code | [amenityCodes](#/definitions/amenityCodes) | Uniquely identifies an amenity. A given code can only ever be specified once for a room type. 
+detailCode | [amenityCodes](#/definitions/amenityCodes) | Adds precision or qualifies the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
+value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
 
 ## Rate plan
 ### Obtain a list of rate plans
@@ -1304,3 +1384,102 @@ Status Code | Description | Response Model
 | 80PercentCostOfStay |
 | 90PercentCostOfStay |
 | FullCostOfStay |
+
+<a name="/definitions/amenityCodes"></a>
+### amenityCodes, detailCodes and Values
+Category | Code | DetailCodes Permitted | DetailCode Required | Values Permitted | Notes
+-------- | ---- | --------------------- | ------------------- | ---------------- | -----
+Internet Access | ROOM_WIRED_INTERNET | FREE, SURCHARGE | Yes | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+Internet Access | ROOM_WIFI_INTERNET | FREE, SURCHARGE | Yes | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+Bathroom | ROOM_BATHROOM_TYPE | PRIVATE_BATHROOM , PRIVATE_BATHROOM_NOT_IN_ROOM, SHARED_BATHROOM, SHARED_BATHROOM_SINK_IN_ROOM, PARTIALLY_OPEN_BATHROOM | Yes | - | 
+Bathroom | ROOM_FREE_TOILETRIES |  | - | - | 
+Bathroom | ROOM_SHOWER_TYPE | SHOWER_ONLY, BATHTUB_ONLY, BATHTUB_OR_SHOWER, SEPARATE_BATHTUB_AND_SHOWER, SHOWER_AND_BATHTUB_COMBO | Yes | - | 
+Bathroom | ROOM_BATHTUB_TYPE | DEEP_SOAKING, JETTED, SPRING_WATER | Yes | - | 
+Bathroom | ROOM_SECOND_BATHROOM |  | - | - | 
+Bathroom | ROOM_BATHROBES |  | - | - | 
+Bathroom | ROOM_BIDET |  | - | - | 
+Bathroom | ROOM_DESIGNER_TOILETRIES |  | - | - | 
+Bathroom | ROOM_HYDROMASSAGE_SHOWERHEAD |  | - | - | 
+Bathroom | ROOM_RAINFALL_SHOWERHEAD |  | - | - | 
+Bathroom | ROOM_SLIPPERS |  | - | - | 
+Bathroom | ROOM_HAIR_DRYER | IN_ROOM, ON_REQUEST | Yes | - | 
+Food-related | ROOM_COFFEE_TEA | COFFEE_AND_TEA_MAKER, ESPRESSO_MAKER | Yes | - | 
+Food-related | ROOM_FREE_BOTTLED_WATER |  | - | - | 
+Food-related | ROOM_KITCHEN | KITCHEN, KITCHENETTE, SHARED_KITCHEN | Yes | - | 
+Food-related | ROOM_MICROWAVE | IN_ROOM, ON_REQUEST | Yes | - | 
+Food-related | ROOM_REFRIGERATOR | IN_ROOM, FULL_ SIZE_IN_ROOM, ON_REQUEST | Yes | - | 
+Food-related | ROOM_MINIBAR | STOCKED_WITH_FREE_ITEMS, STOCKED_WITH_SOME_FREE_ITEMS, STOCKED_NO_FREE_ITEMS | Yes | - | 
+Food-related | ROOM_DISHWARE |  | - | - | 
+Food-related | ROOM_DISHWASHER |  | - | - | 
+Food-related | ROOM_STOVETOP |  | - | - | 
+Entertainment | ROOM_TV_SERVICE | CABLE, SATELLITE, DIGITAL | Yes | - | 
+Entertainment | ROOM_PREMIUM_TV_CHANNELS |  | - | - | 
+Entertainment | ROOM_PAY_MOVIES |  | - | - | 
+Entertainment | ROOM_TV | LCD, LED, PLASMA, FLAT_PANEL, GENERIC | Yes | - | 
+Entertainment | ROOM_TV_SIZE | SIZE_INCH, SIZE_CM | Yes | Integer between 1 and 1000 inclusively. | When specifying this amenity, the actual size needs to be provided as the value of the amenity. The unit of measure is defined by the detailCode.
+Entertainment | ROOM_DVD_PLAYER |  | - | - | 
+Entertainment | ROOM_FIRST_RUN_MOVIES |  | - | - | 
+Entertainment | ROOM_VIDEO_GAME |  | - | - | 
+Entertainment | ROOM_ELECTRONIC_DEVICE | COMPUTER, TABLET, IPAD | Yes | - | 
+Entertainment | ROOM_IPOD_DOCK |  | - | - | 
+Entertainment | ROOM_MP3_PLAYER_DOCK |  | - | - | 
+Bedding and linens | ROOM_CRIBS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+Bedding and linens | ROOM_EXTRA_BEDS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
+Bedding and linens | ROOM_SOFA_BED | SINGLE, TWIN, DOUBLE, QUEEN, KING | No | - | 
+Bedding and linens | ROOM_PREMIUM_LINENS | EGYPTIAN_COTTON_SHEETS , FRETTE_ITALIAN_SHEETS | Yes | - | 
+Bedding and linens | ROOM_HYPO_BED_AVAIL |  | - | - | 
+Bedding and linens | ROOM_PREMIUM_MATTRESS | MEMORY_FOAM, PILLOW_TOP, SLEEP_NUMBER, TEMPURPEDIC | Yes | - | 
+Bedding and linens | ROOM_DAY_BED |  | - | - | 
+Bedding and linens | ROOM_DOWN_COMFORTER |  | - | - | 
+Bedding and linens | ROOM_PILLOW_MENU |  | - | - | 
+Bedding and linens | ROOM_PREMIUM_BEDDING |  | - | - | 
+Room Layout | ROOM_NUMBER_OF_SEPARATE_ BEDROOMS |  | - | Integer between 1 and 10 inclusively. | 
+Room Layout | ROOM_DINING_AREA |  | - | - | 
+Room Layout | ROOM_LIVING_ROOM |  | - | - | 
+Room Layout | ROOM_SITTING_AREA |  | - | - | 
+Room Layout | ROOM_BALCONY | FURNISHED_BALCONY, FURNISHED_BALCONY_OR_PATIO, FURNISHED_LANAI, FURNISHED_PATIO, BALCONY, BALCONY_OR_PATIO, LANAI, PATIO | Yes | - | 
+Room Layout | ROOM_PRIVATE_POOL |  | - | - | 
+Room Layout | ROOM_PRIVATE_PLUNGE_POOL |  | - | - | 
+Room Layout | ROOM_PRIVATE_SPA |  | - | - | 
+Room Layout | ROOM_EXT_ACCESS |  | - | - | 
+Room Layout | ROOM_CONNECTED_ROOMS |  | - | - | 
+Room Layout | ROOM_SOUND_ISOLATION | SOUNDPROOFED, NOISE_DISCLAIMER | Yes | - | 
+Room Layout | ROOM_YARD |  | - | - | 
+Room Layout | ROOM_NO_WINDOWS |  | - | - | 
+Services | ROOM_HOUSEKEEPING | DAILY , LIMITED, ONCE_PER_STAY, WEEKENDS_ONLY, WEEKDAYS_ONLY, WEEKLY | Yes | - | 
+Services | ROOM_NEWSPAPER_FREE | DAILY , WEEKDAY | Yes | - | 
+Services | ROOM_CHILDCARE |  | - | - | 
+Services | ROOM_MASSAGE |  | - | - | 
+Services | ROOM_TURNDOWN |  | - | - | 
+Room Features | ROOM_AIR_CONDITIONING |  | - | - | 
+Room Features | ROOM_CLIMATE_CONTROL |  | - | - | 
+Room Features | ROOM_CEILING_FAN |  | - | - | 
+Room Features | ROOM_DESK |  | - | - | 
+Room Features | ROOM_IRON | IN_ROOM, ON_REQUEST | Yes | - | 
+Room Features | ROOM_SAFE | STANDARD_SIZE, LAPTOP_COMPATIBLE, SURCHARGE | Yes | - | 
+Room Features | ROOM_FIREPLACE |  | - | - | 
+Room Features | ROOM_BLACKOUT_DRAPES |  | - | - | 
+Room Features | ROOM_DECOR |  | - | - | 
+Room Features | ROOM_FURNISHING |  | - | - | 
+Room Features | ROOM_SHARED_ACCOMODATIONS |  | - | - | 
+Room Features | ROOM_WASHER |  | - | - | 
+Room Features | ROOM_FREE_LOCAL_CALLS |  | - | - | 
+Room Features | ROOM_FREE_LONG_DISTANCE_CALLS |  | - | - | 
+Room Features | ROOM_FREE_INTERNATIONAL_CALLS |  | - | - | 
+Room Features | ROOM_PLAYPEN |  | - | - | 
+Room Features | ROOM_PHONE |  | - | - | 
+Room Features | ROOM_RECENT_RENOVATION_MONTH |  | - | Integer between 1 and 12. | 
+Room Features | ROOM_RECENT_RENOVATION_YEAR |  | - | Integer between 2000 and current year. | 
+Room Features | ROOM_LIMITED_FACILITY_ACCESS |  | - | - | 
+Room Features | ROOM_RUN_OF_HOUSE |  | - | - | 
+Room Features | ROOM_PET_FRIENDLY |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_LEVEL | CLUB_LEVEL, EXEC_LEVEL | Yes | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_LOUNGE_ACCESS | CLUB_LOUNGE, EXEC_LOUNGE | Yes | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_MEET_ROOM |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_MEET_ROOM_TIME_LIMIT_HOURS |  | - | Integer between 1 and 24. | 
+Club/Executive Level | ROOM_CLUB_EXEC_BREAKFAST | BREAKFAST_BUFFET, BREAKFAST_CONTINENTAL, BREAKFAST_COOKED, BREAKFAST_ENGLISH, BREAKFAST_FULL | Yes | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_REFRESHMENTS |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_LOUNGE_INTERNET |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_LUNCH |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_SEPARATE_CHECKIN |  | - | - | 
+Club/Executive Level | ROOM_CLUB_EXEC_DINNER |  | - | - | 
