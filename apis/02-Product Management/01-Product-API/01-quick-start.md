@@ -6,9 +6,9 @@ The Product API enables Expedia partners to read, create, and edit room types an
 ## Authentication
 Product API uses a Basic Authorization scheme. The same credentials used to manage properties via EQC today are compatible with the Product API. 
 
-For more details, please review the [Authentication section](/apis/product-api/reference.html#authentication) of the API Definition section.
+For more details, please review the [Authentication section](reference.html#authentication) of the API Definition section.
 
-For partners using Expedia APIs for the first time, please refer to the [FAQ & Guides section](/apis/product-api/guides.html#howtogetstarted) for instructions on how to obtain credentials.
+For partners using Expedia APIs for the first time, please refer to the [FAQ & Guides section](guides.html#howtogetstarted) for instructions on how to obtain credentials.
 
 ----
 
