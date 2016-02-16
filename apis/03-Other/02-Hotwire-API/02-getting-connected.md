@@ -1,4 +1,4 @@
-# Hotwire Registration Process
+# Getting Connected
 
 To register for an API key and get approved as a developer to begin using the Hotwire QuickConnect interface, follow these steps: 
 
