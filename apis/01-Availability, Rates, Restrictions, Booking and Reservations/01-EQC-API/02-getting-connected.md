@@ -4,7 +4,7 @@
 Below is a summary to get your system connected to our APIs.
 
 ### Development phase
-All our API specifications are on this site.  You must abide by our [terms and conditions](terms.html).
+All our API specifications are on this site.  You must abide by our [terms and conditions](/terms.html).
 If you have any development related questions during this phase, please send email [eqcss@expedia.com](mailto:eqcss@expedia.com).
 
 ### Test phase
