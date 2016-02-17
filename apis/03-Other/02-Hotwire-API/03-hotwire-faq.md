@@ -1,4 +1,4 @@
-# FAQ & Guides
+# FAQ
 
 ## How do I obtain an API key?
 Please visit the Developer Registration page for more information.
