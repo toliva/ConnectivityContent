@@ -1,7 +1,7 @@
 # FAQ
 
 ## How do I obtain an API key?
-Please visit the Developer Registration page for more information.
+Please visit the [Developer Registration page](getting-connected.html) for more information.
 
 ## Does each hotel need its own API key?
 No, a hotel does not need a unique API key, the API key is only at the developer level.
