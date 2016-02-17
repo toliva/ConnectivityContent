@@ -8,7 +8,7 @@ To invoke the simulator:
 
 Provide your usual apiKey
 Use the authorization credentials 'hqcsim@hotwire.com:hotwire’ (aHFjc2ltQGhvdHdpcmUuY29tOmhvdHdpcmU=)
-Send the request to the pre-production endpoint (https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl)[https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl]
+Send the request to the pre-production endpoint [https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl]
 Send hotel id 17515
 The contents of the response will vary depending on the value sent in the MinsInPast parameter of the request
 
