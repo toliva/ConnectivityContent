@@ -158,8 +158,8 @@ to us or by placing a prominent notice on our Websites.
 
 ## How you can contact us
 
-If you have questions about this Expedia Connectivity Services Privacy Policy, please go to the
-[contact us](/contacts.html) page.
+If you have questions about this Expedia Connectivity Services Privacy Policy, please
+[contact us](mailto:eqcss@expedia.com).
 
 This Expedia Connectivity Services Privacy Policy is effective as of December 18, 2009.
 
