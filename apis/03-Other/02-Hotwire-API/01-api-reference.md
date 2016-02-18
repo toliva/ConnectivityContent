@@ -9,4 +9,6 @@ includes the ability to set the number of available rooms, per-day rate amounts 
 charges, and several restrictions. Retrieved bookings contain guest and Hotwire single use credit card
 information.
 
-Currently this API is only available via PDF, available for download [here](https://ewe-quickconnect.s3.amazonaws.com/system/assets/attachments/425/Hotwire_QuickConnect_API_Guide_Version_1_31.pdf?1395867409)
+Currently this API is only available via PDF, available for download [here](https://ewe-quickconnect.s3.amazonaws.com/system/assets/attachments/425/Hotwire_QuickConnect_API_Guide_Version_1_31.pdf?1395867409).
+
+The WSDL is available to download [here](https://api.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl=XnetHotelService.wsdl).
