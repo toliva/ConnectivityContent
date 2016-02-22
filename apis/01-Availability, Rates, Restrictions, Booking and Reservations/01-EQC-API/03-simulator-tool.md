@@ -239,6 +239,7 @@ Hotel 411 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate pl
         </RatePlan>
     </RoomType>
 </ProductList>
+```
 
 Hotel 511 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate plans per room type, Hotel Collect and flex products. Rate plan linkage only on rate, 10.5%+, with exceptions, no end date.
 ```xml
@@ -309,6 +310,7 @@ Hotel 511 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate pl
         </RatePlan>
     </RoomType>
 </ProductList>
+```
 
 Hotel 611 product configuration: Per day pricing based on day of arrival and LOS, Flex products, Sell Rate, 2 room types and 2 rate plans with 1 flex standalone and 1 package rate per room type.
 ```xml
@@ -374,6 +376,7 @@ Hotel 611 product configuration: Per day pricing based on day of arrival and LOS
         </RatePlan>
     </RoomType>
 </ProductList>
+```
 
 ### Successful Update Scenarios - AR
 
