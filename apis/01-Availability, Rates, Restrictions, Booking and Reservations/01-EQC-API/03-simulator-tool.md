@@ -341,7 +341,7 @@ Hotel 611 product configuration: Per day pricing based on day of arrival and LOS
         <RatePlanname="RackP"rateAcquisitionType="SellRate"type="Package"distributionModel="ExpediaCollect"id="62000"status="Active"code="PKG"pricingModel="PerDayPricingByLengthOfStay"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
             <Compensationdefault="true"percent="35.00"minAmount="15.00"/>
             <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"flatFee="50.00""perStayFee="None"/>
+                <PenaltyinsideWindow="true"flatFee="50.00" perStayFee="None"/>
                 <PenaltyinsideWindow="false"perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
