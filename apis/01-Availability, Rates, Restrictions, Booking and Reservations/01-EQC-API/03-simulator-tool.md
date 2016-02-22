@@ -10,8 +10,8 @@ The following data set is assumed when using the AR and PARR simulators:
 
 The data set for PARR and AR interfaces:
 
-· The simulator uses 365 days of future rates and availabilty defined for a hotel, relative to the date of the PARR RQ
-· There are 6 hotels: 111, 211, 311, 411, 511, 611
+* The simulator uses 365 days of future rates and availabilty defined for a hotel, relative to the date of the PARR RQ
+* There are 6 hotels: 111, 211, 311, 411, 511, 611
  
 | Hotel ID | Base alloc enabled | Pricing Model                                   | Product Type                                                                | Rate Acquisition Type | Room Type + Rate Plan variation                                                       | 
 |----------|--------------------|-------------------------------------------------|-----------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------------| 
