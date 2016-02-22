@@ -6,8 +6,6 @@ The EQC Simulator is a tool provided by Expedia to help EQC partners develop and
 
 This section describes how the PARR and AR simulators are configured and what kind of scenario can be tested using them.
 
-### Data set
-
 The following data set is assumed when using the AR and PARR simulators:
 
 The data set for PARR and AR interfaces:
@@ -571,8 +569,6 @@ http://www.expediaconnect.com/EQC/BR/2014/01
 
 If another version is used, a message indicating that only the latest version is supported is returned, along with error code 2010.
 
-Data set
-
 Bookings returned by the BR simulator are one of the following:
 
 * Expedia Collect bookings, Non-EVC.
@@ -802,8 +798,6 @@ The BR simulator will return error code 3202: invalid hotel ID.
 ## BC
 
 This section describes how the BC simulator is configured and what kind of scenario can be tested using it.
-
-Data set
 
 Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:
 * One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.
