@@ -572,22 +572,22 @@ If another version is used, a message indicating that only the latest version is
 Bookings returned by the BR simulator are one of the following:
 
 * Expedia Collect bookings, Non-EVC.
-* Expedia Collect bookings, EVC, either with payment card info or special request code “5”.
+* Expedia Collect bookings, EVC, either with payment card info or special request code "5".
 * Expedia Collect bookings, mix of EVC and Non-EVC.
-* Hotel Collect bookings, where the POS ID will be prefixed by “A-” and the rate plan ID will be suffixed by “A”. There is no prefix/suffix for room type ID.
+* Hotel Collect bookings, where the POS ID will be prefixed by "A-" and the rate plan ID will be suffixed by "A". There is no prefix/suffix for room type ID.
 * Mix of Expedia Collect and Hotel Collect bookings.
 * Bookings containing child age
 
-The simulator takes three Hotel IDs “111”, “211” and “311”.
+The simulator takes three Hotel IDs "111", "211" and "311".
 
 | Hotel ID | Product Type | POS ID Value | Room Type ID | Rate Plan ID |
 | -------- | ------------ | ------------ | ------------ | ------------ |
-| 111 | Expedia Collect only hotel | Random “Expedia” or “Hotels.com” | 222 | 333 for Expedia Collect bookings |
-| 211 | ETP hotel with flex products | Random “Expedia” or “Hotels.com” for Expedia Collect booking | Random “A-Expedia” or “A-Hotels.com” for Hotel Collect booking | 20000 | 21000 for Expedia Collect booking 21000A for Hotel Collect booking
-| 311 | Hotel Collect only hotel | Random “A-Expedia” or “A-Hotels.com” for Hotel Collect booking | 30000 | 31000A for Hotel Collect booking |
+| 111 | Expedia Collect only hotel | Random "Expedia" or "Hotels.com" | 222 | 333 for Expedia Collect bookings |
+| 211 | ETP hotel with flex products | Random "Expedia" or "Hotels.com" for Expedia Collect booking | Random "A-Expedia" or "A-Hotels.com" for Hotel Collect booking | 20000 | 21000 for Expedia Collect booking 21000A for Hotel Collect booking
+| 311 | Hotel Collect only hotel | Random "A-Expedia" or "A-Hotels.com" for Hotel Collect booking | 30000 | 31000A for Hotel Collect booking |
 
 
-Username can be any, but password must be in one of three fixed values “ECLPASS”, “ECL.DELAY” or “ECL.TIMEOUT”.
+Username can be any, but password must be in one of three fixed values "ECLPASS", "ECL.DELAY" or "ECL.TIMEOUT".
 
 The simulator will generate variable attribute values for the booking content based on the last digit of the booking ID value.
 
@@ -620,7 +620,7 @@ Country: US
 </BookingRetrievalRQ>
 ```
 
-Below are the sample scenarios for hotel ID “111” Expedia Collect hotel.
+Below are the sample scenarios for hotel ID "111" Expedia Collect hotel.
 
 **Retrieve pending bookings**
 Username/password only, no other parameters.
@@ -652,25 +652,25 @@ If specified in request, booking status will randomly be any of the specified va
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID for the last 2 days**
-Username/password, and a hotel ID=”111”  and number of days=2
+Username/password, and a hotel ID="111"  and number of days=2
 1 or more statuses can optionally be specified.
 The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID for the last 3 days**
-Username/password, and a hotel ID=”111”  and number of days=3
+Username/password, and a hotel ID="111"  and number of days=3
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.
 * A cancellation.
-* A modification contains a special request code “5” indicating booking is paid by EVC.
+* A modification contains a special request code "5" indicating booking is paid by EVC.
 * A reservation contains payment card information for EVC.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID for the last 4 days**
-Username/password, and a hotel ID=”111”  and number of days=4
+Username/password, and a hotel ID="111"  and number of days=4
 1 or more statuses can optionally be specified.
 The BR simulator will return 1 booking.
 * A cancellation.
@@ -679,7 +679,7 @@ If specified in request, booking status will randomly be any of the specified va
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID for the last 5 days**
-Username/password, and a hotel ID=”111”  and number of days=5
+Username/password, and a hotel ID="111"  and number of days=5
 1 or more statuses can optionally be specified.
 The BR simulator will return 2 bookings.
 * A modification.
@@ -689,7 +689,7 @@ If specified in request, booking status will randomly be any of the specified va
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID for the last 6 days**
-Username/password, and a hotel ID=”111”  and number of days=6
+Username/password, and a hotel ID="111"  and number of days=6
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.
 * A cancellation.
@@ -706,10 +706,10 @@ The BR simulator will return 103 bookings.
 * A cancellation.
 * A modification, non-EVC.
 * A reservation, non-EVC.
-* The rest of 100 bookings will contain either payment card information or special request code “5” or none of the two.
+* The rest of 100 bookings will contain either payment card information or special request code "5" or none of the two.
 
-For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5” randomly.
-Booking ID will be numbered from “1” to “103”, and the child count and child age will be populated based on the last digit of booking ID value.
+For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5" randomly.
+Booking ID will be numbered from "1" to "103", and the child count and child age will be populated based on the last digit of booking ID value.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 
@@ -721,19 +721,19 @@ The BR simulator will return a single booking with variable attribute values. Se
 
 **Adding hotel ID as input parameter to any of the scenarios above will produce the same result.**
 
-And below are the sample scenarios for hotel ID “211” ETP hotel and hotel ID “311” Hotel Collect only hotel.
+And below are the sample scenarios for hotel ID "211" ETP hotel and hotel ID "311" Hotel Collect only hotel.
 
 
 **Retrieve bookings by hotel ID – ETP hotel**
-Username/password, and hotel ID=“211”
+Username/password, and hotel ID="211"
 1 or more statuses can optionally be specified.
 BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.
-·         A reservation associated with EVC
-·         A modification associated with EVC
-·         A cancellation
-·         A reservation associated with POS ID prefixed by “A-“, Rate Plan ID=21000A, as well as customer CC.
-·         A modification associated with POS ID prefixed by “A-“, Rate Plan ID=21000A, as well as customer CC.
-·         A cancellation associated with POS ID prefixed by “A-“.
+* A reservation associated with EVC
+* A modification associated with EVC
+* A cancellation
+* A reservation associated with POS ID prefixed by "A-", Rate Plan ID=21000A, as well as customer CC.
+* A modification associated with POS ID prefixed by "A-", Rate Plan ID=21000A, as well as customer CC.
+* A cancellation associated with POS ID prefixed by "A-".
 
 Each booking will have unique booking ID.
 
@@ -742,13 +742,13 @@ If specified in request, booking status in RS will randomly be one of the specif
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by hotel ID –Hotel Collect only hotel**
-Username/password, and hotel ID=“311”
+Username/password, and hotel ID="311"
 1 or more statuses can optionally be specified.
 BR simulator to return 3 Hotel Collect bookings.
 
-* A reservation associated with POS ID prefixed by “A-“, Rate Plan ID=31000A, as well as customer CC.
-* A modification associated with POS ID prefixed by “A-“, Rate Plan ID=31000A, as well as customer CC.
-* A cancellation associated with POS ID prefixed by “A-“.
+* A reservation associated with POS ID prefixed by "A-", Rate Plan ID=31000A, as well as customer CC.
+* A modification associated with POS ID prefixed by "A-", Rate Plan ID=31000A, as well as customer CC.
+* A cancellation associated with POS ID prefixed by "A-".
 
 Each booking should have a unique booking ID.
 
@@ -757,12 +757,12 @@ If specified in the request, booking status in RS will randomly be one of the sp
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings**
-Username/password, and hotel ID=“211” or “311”, and number of days=30
+Username/password, and hotel ID="211" or "311", and number of days=30
 1 or more statuses can optionally be specified.
 BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.
-* Hotel ID=”111”, same as scenario #9 above. Return 103 Expedia Collect bookings.
-* Hotel ID=”211”, similar to scenario #9, but include some Hotel Collect bookings randomly.
-* Hotel ID=”311”, similar to scenario #9, but return 103 Hotel Collect bookings.
+* Hotel ID="111", same as scenario #9 above. Return 103 Expedia Collect bookings.
+* Hotel ID="211", similar to scenario #9, but include some Hotel Collect bookings randomly.
+* Hotel ID="311", similar to scenario #9, but return 103 Hotel Collect bookings.
 
 All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.
 
@@ -771,7 +771,7 @@ If specified in request, booking status will randomly be any of the specified va
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **Retrieve single booking by booking ID and hotel ID – Hotel Collect booking**
-Username/password, and hotel ID=”211” or “311”, and booking ID in the range of 1 to 103
+Username/password, and hotel ID="211" or "311", and booking ID in the range of 1 to 103
 BR simulator to return one of the three Hotel Collect bookings.
 * Hotel ID="111", same as no ID is passed.
 * Hotel ID="211", return a single Expedia Collect or Hotel Collect booking randomly.
@@ -791,7 +791,7 @@ Username and any password other than the provided values.
 The BR simulator will return error code 1001: invalid username/password.
 
 **Retrieve pending bookings with invalid hotel ID**
-Username/password and any hotel ID other than “111”, “211” or ‘311’.
+Username/password and any hotel ID other than "111", "211" or ‘311’.
 The BR simulator will return error code 3202: invalid hotel ID.
 
 
@@ -804,7 +804,7 @@ Like all simulators, the BC simulator returns predictable results. It also opera
 * One booking was modified 5 days prior to the date/time of the BC RQ. The bookingID is 000002.
 * One new booking was made 6 days prior to the date/time of the BC RQ. The bookingID is 000003.
 * One hundred new bookings were made 30 days prior to the date/time of the BC RQ. The bookingIDs are 000004 to 000103.
-* BookingID 104 generates a response that includes “HotelId and BookingId Mismatch” warning with code 10081.
+* BookingID 104 generates a response that includes "HotelId and BookingId Mismatch" warning with code 10081.
 * BookingID 105 generates and Invalid Departure Date warning with code 10101.
 * All bookings were made for a hotel with Expedia hotel ID 111.
  
