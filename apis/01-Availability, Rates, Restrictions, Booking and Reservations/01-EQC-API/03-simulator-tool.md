@@ -638,65 +638,65 @@ If specified in request, booking status in RS will randomly be one of the specif
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **2 Retrieve single booking by booking ID**  
-Username/password, and a booking ID in the range of 1 to 103
-The BR simulator may or may not return payment card information for EVC depending on the booking ID value.
-It may also return child ages depending on the booking ID value. See table above.
-Booking status will be confirmed.
+Username/password, and a booking ID in the range of 1 to 103  
+The BR simulator may or may not return payment card information for EVC depending on the booking ID value.  
+It may also return child ages depending on the booking ID value. See table above.  
+Booking status will be confirmed.  
 Booking confirmation number will be a random number between 1000000 and 10000000.
 
 **3 Retrieve bookings by hotel ID for the last 1 day**  
-Username/password, and a hotel ID="111"  and number of days=1
-1 or more statuses can optionally be specified.
-The BR simulator will return 10 bookings, all of them contain payment card information for EVC.
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+Username/password, and a hotel ID="111"  and number of days=1  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 10 bookings, all of them contain payment card information for EVC.  
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **4 Retrieve bookings by hotel ID for the last 2 days**  
-Username/password, and a hotel ID="111"  and number of days=2
-1 or more statuses can optionally be specified.
-The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+Username/password, and a hotel ID="111"  and number of days=2  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.  
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **5 Retrieve bookings by hotel ID for the last 3 days**  
-Username/password, and a hotel ID="111"  and number of days=3
-1 or more statuses can optionally be specified.
-The BR simulator will return 3 bookings.
+Username/password, and a hotel ID="111"  and number of days=3  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 3 bookings.  
 * A cancellation.
 * A modification contains a special request code "5" indicating booking is paid by EVC.
 * A reservation contains payment card information for EVC.
 
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **6 Retrieve bookings by hotel ID for the last 4 days**  
-Username/password, and a hotel ID="111"  and number of days=4
-1 or more statuses can optionally be specified.
-The BR simulator will return 1 booking.
+Username/password, and a hotel ID="111"  and number of days=4  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 1 booking.  
 * A cancellation.
 
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **7 Retrieve bookings by hotel ID for the last 5 days**  
-Username/password, and a hotel ID="111"  and number of days=5
-1 or more statuses can optionally be specified.
-The BR simulator will return 2 bookings.
+Username/password, and a hotel ID="111"  and number of days=5  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 2 bookings.  
 * A modification.
 * A cancellation.
 
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **8 Retrieve bookings by hotel ID for the last 6 days**  
-Username/password, and a hotel ID="111"  and number of days=6
-1 or more statuses can optionally be specified.
-The BR simulator will return 3 bookings.
+Username/password, and a hotel ID="111"  and number of days=6  
+1 or more statuses can optionally be specified.  
+The BR simulator will return 3 bookings.  
 * A cancellation.
 * A modification, non-EVC.
 * A reservation, non-EVC.
 
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
 **9 Retrieve bookings without a hotel ID for the last 30 days**  
@@ -706,17 +706,15 @@ The BR simulator will return 103 bookings.
 * A cancellation.
 * A modification, non-EVC.
 * A reservation, non-EVC.
-* The rest of 100 bookings will contain either payment card information or special request code "5" or none of the two.
+* The rest of 100 bookings will contain either payment card information or special request code "5" or none of the two.  
 
 For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5" randomly.  
 Booking ID will be numbered from "1" to "103", and the child count and child age will be populated based on the last digit of booking ID value.  
-
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **10-19 Detailed scenarios for retrieval by booking ID with value ending with 0 to 9**
-Username/password, and a booking ID ending with 0 to 9
+Username/password, and a booking ID ending with 0 to 9  
 The BR simulator will return a single booking with variable attribute values. See table below.
 
 **20 Adding hotel ID as input parameter to any of the scenarios above will produce the same result.**  
@@ -724,73 +722,60 @@ And below are the sample scenarios for hotel ID "211" ETP hotel and hotel ID "31
 
 
 **23 Retrieve bookings by hotel ID – ETP hotel**  
-Username/password, and hotel ID="211"
-1 or more statuses can optionally be specified.
-BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.
+Username/password, and hotel ID="211"  
+1 or more statuses can optionally be specified.  
+BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.  
 * A reservation associated with EVC
 * A modification associated with EVC
 * A cancellation
 * A reservation associated with POS ID prefixed by "A-", Rate Plan ID=21000A, as well as customer CC.
 * A modification associated with POS ID prefixed by "A-", Rate Plan ID=21000A, as well as customer CC.
 * A cancellation associated with POS ID prefixed by "A-".
-
-Each booking will have unique booking ID.
-
-If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.
-
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+Each booking will have unique booking ID.  
+If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **24 Retrieve bookings by hotel ID –Hotel Collect only hotel**  
-Username/password, and hotel ID="311"
-1 or more statuses can optionally be specified.
-BR simulator to return 3 Hotel Collect bookings.
-
+Username/password, and hotel ID="311"  
+1 or more statuses can optionally be specified.  
+BR simulator to return 3 Hotel Collect bookings.  
 * A reservation associated with POS ID prefixed by "A-", Rate Plan ID=31000A, as well as customer CC.
 * A modification associated with POS ID prefixed by "A-", Rate Plan ID=31000A, as well as customer CC.
 * A cancellation associated with POS ID prefixed by "A-".
-
-Each booking should have a unique booking ID.
-
-If specified in the request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.
-
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+Each booking should have a unique booking ID.  
+If specified in the request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **25 Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings**  
-Username/password, and hotel ID="211" or "311", and number of days=30
-1 or more statuses can optionally be specified.
-BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.
+Username/password, and hotel ID="211" or "311", and number of days=30  
+1 or more statuses can optionally be specified.  
+BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.  
 * Hotel ID="111", same as scenario #9 above. Return 103 Expedia Collect bookings.
 * Hotel ID="211", similar to scenario #9, but include some Hotel Collect bookings randomly.
 * Hotel ID="311", similar to scenario #9, but return 103 Hotel Collect bookings.
-
-All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.
-
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
+All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.  
+If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.  
+Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  
 
 **26 Retrieve single booking by booking ID and hotel ID – Hotel Collect booking**  
-Username/password, and hotel ID="211" or "311", and booking ID in the range of 1 to 103
-BR simulator to return one of the three Hotel Collect bookings.
+Username/password, and hotel ID="211" or "311", and booking ID in the range of 1 to 103  
+BR simulator to return one of the three Hotel Collect bookings.  
 * Hotel ID="111", same as no ID is passed.
 * Hotel ID="211", return a single Expedia Collect or Hotel Collect booking randomly.
 * Hotel ID="311", return a single Hotel Collect booking.
-
-The simulator will generate booking content based on hotel ID and booking ID as described above.
-
-Booking status will be confirmed.
-
+The simulator will generate booking content based on hotel ID and booking ID as described above.  
+Booking status will be confirmed.  
 Booking confirmation number will be a random number between 1000000 and 10000000.
 
  
 #### Erroneous scenarios
 
 **21 Retrieve pending bookings with invalid password**  
-Username and any password other than the provided values.
+Username and any password other than the provided values.  
 The BR simulator will return error code 1001: invalid username/password.
 
 **22 Retrieve pending bookings with invalid hotel ID**  
-Username/password and any hotel ID other than "111", "211" or "311".
+Username/password and any hotel ID other than "111", "211" or "311".  
 The BR simulator will return error code 3202: invalid hotel ID.
 
 
