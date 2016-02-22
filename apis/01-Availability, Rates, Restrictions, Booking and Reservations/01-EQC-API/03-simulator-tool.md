@@ -483,24 +483,20 @@ Sample successful request:
 ```
 The following successful scenarios are supported by the PARR simulator. The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR.
 
-| Request                                                              | Response                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                          | 
-|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
-| Request to retrieve Product information with no additional parameter | Will return all products listed above for the hotel the request is for                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                                                          | 
-| Request to retrieve Active Product information                       | Will return all active products                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                          | 
-| Request to retrieve Inactive Product information                     | Will return an empty success response (no inactive products)                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                          | 
-| Request for a room type ID only                                      | Will return all its rate plans as per the definitions above                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                          | 
-| Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans | Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified / only 31 days will be returned.                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                          | 
-| Request can also attempt to filter data set for response             | Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example / if only RoomAvailStatus + Inventory filters are used / only Room-level information is returned (no rate plans).                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                          | 
-| Request to obtain rate linkage information                           | Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ / will not return rate linkage info. Note that ParentId for derived Unless explicitely asked / PARR will not return all rate plan data available. If asked in request / will return additional rate plan data as defined in section 12.1.1: pricing model / occupants for base rate / deposit required / min and max LOS defaults | products will always be returned with new namespace / and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions / book and travel start and end dates / mobile only indicator / day of week booking restrictions / create and update date and times. | 
-| Request to obtain additional room type data                          | Unless explicitely asked / PARR will not return all room type data available. If specified in the request / it will return additional room type attributes as defined in section12.1.1: max occupancy and age category settings / rate verification thresholds /  smoking preferences / bed types                                                                                                                                           |                                                                                                                                                                                                                                                                                          | 
-| Request to obtain compensation data                                  | Unless explicitely asked / PARR will not return compensation data. If specified in the request / it will return compensation data for each rate plan.                                                                                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                          | 
-| Request to obtain cancellation policy data                           | Unless explicitely asked                                                                                                                                                                                                                                                                                                                                                                                                                    |  PARR will not return cancellation policy data. If specified in the request / it will return cancellation policy data for each rate plan.                                                                                                                                                | 
-| Request to obtain all PARR data available                            | All of the above attributes to get room type / rate plan and compensation data and rate linkage data can be specified in request / in order to get everything Expedia exposes for product configuration in one RQ/RS.                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                          | 
+| Request                                                              | Response                                              
+|----------------------------------------------------------------------|-----------------------------|
+| Request to retrieve Product information with no additional parameter | Will return all products listed above for the hotel the request is for | 
+| Request to retrieve Active Product information                       | Will return all active products |                     
+| Request to retrieve Inactive Product information                     | Will return an empty success response (no inactive products)                                                                                                                      | Request for a room type ID only                                      | Will return all its rate plans as per the definitions above |                                                                                                                        | Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans | Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. 
+| Request can also attempt to filter data set for response             | Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans). |                                        
+| Request to obtain rate linkage information                           | Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ / will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions / book and travel start and end dates / mobile only indicator / day of week booking restrictions / create and update date and times. | 
+| Request to obtain additional room type data                          | Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types |                        | Request to obtain compensation data                                  | Unless explicitey asked, PARR will not return compensation data. If specified in the request / it will return compensation data for each rate plan. |
+| Request to obtain cancellation policy data                           | Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             
+| Request to obtain all PARR data available                            | All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS. | 
 
 
-Please note:
-
--       The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR
+**Please note:**
+The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR
 
 ### Erroneous Update Scenarios – PARR
 ```xml
@@ -512,6 +508,7 @@ Please note:
         <ProductRetrieval/>
     </ParamSet>
 </ProductAvailRateRetrievalRQ>
+```
 
 EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request. Only one error should be returned in case multiple are bundled.
 
@@ -616,20 +613,13 @@ Input
 
 Output
 
-1
-
-Retrieve pending bookings
-
+##### 1 Retrieve pending bookings
 Username/password only, no other parameters.
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 3 bookings.
 
 ·         A cancellation.
-
 ·         A modification, non-EVC.
-
 ·         A new reservation, non-EVC.
 
 These are the basic Expedia Collect bookings.
@@ -638,196 +628,110 @@ If specified in request, booking status in RS will randomly be one of the specif
 
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-2
-
-Retrieve single booking by booking ID
-
+##### 2 Retrieve single booking by booking ID
 Username/password, and a booking ID in the range of 1 to 103
-
 The BR simulator may or may not return payment card information for EVC depending on the booking ID value.
-
 It may also return child ages depending on the booking ID value. See table above.
-
 Booking status will be confirmed.
-
 Booking confirmation number will be a random number between 1000000 and 10000000.
 
-3
-
-Retrieve bookings by hotel ID for the last 1 day
-
+##### 3 Retrieve bookings by hotel ID for the last 1 day
 Username/password, and a hotel ID=”111”  and number of days=1
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 10 bookings, all of them contain payment card information for EVC.
-
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-4
-
-Retrieve bookings by hotel ID for the last 2 days
-
+##### 4 Retrieve bookings by hotel ID for the last 2 days
 Username/password, and a hotel ID=”111”  and number of days=2
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.
-
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-5
-
-Retrieve bookings by hotel ID for the last 3 days
-
+##### 5 Retrieve bookings by hotel ID for the last 3 days
 Username/password, and a hotel ID=”111”  and number of days=3
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 3 bookings.
 
 ·         A cancellation.
-
 ·         A modification contains a special request code “5” indicating booking is paid by EVC.
-
 ·         A reservation contains payment card information for EVC.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-6
-
-Retrieve bookings by hotel ID for the last 4 days
-
+##### 6 Retrieve bookings by hotel ID for the last 4 days
 Username/password, and a hotel ID=”111”  and number of days=4
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 1 booking.
 
 ·         A cancellation.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-7
-
+##### 7
 Retrieve bookings by hotel ID for the last 5 days
-
 Username/password, and a hotel ID=”111”  and number of days=5
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 2 bookings.
 
-·          A modification.
-
+·         A modification.
 ·         A cancellation.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-8
-
-Retrieve bookings by hotel ID for the last 6 days
-
+##### 8 Retrieve bookings by hotel ID for the last 6 days
 Username/password, and a hotel ID=”111”  and number of days=6
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 3 bookings.
 
 ·         A cancellation.
-
 ·         A modification, non-EVC.
-
 ·         A reservation, non-EVC.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-9
-
-Retrieve bookings without a hotel ID for the last 30 days
-
+##### 9 Retrieve bookings without a hotel ID for the last 30 days
 Username/password, and number of days=30
-
 1 or more statuses can optionally be specified.
-
 The BR simulator will return 103 bookings.
 
 ·         A cancellation.
-
 ·         A modification, non-EVC.
-
 ·         A reservation, non-EVC.
-
 ·         The rest of 100 bookings will contain either payment card information or special request code “5” or none of the two.
 
 For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5” randomly.
-
 Booking ID will be numbered from “1” to “103”, and the child count and child age will be populated based on the last digit of booking ID value.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-10-19
-
-Detailed scenarios for retrieval by booking ID with value ending with 0 to 9
-
+##### 10-19 Detailed scenarios for retrieval by booking ID with value ending with 0 to 9
 Username/password, and a booking ID ending with 0 to 9
-
 The BR simulator will return a single booking with variable attribute values. See table below.
 
-20
-
-Adding hotel ID as input parameter to any of the scenarios above will produce the same result.
+##### 20  Adding hotel ID as input parameter to any of the scenarios above will produce the same result.
 
  
-
- 
-
- 
-
 And below are the sample scenarios for hotel ID “211” ETP hotel and hotel ID “311” Hotel Collect only hotel.
 
-No.
 
-Scenario
-
-Input
-
-Output
-
-23
-
-Retrieve bookings by hotel ID – ETP hotel
-
+##### 23 Retrieve bookings by hotel ID – ETP hotel
 Username/password, and hotel ID=“211”
-
 1 or more statuses can optionally be specified.
-
 BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.
 
 ·         A reservation associated with EVC
-
 ·         A modification associated with EVC
-
 ·         A cancellation
-
 ·         A reservation associated with POS ID prefixed by “A-“, Rate Plan ID=21000A, as well as customer CC.
-
 ·         A modification associated with POS ID prefixed by “A-“, Rate Plan ID=21000A, as well as customer CC.
-
 ·         A cancellation associated with POS ID prefixed by “A-“.
 
 Each booking will have unique booking ID.
@@ -836,20 +740,13 @@ If specified in request, booking status in RS will randomly be one of the specif
 
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-24
-
-Retrieve bookings by hotel ID –Hotel Collect only hotel
-
+##### 24 Retrieve bookings by hotel ID –Hotel Collect only hotel
 Username/password, and hotel ID=“311”
-
 1 or more statuses can optionally be specified.
-
 BR simulator to return 3 Hotel Collect bookings.
 
 ·         A reservation associated with POS ID prefixed by “A-“, Rate Plan ID=31000A, as well as customer CC.
-
 ·         A modification associated with POS ID prefixed by “A-“, Rate Plan ID=31000A, as well as customer CC.
-
 ·         A cancellation associated with POS ID prefixed by “A-“.
 
 Each booking should have unique booking ID.
@@ -858,21 +755,14 @@ If specified in request, booking status in RS will randomly be one of the specif
 
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-25
-
-Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings
-
+##### 25 Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings
 Username/password, and hotel ID=“211” or “311”, and number of days=30
-
 1 or more statuses can optionally be specified.
-
 BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.
 
-·         Hotel ID=”111”, same as scenario #9 above. Return 103 Expedia Collect bookings.
-
-·         Hotel ID=”211”, similar to scenario #9, but include some Hotel Collect bookings randomly.
-
-·         Hotel ID=”311”, similar to scenario #9, but return 103 Hotel Collect bookings.
+*         Hotel ID=”111”, same as scenario #9 above. Return 103 Expedia Collect bookings.
+*         Hotel ID=”211”, similar to scenario #9, but include some Hotel Collect bookings randomly.
+*         Hotel ID=”311”, similar to scenario #9, but return 103 Hotel Collect bookings.
 
 All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.
 
@@ -880,18 +770,12 @@ If specified in request, booking status will randomly be any of the specified va
 
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
 
-26
-
-Retrieve single booking by booking ID and hotel ID – Hotel Collect booking
-
+##### 26 Retrieve single booking by booking ID and hotel ID – Hotel Collect booking
 Username/password, and hotel ID=”211” or “311”, and booking ID in the range of 1 to 103
-
 BR simulator to return one of the three Hotel Collect bookings.
 
 ·         Hotel ID=”111”, same as no ID is passed.
-
 ·         Hotel ID=”211”, return a single Expedia Collect or Hotel Collect booking randomly.
-
 ·         Hotel ID=”311”, return a single Hotel Collect booking.
 
 The simulator will generate booking content based on hotel ID and booking ID as described above.
@@ -902,35 +786,18 @@ Booking confirmation number will be a random number between 1000000 and 10000000
 
  
 
-Erroneous scenarios
+#### Erroneous scenarios
 
-No.
-
-Scenario
-
-Input
-
-Output
-
-21
-
-Retrieve pending bookings with invalid password
-
+##### 21 Retrieve pending bookings with invalid password
 Username and any password other than the provided values.
-
 The BR simulator will return error code 1001: invalid username/password.
 
-22
-
-Retrieve pending bookings with invalid hotel ID
-
+##### 22 Retrieve pending bookings with invalid hotel ID
 Username/password and any hotel ID other than “111”, “211” or ‘311’.
-
 The BR simulator will return error code 3202: invalid hotel ID.
 
- 
 
-BC
+## BC
 
 This section describes how the BC simulator is configured and what kind of scenario can be tested using it.
 
@@ -938,87 +805,66 @@ Data set
 
 Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:
 
-One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.
-One booking was modified 5 days prior to the date/time of the BC RQ. The bookingID is 000002.
-One new booking was made 6 days prior to the date/time of the BC RQ. The bookingID is 000003.
-One hundred new bookings were made 30 days prior to the date/time of the BC RQ. The bookingIDs are 000004 to 000103.
-BookingID 104 generates a response that includes “HotelId and BookingId Mismatch” warning with code 10081.
-BookingID 105 generates and Invalid Departure Date warning with code 10101.
-All bookings were made for a hotel with Expedia hotel ID 111.
+* One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.
+* One booking was modified 5 days prior to the date/time of the BC RQ. The bookingID is 000002.
+* One new booking was made 6 days prior to the date/time of the BC RQ. The bookingID is 000003.
+* One hundred new bookings were made 30 days prior to the date/time of the BC RQ. The bookingIDs are 000004 to 000103.
+* BookingID 104 generates a response that includes “HotelId and BookingId Mismatch” warning with code 10081.
+* BookingID 105 generates and Invalid Departure Date warning with code 10101.
+* All bookings were made for a hotel with Expedia hotel ID 111.
  
 
-Successful Update Scenarios
-
-Sample successful BC request:
-
+### Successful Update Scenarios
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
-
 <BookingConfirmRQxmlns="http://www.expediaconnect.com/EQC/BC/2007/09">
-
     <Authenticationusername="eqcxnet"password="ECLPASS"/>
-
     <Hotelid="111"/>
-
     <BookingConfirmNumbers>
-
         <BookingConfirmNumberbookingType="Book"bookingID="000003"confirmNumber="3322334455"confirmTime="2014-03-20T10:48:25Z"/>
-
     </BookingConfirmNumbers>
-
 </BookingConfirmRQ>
+```
 
 EQC partners can use the simulator to test different scenarios for booking confirmation updates. In order to get a successful response from the simulator, the request message must be well formed as defined by the API and contain the appropriate attribute values enumerated above.
 
-Successful Update with Warning Scenario
+### Successful Update with Warning Scenario
 
 The simulator will return warning 10080 in the response if there is an invalid bookingID (not between 000001 and 000103) in the request. It will return warning 10100 if the bookingType and bookingID do not match in the request.
 
-Erroneous Update Scenarios
+### Erroneous Update Scenarios
 
 EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request.
 
-Request
-
-Response
-
-Invalid password
-
+##### Invalid password
 Response with error code 1001
 
-Invalid XML
-
+##### Invalid XML
 Response with error code 2002
 
-Old or invalid namespace
-
+##### Old or invalid namespace
 Response with error code 2010
 
-Invalid XML with invalid structure (XSD validation)
-
+##### Invalid XML with invalid structure (XSD validation)
 Response with error code 3010
 
-More than 10 ConfirmationNumber elements
-
+##### More than 10 ConfirmationNumber elements
 Response with error code 3301
 
-Invalid hotel ID
-
+##### Invalid hotel ID
 Response with error code 3202
 
-TROUBLESHOOTING
- If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:
+### TROUBLESHOOTING
+If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:
 
  BR: https://simulator.expediaquickconnect.com/connect/br
-
  BC: https://simulator.expediaquickconnect.com/connect/bc
-
  AR: https://simulator.expediaquickconnect.com/connect/ar
-
  PARR: https://simulator.expediaquickconnect.com/connect/parr
 
   If the simulator is up and running, the following message will be displayed: "Expedia QuickConnect® simulator is ready and waiting for requests".
 
  If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please refer first to the Expedia QuickConnect® discussion board at: https://expediaquickconnect.com/forum/eqc-forum
 
-DISCLAIMER
+#### DISCLAIMER
 The Expedia QuickConnect® Simulator is not a certification tool and therefore being able to execute all proposed test cases only ensures conformity to the message transport protocol and requisite message formatting. This tool will not validate that a supplier is either (a) using the proper codes as configured in our live system or (b) respecting all of Expedia-specific business validations.
