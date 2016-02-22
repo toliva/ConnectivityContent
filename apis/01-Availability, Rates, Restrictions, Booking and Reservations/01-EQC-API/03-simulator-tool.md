@@ -847,7 +847,7 @@ The simulator will return warning 10080 in the response if there is an invalid b
 
 EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request.
 
-**Invalid password**
+Invalid password
 Response with error code 1001
 
 **Invalid XML**
