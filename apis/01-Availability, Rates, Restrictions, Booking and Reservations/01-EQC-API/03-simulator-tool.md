@@ -483,16 +483,38 @@ Sample successful request:
 ```
 The following successful scenarios are supported by the PARR simulator. The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR.
 
-| Request                                                              | Response                                              
-|----------------------------------------------------------------------|-----------------------------|
-| Request to retrieve Product information with no additional parameter | Will return all products listed above for the hotel the request is for | 
-| Request to retrieve Active Product information                       | Will return all active products |                     
-| Request to retrieve Inactive Product information                     | Will return an empty success response (no inactive products)                                                                                                                      | Request for a room type ID only                                      | Will return all its rate plans as per the definitions above |                                                                                                                        | Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans | Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. 
-| Request can also attempt to filter data set for response             | Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans). |                                        
-| Request to obtain rate linkage information                           | Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ / will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions / book and travel start and end dates / mobile only indicator / day of week booking restrictions / create and update date and times. | 
-| Request to obtain additional room type data                          | Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types |                        | Request to obtain compensation data                                  | Unless explicitey asked, PARR will not return compensation data. If specified in the request / it will return compensation data for each rate plan. |
-| Request to obtain cancellation policy data                           | Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             
-| Request to obtain all PARR data available                            | All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS. | 
+**Request to retrieve Product information with no additional parameter**
+Will return all products listed above for the hotel the request is for | 
+
+**Request to retrieve Active Product information**
+Will return all active products |                     
+
+**Request to retrieve Inactive Product information**
+Will return an empty success response (no inactive products)                                                                   
+
+**Request for a room type ID only**
+Will return all its rate plans as per the definitions above |                                                                  
+
+**Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans**
+Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. 
+
+**Request can also attempt to filter data set for response**
+Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans).
+
+**Request to obtain rate linkage information**
+Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ, will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions,book and travel start and end dates, mobile only indicator, day of week booking restrictions, create and update date and times.
+
+**Request to obtain additional room type data**
+Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types
+
+**Request to obtain compensation data**
+Unless explicitey asked, PARR will not return compensation data. If specified in the request, it will return compensation data for each rate plan.
+
+**Request to obtain cancellation policy data**
+Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             
+
+**Request to obtain all PARR data available**
+All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS.
 
 
 **Please note:**
