@@ -379,12 +379,9 @@ Hotel 611 product configuration: Per day pricing based on day of arrival and LOS
 ```
 
 ### Successful Update Scenarios - AR
-
-Sample request for a successful AR update scenario:
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<AvailRateUpdateRQxmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-    <Authenticationusername="testuser"password="ECLPASS"/>
+<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
+    <Authentication username="testuser" password="ECLPASS"/>
     <Hotelid="311"/>
     <AvailRateUpdate>
         <DateRangefrom="2014-10-15"to="2014-10-20"/>
@@ -634,9 +631,9 @@ Username/password only, no other parameters.
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.
 
-·         A cancellation.
-·         A modification, non-EVC.
-·         A new reservation, non-EVC.
+* A cancellation.
+* A modification, non-EVC.
+* A new reservation, non-EVC.
 
 These are the basic Expedia Collect bookings.
 
@@ -669,10 +666,9 @@ Booking confirmation number will be a random number between 1000000 and 10000000
 Username/password, and a hotel ID=”111”  and number of days=3
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.
-
-·         A cancellation.
-·         A modification contains a special request code “5” indicating booking is paid by EVC.
-·         A reservation contains payment card information for EVC.
+* A cancellation.
+* A modification contains a special request code “5” indicating booking is paid by EVC.
+* A reservation contains payment card information for EVC.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
@@ -682,7 +678,7 @@ Username/password, and a hotel ID=”111”  and number of days=4
 1 or more statuses can optionally be specified.
 The BR simulator will return 1 booking.
 
-·         A cancellation.
+* A cancellation.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
@@ -692,8 +688,8 @@ Username/password, and a hotel ID=”111”  and number of days=5
 1 or more statuses can optionally be specified.
 The BR simulator will return 2 bookings.
 
-·         A modification.
-·         A cancellation.
+* A modification.
+* A cancellation.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
@@ -703,9 +699,9 @@ Username/password, and a hotel ID=”111”  and number of days=6
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.
 
-·         A cancellation.
-·         A modification, non-EVC.
-·         A reservation, non-EVC.
+* A cancellation.
+* A modification, non-EVC.
+* A reservation, non-EVC.
 
 If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
 Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.
@@ -715,10 +711,10 @@ Username/password, and number of days=30
 1 or more statuses can optionally be specified.
 The BR simulator will return 103 bookings.
 
-·         A cancellation.
-·         A modification, non-EVC.
-·         A reservation, non-EVC.
-·         The rest of 100 bookings will contain either payment card information or special request code “5” or none of the two.
+* A cancellation.
+* A modification, non-EVC.
+* A reservation, non-EVC.
+* The rest of 100 bookings will contain either payment card information or special request code “5” or none of the two.
 
 For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5” randomly.
 Booking ID will be numbered from “1” to “103”, and the child count and child age will be populated based on the last digit of booking ID value.
