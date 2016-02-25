@@ -12,7 +12,7 @@ For an example request/response, you can send a `hotelId=test` query parameter. 
 curl -u 'username:password' 'https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test&clientId=YourOrganization'
 ```
 
-The response contains a JSON list of message objects.
+The response contains a JSON list of message objects:
 
 ```
 {
