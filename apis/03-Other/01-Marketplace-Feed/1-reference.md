@@ -298,7 +298,8 @@ The `action` property can have one of the following values:
 {
   "events": [
     { "messageId": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw", "action": "viewed" },
-    { "messageId": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94", "action": "clickthrough" },
+    { "messageId": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94", "action": "clickthrough", "timestamp": "2015-11-11T01:00:00.000Z" },
+    { "messageId": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94", "action": "actioned", "userId": "a1b2c3d4" },
     { "messageId": "1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE", "action": "dismissed" }
   ]
 }
