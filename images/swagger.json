@@ -914,6 +914,10 @@
           "type": "string",
           "description": "Name describing the property. Max. 255 characters"
         },
+        "partnerCode": {
+          "type": "string",
+          "description": "Partner property code/identifier that helps identifying the property uniquely within the Expedia system."
+        },
         "status": {
           "type": "string",
           "description": "Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion"

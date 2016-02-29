@@ -25,6 +25,7 @@ The Product API will sort all properties assigned to this account by resourceId,
     {
       "resourceId": 2268142,
       "name": "Eslington Villa",
+	  "parnerCode": "ABC123",
       "status": "Active",
       "currency": "GBP",
       "address": {
@@ -51,6 +52,7 @@ The Product API will sort all properties assigned to this account by resourceId,
     }, {
       "resourceId": 2268141,
       "name": "Hotel Downtown",
+	  "parnerCode": "DEF456",
       "status": "Active",
       "currency": "CAD",
       "address": {
@@ -78,6 +80,7 @@ The Product API will sort all properties assigned to this account by resourceId,
     }, {
       "resourceId": 2268140,
       "name": "Villa by the Sea",
+	  "parnerCode": "GHI789",
       "status": "Active",
       "currency": "EUR",
       "address": {
@@ -127,6 +130,7 @@ Response:
   "entity": {
     "resourceId": 2268140,
     "name": "Eslington Villa",
+    "parnerCode": "ABC123",
     "status": "Active",
     "currency": "GBP",
     "address": {
