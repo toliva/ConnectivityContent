@@ -916,7 +916,7 @@
         },
         "partnerCode": {
           "type": "string",
-          "description": "Partner property code/identifier that helps identifying the property uniquely within the Expedia system."
+          "description": "Partner property code/identifier. Max 64 characters. Optional field returned for connected properties. This code allows partner to uniquely identify the property in its system."
         },
         "status": {
           "type": "string",
