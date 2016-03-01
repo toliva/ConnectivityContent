@@ -29,6 +29,7 @@ The result will be an array of properties assigned to your account. For example:
         {
             "resourceId": 12933873,
             "name": "EQC Hotel 84",
+			"partnerCode": "EQC123456",
             "status": "Active",
             "currency": "USD",
             "address": {
