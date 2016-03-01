@@ -219,7 +219,7 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 resourceId | integer | Expedia property ID.
 name | string | Name describing the property. Max. 255 characters.
-partnerCode | string | Partner property code/identifier that helps identifying the property uniquely within the Expedia system.
+partnerCode | string | Partner property code/identifier. Max 64 characters. Optional field returned for connected properties. This code allows partner to uniquely identify the property in its system.
 status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.
 currency | string | Currency code applicable to all amounts found in any resources available as part of the EPS Product API. Format: [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm). E.g.: "USD" (for US dollars), "CAD" (for Canadian dollars) etc.
 address | [PropertyAddress](#/definitions/PropertyAddressDTO) | Property address details.
