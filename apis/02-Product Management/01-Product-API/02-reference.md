@@ -219,8 +219,9 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 resourceId | integer | Expedia property ID.
 name | string | Name describing the property. Max. 255 characters.
+partnerCode | string | Partner property code/identifier. Max 64 characters. Optional field returned for connected properties. This code allows partner to uniquely identify the property in its system.
 status | string | Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.
-currency | string | Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.
+currency | string | Currency code applicable to all amounts found in any resources available as part of the EPS Product API. Format: [ISO 4217](http://www.iso.org/iso/home/standards/currency_codes.htm). E.g.: "USD" (for US dollars), "CAD" (for Canadian dollars) etc.
 address | [PropertyAddress](#/definitions/PropertyAddressDTO) | Property address details.
 distributionModels | Array[Enum] | Distribution model(s) under which the property is configured to work with Expedia. Possible values are: ExpediaCollect, HotelCollect. Properties that opted in the ExpediaTravelerPreference program will have both.
 rateAcquisitionType | Enum | Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs. Possible value s are NetRate (rate net of Expedia’s compensation) and SellLAR (rate inclusive of compensation).
@@ -229,8 +230,8 @@ pricingModel | Enum | Configuration of the property when it comes to pricing roo
 baseAllocationEnabled | boolean | Boolean to indicate whether this property has a base allocation contract with Expedia.
 minLOSThreshold | integer | This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.
 cancellationTime | string | Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration.
-timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.
-reservationCutOff | [CutOff](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).
+timezone | string | Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time. E.g.: "(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London"
+reservationCutOff | [CutOff](#/definitions/CutOffDTO) | Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00 AM on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5:00 AM (based on property timezone).
 
 <a name="/definitions/CutOffDTO"></a>
 #### CutOff
