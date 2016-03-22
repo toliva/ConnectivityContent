@@ -1339,46 +1339,103 @@ Status Code | Description | Response Model
 
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
+There are 2 possible enums. One applies to all rate plans of type Standalone and Package, the other to rate plans of type Corporate.
 
-| valueAddInclusions |
-| ------------------ |
-| Free Internet |
-| Free Parking |
+| valueAddInclusions for Standalone and Package rate plans |
+| -------------------------------------------------------- |
 | Free Breakfast |
-| Free Wireless Internet |
-| Breakfast Buffet |
-| Free High-Speed Internet |
 | Continental Breakfast |
-| Full Breakfast |
-| Half Board |
-| Breakfast for 2 |
-| All-Inclusive |
-| Full Kitchen |
-| Free Airport Shuttle |
-| Full Board |
-| Free Dinner |
-| English Breakfast |
-| Resort Credit Included |
-| Spa Credit |
-| Free Valet Parking |
-| Welcome Gift Upon Arrival |
-| Free welcome drink |
-| Food/Beverage Credit |
-| Spa access |
-| All Meals |
-| Drinks and hors doeuvres |
 | Continental Breakfast for 2 |
+| Breakfast Buffet  |
+| Full Breakfast |
+| English Breakfast |
+| Breakfast for 1 |
+| Breakfast for 2 |
+| Free Internet |
+| Free Wireless Internet |
+| Free High-Speed Internet |
+| Free Parking |
+| Free welcome drink |
+| Drinks and hors doeuvres |
+| All Meals |
+| Half Board |
+| Full Board |
 | Free Lunch |
-| Free Room Upgrade |
+| Free Dinner |
+| All-Inclusive |
+| Food/Beverage Credit |
 | Free Airport Parking |
-| Golf Credit |
+| Free Valet Parking |
+| Free Airport Shuttle  |
+| Free Room Upgrade |
+| Resort Credit Included  |
+| Welcome Gift Upon Arrival |
+| Spa Credit  |
+| Golf Credit  |
+| VIP Line Access to Nightclub(s) |
+| 2-for-1 Buffet |
+| Free Ski Lift Ticket & Rental |
+| Full Kitchen |
+| Complimentary green fees |
+| Free one-way airport transfer |
+| Free return airport transfer |
+| Free water park passes |
+| 2 Game Drives per night |
+| 1 Game Drive per night |
+| Early Check-in |
+| Late Check-out |
+| Free massage included |
+| Free minibar |
+| Ski pass included |
 | Disney Park tickets |
+| Spa access |
+| Slot Play |
 | Casino Credit |
 | Match Play |
-| 2-for-1 Buffet |
-| VIP Line Access to Nightclub(s) |
-| Slot Play |
-| Free Ski Lift Ticket & Rental |
+
+| valueAddInclusions for Corporate rate plans |
+| ------------------------------------------- |
+| Same-Day Cancellation |
+| Eligibility for Hotel Loy Points |
+| Free High-Speed Internet  |
+| Free Breakfast |
+| Continental Breakfast |
+| Full Breakfast |
+| Breakfast Buffet |
+| Free Fitness Center Access |
+| Free Business Center Access |
+| Free Airport Shuttle |
+| Free Hotel Parking |
+| Free Valet Parking |
+| Welcome Drink Upon Arrival |
+| Free Local Calls |
+| Complimentary Wine Reception |
+| Free Wireless Internet  |
+| Free Local Shuttle |
+| Free Local Newspaper |
+| Includes One Free In-Room Movie |
+| Room Upgrade Upon Availability |
+| Guaranteed Room Upgrade |
+| Early Check-In Privilege |
+| Late Check-Out Privilege |
+| Free Bottled Water |
+| City Tax Included |
+| Free Train Shuttle |
+| Free Breakfast for 1 Adult |
+| Upgrade to Club Floor |
+| Upgrade to Business Floor |
+| Complimentary Minibar Items |
+| Free Dinner |
+| Free Dinner for 1 Adult |
+| Full Kitchen |
+| Incl. 1000 CP Reward Pts. |
+| Incl. 500 CP Reward Pts. |
+| Incl. 5000 CP Reward Pts. |
+| Incl. 4000 CP Reward Pts. |
+| Evening Manager's Reception |
+| Egencia Exclusive Rate |
+| Food-and-Beverage Discount |
+
 
 <a name="/definitions/perStayFeeEnum"></a>
 ### perStayFeeEnum
