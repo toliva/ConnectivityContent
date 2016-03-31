@@ -437,22 +437,23 @@ Status Code | Description | Response Model
 <a name="/definitions/RoomTypeDTO"></a>
 ### RoomType Resource Definition
 
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.
-partnerCode | string | Partner room type code/identifier. Max. 40 characters. Required in create or modify request, and has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.
-name | [RoomTypeName](#/definitions/RoomTypeNameDTO) | Name object. Collection of elements/attributes related the name of a room.
-status | enum | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
-maxOccupants | integer | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
-occupancyByAge | Array[[OccupancyByAge](#/definitions/OccupancyByAgeDTO)] | Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
-bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
-smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
-roomSize | [RoomSize](#/definitions/RoomSizeDTO) | Optional. Used to define room size. When used, both size in square feet and in square meters must be specified.
-views | Array[[viewEnum](#/definitions/viewEnum)] | Optional. Used to define view(s) from the room. There can be up to 2 different views defined per room type.
-wheelchairAccessibility | boolean | Optional. Used to indicate whether the room is configured to be wheelchair accessible or not.
+Property Name | Type | Required for POST | Description
+------------- | ---- | ------------------ | -----------
+resourceId | integer | No | Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.
+partnerCode | string | Yes | Partner room type code/identifier. Max. 40 characters. Has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.
+name | [RoomTypeName](#/definitions/RoomTypeNameDTO) | Yes | Name object. Collection of elements/attributes related the name of a room.
+status | enum | No | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
+maxOccupants | integer | Yes | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
+occupancyByAge | Array[[OccupancyByAge](#/definitions/OccupancyByAgeDTO)] | Yes | Array of occupancies by age. A room is required to have at least 1 age category: adult. Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
+bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Yes | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
+smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Yes | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
+roomSize | [RoomSize](#/definitions/RoomSizeDTO) | No | Used to define room size. When used, both size in square feet and in square meters must be specified.
+views | Array[[viewEnum](#/definitions/viewEnum)] | No | Used to define view(s) from the room. There can be up to 2 different views defined per room type.
+wheelchairAccessibility | boolean | No | Used to indicate whether the room is configured to be wheelchair accessible or not.
 
 <a name="/definitions/RoomTypeNameDTO"></a>
 #### RoomTypeName
+More information can be found on room type names in the "FAQ and Guides" section, under "Understanding Expedia's Logic Around Room Names" section.
 
 Property Name | Type | Description
 ------------- | ---- | -----------
@@ -461,52 +462,53 @@ value | string | For create and modify requests, optional and ignored if name at
 
 <a name="/definitions/RnsAttributesDTO"></a>
 #### RoomNameAttributes
+More information can be found on room type names in the "FAQ and Guides" section, under "Understanding Expedia's Logic Around Room Names" section.
 
-Property Name | Type | Description
-------------- | ---- | -----------
-typeOfRoom | [typeOfRoomEnum](#/definitions/typeOfRoomEnum) | Attribute that determines the type of room, which is used to compose the name
-roomClass | [roomClassEnum](#/definitions/roomClassEnum) | Attribute that described the class of room, which is used to compose the name
-includeBedType | boolean | Attribute that determines whether or not to include bed type on the room name
-bedroomDetails | [bedroomDetailsEnum](#/definitions/bedroomDetailsEnum) | Attribute that describes details of the bedroom used to compose the name of the room
-includeSmokingPref | boolean | Attribute that determines if room has smoking preference
-accessibility | boolean | Attribute that determines if room is considered wheelchair accessible
-view | [viewEnum](#/definitions/viewEnum) | Attribute that gives additional information about the view of the room
-featuredAmenity | [featuredAmenityEnum](#/definitions/featuredAmenityEnum) | Attribute used to highlight a feature of the room on its name
-area | [areaEnum](#/definitions/areaEnum) | Attributed used to highlight the location of the room
-customLabel | string | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+typeOfRoom | [typeOfRoomEnum](#/definitions/typeOfRoomEnum) | Yes | Attribute that determines the type of room, which is used to compose the name
+roomClass | [roomClassEnum](#/definitions/roomClassEnum) | No | Attribute that described the class of room, which is used to compose the name
+includeBedType | boolean | No | Attribute that determines whether or not to include bed type on the room name
+bedroomDetails | [bedroomDetailsEnum](#/definitions/bedroomDetailsEnum) | No | Attribute that describes details of the bedroom used to compose the name of the room
+includeSmokingPref | boolean | No | Attribute that determines if room has smoking preference
+accessibility | boolean | No | Attribute that determines if room is considered wheelchair accessible
+view | [viewEnum](#/definitions/viewEnum) | No | Attribute that gives additional information about the view of the room
+featuredAmenity | [featuredAmenityEnum](#/definitions/featuredAmenityEnum) | No | Attribute used to highlight a feature of the room on its name
+area | [areaEnum](#/definitions/areaEnum) | No | Attributed used to highlight the location of the room
+customLabel | string | No | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged. Max 37 characters
 
 <a name="/definitions/BedTypeDTO"></a>
 #### BedType
 
-Property Name | Type | Description
-------------- | ---- | -----------
-id | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | The code identifying the bed type. 
-name | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | Name identifying the bed type. This is provided as informational data, and will be ignored during create or update operations.
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+id | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | Yes | The code identifying the bed type. 
+name | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | No | Name identifying the bed type. This is provided as informational data, and will be ignored during create or update operations.
 
 <a name="/definitions/OccupancyByAgeDTO"></a>
 #### OccupancyByAge
 
-Property Name | Type | Description
-------------- | ---- | -----------
-ageCategory | enum | The age category whose occupancy is being defined. Possible values are Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
-minAge | integer | Minimum age allowed for the category. Min 0, max 99
-maxOccupants | integer | Max number of occupants on the category. Min 0, max 20
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+ageCategory | enum | Yes | The age category whose occupancy is being defined. Possible values are Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
+minAge | integer | Yes | Minimum age allowed for the category. Min 0, max 99
+maxOccupants | integer | Yes | Max number of occupants on the category. Min 0, max 20
 
 <a name="/definitions/SmokingPreferenceDTO"></a>
 #### SmokingPreference
 
-Property Name | Type | Description
-------------- | ---- | -----------
-id | enum | Id identifying the smoking preference. Possible values are 2.1 (Non-Smoking) and 2.2 (Smoking).
-name | string | Name identifying the smoking preference.
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+id | enum | Yes | Id identifying the smoking preference. Possible values are 2.1 (Non-Smoking) and 2.2 (Smoking).
+name | string | No | Name identifying the smoking preference.  This is provided as informational data, and will be ignored during create or update operations.
 
 <a name="/definitions/RoomSizeDTO"></a>
 #### RoomSize
 
-Property Name | Type | Description
-------------- | ---- | -----------
-squareFeet | integer | Room size in square feet.
-squareMeters | integer | Room size in square meters.
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+squareFeet | integer | Yes | Room size in square feet.
+squareMeters | integer | Yes | Room size in square meters.
 
 ## Room Type Amenities
 Amenities of a given room type can be accessed as a sub resource of a specific room type any time after it was created. By default, for newly created room types, there will be no amenities. The only operations available are GET to read amenities, and PUT to set amenities (as a full overlay, all currently supported amenities have to be passed in a PUT).
