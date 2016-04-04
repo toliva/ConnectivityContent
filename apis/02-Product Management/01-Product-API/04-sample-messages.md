@@ -160,7 +160,7 @@ Response:
 ```
 
 ##	Room Type Resource Examples
-The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to hotels, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.
+The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to properties, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.
 
 Against the room type resource, partners can retrieve a list of room types or a specific room type. Partners can also create new room types (one at a time), and edit an existing room type (one at a time, full overlay operation).
 
@@ -452,7 +452,7 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
 Accept: application/json
 Content-Type: application/json
 ```
@@ -557,7 +557,7 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
 Accept: application/json
 Content-Type: application/json
 ```
@@ -789,7 +789,7 @@ The response will not include bedroom details, view, featured amenity and area a
 Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.
 
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
 Accept: application/json
 Content-Type: application/json
 ```
@@ -887,7 +887,7 @@ Leveraging the Create example from above, predefined name is modified to a new r
 
 The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
 Accept: application/json
 Content-Type: application/json
 ```
@@ -896,7 +896,7 @@ Content-Type: application/json
   "resourceId": 201171339,
   "partnerCode": "JS002",
   "name": {
-    "roomNameAttributes": {
+    "attributes": {
       "typeOfRoom": "Suite",
       "roomClass": "Executive",
       "bedroomDetails": "1 Bedroom",
