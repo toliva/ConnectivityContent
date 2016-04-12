@@ -1,0 +1,46 @@
+<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <h1>EQC Login</h1>
+    <p class="announce">
+        Please enter your Expedia Quick Connect (EQC) login details below.
+    </p>
+    <form class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
+        <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
+        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password"
+                                                                                placeholder=""/></div>
+        <div id="result" class="formline center"></div>
+        <div class="formline"><input class="submit" type="submit" value="Login"/></div>
+    </form>
+</div>
+<!--[if lte IE 9]>
+<script src="/js/base64.js"></script>
+<!--<![endif]-->
+<script>
+    function login(form) {
+        var username = $(form).find("#username").val();
+        var password = $(form).find("#password").val();
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/v1/properties/login",
+            xhrFields: {
+                withCredentials: true,
+                XDomainRequest: true
+            },
+            beforeSend: function(xhr) {
+                if (username) {
+                    if (typeof(btoa) !== "function") {
+                        btoa = Base64.encode
+                    }
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+                }
+            }
+        }).done(function(data, textStatus, jqxhr) {
+            $("#result").removeClass("error");//.html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + jqxhr.getResponseHeader('X-Auth-Token'));
+            localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
+            window.location.href = "/hotels.html"
+        }).fail(function(jqxhr) {
+            $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
+        });
+    }
+
+</script>
