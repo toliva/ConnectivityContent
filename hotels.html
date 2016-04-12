@@ -1,0 +1,131 @@
+<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <h1>EPC Hotels</h1>
+    <p class="announce">
+        Below is a list of hotels associated with your account.
+    </p>
+    <table id="hotels" style="display: none;" class="display" cellspacing="0" width="100%"></table>
+    <form style="margin-bottom: 200px;" onsubmit="return false;">
+        <div id="result" class="formline center"></div>
+        <div class="formline"><input class="submit" type="button" value="Request Hotel" onclick="autoAssignHotel();"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    var datatable = false;
+
+    function dateNow(h) {
+        var instant = new Date();
+        if (typeof h == 'undefined') return instant.toString();
+        instant.setTime(instant.getTime() + h * 60 * 60 * 1000)
+        return instant.toString();
+    }
+
+    var testAssignment = [
+        {
+            "tuid": "0123",
+            "hotels": [
+                {
+                    "hotelId": "H4321",
+                    "dates": [
+                        {
+                            "start": dateNow(1),
+                            "end": dateNow(24)
+                        },
+                        {
+                            "start": dateNow(2),
+                            "end": dateNow(48)
+                        }
+                    ]
+                },
+                {
+                    "hotelId": "H1234",
+                    "dates": [
+                        {
+                            "start": dateNow(1),
+                            "end": dateNow(16)
+                        },
+                        {
+                            "start": dateNow(3),
+                            "end": dateNow(72)
+                        }
+                    ]
+                }
+            ]
+        }
+    ];
+
+    var columns = [
+        { title: "TUID" },
+        { title: "Hotel ID" },
+        { title: "Valid From", type: "date" },
+        { title: "Valid To", type: "date" }
+    ];
+
+    $(document).ready(function() {
+        getHotelsByJwt();
+    });
+
+    function jwtRequest(method, url, done, error) {
+        $.ajax({
+            method: method,
+            url: url,
+            xhrFields: {
+                withCredentials: true,
+                XDomainRequest: true
+            },
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
+            }
+        }).done(done).fail(error);
+    }
+
+    function displayTable(data) {
+        var table = [];
+        for (tuid of data) {
+            for (hotel of tuid.hotels) {
+                for (date of hotel.dates) {
+                    table.push([tuid.tuid, hotel.hotelId, date.startDate, date.endDate]);
+                    console.log("Start: " + date.startDate);
+                }
+            }
+        }
+        if (datatable) {
+            datatable.destroy();
+        }
+        datatable = $("#hotels").DataTable({ data: table, columns: columns });
+        datatable.order([ 2, "asc" ]).draw();
+        $("#hotels").show();
+    }
+
+    function ajaxError(jqxhr) {
+        console.log("Ajax Error: " + jqxhr.url);
+        console.log("Error Response: " + jqxhr.responseText);
+        $("#result").addClass("error").text("Error: " + jqxhr.responseText);
+    }
+
+    function getHotelsByJwt() {
+        jwtRequest("GET", "http://localhost:8080/v1/schedule", function(data, textStatus, jqxhr) {
+            console.log("Ajax Success: " + jqxhr.url);
+            console.log("Response: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully retrieved hotels");
+            displayTable(JSON.parse(jqxhr.responseText));
+        }, function(jqxhr) {
+            ajaxError(jqxhr);
+            displayTable(testAssignment);
+        });
+    }
+
+    function autoAssignHotel() {
+        jwtRequest("POST", "http://localhost:8080/v1/schedule/assign", function(data, textStatus, jqxhr) {
+            console.log("Ajax Success: " + jqxhr.url);
+            console.log("Response: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully assigned hotel");
+            getHotelsByJwt();
+        }, function(jqxhr) {
+            ajaxError(jqxhr);
+        });
+    }
+
+
+</script>
