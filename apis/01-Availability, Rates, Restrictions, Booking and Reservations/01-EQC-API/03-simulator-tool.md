@@ -799,7 +799,7 @@ The simulator only supports the latest version of BR namespace:
 | Schema | Namespace |
 |--------|-----------|
 |[BookingConfirmation request](http://www.expediaquickconnect.com/system/assets/attachments/313/BookingConfirmRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2007/09|
-[BookingConfirmation response](http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd)|http://www.expediaconnect.com/EQC/BC/2007/08|
+|[BookingConfirmation response](http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd)|http://www.expediaconnect.com/EQC/BC/2007/08|
 
 Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:
 * One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.
@@ -854,14 +854,17 @@ Response with error code 3202
 ### TROUBLESHOOTING
 If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:
 
- BR: https://simulator.expediaquickconnect.com/connect/br
- BC: https://simulator.expediaquickconnect.com/connect/bc
- AR: https://simulator.expediaquickconnect.com/connect/ar
- PARR: https://simulator.expediaquickconnect.com/connect/parr
+BR: https://simulator.expediaquickconnect.com/connect/br
 
- If the simulator is up and running, the following message will be displayed: "Expedia QuickConnect® simulator is ready and waiting for requests".
+BC: https://simulator.expediaquickconnect.com/connect/bc
 
- If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please [contact us](mailto:eqcss@expedia.com)
+AR: https://simulator.expediaquickconnect.com/connect/ar
+
+PARR: https://simulator.expediaquickconnect.com/connect/parr
+
+If the simulator is up and running, the following message will be displayed: "Expedia QuickConnect® simulator is ready and waiting for requests".
+
+If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please [contact us](mailto:eqcss@expedia.com)
 
 #### DISCLAIMER
 The Expedia QuickConnect® Simulator is not a certification tool and therefore being able to execute all proposed test cases only ensures conformity to the message transport protocol and requisite message formatting. This tool will not validate that a supplier is either (a) using the proper codes as configured in our live system or (b) respecting all of Expedia-specific business validations.
