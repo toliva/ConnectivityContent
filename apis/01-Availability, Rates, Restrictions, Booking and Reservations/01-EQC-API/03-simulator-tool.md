@@ -22,9 +22,15 @@ The data set for PARR and AR interfaces:
 | 511      | Yes                | Occupancy-based pricing                         | Hotel Collect  and flex products. Rate plan linkage defined for 1 product.  | Sell rate             | 2 room types and 2-3 rate plans per room type                                         | 
 | 611      | No                 | Per day pricing based on day of arrival and LOS | Flex products                                                               | Sell Rate             | 2 room types and 2 rate plans with 1 flex standalone and 1 package rate per room type | 
 
-* Only the latest versions of AR and PARR are supported on the EQC Simulator:
-* For AR, latest namespace is: http://www.expediaconnect.com/EQC/AR/2011/06
-* For PARR, latest namespace is: http://www.expediaconnect.com/EQC/PAR/2013/07
+Only the latest versions of AR and PARR are supported on the EQC Simulator:
+
+| Schema | Namespace | 
+|--------|-----------|
+|[AvailRateupdate request](http://www.expediaquickconnect.com/system/assets/attachments/310/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
+|[AvailRateupdate response](http://www.expediaquickconnect.com/system/assets/attachments/309/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
+|[ProductAvailRateRetrieval request](http://www.expediaquickconnect.com/system/assets/attachments/423/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[ProductAvailRateRetrieval response](http://www.expediaquickconnect.com/system/assets/attachments/382/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+
 * Currency is in USD.
 * Base allocation is always=2 starting from today+2 days. Base allocation is always=0 for today and tomorrow.
 * Total Allocation is a random number between 2 and 20
@@ -560,12 +566,17 @@ Response with error code 3204
 Response with error code 3205
 
 
-## BR
+## Booking Retrieval
 
 This section describes how the BR simulator is configured and what kind of scenario can be tested using it.
 
 The simulator only supports the latest version of BR namespace:
-http://www.expediaconnect.com/EQC/BR/2014/01
+
+| Schema | Namespace |
+|--------|-----------|
+|[Schema for BookingRetrieval request](http://www.expediaquickconnect.com/system/assets/attachments/415/BookingRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+|[Schema for BookingRetrieval response](http://www.expediaquickconnect.com/system/assets/attachments/416/BookingRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+
 
 If another version is used, a message indicating that only the latest version is supported is returned, along with error code 2010.
 
@@ -779,9 +790,16 @@ Username/password and any hotel ID other than "111", "211" or "311".
 The BR simulator will return error code 3202: invalid hotel ID.
 
 
-## BC
+## Booking Confirmation
 
 This section describes how the BC simulator is configured and what kind of scenario can be tested using it.
+
+The simulator only supports the latest version of BR namespace:
+
+| Schema | Namespace |
+|--------|-----------|
+|[BookingConfirmation request](http://www.expediaquickconnect.com/system/assets/attachments/313/BookingConfirmRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2007/09|
+[BookingConfirmation response](http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd)|http://www.expediaconnect.com/EQC/BC/2007/08|
 
 Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:
 * One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.
