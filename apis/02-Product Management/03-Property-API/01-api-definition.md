@@ -542,7 +542,250 @@ GET /properties/v1/mycompany/1234
 
 ```javascript
 
-need example
+{
+  "entity": {
+    "providerPropertyId": "1234",
+    "provider": "mycompany",
+    "expediaId": 11632,
+    "name": "The Grand Inn",
+    "latitude": "53.3322239619385",
+    "longitude": "-3.1883265505371",
+    "createdUtc": "2015-11-26T12:29:54.311Z",
+    "modifiedUtc": "2015-11-30T22:06:27.865Z",
+    "providerPropertyUrl": "www.thegrandinn.com",
+    "structureType": "HOTEL",
+    "currencyCode": "GBP",
+    "billingCurrencyCode": null,
+    "timeZone": "Europe/London",
+    "addresses": [
+      {
+        "line1": "12 Ires Road",
+        "line2": "",
+        "city": "Glasgow",
+        "state": "",
+        "postalCode": "G12 8NN",
+        "countryCode": "GBR"
+      }
+    ],
+    "ratings": [
+      {
+        "score": 5,
+        "maxScore": 5,
+        "source": "Visit Scotland",
+        "description": "5 STARS"
+      }
+    ],
+    "contacts": {
+      "Property": {
+        "phoneNumbers": [
+          {
+            "phoneNumberType": "Phone",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "1211234269"
+          },
+          {
+            "phoneNumberType": "Fax",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "121336311"
+          }
+        ]
+      },
+      "ReservationManager": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "phoneNumbers": [
+          {
+            "phoneNumberType": "Phone",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "1212231567"
+          },
+          {
+            "phoneNumberType": "Fax",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "1217634321"
+          }
+        ]
+      },
+      "AlternateReservationManager": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "phoneNumbers": [
+          {
+            "phoneNumberType": "Phone",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "1911934967"
+          },
+          {
+            "phoneNumberType": "Fax",
+            "countryAccessCode": "44",
+            "areaCode": "",
+            "number": "1996534321"
+          }
+        ]
+      }
+    },
+    "airports": [
+      {
+        "code": "GLA",
+        "name": "Glasgow"
+      }
+    ],
+    "contents": [
+      {
+        "locale": "en_GB",
+        "name": null,
+        "providerPropertyUrl": null,
+        "images": [
+          {
+            "url": "https://images.mycompany.com/1234/1234main.jpg",
+            "categoryCode": "FEATURED_IMAGE",
+            "caption": "Main Image"
+          },
+          {
+            "url": "https://images.mycompany.com/1234/1234double.jpg",
+            "categoryCode": "GUESTROOM",
+            "caption": "Double Room Image"
+          }
+        ],
+        "amenities": [
+          {
+            "code": "WIFI",
+            "detailCode": "FREE",
+            "value": 0
+          },
+          {
+            "code": "BREAKFAST",
+            "detailCode": "FREE",
+            "value": null
+          },
+          {
+            "code": "SELF_PARKING",
+            "detailCode": "FREE",
+            "value": 0
+          },
+          {
+            "code": "POOL_INDOOR",
+            "detailCode": null,
+            "value": null
+          },
+          {
+            "code": "PLAYGROUND",
+            "detailCode": null,
+            "value": null
+          },
+          {
+            "code": "GARDEN",
+            "detailCode": null,
+            "value": null
+          }
+        ],
+        "paragraphs": [
+          {
+            "code": "DESCRIPTION",
+            "value": "This hotel is really really nice"
+          },
+          {
+            "code": "CHECKIN_INSTRUCTIONS",
+            "value": "Government-issued photo identification and a credit card are required at check-in for incidental charges."
+          }
+        ]
+      }
+    ],
+    "propertyCollectedMandatoryFees": [
+      {
+        "code": "RESORT_FEE",
+        "scope": "PER_PERSON",
+        "duration": "PER_NIGHT",
+        "value": 25.99,
+        "startDate": null,
+        "endDate": null
+      }
+    ],
+    "taxes": [
+      {
+        "code": "VAT",
+        "detailCode": "PERCENT_PER_STAY",
+        "value": 20
+      }
+    ],
+    "policies": [
+      {
+        "code": "ACCEPTS_VISA",
+        "detailCode": null,
+        "value": "5 GBP"
+      },
+      {
+        "code": "ACCEPTS_MASTERCARD",
+        "detailCode": null,
+        "value": "5 GBP"
+      },
+      {
+        "code": "CHECKIN_START_TIME",
+        "detailCode": null,
+        "value": "11:00 AM"
+      },
+      {
+        "code": "CHECKIN_END_TIME",
+        "detailCode": null,
+        "value": "11:00 PM"
+      },
+      {
+        "code": "CHECKOUT_TIME",
+        "detailCode": null,
+        "value": "10:00 AM"
+      },
+      {
+        "code": "BOOKING_CUTOFF_TIME",
+        "detailCode": null,
+        "value": "1:00 PM"
+      },
+      {
+        "code": "BOOKING_CUTOFF_DAY",
+        "detailCode": null,
+        "value": "SAME_DAY"
+      },
+      {
+        "code": "CANCELLATION_CUTOFF_TIME",
+        "detailCode": null,
+        "value": "2:00 PM"
+      },
+      {
+        "code": "MINIMUM_CHECKIN_AGE",
+        "detailCode": null,
+        "value": "18"
+      },
+      {
+        "code": "SMOKING_POLICY",
+        "detailCode": "SMOKE_FREE_PROPERTY",
+        "value": null,
+      },
+      {
+        "code": "CATERS_TO",
+        "detailCode": "NO_BACHELOR_PARTIES",
+        "value": null,
+      }
+      {
+        "code": "CATERS_TO",
+        "detailCode": "NO_BACHELORETTE_PARTIES",
+        "value": null,
+      }
+    ],
+    "attributes": [
+      {
+        "code": "TOTAL_ROOMS",
+        "value": "2"
+      }
+    ],
+    "status": {
+      "href": "/properties/v1/mycompany/10/status"
+    }
+  }
+}
 
 ```
 # GetPropertyStatus
@@ -586,8 +829,180 @@ Sending a DELETE for an onboarded property will deactivate the property in Exped
 
 DELETE /properties/v1/mycompany/1234
 
+The response to the delete request will be a 200/OK and the response will echo back the details of the property which was just deleted.
+
 ```javascript
 
-need example
+{
+  "entity": [
+    {
+      "providerPropertyId": "1234",
+      "provider": "mycompany",
+      "expediaId": null,
+      "name": "Property Name",
+      "latitude": "21.3752",
+      "longitude": "-88.3261",
+      "createdUtc": "2015-11-20T00:16:16.819Z",
+      "modifiedUtc": "2015-11-20T15:42:28.605Z",
+      "providerPropertyUrl": "http://example.org",
+      "structureType": "Hotel",
+      "currencyCode": "GBP",
+      "billingCurrencyCode": "GBP",
+      "timeZone": "Europe/Dublin",
+      "addresses": [
+        {
+          "line1": "Address Line 1",
+          "line2": null,
+          "city": "City",
+          "state": "State or Province",
+          "postalCode": "77780",
+          "countryCode": "IRL"
+        }
+      ],
+      "ratings": [
+        {
+          "score": 4,
+          "maxScore": 5,
+          "source": "AAA",
+          "description": "4 STARS"
+        }
+      ],
+      "contacts": {
+        "Property": {
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "1234567"
+            }
+          ]
+        },
+        "ReservationManager": {
+          "firstName": "First",
+          "lastName": "Last",
+          "emails": [
+            "abc@xyz.com"
+          ],
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "4567890"
+            },
+            {
+              "phoneNumberType": "Fax",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "7890123"
+            }
+          ]
+        },
+        "AlternateReservationManager": {
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "1234567"
+            }
+          ]
+        },
+        "GeneralManager": {
+          "firstName": "General",
+          "lastName": "Manager",
+          "emails": [
+            "abc123@xyz.com"
+          ]
+        }
+      },
+      "contents": [
+        {
+          "locale": "en-US",
+          "name": "Localized Property Name",
+          "providerPropertyUrl": null,
+          "images": [
+            {
+              "url": "images.xyz.com/mainImage.jpg",
+              "categoryCode": "FEATURED_IMAGE",
+              "caption": "Main Image"
+            },
+          ],
+          "amenities": [
+            {
+              "code": "BREAKFAST",
+              "detailCode": "FREE",
+              "value": null
+            },
+            {
+              "code": "WIFI",
+              "detailCode": "SURCHARGE_PER_STAY",
+              "value": 10.99
+            }
+          ],
+          "paragraphs": [
+            {
+              "code": "DESCRIPTION",
+              "value": "Property description."
+            },
+            {
+              "code": "CHECKIN_INSTRUCTIONS",
+              "value": "Special check-in instructions."
+            }
+          ]
+        }
+      ],
+      "propertyCollectedMandatoryFees": [
+        {
+          "code": "RESORT_FEE",
+          "scope": "PER_PERSON",
+          "duration": "PER_NIGHT",
+          "value": 25.99,
+          "startDate": null,
+          "endDate": null
+        }
+      ],
+      "taxes": [
+        {
+          "code": "VAT",
+          "detailCode": "PERCENT_PER_STAY",
+          "value": 20
+        }
+      ],
+      "policies": [
+        {
+          "code": "MINIMUM_CHECKIN_AGE",
+          "detailCode": null,
+          "value": "18"
+        },
+        {
+          "code": "CHECKIN_TIME",
+          "detailCode": null,
+          "value": "2:00 PM"
+        },
+        {
+          "code": "CHECKOUT_TIME",
+          "detailCode": null,
+          "value": "11:00 AM"
+        },
+        {
+          "code": "CANCELLATION_CUTOFF_TIME",
+          "detailCode": null,
+          "value": "6:00 PM"
+        }
+      ],
+      "inventorySettings": {
+        "rateAcquisitionType": "NET_RATE"
+      },
+      "attributes": [
+        {
+          "code": "TOTAL_ROOMS",
+          "value": "15"
+        }
+      ]
+    }
+  ]
+}
 
 ```
