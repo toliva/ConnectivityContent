@@ -16,9 +16,9 @@ The following sections indicate specific use cases that are supported or not sup
 | Supported | Not Supported |
 | --------- | ------------- |
 | Expedia Collect-only Properties | Hotel Collect-only Properties |
-| Flex Properties (offering both Expedia Collect and Hotel Collect products) | Changing a property's business model via API |
+| Flex Properties (offering both Expedia Collect and Hotel Collect products) | *Changing a property's business model via API |
 
-Property API supports the onboarding of new properties that offer either Expedia Collect products only OR offers both Expedia Collect and Hotel Collect products.  Changing a property's business model is currently not supported via the Property API.
+Property API supports the onboarding of new properties that offer either Expedia Collect products only OR offers both Expedia Collect and Hotel Collect products.  *Contact your account manager if you wish to support changing a property's business model via the API.   
 
 ## Billing Setup
 

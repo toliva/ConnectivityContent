@@ -1,6 +1,6 @@
 # API Definition
 
-The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](./supported-features.html) and Try the Property API in [the sandbox](./quick-start.html).
+The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](./supported-features.html) and review the API Definition.
 
 # Authentication
 
@@ -40,7 +40,7 @@ A list of possible errors for each API can be found [here](./code-list.html "Err
 
 The below example is a request to onboard a new property using SetPropertyDetails.
 
-- Information for more than one property is accepted in the request
+- Information for more than one property is accepted in the request, max. batch size is 50 properties per request.
 - Each property must have a unique providerPropertyId
 - Property content can be sent as it is collected, and does not all need to be submitted in a single call. To do this, just send in at least a providerPropertyID and use that ID to submit any content updates.
 
@@ -532,15 +532,7 @@ The response body will echo back the values of *the request received* and will i
 ```
 # GetPropertyDetails
 
-- Displays Provider's view of the property.
-- Does not show what's been changed by Expedia
-- Star Rating
-- Paragraphs
-- tax
-- star rating
-- lat/long
-- name
-- address
+Provides the Provider's view of the property, which can be used by the Property API client to construct an update overlay message.  The GetPropertyDetails response does not necessarily show any fields that have been moderated (modified) by Expedia, such as star rating, freeform paragraph text, taxes, latitude/longitude coordinates, or address.
 
 **Example GetPropertyDetails Request**
 
@@ -555,7 +547,7 @@ need example
 ```
 # GetPropertyStatus
 
-The onboarding process is an asynchronous workflow, so this endpoint should be polled to retrieve the latest status of the property and its assigned Expedia ID.
+The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached 'OnboardingSucceed' status.
 
 **Example Request**
 

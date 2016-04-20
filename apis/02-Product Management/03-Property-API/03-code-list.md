@@ -1,6 +1,6 @@
 # Code Lists
 
-## SetPropertyDetails
+## SetPropertyDetails Codes
 
 ### property.structureType
 
@@ -22,7 +22,6 @@
 | MOBILE |
 | PHONE |
 | FAX |
-| UNDEFINED (DEFAULT) |
 
 ### property.inventorySetting.rateAcquisitionType
 
@@ -31,11 +30,15 @@
 | SELL_LAR | Rate inclusive of compensation. |
 | NET_RATE | Rate without compensation |
 
-## SetPropertyDetails
+### Content Attribute & Detail Codes
 
-[Download the DetailCodeList Excel.](/files/PropertyAPICodeList0.4.xlsx)
+A **DRAFT** version of the SetPropertyDetails code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
 
-## GetPropertyStatus
+### SetPropertyDetails Error Codes
+
+To be added.
+
+## GetPropertyStatus Codes
 
 The reasonCodes field represents all the reasons the property has a particular status.
 
@@ -61,3 +64,15 @@ The reasonCodes field represents all the reasons the property has a particular s
 | FinanceSetupPending | None |
 | VendorIdAssigned | None |
 | OnboardingSucceeded | None |
+
+### GetPropertyStatus Error Codes
+
+None
+
+## GetPropertyDetails Codes
+
+None
+
+### GetPropertyDetails Error Codes
+
+None
