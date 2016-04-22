@@ -605,7 +605,7 @@ Content-Type: application/json
     "squareMeters": 95
   },
   "views": [
-    "Ocean View",
+    "Partial Ocean View",
     "Beach View"
   ],
   "wheelchairAccessibility": false
@@ -659,7 +659,7 @@ When successful, the API will respond with what Expedia created. Please note tha
       "squareMeters": 95
     },
     "views": [
-      "Ocean View",
+      "Partial Ocean View",
       "Beach View"
     ],
     "wheelchairAccessibility": false
@@ -935,7 +935,7 @@ Content-Type: application/json
     "squareMeters": 95
   },
   "views": [
-    "Ocean View",
+    "City View",
     "Beach View"
   ],
   "wheelchairAccessibility": false
@@ -987,7 +987,7 @@ Response looks like
       "squareMeters": 95
     },
     "views": [
-      "Ocean View",
+      "City View",
       "Beach View"
     ],
     "wheelchairAccessibility": false
