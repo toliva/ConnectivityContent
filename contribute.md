@@ -50,4 +50,4 @@ Open a pull request - there may be a form on the current web page if you did not
 * Enter a title and description for the changes in the pull request.
 * Click `Create pull request`
 
-Your pull request has now been submitted for review and if accepted with be merged into the master branch.  Thanks for contributing!
+Your pull request has now been submitted for review and if accepted will be merged into the master branch.  Thanks for contributing!
