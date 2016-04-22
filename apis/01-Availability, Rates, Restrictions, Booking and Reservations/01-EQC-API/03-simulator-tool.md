@@ -26,10 +26,10 @@ Only the latest versions of AR and PARR are supported on the EQC Simulator:
 
 | Schema | Namespace | 
 |--------|-----------|
-|[AvailRateupdate request](http://www.expediaquickconnect.com/system/assets/attachments/310/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
-|[AvailRateupdate response](http://www.expediaquickconnect.com/system/assets/attachments/309/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
-|[ProductAvailRateRetrieval request](http://www.expediaquickconnect.com/system/assets/attachments/423/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
-|[ProductAvailRateRetrieval response](http://www.expediaquickconnect.com/system/assets/attachments/382/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[AvailRateupdate request](/files/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
+|[AvailRateupdate response](/files/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
+|[ProductAvailRateRetrieval request](/files/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[ProductAvailRateRetrieval response](/files/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
 
 * Currency is in USD.
 * Base allocation is always=2 starting from today+2 days. Base allocation is always=0 for today and tomorrow.
