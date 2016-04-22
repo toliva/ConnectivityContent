@@ -26,10 +26,10 @@ Only the latest versions of AR and PARR are supported on the EQC Simulator:
 
 | Schema | Namespace | 
 |--------|-----------|
-|[AvailRateupdate request](http://www.expediaquickconnect.com/system/assets/attachments/310/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
-|[AvailRateupdate response](http://www.expediaquickconnect.com/system/assets/attachments/309/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
-|[ProductAvailRateRetrieval request](http://www.expediaquickconnect.com/system/assets/attachments/423/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
-|[ProductAvailRateRetrieval response](http://www.expediaquickconnect.com/system/assets/attachments/382/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[AvailRateupdate request](/files/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
+|[AvailRateupdate response](/files/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
+|[ProductAvailRateRetrieval request](/files/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[ProductAvailRateRetrieval response](/files/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
 
 * Currency is in USD.
 * Base allocation is always=2 starting from today+2 days. Base allocation is always=0 for today and tomorrow.
@@ -574,8 +574,8 @@ The simulator only supports the latest version of BR namespace:
 
 | Schema | Namespace |
 |--------|-----------|
-|[Schema for BookingRetrieval request](http://www.expediaquickconnect.com/system/assets/attachments/415/BookingRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
-|[Schema for BookingRetrieval response](http://www.expediaquickconnect.com/system/assets/attachments/416/BookingRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+|[Schema for BookingRetrieval request](/files/BookingRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+|[Schema for BookingRetrieval response](/files/BookingRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
 
 
 If another version is used, a message indicating that only the latest version is supported is returned, along with error code 2010.
@@ -594,7 +594,7 @@ The simulator takes three Hotel IDs "111", "211" and "311".
 | Hotel ID | Product Type | POS ID Value | Room Type ID | Rate Plan ID |
 | -------- | ------------ | ------------ | ------------ | ------------ |
 | 111 | Expedia Collect only hotel | Random "Expedia" or "Hotels.com" | 222 | 333 for Expedia Collect bookings |
-| 211 | ETP hotel with flex products | Random "Expedia" or "Hotels.com" for Expedia Collect booking | Random "A-Expedia" or "A-Hotels.com" for Hotel Collect booking | 20000 | 21000 for Expedia Collect booking 21000A for Hotel Collect booking
+| 211 | ETP hotel with flex products | Random "A-Expedia" or "A-Hotels.com" for Hotel Collect booking | 20000 | 21000 for Expedia Collect booking 21000A for Hotel Collect booking
 | 311 | Hotel Collect only hotel | Random "A-Expedia" or "A-Hotels.com" for Hotel Collect booking | 30000 | 31000A for Hotel Collect booking |
 
 
