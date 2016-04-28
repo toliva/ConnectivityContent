@@ -899,7 +899,7 @@ amount | number | Min value 0.000, accepts up to 3 decimal points
 Property Name | Type | Description
 ------------- | ---- | -----------
 defaultPenalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Default penalties' definition. Min 1, Max 2 penalties defined
-exceptions | Array[[CancelPolicyException](#/definitions/CancelPolicyExceptionDTO)] | List of cancel policy exceptions. _Max 500 exceptions_
+exceptions | Array[[CancelPolicyException](#/definitions/CancelPolicyExceptionDTO)] | List of cancel policy exceptions. Max 500 exceptions
 
 <a name="/definitions/PenaltyDTO"></a>
 #### Penalty
@@ -913,11 +913,11 @@ amount | number | Min value 0.000 (3 decimal points). The amount provided here s
 <a name="/definitions/CancelPolicyExceptionDTO"></a>
 #### Cancel Policy Exception
 
-Property Name | Type | Description
-------------- | ---- | -----------
-startDate | date | Date at which the exceptions starts. _Format YYYY-MM-DD._ 
-endDate | date | Date at which the exceptions ends. _Format YYYY-MM-DD._ 
-penalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Penalties' definition. Min 1, Max 2 penalties defined.
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+startDate | date | Yes | Date at which the exceptions starts. Format YYYY-MM-DD.
+endDate | date | Yes | Date at which the exceptions ends. Format YYYY-MM-DD.
+penalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Yes | Penalties' definition. Min 1, Max 2 penalties defined.
 
 <a name="/definitions/DistributionRuleDTO"></a>
 #### DistributionRule
