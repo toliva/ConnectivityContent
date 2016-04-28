@@ -1921,4 +1921,13 @@ Response would look like:
   }
 }
 ```
+### Rate Plan Delete
+In this example, the rate plan created in a previous example is deleted.
+```HTTP
+DELETE https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/204309700
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in base64]
+```
 

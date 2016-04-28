@@ -53,6 +53,7 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | ----------- | ------- |
 | 200 | Success for read and update operations |
 | 201 | Success for create operations |
+| 204 | Success for delete operations |
 | 400 | Errors induced by user due to incorrect input |
 | 401 | Authentication error |
 | 403 | Authorization error |
@@ -835,6 +836,25 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
+
+### Delete an existing rate plan
+- Method: `DELETE`
+- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Consumes: HTTP Request (DELETE)
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type
+--------- | -------------- | ----------- | -------- | ---------
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token
+propertyId | path | Expedia Property ID | Yes | string
+roomTypeId | path | Room type resource ID | Yes | string
+ratePlanId | path | Rate plan resource ID | Yes | string
+
+#### Success Responses
+Status Code | Description
+----------- | -----------
+204 | No Content
 
 <a name="/definitions/RatePlanDTO"></a>
 ### RatePlan Resource Definition
