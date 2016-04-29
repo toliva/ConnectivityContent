@@ -42,7 +42,6 @@ The below example is a request to onboard a new property using SetPropertyDetail
 
 - Information for more than one property is accepted in the request, max. batch size is 50 properties per request.
 - Each property must have a unique providerPropertyId
-- Property content can be sent as it is collected, and does not all need to be submitted in a single call. To do this, just send in at least a providerPropertyID and use that ID to submit any content updates.
 
 ```javascript
 [{
@@ -198,25 +197,25 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
 | providerPropertyUrl | String | No | Yes | URL for property's website, must be submitted in Western European Character set. |
-| structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./CodeList#StructureType) |
+| structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./Code-list.html#StructureType "Structure type codes") |
 | currencyCode | String | Yes | No | Currency code to be used for property's pricing. Cannot be updated after initial onboarding. Use ISO4217 |
 | billingCurrencyCode | String | Yes | No | Currency code to be used for billing. Use ISO4217. |
 | timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the IANA timezone database codes. |
-| addresses | Array of Address objects | Yes | No | See [Address](####address) below. |
-| ratings | Array of Rating objects | No | No | See [Rating](####rating) below. |
-| contacts | Dictionary of Contact objects | Yes | Yes | See [Contact](####contact) below. |
-| contents | Array of Content | Yes | Yes | See [Content](####content) below. |
-| propertyCollectedMandatoryFees | Array of SupplierCollectedMandatoryFee | No | Yes | See [SupplierCollectedMandatoryFee](####SupplierCollectedMandatoryFee) below. |
-| policies | Array of Policy | No | Yes | See [Policy](####policy) below. |
-| inventorySettings | Array of InventorySetting | No | Yes | See [InventorySetting](####inventorysetting) below. |
-| taxes | Array of Tax | No | Yes | See [Tax](####tax) below. |
-| attributes | Array of Attribute | No | Yes | See [Attribute](####attribute) below |
+| addresses | Array of Address objects | Yes | No | See Address below. |
+| ratings | Array of Rating objects | No | No | See Rating below. |
+| contacts | Dictionary of Contact objects | Yes | Yes | See Contact below. |
+| contents | Array of Content | Yes | Yes | See Content below. |
+| propertyCollectedMandatoryFees | Array of SupplierCollectedMandatoryFee | No | Yes | See SupplierCollectedMandatoryFee below. |
+| policies | Array of Policy | No | Yes | See Policy below. |
+| inventorySettings | Array of InventorySetting | No | Yes | See InventorySetting below. |
+| taxes | Array of Tax | No | Yes | See Tax below. |
+| attributes | Array of Attribute | No | Yes | See Attribute below |
 
 **address**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| line 1 | String | Yes | Number and Civic address. This is the address used by travelers to reach your property. Refrain from using informal instructions like “(across from the mall)”. If your address is longer than 40 characters, we recommend you continue with Line2. You will not produce a validation error for longer addresses, but the value may be parsed inaccurately. |
+| line 1 | String | Yes | <ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li> |
 | line 2 | String | No | |
 | city | String | Yes | Town/City |
 | postalCode | String | No | ZIP/Postal Code |
@@ -229,7 +228,7 @@ Only star rating is displayed for a property. Rating data submitted will be revi
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
 | score | Decimal | Yes | Normalized Score, e.g. 4.0 |
-| maxScore | Decimal | Yes | he maximum score possible for the rating scale, e.g. 5.0 if highest rating is 5 stars. |
+| maxScore | Decimal | Yes | The maximum score possible for the rating scale, e.g. 5.0 if highest rating is 5 stars. |
 | description | String | Yes | Only supported value is "Stars" |
 | source | String | No | More descriptive information about the star rating. Indicate here if national or non-national rating and affiliation. |
 
