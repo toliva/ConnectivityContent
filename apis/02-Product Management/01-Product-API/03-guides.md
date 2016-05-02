@@ -195,23 +195,7 @@ For partners who want more control over their names and which attributes get use
 For more information about the various possible values and constraints on each of these attributes, please refer to the [API Definition section](reference.html#/definitions/RnsAttributesDTO).
 
 ## Understanding Cancellation & Change Policy
-The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation & Change Policy is defined with the following attributes in the Expedia system:
-
-| Attribute Name | Description |
-| -------------- | ----------- |
-| defaultPenalties | Array of penalties. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided |
-| exceptions | Array of exceptions. Exceptions can be provided for specific date ranges. An exception will contain a startDate, endDate, and an array of penalties that follow the same structure and rules as the penalties provided as default |
-| exceptions[].startDate | startDate of an exception. Has to be in format: YYYY-MM-DD |
-| exceptions[].endDate | endDate of an exception. Cannot be in the past. Has to be in format: YYYY-MM-DD |
-| exceptions[].penalties | Array of penalties applicable to the start and end dates provided. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided. |
-
-A penalty object contains the following attributes:
-
-| Attribute Name | Description |
-| -------------- | ----------- |
-| Deadline | Penalty window defined in hours. Hours are relative to checkin date and the property's cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours. |
-| Penalty | Value should match one of the [predefined values](reference.html#/definitions/perStayFeeEnum). |
-| Amount | Flat amount that can be charged if customer cancels. |
+The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. For more detailed information on Cancellation & Change Policy please see the [reference](reference.html#/definitions/CancelPolicyDTO).
 
 Cancellation and change policy is optional when creating a new rate plan.
 - If provided, partners are required to provide at least one defaultPenalty with one deadline in hours, and a penalty.
