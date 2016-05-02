@@ -657,7 +657,25 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
 				"perStayFee": "None",
 				"amount": 0
 			}
-		]
+		],
+        "exceptions": [
+            {
+                "endDate": "2019-04-01",
+                "startDate": "2019-03-01",
+                "penalties": [
+                    {
+                        "amount": 1.0,
+                        "deadline": 0,
+                        "perStayFee": "1stNightRoomAndTax"
+                    },
+                    {
+                        "amount": 1.0,
+                        "deadline": 24,
+                        "perStayFee": "FullCostOfStay"
+                    }
+                ]
+            }
+        ]
 	},
 	"additionalGuestAmounts": [
 		{
@@ -766,7 +784,25 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
 				"perStayFee": "None",
 				"amount": 0
 			}
-		]
+		],
+        "exceptions": [
+            {
+                "endDate": "2019-04-01",
+                "startDate": "2019-03-01",
+                "penalties": [
+                    {
+                        "amount": 1.0,
+                        "deadline": 0,
+                        "perStayFee": "1stNightRoomAndTax"
+                    },
+                    {
+                        "amount": 1.0,
+                        "deadline": 24,
+                        "perStayFee": "FullCostOfStay"
+                    }
+                ]
+            }
+        ]
 	},
 	"additionalGuestAmounts": [
 		{
@@ -862,14 +898,24 @@ amount | number | Min value 0.000, accepts up to 3 decimal points
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-defaultPenalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Default penalties' definition. Min 1, Max 2 penalties defined
+defaultPenalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Array of penalties. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided.
+exceptions | Array[[CancelPolicyException](#/definitions/CancelPolicyExceptionDTO)] | Array of exceptions. Exceptions can be provided for specific date ranges. An exception will contain a startDate, endDate, and an array of penalties that follow the same structure and rules as the penalties provided as default. Max 500 exceptions.
+
+<a name="/definitions/CancelPolicyExceptionDTO"></a>
+#### Cancel Policy Exception
+
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+startDate | date | Yes | Start date of an exception. Has to be in format: YYYY-MM-DD
+endDate | date | Yes | End date of an exception. Cannot be in the past. Has to be in format: YYYY-MM-DD.
+penalties | Array[[Penalty](#/definitions/PenaltyDTO)] | Yes | Array of penalties applicable to the start and end dates provided. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided.
 
 <a name="/definitions/PenaltyDTO"></a>
 #### Penalty
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-deadline | integer | Number of hours prior to the arrival of the guest. When set to 0, it means up until end of the day of arrival. Min 0, Max 999
+deadline | integer | Penalty window defined in hours. Hours are relative to checkin date and the property's cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours.
 perStayFee | [perStayFeeEnum](#/definitions/perStayFeeEnum) | Fee that will be charged if the customer cancels within the specified deadline.
 amount | number | Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires
 
