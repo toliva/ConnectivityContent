@@ -253,7 +253,7 @@ To reflect such terms, a partner should send:
 }
 ```
 
-**How will Expedia decide which penalty to apply to a booking based on example 1's policy? ** 
+**How will Expedia decide which penalty to apply to a booking based on example 1's policy?** 
 Expedia picks a cancel policy to apply based on arrival date. For example:
 - Assume a booking is made for arrival on June 1st, for 3 nights:  because the arrival date is outside of the range of dates covered by the exception, the default policy applies. 
 - Assume a booking is made for arrival on July 15th, for 3 nights: because the arrival date falls on the last date of the exception, the exception policy applies.
