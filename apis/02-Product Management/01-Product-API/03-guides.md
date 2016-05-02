@@ -199,12 +199,22 @@ The Cancellation & Change Policy is applicable when a customer either wants to c
 
 | Attribute Name | Description |
 | -------------- | ----------- |
+| defaultPenalties | Array of penalties. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided |
+| exceptions | Array of exceptions. Exceptions can be provided for specific date ranges. An exception will contain a startDate, endDate, and an array of penalties that follow the same structure and rules as the penalties provided as default |
+| exceptions[].startDate | startDate of an exception. Has to be in format: YYYY-MM-DD |
+| exceptions[].endDate | endDate of an exception. Cannot be in the past. Has to be in format: YYYY-MM-DD |
+| exceptions[].penalties | Array of penalties applicable to the start and end dates provided. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided. |
+
+A penalty object contains the following attributes:
+
+| Attribute Name | Description |
+| -------------- | ----------- |
 | Deadline | Penalty window defined in hours. Hours are relative to checkin date and the property's cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours. |
 | Penalty | Value should match one of the [predefined values](reference.html#/definitions/perStayFeeEnum). |
 | Amount | Flat amount that can be charged if customer cancels. |
 
 Cancellation and change policy is optional when creating a new rate plan.
-- If provided, partners are required to provide at least one deadline in hours, and a cancellation penalty.
+- If provided, partners are required to provide at least one defaultPenalty with one deadline in hours, and a penalty.
 - If no cancellation policy is provided in a create rate plan request, Expedia will try to select one which already exists, is refundable, and was most recently used by an active rate plan of the same type (standalone, package or corporate)
 - If no cancellation policy can be found due to not having any active rate plan of the required type, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. 
 
@@ -215,7 +225,56 @@ When providing a cancel policy, partners can provide one or two defaultPenalties
 - If a second penalty is provided, its deadline must be greater than 0, and less than 1000.
 - It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation & change policy.
 
-**Example 1** : Considering the following policy: 
+Partners can optionally add exceptions objects.
+- startDate and endDate are both required
+- It is not allowed to provide exceptions with end dates in the past in a create or update message. Exceptions with end dates in the past will not be returned in GET responses.
+- Exception date ranges cannot overlap: if more than 1 exception is provided, Expedia will make sure that there are no date overlaps between 2 exception objects.
+- The rules and validations around the penalties included in an exception are the same as with the defaultPenalties object (min 1, max 1 deadlines, deadline 0 required, etc.)
+
+When exceptions are defined, Expedia will apply a cancel policy to a booking based on the booking start/arrival date. See example 1 below for a concrete example of what this means.
+
+**Example 1** : Assume a cancel policy with only one exception defined:
+- By default, if a customer cancels 72h or less before a property's cancellation time, the customer pays the full amount of the reservation. If he cancels more than 72h before the property's cancellation time, the customer pays no penalty.
+- For dates from June 2nd to July 15th inclusively, the rate plan is not refundable.
+
+To reflect such terms, a partner should send:
+```JSON
+{
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "FullCostOfStay",
+        "amount": 0
+      }, {
+        "deadline": 72,
+        "perStayFee": "None",
+        "amount": 0
+      }
+    ],
+    "exceptions": [
+      {
+        "startDate": "2016-06-02",
+        "endDate": "2016-07-15",
+        "penalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "FullCostOfStay",
+            "amount": 0
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+**How will Expedia decide which penalty to apply to a booking based on example 1's policy? ** 
+Expedia picks a cancel policy to apply based on arrival date. For example:
+- Assume a booking is made for arrival on June 1st, for 3 nights:  because the arrival date is outside of the range of dates covered by the exception, the default policy applies. 
+- Assume a booking is made for arrival on July 15th, for 3 nights: because the arrival date falls on the last date of the exception, the exception policy applies.
+
+**Example 2** : Considering the following policy: 
 - If a customer cancels between 24h or less before property's cancellation time, the customer pays for one night.
 - If a customer cancels more than 24h before property's cancellation time, the customer pays no penalty.
 
@@ -236,7 +295,7 @@ To reflect such terms, a partner should send:
   }
 ```
 
-**Example 2** : variation of the above example, where 
+**Example 3** : variation of the above example, where 
 - cancellations within 24h of property cancellation time deadline should be charged 1 night room and tax
 - cancellations further out should incur a 5 unit of currency penalty (for example 5 GBP for a London, UK property, assuming property rate acquisition type is SellLAR)
 
@@ -257,7 +316,7 @@ To reflect such terms, a partner should send:
   }
 ```
   
-**Example 3** : if a policy is non-refundable, partner should send:
+**Example 4** : if a policy is non-refundable, partner should send:
 ```JSON
   "cancelPolicy": {
     "defaultPenalties": [
