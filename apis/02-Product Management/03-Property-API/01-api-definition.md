@@ -1,6 +1,6 @@
 # API Definition
 
-The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](./supported-features.html) and review the API Definition.
+The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](http://developer.expediapartnercentral.com/apis/product-management/property-api/supported-features.html) and review the API Definition.
 
 # Authentication
 
