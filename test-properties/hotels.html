@@ -75,7 +75,6 @@
     function parseFactors(factors) {
         var factorsLoc = $('#factors');
         for (var factor of factors) {
-            console.log(factor);
             var label = $('<label>').text(factor.displayName);
             var sel = $('<select>');
             sel.attr('name', factor.factorName);
