@@ -2,11 +2,11 @@
 
 The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](http://developer.expediapartnercentral.com/apis/product-management/property-api/supported-features.html) and review the API Definition.
 
-# Authentication
+## Authentication
 
 Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
-# Endpoints
+## Endpoints
 
 | Environment | Host |
 | ----------- | -----|
@@ -22,7 +22,7 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 | Get Property Status | GET | /properties/v1/{EPC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
 | Deactivate Property | DELETE | /properties/v1/{EPC account id}/{provider property ID} | De-activates property in Expedia system |
 
-# API Errors
+## API Errors
 
 After submitting a request for any of the endpoints listed in the section above, acknowledgement or errors will be returned in the http headers.
 
@@ -36,7 +36,7 @@ After submitting a request for any of the endpoints listed in the section above,
 
 A list of possible errors for each API can be found [here](./code-list.html "Error Code List")
 
-# SetPropertyDetails
+## SetPropertyDetails
 
 The below example is a request to onboard a new property using SetPropertyDetails.
 
@@ -327,7 +327,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | detailCode | String | See [code list](./code-list.html#tax) | See [code list](./code-list.html#tax) |
 | value | Number | Yes |
 
-## SetPropertyDetails Response
+### SetPropertyDetails Response
 
 After submitting a Property API request, the response will acknowledge receipt of the message or return an error.  More information can be found here.
 
@@ -529,7 +529,7 @@ The response body will echo back the values of *the request received* and will i
     ]
 }
 ```
-# GetPropertyDetails
+## GetPropertyDetails
 
 Provides the Provider's view of the property, which can be used by the Property API client to construct an update overlay message.  The GetPropertyDetails response does not necessarily show any fields that have been moderated (modified) by Expedia, such as star rating, freeform paragraph text, taxes, latitude/longitude coordinates, or address.
 
@@ -537,7 +537,7 @@ Provides the Provider's view of the property, which can be used by the Property 
 
 GET /properties/v1/mycompany/1234
 
-## GetPropertyDetails Response
+### GetPropertyDetails Response
 
 ```javascript
 
@@ -787,7 +787,7 @@ GET /properties/v1/mycompany/1234
 }
 
 ```
-# GetPropertyStatus
+## GetPropertyStatus
 
 The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached 'OnboardingSucceed' status.
 
@@ -795,7 +795,7 @@ The onboarding process is an asynchronous workflow, so this endpoint should be p
 
 GET /properties/v1/mycompany/1234/status
 
-## GetPropertyStatus Response
+### GetPropertyStatus Response
 
  ```javascript
 
@@ -817,11 +817,11 @@ GET /properties/v1/mycompany/1234/status
 
 A complete list of reason codes can be found on the [code list page](./code-list.html).
 
-# Update a Property
+## Update a Property
 Updating a property that is already onboarded is the same operation as the original onboarding - a full overlay update is required using the SetPropertyDetails.  It is recommended that you GET the property details first, modify the fields that you'd like to change (and/or add new), then send the entire json document as a PUT request to update the property.  Please note that PATCH is not supported at this time - a complete overlay is required for updates.
 
 
-# Deactivate/Delete a Property
+## Deactivate/Delete a Property
 Sending a DELETE for an onboarded property will deactivate the property in Expedia's system.  Content will not be deleted, only the property's state will be changed to inactive.  The property can later be re-enabled using the SetPropertyDetails API call.
 
 **Example**
