@@ -54,9 +54,7 @@
             }
         });
 
-        $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", function (data) {
-            parseFactors(data);
-        });
+        $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
     });
 
     function parseData(data) {
