@@ -120,6 +120,94 @@ Step | Expedia | Partner
 9 | Extract confirmation number from the response message and update booking information in the Expedia system. | 
 10 | Now the consumer can view his itinerary on any Expedia websites with the hotel confirmation number. | 
 
+## Understanding the POS element
+
+The POS element is used to identify the point of sale, or the source of the booking. This element is mandatory in all booking notification requests, except for the Ping request.
+
+Level | Element or @Attribute | Format | Number of occur. | Value set | Description
+----- | --------------------- | ------ | ---------------- | --------- | -----------
+0 | Root Tag of the OTA message |  | 1 |  | Name of the OTA message.
+1 | POS |  | 1 |  | Container element for the Point of Sale information.
+
+The current POS ID values for  Expedia Collect bookings are:
+- Expedia: for Expedia Collect bookings made on all Expedia points of sales
+- Hotels.com: for Expedia Collect bookings made on all Hotels.com points of sales. 
+- Expedia Affiliate Network: for Expedia Collect bookings made on all Expedia affiliate networks.
+
+Additional POS ID values are sent in the e-notification message for Hotel Collect bookings. The values are the same for the respective points of sales, but prefixed with the letter "A-" in front of the current values.
+- A-Expedia: for Hotel Collect bookings made on all Expedia points of sales,
+- A-Hotels.com: for Hotel Collect bookings made on all Hotels.com points of sales. 
+- A-Expedia Affiliate Network: for Hotel Collect bookings made on all Expedia affiliate networks.
+
+The additional POS ID 5 is used to return a TIDS for hotels participating in Expedia Group Reconciliation process. TIDS are issued and managed by the IATA group. They are used to identify the Expedia contracting entities and compensation payment currencies. Note that TIDS ID is not related to POS ID. Possible values are driven by points of supply. Your lodging connectivity account manager can provide more details about this feature.
+To help understand better the POS element, a few examples are provided here for bookings with different POS.
+
+Expedia Collect bookings sourced from Expedia points of sales 
+```xml
+	<POS>
+		<Source>
+			<RequestorID Type="18" ID="Expedia"/>
+			<BookingChannel Type="2" Primary="true">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+	</POS>
+
+Expedia Collect bookings sourced from Hotels.com points of sales 
+```xml
+	<POS>
+		<Source>
+			< RequestorID Type="18" ID="Hotels.com"/>
+			<BookingChannel Type="2">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+	</POS>
+```
+
+Hotel Collect bookings sourced from Expedia points of sales 
+```xml
+	<POS>
+		<Source>
+			<RequestorID Type="18" ID="A-Expedia"/>
+			<BookingChannel Type="2" Primary="true">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+		<Source>
+			<RequestorID Type="5" ID="12345678"/>
+		</Source>
+	</POS>
+```
+
+Hotel Collect bookings sourced from Hotels.com points of sales
+```xml
+	<POS>
+		<Source>
+			< RequestorID Type="18" ID="A-Hotels.com"/>
+			<BookingChannel Type="2">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+	</POS>
+```
+
+Hotel Collect bookings sourced from Venere points of sales
+```xml
+	<POS>
+		<Source>
+			< RequestorID Type="18" ID="A-Venere"/>
+			<BookingChannel Type="2">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+		<Source>
+			<RequestorID Type="5" ID="12345678"/>
+		</Source>
+</POS>
+```
+
+
 ## Error Handling
 
 Errors occurring at the acknowledgement level will be reported as a negative acknowledgment using a Fault element. And errors occurring afterwards should be communicated to Expedia by returning an OTA response with the “Errors” element in it.
