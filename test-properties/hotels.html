@@ -16,7 +16,7 @@
         Below is a list of hotels associated with your account.
     </p>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
-    <form onsubmit="autoAssignHotel(); return false;">
+    <form id="requestHotelForm">
         <div id="result" class="formline center"></div>
         <hr/>
         <div id="factors" class="row full-width"></div>
@@ -28,6 +28,7 @@
 
 <script>
     var datatable = false;
+    var assignmentRequestFields = [];
 
     var columns = [
         { title: "TUID" },
@@ -80,6 +81,11 @@
         $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
     });
 
+    $('#requestHotelForm').submit(function (event) {
+        event.preventDefault();
+        autoAssignHotel();
+    });
+
     function parseData(data) {
         var table = [];
         for (tuid of data) {
@@ -99,6 +105,7 @@
             var label = $('<label>').text(factor.displayName);
             var sel = $('<select>').attr("name", factor.factorName);
             sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
+            assignmentRequestFields.push(factor.factorName);
             for (var value of factor.validValues) {
                 sel.append($('<option>').attr('value', value).text(value));
             }
@@ -112,8 +119,24 @@
         $("#result").addClass("error").text(humanError);
     }
 
+    function addAssignmentField(request, fieldName) {
+        var val = $('#val_' + fieldName).val();
+        if (val != '') {
+            request[fieldName] = val;
+        }
+    }
+
+    function getAssignmentRequest() {
+        var request = {};
+        for (fieldName of assignmentRequestFields) {
+            addAssignmentField(request, fieldName);
+        }
+        return request;
+    }
+
     function autoAssignHotel() {
-        jwtRequest("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", function(data, textStatus, jqxhr) {
+        var req = getAssignmentRequest();
+        jwtRequestWithData("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", req, function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully assigned hotel");
             datatable.ajax.reload();
