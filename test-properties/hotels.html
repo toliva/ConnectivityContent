@@ -88,12 +88,12 @@
 
     function parseData(data) {
         var table = [];
-        for (var i = 0; i < data.length; i++) {
+        for (var i in data) {
             var tuid = data[i];
-            for (var j = 0; j < tuid.hotels.length; j++) {
-                var hotel = tuid.hotels[i];
-                for (var k = 0; k < hotel.dates.length; k++) {
-                    var date = hotel.dates[i];
+            for (var j in tuid.hotels) {
+                var hotel = tuid.hotels[j];
+                for (var k in hotel.dates) {
+                    var date = hotel.dates[k];
                     table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.startDate, date.endDate,
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
                 }
@@ -104,14 +104,14 @@
 
     function parseFactors(factors) {
         var factorsLoc = $('#factors');
-        for (var i = 0; i < factors.length; i++) {
+        for (var i in factors) {
             var factor = factors[i];
             var label = $('<label>').text(factor.displayName);
             assignmentRequestFields.push(factor.factorName);
             var sel = $('<select>').attr("name", factor.factorName);
             sel.attr("id", "val_" + factor.factorName);
             sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
-            for (var j = 0; j < factor.validValues.length; j++) {
+            for (var j in factor.validValues) {
                 var value = factor.validValues[j];
                 sel.append($('<option>').attr('value', value).text(value));
             }
@@ -134,7 +134,7 @@
 
     function getAssignmentRequest() {
         var request = {};
-        for (var i = 0; i < assignmentRequestFields.length; i++) {
+        for (var i in assignmentRequestFields) {
             addAssignmentField(request, assignmentRequestFields[i]);
         }
         return JSON.stringify(request);
