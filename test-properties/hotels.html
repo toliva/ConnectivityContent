@@ -18,8 +18,9 @@
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form onsubmit="autoAssignHotel(); return false;">
         <div id="result" class="formline center"></div>
-        <div id="factors"></div>
-        <div class="formline">
+        <hr/>
+        <div id="factors" class="row full-width"></div>
+        <div class="formline large-6 small-12 large-offset-6 columns request-hotel">
             <input class="submit" type="submit" value="Request Hotel"/>
         </div>
     </form>
@@ -53,7 +54,10 @@
             ajax: function (data, callback, settings) {
                 jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
                     console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-                    $("#result").removeClass("error").text("");
+                    if ($("#result").hasClass("error")) {
+                        $("#result").removeClass("error").text("");
+                    }
+                    $(".dt-button").prop("disabled", true).addClass("disabled");
                     callback({data: parseData(JSON.parse(jqxhr.responseText))});
                     datatable.order([ 3, "asc" ]).draw();
                 }, function(jqxhr) {
@@ -74,7 +78,6 @@
         });
 
         $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
-        $(".dt-button").prop("disabled", true).addClass("disabled");
     });
 
     function parseData(data) {
@@ -94,15 +97,13 @@
         var factorsLoc = $('#factors');
         for (var factor of factors) {
             var label = $('<label>').text(factor.displayName);
-            var sel = $('<select>');
-            sel.attr('name', factor.factorName);
-            sel.append($('<option selected>').attr('value', '').text('No preference'));
+            var sel = $('<select>').attr("name", factor.factorName);
+            sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
             for (var value of factor.validValues) {
                 sel.append($('<option>').attr('value', value).text(value));
             }
-            factorsLoc.append(label);
-            factorsLoc.append(sel);
-            factorsLoc.append($('<br/><br/>'));
+            var factor = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
+            factorsLoc.append(factor);
         }
     }
 
