@@ -103,9 +103,9 @@
         var factorsLoc = $('#factors');
         for (var factor of factors) {
             var label = $('<label>').text(factor.displayName);
+            assignmentRequestFields.push(factor.factorName);
             var sel = $('<select>').attr("name", factor.factorName);
             sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
-            assignmentRequestFields.push(factor.factorName);
             for (var value of factor.validValues) {
                 sel.append($('<option>').attr('value', value).text(value));
             }
