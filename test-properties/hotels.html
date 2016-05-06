@@ -9,6 +9,10 @@
         margin-top: 50px;
         margin-bottom: 200px;
     }
+
+    .dataTables_paginate,.dataTables_info {
+        display: none;
+    }
 </style>
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>EPC Hotels</h1>
@@ -31,10 +35,8 @@
     var assignmentRequestFields = [];
 
     var columns = [
-        { title: "TUID" },
         { title: "Hotel ID" },
         { title: "Name" },
-        { title: "Valid From", type: "date" },
         { title: "Valid To", type: "date" },
         { title: "Model" },
         { title: "Currency" },
@@ -61,7 +63,7 @@
                     }
                     $(".dt-button").prop("disabled", true).addClass("disabled");
                     callback({data: parseData(JSON.parse(jqxhr.responseText))});
-                    datatable.order([ 3, "asc" ]).draw();
+                    datatable.order([ 2, "asc" ]).draw();
                 }, function(jqxhr) {
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
                 });
@@ -95,7 +97,7 @@
                 var hotel = tuid.hotels[j];
                 for (var k in hotel.dates) {
                     var date = hotel.dates[k];
-                    table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.startDate, date.endDate,
+                    table.push([hotel.hotelId, hotel.hotelName, date.endDate,
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
                 }
             }
