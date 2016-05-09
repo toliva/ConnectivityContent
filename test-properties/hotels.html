@@ -64,7 +64,7 @@
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
                     }
-                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property assignment");
+                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
                     $(document).tooltip();
                     if (jqxhr.responseText == "") {
                         datatable.clear().draw();
@@ -79,7 +79,7 @@
         }).on('click', 'tr', function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass("selected");
-                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property assignment");
+                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
                 console.log("disabled");
             } else {
                 $("#hotels tr").removeClass("selected");
