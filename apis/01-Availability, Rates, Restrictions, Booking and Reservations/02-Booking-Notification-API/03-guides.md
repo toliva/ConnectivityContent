@@ -10,7 +10,7 @@ The reservation notification request message will contain the Hotelier’s daily r
 
 We foresee two key standard cases where rates sent by Expedia may not match those in the hotelier system:
 - The hotel agent managing rates on the Expedia system updates rates through ARI or Expedia Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the ARI interface.
-- The hotel decides to take advantage of the promotional capabilities mentioned previously for a period of time. In the Expedia system they can set up a special promotion to give “5th night free if you stay 4 nights”. Those 5th nights that have a daily rate of $0.00 may not match the rate expected by the hotelier system.
+- The hotel decides to take advantage of the promotional capabilities mentioned previously for a period of time. In the Expedia system they can set up a special promotion to give "5th night free if you stay 4 nights". Those 5th nights that have a daily rate of $0.00 may not match the rate expected by the hotelier system.
 
 ### Information included in a notification
 
@@ -40,7 +40,7 @@ Expedia Collect bookings are sent with net rate. If the booking is paid by EVC, 
 
 Hotel Collect bookings are sent with the sell rate. Payment information for the customer Credit Card will be included in the notification, along with a special billing instruction (special request code 5) indicating that the booking is hotel collect and the hotel should charge full stay to guest credit card.
 
-Note that Hotel Collect bookings can be easily distinguished by the prefix “A-” in the POS ID value, and also by different rate plan codes provided in the product mapping by the partner.
+Note that Hotel Collect bookings can be easily distinguished by the prefix "A-" in the POS ID value, and also by different rate plan codes provided in the product mapping by the partner.
 
 Upon receiving the notification for Hotel Collect booking, partner must ensure the booking is mapped to the appropriate profile in the hotel system so that the payment, the reconciliation and other downstream processes will be handled correctly by the hotelier.
 
@@ -92,14 +92,15 @@ Note that the booking source information is sent under the POS element in the OT
 		</Source>
 	</POS>
 
-The values used currently by the interface are listed below. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by “A-“ in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be “A-Hotels.com”. 
+The values used currently by the interface are listed below. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by "A-" in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be "A-Hotels.com". 
+
 Interface | POS/Source/RequestorID/@ID | ExpediaCollect/HotelCollect
 --------- | -------------------------- | ---------------------------
 BN | Expedia Hotels.com Expedia Affiliate Network | ExpediaCollect bookings
 BN | A-Expedia A-Hotels.com A-Expedia Affiliate Network | HotelCollect bookings
 
 Hotel suppliers must ensure proper mapping is done for the new POS ID values in the hotel system so that Hotel Collect bookings can be associated with the appropriate profile.
-Note that the POS ID included in fall-back fax or email notifications will not contain “A-“.
+Note that the POS ID included in fall-back fax or email notifications will not contain "A-".
 
 ## Booking Flow
 
@@ -120,6 +121,7 @@ Step | Expedia | Partner
 9 | Extract confirmation number from the response message and update booking information in the Expedia system. | 
 10 | Now the consumer can view his itinerary on any Expedia websites with the hotel confirmation number. | 
 
+<a name="POSElement"></a>
 ## Understanding the POS element
 
 The POS element is used to identify the point of sale, or the source of the booking. This element is mandatory in all booking notification requests, except for the Ping request.
@@ -207,15 +209,14 @@ Hotel Collect bookings sourced from Venere points of sales
 </POS>
 ```
 
-
+<a name="ErrorHandling"></a>
 ## Error Handling
 
-Errors occurring at the acknowledgement level will be reported as a negative acknowledgment using a Fault element. And errors occurring afterwards should be communicated to Expedia by returning an OTA response with the “Errors” element in it.
-If Expedia receives a Nack on the request post, Expedia will perform a retry.
-Since Expedia bookings are guaranteed, in most cases the partner should accept the booking notification and return a confirmation number.  A partner can only reject the notification for a limited number of reasons, which corresponds to the list of error codes defined by this API.
-In general, the partner can reject the notification if mandatory data elements or attributes are missing or some elements or attribute have invalid values according to this specification. However, we encourage partners to build its interface to handle as much as possible the exceptional cases by putting the notification into its system and returning a positive response with confirmation number. The goal is to reduce the number of faxes or emails resulting from failed notification because in the end, one way or another, the notification will be entered in the partner system.
-The only acceptable errors in the OTA content that may justify an error Response message concern the guest name, the check-in / check-out date, the hotel code, the room type code, the rate plan code, the number of guests, and for the modification and cancellation requests, the original supplier confirmation number.
-Only a response with a confirmation number is considered a successful notification. Otherwise, Expedia will consider the notification failed, and a fax or email notification will be sent to the partner.
+Errors occurring at the acknowledgement level will be reported as a negative acknowledgment using a Fault element. Errors occurring afterwards should be communicated to Expedia by returning an OTA response with the "Errors" element in it. If Expedia receives a Nack on the request post, Expedia will perform a retry.
+
+Since Expedia bookings are guaranteed, in most cases the partner should accept the booking notification and return a confirmation number.  A partner can only reject the notification for a limited number of reasons, which corresponds to the list of error codes defined by this API. In general, the partner can reject the notification if mandatory data elements or attributes are missing or some elements or attribute have invalid values according to this specification. However, we encourage partners to build its interface to handle as much as possible the exceptional cases by putting the notification into its system and returning a positive response with confirmation number. The goal is to reduce the number of faxes or emails resulting from failed notification because in the end, one way or another, the notification will be entered in the partner system.
+
+The only acceptable errors in the OTA content that may justify an error Response message concern the guest name, the check-in / check-out date, the hotel code, the room type code, the rate plan code, the number of guests, and for the modification and cancellation requests, the original supplier confirmation number. Only a response with a confirmation number is considered a successful notification. Otherwise, Expedia will consider the notification failed, and a fax or email notification will be sent to the partner.
 
 ### Error Flow 1: Nack for Request
 
@@ -226,8 +227,8 @@ Step | Expedia | DC Partner
 5 |  | Partner validates the message header, and store the request message.
 6 |  | Partner returns a negative acknowledgement, indicating that the message has not been received correctly and will not be processed by the partner system. The error codes that can be returned in a Nack are listed in section 9.12.5.     
 
-**Final condition:** Expedia received a negative acknowledgement. After a retry delay Expedia will resend the request with retry indicator set to “true”, until a response is received or maximum number of retries is reached. Expedia will retry until the expiration time is reached.
-If Expedia cannot get a valid response, the notification will be flagged as “failed”, and then automatically fallback to fax or email.
+**Final condition:** Expedia received a negative acknowledgement. After a retry delay Expedia will resend the request with retry indicator set to "true", until a response is received or maximum number of retries is reached. Expedia will retry until the expiration time is reached.
+If Expedia cannot get a valid response, the notification will be flagged as "failed", and then automatically fallback to fax or email.
 
 ### Error Flow 2: No Response for Request
 
@@ -238,12 +239,13 @@ Step | Expedia | DC Partner
 6 |  | Partner returns an acknowledgement of receipt of the request message, or a response if protocol is synchronous.
  | Expedia is not able to read the acknowledgement or connection timeout | 
 
-**Final condition:** after a retry delay, Expedia will resend the request with retry indicator set to “true”, until an Ack/Response is received or expiration time of the notification is reached.
-If Expedia cannot get a valid response after the maximum number of retries, the notification will be flagged as “failed”, and then automatically fallback to fax or email.
+**Final condition:** after a retry delay, Expedia will resend the request with retry indicator set to "true", until an Ack/Response is received or expiration time of the notification is reached.
+
+If Expedia cannot get a valid response after the maximum number of retries, the notification will be flagged as "failed", and then automatically fallback to fax or email.
 
 ### Error Flow 3: Error Response
 
-Initial condition: the partner is not able to process the request. The partner will reject the notification by sending back a response with the appropriate error message indicating why the request cannot be processed.
+**Initial condition:** the partner is not able to process the request. The partner will reject the notification by sending back a response with the appropriate error message indicating why the request cannot be processed.
 The partner can only reject the notification for a limited number of reasons. The error codes allowed to be returned in a booking notification response are listed in the <Error Codes for Response> section below.  Expedia will automatically fail over bookings to secondary delivery mechanisms (fax or email) if a partner returns a negative response.
 
 Step | Expedia | DC Partner
@@ -255,50 +257,6 @@ Step | Expedia | DC Partner
 
 **Final condition:** Expedia received a response with OTA error. The notifications will automatically fallback to fax or email when a response with OTA error is received.
 
-### Error Codes for Nack
-
-Error codes for Nack are generated by the partner upon receiving the BN request from Expedia, or by Expedia upon receiving the BN response from the partner.
-After receiving a Nack from a partner, Expedia will retry to send the request until an Ack is received or the maximum number of retries is reached. Expedia has different retry strategies with configurable retry interval and max number of retries. By default, the retry interval is set to every 2 minutes and the maximum number of retries is set to 15.
-After receiving a Nack from Expedia, the partner should retry to send the response at regular intervals until an Ack is received from Expedia or the maximum number of retries is reached.
-
-Error Code | Error Text | Error Condition | Retry to send RS? | Recommended Action for RS
----------- | ---------- | --------------- | ----------------- | -------------------------
-2000 | Missing header | The message receiver detected that mandatory attribute value is missing in the message header. |  | Log and investigate the error
-2001 | Invalid header | The message receiver detected that invalid values are sent in the message header. |  | Same as code 2000
-2002 | Unable to parse the message | The message receiver is not able to parse the message header. |  | Same as code 2000
-4000 | Software error | The message receiver encountered internal software error while processing the message. | Yes, max 10 times | Retry the BN response until Ack is received or the max number of retries is reached. Log error and contact HSTS. 
-4206 | Expedia Direct Connect Interface is temporarily closed | The message receiver detected that the Expedia DC interface is currently closed for BN. | Yes, max 360 times | Same as code 4000
-5000 | Database error | The message receiver encountered database error while processing the message. | Yes, max 10 times | Same as code 4000
-6000 | Unknown error | The message receiver encountered unknown error while processing the message. | Yes, max 10 times | Same as code 4000
-
-###	Error Codes for Response
-
-Error codes for OTA error – generated by the partner after processing the BN request
-Upon receiving the error response, the notification will fall back to fax or email automatically. This means Expedia will send the notification by fax or email to the partner. There will not be re-send for failed notifications.
-Only these error codes are acceptable in the response message for booking notification.
-
-Error Code | Error Text | Error Condition | Data Source | Applicable to
----------- | ---------- | --------------- | ------------| -------------
-2002 | Unable to parse the message | The message receiver is not able to parse the message body. | OTA Payload | Booking, Modify, Cancel
-3200 | The booking was already cancelled | The partner system could not perform the cancellation because the booking is already cancelled or does not exist anymore in the partner system. Expedia recommends that partners do not use this code. If Expedia sends a cancellation request for a booking already confirmed, we suggest that partners return a successful response with the cancellation number of the existing cancellation. | UniqueID/@ID | Cancel
-3201 | The supplier confirmation number is missing or invalid | The partner system could not modify or cancel the booking because it cannot find the original booking for the confirmation number sent in the notification. | HotelReservationID/@ResID_Value, or
-UniqueID/@ID | Modify, Cancel
-3202 | The property Identifier is missing or invalid | The partner system could not create or modify the booking because the property cannot be identified by the chain code, code, brand code and hotel code sent in the notification. | HotelCode, BrandCode, ChainCode | Booking, Modify
-3203 | The Room Type Code is missing or invalid | The partner system could not create or modify the booking because no match in the partner system for the room type code sent in the notification. | RoomRate/@RoomTypeCode | Booking, Modify
-3204 | The Rate Plan Code is missing or invalid | The partner system could not create or modify the booking because no match in the partner system for the rate plan code sent in the notification. | RoomRate/@RatePlanCode | Booking, Modify
-3205 | The guest name is missing | The partner system could not create or modify the booking because guest name is not sent in the notification. | PersonName/@Surname | Booking, Modify
-3206 | The Check-in date is missing or invalid | The partner system could not create, modify or cancel the booking because check-in date is not sent in notification or the check-in date is in the past. | TimeSpan/ @Start | Booking, Modify, Cancel
-3207 | The check-out date is missing or invalid | The partner system could not create, modify or cancel the booking because check-out date is not sent in notification or the check-out date is in the past. | TimeSpan/ @End | Booking, Modify, Cancel
-3208 | The guest count is missing or invalid | The partner system could not create or modify the booking because guest count is not sent in the notification, or guest count exceeds max occupancy. | GuestCount/@Count | Booking, Modify
-3209 | Duplicate booking | The partner system detected a duplicate booking based on its duplicate checking logic.  |  | Booking
-
-For EVC or Hotel Collect bookings, new errors may be generated by hotel partners for errors that occur while processing the credit card payment information. As with the normal booking notification process, failed e-notifications will automatically fallback to fax or email. 
-The credit card information will be included on the fax or email for EVC bookings. However credit card information will not be included on the fax or email for Hotel Collect bookings. Hotel supplier can obtain the credit card information from Expedia Partner Central during specific time window relative to the booking check-in and check-out dates. 
-
-Error Code | Error Text | Error Condition | Data Source | Applicable to
----------- | ---------- | --------------- | ------------| -------------
-3300 | Unable to process the credit card information | Generated by hotel partner for errors encountered when processing the credit card information sent in the xml for booking or modify notifications. Card number is invalid. Card effective or expiration date is invalid. | Booking, Modify | 3300
-3301 | Payment type not accepted or payment type change not allowed | Generated by hotel partner for the following error scenarios: If the payment type is not permitted by the hotel, for example credit card payment is not setup in the partner system for the given hotel. If the partner system cannot handle payment type change to an existing booking, for example a credit card is sent by Expedia for a booking made prior to the EVC activation, | Booking, Modify | 3301
 
 ## Warning in Successful Response
 A warning is the information sent in a successful response to inform Expedia that a particular situation occurred during the request processing but did not generate an error response.
@@ -313,3 +271,12 @@ A rare condition can occur since the hotel agent who receives the fax or email w
 - If Expedia successfully delivered the booking as well (in which case we have a double booking) and the supplier has returned another confirmation number to Expedia, then the agent will see that the confirmation number for this booking already exists on the interface or tool provided by Expedia and then will be able on his own to delete the duplicate booking in his system.
 - If the agent enters the confirmation number through the Expedia interface or tool before Expedia receives a confirmation number in the electronic response from the supplier, then the system will automatically detect the double booking. Expedia Customer Operations will monitor a log and then call the hotel. They would ask the agent to look for the duplicate hotel bookings with two different confirmation numbers and delete one of them.
 
+## Guarantees/Credit Cards Included in Booking Messages
+For Expedia Collect booking paid by EVC or Hotel Collect booking paid by guest credit card, the payload for Booking or Modify request will include a <Guarantee> element as the container for credit card payment information.
+- The <Guarantee> element will contain the credit card payment information including card type, card code, card number, expiry date, card holder name.
+- For ExpediaCollect EVC bookings, CVV is not included. If CVV is required by the hotel to charge the EVC card, they should contact Expedia to obtain a default CVV value for all EVC cards. A billing address is included, which is Expedia head office address by default for all cards.
+- For Hotel Collect bookings, depending on the hotel configuration Expedia may or may not send CVV for guest credit card, therefore the hotel booking notification interface must be able to process the booking with and without CVV. Customer billing address is not included.
+- The <Guarantee> element is optional, and will be sent only for Expedia Collect bookings paid by EVC, and for Hotel Collect bookings. For Expedia Collect bookings remaining on the standard billing process, no credit card information will be sent in the booking or modify request.
+
+A special request code (5) is sent to communicate payment related information in the booking or modify request, for bookings paid by credit card, either EVC or Hotel Collect.
+Please note that credit card inform is only sent for the booking or modify request, but not for the cancel request. Penalty charge, if applicable, should be processed using the same payment information sent previously for the original reservation. If the original reservation is sent with a credit card, the penalty charge should be put on the same card.
