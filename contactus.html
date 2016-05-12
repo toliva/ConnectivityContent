@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/css/he-main.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<section class='hero hero-oceanview'>
+    <div class='inner'>
+        <h1>Developer APIs</h1>
+        <h2>Get up and running with the Expedia's partner APIs</h2>
+    </div>
+</section>
+<section id="section-intro_paragraph">
+    <div class="inner">
+        <div class="row">
+            <div class="twelve columns">
+                <p>
+                    Thank you for trying to contact us.  Send your message to us using the form below, or send an email to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="row">
+    <form id="contactus" onsubmit="sendmail(this); return false;">
+        <div class="formline">
+            <div class="g-recaptcha" data-sitekey="6LfpsB8TAAAAALLACfO9hn25EKmfE1YEq9QamDop" data-callback="captcha"></div>
+        </div>
+        <div class="formline">
+            <select id="category">
+                <option>Feedback</option>
+                <option>Question</option>
+            </select>
+        </div>
+        <div class="formline">
+            <textarea id="message" placeholder="Type your message here"></textarea>
+        </div>
+        <div class="formline">
+            <input type="submit" value="Send" class="submit"/>
+        </div>
+    </form>
+</section>
+<script>
+    var captchaResponse = null;
+
+    function captcha(response) {
+        captchaResponse = response;
+        console.log("Captcha Response: " + response);
+    }
+
+    function sendmail(form) {
+        var data = {};
+        data.category = $(form).find("#category").val();
+        data.message = $(form).find("#message").val();
+        data.captchaResponse = captchaResponse;
+        $.ajax({
+            method: "POST",
+            url: "https://hotel-assignment-service.test.expedia.com/v1/sendmail",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json; charset=UTF-8'
+        }).done(function(response, textStatus, jqxhr) {
+            console.log(response);
+        }).fail(function(jqxhr){
+            ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
+        });
+    }
+
+    function ajaxError(jqxhr, humanError) {
+        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        $("#result").addClass("error").text(humanError);
+    }
+</script>
