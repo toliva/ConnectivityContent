@@ -34,6 +34,10 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 - Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
 - Changes and cancellations to reservations sent by fax or email before the Expedia®Connect Interface went live will continue to be delivered by fax or email.
 
+## Are WSDL available?
+
+Unfortunately, Expedia can't make a WSDL endpoint or a WSDL file available for the booking messages. Schemas (XSDs) are available, and can be found here.
+
 ## Booking Notification & ETP, HotelCollect, ExpediaCollect
 
 Expedia Collect bookings are sent with net rate. If the booking is paid by EVC, payment information for the Expedia Virtual Card will be included in the notification. Note that even when a partner is managing Lowest Available Rate, ExpediaCollect bookings will always contain a net rate.
