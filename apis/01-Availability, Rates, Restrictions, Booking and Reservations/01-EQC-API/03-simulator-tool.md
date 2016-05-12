@@ -51,26 +51,26 @@ Only the latest versions of AR and PARR are supported on the EQC Simulator:
 Hotel ID 111 product configuration: Per Person Pricing, Day-of-Arrival pricing enabled (rateChangeIndicator flag returned), 1 Room Type, 2 rate plans, Expedia Collect-only property. 
 ```xml
 <ProductList>
-    <Hotelname="Test Hotel 111"city="New York"id="111"/>
-    <RoomTypename="Standard"id="222"status="Active"code="Standard"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.23"name="Two Queen Beds"/>
-        <BedTypeid="1.67"name="One King Bed and One Sofa Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="3"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="7.61"maxAmount="380.74"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="LowestAvailableRate"type="Standalone"distributionModel="ExpediaCollect"id="333"status="Active"code="STD"pricingModel="PerDayPricingByDayOfArrival"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T12:01:05Z"updateDateTime="2012-10-03T17:01:01Z">
-            <Compensationdefault="true"percent="25.00"minAmount="20.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <Hotel name="Test Hotel 111" city="New York" id="111"/>
+    <RoomType name="Standard" id="222" status="Active" code="Standard" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.23" name="Two Queen Beds"/>
+        <BedType id="1.67" name="One King Bed and One Sofa Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="3" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="7.61" maxAmount="380.74" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="LowestAvailableRate" type="Standalone" distributionModel="ExpediaCollect" id="333" status="Active" code="STD" pricingModel="PerDayPricingByDayOfArrival" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T12:01:05Z" updateDateTime="2012-10-03T17:01:01Z">
+            <Compensation default="true" percent="25.00" minAmount="20.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Package"rateAcquisitionType="LowestAvailableRate"type="Package"distributionModel="ExpediaCollect"id="444"status="Active"code="PKG"pricingModel="PerDayPricingByDayOfArrival"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T12:05:15Z"updateDateTime="2012-10-03T17:06:14Z">
-            <Compensationdefault="true"percent="35.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Package" rateAcquisitionType="LowestAvailableRate" type="Package" distributionModel="ExpediaCollect" id="444" status="Active" code="PKG" pricingModel="PerDayPricingByDayOfArrival" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T12:05:15Z" updateDateTime="2012-10-03T17:06:14Z">
+            <Compensation default="true" percent="35.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
@@ -81,45 +81,45 @@ Hotel 211 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plan
 ```xml
 <ProductList>
     <Hotel name="Test Hotel 211" city="Montreal" id="211"/>
-    <RoomTypename="Standard"id="20000"status="Active"code="Standard"smokingPref="Either"maxOccupants="3">
-        <BedTypeid="1.14"name="One King Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="0"maxOccupants="2"/>
-        <RateThresholdtype="NetRate"minAmount="15.12"maxAmount="715.87"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="25.21"maxAmount="919.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="NetRate"type="Standalone"distributionModel="ExpediaCollect"id="21000"status="Active"code="STD"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+    <RoomType name="Standard" id="20000" status="Active" code="Standard" smokingPref="Either" maxOccupants="3">
+        <BedType id="1.14" name="One King Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="0" maxOccupants="2"/>
+        <RateThreshold type="NetRate" minAmount="15.12" maxAmount="715.87" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="25.21" maxAmount="919.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="NetRate" type="Standalone" distributionModel="ExpediaCollect" id="21000" status="Active" code="STD" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="HotelCollect"id="21000A"status="Active"code="STD"parentId="21000"pricingModel="PerDayPricing"occupantsForBaseRate="2"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="HotelCollect" id="21000A" status="Active" code="STD" parentId="21000" pricingModel="PerDayPricing" occupantsForBaseRate="2" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
-        <RatePlanname="Breakfast included"rateAcquisitionType="NetRate"type="Standalone"distributionModel="ExpediaCollect"id="22000"status="Active"code="BRKFST"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"bookDateStart="[today-30 days]"bookDateEnd="[today+180days]"travelDateStart="[today-15days]"travelDateEnd="[today+210 days]"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2013-12-23T12:51:54Z">
-            <DayOfWeekBookingRestrictiontype="StartOn"thu="true"fri="true"sat="true"/>
-            <DayOfWeekBookingRestrictiontype="EndOn"sun="true"thu="true"fri="true"sat="true"/>
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <Compensationdefault="false"percent="22.00"from="[today]"to="[today+180]"mon="true"tue="true"wed="true"thu="true"fri="false"sat="false"sun="false"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+        <RatePlan name="Breakfast included" rateAcquisitionType="NetRate" type="Standalone" distributionModel="ExpediaCollect" id="22000" status="Active" code="BRKFST" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" bookDateStart="[today-30 days]" bookDateEnd="[today+180days]" travelDateStart="[today-15days]" travelDateEnd="[today+210 days]" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2013-12-23T12:51:54Z">
+            <DayOfWeekBookingRestriction type="StartOn" thu="true" fri="true" sat="true"/>
+            <DayOfWeekBookingRestriction type="EndOn" sun="true" thu="true" fri="true" sat="true"/>
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <Compensation default="false" percent="22.00" from="[today]" to="[today+180]" mon="true" tue="true" wed="true" thu="true" fri="false" sat="false" sun="false"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
     </RoomType>
-    <RoomTypename="Deluxe"id="23000"status="Active"code="Deluxe"smokingPref="NonSmoking"maxOccupants="2">
-        <BedTypeid="1.15"name="One Queen Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="2"/>
-        <RateThresholdtype="NetRate"minAmount="15.12"maxAmount="715.87"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="25.21"maxAmount="919.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="NetRate"type="Standalone"distributionModel="ExpediaCollect"id="24000"status="Active"code="STD"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+    <RoomType name="Deluxe" id="23000" status="Active" code="Deluxe" smokingPref="NonSmoking" maxOccupants="2">
+        <BedType id="1.15" name="One Queen Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="2"/>
+        <RateThreshold type="NetRate" minAmount="15.12" maxAmount="715.87" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="25.21" maxAmount="919.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="NetRate" type="Standalone" distributionModel="ExpediaCollect" id="24000" status="Active" code="STD" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="HotelCollect"id="24000A"status="Active"code="STD"parentId="24000"pricingModel="PerDayPricing"occupantsForBaseRate="2"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="HotelCollect" id="24000A" status="Active" code="STD" parentId="24000" pricingModel="PerDayPricing" occupantsForBaseRate="2" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
-        <RatePlanname="Breakfast included"rateAcquisitionType="Linked"type="Standalone"distributionModel="ExpediaCollect"id="25000"status="Active"code="BRKFST"parentId="22000"rateLinkStart="[today]"rateLinkEnd="[today+180days]"isAvailStatusLinked="true"areMinMaxLOSLinked="true"isCTALinked="true"isCTDLinked="false"rateLinkExceptions="false"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <RatePlanLinkDefinitionlinkType="Amount"linkValue="20.0"/>
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"nonRefundable="true"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z"/>
+        <RatePlan name="Breakfast included" rateAcquisitionType="Linked" type="Standalone" distributionModel="ExpediaCollect" id="25000" status="Active" code="BRKFST" parentId="22000" rateLinkStart="[today]" rateLinkEnd="[today+180days]" isAvailStatusLinked="true" areMinMaxLOSLinked="true" isCTALinked="true" isCTDLinked="false" rateLinkExceptions="false" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <RatePlanLinkDefinition linkType="Amount" linkValue="20.0"/>
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" nonRefundable="true" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z"/>
         </RatePlan>
     </RoomType>
 </ProductList>
@@ -128,56 +128,56 @@ Hotel 211 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plan
 Hotel 311 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plans per room type, Hotel Collect and flex products.
 ```xml
 <ProductList>
-    <Hotelname="Test Hotel 311"city="London"id="311"/>
-    <RoomTypename="Standard"id="30000"status="Active"code="Standard"smokingPref="NonSmoking"maxOccupants="5">
-        <BedTypeid="1.21"name="Two Double Beds"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="9.29"maxAmount="531.98"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="14.22"maxAmount="701.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="31000A"status="Active"code="STD"pricingModel="PerDayPricing"occupantsForBaseRate="2"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2010-03-21T09:30:45Z"updateDateTime="2011-01-01T12:15:55Z">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <Hotel name="Test Hotel 311" city="London" id="311"/>
+    <RoomType name="Standard" id="30000" status="Active" code="Standard" smokingPref="NonSmoking" maxOccupants="5">
+        <BedType id="1.21" name="Two Double Beds"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="9.29" maxAmount="531.98" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="14.22" maxAmount="701.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="31000A" status="Active" code="STD" pricingModel="PerDayPricing" occupantsForBaseRate="2" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2010-03-21T09:30:45Z" updateDateTime="2011-01-01T12:15:55Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="31000"status="Active"code="STD"parentId="31000A"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="31000" status="Active" code="STD" parentId="31000A" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Breakfast included"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="32000A"status="Active"code="BRKFST"pricingModel="PerDayPricing"occupantsForBaseRate="2"depositRequired="true"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="2"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Breakfast included" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="32000A" status="Active" code="BRKFST" pricingModel="PerDayPricing" occupantsForBaseRate="2" depositRequired="true" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="2" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
-    <RoomTypename="Deluxe"id="33000"status="Active"code="Deluxe"smokingPref="Either"maxOccupants="3">
-        <BedTypeid="1.15"name="One Queen Bed"/>
-        <BedTypeid="1.25"name="Two Twin Beds"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="2"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="19.29"maxAmount="811.98"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="29.29"maxAmount="911.98"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="34000A"status="Active"code="STD"pricingModel="PerDayPricing"occupantsForBaseRate="2"depositRequired="true"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="2"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <RoomType name="Deluxe" id="33000" status="Active" code="Deluxe" smokingPref="Either" maxOccupants="3">
+        <BedType id="1.15" name="One Queen Bed"/>
+        <BedType id="1.25" name="Two Twin Beds"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="2"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="19.29" maxAmount="811.98" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="29.29" maxAmount="911.98" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="34000A" status="Active" code="STD" pricingModel="PerDayPricing" occupantsForBaseRate="2" depositRequired="true" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="2" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="34000"status="Active"code="STD"parentId="34000A"pricingModel="PerDayPricing"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <DayOfWeekBookingRestrictiontype="IncludeOneOf"thu="true"fri="true"sat="true"/>
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="34000" status="Active" code="STD" parentId="34000A" pricingModel="PerDayPricing" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <DayOfWeekBookingRestriction type="IncludeOneOf" thu="true" fri="true" sat="true"/>
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
@@ -187,59 +187,59 @@ Hotel 311 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plan
 Hotel 411 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate plans per room type, Expedia Collect and flex products.
 ```xml
 <ProductList>
-    <Hotelname="Test Hotel 411"city="Delhi"id="411"/>
-    <RoomTypename="Standard"id="40000"status="Active"code="Standard"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.41"name="Two Beds"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="4.22"maxAmount="521.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="14.22"maxAmount="701.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="NetRate"type="Standalone"distributionModel="ExpediaCollect"id="41000"status="Active"code="STD"pricingModel="OccupancyBasedPricing"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <Hotel name="Test Hotel 411" city="Delhi" id="411"/>
+    <RoomType name="Standard" id="40000" status="Active" code="Standard" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.41" name="Two Beds"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="4.22" maxAmount="521.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="14.22" maxAmount="701.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="NetRate" type="Standalone" distributionModel="ExpediaCollect" id="41000" status="Active" code="STD" pricingModel="OccupancyBasedPricing" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
-            <CancelPolicydefault="false"startDate="2014-12-20"endDate="2015-01-10"nonRefundable="true"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z "/>
+            <CancelPolicy default="false" startDate="2014-12-20" endDate="2015-01-10" nonRefundable="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z"/>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="HotelCollect"id="41000A"status="Active"code="STD"parentId="41000"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="HotelCollect" id="41000A" status="Active" code="STD" parentId="41000" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
-            <CancelPolicydefault="false"startDate="2014-12-20"endDate="2015-01-10"nonRefundable="true"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z "/>
+            <CancelPolicy default="false" startDate="2014-12-20" endDate="2015-01-10" nonRefundable="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z"/>
         </RatePlan>
-        <RatePlanname="Package"rateAcquisitionType="NetRate"type="Package"distributionModel="ExpediaCollect"id="42000"status="Active"code="PKG"pricingModel="OccupancyBasedPricing"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="35.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"flatFee="100.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Package" rateAcquisitionType="NetRate" type="Package" distributionModel="ExpediaCollect" id="42000" status="Active" code="PKG" pricingModel="OccupancyBasedPricing" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="35.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="100.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
-            <CancelPolicydefault="false"startDate="2014-12-20"endDate="2015-01-10"nonRefundable="true"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z "/>
+            <CancelPolicy default="false" startDate="2014-12-20" endDate="2015-01-10" nonRefundable="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z"/>
         </RatePlan>
     </RoomType>
-    <RoomTypename="Deluxe"id="43000"status="Active"code="Deluxe"smokingPref="NonSmoking"maxOccupants="2">
-        <BedTypeid="1.40"name="One Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="2"/>
-        <RateThresholdtype="NetRate"minAmount="24.22"maxAmount="821.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="34.32"maxAmount="921.27"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="NetRate"type="Standalone"distributionModel="ExpediaCollect"id="44000"status="Active"code="STD"pricingModel="OccupancyBasedPricing"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"flatFee="75.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <RoomType name="Deluxe" id="43000" status="Active" code="Deluxe" smokingPref="NonSmoking" maxOccupants="2">
+        <BedType id="1.40" name="One Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="2"/>
+        <RateThreshold type="NetRate" minAmount="24.22" maxAmount="821.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="34.32" maxAmount="921.27" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="NetRate" type="Standalone" distributionModel="ExpediaCollect" id="44000" status="Active" code="STD" pricingModel="OccupancyBasedPricing" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="75.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
-            <CancelPolicydefault="false"startDate="2014-12-20"endDate="2015-01-10"nonRefundable="true"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z "/>
+            <CancelPolicy default="false" startDate="2014-12-20" endDate="2015-01-10" nonRefundable="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z"/>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="HotelCollect"id="44000A"status="Active"code="STD"parentId="44000"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z ">
-                <PenaltyinsideWindow="true"flatFee="75.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="HotelCollect" id="44000A" status="Active" code="STD" parentId="44000" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="75.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
-            <CancelPolicydefault="false"startDate="2014-12-20"endDate="2015-01-10"nonRefundable="true"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z "/>
+            <CancelPolicy default="false" startDate="2014-12-20" endDate="2015-01-10" nonRefundable="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z"/>
         </RatePlan>
     </RoomType>
 </ProductList>
@@ -248,68 +248,68 @@ Hotel 411 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate pl
 Hotel 511 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate plans per room type, Hotel Collect and flex products. Rate plan linkage only on rate, 10.5%+, with exceptions, no end date.
 ```xml
 <ProductList>
-    <Hotelname="Test Hotel 511"city="Beijing"id="511"/>
-    <RoomTypename="Standard"id="50000"status="Active"code="Standard"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.23"name="Two Queen Beds"/>
-        <BedTypeid="1.67"name="One King Bed and One Sofa Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="4.22"maxAmount="521.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="14.22"maxAmount="701.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="51000A"status="Active"code="STD"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <Hotel name="Test Hotel 511" city="Beijing" id="511"/>
+    <RoomType name="Standard" id="50000" status="Active" code="Standard" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.23" name="Two Queen Beds"/>
+        <BedType id="1.67" name="One King Bed and One Sofa Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="4.22" maxAmount="521.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="14.22" maxAmount="701.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="51000A" status="Active" code="STD" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="51000"status="Active"code="STD"parentId="51000A"pricingModel="OccupancyBasedPricing"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="51000" status="Active" code="STD" parentId="51000A" pricingModel="OccupancyBasedPricing" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Breakfast included"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="52000A"status="Active"code="BRKFST"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"bookDateStart="[today-30 days]"bookDateEnd="[today+180days]"travelDateStart="[today-15days]"travelDateEnd="[today+210 days]"mobileOnly="true"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2014-02-03T15:56:44Z">
-            <DayOfWeekBookingRestrictiontype="IncludeOneOf"sun="true"/>
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Breakfast included" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="52000A" status="Active" code="BRKFST" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" bookDateStart="[today-30 days]" bookDateEnd="[today+180days]" travelDateStart="[today-15days]" travelDateEnd="[today+210 days]" mobileOnly="true" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2014-02-03T15:56:44Z">
+            <DayOfWeekBookingRestriction type="IncludeOneOf" sun="true"/>
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
-    <RoomTypename="Deluxe"id="53000"status="Active"code="Deluxe"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.88"name="Two Queen and One Sofa Bed"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="24.22"maxAmount="821.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="34.32"maxAmount="921.27"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="54000A"status="Active"code="STD"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <Compensationdefault="false"percent="22.00"from="[today]"to="[today+180]"mon="true"tue="true"wed="true"thu="true"fri="false"sat="false"sun="false"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <RoomType name="Deluxe" id="53000" status="Active" code="Deluxe" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.88" name="Two Queen and One Sofa Bed"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="24.22" maxAmount="821.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="34.32" maxAmount="921.27" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="54000A" status="Active" code="STD" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <Compensation default="false" percent="22.00" from="[today]" to="[today+180]" mon="true" tue="true" wed="true" thu="true" fri="false" sat="false" sun="false"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="54000"status="Active"code="STD"parentId="54000A"pricingModel="OccupancyBasedPricing"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <Compensationdefault="false"percent="22.00"from="[today]"to="[today+180]"mon="true"tue="true"wed="true"thu="true"fri="false"sat="false"sun="false"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="54000" status="Active" code="STD" parentId="54000A" pricingModel="OccupancyBasedPricing" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <Compensation default="false" percent="22.00" from="[today]" to="[today+180]" mon="true" tue="true" wed="true" thu="true" fri="false" sat="false" sun="false"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Breakfast included"rateAcquisitionType="Linked"type="Standalone"distributionModel="HotelCollect"id="55000"status="Active"code="BRKFST"parentId="54000A"rateLinkStart="[today]"isAvailStatusLinked="false"areMinMaxLOSLinked="false"isCTALinked="false"isCTDLinked="false"rateLinkExceptions="true"pricingModel="OccupancyBasedPricing"depositRequired="false"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <RatePlanLinkDefinitionlinkType="Percent"linkValue="10.5"/>
-            <Compensationdefault="true"percent="25.00"/>
-            <Compensationdefault="false"percent="22.00"from="[today]"to="[today+180]"mon="true"tue="true"wed="true"thu="true"fri="false"sat="false"sun="false"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Breakfast included" rateAcquisitionType="Linked" type="Standalone" distributionModel="HotelCollect" id="55000" status="Active" code="BRKFST" parentId="54000A" rateLinkStart="[today]" isAvailStatusLinked="false" areMinMaxLOSLinked="false" isCTALinked="false" isCTDLinked="false" rateLinkExceptions="true" pricingModel="OccupancyBasedPricing" depositRequired="false" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <RatePlanLinkDefinition linkType="Percent" linkValue="10.5"/>
+            <Compensation default="true" percent="25.00"/>
+            <Compensation default="false" percent="22.00" from="[today]" to="[today+180]" mon="true" tue="true" wed="true" thu="true" fri="false" sat="false" sun="false"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <PenaltyinsideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <PenaltyinsideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
@@ -319,63 +319,63 @@ Hotel 511 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate pl
 Hotel 611 product configuration: Per day pricing based on day of arrival and LOS, Flex products, Sell Rate, 2 room types and 2 rate plans with 1 flex standalone and 1 package rate per room type.
 ```xml
 <ProductList>
-    <Hotelname="Test Hotel 611"city="London"id="611"/>
-    <RoomTypename="Standard"id="60000"status="Active"code="Standard"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.14"name="One King Bed"/>
-        <BedTypeid="1.23"name="Two Queen Beds"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="14.22"maxAmount="721.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="24.22"maxAmount="821.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="61000A"status="Active"code="STD"pricingModel="PerDayPricingByLengthOfStay"depositRequired="false"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"flatFee="75.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <Hotel name="Test Hotel 611" city="London" id="611"/>
+    <RoomType name="Standard" id="60000" status="Active" code="Standard" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.14" name="One King Bed"/>
+        <BedType id="1.23" name="Two Queen Beds"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="14.22" maxAmount="721.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="24.22" maxAmount="821.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="61000A" status="Active" code="STD" pricingModel="PerDayPricingByLengthOfStay" depositRequired="false" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="75.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="61000"status="Active"code="STD"parentId="61000A"pricingModel="PerDayPricingByLengthOfStay"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"flatFee="75.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="61000" status="Active" code="STD" parentId="61000A" pricingModel="PerDayPricingByLengthOfStay" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="75.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="RackP"rateAcquisitionType="SellRate"type="Package"distributionModel="ExpediaCollect"id="62000"status="Active"code="PKG"pricingModel="PerDayPricingByLengthOfStay"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="35.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"flatFee="50.00" perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="RackP" rateAcquisitionType="SellRate" type="Package" distributionModel="ExpediaCollect" id="62000" status="Active" code="PKG" pricingModel="PerDayPricingByLengthOfStay" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="35.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="50.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
-    <RoomTypename="Deluxe"id="63000"status="Active"code="Deluxe"smokingPref="Either"maxOccupants="5">
-        <BedTypeid="1.23"name="Two Queen Beds"/>
-        <OccupancyByAgeageCategory="Adult"minAge="18"maxOccupants="4"/>
-        <OccupancyByAgeageCategory="ChildAgeA"minAge="2"maxOccupants="3"/>
-        <OccupancyByAgeageCategory="Infant"minAge="0"maxOccupants="1"/>
-        <RateThresholdtype="NetRate"minAmount="19.22"maxAmount="729.17"source="RecentReservations"/>
-        <RateThresholdtype="SellRate"minAmount="29.22"maxAmount="829.17"source="RecentReservations"/>
-        <RatePlanname="Rack"rateAcquisitionType="SellRate"type="Standalone"distributionModel="HotelCollect"id="64000A"status="Active"code="STD"pricingModel="PerDayPricingByLengthOfStay"depositRequired="false"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"flatFee="50.00"perStayFee="None"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+    <RoomType name="Deluxe" id="63000" status="Active" code="Deluxe" smokingPref="Either" maxOccupants="5">
+        <BedType id="1.23" name="Two Queen Beds"/>
+        <OccupancyByAge ageCategory="Adult" minAge="18" maxOccupants="4"/>
+        <OccupancyByAge ageCategory="ChildAgeA" minAge="2" maxOccupants="3"/>
+        <OccupancyByAge ageCategory="Infant" minAge="0" maxOccupants="1"/>
+        <RateThreshold type="NetRate" minAmount="19.22" maxAmount="729.17" source="RecentReservations"/>
+        <RateThreshold type="SellRate" minAmount="29.22" maxAmount="829.17" source="RecentReservations"/>
+        <RatePlan name="Rack" rateAcquisitionType="SellRate" type="Standalone" distributionModel="HotelCollect" id="64000A" status="Active" code="STD" pricingModel="PerDayPricingByLengthOfStay" depositRequired="false" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" flatFee="50.00" perStayFee="None"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="Rack"rateAcquisitionType="Derived"type="Standalone"distributionModel="ExpediaCollect"id="64000"status="Active"code="STD"parentId="64000A"pricingModel="PerDayPricingByLengthOfStay"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="25.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="FullCostOfStay"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="Rack" rateAcquisitionType="Derived" type="Standalone" distributionModel="ExpediaCollect" id="64000" status="Active" code="STD" parentId="64000A" pricingModel="PerDayPricingByLengthOfStay" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="25.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="FullCostOfStay"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
-        <RatePlanname="RackP"rateAcquisitionType="SellRate"type="Package"distributionModel="ExpediaCollect"id="65000"status="Active"code="PKG"pricingModel="PerDayPricingByLengthOfStay"occupantsForBaseRate="2"minLOSDefault="1"maxLOSDefault="28"minAdvBookDays="0"maxAdvBookDays="500"mobileOnly="false"createDateTime="2004-07-29T09:12:42Z"updateDateTime="2012-10-03T15:56:44Z">
-            <Compensationdefault="true"percent="35.00"minAmount="15.00"/>
-            <CancelPolicydefault="true"cancelWindow="24"createDateTime="2004-07-29T09:12:42Z "updateDateTime="2012-10-03T15:56:44Z">
-                <PenaltyinsideWindow="true"perStayFee="1stNightRoomAndTax"/>
-                <PenaltyinsideWindow="false"perStayFee="None"/>
+        <RatePlan name="RackP" rateAcquisitionType="SellRate" type="Package" distributionModel="ExpediaCollect" id="65000" status="Active" code="PKG" pricingModel="PerDayPricingByLengthOfStay" occupantsForBaseRate="2" minLOSDefault="1" maxLOSDefault="28" minAdvBookDays="0" maxAdvBookDays="500" mobileOnly="false" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+            <Compensation default="true" percent="35.00" minAmount="15.00"/>
+            <CancelPolicy default="true" cancelWindow="24" createDateTime="2004-07-29T09:12:42Z" updateDateTime="2012-10-03T15:56:44Z">
+                <Penalty insideWindow="true" perStayFee="1stNightRoomAndTax"/>
+                <Penalty insideWindow="false" perStayFee="None"/>
             </CancelPolicy>
         </RatePlan>
     </RoomType>
@@ -386,11 +386,11 @@ Hotel 611 product configuration: Per day pricing based on day of arrival and LOS
 ```xml
 <AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
     <Authentication username="testuser" password="ECLPASS"/>
-    <Hotelid="311"/>
+    <Hotel id="311"/>
     <AvailRateUpdate>
-        <DateRangefrom="2014-10-15"to="2014-10-20"/>
-        <RoomTypeid="30000">
-            <InventoryflexibleAllocation="10"/>
+        <DateRange from="2014-10-15" to="2014-10-20"/>
+        <RoomType id="30000">
+            <Inventory flexibleAllocation="10"/>
         </RoomType>
     </AvailRateUpdate>
 </AvailRateUpdateRQ>
@@ -406,16 +406,16 @@ Expedia does not recommend updating child rate plans for linked periods.
 Sample request for a successful AR update that will result in warnings:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<AvailRateUpdateRQxmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-    <Authenticationusername="testuser"password="ECLPASS"/>
-    <Hotelid="511"/>
+<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
+    <Authentication username="testuser" password="ECLPASS"/>
+    <Hotel id="511"/>
     <AvailRateUpdate>
-        <DateRangefrom="2014-10-15"to="2014-10-20"/>
-        <RoomTypeid="53000">
-            <InventoryflexibleAllocation="10"/>
-            <RatePlanid="54000A"closed="false">
+        <DateRange from="2014-10-15" to="2014-10-20"/>
+        <RoomType id="53000">
+            <Inventory flexibleAllocation="10"/>
+            <RatePlan id="54000A" closed="false">
                 <Ratecurrency="USD">
-                    <PerOccupancyrate="1100.00"occupancy="1"/>
+                    <PerOccupancy rate="1100.00" occupancy="1"/>
                 </Rate>
             </RatePlan>
         </RoomType>
@@ -439,13 +439,13 @@ Remember that those are just a subset of possible warning scenarios. The full li
 Sample request to get an error back:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<AvailRateUpdateRQxmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-    <Authenticationusername="testuser"password="testpass"/>
-    <Hotelid="511"/>
+<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
+    <Authentication username="testuser" password="testpass"/>
+    <Hotel id="511"/>
     <AvailRateUpdate>
-        <DateRangefrom="2014-10-15"to="2014-10-20"/>
-        <RoomTypeid="53000">
-            <InventoryflexibleAllocation="10"/>
+        <DateRange from="2014-10-15" to="2014-10-20"/>
+        <RoomType id="53000">
+            <Inventory flexibleAllocation="10"/>
         </RoomType>
     </AvailRateUpdate>
 </AvailRateUpdateRQ>
@@ -477,11 +477,11 @@ All error descriptions are the same as the one from the real application. For th
 Sample successful request:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<ProductAvailRateRetrievalRQxmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
-    <Authenticationusername="eqcxnet"password="ECLPASS"/>
-    <Hotelid="511"/>
+<ProductAvailRateRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
+    <Authentication username="eqcxnet" password="ECLPASS"/>
+    <Hotel id="511"/>
     <ParamSet>
-        <ProductRetrievalreturnRateLink="true"returnRoomAttributes="true"returnRatePlanAttributes="true"returnCompensation="true"/>
+        <ProductRetrieval returnRateLink="true" returnRoomAttributes="true" returnRatePlanAttributes="true" returnCompensation="true"/>
     </ParamSet>
 </ProductAvailRateRetrievalRQ>
 ```
@@ -527,9 +527,9 @@ The data provided back in the response being randomized, systems cannot attempt 
 ### Erroneous Update Scenarios – PARR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<ProductAvailRateRetrievalRQxmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
-    <Authenticationusername="eqcxnet"password="testpass"/>
-    <Hotelid="511"/>
+<ProductAvailRateRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
+    <Authentication username="eqcxnet" password="testpass"/>
+    <Hotel id="511"/>
     <ParamSet>
         <ProductRetrieval/>
     </ParamSet>
@@ -625,9 +625,9 @@ Country: US
 ### Successful Retrieval Scenarios
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<BookingRetrievalRQxmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
-    <Authenticationusername="anyuser"password="ECLPASS"/>
-    <Hotelid="211"/>
+<BookingRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
+    <Authentication username="anyuser" password="ECLPASS"/>
+    <Hotel id="211"/>
 </BookingRetrievalRQ>
 ```
 
@@ -814,11 +814,11 @@ Like all simulators, the BC simulator returns predictable results. It also opera
 ### Successful Update Scenarios
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<BookingConfirmRQxmlns="http://www.expediaconnect.com/EQC/BC/2007/09">
-    <Authenticationusername="eqcxnet"password="ECLPASS"/>
-    <Hotelid="111"/>
+<BookingConfirmRQ xmlns="http://www.expediaconnect.com/EQC/BC/2007/09">
+    <Authentication username="eqcxnet" password="ECLPASS"/>
+    <Hotel id="111"/>
     <BookingConfirmNumbers>
-        <BookingConfirmNumberbookingType="Book"bookingID="000003"confirmNumber="3322334455"confirmTime="2014-03-20T10:48:25Z"/>
+        <BookingConfirmNumber bookingType="Book" bookingID="000003" confirmNumber="3322334455" confirmTime="2014-03-20T10:48:25Z"/>
     </BookingConfirmNumbers>
 </BookingConfirmRQ>
 ```
