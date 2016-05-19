@@ -5,7 +5,7 @@ The Expedia Conversation Count Service (CCS) is a simple service that retrieves 
 ## Get Unread Count for Hotel Endpoint
 
 ```
-GET https://conversations-count-service.us-west-1.prod-p.expedia.com/conversations/hotels/conversations/hotels/{hotelId}/unreadmessages/count
+GET https://www.expedia.com/conversations/hotels/{hotelid}/unreadmessages/count
 ```
 
 This endpoint returns the number of unread messages for a given hotel.
