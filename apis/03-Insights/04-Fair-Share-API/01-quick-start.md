@@ -16,7 +16,7 @@ Each request should include hotelier credentials in HTTP basic auth format, a cl
 To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/fairShare``` endpoint via query parameters.  
 
 ```
-https://insights.expediapartnercentral.com.lisqa7.sb.karmalab.net/public/v1/fairShare?hotelId=759&dayNum=2&clientId=insights-test&apiToken=dfc276f9-6e17-4d89-ac66-e2cdf7f77c2e&api_key=insights
+http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&dayNum=2&clientId=insights-test
 ```
 
 The response will contain the fair share data in the following format: 

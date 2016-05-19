@@ -15,7 +15,7 @@ Each request should include hotelier credentials in HTTP basic auth format, a cl
 To retreive competitor set data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/addCompSet``` endpoint via query parameters.  
 
 ```
-https://insights.expediapartnercentral.com.lisqa7.sb.karmalab.net:443/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10&clientId=insights-test&apiToken=dfc276f9-6e17-4d89-ac66-e2cdf7f77c2e&api_key=insights
+http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10&clientId=insights-test
 ```
 
 
