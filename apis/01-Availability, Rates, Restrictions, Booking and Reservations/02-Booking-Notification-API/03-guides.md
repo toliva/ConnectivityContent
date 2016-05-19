@@ -4,9 +4,9 @@
 
 ### Book with locally stored inventory and rate
 
-Hoteliers control Expedia’s product information (in particular availability, rates and inventory) via the EQC AR interface or Expedia Partner Central. Thus, hoteliers need to keep this information up-to-date. As the Hotelier controls the inventory, Expedia does not need to send an availability request to the Hotelier when a booking is made on Expedia and no Expedia reservation notification arriving via the Expedia®Connect Interface should be rejected. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking, but rather the hotels should inform their Expedia Market Manager immediately.
+Hoteliers control Expedia's product information (in particular availability, rates and inventory) via the EQC AR interface or Expedia Partner Central. Thus, hoteliers need to keep this information up-to-date. As the Hotelier controls the inventory, Expedia does not need to send an availability request to the Hotelier when a booking is made on Expedia and no Expedia reservation notification arriving via the ExpediaConnect Interface should be rejected. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking, but rather the hotels should inform their Expedia Market Manager immediately.
 
-The reservation notification request message will contain the Hotelier’s daily rates and may include taxes and extra person and extra service fees. If there are rate issues with the booking, this discrepancy should be flagged and the booking should be routed by the Hotelier to the staff that is responsible for reconciling these differences and the Expedia Market Manager should be alerted. A discrepancy in pricing is not an acceptable reason to reject a booking; rather it means that on the accounting side, this booking needs special attention, so that the pricing differences, for whatever reason, need to be reconciled with Expedia. Hoteliers are responsible for keeping their inventory and rates up to date.
+The reservation notification request message will contain the Hotelier's daily rates and may include taxes and extra person and extra service fees. If there are rate issues with the booking, this discrepancy should be flagged and the booking should be routed by the Hotelier to the staff that is responsible for reconciling these differences and the Expedia Market Manager should be alerted. A discrepancy in pricing is not an acceptable reason to reject a booking; rather it means that on the accounting side, this booking needs special attention, so that the pricing differences, for whatever reason, need to be reconciled with Expedia. Hoteliers are responsible for keeping their inventory and rates up to date.
 
 We foresee two key standard cases where rates sent by Expedia may not match those in the hotelier system:
 - The hotel agent managing rates on the Expedia system updates rates through ARI or Expedia Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the ARI interface.
@@ -26,13 +26,13 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 - A partner can use the Warning message in the response to communicate any availability or rate discrepancy between Expedia and the hotelier system.
 - Expedia will be responsible for the sequencing of messages, i.e. always sending the reservation message and ensuring that it has been processed by the supplier prior to sending a cancellation or modification for the given booking. 
 - Expedia will always wait to get a valid response before sending another notification affecting the same reservation. In other words, two messages will never be sent in parallel, a queue will be in place for modifications and/or cancellations.
-- All information sent in the E-notifications must be passed down to the hotel’s Property Management System.
+- All information sent in the E-notifications must be passed down to the hotel's Property Management System.
 
 ### Fallback to fax or email
 
 - Failed electronic notification automatically fallback to fax or email.
 - Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
-- Changes and cancellations to reservations sent by fax or email before the Expedia®Connect Interface went live will continue to be delivered by fax or email.
+- Changes and cancellations to reservations sent by fax or email before the ExpediaConnect Interface went live will continue to be delivered by fax or email.
 
 ## Are WSDL available?
 
@@ -265,7 +265,7 @@ Step | Expedia | DC Partner
 ## Warning in Successful Response
 A warning is the information sent in a successful response to inform Expedia that a particular situation occurred during the request processing but did not generate an error response.
 According to the API specification, a finite and precise list of situations may result in error responses. When one of these errors occurs on the partner side or when any other error (outside the allowed list of errors) occurs, the partner may use the warning to inform Expedia about this situation.
-The use of warning will not be enforced by Expedia and it is up to the partner to put it to good use. However, the goal of the warning is to improve the quality of Expedia®Connect. Warning information can help us investigate the problem and reduce the number of error situations eventually. As a result, its use is strongly recommended by Expedia.
+The use of warning will not be enforced by Expedia and it is up to the partner to put it to good use. However, the goal of the warning is to improve the quality of ExpediaConnect. Warning information can help us investigate the problem and reduce the number of error situations eventually. As a result, its use is strongly recommended by Expedia.
 In the XML message, warning information can be sent using the <Warning> element following the <Success> element. The <Warning> element has the same data structure as the <Error> element, and it can use any of the error codes applicable to the <Error> element. In addition, partner may also use code 3000 to communicate other errors related to the OTA content.
 
 ## Duplicate Booking Issue
