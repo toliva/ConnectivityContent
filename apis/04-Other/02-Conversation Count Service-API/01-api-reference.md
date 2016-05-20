@@ -15,7 +15,6 @@ This endpoint returns the number of unread messages for a given hotel.
 | Name           | Parameter Type | Data Type | Values              |
 |----------------|----------------|-----------|---------------------|
 | 'Client-Id'    | Header         | String    | `hackathon`         |
-| 'api-key'      | Header         | String    | `SjDuKZx`(example)  |
 | 'hotelId'      | Query          | int       | '759'               |
 | 'origin'       | Header         | String    | `""`                |
 
