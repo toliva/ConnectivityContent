@@ -28,6 +28,14 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 - Expedia will always wait to get a valid response before sending another notification affecting the same reservation. In other words, two messages will never be sent in parallel, a queue will be in place for modifications and/or cancellations.
 - All information sent in the E-notifications must be passed down to the hotel's Property Management System.
 
+### HTTP vs HTTPS, IP Address or URL?
+
+Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.1 or above protocol.
+
+Expedia  requires that partners make URLs available, and that the SSL certificates used be registered correctly to the URL.
+
+Expedia requires that partners receiving HotelCollect notifications with customer credit cards be PCI-compliant.
+
 ### Fallback to fax or email
 
 - Failed electronic notification automatically fallback to fax or email.
@@ -85,16 +93,20 @@ OTA_CancelRQ | Identifies the reservation and requests a cancellation.
 OTA_CancelRS | Returns a cancellation number upon execution of the cancel action, or Errors if the processing of the request did not succeed.
 
 Each message will be sent in SOAP envelopes within HTTPS posts. The message header will be built using the common header structure, and the message body will contain the appropriate OTA message.
+
 The common header structure is described above in the <Message Header> section. Please refer to Appendix B for detail descriptions on how to use the OTA messages sent in the message body.
 Note that the booking source information is sent under the POS element in the OTA payload for each booking notification request message. For example:
-	<POS>
-		<Source>
-			< RequestorID Type="18" ID="Hotels.com"/>
-			<BookingChannel Type="2">
-				<CompanyName>Expedia</CompanyName>
-			</BookingChannel>
-		</Source>
-	</POS>
+
+```xml
+<POS>
+  <Source>
+    < RequestorID Type="18" ID="Hotels.com"/>
+    <BookingChannel Type="2">
+      <CompanyName>Expedia</CompanyName>
+    </BookingChannel>
+  </Source>
+</POS>
+```
 
 The values used currently by the interface are listed below. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by "A-" in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be "A-Hotels.com". 
 
@@ -119,8 +131,8 @@ Step | Expedia | Partner
 3 | Expedia creates a notification message, computes routing for the appropriate DC partner, and performs any necessary message transformation so that the message will adheres to the expected output format. | 
 4 | Expedia sends the request message to the DC partner via a HTTPS post of a SOAP formatted XML message with a SOAP header and an OTA message as the payload. The body of the message will be built using the OTA_HotelResNotifRQ XML message schema for bookings, the OTA_HotelResModifyNotifRQ for changes, and the OTA_CancelRQ for cancellations. | 
 5 |  | DC partner validates the message header, and stores the request message.
-6 |  | The partner system performs any necessary operations to process the request and generates a booking/modification confirmation or cancellation number for this notification as soon as possible. Connection remains open with Expediauntil Expedia receives a response with a confirmation number.
-7 |  | The partner system generates a response after notification is processed, on the same connection it received the HTTP Post containing the SOAP message. The payload will be built with one the following messages: OTA_HotelResNotifRS, OTA_HotelResModifyNotifRS and OTA_CancelRS.
+6 |  | The partner system performs any necessary operations to process the request and generates a booking/modification confirmation or cancellation number for this notification as soon as possible. Connection remains open with Expedia until Expedia receives a response with a confirmation number.
+7 |  | The partner system generates a response after notification is processed, on the same connection it received the HTTPS Post containing the SOAP message. The payload will be built with one the following messages: OTA_HotelResNotifRS, OTA_HotelResModifyNotifRS and OTA_CancelRS.
 8 | Expedia validates the message header, and stores the response message. | 
 9 | Extract confirmation number from the response message and update booking information in the Expedia system. | 
 10 | Now the consumer can view his itinerary on any Expedia websites with the hotel confirmation number. | 
@@ -198,11 +210,11 @@ Hotel Collect bookings sourced from Hotels.com points of sales
 	</POS>
 ```
 
-Hotel Collect bookings sourced from Venere points of sales
+Hotel Collect bookings sourced from Venere points of sales: Expedia will be used by default for any non Expedia/Hotels.com/EAN booking.
 ```xml
 	<POS>
 		<Source>
-			< RequestorID Type="18" ID="A-Venere"/>
+			< RequestorID Type="18" ID="A-Expedia"/>
 			<BookingChannel Type="2">
 				<CompanyName>Expedia</CompanyName>
 			</BookingChannel>
