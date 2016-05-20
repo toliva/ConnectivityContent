@@ -39,7 +39,6 @@ Example:
 The Header of a response message must include these data elements:
 - The Payload element with the same RequestID, RequestorID and ResponderID returned in the response message.
 - The CommDescriptor element with the SourceID and DestinationID for the response message.
-- The Authentication element is required for the incoming response message.
 - The PayloadDescriptor element with the name of the OTA message in the message body.
 - The PayloadReference element can be sent in the response message, but is not required.
 
@@ -49,9 +48,7 @@ Example:
   <soap-env:Header>
     <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
       <PayloadInfo Location="Body" RequestId="644630088" RequestorId="Expedia.com" ResponderId="EQCTest">
-        <CommDescriptor DestinationId="ExpediaDC" SourceId="EQCTest" RetryIndicator="false">
-          <Authentication Username="Test" Password="Pa$$w0rd"/>
-        </CommDescriptor>
+        <CommDescriptor DestinationId="ExpediaDC" SourceId="EQCTest" RetryIndicator="false"/>
         <PayloadDescriptor Name="OTA_HotelResNotifRS" Version="2003A">
           <PayloadReference SupplierHotelCode="40512" DistributorHotelId="40512"/>
         </PayloadDescriptor>
