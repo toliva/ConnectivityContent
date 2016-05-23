@@ -45,20 +45,21 @@ http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSe
 
 ##### Sample Response
 ```JSON
-{
-    "errorCode": "",
-    "errorMsg": "",
-    "status": "",
+{    
+    "errorCode": null,
+    "errorMsg": null,
+    "status": "Success"
     "data": {
-        "HotelId": 0,
-        "HotelName": "",
-        "endDate": "",
-        "startDate": "",
+        "HotelId": 3513358,
+        "HotelName": "Best Western Plus Kamloops Hotel",
+        "endDate": "2016-06-01T23:59:59.999Z",
+        "limit": 50,
+        "startDate": "2016-05-01T00:00:00.000Z"
         "compSet": [
             {
-                "eventDate": "",
-                "hotelId": 0,
-                "hotelName": ""
+                "eventDate": "2016-05-18T08:46:45.956Z",
+                "hotelId": 759,
+                "hotelName": "Accent Inns Kamloops"
             }
         ]
     }
