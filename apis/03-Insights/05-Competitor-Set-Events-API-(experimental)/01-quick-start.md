@@ -1,12 +1,12 @@
 # Quick Start
 
-As a hotel manager, by specifying your hotel id, startDate and endDate, you can find a list of hotels,which have added your hotel as competitor in that time period. Hoteliers may want to use this API to become aware of competitors list.
+The Competitor Set Events API allows hoteliers to know when a new competitor has entered the market.  By providing a start and end date you can find a list of hotels with have added your hotel as a competitor in that time period.
 
 ----
 
 ## Authentication
 
-Each request should include hotelier credentials in HTTP basic auth format, a clientId query parameter, a startDate query parameter, an endDate query parameter, and a hotelId query parameter.
+Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
 ----
 
@@ -15,7 +15,7 @@ Each request should include hotelier credentials in HTTP basic auth format, a cl
 To retreive competitor set data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/addCompSet``` endpoint via query parameters.  
 
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10&clientId=insights-test
+http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10
 ```
 
 

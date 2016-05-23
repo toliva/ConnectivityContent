@@ -1,10 +1,11 @@
 # Quick Start
 
-The Sort Rank API displays a hotel's average sort position on Expedia top TPIDs and Regions for the next 90 days. Hoteliers can use this information to make informed decisions to increase visibility and/or to view/analyze the effect of an Accelerator on sort.
+The Sort Rank API displays a hotel's average sort position for the next 90 days. Hoteliers can use this information to make informed decisions to increase visibility and/or to view/analyze the effect of an Accelerator on sort.
 
 ----
 
 ## Authentication
+
 Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
 ----
@@ -17,7 +18,7 @@ The most basic call to retreive sort rank data is to simply pass a hotel id and 
 http://apis.integration.karmalab.net/june-hackathon/sort-ranks/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1
 ```
 
-The response will contain the hotel's average sort position for check in dates starting from today for the next 90 days in that hotel's top TPIDs and regions.
+The response will contain the hotel's average sort position for check in dates starting from today for the next 90 days.  The data is separately provided for each of the hotel's top points of sale and regions.
 
 ----
 
