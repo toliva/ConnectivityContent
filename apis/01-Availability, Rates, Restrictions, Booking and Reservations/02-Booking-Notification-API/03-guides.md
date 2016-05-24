@@ -24,16 +24,13 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 
 ### General notification delivery process
 
-- Expedia expects to receive a confirmation number in return upon successful delivery of a notification. At the business agreement level, the Hotelier must accept all bookings, as the Hotelier controls the product availability and rate on Expedia. Therefore not returning a confirmation number is not a valid response to a notification. At a system to system level, if the Hoteliers system is unable to accept the reservation, then the Hoteliers system will need to send back a response with an error message; in this case Expedia will fax or email the reservation, which will need to be handled by the Hotelier as the fax or email is handled today.
-- A partner can use the Warning message in the response to communicate any availability or rate discrepancy between Expedia and the hotelier system.
-- Expedia will be responsible for the sequencing of messages, i.e. always sending the reservation message and ensuring that it has been processed by the supplier prior to sending a cancellation or modification for the given booking. 
-- Expedia will always wait to get a valid response before sending another notification affecting the same reservation. In other words, two messages will never be sent in parallel, a queue will be in place for modifications and/or cancellations.
-- All information sent in the E-notifications must be passed down to the hotel's Property Management System.
+Expedia expects to receive a confirmation number in return upon successful delivery of a notification. Expedia partners must accept all bookings. Not returning a confirmation number is not a valid response to a notification. If the partner's system is unable to accept the reservation, then the Hoteliers system will need to send back a response with an error message; in this case Expedia will fax or email the reservation, which will need to be handled by the Hotelier as the fax or email is handled today.
 
-### Message Sequence
+Expedia will be responsible for the sequencing of messages, i.e. always sending the reservation message and ensuring that it has been processed by the supplier prior to sending a cancellation or modification for the given booking. 
 
-Expedia ensures to never send modification or cancellation before receiving the confirmation for the original booking.
-When there are more than one notifications pending in the queue for the same booking, Expedia will always wait for a valid response for the previous notification before sending the next one. 
+Expedia will always wait to get a valid response before sending another notification affecting the same reservation. When there are more than one notifications pending in the queue for the same booking, Expedia will always wait for a valid response for the previous notification before sending the next one. 
+
+All information sent in the notification must be passed down to the hotel's Property Management System.
 
 ### Notification Expiration Time
 
