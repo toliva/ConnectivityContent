@@ -282,13 +282,6 @@ Step | Expedia | DC Partner
 
 **Final condition:** Expedia received a response with OTA error. The notifications will automatically fallback to fax or email when a response with OTA error is received.
 
-
-## Warning in Successful Response
-A warning is the information sent in a successful response to inform Expedia that a particular situation occurred during the request processing but did not generate an error response.
-According to the API specification, a finite and precise list of situations may result in error responses. When one of these errors occurs on the partner side or when any other error (outside the allowed list of errors) occurs, the partner may use the warning to inform Expedia about this situation.
-The use of warning will not be enforced by Expedia and it is up to the partner to put it to good use. However, the goal of the warning is to improve the quality of ExpediaConnect. Warning information can help us investigate the problem and reduce the number of error situations eventually. As a result, its use is strongly recommended by Expedia.
-In the XML message, warning information can be sent using the <Warning> element following the <Success> element. The <Warning> element has the same data structure as the <Error> element, and it can use any of the error codes applicable to the <Error> element. In addition, partner may also use code 3000 to communicate other errors related to the OTA content.
-
 ## Duplicate Booking Issue
 Described in this section are two possible scenarios related to potential double bookings in the supplier system.
 A somewhat complex situation can arise when Expedia (being pessimistic with regards to successful message delivery) does not receive a valid response even though the supplier has received the request and successfully processed the notification. In this case Expedia will send a fax or email to the hotel.
