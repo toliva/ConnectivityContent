@@ -7,7 +7,6 @@
       <xs:choice>
         <xs:sequence>
           <xs:element name="Success" type="SuccessType"/>
-          <xs:element name="Warnings" type="WarningsType" minOccurs="0"/>
           <xs:element name="UniqueID" type="UniqueID_Type" minOccurs="2" maxOccurs="2"/>
           <xs:element name="CancelInfoRS" type="CancelInfoRSType"/>
         </xs:sequence>
@@ -212,22 +211,6 @@
   <xs:complexType name="ErrorsType">
     <xs:sequence>
       <xs:element name="Error" type="ErrorType" maxOccurs="99"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="WarningType">
-    <xs:annotation>
-      <xs:documentation>Standard way to indicate successful processing of an OTA message, but one in which warnings are generated</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="FreeTextType">
-        <xs:attributeGroup ref="ErrorWarningType"/>
-        <xs:attributeGroup ref="ErrorWarningAttributes"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="WarningsType">
-    <xs:sequence>
-      <xs:element name="Warning" type="WarningType" maxOccurs="99"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="FreeTextType">
