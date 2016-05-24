@@ -30,58 +30,29 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 - Expedia will always wait to get a valid response before sending another notification affecting the same reservation. In other words, two messages will never be sent in parallel, a queue will be in place for modifications and/or cancellations.
 - All information sent in the E-notifications must be passed down to the hotel's Property Management System.
 
-### Fallback to fax or email
+### Message Sequence
 
-- Failed electronic notification automatically fallback to fax or email. A BN message (new res, modify or cancel) will be considered as having failed electronic notification if Expedia does not receive a positive success response back. In other words, if Expedia retries the message over and over until expiration time is reached, without getting a positive successful response, or if an OTA error is returned, Expedia will send the notification by fax or email, depending on the property configuration.
-- Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
-- Changes and cancellations to reservations sent by fax or email before the electronic interface went live will continue to be delivered by fax or email.
+Expedia ensures to never send modification or cancellation before receiving the confirmation for the original booking.
+When there are more than one notifications pending in the queue for the same booking, Expedia will always wait for a valid response for the previous notification before sending the next one. 
 
-## HTTP vs HTTPS, IP Address or URL?
-
-Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.1 or above protocol.
-
-Expedia  requires that partners make URLs available, and that the SSL certificates used be registered correctly to the URL.
-
-Expedia requires that partners receiving HotelCollect notifications with customer credit cards be PCI-compliant.
-
-## Are WSDL available?
-
-Unfortunately, Expedia can't make a WSDL endpoint or a WSDL file available for the booking messages. Schemas (XSDs) are available, and can be found in the [XML Schemas](schemas.html) section.
-
-## I'm using EQC BR and BC to retrieve and confirm reservations, should I also consider using this API?
-
-Partners need to select either EQC BR/BC, or the BN API. Partners cannot expect to be live on both connectivity APIs at the same time.
-
-The choice to use either EQC BR/BC or the BN API to get bookings is left entirely up to the partner integrating with Expedia. Both options have benefits and drawbacks.
-
-## Booking Notification & ETP, HotelCollect, ExpediaCollect
-
-Expedia Collect bookings are sent with net rate. If the booking is paid by EVC, payment information for the Expedia Virtual Card will be included in the notification. Note that even when a partner is managing Lowest Available Rate, ExpediaCollect bookings will always contain a net rate.
-
-Hotel Collect bookings are sent with the sell rate. Payment information for the customer Credit Card will be included in the notification, along with a special billing instruction (special request code 5) indicating that the booking is hotel collect and the hotel should charge full stay to guest credit card.
-
-Note that Hotel Collect bookings can be easily distinguished by the prefix "A-" in the POS ID value, and also by different rate plan codes provided in the product mapping by the partner.
-
-Upon receiving the notification for Hotel Collect booking, partner must ensure the booking is mapped to the appropriate profile in the hotel system so that the payment, the reconciliation and other downstream processes will be handled correctly by the hotelier.
-
-## Notification Expiration Time
+### Notification Expiration Time
 
 When Expedia initiates a booking notification and creates a request message, a notification expiration date/time is set and sent in the message header. The notification time may be set to a fixed value of 2 hours 15 minutes from the notification creation time, or calculated based on date of arrival of the booking, which is configurable per partner.
+
 The purpose of the notification expiration time is to make sure that all possible message delivery attempts between systems are made before giving up on electronic delivery of the notification. 
+
 This notification expiration time is a concern for the notification sender, not for the supplier. This is sent for information only and the supplier must never stop the notification processing because of this notification expiration time being reached. Expedia will accept the response even after the notification has expired.
+
 Until the notification has been completely processed (Expedia has received a valid response message with confirmation or error message) the notification expiration time will be continually monitored by Expedia to make sure it has not yet expired. 
 If the notification does expire, then a fax or email notification will be sent to the hotel or to the central reservation office.
 
-## Notification Identifier
+### Fallback to fax or email
 
-A notification is identified by a RequestID. For booking notification, this ID is generated by Expedia and Expedia guarantees the ID is unique in all notifications sent by Expedia.
-This ID is mandatory in all messages and in acknowledgements. For booking notification, this means the DC partner must return the RequestID in the acknowledgement and the response message with the same value sent in the request by Expedia.
-In other words, the RequestID must remain unchanged throughout a complete notification process.
+Failed electronic notification automatically fallback to fax or email. A BN message (new res, modify or cancel) will be considered as having failed electronic notification if Expedia does not receive a positive success response back. In other words, if Expedia retries the message over and over until expiration time is reached, without getting a positive successful response, or if an OTA error is returned, Expedia will send the notification by fax or email, depending on the property configuration.
 
-## Message Sequence
+Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
 
-Expedia ensures never send modification or cancellation before receiving the confirmation for the original booking.
-When there are more than one notifications pending in the queue for the same booking, Expedia will always wait for a valid response for the previous notification before sending the next one. 
+Changes and cancellations to reservations sent by fax or email before the electronic interface went live will continue to be delivered by fax or email.
 
 ## Message Pairs and POS
 
@@ -144,6 +115,44 @@ Step | Expedia | Partner
 8 | Expedia validates the message header, and stores the response message. | 
 9 | Extract confirmation number from the response message and update booking information in the Expedia system. | 
 10 | Now the consumer can view his itinerary on any Expedia websites with the hotel confirmation number. | 
+
+## HTTP vs HTTPS, IP Address or URL?
+
+Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.1 or above protocol.
+
+Expedia  requires that partners make URLs available, and that the SSL certificates used be registered correctly to the URL.
+
+Expedia requires that partners receiving HotelCollect notifications with customer credit cards be PCI-compliant.
+
+## Are WSDL available?
+
+Unfortunately, Expedia can't make a WSDL endpoint or a WSDL file available for the booking messages. Schemas (XSDs) are available, and can be found in the [XML Schemas](schemas.html) section.
+
+## I'm using EQC BR and BC to retrieve and confirm reservations, should I also consider using this API?
+
+Partners need to select either EQC BR/BC, or the BN API. Partners cannot expect to be live on both connectivity APIs at the same time.
+
+The choice to use either EQC BR/BC or the BN API to get bookings is left entirely up to the partner integrating with Expedia. Both options have benefits and drawbacks.
+
+## Booking Notification & ETP, HotelCollect, ExpediaCollect
+
+Expedia Collect bookings are sent with net rate. If the booking is paid by EVC, payment information for the Expedia Virtual Card will be included in the notification. Note that even when a partner is managing Lowest Available Rate, ExpediaCollect bookings will always contain a net rate.
+
+Hotel Collect bookings are sent with the sell rate. Payment information for the customer Credit Card will be included in the notification, along with a special billing instruction (special request code 5) indicating that the booking is hotel collect and the hotel should charge full stay to guest credit card.
+
+Note that Hotel Collect bookings can be easily distinguished by the prefix "A-" in the POS ID value, and also by different rate plan codes provided in the product mapping by the partner.
+
+Upon receiving the notification for Hotel Collect booking, partner must ensure the booking is mapped to the appropriate profile in the hotel system so that the payment, the reconciliation and other downstream processes will be handled correctly by the hotelier.
+
+## Guarantees/Credit Cards Included in Booking Messages
+For Expedia Collect booking paid by EVC or Hotel Collect booking paid by guest credit card, the payload for Booking or Modify request will include a <Guarantee> element as the container for credit card payment information.
+- The <Guarantee> element will contain the credit card payment information including card type, card code, card number, expiry date, card holder name.
+- For ExpediaCollect EVC bookings, CVV is not included. If CVV is required by the hotel to charge the EVC card, they should contact Expedia to obtain a default CVV value for all EVC cards. A billing address is included, which is Expedia head office address by default for all cards.
+- For Hotel Collect bookings, depending on the hotel configuration Expedia may or may not send CVV for guest credit card, therefore the hotel booking notification interface must be able to process the booking with and without CVV. Customer billing address is not included.
+- The <Guarantee> element is optional, and will be sent only for Expedia Collect bookings paid by EVC, and for Hotel Collect bookings. For Expedia Collect bookings remaining on the standard billing process, no credit card information will be sent in the booking or modify request.
+
+A special request code (5) is sent to communicate payment related information in the booking or modify request, for bookings paid by credit card, either EVC or Hotel Collect.
+Please note that credit card inform is only sent for the booking or modify request, but not for the cancel request. Penalty charge, if applicable, should be processed using the same payment information sent previously for the original reservation. If the original reservation is sent with a credit card, the penalty charge should be put on the same card.
 
 <a name="POSElement"></a>
 ## Understanding the POS element
@@ -282,19 +291,17 @@ Step | Expedia | DC Partner
 
 **Final condition:** Expedia received a response with OTA error. The notifications will automatically fallback to fax or email when a response with OTA error is received.
 
+## Notification Identifier
+
+A notification is identified by a RequestID. For booking notification, this ID is generated by Expedia and Expedia guarantees the ID is unique in all notifications sent by Expedia.
+
+This ID is mandatory in all messages requests and responses. The partner must return the RequestID in the response message with the same value sent in the request by Expedia.
+
 ## Duplicate Booking Issue
 Described in this section are two possible scenarios related to potential double bookings in the supplier system.
 A somewhat complex situation can arise when Expedia (being pessimistic with regards to successful message delivery) does not receive a valid response even though the supplier has received the request and successfully processed the notification. In this case Expedia will send a fax or email to the hotel.
+
 A rare condition can occur since the hotel agent who receives the fax or email will be trying to enter the reservation into his system while Expedia is attempting to deliver the same booking to the hotel. In this case the hotel agent will enter the reservation in his system, and then attempt to enter the confirmation number manually through Expedia Partner Central.
 - If Expedia successfully delivered the booking as well (in which case we have a double booking) and the supplier has returned another confirmation number to Expedia, then the agent will see that the confirmation number for this booking already exists on the interface or tool provided by Expedia and then will be able on his own to delete the duplicate booking in his system.
 - If the agent enters the confirmation number through the Expedia interface or tool before Expedia receives a confirmation number in the electronic response from the supplier, then the system will automatically detect the double booking. Expedia Customer Operations will monitor a log and then call the hotel. They would ask the agent to look for the duplicate hotel bookings with two different confirmation numbers and delete one of them.
 
-## Guarantees/Credit Cards Included in Booking Messages
-For Expedia Collect booking paid by EVC or Hotel Collect booking paid by guest credit card, the payload for Booking or Modify request will include a <Guarantee> element as the container for credit card payment information.
-- The <Guarantee> element will contain the credit card payment information including card type, card code, card number, expiry date, card holder name.
-- For ExpediaCollect EVC bookings, CVV is not included. If CVV is required by the hotel to charge the EVC card, they should contact Expedia to obtain a default CVV value for all EVC cards. A billing address is included, which is Expedia head office address by default for all cards.
-- For Hotel Collect bookings, depending on the hotel configuration Expedia may or may not send CVV for guest credit card, therefore the hotel booking notification interface must be able to process the booking with and without CVV. Customer billing address is not included.
-- The <Guarantee> element is optional, and will be sent only for Expedia Collect bookings paid by EVC, and for Hotel Collect bookings. For Expedia Collect bookings remaining on the standard billing process, no credit card information will be sent in the booking or modify request.
-
-A special request code (5) is sent to communicate payment related information in the booking or modify request, for bookings paid by credit card, either EVC or Hotel Collect.
-Please note that credit card inform is only sent for the booking or modify request, but not for the cancel request. Penalty charge, if applicable, should be processed using the same payment information sent previously for the original reservation. If the original reservation is sent with a credit card, the penalty charge should be put on the same card.
