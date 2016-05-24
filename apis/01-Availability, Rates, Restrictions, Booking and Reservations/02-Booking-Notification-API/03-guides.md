@@ -38,9 +38,9 @@ Expedia requires that partners receiving HotelCollect notifications with custome
 
 ### Fallback to fax or email
 
-- Failed electronic notification automatically fallback to fax or email.
+- Failed electronic notification automatically fallback to fax or email. A BN message (new res, modify or cancel) will be considered as having failed electronic notification if Expedia does not receive a positive success response back. In other words, if Expedia retries the message over and over until expiration time is reached, without getting a positive successful response, or if an OTA error is returned, Expedia will send the notification by fax or email, depending on the property configuration.
 - Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
-- Changes and cancellations to reservations sent by fax or email before the ExpediaConnect Interface went live will continue to be delivered by fax or email.
+- Changes and cancellations to reservations sent by fax or email before the electronic interface went live will continue to be delivered by fax or email.
 
 ## Are WSDL available?
 
