@@ -4,12 +4,14 @@
 
 ### Book with locally stored inventory and rate
 
-Hoteliers control Expedia's product information (in particular availability, rates and inventory) via the EQC AR interface or Expedia Partner Central. Thus, hoteliers need to keep this information up-to-date. As the Hotelier controls the inventory, Expedia does not need to send an availability request to the Hotelier when a booking is made on Expedia and no Expedia reservation notification arriving via the ExpediaConnect Interface should be rejected. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking, but rather the hotels should inform their Expedia Market Manager immediately.
+Expedia suppliers control availability, rates and inventory information via the EQC AR interface or Expedia Partner Central. Because suppliers are expected to provide the latest changes to availability or rate in real time via either EQC or EPC, Expedia will let customers book against the latest information received successsfully and stored locally in Expedia systems. 
 
-The reservation notification request message will contain the Hotelier's daily rates and may include taxes and extra person and extra service fees. If there are rate issues with the booking, this discrepancy should be flagged and the booking should be routed by the Hotelier to the staff that is responsible for reconciling these differences and the Expedia Market Manager should be alerted. A discrepancy in pricing is not an acceptable reason to reject a booking; rather it means that on the accounting side, this booking needs special attention, so that the pricing differences, for whatever reason, need to be reconciled with Expedia. Hoteliers are responsible for keeping their inventory and rates up to date.
+Expedia reservation sent via the BN API are notifications, made after the reservation was confirmed to the guest. Under no circumstances should Expedia suppliers reject these reservation notifications. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking.
+
+The reservation notification request message will contain the Hotelier's daily rates and may include taxes and extra person and extra service fees. If there are rate issues with the booking, this discrepancy should be flagged and the booking should be routed by the Hotelier to the staff that is responsible for reconciling these differences and the Expedia Market Manager should be alerted. A discrepancy in pricing is not an acceptable reason to reject a booking either. Hoteliers are responsible for keeping their inventory and rates up to date.
 
 We foresee two key standard cases where rates sent by Expedia may not match those in the hotelier system:
-- The hotel agent managing rates on the Expedia system updates rates through ARI or Expedia Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the ARI interface.
+- The hotel agent managing rates on the Expedia system updates rates through ARI or Expedia Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the EQC AR interface.
 - The hotel decides to take advantage of the promotional capabilities mentioned previously for a period of time. In the Expedia system they can set up a special promotion to give "5th night free if you stay 4 nights". Those 5th nights that have a daily rate of $0.00 may not match the rate expected by the hotelier system.
 
 ### Information included in a notification
@@ -28,7 +30,13 @@ We foresee two key standard cases where rates sent by Expedia may not match thos
 - Expedia will always wait to get a valid response before sending another notification affecting the same reservation. In other words, two messages will never be sent in parallel, a queue will be in place for modifications and/or cancellations.
 - All information sent in the E-notifications must be passed down to the hotel's Property Management System.
 
-### HTTP vs HTTPS, IP Address or URL?
+### Fallback to fax or email
+
+- Failed electronic notification automatically fallback to fax or email. A BN message (new res, modify or cancel) will be considered as having failed electronic notification if Expedia does not receive a positive success response back. In other words, if Expedia retries the message over and over until expiration time is reached, without getting a positive successful response, or if an OTA error is returned, Expedia will send the notification by fax or email, depending on the property configuration.
+- Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
+- Changes and cancellations to reservations sent by fax or email before the electronic interface went live will continue to be delivered by fax or email.
+
+## HTTP vs HTTPS, IP Address or URL?
 
 Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.1 or above protocol.
 
@@ -36,15 +44,15 @@ Expedia  requires that partners make URLs available, and that the SSL certificat
 
 Expedia requires that partners receiving HotelCollect notifications with customer credit cards be PCI-compliant.
 
-### Fallback to fax or email
-
-- Failed electronic notification automatically fallback to fax or email. A BN message (new res, modify or cancel) will be considered as having failed electronic notification if Expedia does not receive a positive success response back. In other words, if Expedia retries the message over and over until expiration time is reached, without getting a positive successful response, or if an OTA error is returned, Expedia will send the notification by fax or email, depending on the property configuration.
-- Once a failed electronic notification has been rerouted to fax or email delivery, the associated booking will be marked as having been sent by fax or email. Future notifications associated with that flagged booking will not be sent by e-notification but be delivered via fax or email only.
-- Changes and cancellations to reservations sent by fax or email before the electronic interface went live will continue to be delivered by fax or email.
-
 ## Are WSDL available?
 
-Unfortunately, Expedia can't make a WSDL endpoint or a WSDL file available for the booking messages. Schemas (XSDs) are available, and can be found here.
+Unfortunately, Expedia can't make a WSDL endpoint or a WSDL file available for the booking messages. Schemas (XSDs) are available, and can be found in the [XML Schemas](schemas.html) section.
+
+## I'm using EQC BR and BC to retrieve and confirm reservations, should I also consider using this API?
+
+Partners need to select either EQC BR/BC, or the BN API. Partners cannot expect to be live on both connectivity APIs at the same time.
+
+The choice to use either EQC BR/BC or the BN API to get bookings is left entirely up to the partner integrating with Expedia. Both options have benefits and drawbacks.
 
 ## Booking Notification & ETP, HotelCollect, ExpediaCollect
 
@@ -170,6 +178,7 @@ Expedia Collect bookings sourced from Expedia points of sales
 			</BookingChannel>
 		</Source>
 	</POS>
+```
 
 Expedia Collect bookings sourced from Hotels.com points of sales 
 ```xml
