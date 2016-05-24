@@ -286,7 +286,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 
 ###	OTA_HotelResNotifRS
 There are 2 types of responses that can be returned by the hotel partner.
-- A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response. Optionally partner can include warning information in a success response.
+- A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response. 
 - An error response is to be returned when the notification failed to be processed by the partner system. In this case partner must include an explicit error code and a detail error message in the error response. The list of error codes are defined in the API spec. 
 
 #### Detailed definition of a successul response
@@ -302,12 +302,6 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
  | @ResResponseType | String 9 | 1 | Committed | Status of response.
 1 | Success |  | 1 |  | Presence of the Success element indicates that transaction was processed successfully.
-1 | Warnings |  | 0..1 |  | Collection of warning messages. Container element.
-2 | Warning | String 512 | 1..99 |  | This element contains the warning message structure, which is identical to the error message structure in an error response. Details on how to use the warning or error structure can be found in the API spec. May have 1 or multiple instances if one or many errors/warnings are detected while processing the request message. Detailed error/warning description is placed directly under this element. The API allows up to 512 characters for this element.
- | @ Language | language | 0..1 | en-us | Language of the textual error message.
- | @ Type | OTA_CodeType | 1 | 3 | OTA error type. The DC interface uses a generic error type for all errors. Type 3 = Business error
- | @ Code | OTA_CodeType | 1 | 450 | OTA error code. The DC interface uses a generic code for all errors. Code 450 = Unable to process
- | @ ShortText | String 4 | 1 |  | The 4 digit error code defined by the Direct Connect API. See [Error Codes](#/ErrorCodes) section for all recognized errors..
 1 | HotelReservations |  | 1 |  | Collection of Hotel Reservations. Container element.
 2 | HotelReservation |  | 1 |  | A single Hotel Reservation. Single occurrence.
 3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element. 
@@ -455,12 +449,6 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
  | @Status | String 9 | 1 | Cancelled  | Status of response.
 1 | Success |  | 1 |  | Presence of the Success element indicates that transaction was processed successfully.
-1 | Warnings |  | 0..1 |  | Collection of warning messages. Container element.
-2 | Warning | String 512 | 1..99 |  | This element contains the warning message structure, which is identical to the error message structure in an error response. Details on how to use the warning or error structure can be found in the API spec. May have 1 or multiple instances if one or many errors/warnings are detected while processing the request message. Detailed error/warning description is placed directly under this element. The API allows up to 512 characters for this element.
- | @ Language | language | 0..1 | en-us | Language of the textual error message.
- | @ Type | OTA_CodeType | 1 | 3 | OTA error type. The DC interface uses a generic error type for all errors. Type 3 = Business error
- | @ Code | OTA_CodeType | 1 | 450 | OTA error code. The DC interface uses a generic code for all errors. Code 450 = Unable to process
- | @ ShortText | String 4 | 1 |  | The 4 digit error code defined by the Direct Connect API. See the API spec on BN Message Set - Error Handling for a complete list of error codes used by the booking notification interface.
 1 | UniqueID |  | 2 |  | Unique identifier of the reservation to be cancelled. Ref <OTA Unique ID Types> at the end of this document. There will be 2 occurrences, one to contain the original Expedia booking / reservation number, and another for the Hotelier confirmation number.
  | @Type | Numeric 2 | 1 | 10, 14 | A reference to the type of object defined by the UniqueID element. 10=Hotel, to be used to specify the hotel confirmation number. 14=Reservation, to be used to specify the Expedia booking ID.
  | @ID | String 32 | 1 |  | A unique identifying value assigned by the creating system to the reservation. This will be either the hotel confirmation number or the Expedia booking ID.
