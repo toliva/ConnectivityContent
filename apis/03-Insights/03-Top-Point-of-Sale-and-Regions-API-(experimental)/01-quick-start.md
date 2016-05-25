@@ -1,23 +1,24 @@
 # Quick Start
 
-Rank Optimizer is a tool in Expedia Partner Central (EPC) that shows hoteliers their average placement position (aka sort rank) in hotel search result, with the goal of helping them understand the main factors that influence placement and how to optimize for visibility and booking. In order to provide the most relevant information, average sort rank is shown for the Point of Sales (POSa) and regions (aka, top TPIDs and Regions) where the hotel is most popular. This API provides the top TPIDs and region data.
+The Top Point of Sale and Regions API provides the highest booking points of sale and regions for a given hotel.  Hoteliers can use this information to determine for what point of sale and region their hotel is most popular.
 
 ----
 
 ## Authentication
+
 Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
 ----
 
-## Reading Top TPID and Region Data
+## Reading Top Point of Sale and Region Data
 
-To retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  
+To retreive top point of sale and regions data simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  
 
 ```
 http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 ```
 
-The response will contain a sorted list of top regions for each of the top tpids for the specified hotel. 
+The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel.
 
 ```JSON
 {

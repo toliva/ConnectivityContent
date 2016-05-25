@@ -1,13 +1,15 @@
 # Quick Start
 
-The FairShare API returns a hotel’s expected fair share and actual market share per stay dates. 
+The Fair Share API returns a hotel’s expected fair share and actual market share per stay dates.  Fair share is a ratio of a hotel's provided rooms vs the total number of rooms provided by all competitors.
+
 The equation for fair share is my room count /(my room count + my competitors' total room count). 
-The equation for actual share is my bookings /(my bookings + my competitors’ total bookings)
+The equation for actual share is my booked rooms /(my booked rooms + my competitors’ total booked rooms)
 
 ----
 
 ## Authentication
-Each request should include hotelier credentials in HTTP basic auth format, a clientId query parameter, a dayNum query parameter, and a hotelId query parameter.
+
+Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
 ----
 
@@ -16,32 +18,32 @@ Each request should include hotelier credentials in HTTP basic auth format, a cl
 To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/fairShare``` endpoint via query parameters.  
 
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&dayNum=2&clientId=insights-test
+http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&dayNum=2
 ```
 
 The response will contain the fair share data in the following format: 
 
 ```JSON
-{
-    "data": {
-        "compSetRoomCount": 3322,
-        "daily": [
-            {
-                "bookedRooms": 0,
-                "compSetBookedRooms": 0,
-                "date": "2016-05-18"
-            },
-            {
-                "bookedRooms": 0,
-                "compSetBookedRooms": 0,
-                "date": "2016-05-19"
-            }
-        ],
-        "fairshare": 0.024,
-        "roomCount": 83
-    },
+{    
     "errorCode": null,
     "errorMsg": null,
-    "status": "Success"
+    "status": "Success",
+    "data": {
+        "compSetRoomCount": 514,
+        "fairshare": 0.085,
+        "roomCount": 48,
+        "daily": [
+            {
+                "bookedRooms": 13,
+                "compSetBookedRooms": 236,
+                "date": "2016-05-23"
+            },
+            {
+                "bookedRooms": 13,
+                "compSetBookedRooms": 207,
+                "date": "2016-05-24"
+            }
+        ]
+    }
 }
 ```
