@@ -2,6 +2,12 @@
 
 The Expedia Conversation Count Service (CCS) is a simple service that retrieves the unread message count by hotel.
 
+## Authentication
+
+The Conversation Count Service requires HTTP basic auth credentials to be supplied with every request.
+
+Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.
+
 ## Get Unread Count for Hotel Endpoint
 
 ```
@@ -12,11 +18,10 @@ This endpoint returns the number of unread messages for a given hotel.
 
 ### Request Parameters
 
-| Name           | Parameter Type | Data Type | Values              |
-|----------------|----------------|-----------|---------------------|
-| 'Client-Id'    | Header         | String    | `hackathon`         |
-| 'hotelId'      | Query          | int       | '759'               |
-| 'origin'       | Header         | String    | `""`                |
+| Name            | Parameter Type | Data Type | Values               |
+|-----------------|----------------|-----------|----------------------|
+| `Authorization` | Header         | String    | `Basic dGVzdDp0ZXN0` |
+| 'hotelId'       | Path           | int       | '759'                |
 
 ### Response
 
@@ -25,6 +30,8 @@ This endpoint returns the number of unread messages for a given hotel.
 | Code                    | Reason                                                                          |
 |-------------------------|---------------------------------------------------------------------------------|
 | 200 OK                  | Request was successful.                                                         |
+| 401 Unauthorized        | Username and/or password was invalid.                                           |
+| 403 Forbidden           | User is not authorized to request data for the specified hotel.                 |
 
 ### Response Content
 
@@ -43,18 +50,3 @@ When Successful, this endpoint responds with a JSON object with 'Content-Type: a
   "unreadCount": 3
 }
 ```
-#### HTTP Status Codes
-
-| Code                    | Reason                                                                          |
-|-------------------------|---------------------------------------------------------------------------------|
-| 400 Bad Request         | `clientId` query parameter and/or request body is invalid.                      |
-| 404 Not Found           | "Not Found"                                                                     |
-| 401 Unauthorized        | 'Client-Id' is invalid / Incorrect ApiKey                                       |
-
-Specific reasons for a `400 Bad Request ` response status include:
-- "Missing request header 'Client-Id' for method parameter of type String"
-- "Request value "hotelId" of "-1" is invalid"
-
-Specific reasons for a `404 Not Found ` response status include:
-- "Incorrect endpoint"
-
