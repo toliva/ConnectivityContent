@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2016-05-25 | Update the documentation to reflect all the Product-API v2 (no version in URL, update to Accept & Content-Type, new room type model) |
 | 2016-05-02 | Added support for cancel policy exceptions |
 | 2016-04-27 | Added support for Rate Plan Delete |
 | 2016-04-04 | Refreshed list of supported value adds, added more pricing models supported, clarified required VS optional fields. |

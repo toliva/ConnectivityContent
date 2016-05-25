@@ -32,18 +32,18 @@ For more information about getting started for the first time, and authorization
 
 | Resource | Supported Operations | Production Endpoint | Parameters |
 | -------- | -------------------- | ------------------- | ---------- |
-| Property | Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided | GET https://services.expediapartnercentral.com/products/v1/properties/ | status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default) |
-| Property | Read a single property (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{PropertyID} | None |
-| Room Type | Read multiple room types (GET) belonging to a single property | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/ | status=all (optional) If status is not provided, only active room types are returned.|
-| Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/ | None |
-| Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
-| Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
-| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
-| Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
-| Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
-| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Property | Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided | GET https://services.expediapartnercentral.com/products/properties/ | status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default) |
+| Property | Read a single property (GET) | GET https://services.expediapartnercentral.com/products/properties/{PropertyID} | None |
+| Room Type | Read multiple room types (GET) belonging to a single property | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/ | status=all (optional) If status is not provided, only active room types are returned.|
+| Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/ | None |
+| Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
+| Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
+| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
 ## HTTP Status Code
 
@@ -59,9 +59,9 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 403 | Authorization error |
 | 404 | Invalid resource |
 | 405 | Invalid/unsupported method on resource |
-| 406 | Unsupported media type for response (only application/json is supported) |
+| 406 | Unsupported media type for response (only application/vnd.expedia.eps.product-v2+json is supported) |
 | 409 | Conflicting data |
-| 415 | Unsupported media type for requests (only application/json is supported) |
+| 415 | Unsupported media type for requests (only application/vnd.expedia.eps.product-v2+json is supported) |
 | 500 | Internal system error (shouldn’t be retried) |
 | 503 | Internal system error (should be retried) |
 
@@ -72,15 +72,15 @@ HTTP headers are slightly different between a request made to the EPS Product AP
 | Header | Type | Required | Input Format |
 | ------ | ---- | -------- | ------------ |
 | Authorization | String | Required | Authorization: Basic [username:password encoded by Base64] |
-| Content-Type | String | Required* | Content-Type: application/json |
-| Accept | String | Required | Accept: application/json |
+| Content-Type | String | Required* | Content-Type: application/vnd.expedia.eps.product-v2+json |
+| Accept | String | Required | Accept: application/vnd.expedia.eps.product-v2+json |
 | Request-ID | String | Optional | Can be provided by the partner and can be referenced later on for troubleshooting purposes. When provided by the partner, it can be anything, and no validations will be performed to insure uniqueness of this ID. If it is not provided in request, API will generate a UUID and return it in the response.  |
 *required for create and modify requests only
 
 ### Format – Response
 | Header | Type | Input Format |
 | ------ | ---- | ------------ |
-| Content-Type | String | Content-Type: application/json |
+| Content-Type | String | Content-Type: application/vnd.expedia.eps.product-v2+json |
 | Request-ID | String | Partner-provided request identifier. If it was not provided in the request, Expedia will generate a UUID and return it in the response |
 | Transaction-ID | GUID | Unique transaction ID generated by Expedia for all messages. Expedia recommends storing this identifier. Can be used to reference messages when troubleshooting with Expedia |
 
@@ -168,19 +168,19 @@ Both successful and unsuccessful responses are returned by the same DTO, but can
 
 A Java implementation to handle this, using Spring’s RestTemplate, could look like this:
 ```Java
-   ResponseEntity<ResponseWrapperDTO<ProductDTO>> response = restTemplate.exchange(
+   ResponseEntity<ResponseWrapperDTO<RoomTypeDTO>> response = restTemplate.exchange(
             "url",
             HttpMethod.POST,
             entity,
-            new ParameterizedTypeReference<ResponseWrapperDTO<ProductDTO>>() {});
+            new ParameterizedTypeReference<ResponseWrapperDTO<RoomTypeDTO>>() {});
 ```
 
 ## Property
 ### Obtain a list of properties
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties
+- Url: https://services.expediapartnercentral.com/products/properties
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
@@ -198,9 +198,9 @@ Status Code | Description | Response Model
 
 ### Read a single property
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -257,9 +257,9 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 ## Room type
 ### Obtain a list of room types
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default
@@ -275,9 +275,9 @@ Status Code | Description | Response Model
 
 ### Creates a new room type
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes
-- Consumes: `application/json`
-- Produces: `application/json`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -300,34 +300,54 @@ body | body | JSON message describing the new room type | Yes | [RoomType](#/def
                 "customLabel": "Rooftop Terrace"
             }
         },
-        "maxOccupants": 4,
-        "occupancyByAge": [
+        "ageCategories": [
             {
-                "ageCategory": "Adult",
-                "minAge": 18,
-                "maxOccupants": 4
-            },
+                "category": "Adult", 
+                "minAge": 18
+            }, 
             {
-                "ageCategory": "ChildAgeA",
-                "minAge": 0,
-                "maxOccupants": 3
+                "category": "ChildAgeA", 
+                "minAge": 6
+            }, 
+            {
+                "category": "Infant", 
+                "minAge": 0
             }
-        ],
-        "bedTypes": [
+        ], 
+        "maxOccupancy": {
+            "adults": 2, 
+            "children": 1, 
+            "total": 3
+        }, 
+        "standardBedding": [
             {
-                "id": "1.67",
-                "name": "1 king and 1 sofa bed"
+                "option": [
+                    {
+                        "quantity": 1, 
+                        "size": "Full", 
+                        "type": "Full Bed"
+                    }, 
+                    {
+                        "quantity": 2, 
+                        "size": "Twin", 
+                        "type": "Bunk Bed"
+                    }
+                ]
+            }
+        ], 
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Sofa Bed",
+                "size": "Full"
             }
         ],
         "smokingPreferences": [
-            {
-                "id": "2.1",
-                "name": "Non-Smoking"
-            }
+            "Non-Smoking"
         ],
         "roomSize": {
-            "squareFeet": 1200,
-            "squareMeters": 111
+            "squareFeet": 300,
+            "squareMeters": 14
         },
         "views": [
             "Ocean View",
@@ -344,9 +364,9 @@ Status Code | Description | Response Model
 
 ### Read a single room type
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -363,9 +383,9 @@ Status Code | Description | Response Model
 
 ### Modify an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}
-- Consumes: `application/json`
-- Produces: `application/json`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -392,34 +412,54 @@ body | body | JSON message with modified room type | Yes | [RoomType](#/definiti
             "value": "Executive Penthouse, 1 King Bed with Sofabed, Jetted Tub, City View (Rooftop Terrace)"
         },
         "status": "Active",
-        "maxOccupants": 4,
-        "occupancyByAge": [
+        "ageCategories": [
             {
-                "ageCategory": "Adult",
-                "minAge": 18,
-                "maxOccupants": 4
-            },
+                "category": "Adult", 
+                "minAge": 18
+            }, 
             {
-                "ageCategory": "ChildAgeA",
-                "minAge": 0,
-                "maxOccupants": 3
+                "category": "ChildAgeA", 
+                "minAge": 6
+            }, 
+            {
+                "category": "Infant", 
+                "minAge": 0
             }
-        ],
-        "bedTypes": [
+        ], 
+        "maxOccupancy": {
+            "adults": 2, 
+            "children": 1, 
+            "total": 3
+        }, 
+        "standardBedding": [
             {
-                "id": "1.67",
-                "name": "1 king and 1 sofa bed"
+                "option": [
+                    {
+                        "quantity": 1, 
+                        "size": "Full", 
+                        "type": "Full Bed"
+                    }, 
+                    {
+                        "quantity": 2, 
+                        "size": "Twin", 
+                        "type": "Bunk Bed"
+                    }
+                ]
+            }
+        ], 
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Sofa Bed",
+                "size": "Full"
             }
         ],
         "smokingPreferences": [
-            {
-                "id": "2.1",
-                "name": "Non-Smoking"
-            }
+            "Non-Smoking"
         ],
         "roomSize": {
-            "squareFeet": 1200,
-            "squareMeters": 111
+            "squareFeet": 300,
+            "squareMeters": 14
         },
         "views": [
             "Ocean View",
@@ -444,10 +484,11 @@ resourceId | integer | No | Integer. Required for modify, and cannot be changed.
 partnerCode | string | Yes | Partner room type code/identifier. Max. 40 characters. Has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.
 name | [RoomTypeName](#/definitions/RoomTypeNameDTO) | Yes | Name object. Collection of elements/attributes related the name of a room.
 status | enum | No | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
-maxOccupants | integer | Yes | Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.
-occupancyByAge | Array[[OccupancyByAge](#/definitions/OccupancyByAgeDTO)] | Yes | Array of occupancies by age. A room is required to have at least 1 age category: adult. Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room's max occupancy.
-bedTypes | Array[[BedType](#/definitions/BedTypeDTO)] | Yes | Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.
-smokingPreferences | Array[[SmokingPreference](#/definitions/SmokingPreferenceDTO)] | Yes | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner
+ageCategories | Array[[RoomTypeAgeCategory](#/definitions/RoomTypeAgeCategoryDTO)] | Yes | Array of age categories. Defines the different age categories supported by the room type. At the very least, the 'Adult' category must be defined.
+maxOccupancy | [Occupancy](#/definitions/OccupancyDTO) | No | Defines the different age categories supported by the room type. At the very least, the 'Adult' category must be defined.
+standardBedding | [BeddingOption](#/definitions/BeddingOptionDTO) | Yes | Lists the different combination of beds (type, size and quality) a room may have.
+extraBedding | Array[[Bed](#/definitions/BedDTO)] | No | Defines the configuration (type, size and quality) of any extra beds the room type may have.
+smokingPreferences | Array[[smokingPreferenceEnum](#/definitions/smokingPreferenceEnum)] | Yes | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner.
 roomSize | [RoomSize](#/definitions/RoomSizeDTO) | No | Used to define room size. When used, both size in square feet and in square meters must be specified.
 views | Array[[viewEnum](#/definitions/viewEnum)] | No | Used to define view(s) from the room. There can be up to 2 different views defined per room type.
 wheelchairAccessibility | boolean | No | Used to indicate whether the room is configured to be wheelchair accessible or not.
@@ -478,30 +519,38 @@ featuredAmenity | [featuredAmenityEnum](#/definitions/featuredAmenityEnum) | No 
 area | [areaEnum](#/definitions/areaEnum) | No | Attributed used to highlight the location of the room
 customLabel | string | No | Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged. Max 37 characters
 
-<a name="/definitions/BedTypeDTO"></a>
-#### BedType
+<a name="/definitions/RoomTypeAgeCategoryDTO"></a>
+#### RoomTypeAgeCategory
 
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
-id | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | Yes | The code identifying the bed type. 
-name | [bedTypeIdEnum](#/definitions/bedTypeIdEnum) | No | Name identifying the bed type. This is provided as informational data, and will be ignored during create or update operations.
+category | [categoryEnum](#/definitions/categoryEnum) | Yes | Defines which category of age is being defined. 
+minAge | integer | Yes | Defines what is the minimum age for a person to belong in the given age category.
 
-<a name="/definitions/OccupancyByAgeDTO"></a>
-#### OccupancyByAge
-
-Property Name | Type | Required | Description
-------------- | ---- | -------- | -----------
-ageCategory | enum | Yes | The age category whose occupancy is being defined. Possible values are Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
-minAge | integer | Yes | Minimum age allowed for the category. Min 0, max 99
-maxOccupants | integer | Yes | Max number of occupants on the category. Min 0, max 20
-
-<a name="/definitions/SmokingPreferenceDTO"></a>
-#### SmokingPreference
+<a name="/definitions/OccupancyDTO"></a>
+#### Occupancy
 
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
-id | enum | Yes | Id identifying the smoking preference. Possible values are 2.1 (Non-Smoking) and 2.2 (Smoking).
-name | string | No | Name identifying the smoking preference.  This is provided as informational data, and will be ignored during create or update operations.
+total | integer | Yes | Total count of person that can reside in the room.
+adults | integer | Yes | Max number of adults that can reside in the room.
+children | integer | Yes | Max number of children that can reside in the room.
+
+<a name="/definitions/BeddingOptionDTO"></a>
+#### BeddingOption
+
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+option | Array[[Bed](#/definitions/BedDTO)] | Yes | Option of bedding a room may have.
+
+<a name="/definitions/BedDTO"></a>
+#### Bed
+
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+quantity | integer | Yes | Number of beds.
+type | string | Yes | Qualifies the bed. Examples: "Sofa Bed"
+size | string | No | Defines the size of the bed. Example: "Double"
 
 <a name="/definitions/RoomSizeDTO"></a>
 #### RoomSize
@@ -516,9 +565,9 @@ Amenities of a given room type can be accessed as a sub resource of a specific r
 
 ### Read a single room type's amenities
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -534,9 +583,9 @@ Status Code | Description | Response Model
 
 ### Set room type amenities to an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
-- Consumes: `application/json`
-- Produces: `application/json`
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -595,9 +644,9 @@ value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to 
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `HTTP Request (GET)`
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
@@ -615,9 +664,9 @@ Status Code | Description | Response Model
 
 ### Creates a new rate plan
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
-- Consumes: `application/json`
-- Produces: `application/json`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
@@ -709,9 +758,9 @@ Status Code | Description | Response Model
 
 ### Read a single rate plan
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (GET)
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -729,9 +778,9 @@ Status Code | Description | Response Model
 
 ### Modify an existing rate plan
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
-- Consumes: `application/json`
-- Produces: `application/json`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type 
@@ -839,9 +888,9 @@ Status Code | Description | Response Model
 
 ### Delete an existing rate plan
 - Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (DELETE)
-- Produces: `application/json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type
@@ -960,7 +1009,7 @@ sun | boolean | For any exception, all 7 days of week are returned with a true/f
 ## Error codes
 Renders the page describing the business error codes used by the API
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/v1/documentation/api/errors
+- Url: https://services.expediapartnercentral.com/products/documentation/api/errors
 - Consumes: `HTTP Request (GET)`
 - Produces: `text/html`
 
@@ -1174,236 +1223,25 @@ Status Code | Description | Response Model
 | Slope side |
 | Tower |
 
-<a name="/definitions/bedTypeIdEnum"></a>
-### bedTypeIdEnum
+<a name="/definitions/categoryEnum"></a>
+#### categoryEnum
 
-| bedTypeId | bedTypeName |
-| ----------- | --------- |
-| 1.1 | 7 beds |
-| 1.2 | 9 beds |
-| 1.3 | 10 beds |
-| 1.4 | 11 beds |
-| 1.13 | 1 double bed |
-| 1.14 | 1 king bed |
-| 1.15 | 1 queen bed |
-| 1.18 | 1 twin bed |
-| 1.21 | 2 double beds |
-| 1.22 | 2 king beds |
-| 1.23 | 2 queen beds |
-| 1.25 | 2 twin beds |
-| 1.30 | 3 twin beds |
-| 1.34 | 4 twin beds |
-| 1.40 | 1 bed |
-| 1.41 | 2 beds |
-| 1.42 | 1 single bed |
-| 1.43 | 2 single beds |
-| 1.44 | 3 single beds |
-| 1.45 | 4 single beds |
-| 1.46 | 1 full bed |
-| 1.47 | 2 full beds |
-| 1.48 | 1 trundle bed |
-| 1.49 | 1 murphy bed |
-| 1.50 | 1 bunk bed |
-| 1.51 | 1 sofa bed |
-| 1.52 | 2 sofa beds |
-| 1.53 | 3 sofa beds |
-| 1.54 | 1 Japanese futon |
-| 1.55 | 3 beds |
-| 1.56 | 3 king beds |
-| 1.57 | 3 queen beds |
-| 1.58 | 4 beds |
-| 1.59 | 4 king beds |
-| 1.60 | 4 queen beds |
-| 1.61 | 1 king and 1 single bed |
-| 1.62 | 1 queen and 1 single bed |
-| 1.63 | 1 double and 1 single bed |
-| 1.64 | 1 king and 2 single beds |
-| 1.65 | 1 queen and 2 single beds |
-| 1.66 | 1 double and 2 single beds |
-| 1.67 | 1 king and 1 sofa bed |
-| 1.68 | 1 queen and 1 sofa bed |
-| 1.69 | 1 double and 1 sofa bed |
-| 1.70 | 2 twin and 1 sofa bed |
-| 1.71 | 2 single and 1 sofa bed |
-| 1.72 | 1 king and 1 queen bed |
-| 1.73 | 2 double and 1 single bed |
-| 1.74 | 2 king and 1 single bed |
-| 1.75 | 1 double and 1 twin bed |
-| 1.76 | 6 beds |
-| 1.77 | 5 beds |
-| 1.78 | 2 extra-long double bed |
-| 1.79 | 1 semi-double bed |
-| 1.80 | 1 pullout bed |
-| 1.81 | 4 double and 1 queen sofa bed |
-| 1.82 | 2 king and 1 queen sofa bed |
-| 1.83 | 2 double and 1 sofa bed |
-| 1.84 | 4 double beds |
-| 1.85 | 3 double beds |
-| 1.86 | 2 double and 2 single beds |
-| 1.87 | 1 queen and 1 double bed |
-| 1.88 | 2 queen and 1 sofa bed |
-| 1.89 | 4 double and 1 sofa bed |
-| 1.90 | 2 king and 1  sofa bed |
-| 1.91 | Quadruple Occupancy |
-| 1.92 | Triple Occupancy |
-| 1.93 | Double Occupancy |
-| 1.94 | Single Occupancy |
-| 1.96 | 1 double or 2 twin beds |
-| 1.97 | 1 double or 1 twin bed |
-| 1.98 | 1 king and 1 double bed |
-| 1.99 | 1 double and 1 bunk bed |
-| 1.100 | 1 double and 2 bunk beds |
-| 1.101 | 1 double and 2 single sofa beds |
-| 1.102 | 1 double and 2 sofa beds |
-| 1.103 | 1 double and 3 single beds |
-| 1.104 | 1 double and 3 sofa beds |
-| 1.105 | 1 double, 1 single, and 1 bunk bed |
-| 1.106 | 1 double, 1 single, and 1 sofa bed |
-| 1.107 | 1 double, 1 sofa bed, and 1 bunk bed |
-| 1.108 | 1 double, 2 single, and 1 double sofa bed |
-| 1.109 | 1 double, 2 single, and 1 sofa bed |
-| 1.110 | 1 double, 3 single, and 1 sofa bed |
-| 1.111 | 1 double, 3 twin, and 3 queen beds |
-| 1.112 | 1 king and 1 bunk bed |
-| 1.113 | 1 king and 2 queen beds |
-| 1.114 | 1 king and 4 single beds |
-| 1.115 | 1 king, 1 queen, and 1 sofa bed |
-| 1.116 | 1 king, 1 queen, and 3 single beds |
-| 1.117 | 1 king, 1 sofa bed, and 1 murphy bed |
-| 1.118 | 1 king, 2 double, and 1 sofa bed |
-| 1.119 | 1 king, 2 single, and 1 sofa bed |
-| 1.120 | 1 queen and 1 bunk bed |
-| 1.121 | 1 queen and 1 murphy bed |
-| 1.122 | 1 queen and 2 bunk beds |
-| 1.123 | 1 queen and 2 double beds |
-| 1.124 | 1 queen and 2 sofa beds |
-| 1.125 | 1 queen and 3 single beds |
-| 1.126 | 1 queen and 4 single beds |
-| 1.127 | 1 queen, 1 bunk bed, and 1 sofa bed |
-| 1.128 | 1 queen, 1 murphy bed, and 1 sofa bed |
-| 1.129 | 1 single and 1 sofa bed |
-| 1.130 | 1 sofa bed and 1 bunk bed |
-| 1.131 | 2 bunk beds |
-| 1.133 | 2 double and 2 sofa beds |
-| 1.134 | 2 Japanese futons |
-| 1.135 | 2 king and 1 sofa bed |
-| 1.136 | 2 king and 2 queen beds |
-| 1.137 | 2 king, 2 single, and 1 bunk bed |
-| 1.138 | 2 king, 2 single, and 1 sofa bed |
-| 1.139 | 2 queen and 1 bunk bed |
-| 1.140 | 2 queen and 1 single bed |
-| 1.142 | 2 queen and 1 trundle bed |
-| 1.143 | 2 queen and 2 single beds |
-| 1.144 | 2 single and 1 bunk bed |
-| 1.146 | 2 single and 2 bunk beds |
-| 1.147 | 2 single and 2 sofa beds |
-| 1.148 | 2 single and 3 sofa beds |
-| 1.149 | 3 double and 1 sofa bed |
-| 1.150 | 3 Japanese futons |
-| 1.151 | 3 queen and 1 sofa bed |
-| 1.152 | 3 queen and 2 single beds |
-| 1.153 | 3 queen, 2 single, and 2 bunk beds |
-| 1.154 | 4 Japanese futons |
-| 1.155 | 4 single and 1 sofa bed |
-| 1.156 | 4 single and 2 sofa beds |
-| 1.157 | 5 Japanese futons |
-| 1.158 | 5 queen and 4 single beds |
-| 1.159 | 6 Japanese futons |
-| 1.160 | 7 Japanese futons |
-| 1.161 | 8 Japanese futons |
-| 1.163 | 3 queen, 1 double, and 3 single beds |
-| 1.164 | 3 bunk beds |
-| 1.165 | 4 bunk beds |
-| 1.166 | 1 queen, 1 double, and 1 sofa bed |
-| 1.167 | 1 queen, 2 single, and 2 sofa beds |
-| 1.168 | 1 king, 1 queen, and 1 twin bed |
-| 1.169 | 1 king, 1 queen, and 2 twin beds |
-| 1.170 | 1 king, 2 queen, and 2 twin beds |
-| 1.171 | 1 king, 4 single, and 1 sofa bed |
-| 1.172 | 2 king, 4 single, and 1 sofa bed |
-| 1.173 | 2 king, 2 queen, and 2 twin beds |
-| 1.174 | 2 king, 2 double, and 1 sofa bed |
-| 1.175 | 1 king, 1 queen, 4 single, and 1 sofa bed |
-| 1.176 | 1 king, 2 double, 1 twin, and 2 sofa beds |
-| 1.177 | 1 double, 2 single, and 1 bunk bed |
-| 1.178 | 1 king, 1 queen, and 6 twin beds |
-| 1.179 | 1 king, 2 queen, 2 full, 3 twin, and 1 bunk bed |
-| 1.180 | 1 king, 3 queen, and 1 sofa bed |
-| 1.181 | 2 double, 2 single, and 1 sofa bed |
-| 1.182 | 2 king and 4 single beds |
-| 1.183 | 2 king, 2 queen, and 1 sofa bed |
-| 1.184 | 2 queen, 2 single, and 2 sofa beds |
-| 1.185 | 8 beds |
-| 1.186 | 1 double and 4 bunk beds |
-| 1.187 | 1 double, 1 bunk, and 1 sofa bed |
-| 1.188 | 1 double, 1 sofa bed, and 1 trundle bed |
-| 1.189 | 1 double, 2 single, 1 sofa bed, and 1 trundle bed |
-| 1.190 | 1 king and 1 murphy bed |
-| 1.191 | 1 king, 1 queen, 2 full, and 1 bunk bed |
-| 1.192 | 1 king, 1 single, and 1 sofa bed |
-| 1.193 | 1 queen, 1 full, and 2 sofa beds |
-| 1.194 | 1 queen, 1 full, 1 single, and 1 sofa bed |
-| 1.195 | 1 single and 1 bunk bed |
-| 1.196 | 2 queen, 1 full, and 1 bunk bed |
-| 1.197 | 2 queen, 2 full, 4 bunk beds, and 1 sofa bed |
-| 1.198 | 3 queen and 1 single bed |
-| 1.199 | 3 single and 1 sofa bed |
-| 1.200 | 4 single and 3 double beds |
-| 1.201 | 2 king and 2 sofa beds |
-| 1.202 | 1 king and 2 full beds |
-| 1.203 | 1 single and 1 trundle bed |
-| 1.204 | 1 double and 12 single beds |
-| 1.205 | 1 double, 2 bunk, and 1 sofa bed |
-| 1.206 | 1 double, 2 single, and 4 sofa beds |
-| 1.207 | 1 double, 4 single, and 1 sofa bed |
-| 1.208 | 1 double, 5 single, and 2 sofa beds |
-| 1.209 | 1 king and 2 double beds |
-| 1.210 | 1 king and 3 bunk beds |
-| 1.211 | 1 king and 3 queen beds |
-| 1.212 | 1 king, 1 full, and 2 bunk beds |
-| 1.213 | 1 king, 1 full, 1 single, and 1 sofa bed |
-| 1.214 | 1 king, 2 full, 2 single, and 1 sofa bed |
-| 1.215 | 1 king, 2 queen, and 1 murphy bed |
-| 1.216 | 1 king, 2 queen, 2 single, and 2 sofa beds |
-| 1.217 | 1 queen, 1 full, 2 single, and 1 sofa bed |
-| 1.218 | 1 queen, 1 single, and 1 sofa bed |
-| 1.219 | 1 queen, 2 double, and 1 single bed |
-| 1.220 | 1 queen, 2 single, and 1 sofa bed |
-| 1.221 | 1 sofa bed and 1 murphy bed |
-| 1.222 | 12 beds |
-| 1.223 | 2 double and 2 bunk beds |
-| 1.224 | 2 double, 1 single, and 1 sofa bed |
-| 1.225 | 2 king, 1 queen, and 1 sofa bed |
-| 1.226 | 2 king, 1 queen, and 4 single beds |
-| 1.227 | 2 king, 2 queen, and 1 single bed |
-| 1.228 | 2 king, 2 queen, and 4 single beds |
-| 1.229 | 2 queen , 2 single, and 1 sofa bed |
-| 1.230 | 2 queen and 1 murphy bed |
-| 1.231 | 2 queen and 2 sofa beds |
-| 1.232 | 2 queen, 2 double, and 2 single beds |
-| 1.233 | 3 double and 1 single bed |
-| 1.234 | 3 king, 4 single and 3 sofa beds |
-| 1.235 | 4 double and 1 bunk bed |
-| 1.236 | 4 double and 1 single bed |
-| 1.237 | 4 single and 2 bunk beds |
-| 1.238 | 1 queen, 1 double, and 1 murphy bed |
-| 1.239 | 1 queen, 1 sofa bed, and 1 Japanese futon |
-| 1.240 | 1 queen and 1 Japanese futon |
-| 1.241 | 1 king and 3 double beds |
-| 1.242 | 2 king and 3 double beds |
-| 1.243 | 2 king and 5 double beds |
-| 1.244 | 2 king, 5 double, and 2 single beds |
-| 1.245 | 2 king, 6 double, and 2 single beds |
-| 1.246 | 4 double, 2 single, and 1 sofa bed |
-| 1.247 | 2 double, 2 single, and 2 sofa beds |
-| 1.248 | 3 double and 2 sofa beds |
-| 1.249 | 3 double, 5 single, and 1 sofa bed |
-| 1.250 | 3 single and 1 bunk bed |
-| 1.251 | 2 double and 3 single beds |
-| 1.252 | 2 queen and 4 single beds |
-| 1.253 | 3 queen and 4 single beds |
-| 1.254 | 4 single and 1 double bed |
-| 1.255 | 2 king and 1 double bed |
+| category |
+| ---- |
+| Adult |
+| ChildAgeA |
+| ChildAgeB |
+| ChildAgeC |
+| ChildAgeD |
+| Infant |
+
+<a name="/definitions/smokingPreferenceEnum"></a>
+#### smokingPreferenceEnum
+
+| smokingPreference |
+| ---- |
+| Smoking |
+| Non-Smoking |
 
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum

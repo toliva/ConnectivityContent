@@ -13,9 +13,9 @@ When using GET for multiple properties, additional parameters can be provided to
 only 20 properties are returned at a time. Partners who have more than 20 properties assigned to their accounts and want to get through all their properties have to use offset and limit parameters.
 For example, a partner wanting to get 3 results at a time would do a request like this:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties?offset=0&limit=3
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties?offset=0&limit=3
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in base64]
 ```
 The Product API will sort all properties assigned to this account by resourceId, ascending, and return the 3 lowest property resource ids. Response:
@@ -109,19 +109,19 @@ The Product API will sort all properties assigned to this account by resourceId,
 ```
 Partners can then iterate through their properties by increasing the offset parameter. To get the next 3 properties, partners would issue a GET with offset=3, limit=3
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties?offset=3&limit=3
+GET https://services.expediapartnercentral.com/products/properties?offset=3&limit=3
 ```
 To get the next results, offset would become 6:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties?offset=6&limit=3
+GET https://services.expediapartnercentral.com/products/properties?offset=6&limit=3
 ```
 
 ### Single Property Read
 Request is a simple HTTP GET:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/2268140
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/2268140
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in base64]
 ```
 Response:
@@ -165,285 +165,197 @@ The room type resource describes the configuration of a specific room type/class
 Against the room type resource, partners can retrieve a list of room types or a specific room type. Partners can also create new room types (one at a time), and edit an existing room type (one at a time, full overlay operation).
 
 ### All Room Types Read
-This example shows how to do a read request to retrieve all room types under a given property. We'll illustrate how to add the status param on the request to get all active and inactive room types. In this example, the property has 2 active and 2 inactive room types, so the request will return 4 room types, sorted by resourceId.
+This example shows how to do a read request to retrieve all room types under a given property. We'll illustrate how to add the status param on the request to get all active and inactive room types. In this example, the property has active and inactive room types, sorted by resourceId.
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes?status=all
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780041/roomTypes?status=all
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
 ```
 Response:
 ```JSON
 {
-    "entity": [
+  "entity": [
+    {
+      "resourceId":209857,
+      "partnerCode":"Deluxe Suite",
+      "name": {
+        "attributes": {
+          "typeOfRoom":"Suite",
+          "roomClass":"Executive",
+          "area":"Ground Floor"
+        },
+      "value":"Executive Suite, Ground Floor"
+      },
+      "status":"Active",
+      "ageCategories": [
         {
-            "resourceId": 204830,
-            "partnerCode": "Standard Room ",
-            "name": {
-                "value": "Standard Room"
-            },
-            "status": "Inactive",
-            "maxOccupants": 2,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 18,
-                    "maxOccupants": 2
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.14",
-                    "name": "1 king bed"
-                },
-                {
-                    "id": "1.15",
-                    "name": "1 queen bed"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ],
-            "roomSize": {
-              "squareFeet": 1023,
-              "squareMeters": 95
-            },
-            "views": [
-              "Ocean View",
-              "Beach View"
-            ],
-            "wheelchairAccessibility": false
+          "category":"Adult",
+          "minAge":17
         },
         {
-            "resourceId": 204832,
-            "partnerCode": "Superior Room ",
-            "name": {
-                "value": "Superior Room"
-            },
-            "status": "Inactive",
-            "maxOccupants": 3,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 18,
-                    "maxOccupants": 2
-                },
-                {
-                    "ageCategory": "ChildAgeA",
-                    "minAge": 2,
-                    "maxOccupants": 2
-                },
-                {
-                    "ageCategory": "Infant",
-                    "minAge": 0,
-                    "maxOccupants": 2
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.14",
-                    "name": "1 king bed"
-                },
-                {
-                    "id": "1.15",
-                    "name": "1 queen bed"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ],
-            "roomSize": {
-              "squareFeet": 1023,
-              "squareMeters": 95
-            },
-            "views": [
-              "Ocean View"
-            ],
-            "wheelchairAccessibility": false
-        },
-        {
-            "resourceId": 209857,
-            "partnerCode": "Deluxe Suite",
-            "name": {
-                "attributes": {
-                    "typeOfRoom": "Suite",
-                    "roomClass": "Deluxe"
-                },
-                "value": "Deluxe Suite"
-            },
-            "status": "Active",
-            "maxOccupants": 3,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 17,
-                    "maxOccupants": 2
-                },
-                {
-                    "ageCategory": "ChildAgeA",
-                    "minAge": 0,
-                    "maxOccupants": 2
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.14",
-                    "name": "1 king bed"
-                },
-                {
-                    "id": "1.21",
-                    "name": "2 double beds"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ],
-            "roomSize": {
-              "squareFeet": 1023,
-              "squareMeters": 95
-            },
-            "views": [
-              "Beach View"
-            ],
-            "wheelchairAccessibility": false
-        },
-        {
-            "resourceId": 211705,
-            "partnerCode": "211705",
-            "name": {
-                "value": "Junior Suite"
-            },
-            "status": "Active",
-            "maxOccupants": 3,
-            "occupancyByAge": [
-                {
-                    "ageCategory": "Adult",
-                    "minAge": 18,
-                    "maxOccupants": 2
-                },
-                {
-                    "ageCategory": "ChildAgeA",
-                    "minAge": 0,
-                    "maxOccupants": 2
-                }
-            ],
-            "bedTypes": [
-                {
-                    "id": "1.14",
-                    "name": "1 king bed"
-                },
-                {
-                    "id": "1.21",
-                    "name": "2 double beds"
-                }
-            ],
-            "smokingPreferences": [
-                {
-                    "id": "2.1",
-                    "name": "Non-Smoking"
-                },
-                {
-                    "id": "2.2",
-                    "name": "Smoking"
-                }
-            ],
-            "roomSize": {
-              "squareFeet": 1023,
-              "squareMeters": 95
-            },
-            "wheelchairAccessibility": false
+          "category":"ChildAgeA",
+          "minAge":0
         }
-    ]
+      ],
+      "maxOccupancy": {
+        "total":3,
+        "adults":2,
+        "children":1
+        },
+      "standardBedding": [
+        {
+          "option": [
+            {
+              "quantity":1,
+              "type":"King Bed",
+              "size":"King"
+            },
+            {
+              "quantity":1,
+              "type":"Sofa Bed",
+              "size":"Full"
+            }
+          ]
+        }
+      ],
+      "smokingPreferences": [
+        "Smoking",
+        "Non-Smoking"
+      ]
+    },
+    {
+      "resourceId":200108425,
+      "partnerCode":"Caribbean Test",
+      "name": {
+        "attributes": {
+          "typeOfRoom":"Room",
+          "roomClass":"Standard",
+          "includeBedType":true
+        },
+        "value":"Standard Room, 1 King Bed"
+      },
+      "status":"Inactive",
+      "ageCategories": [
+        {
+          "category":"Adult",
+          "minAge":13
+        },
+        {
+          "category":"ChildAgeA",
+          "minAge":0
+        }
+      ],
+      "maxOccupancy": {
+        "total":4,
+        "adults":3,
+        "children":1
+      },
+      "standardBedding": [
+        {
+          "option": [
+            {
+              "quantity":2,
+              "type":"Full Bed",
+              "size":"Full"
+            }
+          ]
+        }
+      ],
+      "smokingPreferences": [
+        "Smoking",
+        "Non-Smoking"
+      ],
+      "roomSize": {
+        "squareFeet":150,
+        "squareMeters":14
+      },
+      "views": [
+        "Beach View",
+        "Bay View"
+      ]
+    }        
+  ]
 }
 ```
 
-###	Single Room Type Read
-This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bed types, and supporting both smoking and non-smoking
+### Single Room Type Read
+This example shows how to do a read request for a single room type with 3 age categories, a choice of 2 bed types, and supporting both smoking and non-smoking
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200616960
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
 ```
 Response:
 ```JSON
 {
-  "entity": {
-    "resourceId": 211705,
-    "partnerCode": "MySuiteCode123",
-    "name": {
-      "attributes": {
-        "typeOfRoom": "Suite",
-        "roomClass": "Deluxe",
-        "includeBedType": true,
-        "featuredAmenity": "Terrace",
-        "view": "Ocean View"
-      },
-      "value": "Deluxe Suite, 1 King Bed with Sofabed, Terrace, Ocean View"
-    },
-    "status": "Active",
-    "maxOccupants": 4,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 4
-      }, {
-        "ageCategory": "ChildAgeA",
-        "minAge": 0,
-        "maxOccupants": 3
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.67",
-        "name": "1 king and 1 sofa bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }, {
-        "id": "2.2",
-        "name": "Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "Ocean View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId":200192910,
+        "partnerCode":"Deluxe",
+        "name": {
+            "attributes": {
+                "typeOfRoom":"Apartment "
+            },
+            "value":"Apartment"
+        },
+        "status":"Active",
+        "ageCategories": [
+            {
+                "category":"Adult",
+                "minAge":13
+            },
+            {
+            	"category":"ChildAgeB",
+            	"minAge":5
+            },
+            {
+            	"category":"Infant",
+            	"minAge":0
+            }
+        ],
+        "maxOccupancy": {
+            "total":4,
+            "adults":3,
+            "children":0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity":1,
+                        "type":"King Bed",
+                        "size":"King"
+                    }
+                ]
+            },
+            {
+                "option": [
+                    {
+                        "quantity":2,
+                        "type":"Full Bed",
+                        "size":"Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Smoking",
+            "Non-Smoking"
+        ],
+        "roomSize": {
+            "squareFeet":500,
+            "squareMeters":46
+        },
+        "views": [
+             "Partial Sea View"
+        ],
+        "wheelchairAccessibility":false
+    }
 }
 ```
 
@@ -452,9 +364,9 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
-Accept: application/json
-Content-Type: application/json
+POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 ```JSON
 {
@@ -462,33 +374,38 @@ Content-Type: application/json
   "name": {
     "value": "Junior Suite"
   },
-  "maxOccupants": 5,
-  "occupancyByAge": [
+  "ageCategories": [
     {
-      "ageCategory": "Adult",
-      "minAge": 18,
-      "maxOccupants": 2
-    }, {
-      "ageCategory": "ChildAgeA",
-      "minAge": 3,
-      "maxOccupants": 2
-    }, {
-      "ageCategory": "Infant",
-      "minAge": 0,
-      "maxOccupants": 2
+      "category":"Adult",
+      "minAge":13
+    },
+    {
+      "category":"ChildAgeB",
+      "minAge":5
+    },
+    {
+      "category":"Infant",
+      "minAge":0
     }
   ],
-  "bedTypes": [
+  "maxOccupancy": {
+    "total":4,
+    "adults":3,
+    "children":0
+  },
+  "standardBedding": [
     {
-      "id": "1.88",
-      "name": "2 queen and 1 sofa bed"
+      "option": [
+        {
+          "quantity":2,
+          "type":"Full Bed",
+          "size":"Full"
+        }
+      ]
     }
   ],
   "smokingPreferences": [
-    {
-      "id": "2.1",
-      "name": "Non-Smoking"
-    }
+    "Non-Smoking"
   ],
   "roomSize": {
     "squareFeet": 1023,
@@ -501,54 +418,60 @@ Content-Type: application/json
   "wheelchairAccessibility": false
 }
 ```
+
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
 ```JSON
 {
-  "entity": {
-    "resourceId": 201171339,
-    "partnerCode": "JS001",
-    "name": {
-      "value": "Junior Suite"
-    },
-    "status": "Inactive",
-    "maxOccupants": 5,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 2
-      }, {
-        "ageCategory": "ChildAgeA",
-        "minAge": 3,
-        "maxOccupants": 2
-      }, {
-        "ageCategory": "Infant",
-        "minAge": 0,
-        "maxOccupants": 2
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.88",
-        "name": "2 queen and 1 sofa bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "Ocean View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId": 201171339,
+        "partnerCode": "JS001",
+        "name": {
+            "value": "Junior Suite"
+        },
+        "status": "Inactive",
+        "ageCategories": [
+            {
+                "category": "Adult",
+                "minAge": 13
+            },
+            {
+                "category": "ChildAgeB",
+                "minAge": 5
+            },
+            {
+                "category": "Infant",
+                "minAge": 0
+            }
+        ],
+        "maxOccupancy": {
+            "total": 4,
+            "adults": 3,
+            "children": 0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 2,
+                        "type": "Full Bed",
+                        "size": "Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ],
+        "roomSize": {
+            "squareFeet": 1023,
+            "squareMeters": 95
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ],
+        "wheelchairAccessibility": false
+    }
 }
 ```
 
@@ -557,231 +480,233 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
-Accept: application/json
-Content-Type: application/json
+POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 ```JSON
 {
-  "partnerCode": "JS001",
-  "name": {
-    "attributes": {
-      "typeOfRoom": "Condo",
-      "bedroomDetails": "3 Bedrooms",
-      "featuredAmenity": "2 Bathrooms",
-      "view": "Partial Ocean View"
-    }
-  },
-  "maxOccupants": 8,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 18,
-      "maxOccupants": 7
-    }, {
-      "ageCategory": "ChildAgeA",
-      "minAge": 3,
-      "maxOccupants": 5
-    }, {
-      "ageCategory": "Infant",
-      "minAge": 0,
-      "maxOccupants": 2
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "1.149",
-      "name": "3 double and 1 sofa bed"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1",
-      "name": "Non-Smoking"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 1023,
-    "squareMeters": 95
-  },
-  "views": [
-    "Partial Ocean View",
-    "Beach View"
-  ],
-  "wheelchairAccessibility": false
+    "partnerCode": "JS001",
+    "name": {
+        "attributes": {
+            "typeOfRoom": "Condo",
+            "bedroomDetails": "3 Bedrooms",
+            "featuredAmenity": "2 Bathrooms",
+            "view": "Partial Ocean View"
+        }
+    },
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 13
+        },
+        {
+            "category": "ChildAgeB",
+            "minAge": 5
+        },
+        {
+            "category": "Infant",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 3,
+        "children": 0
+    },
+    "standardBedding": [
+        {
+            "option": [
+                {
+                    "quantity": 2,
+                    "type": "Full Bed",
+                    "size": "Full"
+                }
+            ]
+        }
+    ],
+    "smokingPreferences": [
+        "Non-Smoking"
+    ],
+    "roomSize": {
+        "squareFeet": 1023,
+        "squareMeters": 95
+    },
+    "views": [
+        "Ocean View",
+        "Beach View"
+    ],
+    "wheelchairAccessibility": false
 }
 ```
+
 When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.
 ```JSON
 {
-  "entity": {
-    "resourceId": 201171339,
-    "partnerCode": "JS001",
-    "name": {
-      "attributes": {
-        "typeOfRoom": "Condo",
-        "bedroomDetails": "3 Bedrooms",
-        "featuredAmenity": "2 Bathrooms",
-        "view": "Partial Ocean View"
-      },
-      "value": "Condo, 3 Bedrooms, 2 Bathrooms, Partial Ocean View"
-    },
-    "maxOccupants": 8,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 7
-      }, {
-        "ageCategory": "ChildAgeA",
-        "minAge": 3,
-        "maxOccupants": 5
-      }, {
-        "ageCategory": "Infant",
-        "minAge": 0,
-        "maxOccupants": 2
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.149",
-        "name": "3 double and 1 sofa bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "Partial Ocean View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId": 201171339,
+        "partnerCode": "JS001",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Condo",
+                "bedroomDetails": "3 Bedrooms",
+                "featuredAmenity": "2 Bathrooms",
+                "view": "Partial Ocean View"
+            },
+            "value": "Condo, 3 Bedrooms, 2 Bathrooms, Partial Ocean View"
+        },
+        "status": "Inactive",
+        "ageCategories": [
+            {
+                "category": "Adult",
+                "minAge": 13
+            },
+            {
+                "category": "ChildAgeB",
+                "minAge": 5
+            },
+            {
+                "category": "Infant",
+                "minAge": 0
+            }
+        ],
+        "maxOccupancy": {
+            "total": 4,
+            "adults": 3,
+            "children": 0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 2,
+                        "type": "Full Bed",
+                        "size": "Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ],
+        "roomSize": {
+            "squareFeet": 1023,
+            "squareMeters": 95
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ],
+        "wheelchairAccessibility": false
+    }
 }
 ```
+
 ### Room Type Create (Ignored Room Name Attributes)
 When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our API Definition section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.
 
 Request:
+```HTTP
+POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v2+json
+```
 ```JSON
 {
-  "partnerCode": "JS001",
-  "name": {
-    "attributes": {
-      "typeOfRoom": "Studio",
-      "roomClass": "Basic",
-      "includeBedType": true,
-      "bedroomDetails": "1 Bedroom",
-      "includeSmokingPref": true,
-      "accessibility": true,
-      "view": "Beach View",
-      "featuredAmenity": "Hot Tub",
-      "area": "Corner",
-      "customLabel": "Blue Room"
-    }
-  },
-  "maxOccupants": 8,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 18,
-      "maxOccupants": 7
-    }, {
-      "ageCategory": "ChildAgeA",
-      "minAge": 3,
-      "maxOccupants": 5
-    }, {
-      "ageCategory": "Infant",
-      "minAge": 0,
-      "maxOccupants": 2
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "1.15",
-      "name": "1 queen bed"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1",
-      "name": "Non-Smoking"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 1023,
-    "squareMeters": 95
-  },
-  "views": [
-    "Ocean View",
-    "Beach View"
-  ],
-  "wheelchairAccessibility": false
+    "partnerCode": "JS001",
+    "name": {
+        "attributes": {
+            "typeOfRoom": "Studio",
+            "roomClass": "Basic",
+            "includeBedType": true,
+            "bedroomDetails": "1 Bedroom",
+            "includeSmokingPref": true,
+            "accessibility": true,
+            "view": "Beach View",
+            "featuredAmenity": "Hot Tub",
+            "area": "Corner",
+            "customLabel": "Blue Room"
+        }
+    },
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 13
+        },
+        {
+            "category": "Infant",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 3,
+        "children": 0
+    },
+    "standardBedding": [
+        {
+            "option": [
+                {
+                    "quantity": 2,
+                    "type": "Full Bed",
+                    "size": "Full"
+                }
+            ]
+        }
+    ],
+    "smokingPreferences": [
+        "Non-Smoking"
+    ]
 }
 ```
 
 The response will not include bedroom details, view, featured amenity and area as we cannot used all attributes to build a name. 
 ```JSON
 {
-  "entity": {
-    "resourceId": 201171339,
-    "partnerCode": "JS001",
-    "name": {
-      "attributes": {
-        "typeOfRoom": "Studio",
-        "roomClass": "Basic",
-        "includeBedType": true,
-        "includeSmokingPref": true,
-        "accessibility": true,
-        "customLabel": "Blue Room"
-      },
-      "value": "Basic Studio, 1 Queen Bed, Accessible, Non Smoking (Blue Room)"
-    },
-    "maxOccupants": 8,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 7
-      }, {
-        "ageCategory": "ChildAgeA",
-        "minAge": 3,
-        "maxOccupants": 5
-      }, {
-        "ageCategory": "Infant",
-        "minAge": 0,
-        "maxOccupants": 2
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.15",
-        "name": "1 queen bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "Ocean View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId": 201171339,
+        "partnerCode": "JS001",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Studio",
+                "roomClass": "Basic",
+                "includeBedType": true,
+                "includeSmokingPref": true,
+                "accessibility": true,
+                "customLabel": "Blue Room"
+            },
+            "value": "Basic Studio, 1 Queen Bed, Accessible, Non Smoking (Blue Room)"
+        },
+        "ageCategories": [
+            {
+                "category": "Adult",
+                "minAge": 13
+            },
+            {
+                "category": "Infant",
+                "minAge": 0
+            }
+        ],
+        "maxOccupancy": {
+            "total": 4,
+            "adults": 3,
+            "children": 0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 2,
+                        "type": "Full Bed",
+                        "size": "Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ]
+    }
 }
 ```
 
@@ -789,97 +714,115 @@ The response will not include bedroom details, view, featured amenity and area a
 Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.
 
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
-Accept: application/json
-Content-Type: application/json
+PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 ```JSON
 {
-  "resourceId": 201171339,
-  "partnerCode": "JS002",
-  "name": {
-    "value": "Executive Suite"
-  },
-  "status": "Active",
-  "maxOccupants": 5,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 18,
-      "maxOccupants": 2
-    }, {
-      "ageCategory": "Infant",
-      "minAge": 0,
-      "maxOccupants": 2
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "1.88",
-      "name": "2 queen and 1 sofa bed"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1",
-      "name": "Non-Smoking"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 1023,
-    "squareMeters": 95
-  },
-  "views": [
-    "Ocean View",
-    "Beach View"
-  ],
-  "wheelchairAccessibility": false
+    "resourceId": 201171339,
+    "partnerCode": "JS002",
+    "name": {
+        "value": "Executive Suite"
+    },
+    "status": "Active",
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        },
+        {
+            "category": "ChildAgeA",
+            "minAge": 12
+        },
+        {
+            "category": "Infant",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 3,
+        "children": 0
+    },
+    "standardBedding": [
+        {
+            "option": [
+                {
+                    "quantity": 2,
+                    "type": "Full Bed",
+                    "size": "Full"
+                }
+            ]
+        }
+    ],
+    "smokingPreferences": [
+        "Non-Smoking"
+    ],
+    "roomSize": {
+        "squareFeet": 1023,
+        "squareMeters": 95
+    },
+    "views": [
+        "Ocean View",
+        "Beach View"
+    ],
+    "wheelchairAccessibility": false
 }
 ```
 Response look like
 ```JSON
 {
-  "entity": {
-    "resourceId": 201171339,
-    "partnerCode": "JS002",
-    "name": {
-      "value": "Executive Suite"
-    },
-    "status": "Active",
-    "maxOccupants": 5,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 2
-      }, {
-        "ageCategory": "Infant",
-        "minAge": 0,
-        "maxOccupants": 2
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.88",
-        "name": "2 queen and 1 sofa bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "Ocean View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId": 201171339,
+        "partnerCode": "JS002",
+        "name": {
+            "value": "Executive Suite"
+        },
+        "status": "Active",
+        "ageCategories": [
+            {
+                "category": "Adult",
+                "minAge": 18
+            },
+            {
+                "category": "ChildAgeA",
+                "minAge": 12
+            },
+            {
+                "category": "Infant",
+                "minAge": 0
+            }
+        ],
+        "maxOccupancy": {
+            "total": 4,
+            "adults": 3,
+            "children": 0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 2,
+                        "type": "Full Bed",
+                        "size": "Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ],
+        "roomSize": {
+            "squareFeet": 1023,
+            "squareMeters": 95
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ],
+        "wheelchairAccessibility": false
+    }
 }
 ```
 ### Modify Room Type (Predefined Name to Name Attributes)
@@ -887,111 +830,103 @@ Leveraging the Create example from above, predefined name is modified to a new r
 
 The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
-Accept: application/json
-Content-Type: application/json
+PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 ```JSON
 {
-  "resourceId": 201171339,
-  "partnerCode": "JS002",
-  "name": {
-    "attributes": {
-      "typeOfRoom": "Suite",
-      "roomClass": "Executive",
-      "bedroomDetails": "1 Bedroom",
-      "featuredAmenity": "Jetted Tub",
-      "view": "City View"
+    "resourceId": 201171339,
+    "partnerCode": "JS002",
+    "name": {
+        "attributes": {
+            "typeOfRoom": "Suite",
+            "roomClass": "Executive",
+            "bedroomDetails": "1 Bedroom",
+            "featuredAmenity": "Jetted Tub",
+            "view": "City View"
+        },
+        "value": "Executive Suite"
     },
-    "value": "Executive Suite"
-  },
-  "status": "Active",
-  "maxOccupants": 5,
-  "occupancyByAge": [
-    {
-      "ageCategory": "Adult",
-      "minAge": 18,
-      "maxOccupants": 2
-    }, {
-      "ageCategory": "Infant",
-      "minAge": 0,
-      "maxOccupants": 2
-    }
-  ],
-  "bedTypes": [
-    {
-      "id": "1.88",
-      "name": "2 queen and 1 sofa bed"
-    }
-  ],
-  "smokingPreferences": [
-    {
-      "id": "2.1",
-      "name": "Non-Smoking"
-    }
-  ],
-  "roomSize": {
-    "squareFeet": 1023,
-    "squareMeters": 95
-  },
-  "views": [
-    "City View",
-    "Beach View"
-  ],
-  "wheelchairAccessibility": false
+    "status": "Active",
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 13
+        },
+        {
+            "category": "Infant",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 3,
+        "children": 0
+    },
+    "standardBedding": [
+        {
+            "option": [
+                {
+                    "quantity": 2,
+                    "type": "Full Bed",
+                    "size": "Full"
+                }
+            ]
+        }
+    ],
+    "smokingPreferences": [
+        "Non-Smoking"
+    ]
 }
 ```
 Response looks like
 ```JSON
 {
-  "entity": {
-    "resourceId": 201171339,
-    "partnerCode": "JS002",
-    "name": {
-      "attributes": {
-        "typeOfRoom": "Suite",
-        "roomClass": "Executive",
-        "bedroomDetails": "1 Bedroom",
-        "featuredAmenity": "Jetted Tub",
-        "view": "City View"
-      },
-      "value": "Executive Suite, 1 Bedroom, Jetted Tub, City View"
-    },
-    "status": "Active",
-    "maxOccupants": 5,
-    "occupancyByAge": [
-      {
-        "ageCategory": "Adult",
-        "minAge": 18,
-        "maxOccupants": 2
-      }, {
-        "ageCategory": "Infant",
-        "minAge": 0,
-        "maxOccupants": 2
-      }
-    ],
-    "bedTypes": [
-      {
-        "id": "1.88",
-        "name": "2 queen and 1 sofa bed"
-      }
-    ],
-    "smokingPreferences": [
-      {
-        "id": "2.1",
-        "name": "Non-Smoking"
-      }
-    ],
-    "roomSize": {
-      "squareFeet": 1023,
-      "squareMeters": 95
-    },
-    "views": [
-      "City View",
-      "Beach View"
-    ],
-    "wheelchairAccessibility": false
-  }
+    "entity": {
+        "resourceId": 201171339,
+        "partnerCode": "JS002",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Suite",
+                "roomClass": "Executive",
+                "bedroomDetails": "1 Bedroom",
+                "featuredAmenity": "Jetted Tub",
+                "view": "City View"
+            },
+            "value": "Executive Suite, 1 Bedroom, Jetted Tub, City View"
+        },
+        "status": "Active",
+        "ageCategories": [
+            {
+                "category": "Adult",
+                "minAge": 13
+            },
+            {
+                "category": "Infant",
+                "minAge": 0
+            }
+        ],
+        "maxOccupancy": {
+            "total": 4,
+            "adults": 3,
+            "children": 0
+        },
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 2,
+                        "type": "Full Bed",
+                        "size": "Full"
+                    }
+                ]
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ]
+    }
 }
 ```
 ##	Rate Plan Resource Examples
@@ -1003,9 +938,9 @@ This example shows how to retrieve all active rate plans under a given room type
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
@@ -1188,9 +1123,9 @@ This example is for a Per Day Pricing, ExpediaCollect, Net Rate Rate Plan.
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204297188
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204297188
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
@@ -1280,9 +1215,9 @@ Response:
 ### Single Rate Plan Read (Occupancy-Based Pricing, ExpediaCollect, Sell Rate)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204126855
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
@@ -1357,9 +1292,9 @@ Response:
 ### Single Rate Plan Read (Occupancy-Based Pricing, HotelCollect)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204321248
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
@@ -1439,9 +1374,9 @@ Response:
 ### Single Rate Plan Read (Expedia Traveler Preference)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204309700
-Content-Type: application/json
-Accept: application/json
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
@@ -1519,9 +1454,9 @@ Response:
 
 ### Rate Plan Create (Per-day-Pricing, ExpediaCollect)
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/
-Content-Type: application/json
-Accept: application/json
+POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
@@ -1653,9 +1588,9 @@ The response would look like:
 ```
 ### Rate Plan Create (Expedia Traveler Preference)
 ```HTTP
-POST https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
-Content-Type: application/json
-Accept: application/json
+POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in base64] 
@@ -1776,9 +1711,9 @@ Response would look like:
 ### Rate Plan Modify (Name, Additional Guest Amount, Value Adds)
 In this example, the rate plan created in a previous example is modified to have a more meaningful name, lower additional guest amounts and free Internet.
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/204309700 
-Content-Type: application/json
-Accept: application/json
+PUT https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700 
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in base64]
 ```
@@ -1924,9 +1859,9 @@ Response would look like:
 ### Rate Plan Delete
 In this example, the rate plan created in a previous example is deleted.
 ```HTTP
-DELETE https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/204309700
-Content-Type: application/json
-Accept: application/json
+DELETE https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in base64]
 ```

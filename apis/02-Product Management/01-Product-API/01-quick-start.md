@@ -14,7 +14,7 @@ For partners using Expedia APIs for the first time, please refer to the [FAQ & G
 
 ## Reading property, room type or rate plan information
 The simplest way to start interacting with the Product API is to access the 
-<https://services.expediapartnercentral.com/products/v1/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
+<https://services.expediapartnercentral.com/products/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
 
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:
 ```
@@ -60,7 +60,7 @@ The result will be an array of properties assigned to your account. For example:
 }
 ```
 Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes>
+<https://services.expediapartnercentral.com/products/properties/12933873/roomTypes>
 
 The result will be an array of active room types under this property. For example:
 ```JSON
@@ -74,103 +74,99 @@ The result will be an array of active room types under this property. For exampl
           "typeOfRoom": "Room",
           "roomClass": "Deluxe",
           "view": "Mountain View",
-          "featuredAmenity": "Jetted Tub"
+          "featuredAmenity": "Business Lounge Access",
+          "customLabel": "here is a custom text223"
         },
-        "value": "Deluxe Room, Jetted Tub, Mountain View"
+        "value": "Deluxe Room, Business Lounge Access, Mountain View (here is a custom text223)"
       },
       "status": "Active",
-      "maxOccupants": 4,
-      "occupancyByAge": [
+      "ageCategories": [
         {
-          "ageCategory": "Adult",
-          "minAge": 18,
-          "maxOccupants": 4
-        },
+          "category": "Adult", 
+          "minAge": 18
+        }, 
         {
-          "ageCategory": "ChildAgeA",
-          "minAge": 2,
-          "maxOccupants": 3
-        },
+          "category": "ChildAgeA", 
+          "minAge": 2
+        }, 
         {
-          "ageCategory": "Infant",
-          "minAge": 0,
-          "maxOccupants": 3
+          "category": "Infant", 
+          "minAge": 0
         }
       ],
-      "bedTypes": [
+      "maxOccupancy": {
+        "adults": 0, 
+        "children": 0, 
+        "total": 4
+      }, 
+      "standardBedding": [
         {
-          "id": "1.66",
-          "name": "1 double and 2 single beds"
+          "option": [
+            {
+              "quantity": 1, 
+              "size": "Full", 
+              "type": "Full Bed"
+            }, 
+            {
+              "quantity": 2, 
+              "size": "Twin", 
+              "type": "Twin Bed"
+            }
+          ]
         }
-      ],
+      ], 
       "smokingPreferences": [
-        {
-          "id": "2.1",
-          "name": "Non-Smoking"
-        },
-        {
-          "id": "2.2",
-          "name": "Smoking"
-        }
-      ],
-      "roomSize": {
-        "squareFeet": 915,
-        "squareMeters": 85
-      },
-      "views": [
-        "Mountain View"
-      ]
+        "Smoking", 
+        "Non-Smoking"
+      ], 
     },
     {
-      "resourceId": 201357992,
-      "partnerCode": "Executive Room",
+      "resourceId": 201357992, 
+      "partnerCode": "Executive RoomX3", 
       "name": {
         "value": "Executive Suite"
       },
-      "status": "Active",
-      "maxOccupants": 6,
-      "occupancyByAge": [
+      "ageCategories": [
         {
-          "ageCategory": "Adult",
-          "minAge": 18,
-          "maxOccupants": 6
-        },
+          "category": "Adult", 
+          "minAge": 18
+        }, 
         {
-          "ageCategory": "Infant",
-          "minAge": 0,
-          "maxOccupants": 5
+          "category": "Infant", 
+          "minAge": 0
         }
-      ],
-      "bedTypes": [
+      ], 
+      "maxOccupancy": {
+        "adults": 0, 
+        "children": 0, 
+        "total": 6
+      }, 
+      "standardBedding": [
         {
-          "id": "1.100",
-          "name": "1 double and 2 bunk beds"
+          "option": [
+            {
+              "quantity": 1, 
+              "size": "Full", 
+              "type": "Full Bed"
+            }, 
+            {
+              "quantity": 2, 
+              "size": "Twin", 
+              "type": "Bunk Bed"
+            }
+          ]
         }
-      ],
+      ], 
       "smokingPreferences": [
-        {
-          "id": "2.1",
-          "name": "Non-Smoking"
-        },
-        {
-          "id": "2.2",
-          "name": "Smoking"
-        }
-      ],
-      "roomSize": {
-        "squareFeet": 1023,
-        "squareMeters": 95
-      },
-      "views": [
-        "Ocean View",
-        "Beach View"
-      ]
+        "Smoking", 
+        "Non-Smoking"
+      ] 
     }
   ]
 }
 ```
 Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans>
+<https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans>
 
 The result will be an array of active rate plans under this property and room type. For example:
 ```JSON
@@ -235,7 +231,7 @@ The result will be an array of active rate plans under this property and room ty
             "bookDateEnd": "2079-06-06",
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
+            "mobileOnly": true
         },
         {
             "resourceId": 206651853,
@@ -244,7 +240,7 @@ The result will be an array of active rate plans under this property and room ty
             "distributionRules": [
                 {
                     "expediaId": "206651853",
-                    "partnerCode": "BRKEC",
+                    "partnerCode": "xxBRKHC",
                     "distributionModel": "ExpediaCollect",
                     "manageable": false,
                     "compensation": {
@@ -254,7 +250,7 @@ The result will be an array of active rate plans under this property and room ty
                 },
                 {
                     "expediaId": "206651853A",
-                    "partnerCode": "BRKHC",
+                    "partnerCode": "xxBRKHC",
                     "distributionModel": "HotelCollect",
                     "manageable": true,
                     "compensation": {
@@ -303,7 +299,7 @@ The result will be an array of active rate plans under this property and room ty
 ----
 
 ## Add a Rate Plan
-To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan:
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan:
 ```JSON
 {
   "distributionRules": [
