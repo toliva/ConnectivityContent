@@ -15,7 +15,7 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 To retreive top point of sale and regions data simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  
 
 ```
-http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
+https://services.expediapartnercentral.com/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 ```
 
 The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel.

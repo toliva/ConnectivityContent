@@ -1,4 +1,4 @@
 # Try It
 +++swagger
-https://apis.integration.karmalab.net/june-hackathon/insights/api-docs/v1
+/files/fair-share-hackathon-swagger.json
 +++

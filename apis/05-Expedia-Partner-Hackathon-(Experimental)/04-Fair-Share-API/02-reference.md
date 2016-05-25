@@ -29,7 +29,7 @@ The equation for actual share is my booked rooms /(my booked rooms + my competit
 
 ##### Sample request with all parameters populated
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&dayNum=2
+https://services.expediapartnercentral.com/insights/public/v1/fairShare?hotelId=759&dayNum=2
 ```
 
 ## Response
