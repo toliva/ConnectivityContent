@@ -31,7 +31,7 @@ http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSe
 ## Response
 
 |Name | Type | Description|
-|-----|------|-------------| 
+|-----|------|-------------|
 | errorCode | Integer | Error code, null when no error |
 | errorMsg | String | Error message, null when no error |
 | status | String | Response status |
@@ -45,16 +45,16 @@ http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSe
 
 ##### Sample Response
 ```JSON
-{    
+{
     "errorCode": null,
     "errorMsg": null,
-    "status": "Success"
+    "status": "Success",
     "data": {
         "HotelId": 3513358,
         "HotelName": "Best Western Plus Kamloops Hotel",
         "endDate": "2016-06-01T23:59:59.999Z",
         "limit": 50,
-        "startDate": "2016-05-01T00:00:00.000Z"
+        "startDate": "2016-05-01T00:00:00.000Z",
         "compSet": [
             {
                 "eventDate": "2016-05-18T08:46:45.956Z",
@@ -70,10 +70,10 @@ http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSe
 ## Errors
 
 
-|HTTP Status Code |    Reason | 
+|HTTP Status Code |    Reason |
 |------------------|----------|
 |400 | status: 'Error', errorCode: 3010, errorMsg: 'HotelId is necessary.' |
 |400 | status: 'Error', errorCode: 3011, errorMsg: 'The hotelId was not an integer.'   |
 |400 | status: 'Error', errorCode: 3012, errorMsg: 'The hotelId should be positive integer.'   |
-|400 | status: 'Error', errorCode: 2000, errorMsg: 'Hotel is not exist'   | 
+|400 | status: 'Error', errorCode: 2000, errorMsg: 'Hotel is not exist'   |
 |400 | status: 'Error', errorCode: 2002, errorMsg: 'This hotel has no competitors'|
