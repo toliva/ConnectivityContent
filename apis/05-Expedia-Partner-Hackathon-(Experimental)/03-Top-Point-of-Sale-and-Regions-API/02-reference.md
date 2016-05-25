@@ -23,7 +23,7 @@ The top points of sale and regions endpoint will return a sorted list of top reg
 
 ##### Sample Request with all parameters specified
 ```
-http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
+https://services.expediapartnercentral.com/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 ```
 
 ## Response Format

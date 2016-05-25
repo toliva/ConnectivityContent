@@ -25,7 +25,7 @@ The Competitor Set Events endpoint provides a list of competitors to a given hot
 
 ##### Sample Request with all Parameters
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10
+https://services.expediapartnercentral.com/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10
 ```
 
 ## Response

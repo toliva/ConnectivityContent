@@ -18,7 +18,7 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/fairShare``` endpoint via query parameters.  
 
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&dayNum=2
+https://services.expediapartnercentral.com/insights/public/v1/fairShare?hotelId=759&dayNum=2
 ```
 
 The response will contain the fair share data in the following format: 

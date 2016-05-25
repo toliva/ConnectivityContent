@@ -15,7 +15,7 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 To retreive competitor set data pass a hotel id and number of days along with the required authentication parameters to the ```public/v1/addCompSet``` endpoint via query parameters.
 
 ```
-http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10
+https://services.expediapartnercentral.com/insights/public/v1/addCompSet?hotelId=1234567&startDate=2014-01-01&endDate=2016-05-10
 ```
 
 
