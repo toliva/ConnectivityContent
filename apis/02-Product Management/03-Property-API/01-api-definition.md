@@ -53,7 +53,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "structureType": "Hotel",
     "currencyCode": "USD",
     "billingCurrencyCode": "USD",
-    "timeZone": "USA/Pacific",
+    "timeZone": "America/Los_Angeles",
     "addresses": [
         {
             "line1": "123 Main St.",
@@ -200,7 +200,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./Code-list.html#StructureType "Structure type codes") |
 | currencyCode | String | Yes | No | Currency code to be used for property's pricing. Cannot be updated after initial onboarding. Use ISO4217 |
 | billingCurrencyCode | String | Yes | No | Currency code to be used for billing. Use ISO4217. |
-| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the IANA timezone database codes. |
+| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](./https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
 | addresses | Array of Address objects | Yes | No | See Address below. |
 | ratings | Array of Rating objects | No | No | See Rating below. |
 | contacts | Dictionary of Contact objects | Yes | Yes | See Contact below. |
