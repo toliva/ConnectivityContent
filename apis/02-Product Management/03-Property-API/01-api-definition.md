@@ -4,7 +4,7 @@ The Property API is used to onboard property attributes, images, policies, and f
 
 ## Authentication
 
-Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
+Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
 
 ## Endpoints
 
@@ -16,11 +16,11 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 
 | Method | HTTP Verb | Endpoint | Description |
 | ------ | --------- | -------- | ----------- |
-| Set Property Details | PUT | /properties/v1/{EPC account id} | PUT property information to initiate onboarding. |
-| Get Property Details | GET | /properties/v1/{EPC account id}/{provider property ID} | GET property information |
-| Update a Property | PUT | /properties/v1/{EPC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
-| Get Property Status | GET | /properties/v1/{EPC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
-| Deactivate Property | DELETE | /properties/v1/{EPC account id}/{provider property ID} | De-activates property in Expedia system |
+| Set Property Details | PUT | /properties/v1/{EQC account id} | PUT property information to initiate onboarding. |
+| Get Property Details | GET | /properties/v1/{EQC account id}/{provider property ID} | GET property information |
+| Update a Property | PUT | /properties/v1/{EQC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
+| Get Property Status | GET | /properties/v1/{EQC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
+| Deactivate Property | DELETE | /properties/v1/{EQC account id}/{provider property ID} | De-activates property in Expedia system |
 
 ## API Errors
 
