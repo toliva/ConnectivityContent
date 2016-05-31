@@ -4,7 +4,7 @@ The Property API is used to onboard property attributes, images, policies, and f
 
 ## Authentication
 
-Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
+Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.  Please contact EPSProductSupport [at] expedia [dot] com to authorize your existing EQC credentials to use the Property API *OR* to request a new EQC account.
 
 ## Endpoints
 
