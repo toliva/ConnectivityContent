@@ -5,7 +5,7 @@
     border-width: 1px;
 }
 .blog-title {
-    padding: 5px 10px 5px 10px;
+    padding: 0px 0px 0px 5px;
     text-align: justify;
     background-color: #FECB2F;
 }
@@ -13,6 +13,7 @@
     background-color: #F3F3F3;
     font-size: 12px;
     padding: 3px;
+    text-align: right;
 }
 .blog-tag {
     background-color: #C6E5FF;
@@ -36,20 +37,45 @@
     color: #B1B1B1;
 }
 h1 {
+    font-size: 2em;
+    margin: 0 0;
+    text-align: center;
+}
+@media only screen and (min-width: 705px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media only screen and (min-width: 840px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+h2 {
     font-size: 1.4em;
     margin: 0 0;
+    padding: 0px;
 }
 @media only screen and (min-width: 805px) {
-    h1 {
+    h2 {
         font-size: 2em;
     }
 }
 </style>
+<br/>
+<div class="row">
+    <div class="small-8 small-centered large-10 large-centered columns"><h1>Expedia Connectivity Blog</h1></div>
+</div>
 <br/><br/>
 <div class="row">
     <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title"><h1>Delete those old rate plans</h1></div>
+            <div class="blog-title"><h2>Delete those old rate plans</h2></div>
             <div class="blog-tags">
                 <div class="blog-tag"><a href="/blog?tags=product">product</a></div>
             </div>
