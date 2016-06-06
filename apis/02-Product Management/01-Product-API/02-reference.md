@@ -1243,6 +1243,55 @@ Status Code | Description | Response Model
 | Smoking |
 | Non-Smoking |
 
+<a name="/definitions/typeEnum"></a>
+#### bed typeEnum
+
+| standard bed type | Extra bed type |
+| ---- | ---- |
+| Bunk Bed | Crib |
+| Full Bed | Day Bed |
+| Futon | Rollaway Bed |
+| King Bed | Sofa Bed |
+| Murphy Bed | |
+| Queen Bed | |
+| Sofa Bed | |
+| Trundle Bed | |
+| Twin Bed | |
+| Twin XL Bed | |
+| Water Bed | |
+
+<a name="/definitions/sizeEnum"></a>
+#### bed sizeEnum
+
+| bed size |
+| ---- |
+| Crib |
+| Full |
+| King |
+| Queen |
+| Twin |
+| TwinXL |
+
+<a name="/definitions/bed type and size"></a>
+#### bed type and size
+
+|  bed type | bed size |
+| ---- | ---- |
+| Bunk Bed | Full, King, Queen, Twin, TwinXL |
+| Crib | Crib |
+| Day Bed | Full, King, Queen, Twin, TwinXL |
+| Full Bed | Full |
+| Futon | Full, King, Queen, Twin, TwinXL |
+| King Bed | King |
+| Murphy Bed | Full, King, Queen, Twin, TwinXL |
+| Queen Bed | Queen |
+| Rollaway Bed | Full, King, Queen, Twin, TwinXL |
+| Sofa Bed | Full, King, Queen, Twin, TwinXL |
+| Trundle Bed | Full, King, Queen, Twin, TwinXL |
+| Twin Bed | Twin |
+| Twin XL Bed | TwinXL |
+| Water Bed | Full, King, Queen, Twin, TwinXL |
+
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
 There are 2 possible enums. One applies to all rate plans of type Standalone and Package, the other to rate plans of type Corporate.
