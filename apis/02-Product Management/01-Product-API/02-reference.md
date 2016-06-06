@@ -486,8 +486,8 @@ name | [RoomTypeName](#/definitions/RoomTypeNameDTO) | Yes | Name object. Collec
 status | enum | No | Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.
 ageCategories | Array[[RoomTypeAgeCategory](#/definitions/RoomTypeAgeCategoryDTO)] | Yes | Array of age categories. Defines the different age categories supported by the room type. At the very least, the 'Adult' category must be defined.
 maxOccupancy | [Occupancy](#/definitions/OccupancyDTO) | No | Defines the different age categories supported by the room type. At the very least, the 'Adult' category must be defined.
-standardBedding | [BeddingOption](#/definitions/BeddingOptionDTO) | Yes | Lists the different combination of beds (type, size and quality) a room may have.
-extraBedding | Array[[Bed](#/definitions/BedDTO)] | No | Defines the configuration (type, size and quality) of any extra beds the room type may have.
+standardBedding | [BeddingOption](#/definitions/BeddingOptionDTO) | Yes | Minimum 1 maxium 2 bedding options a room may have. Each bedding option can be with a combination of beds (type, size and quality).
+extraBedding | Array[[Bed](#/definitions/BedDTO)] | No | Defines the extra bed combination (type, size and quality) the room type may have.
 smokingPreferences | Array[[smokingPreferenceEnum](#/definitions/smokingPreferenceEnum)] | Yes | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner.
 roomSize | [RoomSize](#/definitions/RoomSizeDTO) | No | Used to define room size. When used, both size in square feet and in square meters must be specified.
 views | Array[[viewEnum](#/definitions/viewEnum)] | No | Used to define view(s) from the room. There can be up to 2 different views defined per room type.
@@ -541,7 +541,7 @@ children | integer | Yes | Max number of children that can reside in the room.
 
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
-option | Array[[Bed](#/definitions/BedDTO)] | Yes | Option of bedding a room may have.
+option | Array[[Bed](#/definitions/BedDTO)] | Yes | Each bedding option can be with a combination of beds (type, size and quality).
 
 <a name="/definitions/BedDTO"></a>
 #### Bed
@@ -549,8 +549,8 @@ option | Array[[Bed](#/definitions/BedDTO)] | Yes | Option of bedding a room may
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
 quantity | integer | Yes | Number of beds.
-type | string | Yes | Qualifies the bed. Examples: "Sofa Bed"
-size | string | No | Defines the size of the bed. Example: "Double"
+type | [typeEnum](#/definitions/typeEnum) | Yes | Defines the bed type. Example: "King Bed", "Sofa Bed".
+size | [sizeEnum](#/definitions/sizeEnum) | No | Defines the size of the bed. Example: "King", "Queen".
 
 <a name="/definitions/RoomSizeDTO"></a>
 #### RoomSize
