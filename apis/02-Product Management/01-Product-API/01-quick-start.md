@@ -95,8 +95,8 @@ The result will be an array of active room types under this property. For exampl
         }
       ],
       "maxOccupancy": {
-        "adults": 0, 
-        "children": 0, 
+        "adults": 4, 
+        "children": 3, 
         "total": 4
       }, 
       "standardBedding": [
@@ -137,7 +137,7 @@ The result will be an array of active room types under this property. For exampl
         }
       ], 
       "maxOccupancy": {
-        "adults": 0, 
+        "adults": 6, 
         "children": 0, 
         "total": 6
       }, 
