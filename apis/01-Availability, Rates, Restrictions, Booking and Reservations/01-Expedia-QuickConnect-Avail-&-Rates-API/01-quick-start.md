@@ -12,16 +12,16 @@ Updates by date range and day(s) of week | Modification of base allocation count
 Update of multiple room types and rate plans at the same time, for multiple different date ranges. | Closing a room with outstanding base allocation
 Total room allocation for properties with or without base allocation contracts | Closing all rate plans for a room with outstanding base allocation
 Additional allocation for properties with base allocation contracts | Single-person supplements in per-person pricing Extra person/child/infant fees for all pricing models
-Opening and Closing – rate plans
-Opening and Closing – room types
-Rate per day for base occupancy (per day pricing model)
-Rate per day for base occupancy, per length of stay (per day length of stay pricing model)
-Rate per day by occupancy (occupancy based pricing model) **Recommended**
-Rate per day per person for double occupancy (per person pricing model)
-Rates could be Net Rate, Sell Rate or Lowest Available Rate, based on product configuration in Expedia system.
-Day-of-arrival pricing with rate change indicator
-Minimum length of stay (based on arrival or stay through)
-Maximum length-of-stay (based on arrival or stay through)
-Update number of rooms available as far as two years in advance
-Closed-to-arrival restrictions
-Closed-to-departure restriction
+Opening and Closing – rate plans |
+Opening and Closing – room types |
+Rate per day for base occupancy (per day pricing model) |
+Rate per day for base occupancy, per length of stay (per day length of stay pricing model) |
+Rate per day by occupancy (occupancy based pricing model) **Recommended** |
+Rate per day per person for double occupancy (per person pricing model) |
+Rates could be Net Rate, Sell Rate or Lowest Available Rate, based on product configuration in Expedia system. |
+Day-of-arrival pricing with rate change indicator |
+Minimum length of stay (based on arrival or stay through) |
+Maximum length-of-stay (based on arrival or stay through) |
+Update number of rooms available as far as two years in advance |
+Closed-to-arrival restrictions |
+Closed-to-departure restriction |
