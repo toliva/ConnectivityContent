@@ -1,5 +1,5 @@
 # API Definition
-EQC AR is TBD
+EQC AR is XML based
 
 ### Communication Protocol
 #### XML over HTTPS – Synchronous
