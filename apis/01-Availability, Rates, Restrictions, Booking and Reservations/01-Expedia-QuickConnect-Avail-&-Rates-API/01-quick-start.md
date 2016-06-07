@@ -11,7 +11,7 @@ Updates by Property for Room Types and/or Rate Plans using Expedia IDs as identi
 Updates by date range and day(s) of week | Modification of base allocation count through EQC
 Update of multiple room types and rate plans at the same time, for multiple different date ranges. | Closing a room with outstanding base allocation
 Total room allocation for properties with or without base allocation contracts | Closing all rate plans for a room with outstanding base allocation
-Additional allocation for properties with base allocation contracts | Single-person supplements in per-person pricingExtra person/child/infant fees for all pricing models
+Additional allocation for properties with base allocation contracts | Single-person supplements in per-person pricing Extra person/child/infant fees for all pricing models
 Opening and Closing – rate plans
 Opening and Closing – room types
 Rate per day for base occupancy (per day pricing model)
