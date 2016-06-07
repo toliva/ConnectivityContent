@@ -235,7 +235,7 @@ Response:
           "roomClass":"Standard",
           "includeBedType":true
         },
-        "value":"Standard Room, 1 King Bed"
+        "value":"Standard Room, 2 Double Beds"
       },
       "status":"Inactive",
       "ageCategories": [
@@ -321,7 +321,7 @@ Response:
         "maxOccupancy": {
             "total":4,
             "adults":3,
-            "children":0
+            "children":2
         },
         "standardBedding": [
             {
@@ -391,7 +391,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
   "maxOccupancy": {
     "total":4,
     "adults":3,
-    "children":0
+    "children":2
   },
   "standardBedding": [
     {
@@ -446,7 +446,7 @@ When successful, the API will respond with what Expedia created. Please note tha
         "maxOccupancy": {
             "total": 4,
             "adults": 3,
-            "children": 0
+            "children": 2
         },
         "standardBedding": [
             {
@@ -512,7 +512,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
     "maxOccupancy": {
         "total": 4,
         "adults": 3,
-        "children": 0
+        "children": 2
     },
     "standardBedding": [
         {
@@ -573,7 +573,7 @@ When successful, the API will respond with what Expedia created. Please note tha
         "maxOccupancy": {
             "total": 4,
             "adults": 3,
-            "children": 0
+            "children": 2
         },
         "standardBedding": [
             {
@@ -641,7 +641,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
     "maxOccupancy": {
         "total": 4,
         "adults": 3,
-        "children": 0
+        "children": 2
     },
     "standardBedding": [
         {
@@ -690,7 +690,7 @@ The response will not include bedroom details, view, featured amenity and area a
         "maxOccupancy": {
             "total": 4,
             "adults": 3,
-            "children": 0
+            "children": 2
         },
         "standardBedding": [
             {
@@ -743,7 +743,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
     "maxOccupancy": {
         "total": 4,
         "adults": 3,
-        "children": 0
+        "children": 2
     },
     "standardBedding": [
         {
@@ -797,7 +797,7 @@ Response look like
         "maxOccupancy": {
             "total": 4,
             "adults": 3,
-            "children": 0
+            "children": 2
         },
         "standardBedding": [
             {
@@ -862,7 +862,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
     "maxOccupancy": {
         "total": 4,
         "adults": 3,
-        "children": 0
+        "children": 2
     },
     "standardBedding": [
         {
@@ -910,7 +910,7 @@ Response looks like
         "maxOccupancy": {
             "total": 4,
             "adults": 3,
-            "children": 0
+            "children": 2
         },
         "standardBedding": [
             {
