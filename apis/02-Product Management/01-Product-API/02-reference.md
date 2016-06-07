@@ -323,14 +323,8 @@ body | body | JSON message describing the new room type | Yes | [RoomType](#/def
             {
                 "option": [
                     {
-                        "quantity": 1, 
-                        "size": "Full", 
-                        "type": "Full Bed"
-                    }, 
-                    {
-                        "quantity": 2, 
-                        "size": "Twin", 
-                        "type": "Bunk Bed"
+                        "quantity": 1,
+                        "type": "King Bed"
                     }
                 ]
             }
@@ -409,7 +403,7 @@ body | body | JSON message with modified room type | Yes | [RoomType](#/definiti
                 "featuredAmenity": "Jetted Tub",
                 "customLabel": "Rooftop Terrace"
             },
-            "value": "Executive Penthouse, 1 King Bed with Sofabed, Jetted Tub, City View (Rooftop Terrace)"
+            "value": "Executive Penthouse, 1 King Bed, Jetted Tub, City View (Rooftop Terrace)"
         },
         "status": "Active",
         "ageCategories": [
@@ -436,13 +430,8 @@ body | body | JSON message with modified room type | Yes | [RoomType](#/definiti
                 "option": [
                     {
                         "quantity": 1, 
-                        "size": "Full", 
-                        "type": "Full Bed"
-                    }, 
-                    {
-                        "quantity": 2, 
-                        "size": "Twin", 
-                        "type": "Bunk Bed"
+                        "type": "King Bed",
+                        "size": "King"
                     }
                 ]
             }
