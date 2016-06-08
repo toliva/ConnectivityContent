@@ -45,6 +45,23 @@ For more information about getting started for the first time, and authorization
 | Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
 | Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
+## Versioning
+
+Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independentely. 
+
+Starting with version 2, it is now required to provide a content-type header including the version with any POST or PUT request. For example:
+
+```
+Content-Type: application/vnd.expedia.eps.product-v2+json
+```
+
+The Accept header also now indicates which version is expected to be returned. Accept header is optional. If provided, Expedia will validate that the version requestedf for the response is a valid one. Example of a valid Accept header:
+
+```
+Accept: application/vnd.expedia.eps.product-v2+json
+```
+
+
 ## HTTP Status Code
 
 The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: 
@@ -530,7 +547,7 @@ children | integer | Yes | Max number of children that can reside in the room.
 
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
-option | Array[[Bed](#/definitions/BedDTO)] | Yes | Each bedding option can be with a combination of beds (type, size and quality).
+option | Array[[Bed](#/definitions/BedDTO)] | Yes | Each bedding option can be with a combination of beds (type, size and quality). 
 
 <a name="/definitions/BedDTO"></a>
 #### Bed
@@ -538,8 +555,8 @@ option | Array[[Bed](#/definitions/BedDTO)] | Yes | Each bedding option can be w
 Property Name | Type | Required | Description
 ------------- | ---- | -------- | -----------
 quantity | integer | Yes | Number of beds.
-type | [typeEnum](#/definitions/typeEnum) | Yes | Defines the bed type. Example: "King Bed", "Sofa Bed".
-size | [sizeEnum](#/definitions/sizeEnum) | No | Defines the size of the bed. Example: "King", "Queen".
+type | [bedTypeEnum](#/definitions/bedTypeEnum) | Yes | Defines the bed type. Example: "King Bed", "Sofa Bed".
+size | [bedSizeEnum](#/definitions/bedSizeEnum) | No | Defines the size of the bed. Example: "King", "Queen". When specified, [only certain sizes can be used for each type](#/definitions/bedTypeAndSize). For bed types where Expedia accepts different sizes, when the size is not specific, Expedia will default to the smallest size possbile for the bed type.
 
 <a name="/definitions/RoomSizeDTO"></a>
 #### RoomSize
@@ -1213,7 +1230,7 @@ Status Code | Description | Response Model
 | Tower |
 
 <a name="/definitions/categoryEnum"></a>
-#### categoryEnum
+### categoryEnum
 
 | category |
 | ---- |
@@ -1225,34 +1242,39 @@ Status Code | Description | Response Model
 | Infant |
 
 <a name="/definitions/smokingPreferenceEnum"></a>
-#### smokingPreferenceEnum
+### smokingPreferenceEnum
 
 | smokingPreference |
 | ---- |
 | Smoking |
 | Non-Smoking |
 
-<a name="/definitions/typeEnum"></a>
-#### bed typeEnum
+<a name="/definitions/bedTypeEnum"></a>
+### bedTypeEnum
 
-| standard bed type | Extra bed type |
+Bed types can not all be used as extra or standard beds. To understand if a bed type can be used in the standard bedding configuration of the room, or can only be provided in the extra bed list, please refer to the Standard/Extra column. Trying to provide a standard-only bed as extra (or vice-versa) via the API will result in the API returning an error.
+
+| bedType | Standard/Extra |
 | ---- | ---- |
-| Bunk Bed | Crib |
-| Full Bed | Day Bed |
-| Futon | Rollaway Bed |
-| King Bed | Sofa Bed |
-| Murphy Bed | |
-| Queen Bed | |
-| Sofa Bed | |
-| Trundle Bed | |
-| Twin Bed | |
-| Twin XL Bed | |
-| Water Bed | |
+| Bunk Bed | Standard only |
+| Full Bed | Standard only |
+| Futon |  Standard only |
+| King Bed | Standard only |
+| Murphy Bed | Standard only |
+| Queen Bed | Standard only |
+| Trundle Bed | Standard only |
+| Twin Bed | Standard only |
+| Twin XL Bed | Standard only |
+| Water Bed | Standard only |
+| Sofa Bed | Standard and Extra |
+| Crib | Extra only |
+| Day Bed | Extra only |
+| Rollaway Bed | Extra only |
 
-<a name="/definitions/sizeEnum"></a>
-#### bed sizeEnum
+<a name="/definitions/bedSizeEnum"></a>
+### bedSizeEnum
 
-| bed size |
+| bedSize |
 | ---- |
 | Crib |
 | Full |
@@ -1261,10 +1283,12 @@ Status Code | Description | Response Model
 | Twin |
 | TwinXL |
 
-<a name="/definitions/bed type and size"></a>
-#### bed type and size
+<a name="/definitions/bedTypeAndSize"></a>
+### Valid Bed Type and Size Combinations
 
-|  bed type | bed size |
+Expedia doesn't support all possible combinations of bed types and size. The table below indicates which sizez can be used with each bed type. Partners attempting to make use of any other size will get an error back from the API when they do so.
+
+|  bedType | bedSize |
 | ---- | ---- |
 | Bunk Bed | Full, King, Queen, Twin, TwinXL |
 | Crib | Crib |
