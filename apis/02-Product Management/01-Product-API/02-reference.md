@@ -55,7 +55,7 @@ Starting with version 2, it is now required to provide a content-type header inc
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 
-The Accept header also now indicates which version is expected to be returned. Accept header is optional. If provided, Expedia will validate that the version requestedf for the response is a valid one. Example of a valid Accept header:
+The Accept header also now indicates which version is expected to be returned. Accept header is optional. If ommitted, Expedia will default to return the latest version. If provided, Expedia will validate that the version requested for the response is a valid one. Example of a valid Accept header:
 
 ```
 Accept: application/vnd.expedia.eps.product-v2+json
