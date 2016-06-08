@@ -15,6 +15,10 @@ This retry strategy should be different than the retry where the communication c
 ####Concurrency
 Expedia QuickConnect only allows one connection at a time per hotel. EQC partners cannot send concurrent requests to update the same hotel. Requests should be queued in the hotel system.
 
+####Included Features
+The following table is an overview of what is and is not included in the availability and rates API. 
+Note: The features listed as “not supported” are ones that are managed through Expedia's tools. Some of these features can be managed by the EQC partner, while others are managed by the Expedia Market Manager.
+
 
 Supported | Not Supported
 --------- | -------------
