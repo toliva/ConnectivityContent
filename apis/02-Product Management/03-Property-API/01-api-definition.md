@@ -4,7 +4,7 @@ The Property API is used to onboard property attributes, images, policies, and f
 
 ## Authentication
 
-Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
+Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.  Please contact EPSProductSupport [at] expedia [dot] com to authorize your existing EQC credentials to use the Property API *OR* to request a new EQC account.
 
 ## Endpoints
 
@@ -16,11 +16,11 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 
 | Method | HTTP Verb | Endpoint | Description |
 | ------ | --------- | -------- | ----------- |
-| Set Property Details | PUT | /properties/v1/{EPC account id} | PUT property information to initiate onboarding. |
-| Get Property Details | GET | /properties/v1/{EPC account id}/{provider property ID} | GET property information |
-| Update a Property | PUT | /properties/v1/{EPC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
-| Get Property Status | GET | /properties/v1/{EPC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
-| Deactivate Property | DELETE | /properties/v1/{EPC account id}/{provider property ID} | De-activates property in Expedia system |
+| Set Property Details | PUT | /properties/v1/{EQC account id} | PUT property information to initiate onboarding. |
+| Get Property Details | GET | /properties/v1/{EQC account id}/{provider property ID} | GET property information |
+| Update a Property | PUT | /properties/v1/{EQC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
+| Get Property Status | GET | /properties/v1/{EQC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
+| Deactivate Property | DELETE | /properties/v1/{EQC account id}/{provider property ID} | De-activates property in Expedia system |
 
 ## API Errors
 
@@ -53,7 +53,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "structureType": "Hotel",
     "currencyCode": "USD",
     "billingCurrencyCode": "USD",
-    "timeZone": "USA/Pacific",
+    "timeZone": "America/Los_Angeles",
     "addresses": [
         {
             "line1": "123 Main St.",
@@ -200,7 +200,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./Code-list.html#StructureType "Structure type codes") |
 | currencyCode | String | Yes | No | Currency code to be used for property's pricing. Cannot be updated after initial onboarding. Use ISO4217 |
 | billingCurrencyCode | String | Yes | No | Currency code to be used for billing. Use ISO4217. |
-| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the IANA timezone database codes. |
+| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](./https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
 | addresses | Array of Address objects | Yes | No | See Address below. |
 | ratings | Array of Rating objects | No | No | See Rating below. |
 | contacts | Dictionary of Contact objects | Yes | Yes | See Contact below. |

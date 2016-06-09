@@ -44,6 +44,7 @@ For more information about getting started for the first time, and authorization
 | Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
 | Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Rate Plan | Delete a single rate plan (DELETE) | DELETE https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
 ## Versioning
 
@@ -60,7 +61,6 @@ The Accept header also now indicates which version is expected to be returned. A
 ```
 Accept: application/vnd.expedia.eps.product-v2+json
 ```
-
 
 ## HTTP Status Code
 
@@ -129,8 +129,8 @@ Simple entity response:
 
 ### Single Entity VS Entity Array in Read/GET Responses
 There are two different read operations available against the Product API resources:
--	To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}
--	To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. 
+- To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}
+- To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. 
 
 
 For example, when requesting a single property, EPS Product API will return the property resource information as part of an Entity object:
@@ -685,34 +685,34 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
 **Examples**
 ```
 {
-	"name": "My Rate Plan Name",
-	"rateAcquisitionType": "NetRate",
-	"distributionRules": [
-		{
-			"partnerCode": "ECCode",
-			"distributionModel": "ExpediaCollect"
-		}, {
-			"partnerCode": "HCCode",
-			"distributionModel": "HotelCollect"
-		}
-	],
-	"status": "Active",
-	"type": "Standalone",
-	"pricingModel": "PerDayPricing",
-	"occupantsForBaseRate": 2,
-	"taxInclusive": false,
-	"cancelPolicy": {
-		"defaultPenalties": [
-			{
-				"deadline": 0,
-				"perStayFee": "1stNightRoomAndTax",
-				"amount": 0
-			}, {
-				"deadline": 24,
-				"perStayFee": "None",
-				"amount": 0
-			}
-		],
+  "name": "My Rate Plan Name",
+  "rateAcquisitionType": "NetRate",
+  "distributionRules": [
+    {
+      "partnerCode": "ECCode",
+      "distributionModel": "ExpediaCollect"
+    }, {
+      "partnerCode": "HCCode",
+      "distributionModel": "HotelCollect"
+    }
+  ],
+  "status": "Active",
+  "type": "Standalone",
+  "pricingModel": "PerDayPricing",
+  "occupantsForBaseRate": 2,
+  "taxInclusive": false,
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "1stNightRoomAndTax",
+        "amount": 0
+      }, {
+        "deadline": 24,
+        "perStayFee": "None",
+        "amount": 0
+      }
+    ],
         "exceptions": [
             {
                 "endDate": "2019-04-01",
@@ -731,28 +731,28 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
                 ]
             }
         ]
-	},
-	"additionalGuestAmounts": [
-		{
-			"ageCategory": "Adult",
-			"amount": 8.73
-		}, {
-			"ageCategory": "ChildAgeA",
-			"amount": 5
-		}
-	],
-	"valueAddInclusions": [
-		"Free Parking", "Free Breakfast", "Free Internet"
-	],
-	"minLOSDefault": 1,
-	"maxLOSDefault": 28,
-	"minAdvBookDays": 0,
-	"maxAdvBookDays": 500,
-	"bookDateStart": "1900-01-01",
-	"bookDateEnd": "2079-06-06",
-	"travelDateStart": "1901-01-01",
-	"travelDateEnd": "2079-06-06",
-	"mobileOnly": false
+  },
+  "additionalGuestAmounts": [
+    {
+      "ageCategory": "Adult",
+      "amount": 8.73
+    }, {
+      "ageCategory": "ChildAgeA",
+      "amount": 5
+    }
+  ],
+  "valueAddInclusions": [
+    "Free Parking", "Free Breakfast", "Free Internet"
+  ],
+  "minLOSDefault": 1,
+  "maxLOSDefault": 28,
+  "minAdvBookDays": 0,
+  "maxAdvBookDays": 500,
+  "bookDateStart": "1900-01-01",
+  "bookDateEnd": "2079-06-06",
+  "travelDateStart": "1901-01-01",
+  "travelDateEnd": "2079-06-06",
+  "mobileOnly": false
 }
 ```
 
@@ -800,46 +800,46 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
 **Examples**
 ```
 {
-	"resourceId": 205020307,
-	"name": "My Rate Plan Name",
-	"rateAcquisitionType": "NetRate",
-	"distributionRules": [
-		{
-			"expediaId": "205020307",
-			"partnerCode": "ECCode",
-			"distributionModel": "ExpediaCollect",
-			"manageable": true,
-			"compensation": {
-				"percent": 0.23,
-				"minAmount": 0
-			}
-		}, {
-			"expediaId": "205020307A",
-			"partnerCode": "HCCode",
-			"distributionModel": "HotelCollect",
-			"manageable": true,
-			"compensation": {
-				"percent": 0.23
-			}
-		}
-	],
-	"status": "Active",
-	"type": "Standalone",
-	"pricingModel": "PerDayPricing",
-	"occupantsForBaseRate": 2,
-	"taxInclusive": false,
-	"cancelPolicy": {
-		"defaultPenalties": [
-			{
-				"deadline": 0,
-				"perStayFee": "1stNightRoomAndTax",
-				"amount": 0
-			}, {
-				"deadline": 24,
-				"perStayFee": "None",
-				"amount": 0
-			}
-		],
+  "resourceId": 205020307,
+  "name": "My Rate Plan Name",
+  "rateAcquisitionType": "NetRate",
+  "distributionRules": [
+    {
+      "expediaId": "205020307",
+      "partnerCode": "ECCode",
+      "distributionModel": "ExpediaCollect",
+      "manageable": true,
+      "compensation": {
+        "percent": 0.23,
+        "minAmount": 0
+      }
+    }, {
+      "expediaId": "205020307A",
+      "partnerCode": "HCCode",
+      "distributionModel": "HotelCollect",
+      "manageable": true,
+      "compensation": {
+        "percent": 0.23
+      }
+    }
+  ],
+  "status": "Active",
+  "type": "Standalone",
+  "pricingModel": "PerDayPricing",
+  "occupantsForBaseRate": 2,
+  "taxInclusive": false,
+  "cancelPolicy": {
+    "defaultPenalties": [
+      {
+        "deadline": 0,
+        "perStayFee": "1stNightRoomAndTax",
+        "amount": 0
+      }, {
+        "deadline": 24,
+        "perStayFee": "None",
+        "amount": 0
+      }
+    ],
         "exceptions": [
             {
                 "endDate": "2019-04-01",
@@ -858,32 +858,32 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
                 ]
             }
         ]
-	},
-	"additionalGuestAmounts": [
-		{
-			"dateStart": "2015-11-27",
-			"dateEnd": "2079-06-06",
-			"ageCategory": "Adult",
-			"amount": 8.73
-		}, {
-			"dateStart": "2015-11-27",
-			"dateEnd": "2079-06-06",
-			"ageCategory": "ChildAgeA",
-			"amount": 5
-		}
-	],
-	"valueAddInclusions": [
-		"Free Parking", "Free Breakfast", "Free Internet"
-	],
-	"minLOSDefault": 1,
-	"maxLOSDefault": 28,
-	"minAdvBookDays": 0,
-	"maxAdvBookDays": 500,
-	"bookDateStart": "1900-01-01",
-	"bookDateEnd": "2079-06-06",
-	"travelDateStart": "1901-01-01",
-	"travelDateEnd": "2079-06-06",
-	"mobileOnly": false
+  },
+  "additionalGuestAmounts": [
+    {
+      "dateStart": "2015-11-27",
+      "dateEnd": "2079-06-06",
+      "ageCategory": "Adult",
+      "amount": 8.73
+    }, {
+      "dateStart": "2015-11-27",
+      "dateEnd": "2079-06-06",
+      "ageCategory": "ChildAgeA",
+      "amount": 5
+    }
+  ],
+  "valueAddInclusions": [
+    "Free Parking", "Free Breakfast", "Free Internet"
+  ],
+  "minLOSDefault": 1,
+  "maxLOSDefault": 28,
+  "minAdvBookDays": 0,
+  "maxAdvBookDays": 500,
+  "bookDateStart": "1900-01-01",
+  "bookDateEnd": "2079-06-06",
+  "travelDateStart": "1901-01-01",
+  "travelDateEnd": "2079-06-06",
+  "mobileOnly": false
 }
 ```
 
