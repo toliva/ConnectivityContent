@@ -19,4 +19,49 @@ Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials 
 
 ## Availability and Rates Request and Response
 
-The availability and rate request (AR RQ) allows EQC partners to send Expedia updates on availability and rates for up to 2 years into the future. Below is a pair of sample request/response messages for availability and rate update. The following requests can be posted directly to the EQC interface at https://services.expediapartnercentral.com/eqc/ar
+The availability and rate request (AR RQ) allows EQC partners to send Expedia updates on availability and rates for up to 2 years into the future. Below is a pair of sample request/response messages for availability and rate update. The following requests can be posted directly to the EQC interface at https://services.expediapartnercentral.com/eqc/ar - for partners wanting to experiment with the API. Make sure to include content type= text/xml in your http header.
+
+**RQ**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
+    <Authentication username="" password=""/>
+    <Hotel id="411"/>
+    <AvailRateUpdate>
+        <DateRange from="2014-12-15" to="2015-01-20"/>
+        <RoomType id="40000" closed="false">
+            <Inventory totalInventoryAvailable="10"/>
+            <RatePlan id="41000" closed="false">
+                <Rate currency="USD">
+                    <PerOccupancy rate="60.00" occupancy="1"/>
+                    <PerOccupancy rate="100.00" occupancy="2"/>
+                    <PerOccupancy rate="135.00" occupancy="3"/>
+                    <PerOccupancy rate="160.00" occupancy="4"/>
+                </Rate>
+                <Restrictions closedToArrival="false" closedToDeparture="false" minLOS="1" maxLOS="7"/>
+            </RatePlan>
+        </RoomType>
+    </AvailRateUpdate>
+    <AvailRateUpdate>
+        <DateRange from="2015-02-15" to="2015-02-20"/>
+        <RoomType id="40000" closed="true">
+            <Inventory totalInventoryAvailable="0"/>
+            <RatePlan id="41000" closed="true">
+                <Rate currency="USD">
+                    <PerOccupancy rate="80.00" occupancy="1"/>
+                    <PerOccupancy rate="120.00" occupancy="2"/>
+                </Rate>
+                <Restrictions closedToArrival="true" closedToDeparture="false" minLOS="1" maxLOS="7"/>
+            </RatePlan>
+        </RoomType>
+    </AvailRateUpdate>    
+</AvailRateUpdateRQ>
+```
+
+**RS**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<AvailRateUpdateRS xmlns="http://www.expediaconnect.com/EQC/AR/2007/02">
+    <Success/>
+</AvailRateUpdateRS>
+```
