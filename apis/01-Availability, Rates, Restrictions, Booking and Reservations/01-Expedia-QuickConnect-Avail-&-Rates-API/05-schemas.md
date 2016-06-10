@@ -7,7 +7,7 @@ Please note that this overview provides the most recent structure of EQC AR API 
 
 ### AR RQ Schema Complete Definition
 
-Legend: O = Optional
+_Legend: O = Optional_
 
 Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
 ----- | -------------------- | --------- | ---------------- | ----------- | ---------------
