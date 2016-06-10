@@ -34,6 +34,10 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 2 | @thu | Boolean | O | If set to true, apply update for each Thursday in the specified date interval.
 2 | @fri | Boolean | O | If set to true, apply update for each Friday in the specified date interval.
 2 | @sat | Boolean | O | If set to true, apply update for each Saturday in the specified date interval.
+2 | RoomType | - | | Room type to be updated by this message. This element can be repeated more than once if hotel wants to update multiple room types for the same set of dates.
+2 | @id | String | | Room type ID (defined by Expedia). Note: mapping of Expedia IDs to hotel codes has to be done by EQC partner. | String of 50 characters or less, RoomType ID is valid only if the specified hotel has the corresponding room type defined for it in Expedia Partner Central, Room type should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this room type is inactive. 
+2 | @closed | Boolean | O | If true, the room type is no longer available on Expedia for dates specified in the request. If false, the room type is reopened if previously closed, or stays open if already open. | A close request will be refused if the room is enabled for base allocation and has base allocation left.
+
 
 
 
