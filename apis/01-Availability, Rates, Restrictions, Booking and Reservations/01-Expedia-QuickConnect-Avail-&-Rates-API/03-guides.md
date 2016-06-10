@@ -194,6 +194,18 @@ Please verify which type of rate is being used to update Expedia products using 
 Product Type | Distribution Type | Rate Acquisition Type 
 ------------ | ----------------- | ---------------------
 Flex product, sell rate based | Hotel Collect and Expedia Collect | Sell rate
+Flex product, net rate based | Hotel Collect and Expedia Collect | Net rate
+Expedia Collect-only product | Expedia Collect | Net rate or LAR
+Hotel Collect-only product | Hotel Collect | Sell rate
+
+Please note that each flex product consists of a primary product and a derived product, where hotel should only send AR update for the primary product not for the derived product. The derived product will have the same availability as the primary product and the derived rate will be calculated by Expedia.
+
+Product Type | Base Product – AR Update by Hotel | Derived Product – Calculated by Expedia
+------------ | --------------------------------- | ---------------------------------------
+Flex products, sell rate based | Hotel Collect rate plan, Sell Rate | Expedia Collect rate plan
+Flex products,  net  rate based | Expedia Collect rate plan, Net Rate | Hotel Collect rate plan
+
+It is critical for the EQC partner to define the right type of rate to upload because there will not be any validation done on the EQC AR interface to confirm the rate sent has the right type. Sending the wrong rate will either make Expedia rate much lower than hotel desired rate (when sending a net rate for a sell rate or LAR based product), or much higer (when sending a sell rate or LAR for a net rate based product). 
 
 ### Retry
 -    Retry strategy if EQC partner cannot establish communication: If EQC partner receives an error from their application, saying it cannot connect to Expedia QuickConnect (including a connection refused), the EQC partner should perform retries.
