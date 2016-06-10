@@ -11,3 +11,5 @@ Level | Data element | Data type | O | Description | EQC validations
 ----- | ------------ | --------- | - | ----------- | ---------------
 0 | AvailRateUpdateRQ | - | | Root element | |
 0 | @xmlns | URL | | Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Supported namespaces for AR messages are: http://www.expediaconnect.com/EQC/AR/2007/02 & http://www.expediaconnect.com/EQC/AR/2011/06 | Valid namespace, defined by at least one version of AR schema.
+
+**need help creating table from EQC Spec - page 23**
