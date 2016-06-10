@@ -19,7 +19,16 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 1 | Hotel | - | | Information about Hotel
 1 | @id | Integer | | Hotel ID defined by Expedia and uniquely identifying a property in Expedia system. | Positive integer of 14 digits or less, Hotel ID is valid, Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.
 1 | AvailRateUpdate | - | | Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges. | This element can be omitted in the request and everything brought back one level down if EQC partner doesn’t see a need to send multiple updates within same message, but also to insure backward compatibility.
-2 | DateRange | - | | Specify dates on which availability and rate information provided in this message applies. A 'from' and a 'to' date must be specified. They can be equal if the EQC partner wants to update only one date. This element can be repeated more than once if EQC partner wants to. | “from date” <= “to date”
+2 | DateRange | - | | Specify dates on which availability and rate information provided in this message applies. A 'from' and a 'to' date must be specified. They can be equal if the EQC partner wants to update only one date. This element can be repeated more than once if EQC partner wants to update non-consecutive dates or date ranges. | “from date” <= “to date”
+2 | @from | Date | | Start date of the interval (format: yyyy-mm-dd) | “From date” >= today – 1
+2 | @to | Date | | End date of the interval (format: yyyy-mm-dd).  | “To date” <= (today + 2yrs + 1 day)
+**Note:** The following 7 attributes are used to indicate on which day of the week, from the date range specified in the “from”-“to” attributes, the updates should be applied. If none of the 7 attributes are specified, updates will apply to all days of the week. As soon as one attribute is specified, the updates will only apply to the days where the attribute value is set to true.
+If EQC partners need to use this feature, Expedia recommends specifying all 7 attributes, indicating on which day the updates should be applied (attribute value=true) and on which day the updates should not be applied (attribute value=false) 
+
+Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
+----- | -------------------- | --------- | ---------------- | ----------- | ---------------
+2 | @sun | Boolean | O | If set to true, apply update for each Sunday in the specified date interval.
+
 
 
 
