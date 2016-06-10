@@ -68,16 +68,15 @@ The result will be an array of active room types under this property. For exampl
   "entity": [
     {
       "resourceId": 201357991,
-      "partnerCode": "DLXRM",
+      "partnerCode": "PC122",
       "name": {
         "attributes": {
-          "typeOfRoom": "Room",
-          "roomClass": "Deluxe",
-          "view": "Mountain View",
-          "featuredAmenity": "Business Lounge Access",
-          "customLabel": "here is a custom text223"
+          "typeOfRoom": "Penthouse",
+          "roomClass": "Executive",
+          "view": "City View",
+          "featuredAmenity": "Jetted Tub"
         },
-        "value": "Deluxe Room, Business Lounge Access, Mountain View (here is a custom text223)"
+        "value": "Executive Penthouse, Jetted Tub, City View"
       },
       "status": "Active",
       "ageCategories": [
@@ -87,36 +86,38 @@ The result will be an array of active room types under this property. For exampl
         }, 
         {
           "category": "ChildAgeA", 
-          "minAge": 2
-        }, 
-        {
-          "category": "Infant", 
-          "minAge": 0
+          "minAge": 1
         }
       ],
       "maxOccupancy": {
+        "total": 4, 
         "adults": 4, 
-        "children": 3, 
-        "total": 4
+        "children": 2
       }, 
       "standardBedding": [
         {
           "option": [
             {
               "quantity": 1, 
-              "size": "Full", 
-              "type": "Full Bed"
+              "type": "King Bed", 
+              "size": "King"
             }, 
             {
               "quantity": 2, 
-              "size": "Twin", 
-              "type": "Twin Bed"
+              "type": "Sofa Bed", 
+              "size": "Full"
             }
           ]
         }
-      ], 
+      ],
+      "extraBedding": [
+        {
+          "quantity": 1, 
+          "type": "Day Bed", 
+          "size": "Twin"
+        }
+      ],      
       "smokingPreferences": [
-        "Smoking", 
         "Non-Smoking"
       ], 
     },
@@ -126,6 +127,7 @@ The result will be an array of active room types under this property. For exampl
       "name": {
         "value": "Executive Suite"
       },
+      "status": "Active",
       "ageCategories": [
         {
           "category": "Adult", 
@@ -137,22 +139,22 @@ The result will be an array of active room types under this property. For exampl
         }
       ], 
       "maxOccupancy": {
+        "total": 6,
         "adults": 6, 
-        "children": 0, 
-        "total": 6
+        "children": 5
       }, 
       "standardBedding": [
         {
           "option": [
             {
               "quantity": 1, 
-              "size": "Full", 
-              "type": "Full Bed"
+              "type": "Full Bed",
+              "size": "Full"
             }, 
             {
               "quantity": 2, 
-              "size": "Twin", 
-              "type": "Bunk Bed"
+              "type": "Bunk Bed",
+              "size": "Twin"
             }
           ]
         }
