@@ -6,13 +6,11 @@ Please note that this overview provides the most recent structure of EQC AR API 
 **Need to insert the pic from the spec of the overview**
 
 ### AR RQ Schema Complete Definition
-Legend: O = optional
-Level | Data element | Data type | O | Description | EQC validations
------ | ------------ | --------- | - | ----------- | ---------------
-0 | AvailRateUpdateRQ | - | | Root element | |
-0 | @xmlns | URL | | Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Supported namespaces for AR messages are: http://www.expediaconnect.com/EQC/AR/2007/02 & http://www.expediaconnect.com/EQC/AR/2011/06 | Valid namespace, defined by at least one version of AR schema.
 
-**need help creating table from EQC Spec - page 23**
+Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
+----- | -------------------- | --------- | ---------------- | ----------- | ---------------
+0 | AvailRateUpdateRQ |  | 1 |  DC common message header structure
+0 | @xmlns | URL | 1 | Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Supported namespaces for AR messages are: http://www.expediaconnect.com/EQC/AR/2007/02 & http://www.expediaconnect.com/EQC/AR/2011/06 | Valid namespace, defined by at least one version of AR schema.
 
 ## Availability and Rate Response (AR RS)
 The availability and rate response message is straightforward: it is returned synchronously to update the property’s system with the status of the AR request. The status can either be Success or Error. If successful, it can contain a warning.
