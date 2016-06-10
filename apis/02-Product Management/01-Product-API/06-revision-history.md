@@ -2,7 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
-| 2016-05-25 | Update the documentation to reflect all the Product-API v2 (no version in URL, update to Accept & Content-Type, new room type model) |
+| 2016-06-10 | Product API v2 now live. Versioning strategy changed from URL to using content-type and accept headers. As a result, URLs have all changed to have V1 removed when partners are ready to use V2. Room type resource changed significantly for defining bed types and occupancy. |
 | 2016-05-02 | Added support for cancel policy exceptions |
 | 2016-04-27 | Added support for Rate Plan Delete |
 | 2016-04-04 | Refreshed list of supported value adds, added more pricing models supported, clarified required VS optional fields. |
