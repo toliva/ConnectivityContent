@@ -10,3 +10,5 @@ Here are the schemas for messages supported by the EQC API.
 |[ProductAvailRateRetrieval Response](/files/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
 |[BookingRetrieval Request](/files/BookingRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
 |[BookingRetrieval Response](/files/BookingRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+|[BookingConfirmation Request](/files/BookingConfirmRQ.xsd)|http://www.expediaconnect.com/EQC/BC/2007/09|
+|[BookingConfirmation Response](/files/BookingConfirmRS.xsd)|http://www.expediaconnect.com/EQC/BC/2007/09|
