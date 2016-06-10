@@ -1,8 +1,8 @@
 # API Definition
 
-##Communication Protocol
+## Communication Protocol
 
-###XML over HTTPS – Synchronous
+### XML over HTTPS – Synchronous
 
 The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:
 
@@ -13,7 +13,7 @@ The communication protocol between properties and Expedia QuickConnect consists 
 -   Content-Type of the HTTP Request Header should be: “text/xml”.
 
 
-##AR RQ Schema Complete Definition
+## AR RQ Schema Complete Definition
 
 L | Data element | Data type | O | Description | EQC validations
 -- | ------------ | --------- | -- | ----------- | ---------------
