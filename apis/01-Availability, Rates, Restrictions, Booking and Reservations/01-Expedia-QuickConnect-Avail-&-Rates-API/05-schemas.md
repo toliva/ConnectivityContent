@@ -18,6 +18,8 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 1 | @password | String | | Password for Expedia QuickConnect login (case sensitive), provided by Expedia. | Minimum length: 6, Maximum length: 30, Password fits with the username
 1 | Hotel | - | | Information about Hotel
 1 | @id | Integer | | Hotel ID defined by Expedia and uniquely identifying a property in Expedia system. | Positive integer of 14 digits or less, Hotel ID is valid, Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.
+1 | AvailRateUpdate | - | | Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges. | This element can be omitted in the request and everything brought back one level down if EQC partner doesn’t see a need to send multiple updates within same message, but also to insure backward compatibility.
+2 | DateRange | - | | Specify dates on which availability and rate information provided in this message applies. A 'from' and a 'to' date must be specified. They can be equal if the EQC partner wants to update only one date. This element can be repeated more than once if EQC partner wants to. | “from date” <= “to date”
 
 
 
