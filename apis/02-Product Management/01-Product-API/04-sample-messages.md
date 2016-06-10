@@ -202,8 +202,8 @@ Response:
       ],
       "maxOccupancy": {
         "total":3,
-        "adults":2,
-        "children":1
+        "adults":3,
+        "children":2
         },
       "standardBedding": [
         {
@@ -250,8 +250,8 @@ Response:
       ],
       "maxOccupancy": {
         "total":4,
-        "adults":3,
-        "children":1
+        "adults":4,
+        "children":3
       },
       "standardBedding": [
         {
@@ -282,7 +282,7 @@ Response:
 ```
 
 ### Single Room Type Read
-This example shows how to do a read request for a single room type with 3 age categories, a choice of 2 bed types, and supporting both smoking and non-smoking
+This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bedding options, and supporting both smoking and non-smoking
 
 Request:
 ```HTTP
@@ -307,21 +307,17 @@ Response:
         "ageCategories": [
             {
                 "category":"Adult",
-                "minAge":13
+                "minAge":18
             },
             {
-            	"category":"ChildAgeB",
-            	"minAge":5
-            },
-            {
-            	"category":"Infant",
+            	"category":"ChildAgeA",
             	"minAge":0
             }
         ],
         "maxOccupancy": {
             "total":4,
-            "adults":3,
-            "children":2
+            "adults":4,
+            "children":3
         },
         "standardBedding": [
             {
@@ -330,8 +326,12 @@ Response:
                         "quantity":1,
                         "type":"King Bed",
                         "size":"King"
+                    },
+                    {
+                        "quantity":1,
+                        "type":"Sofa Bed",
+                        "size":"Full"
                     }
-                ]
             },
             {
                 "option": [
@@ -380,7 +380,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
       "minAge":13
     },
     {
-      "category":"ChildAgeB",
+      "category":"ChildAgeA",
       "minAge":5
     },
     {
@@ -435,7 +435,7 @@ When successful, the API will respond with what Expedia created. Please note tha
                 "minAge": 13
             },
             {
-                "category": "ChildAgeB",
+                "category": "ChildAgeA",
                 "minAge": 5
             },
             {
@@ -501,7 +501,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             "minAge": 13
         },
         {
-            "category": "ChildAgeB",
+            "category": "ChildAgeA",
             "minAge": 5
         },
         {
@@ -562,7 +562,7 @@ When successful, the API will respond with what Expedia created. Please note tha
                 "minAge": 13
             },
             {
-                "category": "ChildAgeB",
+                "category": "ChildAgeA",
                 "minAge": 5
             },
             {
