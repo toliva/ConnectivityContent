@@ -148,6 +148,52 @@ Multiple updates can be bundled into one single AR message by making use of the 
     </AvailRateUpdate>
 </AvailRateUpdateRQ>
 ```
+#### Restricting the maximum number of updates per message
+Expedia will restrict the max number of updates allowed in one message. Any request containing more than 3000 updates will be rejected by Expedia and no update will be applied. The error message returned will be:
+3107: Update exceeds allowable size - Maximum allowable size is 3000 updates
+If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
+Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. 
+If you are unsure on how to proceed, we recommend leveraging the EQC discussion forum on http://www.expediaquickconnect.com to get help.
+
+### Date Ranges
+Properties can manage their rates and availabilty for up to 2 years in the future. 
+We recommend that EQC partners be careful when making use of long date ranges within one AR RQ. Long date ranges imply many updates per message, and Expedia limits one message to 3,000 updates at most.
+
+### Minimum and Maximum Lengths of Stay
+#### Arrival VS stay-through
+Expedia supports two different methods to apply minimum and maximum length of stay restrictions.
+Arrival-based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading the LOS configured for the requested arrival date.
+Stay-through based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading all days of the requested stay and applying the most restrictive values from any of those days.
+This is a hotel-level setting in Expedia system, and any Expedia market managers can modify this setting. If you are not sure which setting applies to your hotel, please contact:
+•	eqcss@expedia.com for new activations
+•	hothelp@expedia.com for existing connections
+#### Restricting updates beyond a certain Minimum length of stay value
+Expedia will not accept updates past a certain minimum length of stay value. When a hotel exceeds the maximum value allowed per Expedia configuration, it will receive the following error:
+3135: MinLOS value ([value specified in message]) exceeds Extranet auto-approval threshold ([configuration for this hotel in Expedia system]) for length of stay.
+This is a setting that is configured on a per-hotel basis in Expedia system. If you feel your hotel is misconfigured, please reach out to your market manager.
+
+### Sequencing/Ordering of Messages
+Sequencing of messages (order in which messages are sent by the EQC partner and then processed by Expedia QuickConnect) is critical. EQC partners should ensure that messages for Expedia QuickConnect are sent in the right order so that Expedia QuickConnect is not updated with outdated information.
+Since Expedia QuickConnect only accepts one connection at a time per property, and processes requests synchronously, an older message sent after a newer one would be processed in the order it is received, potentially overwriting more up to date information in Expedia QuickConnect. Therefore, it is important that EQC partners take extra care when designing their solution to make sure this cannot happen in their systems.
+
+### Property Re/Synchronization Mechanism 
+For many different reasons, it is possible for Expedia and its EQC partner to have their rates and/or availability fall out-of-synch. 
+When a property is first activated on Expedia QuickConnect, the EQC partner’s system and Expedia QuickConnect should be synchronized. The EQC partner’s system therefore requires a function that can synchronize the property by triggering updates that send all the information about rates and availability for at least the next 365 days.
+Also, an EQC partner could experience system problems and lose track of which updates were already sent to Expedia. It might then become necessary to perform resynch of availability and rates for specific products and dates.
+Several parameters should be configurable before triggering synchronization:
+•	The interval of dates on which to perform the synchronization
+•	Which room type(s) (one or more, possibly a list)
+•	Which rate plan(s) (one or more, possibly a list)
+
+The (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.
+
+### Send the right type of rate to Expedia: sell rate, net rate or LAR?
+Expedia accepts receiving sell rate, net rate or LAR (lowest available rate) for rate update through EQC, and the type of rate to send to Expedia must be insync with the configuration in the Expedia system. 
+Please verify which type of rate is being used to update Expedia products using the new Product, Avail, Rate and Restrictions API, or log on the Extranet and consult product information there.
+
+Product Type | Distribution Type | Rate Acquisition Type 
+------------ | ----------------- | ---------------------
+Flex product, sell rate based | Hotel Collect and Expedia Collect | Sell rate
 
 ### Retry
 -    Retry strategy if EQC partner cannot establish communication: If EQC partner receives an error from their application, saying it cannot connect to Expedia QuickConnect (including a connection refused), the EQC partner should perform retries.
