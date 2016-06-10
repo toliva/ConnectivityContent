@@ -585,6 +585,7 @@ The following is a sample success response message.
 ### AR Response: Success with warning
 The following is a sample success request/response pair with a list of warnings returned in the response due to the AR RQ containing rates that violate our Rate Verification logic.
 Note that in this example, the restriction and rate change indicator updates would be successfully applied, and the rate updates where rates equal 71 and 61 EUR respectively would also be successful. Only the rates equal to 0.00 EUR are ignored/refused/not processed.
+
 **Request**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
