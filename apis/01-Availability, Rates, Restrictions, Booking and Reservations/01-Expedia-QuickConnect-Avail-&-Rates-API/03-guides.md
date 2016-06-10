@@ -224,6 +224,92 @@ Please make sure the pricing model you specify when sending rate updates is the 
 •	eqcss@expedia.com for new activations
 •	hothelp@expedia.com for existing connections
 
+### Managing Rates for a Property Using Occupancy-based Pricing
+If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central), and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level.
+For example, if a property already has occupancy level 4 newly configured for it on Expedia Partner Central wants to set the rate for occupancy level 4 of a room type to 160.00$
+Then it should include the following input in the AR RQ message:
+```xml
+<PerOccupancy rate="160.00" occupancy="4"/>
+```
+The AR API currently doesn’t support removal of occupancies. If occupancies need to be removed, please contact: 
+•	eqcss@expedia.com for new activations
+•	hothelp@expedia.com for existing connections
+
+### AR Responses Containing more than 20 Warnings
+When messages fail various Expedia validations, Expedia will return up to 20 warnings per type of problem. For example, if a supplier attempts to close remaining base allocation for 120 days, it will get the following response back:
+```xml
+<AvailRateUpdateRS xmlns="http://www.expediaconnect.com/EQC/AR/2007/02">
+	<Success>
+		<Warning code="7013">Warning 1 out of 120 for this cause. Inventory date 2011-08-30; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 2 out of 120 for this cause. Inventory date 2011-08-31; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 3 out of 120 for this cause. Inventory date 2011-09-01; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 4 out of 120 for this cause. Inventory date 2011-09-02; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 5 out of 120 for this cause. Inventory date 2011-09-03; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 6 out of 120 for this cause. Inventory date 2011-09-04; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 7 out of 120 for this cause. Inventory date 2011-09-05; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 8 out of 120 for this cause. Inventory date 2011-09-06; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 9 out of 120 for this cause. Inventory date 2011-09-07; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 10 out of 120 for this cause. Inventory date 2011-09-08; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 11 out of 120 for this cause. Inventory date 2011-09-09; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 12 out of 120 for this cause. Inventory date 2011-09-10; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 13 out of 120 for this cause. Inventory date 2011-09-11; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 14 out of 120 for this cause. Inventory date 2011-09-12; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 15 out of 120 for this cause. Inventory date 2011-09-13; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 16 out of 120 for this cause. Inventory date 2011-09-14; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 17 out of 120 for this cause. Inventory date 2011-09-15; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 18 out of 120 for this cause. Inventory date 2011-09-16; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 19 out of 120 for this cause. Inventory date 2011-09-17; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+		<Warning code="7013">Warning 20 out of 120 for this cause. Remaining 100 warnings will not be returned, we recommend that you address this problem and resubmit this request afterwards. Inventory date 2011-09-18; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]</Warning>
+	</Success>
+</AvailRateUpdateRS>
+```
+The EQC partner should solve the problems reported and attempt to resend the information to Expedia again. If needed, it is possible to obtain the full list of warnings that the request generated, if the request is issued within 7 days of the message creation date. For more details, please contact hothelp@expedia.com.
+
+### Alarms and Monitoring
+EQC partners should include monitors in their interface implementation that will allow partners to see the ratio of successful AR updates and to get detailed information on any errors or warnings. Alarms should also be created to notify concerned individuals (e.g. EQC partner tech support) when the rate of message errors or warnings returned by Expedia exceeds an acceptable threshold. It is recommended that an alarm be triggered when any type of message returns errors or warnings at a rate of 10% or more.
+Partners should review errors and warnings frequently to ensure that bookings are received and confirmed, and that all updates are processed correctly. Failure to do so may result in Expedia booking rooms at the incorrect price or already sold out, or bookings to fall back to fax or email if not confirmed.
+
+### Specifying number of rooms available inclusive of base allocation
+For hotels that have a base allocation agreement with Expedia, the most straightforward method for the EQC partner to update number of rooms available is to specify the total rather than a flexible allocation. The totalInventoryAvailable attribute includes base allocation as well as any flexible allocation, so the EQC partner does not need to manage a separate count for base allocation and deduct that amount from the non-base (i.e. flexible) amount before providing updates.
+It is important to note, however, that if there is unsold base allocation remaining for the room type specified in an update and the totalInventoryAvailable is set lower than that base amount, then Expedia QuickConnect will automatically update the value to equal the current base amount. When the totalInventoryAvailable amount is adjusted in this manner, a warning (7013) will be returned with the success message and it will provide the adjusted total for the update.
+Here are a few examples of how the totalInventoryAvailable amount will be divided into the base and flexible allocation for a property’s room count depending on whether there is base allocation contract:
+
+***TBD, need to insert the table from the spec - page 38***
+
+### Closing rate plans with remaining base allocation
+Hotels typically use more than one rate plan to sell a room. One important reason for multiple rate plans is that those needed to sell rooms for standalone bookings (room-only) are different from those needed for package bookings (room + flight/car/train). As a result, hotels usually have both standalone and package versions of a rate plan configured, such as: Room Only (S), Room Only (P) and Room incl. Breakfast (S), Room incl. Breakfast (P).
+Expedia allows a hotel to close out any and all of its rate plans, regardless of flexible allocation, as long as there is no base allocation remaining for the associated room type on affected days. If the base allocation is not entirely sold for a room type on a particular day, then one standalone rate plan is obliged to remain open in order for Expedia to be able to make bookings from that base allocation. As a result, if a hotel sends AR requests to close out all rate plans when there is a base allocation remaining, the request to close the last standalone rate plan will be rejected and a warning message (Warning 7014) is returned. 
+
+### Closing rooms to avoid overbookings
+In order to close a room that is still available on Expedia, always send a close message for the room type along with setting the number of available rooms @totalInventoryAvailable or @flexibleAllocation to zero. Sending zero (0) for flexible allocation or total will not completely close the room type and, in a case of cancellation, the room will become available again on Expedia. Refer also to Section 5.6.13 "Closing rate plans with remaining base allocation" above for additional recommendations for properties with base allocation contracts.
+
+### Using day of week attributes with date ranges
+Day of week attributes can be used when EQC partners want to perform updates based on the day of week. For example, EQC partners might want to update rates for Friday, Saturday and Sunday, for the month of August 2012.
+To do so, it is not necessary to call out every single date requiring to be updated. Instead, day of week attributes can be used.
+As soon as day of week attributes are used, updates will only be applied to the attributes for which the value is set to true. Missing or omitted day of week attributes will see their value defaulted to false.
+When using day of weeks along with date ranges, Expedia recommends always specifying all 7 attributes, with their desired value (true for days requiring an update, false for days that shouldn’t be updated). This is the safest way for EQC partners to insure Expedia will interpret their updates the desired way.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Sample AR request message: updating rates for 1 room type and 1 rate plan every weekend of the month of August 2012-->
+<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
+    <Authentication username="testuser" password="testpass"/>
+    <Hotel id="3547"/>
+    <AvailRateUpdate>
+        <DateRange from="2012-08-01" to="2012-08-31" mon="false" tue="false" wed="false" thu="false" fri="true" sat="true" sun="true"/>
+        <RoomType id="558025">
+            <RatePlan id="556895" closed="false">
+                <Rate currency="EUR">
+                    <PerOccupancy rate="80.00" occupancy="1"/>
+                    <PerOccupancy rate="120.00" occupancy="2"/>
+                </Rate>
+            </RatePlan>
+        </RoomType>
+    </AvailRateUpdate>
+</AvailRateUpdateRQ>
+```
+### Rate Plan Linkage and AR
+For products with rate plan linkage rules in place and effective on a set of stay dates, the partner is not allowed to update the child products’ rates for those dates. Restrictions are not expected to be managed either if they are linked.
+Child rate plans with linkage rules cannot be managed over AR when a rule is effective for the stay dates being updated. Only the parent can be managed: Expedia will automatically derive rates and restriction updates to the child. If a partner attempts to manage rates and / or restrictions on a rate plan where a rate plan linkage rule exists, the EQC AR service will return a successful response to the partner but will ignore the updates received on the child.
 
 ### Retry
 -    Retry strategy if EQC partner cannot establish communication: If EQC partner receives an error from their application, saying it cannot connect to Expedia QuickConnect (including a connection refused), the EQC partner should perform retries.
