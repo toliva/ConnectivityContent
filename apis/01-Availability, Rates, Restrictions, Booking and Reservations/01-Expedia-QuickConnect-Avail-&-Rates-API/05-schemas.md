@@ -28,6 +28,13 @@ If EQC partners need to use this feature, Expedia recommends specifying all 7 at
 Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
 ----- | -------------------- | --------- | ---------------- | ----------- | ---------------
 2 | @sun | Boolean | O | If set to true, apply update for each Sunday in the specified date interval.
+2 | @mon | Boolean | O | If set to true, apply update for each Monday in the specified date interval.
+2 | @tue | Boolean | O | If set to true, apply update for each Tuesday in the specified date interval.
+2 | @wed | Boolean | O | If set to true, apply update for each Wednesday in the specified date interval.
+2 | @thu | Boolean | O | If set to true, apply update for each Thursday in the specified date interval.
+2 | @fri | Boolean | O | If set to true, apply update for each Friday in the specified date interval.
+2 | @sat | Boolean | O | If set to true, apply update for each Saturday in the specified date interval.
+
 
 
 
