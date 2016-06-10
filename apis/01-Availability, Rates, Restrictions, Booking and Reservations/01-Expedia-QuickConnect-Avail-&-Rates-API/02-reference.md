@@ -13,7 +13,4 @@ The communication protocol between properties and Expedia QuickConnect consists 
 -   Content-Type of the HTTP Request Header should be: “text/xml”.
 
 
-## AR RQ Schema Complete Definition
 
-L | Data element | Data type | O | Description | EQC validations
--- | ------------ | --------- | -- | ----------- | ---------------
