@@ -1,3 +1,3 @@
 +++swagger
-/images/swagger.json
+https://services.expediapartnercentral.com/products/swagger.json
 +++
