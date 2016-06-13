@@ -153,7 +153,7 @@ Expedia will restrict the max number of updates allowed in one message. Any requ
 3107: Update exceeds allowable size - Maximum allowable size is 3000 updates
 If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
 Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. 
-If you are unsure on how to proceed, we recommend leveraging the EQC discussion forum on http://www.expediaquickconnect.com to get help.
+If you are unsure on how to proceed, we recommend requesting help from Expedia through your Connectivity Account Manager.
 
 ### Date Ranges
 Properties can manage their rates and availabilty for up to 2 years in the future. 
