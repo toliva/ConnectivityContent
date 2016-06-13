@@ -49,14 +49,13 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 4 | @lengthOfStay | Int | O | For properties managing per day and per length of stay rates. Rates from length of stay 1 up to 28 can be defined by arrival date. This attribute contains the length of stay for which this rate applies. | Minimum value=1, Maximum value=28
 5 | PerDay | - | O | To be used when property is configured with Per Day pricing on Expedia Partner Central. This rate is for base occupancy of the room. | Property is configured with per day pricing on Expedia Partner Central.
 5 | @rate | Decimal | | Rate for base occupancy, per day. When used in conjunction with length of stay pricing attribute, the rate defined is the rate per day. If the rate is for 100$ for LOS=7, then the total of this stay’s rate would be 7x100=700. | Rate has to be >= 0.000, Rate has to be <= 16 digits long
-
-
-
-
-
-
-
-
+5 | PerPerson | - | O | To be used when property is configured with per person pricing on Expedia Partner Central. The rate specified here will be for one person, for double occupancy. For example, a rate of $75 means that a customer booking this room for 2 person will be charged $75x2=$150. | Property is configured with Per Person pricing on Expedia Partner Central 
+5 | @rate | Decimal | | Rate for one person, based on double occupancy. Single person supplement and additional person fees are configured when rate plan is created and cannot be modified in this interface. | Rate has to be >= 0.000, Rate has to be <= 16 digits long
+4 | Restrictions | - | O | 
+4 | @minLOS | Integer | O | Specifies minimum length of stay required to qualify for this rate. Guest has to stay at least this number of nights to benefit from rate.  If not specified, the minimum length of stay will be set to a default value configured in Expedia systems (1 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS | Minimum value: 1, Maximum value: 28, Attempting to set MinLOS greater than Expedia’s configured value for the hotel will result in the update being refused with error code 3135.
+4 | @maxLOS | Integer | O | Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS.
+4 | @closedToArrival | Boolean | O | Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan.
+4 | @closedToDeparture | Boolean | O | Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan.
 
 
 ## Availability and Rate Response (AR RS)
