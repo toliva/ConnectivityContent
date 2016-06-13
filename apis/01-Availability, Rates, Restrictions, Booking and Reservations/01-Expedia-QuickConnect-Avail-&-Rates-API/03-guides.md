@@ -276,7 +276,7 @@ For hotels that have a base allocation agreement with Expedia, the most straight
 It is important to note, however, that if there is unsold base allocation remaining for the room type specified in an update and the totalInventoryAvailable is set lower than that base amount, then Expedia QuickConnect will automatically update the value to equal the current base amount. When the totalInventoryAvailable amount is adjusted in this manner, a warning (7013) will be returned with the success message and it will provide the adjusted total for the update.
 Here are a few examples of how the totalInventoryAvailable amount will be divided into the base and flexible allocation for a property’s room count depending on whether there is base allocation contract:
 
-***TBD, need to insert the table from the spec - page 38***
+![Base Allocation](/images/Base Allocation.jpg)
 
 ### Closing rate plans with remaining base allocation
 Hotels typically use more than one rate plan to sell a room. One important reason for multiple rate plans is that those needed to sell rooms for standalone bookings (room-only) are different from those needed for package bookings (room + flight/car/train). As a result, hotels usually have both standalone and package versions of a rate plan configured, such as: Room Only (S), Room Only (P) and Room incl. Breakfast (S), Room incl. Breakfast (P).
