@@ -105,7 +105,7 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 The availability and rate response message is straightforward: it is returned synchronously to update the property’s system with the status of the AR request. The status can either be Success or Error. If successful, it can contain a warning.
 ### AR RS Schema Overview
 
-**need to insert pic from eqc spec - page 27**
+![AR RS XML MESSAGE](/images/AR RS XML MESSAGE.jpg)
 
 ### AR RS Schema Complete Definition
 
