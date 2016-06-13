@@ -222,8 +222,8 @@ Per Day Length-of-Stay Pricing | A pricing attribute that is currently only avai
 
 Expedia recommends EQC partners to use occupancy-based pricing as this pricing model offers the most flexible solution for pricing. A simple migration process can also convert a property currently on the per-day pricing model to occupancy-based pricing (the property can request this from their Market Manager). Note that migration from per-person to occupancy-based pricing involves a manual transfer of information which requires scheduling with the property’s Market Manager.
 Please make sure the pricing model you specify when sending rate updates is the right one pre-configured for your property on Expedia Partner Central. You can obtain pricing model information through a PARR request for product details, including the “returnRatePlanAttributes” attribute. Alternatively, you can access Expedia Partner Central and confirm, from the Inventory Grid page, which pricing model is set for your property.  Should a property be using a pricing model you have not developed please contact:
-•	eqcss@expedia.com for new activations
-•	hothelp@expedia.com for existing connections
+- eqcss@expedia.com for new activations
+- hothelp@expedia.com for existing connections
 
 ### Managing Rates for a Property Using Occupancy-based Pricing
 If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central), and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level.
