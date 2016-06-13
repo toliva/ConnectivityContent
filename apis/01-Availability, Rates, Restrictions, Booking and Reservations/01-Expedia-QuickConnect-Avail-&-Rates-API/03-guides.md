@@ -182,9 +182,9 @@ For many different reasons, it is possible for Expedia and its EQC partner to ha
 When a property is first activated on Expedia QuickConnect, the EQC partner’s system and Expedia QuickConnect should be synchronized. The EQC partner’s system therefore requires a function that can synchronize the property by triggering updates that send all the information about rates and availability for at least the next 365 days.
 Also, an EQC partner could experience system problems and lose track of which updates were already sent to Expedia. It might then become necessary to perform resynch of availability and rates for specific products and dates.
 Several parameters should be configurable before triggering synchronization:
-•	The interval of dates on which to perform the synchronization
-•	Which room type(s) (one or more, possibly a list)
-•	Which rate plan(s) (one or more, possibly a list)
+- The interval of dates on which to perform the synchronization
+- Which room type(s) (one or more, possibly a list)
+- Which rate plan(s) (one or more, possibly a list)
 
 The (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.
 
