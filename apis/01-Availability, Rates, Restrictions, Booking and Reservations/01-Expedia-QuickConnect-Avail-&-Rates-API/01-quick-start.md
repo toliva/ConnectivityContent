@@ -25,36 +25,38 @@ The availability and rate request (AR RQ) allows EQC partners to send Expedia up
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-    <Authentication username="" password=""/>
-    <Hotel id="411"/>
-    <AvailRateUpdate>
-        <DateRange from="2014-12-15" to="2015-01-20"/>
-        <RoomType id="40000" closed="false">
-            <Inventory totalInventoryAvailable="10"/>
-            <RatePlan id="41000" closed="false">
-                <Rate currency="USD">
-                    <PerOccupancy rate="60.00" occupancy="1"/>
-                    <PerOccupancy rate="100.00" occupancy="2"/>
-                    <PerOccupancy rate="135.00" occupancy="3"/>
-                    <PerOccupancy rate="160.00" occupancy="4"/>
-                </Rate>
-                <Restrictions closedToArrival="false" closedToDeparture="false" minLOS="1" maxLOS="7"/>
-            </RatePlan>
-        </RoomType>
-    </AvailRateUpdate>
-    <AvailRateUpdate>
-        <DateRange from="2015-02-15" to="2015-02-20"/>
-        <RoomType id="40000" closed="true">
-            <Inventory totalInventoryAvailable="0"/>
-            <RatePlan id="41000" closed="true">
-                <Rate currency="USD">
-                    <PerOccupancy rate="80.00" occupancy="1"/>
-                    <PerOccupancy rate="120.00" occupancy="2"/>
-                </Rate>
-                <Restrictions closedToArrival="true" closedToDeparture="false" minLOS="1" maxLOS="7"/>
-            </RatePlan>
-        </RoomType>
-    </AvailRateUpdate>    
+  <Authentication username="EQCtest12933870" password="kh92nd29"/>
+  <Hotel id="12933870"/>
+  <AvailRateUpdate>
+    <DateRange from="2017-01-01" to="2017-01-15"/>
+    <RoomType id="201357986" closed="false">
+      <Inventory totalInventoryAvailable="10"/>
+      <RatePlan id="206651831A" closed="false">
+        <Rate currency="USD">
+          <PerOccupancy rate="600.00" occupancy="1"/>
+          <PerOccupancy rate="650.00" occupancy="2"/>
+          <PerOccupancy rate="700.00" occupancy="3"/>
+          <PerOccupancy rate="725.00" occupancy="4"/>
+        </Rate>
+        <Restrictions closedToArrival="false" closedToDeparture="false" minLOS="1" maxLOS="28"/>
+      </RatePlan>
+    </RoomType>
+  </AvailRateUpdate>
+  <AvailRateUpdate>
+    <DateRange from="2017-01-16" to="2017-01-30"/>
+    <RoomType id="201357986" closed="true">
+      <Inventory totalInventoryAvailable="8"/>
+      <RatePlan id="206651831A" closed="true">
+        <Rate currency="USD">
+          <PerOccupancy rate="610.00" occupancy="1"/>
+          <PerOccupancy rate="660.00" occupancy="2"/>
+          <PerOccupancy rate="710.00" occupancy="3"/>
+          <PerOccupancy rate="735.00" occupancy="4"/>
+        </Rate>
+        <Restrictions closedToArrival="false" closedToDeparture="false" minLOS="1" maxLOS="28"/>
+      </RatePlan>
+    </RoomType>
+  </AvailRateUpdate>
 </AvailRateUpdateRQ>
 ```
 
