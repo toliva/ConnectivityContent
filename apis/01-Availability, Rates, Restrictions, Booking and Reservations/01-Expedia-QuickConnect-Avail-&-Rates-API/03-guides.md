@@ -167,6 +167,7 @@ Stay-through based restrictions: Minimum and maximum length of a hotel stay whic
 This is a hotel-level setting in Expedia system, and any Expedia market managers can modify this setting. If you are not sure which setting applies to your hotel, please contact:
 - eqcss@expedia.com for new activations
 - hothelp@expedia.com for existing connections
+
 #### Restricting updates beyond a certain Minimum length of stay value
 Expedia will not accept updates past a certain minimum length of stay value. When a hotel exceeds the maximum value allowed per Expedia configuration, it will receive the following error:
 3135: MinLOS value ([value specified in message]) exceeds Extranet auto-approval threshold ([configuration for this hotel in Expedia system]) for length of stay.
