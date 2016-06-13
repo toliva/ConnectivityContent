@@ -233,8 +233,8 @@ Then it should include the following input in the AR RQ message:
 <PerOccupancy rate="160.00" occupancy="4"/>
 ```
 The AR API currently doesn’t support removal of occupancies. If occupancies need to be removed, please contact: 
-•	eqcss@expedia.com for new activations
-•	hothelp@expedia.com for existing connections
+- eqcss@expedia.com for new activations
+- hothelp@expedia.com for existing connections
 
 ### AR Responses Containing more than 20 Warnings
 When messages fail various Expedia validations, Expedia will return up to 20 warnings per type of problem. For example, if a supplier attempts to close remaining base allocation for 120 days, it will get the following response back:
