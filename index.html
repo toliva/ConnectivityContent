@@ -18,8 +18,45 @@
     .hackathon-ad {
         margin-top: 0;
     }
-</style>
 
+    #note {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+
+    @-webkit-keyframes slideDown {
+        0%, 100% { -webkit-transform: translateY(-50px); }
+        10%, 90% { -webkit-transform: translateY(0px); }
+    }
+    @-moz-keyframes slideDown {
+        0%, 100% { -moz-transform: translateY(-50px); }
+        10%, 90% { -moz-transform: translateY(0px); }
+    }
+
+    .cssanimations.csstransforms #note {
+        -webkit-transform: translateY(-50px);
+        -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+        -moz-transform:    translateY(-50px);
+        -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+    }
+
+    .cssanimations.csstransforms #close {
+         display: none;
+    }
+}
+</style>
+<div id="note">
+    This is our new website. It's better than the old one. <a id="close">[close]</a>
+</div>
 <section class='hero hero-oceanview'>
     <div class='inner'>
         <h1>Developer APIs</h1>
@@ -50,3 +87,11 @@
         <img class="hackathon-ad twelve columns show-for-small-only" src="/images/EPC_leaderboard_blog_mob.jpg"/>
     </a>
 </section>
+<!-- should be moved to footer.html if we adopt this -->
+<script>
+ close = document.getElementById("close");
+ close.addEventListener('click', function() {
+   note = document.getElementById("note");
+   note.style.display = 'none';
+ }, false);
+</script>
