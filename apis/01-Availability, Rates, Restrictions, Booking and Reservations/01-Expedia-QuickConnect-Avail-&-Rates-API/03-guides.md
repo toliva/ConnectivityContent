@@ -1,4 +1,5 @@
-# Guidelines & Best Practices
+# FAQ & Guides
+
 ## Guidelines
 Due to the high volume of hotels updating their rates and availability information on Expedia through an XML interface, Expedia QuickConnect enforces the following:
 
