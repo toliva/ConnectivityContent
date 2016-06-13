@@ -1,4 +1,12 @@
 # XML Schemas
+
+Here are the schemas for messages supported by the EQC API.
+
+| Schema | Namespace | 
+|--------|-----------|
+|[AvailRateUpdate Request](/files/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
+|[AvailRateUpdate Response](/files/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
+
 ## Availability and Rates Request (AR RQ)
 ### AR RQ Schema Overview
 Please note that this overview provides the most recent structure of EQC AR API (namespace http://www.expediaconnect.com/EQC/AR/2011/06). The API actually also supports the previous version of the schema (namespace http://www.expediaconnect.com/EQC/AR/2007/02), without the repeatable AvailRateUpdate element. The XSD file for the AR RQ API available on http://www.expediaquickconnect.com also supports both the old and new format under the new version.
