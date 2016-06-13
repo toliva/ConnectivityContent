@@ -27,7 +27,7 @@ The communication protocol between properties and Expedia QuickConnect consists 
 
 ## Pre-connection process
 Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:
-**need to insert pic from spec page 16**
+![ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT](/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg)
 
 ## Schema Design Guidelines
 
