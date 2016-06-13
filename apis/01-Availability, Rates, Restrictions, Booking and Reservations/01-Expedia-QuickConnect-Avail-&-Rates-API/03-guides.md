@@ -73,8 +73,8 @@ The following excerpt contains 1098 updates: number of rooms, a rate and a CTD f
 #### Prevent Duplicate Updates
 The property must ensure that it only sends Expedia QuickConnect true updates, not information that has already been transmitted to Expedia. For example, it is poor practice to send a property’s entire Expedia availabilty every day. Messages should only be sent to keep Expedia synchronized with changes on the hotel system. 
 Avoiding redundant updates will also ensure that those necessary updates are processed faster, since each update is handled sequentially and:
-•	Expedia QuickConnect only allows one connection open per property at a time
-•	Processing one message can be a lengthy process, taking up to 5 seconds. 
+- Expedia QuickConnect only allows one connection open per property at a time
+- Processing one message can be a lengthy process, taking up to 5 seconds. 
 
 #### Availabilty Changes related to Expedia bookings
 Whenever Expedia books or cancels a room, the hotel system interface to Expedia QuickConnect should NOT update number of rooms available for sale on Expedia as this will be updated automatically by Expedia.
