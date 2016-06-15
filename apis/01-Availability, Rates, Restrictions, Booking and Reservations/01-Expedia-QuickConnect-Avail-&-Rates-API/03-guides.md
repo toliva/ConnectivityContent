@@ -388,3 +388,7 @@ If the EQC partner’s system manages to establish a connection to Expedia Quick
 - Make sure that the EQC partner’s system is not closing the connection too early. Because updates are done synchronously in Expedia’s backend, the processing can take several seconds. That is why Expedia QuickConnect cuts the connection only after 1 minute of inactivity. Therefore, the EQC partner should keep the connection open for at least 60 seconds.
 - Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting for bytes that never arrive, and eventually times out.
 
+#### Connection Established, Error Returned (error code greater than or equal to 4000)
+
+The EQC partner might encounter different types of errors while trying to connect to Expedia QuickConnect. These errors are monitored by the Expedia QuickConnect team, so there is no need to advise Expedia QuickConnect of a problem when this occurs. The following is a list of the most common errors, and what the EQC partner should do about them. Please note that every error returned by Expedia services contains a reference ID that can be used when communicating with Expedia to investigate a problem.
+**insert table from page 87**
