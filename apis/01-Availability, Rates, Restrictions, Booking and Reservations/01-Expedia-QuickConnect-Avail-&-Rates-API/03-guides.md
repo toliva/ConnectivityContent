@@ -381,4 +381,4 @@ It is also possible to fail to obtain a connection because Expedia QuickConnect 
 
 - Connection refused
 
-When this happens, the EQC partner should simply enter in retry mode, as described in section 10.1 “Detailed Error Handling and Retry Strategy Recommendation” above for AR RQ or BC RQ messages, should wait for the next BR RQ call in the case of booking retrieval, and should define its own strategy for PARR RQ, depending on its needs.
+When this happens, the EQC partner should simply enter in retry mode as previously described.
