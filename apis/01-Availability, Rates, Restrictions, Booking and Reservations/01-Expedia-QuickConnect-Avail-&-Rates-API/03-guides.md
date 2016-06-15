@@ -366,3 +366,16 @@ In many cases, messages shouldn’t be retried:
 - 3.	Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.
 - 4.	Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.
 
+### Communication Issues for any of the EQC APIs
+#### Connection Cannot Be Established
+For many different reasons, attempting to connect to Expedia QuickConnect might not work. If the problem is:
+- Connection timeout (before establishing connection)
+- Cannot resolve host name
+- Cannot establish connection
+Before looking for assistance on the Expedia QuickConnect discussion forum, the EQC partner should:
+- Verify the URL used to connect to Expedia QuickConnect and make sure the address starts with https://
+- Verify the domain name, and make sure that the address you are using is the right one for the environment you are targeting (do not try to send QA information to production, or vice-versa)
+- If the EQC partner’s system is behind a firewall, make sure that port 443 is opened for connection to Expedia’s production environment (contact Expedia if you don’t know what the URL to the production environment is), and also opened for connection to https://simulator.expediaquickconnect.com for the Expedia QuickConnect simulator.
+It is also possible to fail to obtain a connection because Expedia QuickConnect servers cannot accept any more connections than the ones currently established to other EQC partners. In this case, the EQC partner will receive a communication error saying:
+- Connection refused
+When this happens, the EQC partner should simply enter in retry mode, as described in section 10.1 “Detailed Error Handling and Retry Strategy Recommendation” above for AR RQ or BC RQ messages, should wait for the next BR RQ call in the case of booking retrieval, and should define its own strategy for PARR RQ, depending on its needs.
