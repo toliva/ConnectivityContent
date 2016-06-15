@@ -327,3 +327,30 @@ Expedia QuickConnect only allows one connection at a time per hotel. EQC partner
 ## Troubleshooting
 ### Detailed Error Handling and Retry Strategy Recommendation
 Expedia recommends implementing a strong retry strategy to insure important messages are successfully delivered and processed by Expedia. Expedia QuickConnect defines several different categories of errors. When implementing connectivity, EQC partners should handle errors properly. Depending on the type of interface and type of error, different strategies should be used.
+#### System errors retry recommendation, specific to interfaces updating Expedia systems (AR)
+- 1.	Communication errors (cannot establish connection, connection timeout, no response): If the EQC partner’s system receives a network or communication error from its application, saying that the connection to Expedia QuickConnect cannot be established, or that the connection times out, or even that there is no answer coming from Expedia on the connection, it should retry the message using the following strategy:
+
+Occurrence | Time | Action 
+---------- | ---- | ------
+0 | T0*: new message | Try to send message to Expedia QuickConnect but failed to establish communication. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.
+1 | T0 + 1 minutes | Try to send message. If failed, keep retrying.
+2 | T0 + 2 minutes | Try to send message. If failed, keep retrying.
+3 | T0 + 4 minutes | Try to send message. If failed, keep retrying.
+4 | T0 + 8 minutes | Try to send message. If failed, keep retrying.
+5 | T0 + 15 minutes | Try to send message. If failed, put the message on hold, wait before sending any other message, and raise an alarm to someone on the support team.
+- 2.	Network and communication errors in AR RS (error codes between 4000 and 4099): if the EQC partner manages to connect to Expedia QuickConnect and receives an AR Response in XML with an error message code between 4000 and 4099, the EQC partner should adopt this retry strategy:
+
+Occurrence | Time | Action 
+---------- | ---- | ------
+0 | T0*: new message | Try to send message to Expedia QuickConnect but received an AR Response with an error code between 4000 and 4099. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.
+1 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+2 | T0 + 21 (2 minutes) | Try to send message. If failed, keep retrying.
+3 | T1 + 22 (4 minutes) | Try to send message. If failed, keep retrying.
+4 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+5 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+6 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+7 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+8 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+9 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+10 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
+
