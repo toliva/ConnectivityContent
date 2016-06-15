@@ -382,3 +382,9 @@ It is also possible to fail to obtain a connection because Expedia QuickConnect 
 - Connection refused
 
 When this happens, the EQC partner should simply enter in retry mode as previously described.
+
+#### Connection Established, No Response
+If the EQC partner’s system manages to establish a connection to Expedia QuickConnect servers, but is not getting a response, the EQC partner should:
+- Make sure that the EQC partner’s system is not closing the connection too early. Because updates are done synchronously in Expedia’s backend, the processing can take several seconds. That is why Expedia QuickConnect cuts the connection only after 1 minute of inactivity. Therefore, the EQC partner should keep the connection open for at least 60 seconds.
+- Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting for bytes that never arrive, and eventually times out.
+
