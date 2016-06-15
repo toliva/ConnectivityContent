@@ -376,6 +376,9 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 - Verify the URL used to connect to Expedia QuickConnect and make sure the address starts with https://
 - Verify the domain name, and make sure that the address you are using is the right one for the environment you are targeting (do not try to send QA information to production, or vice-versa)
 - If the EQC partner’s system is behind a firewall, make sure that port 443 is opened for connection to Expedia’s production environment (contact Expedia if you don’t know what the URL to the production environment is), and also opened for connection to https://simulator.expediaquickconnect.com for the Expedia QuickConnect simulator.
+
 It is also possible to fail to obtain a connection because Expedia QuickConnect servers cannot accept any more connections than the ones currently established to other EQC partners. In this case, the EQC partner will receive a communication error saying:
+
 - Connection refused
+
 When this happens, the EQC partner should simply enter in retry mode, as described in section 10.1 “Detailed Error Handling and Retry Strategy Recommendation” above for AR RQ or BC RQ messages, should wait for the next BR RQ call in the case of booking retrieval, and should define its own strategy for PARR RQ, depending on its needs.
