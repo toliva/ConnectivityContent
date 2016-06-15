@@ -354,9 +354,10 @@ Occurrence | Time | Action
 9 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
 10 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
 
-**need to finish this table, unsure how to add power numbers**
+**need to finish this table, unsure how to add power numbers - page 85**
+
 - 3.	Internal system errors with error codes greater or equal to 4100: Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
-- 
+
 #### Error handling recommendation for non-retriable errors
 
 In many cases, messages shouldn’t be retried:
