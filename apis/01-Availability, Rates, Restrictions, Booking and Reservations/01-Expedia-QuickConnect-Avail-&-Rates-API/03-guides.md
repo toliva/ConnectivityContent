@@ -354,3 +354,14 @@ Occurrence | Time | Action
 9 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
 10 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
 
+**need to finish this table, unsure how to add power numbers**
+- 3.	Internal system errors with error codes greater or equal to 4100: Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
+- 
+#### Error handling recommendation for non-retriable errors
+
+In many cases, messages shouldn’t be retried:
+- 1.	Business errors (error codes 3xxx): A message failing because of a business error should be dropped right away to allow other messages to go through (no retries). An alarm should be raised in the PMS or CRS system, and/or a report should be run every day in the EQC partner’s system for information on the problems the interface encountered.
+- 2.	Authentication errors (error codes 1xxx): if the EQC partner’s system receives an authentication error, the EQC partner should stop trying to send the message and an alarm should be raised to an administrator to verify the configuration of the EQC partner’s system and to contact Expedia.
+- 3.	Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.
+- 4.	Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.
+
