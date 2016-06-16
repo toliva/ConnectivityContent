@@ -401,4 +401,31 @@ Error Code | Error Desc | Explanation and EQC partner Action
 4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | Enter in incremental retry mode. 
 5000 | Internal database error, please try again in a few minutes. | Enter in incremental retry mode.
 
+#### Authentication Issues (error code in the 1000s)
+The following table lists a few possible errors related to communication issues, and what the EQC partner should do about them:
+
+Error Code | Error Desc | Explanation and EQC partner Action 
+---------- | ---------- | ----------------------------------
+1000 | Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access. | This message should not be retried. Contact rollout@expedia.com to gain access to EQC for new activations. Contact hothelp@expedia.com to gain access to EQC for hotels that have been EQC-enabled for a while.
+1001 | Authentication error: invalid username or password. | This message should not be retried. Verify username and password configured in your EQC interface. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.
+1003 | The user account provided doesn’t have the right access level | This message should not be retried. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.
+
+#### Parsing and other protocol issues
+
+Error Code | Error Desc | Explanation and EQC partner Action 
+---------- | ---------- | ----------------------------------
+2002 | Parsing error: <parsing_error_description>. | Correct XML format to comply with Expedia QuickConnect’s specification. Developers of the EQC partner system should be involved to find the problem.
+2010 | The namespace specified is invalid. | Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.
+3010 | Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema. | Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.
+3210 | Communication error: exceed max number of connections allowed (1). | EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message
+
+#### Response Business Errors
+
+Once an AR RQ transaction has successfully been transmitted to Expedia QuickConnect, it can either receive a positive or negative acknowledgment. When errors are returned in AR Responses, none of the updates contained in the request were processed. In the case of availability and rates updates, several different types of errors can happen, and the negative acknowledgment of a transaction that failed can contain one or more of those error codes:
+
+Error Code | Error Desc | Explanation and EQC partner Action 
+---------- | ---------- | ----------------------------------
+3015 | Business validation error, such as but not limited to: No updates provided in ICPRUpdateMessage, MaxLOS value (X) smaller than the MinLOS value(Y), The NumberOfGuests attribute may not be 0, etc. | This error can happen for various reasons: The AR RQ sent contained no updates - only room or rate IDs and dates, Contradictory Min and Max LOS were included in the message (Min > Max), For an OBP rate update, occupancy=0 was specified, which is not allowed/impossible, etc. EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.
+3020 | Validation error: start date must not be before yesterday. | Make sure the system cannot send a date in the past, and drop this message (no retry).
+
 
