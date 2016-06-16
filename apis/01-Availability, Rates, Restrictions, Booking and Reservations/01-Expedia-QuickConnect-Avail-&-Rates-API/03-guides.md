@@ -392,3 +392,13 @@ If the EQC partner’s system manages to establish a connection to Expedia Quick
 
 The EQC partner might encounter different types of errors while trying to connect to Expedia QuickConnect. These errors are monitored by the Expedia QuickConnect team, so there is no need to advise Expedia QuickConnect of a problem when this occurs. The following is a list of the most common errors, and what the EQC partner should do about them. Please note that every error returned by Expedia services contains a reference ID that can be used when communicating with Expedia to investigate a problem.
 **insert table from page 87**
+
+Error Code | Error Desc | Explanation and EQC partner Action 
+---------- | ---------- | ----------------------------------
+4000, 4004, 4007 | Internal system error, please try again in a few minutes. | Enter in incremental retry mode. 
+4001 | Internal timeout error, please try again in a few minutes. | Enter in incremental retry mode. 
+4100, 4101 | Internal System Error. Do not retry this request. Our support team was notified of the problem. | Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. It is recommended to perform the update manually on Expedia Partner Central.
+4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | Enter in incremental retry mode. 
+5000 | Internal database error, please try again in a few minutes. | Enter in incremental retry mode.
+
+
