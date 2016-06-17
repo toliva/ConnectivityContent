@@ -392,7 +392,6 @@ If the EQC partner’s system manages to establish a connection to Expedia Quick
 #### Connection Established, Error Returned (error code greater than or equal to 4000)
 
 The EQC partner might encounter different types of errors while trying to connect to Expedia QuickConnect. These errors are monitored by the Expedia QuickConnect team, so there is no need to advise Expedia QuickConnect of a problem when this occurs. The following is a list of the most common errors, and what the EQC partner should do about them. Please note that every error returned by Expedia services contains a reference ID that can be used when communicating with Expedia to investigate a problem.
-**insert table from page 87**
 
 Error Code | Error Desc | Explanation and EQC partner Action 
 ---------- | ---------- | ----------------------------------
