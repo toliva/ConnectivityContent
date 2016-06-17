@@ -356,6 +356,7 @@ Occurrence | Time | Action
 10 | T8 + 4h16 minutes | Try to send message. If failed, keep retrying.
 11 | T9 + 8h32 minutes | Try to send message. If failed, drop the message, raise an alarm to someone in the EQC partner’s team and try to send the next message in queue.
 
+** TO: Time Zero
 - 3.	Internal system errors with error codes greater or equal to 4100: Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
 
 #### Error handling recommendation for non-retriable errors
