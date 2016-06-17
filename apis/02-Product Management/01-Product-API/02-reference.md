@@ -930,8 +930,8 @@ additionalGuestAmounts | Array[[AdditionalGuestAmount](#/definitions/AdditionalG
 valueAddInclusions | Array[[valueAddInclusionsEnum](#/definitions/valueAddInclusionsEnum)] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
 minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
-minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500
-maxAdvBookDays | integer | The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500
+minAdvBookDays | integer | The minimum days before a stay date that the rate plan can be sold. Min 0, Max 500
+maxAdvBookDays | integer | The maximum days before a stay date that the rate plan can be sold. Min 0, Max 500
 bookDateStart | date | Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01
 bookDateEnd | date | Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted
 travelDateStart | date | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
