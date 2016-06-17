@@ -324,6 +324,7 @@ This retry strategy should be different than the retry where the communication c
 ### Concurrency
 Expedia QuickConnect only allows one connection at a time per hotel. EQC partners cannot send concurrent requests to update the same hotel. Requests should be queued in the hotel system.
 
+<a name="/troubleshooting"></a>
 ## Troubleshooting
 ### Detailed Error Handling and Retry Strategy Recommendation
 Expedia recommends implementing a strong retry strategy to insure important messages are successfully delivered and processed by Expedia. Expedia QuickConnect defines several different categories of errors. When implementing connectivity, EQC partners should handle errors properly. Depending on the type of interface and type of error, different strategies should be used.
