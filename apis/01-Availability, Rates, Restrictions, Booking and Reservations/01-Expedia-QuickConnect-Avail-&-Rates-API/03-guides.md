@@ -344,18 +344,17 @@ Occurrence | Time | Action
 Occurrence | Time | Action 
 ---------- | ---- | ------
 0 | T0*: new message | Try to send message to Expedia QuickConnect but received an AR Response with an error code between 4000 and 4099. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.
-1 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-2 | T0 + 21 (2 minutes) | Try to send message. If failed, keep retrying.
-3 | T1 + 22 (4 minutes) | Try to send message. If failed, keep retrying.
-4 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-5 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-6 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-7 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-8 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-9 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-10 | T0 + 1 (1 minute) | Try to send message. If failed, keep retrying.
-
-**need to finish this table, unsure how to add power numbers - page 85**
+1 | T0 + 1 minute | Try to send message. If failed, keep retrying.
+2 | T0 + 2 minutes | Try to send message. If failed, keep retrying.
+3 | T1 + 4 minutes | Try to send message. If failed, keep retrying.
+4 | T2 + 6 minutes | Try to send message. If failed, keep retrying.
+5 | T3 + 8 minutes | Try to send message. If failed, keep retrying.
+6 | T4 + 16 minutes | Try to send message. If failed, keep retrying.
+7 | T5 + 32 minutes | Try to send message. If failed, keep retrying.
+8 | T6 + 1h04 minutes | Try to send message. If failed, keep retrying.
+9 | T7 + 2h08 minutes | Try to send message. If failed, keep retrying.
+10 | T8 + 4h16 minutes | Try to send message. If failed, keep retrying.
+11 | T9 + 8h32 minutes | Try to send message. If failed, drop the message, raise an alarm to someone in the EQC partner’s team and try to send the next message in queue.
 
 - 3.	Internal system errors with error codes greater or equal to 4100: Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
 
