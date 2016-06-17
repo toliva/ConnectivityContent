@@ -447,6 +447,7 @@ Error Code | Error Desc | Explanation and EQC partner Action
 3204 | The following RatePlanIDs do not belong to the given hotel : rate_plan_ID | Fix mapping in EQC partner’s system **INSERT LINK(see Section 13: Appendix B - Mapping property room and rate plan codes to Expedia IDs)**. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.
 3405 | Message size limit exceeded. | The overall size of the AR incoming request exceeds our limit of 100 kb. EQC partner needs to break down AR RQ into smaller requests.
 
+<a name="/arresponsebusinesswarnings"></a>
 #### AR Response Business Warnings
 
 Once an AR RQ transaction has been submitted to Expedia QuickConnect, it can either receive a successful or negative acknowledgment. A successful acknowledgment can optionally contain warnings, which are meant to indicate that part of the incoming request was not successfully processed, with details on what failed. When warnings are returned, anything that is not explicitely listed as a warning has been successfully processed.
