@@ -11,7 +11,7 @@ To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping
 Any time a property changes its room or rate codes, or requests new products to be created in Expedia’s, the EQC partner must update the mapping of the property’s codes in its system with Expedia’s equivalent new or existing IDs to maintain successful communication of availability updates and booking notifications between the EQC partner and Expedia. 
 
 Note: Expedia IDs are also used to identify the room type and rate plan of a booking in the fax notification sent to the property.
-The Expedia product mapping can be obtained electronically via the PARR interface, or manually via Expedia Partner Central. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. 
+The Expedia product mapping can be obtained electronically via the Product API, or manually via Expedia Partner Central. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. 
 
 #### View Expedia room type and rate plan IDs via Expedia Partner Central
 To verify the room type and rate plan IDs currently defined for your property in Expedia’s system, use the Room and Rate Plan Summary page at ExpediaPartner Central.com. This page allows the EQC partner to look up a property’s room and rate plan names to determine Expedia’s equivalent IDs.
