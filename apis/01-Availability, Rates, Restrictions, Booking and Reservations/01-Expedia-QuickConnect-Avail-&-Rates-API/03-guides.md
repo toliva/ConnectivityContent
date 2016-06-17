@@ -5,6 +5,17 @@ Due to the high volume of hotels updating their rates and availability informati
 
 - Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. 
 
+### Mapping property room and rate plan codes to Expedia IDs
+To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping between its property’s room and rate codes and Expedia’s equivalent room type and rate plan IDs. For example, a rate code SUM08001 in the hotel system maps to a unique rate plan ID 1093294 in Expedia system. This mapping is crucial for sending updates, because the EQC partner must specify this Expedia ID in its XML messages instead of the property’s equivalent code. 
+
+Any time a property changes its room or rate codes, or requests new products to be created in Expedia’s, the EQC partner must update the mapping of the property’s codes in its system with Expedia’s equivalent new or existing IDs to maintain successful communication of availability updates and booking notifications between the EQC partner and Expedia. 
+
+Note: Expedia IDs are also used to identify the room type and rate plan of a booking in the fax notification sent to the property.
+The Expedia product mapping can be obtained electronically via the PARR interface, or manually via Expedia Partner Central. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. 
+
+#### View Expedia room type and rate plan IDs via Expedia Partner Central
+To verify the room type and rate plan IDs currently defined for your property in Expedia’s system, use the Room and Rate Plan Summary page at ExpediaPartner Central.com. This page allows the EQC partner to look up a property’s room and rate plan names to determine Expedia’s equivalent IDs.
+
 ### Included Features
 The following table is an overview of what is and is not included in the availability and rates API. 
 Note: The features listed as “not supported” are ones that are managed through Expedia's tools. Some of these features can be managed by the EQC partner, while others are managed by the Expedia Market Manager.
