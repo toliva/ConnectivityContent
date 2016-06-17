@@ -31,7 +31,8 @@ Update number of rooms available as far as two years in advance |
 Closed-to-arrival restrictions |
 Closed-to-departure restriction |
 
-### Sending update to Expedia
+<a name="/sendingupdatestoexpedia"></a>
+### Sending updates to Expedia
 In order to keep Expedia in synch with the hotel availabilty and rates, updates should be triggered by the hotel’s system as soon as rates, availability or restrictions change. 
 Speaking from experience, Expedia expects to receive per day, on average, approximately 180 updates per product, per hotel. For a typical hotel connected through EQC, which has on average 10 different room type/rate plans combinations, this should translate into approximately 1,800 updates per hotel, every day.
 Some specific conditions could cause hotels to generate significantly more updates per day. If you feel that your hotel will consistently generate more than 180 updates per product, please request help from Expedia through your Connectivity Account Manager.
