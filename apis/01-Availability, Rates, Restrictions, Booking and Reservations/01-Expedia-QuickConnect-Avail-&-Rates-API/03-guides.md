@@ -469,6 +469,14 @@ Warning Code | Error Desc | Explanation and EQC partner Action
 7026 | At least one rate plan should be kept open until all base allocation has been sold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated. | An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The AR request attempted to close either the last open parent/main rate plan, or the child/derived rate plan, but there was base allocation left. The availability statuses of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7013 (used for unlinked rate plans). 
 7027 | Sell rate must be within Rate Verification threshold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated. | An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The sell rate update we received was outside of the rate verification threshold defined for either the parent/main rate plan, or the child/ derived rate plan. The sell rates of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7021 (used for unlinked rate plans). 
 
+### SSL Certificate Validation Problems
 
+EQC partners developing in Java should use version 1.4.2_13 or more recent to avoid issues with certificate signing authorities. If EQC partners prefer to keep using an older version of Java or in-house SSL libraries, they need to import the Entrust CA certificate.
+- Entrust CA common name CN = Entrust.net Certification Authority (2048).
+- To manually import the Entrust.net Certification Authority (2048) Certificate, download the CA certificate at https://www.entrust.net/downloads/root_request.cfm.
+
+### Miscellaneous
+
+Like any technology, it is possible in some very rare situations that Expedia QuickConnect will fail to process a message and generate a comprehensive AR RS. In such a situation, where the data returned by Expedia QuickConnect is not proper XML, the EQC partner should retry the message. Even though this situation should never happen, the EQC partner should be ready to handle it.
 
 
