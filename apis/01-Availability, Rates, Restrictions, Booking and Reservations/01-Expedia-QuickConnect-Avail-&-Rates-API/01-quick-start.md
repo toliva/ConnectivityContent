@@ -1,6 +1,8 @@
 # Quick Start
 
-Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically. This section explains authentication and how to send a request to the Expedia QuickConnect AR interface for a live test property.
+Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically.
+
+This section explains authentication and how to send a request to the Expedia QuickConnect AR interface for a live test property.
 
 ----
 ## Authentication
