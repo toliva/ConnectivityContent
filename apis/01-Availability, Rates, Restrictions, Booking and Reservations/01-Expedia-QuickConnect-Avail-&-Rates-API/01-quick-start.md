@@ -21,7 +21,7 @@ Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials 
 
 ## Availability and Rates Request and Response
 
-The availability and rate request (AR RQ) allows EQC partners to send Expedia updates on availability and rates for up to 2 years into the future. Below is a pair of sample request/response messages for availability and rate update. The following requests can be posted directly to the EQC interface at https://services.expediapartnercentral.com/eqc/ar - for partners wanting to experiment with the API. Make sure to include content type= text/xml in your http header.
+The availability and rate request (AR RQ) allows EQC partners to send Expedia updates on availability and rates for up to 2 years into the future. Below is a pair of sample request/response messages for availability and rate update. For partners wanting to experiment with the API, the following requests can be posted directly to the EQC interface at https://services.expediapartnercentral.com/eqc/ar. Make sure to include content type= text/xml in your http header.
 
 **RQ**
 ```xml
