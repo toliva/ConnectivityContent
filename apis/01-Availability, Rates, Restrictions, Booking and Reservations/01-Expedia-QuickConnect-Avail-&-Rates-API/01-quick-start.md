@@ -70,4 +70,4 @@ The availability and rate request (AR RQ) allows EQC partners to send Expedia up
 </AvailRateUpdateRS>
 ```
 ## Connect To Production
-When EQC partners are ready to start sending AR request messages to Expedia QuickConnect to update their rates and availability they should contact their Connectivity Account Manager or reach us at eqcss@expedia.com to obtain the right to use Expedia QuickConnect. Expedia will then communicate the information to connect to our live environment.
+When EQC partners are ready to start sending AR request messages to Expedia QuickConnect to update their rates and availability they should contact their Connectivity Account Manager or reach us at eqcss@expedia.com to obtain the right to use Expedia QuickConnect. Expedia will then provide the necessary information for connecting to our live environment.
