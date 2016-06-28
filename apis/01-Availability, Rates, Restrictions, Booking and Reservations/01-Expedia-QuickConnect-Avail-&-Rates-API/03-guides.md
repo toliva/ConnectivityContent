@@ -3,7 +3,7 @@
 ## Guidelines
 Due to the high volume of hotels updating their rates and availability information on Expedia through an XML interface, Expedia QuickConnect enforces the following:
 
-- Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. 
+- Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
 
 ### Mapping property room and rate plan codes to Expedia IDs
 To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping between its property’s room and rate codes and Expedia’s equivalent room type and rate plan IDs. For example, a rate code SUM08001 in the hotel system maps to a unique rate plan ID 1093294 in Expedia system. This mapping is crucial for sending updates, because the EQC partner must specify this Expedia ID in its XML messages instead of the property’s equivalent code. 
@@ -11,7 +11,7 @@ To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping
 Any time a property changes its room or rate codes, or requests new products to be created in Expedia’s, the EQC partner must update the mapping of the property’s codes in its system with Expedia’s equivalent new or existing IDs to maintain successful communication of availability updates and booking notifications between the EQC partner and Expedia. 
 
 Note: Expedia IDs are also used to identify the room type and rate plan of a booking in the fax notification sent to the property.
-The Expedia product mapping can be obtained electronically via the Product API, or manually via Expedia Partner Central. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. 
+The Expedia product mapping can be obtained electronically via the Product API, or manually via ExpediaPartnerCentral.com. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. 
 
 #### View Expedia room type and rate plan IDs via Expedia Partner Central
 To verify the room type and rate plan IDs currently defined for your property in Expedia’s system, use the Room and Rate Plan Summary page at ExpediaPartner Central.com. This page allows the EQC partner to look up a property’s room and rate plan names to determine Expedia’s equivalent IDs.
@@ -49,9 +49,9 @@ Speaking from experience, Expedia expects to receive per day, on average, approx
 Some specific conditions could cause hotels to generate significantly more updates per day. If you feel that your hotel will consistently generate more than 180 updates per product, please request help from Expedia through your Connectivity Account Manager.
 
 #### Counting how many updates are included in a message
-Expedia has specific rules and recommendations around message bundling, specifically related to how many updates are included in any one given message. Update count is defined as follow:
-Expedia defines the Update Count of an AR message as the number of distinct data elements being changed by that message. Each individual rate, restriction or status change for one stay date is counted as 1 update
-For example, the following message excerpt contains 3 updates: number of rooms, a rate and a CTD restriction for 1 day.
+Expedia has specific rules and recommendations around message bundling, specifically related to how many updates are included in any one given message. Update count is defined as follows:
+Expedia defines the Update Count of an AR message as the number of distinct data elements being changed by that message. Each individual rate, restriction or status change for one stay date is counted as one update.
+For example, the following message excerpt contains 3 updates: number of rooms, a rate and a CTD restriction for one day.
 
 ```xml
 <AvailRateUpdate>
@@ -163,7 +163,7 @@ Multiple updates can be bundled into one single AR message by making use of the 
 ```
 #### Restricting the maximum number of updates per message
 Expedia will restrict the max number of updates allowed in one message. Any request containing more than 3000 updates will be rejected by Expedia and no update will be applied. The error message returned will be:
-3107: Update exceeds allowable size - Maximum allowable size is 3000 updates
+3107: Update exceeds allowable size - Maximum allowable size is 3000 updates.
 If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
 Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. 
 If you are unsure on how to proceed, we recommend requesting help from Expedia through your Connectivity Account Manager.
@@ -241,8 +241,7 @@ Please make sure the pricing model you specify when sending rate updates is the 
 
 ### Managing Rates for a Property Using Occupancy-based Pricing
 If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central), and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level.
-For example, if a property already has occupancy level 4 newly configured for it on Expedia Partner Central wants to set the rate for occupancy level 4 of a room type to 160.00$
-Then it should include the following input in the AR RQ message:
+For example, if a property already has occupancy level 4 newly configured for it on Expedia Partner Central and wants to set the rate for occupancy level 4 of a room type to $160.00, then it should include the following input in the AR RQ message:
 ```xml
 <PerOccupancy rate="160.00" occupancy="4"/>
 ```
@@ -300,7 +299,7 @@ In order to close a room that is still available on Expedia, always send a close
 
 ### Using day of week attributes with date ranges
 Day of week attributes can be used when EQC partners want to perform updates based on the day of week. For example, EQC partners might want to update rates for Friday, Saturday and Sunday, for the month of August 2012.
-To do so, it is not necessary to call out every single date requiring to be updated. Instead, day of week attributes can be used.
+To do so, it is not necessary to call out every single date needing to be updated. Instead, day of week attributes can be used.
 As soon as day of week attributes are used, updates will only be applied to the attributes for which the value is set to true. Missing or omitted day of week attributes will see their value defaulted to false.
 When using day of weeks along with date ranges, Expedia recommends always specifying all 7 attributes, with their desired value (true for days requiring an update, false for days that shouldn’t be updated). This is the safest way for EQC partners to insure Expedia will interpret their updates the desired way.
 ```xml
