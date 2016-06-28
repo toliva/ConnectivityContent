@@ -1,11 +1,11 @@
 # Quick Start
 
-The EQC Product, Availability and Rates API (PARR) was designed for any EQC partner that needs to connect to Expedia to read/retrieve the current product configuration (rooms and rates defined), as well as the current rates and availability loaded in the system.
+The Product, Availability and Rates API (PARR) was designed for any partner that needs to connect to Expedia to read/retrieve the current product configuration (rooms and rates defined), as well as the current rates and availability loaded in the system. PLEASE NOTE: for retrieving product information, Expedia STRONGLY encourages partners to use the Product API.
 
 ----
 ## Authentication
 
-To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
+To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called "Authentication" is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
 
 ```xml
 <Authentication username="EQCtest12933870" password="kh92nd29"/>
@@ -26,7 +26,7 @@ Doing a POST of the following document (with a Content-Type: text/xml) will allo
     <Authentication username="EQCtest12933870" password="kh92nd29"/>
     <Hotel id="12933870"/>
     <ParamSet>
-        <ProductRetrieval returnRateLink="true" returnRoomAttributes="true" returnRatePlanAttributes="true" returnCompensation="true" returnCancelPolicy=”true” />
+        <ProductRetrieval returnRateLink="true" returnRoomAttributes="true" returnRatePlanAttributes="true" returnCompensation="true" returnCancelPolicy="true" />
     </ParamSet>
 </ProductAvailRateRetrievalRQ>
 ```

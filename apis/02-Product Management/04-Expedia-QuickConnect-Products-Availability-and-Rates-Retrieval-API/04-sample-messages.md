@@ -108,7 +108,7 @@ The following example shows how to request all active and inactive room types an
 ```
 
 ## Requesting information for all products of an hotel, for 1 day
-The following example shows how to request all active products’ avail, rates and restriction data for 1 day. Note that this hotel has 2 room types and 1 rate plan per room type.
+The following example shows how to request all active products' avail, rates and restriction data for 1 day. Note that this hotel has 2 room types and 1 rate plan per room type.
 
 ### Request
 ```xml
@@ -211,7 +211,7 @@ The following example shows how to request all room type data for a hotel for 3 
 </ProductAvailRateRetrievalRS>
 ```
 
-## Requesting all active rate plans’ avail and rate data for a specific room type
+## Requesting all active rate plans' avail and rate data for a specific room type
 The following request shows how to request all active rate plans for a specific room type, for one day. Note that specifying only a room type ID implies all rate plans will be returned.
 
 ### Request 

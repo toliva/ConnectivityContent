@@ -19,7 +19,7 @@ L | Data element | Data type | O | Description | validations
 1 | ParamSet | - |  | Grouping element for parameters.  | At least one parameter has to be specified in order to indicate the type of request the EQC partner wants to perform.
 2 | ProductRetrieval | - |  | If specified, the request will return product information. | 
 2 | @productStatus | Enum | * | Possible values are: Active, Inactive, All. By default, only active products are returned. | Value in the list specified in the enumeration given by the schema.
- | @returnRateLink | Boolean | * | False by default, if not specified. If set to true, rate plan linkage rule information will be returned for products, where defined. If no rate plan linkage rules are defined for any of the hotel’s product, using this flag will not make any difference in the response. | 
+ | @returnRateLink | Boolean | * | False by default, if not specified. If set to true, rate plan linkage rule information will be returned for products, where defined. If no rate plan linkage rules are defined for any of the hotel's product, using this flag will not make any difference in the response. | 
  | @returnRoomAttributes | Boolean | * | False by default, if not specified. If set to true, additional room type attributes such as occupancy, age settings, smoking preferences, bed types and rate verification thresholds will be returned. | 
  | @returnRatePlanAttributes | Boolean | * | False by default, if not specified. If set to true, the following additional rate plan attributes are returned: pricing model, occupants for base rate, deposit required, min and max LOS defaults, min and max booking restrictions, book and travel start and end dates, mobile only, day of week booking restrictions, create and update date and times  | 
  | @returnCompensation | Boolean | * | False by default, if not specified. If set to true, compensation details are returned for all products. | 
@@ -45,7 +45,7 @@ L | Data element | Data type | O | Description
 0 | @xmlns | URL |  | Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for PARR messages: http://www.expediaconnect.com/EQC/PAR/2013/07. The following namespace is also supported for backward compatibility, but its features are no longer documented in this API: http://www.expediaconnect.com/EQC/PAR/2011/06 
 1 | Error | String |  | Detailed description of an error message. One or more of this element appears if the request failed. If this element is present, no other element will appear. Maximum length: 1024 characters.
 1 | @code | Int |  | Code for this error, for example: authentication, xml structure, business validation. - Code will be between 1000 and 7,000.
-1 | ProductList | - |  | Returned when parameter “ProductRetrieval” is specified in Request. Contains the list of active products for this hotel by default.
+1 | ProductList | - |  | Returned when parameter "ProductRetrieval" is specified in Request. Contains the list of active products for this hotel by default.
 2 | Hotel | - |  | Grouping element for hotel-level information
 2 | @id | int |  | Expedia Hotel ID
 2 | @name | String |  | Hotel Name. Maximum length: 255 characters.
@@ -55,20 +55,20 @@ L | Data element | Data type | O | Description
 2 | @code | String |  | Expedia Room Type Code. Customizable identifier (can only be defined/modified by Expedia). Default value is room type name. Max length: 50 characters.
 2 | @name | String |  | Expedia Room Type name. Max length: 255 characters.
 2 | @status | Enum |  | Room Type status: active or inactive. By default, only active room types are returned.
-2 | @smokingPref | Enum | * | Only returned if returnRoomAttributes specified in RQ. Room’s smoking preferences. Possible values: NonSmoking, Smoking, Either. When Either is set, guest will have the choice of the preference and a special request will be added to BR RS for the booking, to indicate which preference was selected by the guest.
+2 | @smokingPref | Enum | * | Only returned if returnRoomAttributes specified in RQ. Room's smoking preferences. Possible values: NonSmoking, Smoking, Either. When Either is set, guest will have the choice of the preference and a special request will be added to BR RS for the booking, to indicate which preference was selected by the guest.
 2 | @maxOccupants | int | * | Only returned if returnRoomAttributes specified in RQ.  Indicates how many people can physically stay in the room, and should include the sum of all adults, children and infants that the room can accommodate. The count of how many guests the room can accommodate by age category can be found under the OccupancyByAge element.
 3 | BedType | - | * | Only returned if returnRoomAttributes is specified in RQ.  Grouping element for bed type data. A room can be configured to offer multiple bed types, from which the guest will chose one. The bed type chosen will be provided as a special request in BR RS. A room can also be configured as having multiple bed types within the same room (like a king and a sofa bed). In this case, there will be one ID returned, with a list of beds. For example, bed type ID 67 describes a room that contains one king and one sofa bed.
 3 | @id | int |  | Bed type ID. Bed type ID in PARR is following same convention as bed type IDs used in BR RS special requests.
 3 | @name | string |  | Bed type name. Max 255 characters. If 2 bed types are listed in the name (ex: One King And One Sofa Bed), the room contains both bed types.
-3 | OccupancyByAge | - | * | Only returned if returnRoomAttributes is specified in RQ.  Defines how many occupants by age category a room can accommodate. Complements the room’s maxOccupant setting.
+3 | OccupancyByAge | - | * | Only returned if returnRoomAttributes is specified in RQ.  Defines how many occupants by age category a room can accommodate. Complements the room's maxOccupant setting.
 3 | @ageCategory | enum |  | Name of age category. Can take one of 6 values: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD or Infant.
 3 | @minAge | int |  | Minimum age qualifying for the category. Multiple age categories cannot be configured with the same minimum age. Category is deemed to apply for any age starting at that minimum value, up to the min value of the next category if applicable.
-3 | @maxOccupants | int |  | Maximum number of people for this age category that can stay in this room. The max number of guests who can stay in a room is defined by the room’s maxOccupant attribute.
+3 | @maxOccupants | int |  | Maximum number of people for this age category that can stay in this room. The max number of guests who can stay in a room is defined by the room's maxOccupant attribute.
 3 | RateThreshold | - | * | Only returned if returnRoomAttributes is specified in RQ. Defines min and max acceptable rates that can be uploaded via EQC AR or Expedia Extranet. If the rate falls outside this min or max value, the AR rate update will be ignored and a warning will be returned.
 3 | @type | Enum |  | Defines against which type of rate this threshold applies. Possible values are: NetRate: returned for ExpediaCollect-only and ETP hotels. SellRate: returned for HotelCollect-only and ETP hotels. For ETP hotels, where only one rate (net or sell) is managed, Expedia will still compute both thresholds and will verify that the derived rate is also within acceptable threhsolds.
 3 | @minAmount | Double |  | Minimum acceptable rate amount value that can be uploaded for any rateplan under this room type. Any rate update sent in an AR message with a value below that amount will be ignored and a warning will be returned.
 3 | @maxAmount | Double |  | Maximum acceptable rateamount value that can be uploaded for any rate plan under this room type. Any rate update sent in an AR message with a value exceeding that amount will be ignored and a warning will be returned.
-3 | @source | Enum |  | Defines how minAmount and maxAmount were calculated. 2 possible values: RecentReservations: thresholds calculated using last 10 reservations, and applying multiplication and division factor to find max and min values. Manual: manually defined by Expedia. RecentReservation is Expedia’s default method.
+3 | @source | Enum |  | Defines how minAmount and maxAmount were calculated. 2 possible values: RecentReservations: thresholds calculated using last 10 reservations, and applying multiplication and division factor to find max and min values. Manual: manually defined by Expedia. RecentReservation is Expedia's default method.
 3 | RatePlan | - |  | Rate Plans belonging to that room type and hotel. By default, only active rate plans are returned. This element is repeated once per rate plan that exists for this room type.
 3 | @id | String |  | Expedia Rate Plan ID. Max length: 50 characters.
 3 | @code | String |  | Expedia Rate Plan Code. Customizable identifier (can only be defined/modified by Expedia). Default value is rate plan type (RoomOnly, Corp, PKG). Max length: 50 characters.
@@ -76,8 +76,8 @@ L | Data element | Data type | O | Description
 3 | @status | Enum |  | Rate Plan status: active or inactive. By default, only active rate plans are returned.
 3 | @type | Enum |  | Possible values are: Standalone, Package, Corporate.
 3 | @distributionModel | Enum |  | Possible values are: ExpediaCollect, HotelCollect.
-3 | @rateAcquisitionType | Enum |  | Possible values are: NetRate, LowestAvailableRate, SellRate, Derived, Linked. EQC partner must send rate update using the correct rate acquisition type defined in the Expedia system. Any rate plan with a “Derived” rate acquisition type cannot be updated by the EQC partner. Any rate plan with a Linked rate acquisition type will have a rate plan linkage rule defined. The rule will indicate which portion of the rate plan is linked, and what is the rule applied on the rate. To obtain rate plan linkage information back in a product response, the returnRateLink attribute must be used in the request.
-3 | @parentId | String | * | Returned for Linked or Derived rate plans, to indicate the parent rate plan ID. Max length: 50 characters. Only returned when rate link rules exist, and if returnRateLink is specified as “true” in RQ. “O” column will contain the letter “R” to indicate these are returned only when the appropriate RateLinkage attribute is set to true.
+3 | @rateAcquisitionType | Enum |  | Possible values are: NetRate, LowestAvailableRate, SellRate, Derived, Linked. EQC partner must send rate update using the correct rate acquisition type defined in the Expedia system. Any rate plan with a "Derived" rate acquisition type cannot be updated by the EQC partner. Any rate plan with a Linked rate acquisition type will have a rate plan linkage rule defined. The rule will indicate which portion of the rate plan is linked, and what is the rule applied on the rate. To obtain rate plan linkage information back in a product response, the returnRateLink attribute must be used in the request.
+3 | @parentId | String | * | Returned for Linked or Derived rate plans, to indicate the parent rate plan ID. Max length: 50 characters. Only returned when rate link rules exist, and if returnRateLink is specified as "true" in RQ. "O" column will contain the letter "R" to indicate these are returned only when the appropriate RateLinkage attribute is set to true.
 3 | @rateLinkStart | Date | R | Earliest start date of the rate plan linkage rule. 
 3 | @rateLinkEnd |  | R | Latest end date of a rate link rule, optional even for linked products. If the link rule has no end date and will apply indefinitely, this attribute will not be returned.
 3 | @isAvailStatusLinked | Boolean | R | Is rate plan availability status (open/close) linked to parent or not. When avail status is not linked, partner has to manage the avail status of the linked rate plan. 
@@ -87,9 +87,9 @@ L | Data element | Data type | O | Description
 3 | @rateLinkExceptions | Boolean | R | Indicates if any exception was defined, whereby specific days of the child rate plan would not be linked to the parent. If this is true, details of the exceptions will not be returned by this API. They can be found on Expedia Partner Central. If attribute is missing in response for a linked rate plan, there is no exception defined.
 4 | RatePlanLinkDefinition | - | R | 
 4 | @linkType | Enum | R | Defines the type of adjustement made on the rate. Possible values are Percent and Amount.
-4 | @linkValue | Double | R | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied. Only returned if returnRatePlanAttributes is specified as “true” in RQ. “O” column will contain the letter “A” to indicate these are returned only when the appropriate Additional rate plan attribute is set to true.
+4 | @linkValue | Double | R | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied. Only returned if returnRatePlanAttributes is specified as "true" in RQ. "O" column will contain the letter "A" to indicate these are returned only when the appropriate Additional rate plan attribute is set to true.
 3 | RatePlan | - |  | Continuation of the rate plan section from above, this time for additional rate plan attributes being returned when returnRatePlanAttributes is set to true in RQ
-3 | @pricingModel | Enum | A | Rate plan’s pricing model. Will be identical across all rate plans unless property is undergoing pricing model conversion. Possible values are: PerDayPricing, OccupancyBasedPricing, PerDayPricingByDayOfArrival, PerDayPricingByLengthOfStay, PerPersonPricingByDayOfArrival, OccupancyBasedPricingByDayOfArrival.
+3 | @pricingModel | Enum | A | Rate plan's pricing model. Will be identical across all rate plans unless property is undergoing pricing model conversion. Possible values are: PerDayPricing, OccupancyBasedPricing, PerDayPricingByDayOfArrival, PerDayPricingByLengthOfStay, PerPersonPricingByDayOfArrival, OccupancyBasedPricingByDayOfArrival.
 3 | @occupantsForBaseRate | Int | A | Only returned for PerDayPricing, PerDayPricingByDayOfArrival and PerDayPricingByLengthOfStay. Indicates the number of people included in the rate update we receive for this rate plan. Additional guests above this number will be charge extra fees, if defined.
 3 | @depositRequired | Boolean | A | For HotelCollect distribution model only. Indicates if a deposit is expected to be collected by hotel at time of booking.
 3 | @minLOSDefault | Int | A | Default minimum LenghtOfStay restriction (1 by default). Will always be considered along with the value defined for each stay date. The most restrictive of this default and the daily restriction will prevail.
@@ -135,15 +135,15 @@ L | Data element | Data type | O | Description
 4 | @updateDateTime | DateTime | P | The time and date of the latest update to the cancellation policy.
 5 | Penalty | - | P | Fees charged to customers for the cancellation or modification of a reservation. This element is optional and will not be included if the default policy is non-refundable.
 5 | @insideWindow | Boolean | P | True for penalties applied for cancellation or modification of a reservation inside of the cancellation window, false for cancellation or modification of a reservation outside of the cancellation window.
-5 | @flatFee | Double | P | The penalty fee collected for the cancellation or modification of a reservation. . Attribute is optional and will not be returned if 0. For products with a SellRate or LowestAvailableRate acquisition type, or are linked/derived from rate plans with a SellRate or LowestAvailableRate acquisition type, amount returned will be the fee charged to the customer including Expedia’s commission. For products with a NetRate acquisition type, or are linked/derived from rate plans with a NetRate acquisition type, amount returned will be fee collected from the customer net Expedia’s commission. When applicable, the fee is applied on top of the per stay penalty.
+5 | @flatFee | Double | P | The penalty fee collected for the cancellation or modification of a reservation. . Attribute is optional and will not be returned if 0. For products with a SellRate or LowestAvailableRate acquisition type, or are linked/derived from rate plans with a SellRate or LowestAvailableRate acquisition type, amount returned will be the fee charged to the customer including Expedia's commission. For products with a NetRate acquisition type, or are linked/derived from rate plans with a NetRate acquisition type, amount returned will be fee collected from the customer net Expedia's commission. When applicable, the fee is applied on top of the per stay penalty.
 5 | @perStayFee | String | P | The penalty charged relative to the cost of the stay. Possible values include: None, 1stNightRoomAndTax, 2ndNightsRoomAndTax, 10PercentCostOfStay, 20PercentCostOfStay, 30PercentCostOfStay, 40PercentCostOfStay, 50PercentCostOfStay, 60PercentCostOfStay, 70PercentCostOfStay, 80PercentCostOfStay, 90PercentCostOfStay, FullCostOfStay
 2 | Warning |  | * | Warning is a placeholder, where EQC might eventually return warnings to indicate partial data results for product mapping.
 2 | @code |  |  | Placeholder.
-1 | AvailRateList | - |  | Returned when “AvailRateRetrieval” is specified in the request. Contains avail and/or rate information for the products requested.
+1 | AvailRateList | - |  | Returned when "AvailRateRetrieval" is specified in the request. Contains avail and/or rate information for the products requested.
 2 | Hotel | - |  | 
 2 | @id | Int |  | Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.
 2 | AvailRate | - |  | Grouping of Avail, Rate and Restriction data for one day. One grouping will be returned per day requested, containing all products requested.
-2 | @date | Date |  | Date for which the avail, rate and restriction data provided for the product applies. When only one rate plan ID is requested, we will return a maximum of 365 days of data in a response. If more than 365 days were requested, we will return the first 365 days of the date range, without any other error or warning indicating we didn’t return everything requested. When requesting more than one rate plan ID, or not requesting a specific room or rate plan ID, we will return a maximum of 31 days in a response. If more than 31 days were requested, we will return the first 31 days of the date range, without any other error or warning indicating we didn’t return everything requested.
+2 | @date | Date |  | Date for which the avail, rate and restriction data provided for the product applies. When only one rate plan ID is requested, we will return a maximum of 365 days of data in a response. If more than 365 days were requested, we will return the first 365 days of the date range, without any other error or warning indicating we didn't return everything requested. When requesting more than one rate plan ID, or not requesting a specific room or rate plan ID, we will return a maximum of 31 days in a response. If more than 31 days were requested, we will return the first 31 days of the date range, without any other error or warning indicating we didn't return everything requested.
 3 | RoomType | - |  | 
 3 | @id | String |  | Expedia room type ID. Max Length = 50
 3 | @closed | Boolean |  | Room type availability status
@@ -171,3 +171,71 @@ L | Data element | Data type | O | Description
 5 | @maxLOS | Int | * | Maximum Length of Stay allowed. Maximum possible value=28
 5 | @closedToArrival | Boolean | * | 
 5 | @closedToDeparture | Boolean | * | 
+
+## Error Handling
+You may experience technical difficulties when developing and trying to connect to Expedia QuickConnect PARR. This section addresses the most common errors and problems that an EQC partner might encounter.
+
+### Network/System Communication Issues
+
+There are many different error scenarios related to communication and authentication. Here are the possible scenarios, for any of the supported EQC APIs.
+
+#### Connection Cannot Be Established
+For many different reasons, attempting to connect to Expedia QuickConnect might not work. If the problem is:
+- Connection timeout (before establishing connection)
+- Cannot resolve host name
+- Cannot establish connection
+
+Before looking for assistance, the EQC partner should:
+- Verify the URL used to connect to Expedia QuickConnect and make sure the address starts with https://
+- Verify the domain name, and make sure that the address you are using is the right one for the environment you are targeting (do not try to send QA information to production, or vice-versa)
+- If the EQC partner's system is behind a firewall, make sure that port 443 is opened for connection to Expedia's production environment (contact Expedia if you don't know what the URL to the production environment is), and also opened for connection to https://simulator.expediaquickconnect.com for the Expedia QuickConnect simulator.
+
+It is also possible to fail to obtain a connection because Expedia QuickConnect servers cannot accept any more connections than the ones currently established to other EQC partners. In this case, the EQC partner will receive a communication error saying: Connection refused.
+
+When this happens, the EQC partner should simply enter in retry mode.
+
+#### SSL Certificate Validation Problems
+EQC partners developing in Java should use version 1.4.2_13 or more recent to avoid issues with certificate signing authorities. If EQC partners prefer to keep using an older version of Java or in-house SSL libraries, they need to import the Entrust CA certificate.
+- Entrust CA common name CN = Entrust.net Certification Authority (2048).
+- To manually import the Entrust.net Certification Authority (2048) Certificate, download the CA certificate at https://www.entrust.net/downloads/root_request.cfm.
+
+
+#### System errors retry recommendation
+
+Whenever Expedia PARR return system errors (error code >= 4000), it is up to the EQC partner to decide what is preferable.
+
+If the EQC partner fails to retrieve product or avail and rate data, for systems where a user is expecting instant results, we suggest an immediate retry strategy (1 instantaneous retry).
+
+
+#### | Connection Established, No Response
+
+If the EQC partner's system manages to establish a connection to Expedia QuickConnect servers, but is not getting a response, the EQC partner should:
+- Make sure that the EQC partner's system is not closing the connection too early. Some retrieval queries can take time, and Expedia will keep the connection active for up to 60 seconds. Therefore, the EQC partner should keep the connection open for at least 60 seconds.
+- Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting for bytes that never arrive, and eventually times out.
+
+### Error Codes and Descriptions
+
+Error code | Error description | Explanation and EQC partner Action
+---------- | ----------------- | -----------------------------------
+1000 | Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access. | This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
+1001 | Authentication error: invalid username or password. | This message should not be retried. Verify username and password configured in your EQC interface.  For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
+1003 | The user account provided doesn't have the right access level | This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
+2002 | Parsing error: <parsing_error_description>. | Correct XML format to comply with Expedia QuickConnect's specification. Developers of the EQC partner system should be involved to find the problem.
+2010 | The namespace specified is invalid. | Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.
+3010 | Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema. | Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.
+3015 | Business validation error.  | EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect.
+3020 | Validation error: start date must not be before yesterday. | Make sure the system cannot send a date in the past, and drop this message (no retry).
+3021 | Validation error: end date must not be before start date. | Make sure the system cannot send an end date smaller than a start date, and drop this message (no retry).
+3129 | Invalid Date. | Verify the dates you provided in the AR RQ and then resubmit your message.
+3143 | There is no Product information for the hotel in the database | The hotel you requested information for has no products currently defined in Expedia system yet. This should happen for new hotels not ready to be managed by EQC partner yet. Please contact your market manager for more details.
+3144 | There is no matching product information avalable | The request you made to obtain avail and rate data didn't produce any results. This might for different reasons: You requested dates for which no avail or rates are currently defined in Expedia system, or you issued a request for all active products but there are no active products for this hotel.
+3202 | Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel. | Verify if there is a mapping issue in EQC partner's system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Expedia Partner Central).
+3203 | The following RoomTypeIDs do not belong to the given hotel : <room_type_ID> | Fix mapping in EQC partner's system.
+3204 | The following RatePlanIDs do not belong to the given hotel : <rate_plan_ID> | Fix mapping in EQC partner's system.
+3205 | Rate Plan ID <rateplanID> does not belong to Room Type ID <roomTypeID> | When requesting avail and rate data, the EQC partner provided an incorrect room type ID – rate plan ID association. Please verify your mapping and drop this message (no retry).
+3210 | Communication error: exceed max number of connections allowed (1). | EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message
+4000, 4004, 4007 | Internal system error, please try again in a few minutes. | Please retry.
+4001 | Internal timeout error, please try again in a few minutes. | Please retry.
+4100, 4101 | Internal System Error. Do not retry this request. Our support team was notified of the problem. | Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. 
+4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | If AR, enter in incremental retry mode. 
+5000 | Internal database error, please try again in a few minutes.  | If AR, BC or PARR, enter in incremental retry mode. 
