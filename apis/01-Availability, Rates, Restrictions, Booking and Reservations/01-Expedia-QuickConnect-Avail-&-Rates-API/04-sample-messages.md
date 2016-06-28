@@ -383,7 +383,6 @@ The following is a sample AR message to close out a rate plan for the month of A
     </AvailRateUpdate>
 </AvailRateUpdateRQ>
 ```
-See the Best Practices -**need to link to the best practices..** section for more information about closing rate plans.
 ### Closing a room type
 The following is a sample AR message to close out a room type for the month of August:
 ```xml
