@@ -19,9 +19,9 @@ Optionally, EQC partners can also retrieve products, availability and rate data 
 
 The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:
 
--   Only HTTPS posts to Expedia’s secure server are supported. Using HTTP *will not work*. (Expedia QuickConnect servers are not configured to accept posts on the HTTP service.)
+-   Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).
 
--   Communication is synchronous: on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.
+-   Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.
 
 -   Content-Type of the HTTP Request Header should be: “text/xml”.
 
@@ -33,7 +33,7 @@ Before activation on Expedia QuickConnect, the EQC partner has to go through sev
 
 The design of Expedia QuickConnect schemas is based on the following general guidelines:  
 
-1.	Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes are follow the lower camel case (LCC) convention.  
+1.	Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes follow the lower camel case (LCC) convention.  
 2.	Information is found mostly in attributes, elements are only used to structure the information and make logical groupings.  
 3.	If an element contains text, it is most likely because the text was entered manually.  
 4.	Validation rules about data type, data format and data size/length are included in the schema and should be considered during development.  
@@ -66,7 +66,7 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 2 | @from | Date | | Start date of the interval (format: yyyy-mm-dd) | “From date” >= today – 1
 2 | @to | Date | | End date of the interval (format: yyyy-mm-dd).  | “To date” <= (today + 2yrs + 1 day)
 **Note:** The following 7 attributes are used to indicate on which day of the week, from the date range specified in the “from”-“to” attributes, the updates should be applied. If none of the 7 attributes are specified, updates will apply to all days of the week. As soon as one attribute is specified, the updates will only apply to the days where the attribute value is set to true.
-If EQC partners need to use this feature, Expedia recommends specifying all 7 attributes, indicating on which day the updates should be applied (attribute value=true) and on which day the updates should not be applied (attribute value=false) 
+If EQC partners need to use this feature, Expedia recommends specifying all seven attributes, indicating on which day the updates should be applied (attribute value=true) and on which day the updates should not be applied (attribute value=false) 
 
 Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
 ----- | -------------------- | --------- | ---------------- | ----------- | ---------------
