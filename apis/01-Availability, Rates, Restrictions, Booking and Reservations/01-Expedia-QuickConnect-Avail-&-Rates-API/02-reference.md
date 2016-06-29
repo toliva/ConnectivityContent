@@ -6,21 +6,22 @@
 
 The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:
 
--   Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).
--   Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.
--   Content-Type of the HTTP Request Header should be: “text/xml”.
+- Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).
+- Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.
+- Content-Type of the HTTP Request Header should be: “text/xml”.
+- Only connecting via our URLs is supported. Expedia does not support connection directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
 
 ## Schema Design Guidelines
 
 The design of Expedia QuickConnect schemas is based on the following general guidelines:  
 
-1.	Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes follow the lower camel case (LCC) convention.  
-2.	Information is found mostly in attributes, elements are only used to structure the information and make logical groupings.  
-3.	If an element contains text, it is most likely because the text was entered manually.  
-4.	Validation rules about data type, data format and data size/length are included in the schema and should be considered during development.  
-5.	Expedia uses namespaces to version its schemas. Messages sent to Expedia QuickConnect should always contain the proper namespace.  
-6.	Namespaces are also used for versioning: EQC partners should be careful when specifying a namespace in the messages they send to Expedia QuickConnect.  
-7.	Boolean will be returned as “true” or “false”. 
+- Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes follow the lower camel case (LCC) convention.  
+- Information is found mostly in attributes, elements are only used to structure the information and make logical groupings.  
+- If an element contains text, it is most likely because the text was entered manually.  
+- Validation rules about data type, data format and data size/length are included in the schema and should be considered during development.  
+- Expedia uses namespaces to version its schemas. Messages sent to Expedia QuickConnect should always contain the proper namespace.  
+- Namespaces are also used for versioning: EQC partners should be careful when specifying a namespace in the messages they send to Expedia QuickConnect.  
+- Boolean will be returned as “true” or “false”. 
 
 
 ## Availability and Rates Request (AR RQ)

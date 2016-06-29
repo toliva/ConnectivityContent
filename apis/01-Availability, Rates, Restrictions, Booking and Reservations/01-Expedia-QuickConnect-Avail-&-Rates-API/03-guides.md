@@ -3,6 +3,7 @@
 ## Getting Connected with Expedia for the First Time
 
 Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:
+
 ![ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT](/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg)
 
 ### Development phase
@@ -33,16 +34,13 @@ If testing is successful, select one of your hotels to be Beta and return a comp
 ### Go Live phase
 After soft launch is over (usually it takes one week), the connectivity will be officially up and running in production and other properties can be connected.
 
-
 ## Guidelines
-Due to the high volume of hotels updating their rates and availability information on Expedia through an XML interface, Expedia QuickConnect enforces the following:
-
-- Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
 
 ### Basic Connectivity Requirements
 In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:
 - Have a reliable connection to the Internet
 - Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)
+- Be able to connect using Expedia QuickConnect URL. Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
 - Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)
 - Be able to send changes to rates and availability using XML messages
 - Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages
