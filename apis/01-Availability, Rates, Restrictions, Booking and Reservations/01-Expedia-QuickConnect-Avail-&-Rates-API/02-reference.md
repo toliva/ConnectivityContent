@@ -1,33 +1,14 @@
 # API Definition
 
 ## Overview
-### Basic Requirements
-In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:
-- Have a reliable connection to the Internet
-- Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)
-- Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)
-- Be able to send changes to rates and availability using XML messages
-- Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages
-- Be able to provide confirmation numbers for retrieved bookings (reservations, modifications and cancelations) using XML messages
-- Be able to handle errors and warning scenarios as per this specification’s recommendations
-
-Optionally, EQC partners can also retrieve products, availability and rate data using XML messages.
 
 ## Communication Protocol
-
-### XML over HTTPS – Synchronous
 
 The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:
 
 -   Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).
-
 -   Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.
-
 -   Content-Type of the HTTP Request Header should be: “text/xml”.
-
-## Pre-connection process
-Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:
-![ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT](/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg)
 
 ## Schema Design Guidelines
 

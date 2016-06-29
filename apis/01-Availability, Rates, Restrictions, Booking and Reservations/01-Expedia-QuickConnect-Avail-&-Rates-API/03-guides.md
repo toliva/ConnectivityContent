@@ -1,9 +1,55 @@
 # FAQ & Guides
 
+## Getting Connected with Expedia for the First Time
+
+Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:
+![ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT](/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg)
+
+### Development phase
+
+All our API specifications are on this site.  You must abide by our [terms and conditions](/terms.html).
+If you have any development related questions during this phase, please send email [eqcss@expedia.com](mailto:eqcss@expedia.com).
+
+### Test phase
+
+Expedia will send you access details for a test property in production once you send the following information to [eqcss@expedia.com](mailto:eqcss@expedia.com):
+
+- Company name
+- System Type (CRS, PMS, Channel Manager, etc)
+- System name
+- Address
+- Phone number
+- Contact information
+- Website
+- How many hotels utilize your system?
+- System description
+ 
+In order to assign a property that will suit your needs we need to know more about what you have coded for. Please return a completed [interface questionnaire](/files/EQC%20Interface%20Questionnaire.docx) to [eqcss@expedia.com](mailto:eqcss@expedia.com).
+ 
+ 
+### Beta (Soft Launch) phase
+If testing is successful, select one of your hotels to be Beta and return a completed [enrollment form](/files/EQC%20Enrollment%20Form.docx) to [eqcss@expedia.com](mailto:eqcss@expedia.com) so we can initiate the Soft Launch process (one hour phone call with testing plan, one week monitoring in production with a real hotel). There are also some [soft launch scenarios](/files/EQC%20Softlaunch%20Scenarios.docx) to view.
+      
+### Go Live phase
+After soft launch is over (usually it takes one week), the connectivity will be officially up and running in production and other properties can be connected.
+
+
 ## Guidelines
 Due to the high volume of hotels updating their rates and availability information on Expedia through an XML interface, Expedia QuickConnect enforces the following:
 
 - Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
+
+### Basic Connectivity Requirements
+In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:
+- Have a reliable connection to the Internet
+- Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)
+- Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)
+- Be able to send changes to rates and availability using XML messages
+- Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages
+- Be able to provide confirmation numbers for retrieved bookings (reservations, modifications and cancelations) using XML messages
+- Be able to handle errors and warning scenarios as per this specification’s recommendations
+
+Optionally, EQC partners can also retrieve products, availability and rate data using XML messages.
 
 ### Mapping property room and rate plan codes to Expedia IDs
 To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping between its property’s room and rate codes and Expedia’s equivalent room type and rate plan IDs. For example, a rate code SUM08001 in the hotel system maps to a unique rate plan ID 1093294 in Expedia system. This mapping is crucial for sending updates, because the EQC partner must specify this Expedia ID in its XML messages instead of the property’s equivalent code. 
@@ -199,7 +245,7 @@ Several parameters should be configurable before triggering synchronization:
 - Which room type(s) (one or more, possibly a list)
 - Which rate plan(s) (one or more, possibly a list)
 
-The (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.
+he (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.
 
 <a name="/sendtherighttypeofratetoExpedia"></a>
 ### Send the right type of rate to Expedia: sell rate, net rate or LAR?
@@ -337,11 +383,15 @@ This retry strategy should be different than the retry where the communication c
 Expedia QuickConnect only allows one connection at a time per hotel. EQC partners cannot send concurrent requests to update the same hotel. Requests should be queued in the hotel system.
 
 <a name="/troubleshooting"></a>
+
 ## Troubleshooting
+
 ### Detailed Error Handling and Retry Strategy Recommendation
 Expedia recommends implementing a strong retry strategy to insure important messages are successfully delivered and processed by Expedia. Expedia QuickConnect defines several different categories of errors. When implementing connectivity, EQC partners should handle errors properly. Depending on the type of interface and type of error, different strategies should be used.
+
 #### System errors retry recommendation, specific to interfaces updating Expedia systems (AR)
-- 1.	Communication errors (cannot establish connection, connection timeout, no response): If the EQC partner’s system receives a network or communication error from its application, saying that the connection to Expedia QuickConnect cannot be established, or that the connection times out, or even that there is no answer coming from Expedia on the connection, it should retry the message using the following strategy:
+
+**Communication errors (cannot establish connection, connection timeout, no response):** If the EQC partner’s system receives a network or communication error from its application, saying that the connection to Expedia QuickConnect cannot be established, or that the connection times out, or even that there is no answer coming from Expedia on the connection, it should retry the message using the following strategy:
 
 Occurrence | Time | Action 
 ---------- | ---- | ------
@@ -351,7 +401,8 @@ Occurrence | Time | Action
 3 | T0 + 4 minutes | Try to send message. If failed, keep retrying.
 4 | T0 + 8 minutes | Try to send message. If failed, keep retrying.
 5 | T0 + 15 minutes | Try to send message. If failed, put the message on hold, wait before sending any other message, and raise an alarm to someone on the support team.
-- 2.	Network and communication errors in AR RS (error codes between 4000 and 4099): if the EQC partner manages to connect to Expedia QuickConnect and receives an AR Response in XML with an error message code between 4000 and 4099, the EQC partner should adopt this retry strategy:
+
+**Network and communication errors in AR RS (error codes between 4000 and 4099):** if the EQC partner manages to connect to Expedia QuickConnect and receives an AR Response in XML with an error message code between 4000 and 4099, the EQC partner should adopt this retry strategy:
 
 Occurrence | Time | Action 
 ---------- | ---- | ------
@@ -369,15 +420,16 @@ Occurrence | Time | Action
 11 | T9 + 8h32 minutes | Try to send message. If failed, drop the message, raise an alarm to someone in the EQC partner’s team and try to send the next message in queue.
 
 ** TO: Time Zero
-- 3.	Internal system errors with error codes greater or equal to 4100: Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
+
+**Internal system errors with error codes greater or equal to 4100:** Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.
 
 #### Error handling recommendation for non-retriable errors
 
 In many cases, messages shouldn’t be retried:
-- 1.	Business errors (error codes 3xxx): A message failing because of a business error should be dropped right away to allow other messages to go through (no retries). An alarm should be raised in the PMS or CRS system, and/or a report should be run every day in the EQC partner’s system for information on the problems the interface encountered.
-- 2.	Authentication errors (error codes 1xxx): if the EQC partner’s system receives an authentication error, the EQC partner should stop trying to send the message and an alarm should be raised to an administrator to verify the configuration of the EQC partner’s system and to contact Expedia.
-- 3.	Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.
-- 4.	Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.
+- Business errors (error codes 3xxx): A message failing because of a business error should be dropped right away to allow other messages to go through (no retries). An alarm should be raised in the PMS or CRS system, and/or a report should be run every day in the EQC partner’s system for information on the problems the interface encountered.
+- Authentication errors (error codes 1xxx): if the EQC partner’s system receives an authentication error, the EQC partner should stop trying to send the message and an alarm should be raised to an administrator to verify the configuration of the EQC partner’s system and to contact Expedia.
+- Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.
+- Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.
 
 ### Communication Issues for any of the EQC APIs
 #### Connection Cannot Be Established
