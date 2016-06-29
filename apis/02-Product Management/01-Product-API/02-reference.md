@@ -668,7 +668,7 @@ Status Code | Description | Response Model
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
 
-### Creates a new rate plan
+### Create a new rate plan
 - Method: `POST`
 - Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
@@ -884,6 +884,126 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
   "travelDateStart": "1901-01-01",
   "travelDateEnd": "2079-06-06",
   "mobileOnly": false
+}
+```
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | [RatePlan](#/definitions/RatePlanDTO)
+
+### Partially update an existing rate plan
+This method allows you to update a rate plan by providing only the fields/values you want to change (while responding with the complete udpated rate plan upon a successful request). This saves you from having to first read the rate plan before updating it, grant it you know its Resource ID and all the fields/values you want to update. If you provide the complete rate plan data, this method essentially behaves just like the [update](#modify-an-existing-rate-plan) method.
+
+**Important**
+
+Only the first level properties of the [rate plan](#/definitions/RatePlanDTO) can be partially provided, i.e. the ones that are **not** arrays or other complex types. Everything below has to be provided in full, just like the [update](#modify-an-existing-rate-plan) method.
+
+Fields not provided in the input will remain unchanged. If you want to "nullify" or "blank" an existing property, you have to explicitly specify it in the JSON message. For array types, you need to provided a "null" or empty array value.
+
+Also note that all validation rules are applied on the complete udpated rate plan data. For instance, only providing a `travelDateStart` that is after the current `travelDateEnd` will yield the appropriate error response.
+
+- Method: `PATCH`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Consumes: `application/vnd.expedia.eps.product-v2+json`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type 
+--------- | -------------- | ----------- | -------- | --------- 
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string  
+roomTypeId | path | Room type resource ID | Yes | string  
+ratePlanId | path | Rate plan resource ID | Yes | string  
+body | body | JSON message of partially updated rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO)  
+
+**Examples**
+
+Updating only the name:
+```
+{
+  "name": "My New Rate Plan Name"
+}
+```
+
+Updating both the name and the status:
+```
+{
+  "name": "My New Rate Plan Name",
+  "status": "Inactive"
+}
+```
+
+Overriding the current list of value add inclusions to only include "Free Internet":
+```
+{
+  "valueAddInclusions": ["Free Internet"]
+}
+```
+
+Removing all value add inclusions and additional guest amounts:
+```
+{
+  "valueAddInclusions": [],
+  "additionalGuestAmounts": null
+}
+```
+
+Updating only the cancel policy:
+```
+{
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			},
+			{
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		],
+		"exceptions": [
+			{
+				"endDate": "2019-04-01",
+				"startDate": "2019-03-01",
+				"penalties": [
+					{
+						"amount": 1.0,
+						"deadline": 0,
+						"perStayFee": "1stNightRoomAndTax"
+					},
+					{
+						"amount": 1.0,
+						"deadline": 24,
+						"perStayFee": "FullCostOfStay"
+					}
+				]
+			}
+		]
+	}
+}
+```
+
+Updating only the cancel policy (this would remove any exceptions since they are not specified):
+```
+{
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			},
+			{
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		]
+	}
 }
 ```
 
