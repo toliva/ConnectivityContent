@@ -14,30 +14,30 @@ For partners using Expedia APIs for the first time, please refer to the [FAQ & G
 
 ## Reading property, room type or rate plan information
 The simplest way to start interacting with the Product API is to access the 
-<https://services.expediapartnercentral.com/products/v1/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
+<https://services.expediapartnercentral.com/products/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
 
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:
 ```
-username: EQCtest12933873
-password: cc47an46
+username: EQCtest12933870
+password: kh92nd29
 ```
 
-The result will be an array of properties assigned to your account. For example:
+The result will be an array of properties assigned to your account, and will do so using the latest version of the API. For example:
 ```JSON
 {
     "entity": [
         {
-            "resourceId": 12933873,
-            "name": "EQC Hotel 84",
-			"partnerCode": "EQC123456",
+            "resourceId": 12933870,
+            "name": "EQC Hotel 81",
+            "partnerCode": "12933870",
             "status": "Active",
             "currency": "USD",
             "address": {
-                "line1": "1234 Test Street",
+                "line1": "1244 Test Street",
                 "line2": "",
-                "city": "Région Test",
-                "state": "",
-                "postalCode": "",
+                "city": "Region Test",
+                "state": "WA",
+                "postalCode": "98004",
                 "countryCode": "USA"
             },
             "distributionModels": [
@@ -60,144 +60,87 @@ The result will be an array of properties assigned to your account. For example:
 }
 ```
 Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes>
+<https://services.expediapartnercentral.com/products/properties/12933870/roomTypes>
 
 The result will be an array of active room types under this property. For example:
 ```JSON
 {
-  "entity": [
-    {
-      "resourceId": 201357991,
-      "partnerCode": "DLXRM",
-      "name": {
-        "attributes": {
-          "typeOfRoom": "Room",
-          "roomClass": "Deluxe",
-          "view": "Mountain View",
-          "featuredAmenity": "Jetted Tub"
-        },
-        "value": "Deluxe Room, Jetted Tub, Mountain View"
-      },
-      "status": "Active",
-      "maxOccupants": 4,
-      "occupancyByAge": [
+    "entity": [
         {
-          "ageCategory": "Adult",
-          "minAge": 18,
-          "maxOccupants": 4
-        },
-        {
-          "ageCategory": "ChildAgeA",
-          "minAge": 2,
-          "maxOccupants": 3
-        },
-        {
-          "ageCategory": "Infant",
-          "minAge": 0,
-          "maxOccupants": 3
+            "resourceId": 201357986,
+            "partnerCode": "Executive Room",
+            "name": {
+                "value": "Executive Suite"
+            },
+            "status": "Active",
+            "ageCategories": [
+                {
+                    "category": "Adult",
+                    "minAge": 18
+                },
+                {
+                    "category": "Infant",
+                    "minAge": 0
+                }
+            ],
+            "maxOccupancy": {
+                "total": 6,
+                "adults": 6,
+                "children": 5
+            },
+            "standardBedding": [
+                {
+                    "option": [
+                        {
+                            "quantity": 1,
+                            "type": "Full Bed",
+                            "size": "Full"
+                        },
+                        {
+                            "quantity": 2,
+                            "type": "Bunk Bed",
+                            "size": "Twin"
+                        }
+                    ]
+                }
+            ],
+            "smokingPreferences": [
+                "Smoking",
+                "Non-Smoking"
+            ]
         }
-      ],
-      "bedTypes": [
-        {
-          "id": "1.66",
-          "name": "1 double and 2 single beds"
-        }
-      ],
-      "smokingPreferences": [
-        {
-          "id": "2.1",
-          "name": "Non-Smoking"
-        },
-        {
-          "id": "2.2",
-          "name": "Smoking"
-        }
-      ],
-      "roomSize": {
-        "squareFeet": 915,
-        "squareMeters": 85
-      },
-      "views": [
-        "Mountain View"
-      ]
-    },
-    {
-      "resourceId": 201357992,
-      "partnerCode": "Executive Room",
-      "name": {
-        "value": "Executive Suite"
-      },
-      "status": "Active",
-      "maxOccupants": 6,
-      "occupancyByAge": [
-        {
-          "ageCategory": "Adult",
-          "minAge": 18,
-          "maxOccupants": 6
-        },
-        {
-          "ageCategory": "Infant",
-          "minAge": 0,
-          "maxOccupants": 5
-        }
-      ],
-      "bedTypes": [
-        {
-          "id": "1.100",
-          "name": "1 double and 2 bunk beds"
-        }
-      ],
-      "smokingPreferences": [
-        {
-          "id": "2.1",
-          "name": "Non-Smoking"
-        },
-        {
-          "id": "2.2",
-          "name": "Smoking"
-        }
-      ],
-      "roomSize": {
-        "squareFeet": 1023,
-        "squareMeters": 95
-      },
-      "views": [
-        "Ocean View",
-        "Beach View"
-      ]
-    }
-  ]
+    ]
 }
 ```
 Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans>
+<https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans>
 
 The result will be an array of active rate plans under this property and room type. For example:
 ```JSON
 {
     "entity": [
         {
-            "resourceId": 206651852,
-            "name": "Best available rate",
+            "resourceId": 206651831,
+            "name": "RoomOnly1",
             "rateAcquisitionType": "SellLAR",
             "distributionRules": [
                 {
-                    "expediaId": "206651852",
-                    "partnerCode": "BAREC",
+                    "expediaId": "206651831",
+                    "partnerCode": "RoomOnly1",
                     "distributionModel": "ExpediaCollect",
                     "manageable": false,
                     "compensation": {
-                        "percent": 0.18,
+                        "percent": 0.1,
                         "minAmount": 0
                     }
                 },
                 {
-                    "expediaId": "206651852A",
-                    "partnerCode": "BARHC",
+                    "expediaId": "206651831A",
+                    "partnerCode": "RoomOnly1",
                     "distributionModel": "HotelCollect",
                     "manageable": true,
                     "compensation": {
-                        "percent": 0.18
+                        "percent": 0.1
                     }
                 }
             ],
@@ -209,11 +152,6 @@ The result will be an array of active rate plans under this property and room ty
                 "defaultPenalties": [
                     {
                         "deadline": 0,
-                        "perStayFee": "1stNightRoomAndTax",
-                        "amount": 0
-                    },
-                    {
-                        "deadline": 24,
                         "perStayFee": "None",
                         "amount": 0
                     }
@@ -236,65 +174,6 @@ The result will be an array of active rate plans under this property and room ty
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
             "mobileOnly": false
-        },
-        {
-            "resourceId": 206651853,
-            "name": "Breakfast Included Non Refundable",
-            "rateAcquisitionType": "SellLAR",
-            "distributionRules": [
-                {
-                    "expediaId": "206651853",
-                    "partnerCode": "BRKEC",
-                    "distributionModel": "ExpediaCollect",
-                    "manageable": false,
-                    "compensation": {
-                        "percent": 0.18,
-                        "minAmount": 0
-                    }
-                },
-                {
-                    "expediaId": "206651853A",
-                    "partnerCode": "BRKHC",
-                    "distributionModel": "HotelCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.18
-                    }
-                }
-            ],
-            "status": "Active",
-            "type": "Standalone",
-            "pricingModel": "OccupancyBasedPricing",
-            "taxInclusive": false,
-            "cancelPolicy": {
-                "defaultPenalties": [
-                    {
-                        "deadline": 0,
-                        "perStayFee": "FullCostOfStay",
-                        "amount": 0
-                    }
-                ]
-            },
-            "additionalGuestAmounts": [
-                {
-                    "dateStart": "2015-11-16",
-                    "dateEnd": "2079-06-06",
-                    "ageCategory": "Adult",
-                    "amount": 10
-                }
-            ],
-            "valueAddInclusions": [
-                "Free Breakfast"
-            ],
-            "minLOSDefault": 1,
-            "maxLOSDefault": 28,
-            "minAdvBookDays": 0,
-            "maxAdvBookDays": 500,
-            "bookDateStart": "1900-01-01",
-            "bookDateEnd": "2079-06-06",
-            "travelDateStart": "1901-01-01",
-            "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
         }
     ]
 }
@@ -303,7 +182,13 @@ The result will be an array of active rate plans under this property and room ty
 ----
 
 ## Add a Rate Plan
-To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan:
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:
+
+```
+POST https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans
+Content-Type: application/vnd.expedia.eps.product-v2+json
+```
+
 ```JSON
 {
   "distributionRules": [
@@ -320,65 +205,61 @@ To add a new rate plan on an existing room type, partners can send a minimal pay
 The response returned by the product API will contain all the default values used:
 ```JSON
 {
-  "entity": {
-    "resourceId": 206773289,
-    "name": "ECollect1",
-    "rateAcquisitionType": "SellLAR",
-    "distributionRules": [
-      {
-        "expediaId": "206773289",
-        "partnerCode": "ECollect1",
-        "distributionModel": "ExpediaCollect",
-        "manageable": false,
-        "compensation": {
-          "percent": 0.2,
-          "minAmount": 0.0
-        }
-      }, {
-        "expediaId": "206773289A",
-        "partnerCode": "HCollect1",
-        "distributionModel": "HotelCollect",
-        "manageable": true,
-        "compensation": {
-          "percent": 0.2
-        }
-      }
-    ],
-    "status": "Active",
-    "type": "Standalone",
-    "pricingModel": "PerDayPricing",
-    "occupantsForBaseRate": 1,
-    "taxInclusive": false,
-    "cancelPolicy": {
-      "defaultPenalties": [
-        {
-          "deadline": 0,
-          "perStayFee": "1stNightRoomAndTax",
-          "amount": 0.0
-        }, {
-          "deadline": 24,
-          "perStayFee": "None",
-          "amount": 0.0
-        }
-      ]
-    },
-    "additionalGuestAmounts": [
-      {
-        "dateStart": "2015-04-08",
-        "dateEnd": "2079-06-06",
-        "ageCategory": "Adult",
-        "amount": 0.0
-      }
-    ],
-    "minLOSDefault": 1,
-    "maxLOSDefault": 28,
-    "minAdvBookDays": 0,
-    "maxAdvBookDays": 500,
-    "bookDateStart": "2015-11-30",
-    "bookDateEnd": "2079-06-06",
-    "travelDateStart": "2015-11-30",
-    "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
-  }
+    "entity": {
+        "resourceId": 207994977,
+        "name": "ECollect1",
+        "rateAcquisitionType": "SellLAR",
+        "distributionRules": [
+            {
+                "expediaId": "207994977",
+                "partnerCode": "ECollect1",
+                "distributionModel": "ExpediaCollect",
+                "manageable": false,
+                "compensation": {
+                    "percent": 0.1,
+                    "minAmount": 0
+                }
+            },
+            {
+                "expediaId": "207994977A",
+                "partnerCode": "HCollect1",
+                "distributionModel": "HotelCollect",
+                "manageable": true,
+                "compensation": {
+                    "percent": 0.1
+                }
+            }
+        ],
+        "status": "Active",
+        "type": "Standalone",
+        "pricingModel": "OccupancyBasedPricing",
+        "taxInclusive": false,
+        "cancelPolicy": {
+            "defaultPenalties": [
+                {
+                    "deadline": 0,
+                    "perStayFee": "None",
+                    "amount": 0
+                }
+            ]
+        },
+        "additionalGuestAmounts": [
+            {
+                "dateStart": "2015-11-16",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "amount": 10
+            }
+        ],
+        "minLOSDefault": 1,
+        "maxLOSDefault": 28,
+        "minAdvBookDays": 0,
+        "maxAdvBookDays": 500,
+        "bookDateStart": "1900-01-01",
+        "bookDateEnd": "2079-06-06",
+        "travelDateStart": "1900-01-01",
+        "travelDateEnd": "2079-06-06",
+        "mobileOnly": false
+    }
 }
 ```
