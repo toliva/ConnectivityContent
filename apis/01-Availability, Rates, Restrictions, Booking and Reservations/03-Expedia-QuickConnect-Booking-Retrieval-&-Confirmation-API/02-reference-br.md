@@ -47,10 +47,10 @@ insert picture here
 ### Booking Retrieval Request Schema Complete Definition
 _Legend: O = Optional_
 
-L|Data element|Data type|O|Description|EQC validations
--|------------|---------|-|-----------|---------------
-0|BookingRetrievalRQ|-||Root element| 
-0|@xmlns|URI||Namespace to which this message belongs. Also used to validate version of schema on which this message is based. Current namespace for BR messages is 
+L | Data element | Data type | O | Description | EQC validations
+- | ------------ | --------- | - | ----------- | ---------------
+0 | BookingRetrievalRQ | - | | Root element |  
+0 | @xmlns | URI |   | Namespace to which this message belongs. Also used to validate version of schema on which this message is based. Current namespace for BR messages is 
 
 http://www.expediaconnect.com/EQC/BR/2014/01 
 Previously supported version:
