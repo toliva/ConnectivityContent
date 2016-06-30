@@ -783,12 +783,21 @@ Status Code | Description | Response Model
 
 
 ### Modify an existing rate plan
+
+Expedia offers 2 ways to modify a rate plan. 
+
+Using the PUT verb, partners can perform a full overlay change of the rate plan resource. It means that all elements of a rate plan need to be provided, and any optional element not provided will be erased/removed.
+
+Using the PATCH verb, partners can perform a partial update of a rate plan. Expedia implemented the Merge-Patch RFC.
+
+#### Rate Plan Modify - Full Overlay (PUT)
+
 - Method: `PUT`
 - Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
-#### Parameters
+**Parameters**
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
@@ -797,7 +806,7 @@ roomTypeId | path | Room type resource ID | Yes | string
 ratePlanId | path | Rate plan resource ID | Yes | string  
 body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definitions/RatePlanDTO)  
 
-**Examples**
+**Example**
 ```
 {
   "resourceId": 205020307,
@@ -887,19 +896,24 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
 }
 ```
 
-#### Success Responses
+**Success Responses**
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
-### Partially update an existing rate plan
-This method allows you to update a rate plan by providing only the fields/values you want to change (while responding with the complete udpated rate plan upon a successful request). This saves you from having to first read the rate plan before updating it, grant it you know its Resource ID and all the fields/values you want to update. If you provide the complete rate plan data, this method essentially behaves just like the [update](#modify-an-existing-rate-plan) method.
+#### Rate Plan Modify - Partial Update (PATCH)
+
+Expedia chose the merge-patch method for partial update, as described in https://tools.ietf.org/html/rfc7396. 
+
+This method allows partners to update a rate plan by providing only the fields/values they need to change. This saves partners from having to first read the rate plan before updating it. If partners provide the complete rate plan data, this method essentially behaves just like the [update](#modify-an-existing-rate-plan) method.
+
+The response will always be the complete image of the rate plan after changes have been applied.
 
 **Important**
 
-Only the first level properties of the [rate plan](#/definitions/RatePlanDTO) can be partially provided, i.e. the ones that are **not** arrays or other complex types. Everything below has to be provided in full, just like the [update](#modify-an-existing-rate-plan) method.
+The PATCH logic only applies to first (top) level elements/objects of the [rate plan](#/definitions/RatePlanDTO). Partners can decide to include any number of these top level elements/objects, and any elements/objects not included will be ignored/untouched.  If a partner includes any array or complex object (such as cancel policy, additional guest amounts or distribution rules), these objects will need to be fully specified with all the desired elements/attributes/object changes, as they are treated as full overlay.
 
-Fields not provided in the input will remain unchanged. If you want to "nullify" or "blank" an existing property, you have to explicitly specify it in the JSON message. For array types, you need to provided a "null" or empty array value.
+First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provided a "null" or empty array value.
 
 Also note that all validation rules are applied on the complete udpated rate plan data. For instance, only providing a `travelDateStart` that is after the current `travelDateEnd` will yield the appropriate error response.
 
@@ -919,33 +933,11 @@ body | body | JSON message of partially updated rate plan | Yes | [RatePlan](#/d
 
 **Examples**
 
-Updating only the name:
-```
-{
-  "name": "My New Rate Plan Name"
-}
-```
-
 Updating both the name and the status:
 ```
 {
   "name": "My New Rate Plan Name",
   "status": "Inactive"
-}
-```
-
-Overriding the current list of value add inclusions to only include "Free Internet":
-```
-{
-  "valueAddInclusions": ["Free Internet"]
-}
-```
-
-Removing all value add inclusions and additional guest amounts:
-```
-{
-  "valueAddInclusions": [],
-  "additionalGuestAmounts": null
 }
 ```
 
@@ -987,25 +979,7 @@ Updating only the cancel policy:
 }
 ```
 
-Updating only the cancel policy (this would remove any exceptions since they are not specified):
-```
-{
-	"cancelPolicy": {
-		"defaultPenalties": [
-			{
-				"deadline": 0,
-				"perStayFee": "1stNightRoomAndTax",
-				"amount": 0
-			},
-			{
-				"deadline": 24,
-				"perStayFee": "None",
-				"amount": 0
-			}
-		]
-	}
-}
-```
+
 
 #### Success Responses
 Status Code | Description | Response Model
