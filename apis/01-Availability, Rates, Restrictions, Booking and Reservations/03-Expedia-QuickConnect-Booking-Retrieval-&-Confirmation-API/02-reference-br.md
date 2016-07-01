@@ -49,14 +49,9 @@ _Legend: O = Optional_
 
 L   | Data element | Data type | O   | Description | EQC validations
 --- | ------------ | --------- | --- | ----------- | ---------------
-0 | BookingRetrievalRQ | - | - | Root element |  
-0 | @xmlns | URI | - | Namespace to which this message belongs. Also used to validate version of schema on which this message is based. Current namespace for BR messages is 
-
-http://www.expediaconnect.com/EQC/BR/2014/01 
-Previously supported version:
-http://www.expediaconnect.com/EQC/BR/2007/02
-- Valid namespace, defined by at least one version of BR schema.
-1|Authentication|-||Information to validate and grant access to Expedia QuickConnect electronic interface – stored in next two attributes. 
+0 | BookingRetrievalRQ | - |  | Root element |  
+0 | @xmlns | URI |  | Namespace to which this message belongs. Also used to validate version of schema on which this message is based. Current namespace for BR messages is http://www.expediaconnect.com/EQC/BR/2014/01 Previously supported version: http://www.expediaconnect.com/EQC/BR/2007/02 | - Valid namespace, defined by at least one version of BR schema.
+1 | Authentication|-||Information to validate and grant access to Expedia QuickConnect electronic interface – stored in next two attributes. 
 Refer to section 4.2 for more details on how to obtain valid credentials.|
 1|@username|String||Username for Expedia QuickConnect login (case sensitive), provided by Expedia.|- Minimum length: 4
 - Maximum length: 30
