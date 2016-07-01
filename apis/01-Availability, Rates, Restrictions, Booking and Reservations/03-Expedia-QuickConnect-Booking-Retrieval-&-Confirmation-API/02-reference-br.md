@@ -213,8 +213,8 @@ When implementing this function, the EQC partner should be very careful to compa
 
 The Expedia Booking ID is the only unique key identifying an Expedia booking. The booking ID should be used by EQC partners to identify bookings when EQC partners retrieve booking modifications or cancellations.
 It is crucial that EQC partners save this Expedia Booking ID in their systems, and that they use this booking ID to identify existing bookings before trying to create new bookings. This information is also used as a key reference by the billing and reconciliation process.
----
 
+---
 ### Duplicate Bookings
 
 By default, EQC will only return bookings which have not been previously retrieved. However, partners can create date specifc or status specifc requests (by using the NbOfDaysInPast or Status elements) which may return previously retrieved / confirmed bookings.
@@ -245,7 +245,6 @@ As an example, a guest completes a new reservation, makes a modification, and th
 
 ---
 ### Mapping Information
-
 EQC partners will receive Expedia hotel, room type and rate plan IDs as part of the booking retrieval messages. Mapping information can be obtained via the PARR service described in section 8, or see Section 13 “Appendix B - Mapping property room and rate plan codes to Expedia IDs” for details.
 
 ---
