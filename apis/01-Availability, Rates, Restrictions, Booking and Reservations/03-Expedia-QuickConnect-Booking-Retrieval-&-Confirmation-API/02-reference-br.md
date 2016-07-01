@@ -52,7 +52,7 @@ L   | Data element | Data type | O   | Description | EQC validations
 0 | BookingRetrievalRQ | - |  | Root element |  
 0 | @xmlns | URI |  | Namespace to which this message belongs. Also used to validate version of schema on which this message is based. Current namespace for BR messages is http://www.expediaconnect.com/EQC/BR/2014/01 Previously supported version: http://www.expedpciaconnect.com/EQC/BR/2007/02 | - Valid namespace, defined by at least one version of BR schema.
 1 | Authentication|-||Information to validate and grant access to Expedia QuickConnect electronic interface – stored in next two attributes. Refer to section 4.2 for more details on how to obtain valid credentials.
-1|@username|String||Username for Expedia QuickConnect login (case sensitive), provided by Expedia.|- Minimum length: 4 - Maximum length: 30 - Username exists - User is allowed to access Expedia QuickConnect 
+1|@username|String||Username for Expedia QuickConnect login (case sensitive), provided by Expedia.|<ul><li>- Minimum length: 4 </li> <li>- Maximum length: 30</li><li> - Username exists - User is allowed to access Expedia QuickConnect </li></ul>
 1|@password|String||Password for Expedia QuickConnect login (case sensitive), provided by Expedia.|- Minimum length: 6 - Maximum length: 30 - Password fits with the username
 1|Hotel|-|*|Information about Hotel Note that if a hotel is not specified, Expedia will return all the bookings linked to the authentication username. If this user has access to more than one hotel, bookings for all the hotels to which the user has access will be returned.|
 1|@id|Integer||Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.|- Hotel ID in Expedia system is assigned to the credentials provided in Authentication node. - Positive integer of 14 digits or less.
@@ -77,978 +77,2480 @@ OR
 insert picture here
 
 ### Booking Retrieval Response Complete Schema Definition
-<table>
- <tr>
-   <td>
-   <p>L</p>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+   <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+   mso-border-alt:solid windowtext .5pt;background:#99CCFF;padding:0in 5.75pt 0in 5.75pt'>
+   <p class=Tableheading>L<o:p></o:p></p>
    </td>
-   <td>
-   <p>Data element</p>
+   <td width=123 valign=top style='width:92.05pt;border:solid windowtext 1.0pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+   solid windowtext .5pt;background:#99CCFF;padding:0in 5.75pt 0in 5.75pt'>
+   <p class=Tableheading>Data element<o:p></o:p></p>
    </td>
-   <td>
-   <p>Data type</p>
+   <td width=76 valign=top style='width:56.65pt;border:solid windowtext 1.0pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+   solid windowtext .5pt;background:#99CCFF;padding:0in .05in 0in .05in'>
+   <p class=Tableheading>Data type<o:p></o:p></p>
    </td>
-   <td>
-   <p>O</p>
+   <td width=23 valign=top style='width:17.1pt;border:solid windowtext 1.0pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+   solid windowtext .5pt;background:#99CCFF;padding:0in 5.75pt 0in 5.75pt'>
+   <p class=Tableheading>O<o:p></o:p></p>
    </td>
-   <td>
-   <p>Description</p>
+   <td width=385 valign=top style='width:288.7pt;border:solid windowtext 1.0pt;
+   border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+   solid windowtext .5pt;background:#99CCFF;padding:0in 5.75pt 0in 5.75pt'>
+   <p class=Tableheading>Description<o:p></o:p></p>
    </td>
   </tr>
- 
- <tr>
-  <td>
-  <p>0</p>
+ </thead>
+ <tr style='mso-yfti-irow:1'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>0<o:p></o:p></p>
   </td>
-  <td>
-  <p>BookingRetrievalRS</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>BookingRetrievalRS</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Root element</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Root element<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>0</p>
+ <tr style='mso-yfti-irow:2'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>0<o:p></o:p></p>
   </td>
-  <td>
-  <p>@namespace</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@namespace<o:p></o:p></p>
   </td>
-  <td>
-  <p>URI</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>URI<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Namespace to which this message belongs. Also used to
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Namespace to which this message belongs. Also used to
   validate version of schema on which this message is based. Current namespace
-  for BR messages is </p>
-  <p><a
-  href="http://www.expediaconnect.com/EQC/BR/2014/01">http://www.expediaconnect.com/EQC/BR/2014/01</a> </p>
-  <p>Previously supported version (returned in RS only if used
-  in RQ):</p>
-  <p><a href="http://www.expediaconnect.com/EQC/BR/2007/02">http://www.expediaconnect.com/EQC/BR/2007/02</a></p>
+  for BR messages is <o:p></o:p></p>
+  <p class=cellbody style='margin-left:27.0pt;text-align:justify'><a
+  href="http://www.expediaconnect.com/EQC/BR/2014/01"><span style='font-size:
+  8.0pt;mso-bidi-font-size:10.0pt'>http://www.expediaconnect.com/EQC/BR/2014/01</span></a><span
+  style='font-size:8.0pt;mso-bidi-font-size:10.0pt'> <o:p></o:p></span></p>
+  <p class=cellbody>Previously supported version (returned in RS only if used
+  in RQ):<o:p></o:p></p>
+  <p class=cellbody><a href="http://www.expediaconnect.com/EQC/BR/2007/02"><span
+  style='font-size:8.5pt;mso-bidi-font-family:Arial;mso-bidi-language:AR-SA'>http://www.expediaconnect.com/EQC/BR/2007/02</span></a><o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>1</p>
+ <tr style='mso-yfti-irow:3'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>1<o:p></o:p></p>
   </td>
-  <td>
-  <p>Bookings</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Bookings<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Container element for bookings. If this node appears alone,
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Container element for bookings. If this node appears alone,
   without any child, the request is successful but there are no bookings
-  matching request.</p>
-  <p> If this element is
-  present, "Error" element cannot be present.</p>
+  matching request.<o:p></o:p></p>
+  <p class=cellbody><span style='mso-spacerun:yes'> </span>If this element is
+  present, “Error” element cannot be present.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>1</p>
+ <tr style='mso-yfti-irow:4'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>1<o:p></o:p></p>
   </td>
-  <td>
-  <p>Error</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Error<o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Description of error that occurred during retrieval.
-  Potential causes:</p>
-  <p>- schema validation (invalid XML, invalid fields according
-  to schema or other)</p>
-  <p>- invalid parameters specified by the EQC partner
-  (username, password, booking ID)</p>
-  <p>- error due to Expedia QuickConnect.</p>
-  <p>Minimum length: 0</p>
-  <p>Maximum length: 1024</p>
-  <p>If this element is present, the element "Booking" cannot be
-  present.</p>
-  <p>All error scenarios are described in section 10
-  "Troubleshooting".</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Description of error that occurred during retrieval.
+  Potential causes:<o:p></o:p></p>
+  <p class=cellbody>- schema validation (invalid XML, invalid fields according
+  to schema or other)<o:p></o:p></p>
+  <p class=cellbody>- invalid parameters specified by the EQC partner
+  (username, password, booking ID)<o:p></o:p></p>
+  <p class=cellbody>- error due to Expedia <span class=SpellE>QuickConnect</span>.<o:p></o:p></p>
+  <p class=cellbody>Minimum length: 0<o:p></o:p></p>
+  <p class=cellbody>Maximum length: 1024<o:p></o:p></p>
+  <p class=cellbody>If this element is present, the element “Booking” cannot be
+  present.<o:p></o:p></p>
+  <p class=cellbody>All error scenarios are described in section <!--[if supportFields]><span
+  style='mso-element:field-begin'></span><span
+  style='mso-spacerun:yes'> </span>REF _Ref303773127 \r \h <span
+  style='mso-element:field-separator'></span><![endif]-->10<!--[if gte mso 9]><xml>
+   <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003300300033003700370033003100320037000000</w:data>
+  </xml><![endif]--><!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->
+  “Troubleshooting”.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>1</p>
+ <tr style='mso-yfti-irow:5'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>1<o:p></o:p></p>
   </td>
-  <td>
-  <p>@code</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@code<o:p></o:p></p>
   </td>
-  <td>
-  <p>Integer</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Code corresponding to the type of error detected.</p>
-  <p>&nbsp;</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Code corresponding to the type of error detected.<o:p></o:p></p>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>2</p>
+ <tr style='mso-yfti-irow:6'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2<o:p></o:p></p>
   </td>
-  <td>
-  <p>Booking</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Booking<o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Each booking occurrence represents an Expedia Inc. Point of
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Each booking occurrence represents an Expedia Inc. Point of
   Sale booking transaction. If more than one booking is returned, they will be
-  sorted by creation date, from the more recent to the oldest.</p>
+  sorted by creation date, from the more recent to the oldest.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>2</p>
+ <tr style='mso-yfti-irow:7'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2<o:p></o:p></p>
   </td>
-  <td>
-  <p>@id</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@id<o:p></o:p></p>
   </td>
-  <td>
-  <p>Integer</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Booking ID generated by Expedia. Uniquely identifies a
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Booking ID generated by Expedia. Uniquely identifies a
   booking. Should be used to link modifications and cancellations to initial
-  bookings in hotel system - must be kept in hotel system.</p>
-  <p>Positive integer of 14 digits or less</p>
+  bookings in hotel system - must be kept in hotel system.<o:p></o:p></p>
+  <p class=cellbody>Positive integer of 14 digits or less<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>2</p>
+ <tr style='mso-yfti-irow:8'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2<o:p></o:p></p>
   </td>
-  <td>
-  <p>@type</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@type<o:p></o:p></p>
   </td>
-  <td>
-  <p>Enum</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>Enum</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Type of booking record. Possible values are:
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Type of booking record. Possible values are:
   &quot;Book&quot; for new reservations, &quot;Modify&quot; for modified bookings
-  and &quot;Cancel&quot; for cancelled bookings.</p>
+  and &quot;Cancel&quot; for cancelled bookings.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>2</p>
+ <tr style='mso-yfti-irow:9'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2<o:p></o:p></p>
   </td>
-  <td>
-  <p>@createDateTime</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>createDateTime</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>DateTime</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>DateTime</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Date and time when this booking transaction was made on
-  Expedia, including time zone information. </p>
-  <p>Timestamp as defined in ISO 8601 format. Will always be in
-  the following format: YYYY-MM-DDThh:mm:ssZ
-   (time is UTC). </p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Date and time when this booking transaction was made on
+  Expedia, including time zone information. <o:p></o:p></p>
+  <p class=cellbody>Timestamp as defined in ISO 8601 format. Will always be in
+  the following format: <span class=SpellE>YYYY-MM-DDThh:<span class=GramE>mm:ssZ</span></span>
+  <span style='mso-spacerun:yes'> </span>(time is UTC). <o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>2</p>
+ <tr style='mso-yfti-irow:10'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2<o:p></o:p></p>
   </td>
-  <td>
-  <p>@source</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@source<o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Booking source (Expedia Inc brand
-  on which the booking was made), namely:</p>
-  <table>
-   <tr>
-    <td>
-    <p><b>Expedia Collect
-    Bookings</b></p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Booking source (Expedia <span class=SpellE>Inc</span> brand
+  on which the booking was made), namely:<o:p></o:p></p>
+  <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+   style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+   mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody><b style='mso-bidi-font-weight:normal'>Expedia Collect
+    Bookings<o:p></o:p></b></p>
     </td>
-    <td>
-    <p><b>Hotel Collect
-    Bookings</b></p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>Hotels.com</p>
-    </td>
-    <td>
-    <p>A-Hotels.com</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>Expedia</p>
-    </td>
-    <td>
-    <p>A-Expedia</p>
+    <td width=184 valign=top style='width:138.25pt;border:solid windowtext 1.0pt;
+    border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody><b style='mso-bidi-font-weight:normal'>Hotel Collect
+    Bookings<o:p></o:p></b></p>
     </td>
    </tr>
-   <tr>
-    <td>
-    <p>Expedia Affiliate Network</p>
+   <tr style='mso-yfti-irow:1'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>Hotels.com<o:p></o:p></p>
     </td>
-    <td>
-    <p>A-Expedia Affiliate Network</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>Venere</p>
-    </td>
-    <td>
-    <p>A-Venere</p>
+    <td width=184 valign=top style='width:138.25pt;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>A-Hotels.com<o:p></o:p></p>
     </td>
    </tr>
-   <tr>
-    <td>
-    <p>Venere Affiliate</p>
+   <tr style='mso-yfti-irow:2'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>Expedia<o:p></o:p></p>
     </td>
-    <td>
-    <p>A-Venere Affiliate</p>
+    <td width=184 valign=top style='width:138.25pt;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>A-Expedia<o:p></o:p></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>Expedia Affiliate Network<o:p></o:p></p>
+    </td>
+    <td width=184 valign=top style='width:138.25pt;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>A-Expedia Affiliate Network<o:p></o:p></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody><span class=SpellE>Venere</span><o:p></o:p></p>
+    </td>
+    <td width=184 valign=top style='width:138.25pt;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>A-<span class=SpellE>Venere</span><o:p></o:p></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+    <td width=184 valign=top style='width:138.2pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:
+    solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody><span class=SpellE>Venere</span> Affiliate<o:p></o:p></p>
+    </td>
+    <td width=184 valign=top style='width:138.25pt;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+    mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=cellbody>A-<span class=SpellE>Venere</span> Affiliate<o:p></o:p></p>
     </td>
    </tr>
   </table>
-  <p>&nbsp;</p>
-  <p>Values for
-  the booking source may grow or change in the future.</p>
-  <p>It is required for the EQC partner to pass on
-  notifications from each of these booking sources to
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  <p class=cellbody><span lang=EN-CA style='mso-ansi-language:EN-CA'>Values for
+  the booking source may grow or change in the future.<o:p></o:p></span></p>
+  <p class=body style='margin-left:0in'><span lang=EN-CA style='font-size:9.0pt;
+  mso-ansi-language:EN-CA'>It is required for the EQC partner to pass on
+  notifications from each of these booking sources </span><span lang=EN-CA
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:EN-CA'>to
   the hotel. Note that this value is also included in notifications that expire
-  and fall back to fax or email.</p>
+  and fall back to fax or email.</span><span lang=EN-CA style='mso-ansi-language:
+  EN-CA'><o:p></o:p></span></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>&nbsp;</p>
+ <tr style='mso-yfti-irow:11'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>@status</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@status<o:p></o:p></p>
   </td>
-  <td>
-  <p>Enum</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>Enum</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Only available in version 2014/01.</p>
-  <p>Status of the booking transaction at the time of the
-  retrieval request. Possible values are:</p>
-  <p>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  pending: message is retrieved for the first
-  time.</p>
-  <p>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  retrieved: message was already retrieved at
-  least once but not confirmed yet</p>
-  <p>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  confirmed: message was already retrieved and
-  confirmed via BC</p>
-  <p>This attribute is listed as optional due to only being
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Only available in version 2014/01.<o:p></o:p></p>
+  <p class=cellbody>Status of the booking transaction at the time of the
+  retrieval request. Possible values are:<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+  style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+  style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>pending: message is retrieved for the first
+  time.<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+  style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+  style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>retrieved: message was already retrieved at
+  least once but not confirmed yet<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+  style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+  style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>confirmed: message was already retrieved and
+  confirmed via BC<o:p></o:p></p>
+  <p class=cellbody>This attribute is listed as optional due to only being
   returned through the 2014/01 namespace, where it will always be returned. For
   requests made with the previous namespace, this attribute will never be
-  returned.</p>
+  returned.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>&nbsp;</p>
+ <tr style='mso-yfti-irow:12'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>@confirmNumber</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>confirmNumber</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Only available in version 2014/01.</p>
-  <p>Partner confirmation number for this booking. </p>
-  <p>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  For new reservations: this would only be
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Only available in version 2014/01.<o:p></o:p></p>
+  <p class=cellbody>Partner confirmation number for this booking. <o:p></o:p></p>
+  <p class=cellbody style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+  style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+  style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>For new reservations: this would only be
   available with reservations in the confirmed status. Until a reservation is
-  confirmed, this attribute is not returned.</p>
-  <p>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  For modifications and cancellations in the
+  confirmed, this attribute is not returned.<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2'><![if !supportLists]><span
+  style='mso-fareast-font-family:Arial;mso-bidi-font-family:Arial'><span
+  style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>For modifications and cancellations in the
   pending or retrieved state, this attribute will contain the confirmation
-  number supplied for theinitial reservation message.
+  number supplied for <span class=SpellE>theinitial</span> reservation message.
   For modification or cancellations in the confirmed state, it will contain the
-  newest confirmation number received.</p>
+  newest confirmation number received.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>3</p>
+ <tr style='mso-yfti-irow:13'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
   </td>
-  <td>
-  <p>Hotel</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Hotel<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Information about Hotel</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>3</p>
-  </td>
-  <td>
-  <p>@id</p>
-  </td>
-  <td>
-  <p>Integer</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>Hotel ID defined by Expedia and uniquely identifying a
-  property in Expedia system.</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Information about Hotel<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>3</p>
+ <tr style='mso-yfti-irow:14'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
   </td>
-  <td>
-  <p>RoomStay</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@id<o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Details on the room stay including Guest Counts, Time Span
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Hotel ID defined by Expedia and uniquely identifying a
+  property in Expedia system.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>RoomStay</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Details on the room stay including Guest Counts, Time Span
   of the stay, daily charge for each day of the stay and the total charge for
-  the room stay including taxes.</p>
+  the room stay including taxes.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>3</p>
+ <tr style='mso-yfti-irow:16'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
   </td>
-  <td>
-  <p>@roomTypeID</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>roomTypeID</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Room type ID defined by Expedia and mapped by hotel in its
-  system.</p>
-  <p>Minimum length: 1</p>
-  <p>Maximum length: 50</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>3</p>
-  </td>
-  <td>
-  <p>@ratePlanID</p>
-  </td>
-  <td>
-  <p>String</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>Rate Plan ID defined by Expedia and mapped by the hotel in
-  its system.</p>
-  <p>Minimum length: 1</p>
-  <p>Maximum length: 50</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Room type ID defined by Expedia and mapped by hotel in its
+  system.<o:p></o:p></p>
+  <p class=cellbody>Minimum length: 1<o:p></o:p></p>
+  <p class=cellbody>Maximum length: 50<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:17'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
   </td>
-  <td>
-  <p>StayDate</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>ratePlanID</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>@arrival</p>
-  </td>
-  <td>
-  <p>Date</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>Arrival date of the customer (check in date)</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>@departure</p>
-  </td>
-  <td>
-  <p>Date</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>Departure date of the customer (check out date)</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Rate Plan ID defined by Expedia and mapped by the hotel in
+  its system.<o:p></o:p></p>
+  <p class=cellbody>Minimum length: 1<o:p></o:p></p>
+  <p class=cellbody>Maximum length: 50<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:18'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>GuestCount</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>StayDate</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>@adult</p>
-  </td>
-  <td>
-  <p>Integer</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>Number of adults in the room</p>
-  <p>Minimum value: 0</p>
-  <p> Maximum value: 28</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:19'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@child</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@arrival<o:p></o:p></p>
   </td>
-  <td>
-  <p>Integer</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Date<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Number of children in room (including infants). If no
-  children, element does not appear in the message.</p>
-  <p>Minimum value: 0</p>
-  <p>Maximum value: 28</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Arrival date of the customer (check in date)<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:20'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>Child</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@departure<o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Date<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>0 to 6 occurrences of this container.</p>
-  <p>This element will appear to hotels specifically enabled to
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Departure date of the customer (check out date)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>GuestCount</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@adult<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Number of adults in the room<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
+  <p class=cellbody><span style='mso-spacerun:yes'> </span>Maximum value: 28<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@child<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Number of children in room (including infants). If no
+  children, element does not appear in the message.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
+  <p class=cellbody>Maximum value: 28<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>5<o:p></o:p></span></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>Child<o:p></o:p></span></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>-<o:p></o:p></span></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>*<o:p></o:p></span></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>0 to 6 occurrences of this container.<o:p></o:p></p>
+  <p class=cellbody>This element will appear to hotels specifically enabled to
   see it. If you are not receiving this and are interested in getting the
   information, please contact <a href="mailto:eqchelp@expedia.com">rollout@expedia.com</a>
-  </p>
+  <o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:25'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>5<o:p></o:p></span></p>
   </td>
-  <td>
-  <p>@age</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>@age<o:p></o:p></span></p>
   </td>
-  <td>
-  <p>Integer</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>Integer<o:p></o:p></span></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'><o:p>&nbsp;</o:p></span></p>
   </td>
-  <td>
-  <p>Age of each
-  individual child sharing the room.</p>
-  <p>Minimum value: 0</p>
-  <p> Maximum value: 18</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>PerDayRates</p>
-  </td>
-  <td>
-  <p>-</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>This element appears once per day of stay and indicates the
-  rate for each day.</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'>Age of each
+  individual child sharing the room.<o:p></o:p></span></p>
+  <p class=cellbody><span style='mso-bidi-font-family:Arial'>Minimum value: 0<o:p></o:p></span></p>
+  <p class=TableEntry><span style='font-family:"Arial",sans-serif'><span
+  style='mso-spacerun:yes'> </span>Maximum value: 18<o:p></o:p></span></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:26'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@currency</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>PerDayRates</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>3-letter currency code assigned to property on Expedia Partner
-  Central. Based on ISO 4217 specification.</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>5</p>
-  </td>
-  <td>
-  <p>PerDayRate</p>
-  </td>
-  <td>
-  <p>-</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>1 to 28 occurrences of this container.</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>This element appears once per day of stay and indicates the
+  rate for each day.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:27'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@stayDate</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@currency<o:p></o:p></p>
   </td>
-  <td>
-  <p>Date</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Date to which the room rate applies</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3-letter currency code assigned to property on Expedia Partner
+  Central. Based on ISO 4217 specification.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:28'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
   </td>
-  <td>
-  <p>@baseRate</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>PerDayRate</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>Decimal</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Base rate for one day of stay, including promotional
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>1 to 28 occurrences of this container.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>stayDate</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Date<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Date to which the room rate applies<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>baseRate</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Decimal<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Base rate for one day of stay, including promotional
   discounts if any. Expedia always return net rate for Expedia Collect bookings,
-  even when the propertis managing LAR.</p>
-  <p>Expedia will return sell rate for Hotel Collect bookings,
-  even when the property is managing net rate.</p>
-  <p>Minimum value: 0</p>
+  even when the <span class=SpellE>propertis</span> managing LAR.<o:p></o:p></p>
+  <p class=cellbody>Expedia will return sell rate for Hotel Collect bookings,
+  even when the property is managing net rate.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:31'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
   </td>
-  <td>
-  <p>@extraPersonFees</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>extraPersonFees</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>Decimal</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Decimal<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Extra person fees included in the total amount, if any.</p>
-  <p>Minimum value: 0</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>5</p>
-  </td>
-  <td>
-  <p>@hotelServiceFees</p>
-  </td>
-  <td>
-  <p>Decimal</p>
-  </td>
-  <td>
-  <p>*</p>
-  </td>
-  <td>
-  <p>Hotel Service Fees / Service charges included in the total amount,
-  if any.</p>
-  <p>Minimum value: 0</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Extra person fees included in the total amount, if any.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:32'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
   </td>
-  <td>
-  <p>@promoName</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>hotelServiceFees</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Decimal<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Name of promotion applied to base rate. Promotions and
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Hotel Service Fees / Service charges included in the total amount,
+  if any.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:33'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>promoName</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Name of promotion applied to base rate. Promotions and
   their notification codes are set up by the Expedia Market Manager for the
-  property.</p>
-  <p>If property uses Expedia Flexible Rate, the string will
-  begin with "EFR*" when an Expedia Flexible Rate is applied to this stay date.</p>
-  <p>Promotions may also be referred to as DRRs, or Dynamic Rate
-  Rules.</p>
-  <p>String length will not exceed 80 characters.</p>
+  property.<o:p></o:p></p>
+  <p class=cellbody>If property uses Expedia Flexible Rate, the string will
+  begin with “EFR*” when an Expedia Flexible Rate is applied to this stay date.<o:p></o:p></p>
+  <p class=cellbody>Promotions may also be referred to as DRRs, or Dynamic Rate
+  Rules.<o:p></o:p></p>
+  <p class=cellbody>String length will not exceed 80 characters.<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:34'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>Total</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Total<o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Container element</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Container element<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:35'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@amountAfterTaxes</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 2.9pt 0in 2.9pt'>
+  <p class=cellbody>@<span class=SpellE>amountAfterTaxes</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>Decimal</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Decimal<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Total amount inclusive of taxes. It is the sum of daily rates
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Total amount inclusive of taxes. It is the sum of daily rates
   for each day of stay, extra person fees if any, hotel service fees if any,
   promotional discounts if any and taxes if applicable. Expedia always return net
-  rates for Expedia Collect bookings, even when properties are managing LAR.</p>
-  <p>Minimum value: 0</p>
+  rates for Expedia Collect bookings, even when properties are managing LAR.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:36'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@amountOfTaxes</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>amountOfTaxes</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>Decimal</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Decimal<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
   </td>
-  <td>
-  <p>Amount of taxes included in the @amountAfterTaxes.</p>
-  <p>Minimum value: 0</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>@currency</p>
-  </td>
-  <td>
-  <p>String</p>
-  </td>
-  <td>
-  <p>&nbsp;</p>
-  </td>
-  <td>
-  <p>3-letter currency code assigned to property on Expedia Partner
-  Central (per ISO 4217 specification)</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Amount of taxes included in the @<span class=SpellE>amountAfterTaxes</span>.<o:p></o:p></p>
+  <p class=cellbody>Minimum value: 0<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:37'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>PaymentCard</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@currency<o:p></o:p></p>
   </td>
-  <td>
-  <p>-</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>*</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Applicable to booking paid by credit card. Contains details
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3-letter currency code assigned to property on Expedia Partner
+  Central (per ISO 4217 specification)<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:38'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>PaymentCard</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Applicable to booking paid by credit card. Contains details
   of the credit card, including card type, card number, expiration date and
-  card holder name and address.</p>
-  <p>For Expedia Collect Booking, this node will contain the
-  Expedia Virtual Card (EVC) information. </p>
-  <p>For Hotel Collect booking, this node will contain the
-  customer credit card information. </p>
+  card holder name and address.<o:p></o:p></p>
+  <p class=cellbody>For Expedia Collect Booking, this node will contain the
+  Expedia Virtual Card (EVC) information. <o:p></o:p></p>
+  <p class=cellbody>For Hotel Collect booking, this node will contain the
+  customer credit card information. <o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:39'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@cardCode</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>cardCode</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>2-letter code for the credit card type</p>
-  <table
-  >
-   <tr>
-    <td>
-    <p>VI</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2-letter code for the credit card type<o:p></o:p></p>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=153
+   style='width:114.75pt;margin-left:1.2pt;border-collapse:collapse;mso-padding-alt:
+   0in 0in 0in 0in'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>VI<o:p></o:p></span></p>
     </td>
-    <td>
-    <p>Visa</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>MC</p>
-    </td>
-    <td>
-    <p>MasterCard</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>AX</p>
-    </td>
-    <td>
-    <p>American Express</p>
+    <td width=115 valign=top style='width:1.2in;border:solid windowtext 1.0pt;
+    border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>Visa<o:p></o:p></span></p>
     </td>
    </tr>
-   <tr>
-    <td>
-    <p>DS</p>
+   <tr style='mso-yfti-irow:1'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>MC<o:p></o:p></span></p>
     </td>
-    <td>
-    <p>Discover card</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>CA</p>
-    </td>
-    <td>
-    <p>MasterCard</p>
-    </td>
-   </tr>
-   <tr>
-    <td>
-    <p>JC</p>
-    </td>
-    <td>
-    <p>Japan Credit Bureau</p>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>MasterCard<o:p></o:p></span></p>
     </td>
    </tr>
-   <tr>
-    <td>
-    <p>DN</p>
+   <tr style='mso-yfti-irow:2'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>AX<o:p></o:p></span></p>
     </td>
-    <td>
-    <p>Diners Club</p>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>American Express<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>DS<o:p></o:p></span></p>
+    </td>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>Discover card<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>CA<o:p></o:p></span></p>
+    </td>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    mso-border-top-alt:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>MasterCard<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>JC<o:p></o:p></span></p>
+    </td>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>Japan Credit Bureau<o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+    <td width=38 valign=top style='width:28.35pt;border:solid windowtext 1.0pt;
+    border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>DN<o:p></o:p></span></p>
+    </td>
+    <td width=115 valign=top style='width:1.2in;border-top:none;border-left:
+    none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+    padding:0in 5.4pt 0in 5.4pt'>
+    <p class=bodyCharCharCharCharChar align=left style='margin-left:0in;
+    text-align:left'><span lang=EN-CA style='font-size:8.0pt;mso-ansi-language:
+    EN-CA'>Diners Club<o:p></o:p></span></p>
     </td>
    </tr>
   </table>
-  <p></p>
+  <p class=cellbody><o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:40'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
   </td>
-  <td>
-  <p>@cardNumber</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>cardNumber</span><o:p></o:p></p>
   </td>
-  <td>
-  <p>String</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
   </td>
-  <td>
-  <p>Credit card number</p>
-  <p>String length 1-19</p>
-  </td>
- </tr>
- <tr>
-  <td>
-  <p>4</p>
-  </td>
-  <td>
-  <p>@seriesCode</p>
-  </td>
-  <td>
-  <p>String</p>
-  </td>
-  <td>
-  <p>*</p>
-  </td>
-  <td>
-  <p>CVV/CSV code.</p>
-  <p>String length 1-8</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Credit card number<o:p></o:p></p>
+  <p class=cellbody>String length 1-19<o:p></o:p></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>4</p>
+ <tr style='mso-yfti-irow:41'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>4<o:p></o:p></span></p>
   </td>
-  <td>
-  <p>@expireDate</p>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>@<span class=SpellE>seriesCode</span><o:p></o:p></span></p>
   </td>
-  <td>
-  <p>MMYY</p>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>String<o:p></o:p></span></p>
   </td>
-  <td>
-  <p>&nbsp;</p>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<span style='mso-bidi-font-size:9.0pt'><o:p></o:p></span></p>
   </td>
-  <td>
-  <p>Expiration date of
-  the credit card.</p>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>CVV/CSV code.<o:p></o:p></span></p>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>String length 1-8<o:p></o:p></span></p>
   </td>
  </tr>
- <tr>
-  <td>
-  <p>5</p>
+ <tr style='mso-yfti-irow:42'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>4<o:p></o:p></span></p>
   </td>
-  
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>@<span class=SpellE>expireDate</span><o:p></o:p></span></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>MMYY<o:p></o:p></span></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span style='mso-bidi-font-size:9.0pt'>Expiration date of
+  the credit card.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:43'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>CardHolder</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Card holder name and billing address<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:44'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@name<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Cardholder name<o:p></o:p></p>
+  <p class=cellbody>String length 1-64<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:45'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@address<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Street number and street name<o:p></o:p></p>
+  <p class=cellbody>String length 1-64<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:46'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@city<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>City name<o:p></o:p></p>
+  <p class=cellbody>String length 1-64<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:47'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>stateProv</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>State or province name<o:p></o:p></p>
+  <p class=cellbody>String length 1-64<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:48'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@country<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>2 letter country code, ISO 3166 code list.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:49'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>5<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>postalCode</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Postal or zip code<o:p></o:p></p>
+  <p class=cellbody>String length 1-16<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:50'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>PrimaryGuest</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Container<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:51'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Name<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Container<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:52'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>givenName</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>First Name of the main customer (guest) for this room
+  booking.<o:p></o:p></p>
+  <p class=cellbody>String length does not exceed 60 characters<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:53'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>middleName</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Middle Name of the main customer (guest) for this room
+  booking, if any.<o:p></o:p></p>
+  <p class=cellbody>String length does not exceed 60 characters<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:54'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@surname<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Surname (last name) of the main customer (guest) for this
+  room booking.<o:p></o:p></p>
+  <p class=cellbody>String length does not exceed 60 characters<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:55'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Phone<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Container for phone number of main customer (guest) for
+  this booking, when included.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:56'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>countryCode</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Phone number country code<o:p></o:p></p>
+  <p class=cellbody>Max size &lt; 1,000<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:57'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@<span class=SpellE>cityAreaCode</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Phone number city area code<o:p></o:p></p>
+  <p class=cellbody>Max size &lt; 100,000,000<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:58'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@number<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Phone number of the guest, if available<o:p></o:p></p>
+  <p class=cellbody>Max length: 32<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:59'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@extension<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Integer<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Phone number extension<o:p></o:p></p>
+  <p class=cellbody>Max size &lt; 1,000,000<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:60'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>4<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Email<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Contains customer email address.<o:p></o:p></p>
+  <p class=cellbody>This information is not included by default. Hotels that need
+  to provide special check-in instructions to their guests should discuss enabling
+  email address with their Market Manager.<o:p></o:p></p>
+  <p class=cellbody>Max length: 128 <o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:61'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>RewardProgram</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>-<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Contains reward program code and customer account ID for
+  the program. Customer can specify up to two programs at reservation.<o:p></o:p></p>
+  <p class=cellbody>0 to 2 occurrences of this element in the message.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:62'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@code<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>Enum</span><o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Reward program code, as defined by Expedia.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:63'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@number<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Customer's account no - unique ID from reward program card
+  number<o:p></o:p></p>
+  <p class=cellbody>String length does not exceed 32 characters<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:64'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>SpecialRequest</span><o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>String<o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>*<o:p></o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Special Request made by the customer. Can have up to 6
+  different special requests, and each one can be one of 6 types:<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Bedding type<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Smoking/Non-smoking<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Multi-room booking<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Free text (guest comments entered at booking
+  on Expedia)<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Payment instructions<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>Value Add Promotions<o:p></o:p></p>
+  <p class=cellbody>Types are identified by code attribute on this element.<o:p></o:p></p>
+  <p class=cellbody>String length does not exceed 256 characters.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:65;mso-yfti-lastrow:yes'>
+  <td width=24 valign=top style='width:.25in;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>3<o:p></o:p></p>
+  </td>
+  <td width=123 valign=top style='width:92.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>@code<o:p></o:p></p>
+  </td>
+  <td width=76 valign=top style='width:56.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><span class=SpellE>Enum</span><o:p></o:p></p>
+  </td>
+  <td width=23 valign=top style='width:17.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=385 valign=top style='width:288.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.75pt 0in 5.75pt'>
+  <p class=cellbody>Expedia-defined code associated to special request: <o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(1.x) bedding preferences w/ different codes
+  for beddings<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(2) smoking/no smoking <o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(3) indication of multi room bookings<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(4) free text<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(5) payment instructions<o:p></o:p></p>
+  <p class=cellbody style='margin-left:.25in;text-indent:-.25in;mso-list:l0 level1 lfo1;
+  tab-stops:list .25in'><![if !supportLists]><span style='font-family:Symbol;
+  mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+  style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span></span><![endif]>(6) Value Add Promotions<o:p></o:p></p>
+  <p class=cellbody>Please visit the “<!--[if supportFields]><span
+  style='mso-element:field-begin'></span> REF _Ref234135572 \h<span
+  style='mso-spacerun:yes'>  </span>\* MERGEFORMAT <span style='mso-element:
+  field-separator'></span><![endif]--><o:p></o:p></p>
+  <p class=cellbody>Code definition<!--[if gte mso 9]><xml>
+   <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003200330034003100330035003500370032000000</w:data>
+  </xml><![endif]--><!--[if supportFields]><span style='mso-element:field-end'></span><![endif]-->”
+  section for a complete list of codes.<o:p></o:p></p>
+  </td>
+ </tr>
 </table>
 
 
