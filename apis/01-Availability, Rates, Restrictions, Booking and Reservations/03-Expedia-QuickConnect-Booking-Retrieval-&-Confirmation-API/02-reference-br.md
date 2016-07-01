@@ -5,8 +5,6 @@
 Expedia provides a program interface for EQC partners to retrieve bookings made on any Expedia Inc. Points of sale. EQC partners can retrieve pending bookings (reservations, modifications, or cancellations) as frequently as they want.
 If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by fax or email
 
-
----
 ### Supported Features for Booking Retrieval
 
 The following list is an overview of features that are are included and not included in the booking retrieval API
@@ -39,13 +37,14 @@ Booking transactions (reservations, modifications, cancellations) are always mad
 3. The “pending modification 2” will be returned with the 3rd booking retrieval request
 
 Bookings that revert to fax or email cannot have their latest information requested through Expedia QuickConnect anymore.
----
+
+
 ### Booking Retrieval Request Schema Overview
 
 ![BR RQ XML MESSAGE](/images/BR-RQ-Schema-Diagram.jpg)
----
+
 ### Booking Retrieval Request Complete Schema Definition
-_Legend: O = Optional_
+_Legend: L= Level; O = Optional_
 
 L   | Data element | Data type | O   | Description | EQC validations
 --- | ------------ | --------- | --- | ----------- | ---------------
@@ -71,11 +70,12 @@ The booking retrieval response message (BR RS) contains:
 OR
 
 * An error message
----
+
+
 ### Booking Retrieval Response Schema Overview
 
-![BR RS XML MESSAGE](/images/BR-RS-Schema-Diagram.jpg)
----
+![BR RS XML MESSAGE](/images/BR-RS-Schema-Diagram.png)
+
 ### Booking Retrieval Response Complete Schema Definition
  L |Data element|Data type| O |Description
 ---|------------|---------|---|---------
@@ -89,8 +89,8 @@ OR
 2|@type|Enum||Type of booking record. Possible values are: "Book" for new reservations, "Modify" for modified bookings and "Cancel" for cancelled bookings.
 2|@createDateTime|DateTime||Date and time when this booking transaction was made on Expedia, including time zone information. <p>Timestamp as defined in ISO 8601 format. Will always be in the following format: YYYY-MM-DDThh:mm:ssZ  (time is UTC). </p>
 2|@source|String||Booking source (Expedia Inc brand on which the booking was made), namely:<p><table class=yodawg><tr><td><strong>Expedia Collect Bookings</strong></td><td><strong>Hotel Collect Bookings</strong></td></tr><tr><td>Hotels.com</td><td>A-Hotels.com</td></tr><tr><td>Expedia</td><td>A-Expedia</td></tr><tr><td>Expedia Affiliate Network</td><td>A-Expedia Affiliate Network</td></tr><tr><td>Venere</td><td>A-Venere</td></tr><tr><td>Venere Affiliate</td><td>A-Venere Affiliate</td></tr> </table></p><p>Values for the booking source may grow or change in the future.</p><p>It is required for the EQC partner to pass on notifications from each of these booking sources to the hotel. Note that this value is also included in notifications that expire and fall back to fax or email.</p>
-| |@status|Enum|*|<p>Only available in version 2014/01.</p><p>Status of the booking transaction at the time of the retrieval request. Possible values are:<ul><li>pending: message is retrieved for the first time.</li><li>retrieved: message was already retrieved at least once but not confirmed yet</li><li>confirmed: message was already retrieved and confirmed via BC</li></ul><p>This attribute is listed as optional due to only being returned through the 2014/01 namespace, where it will always be returned. For requests made with the previous namespace, this attribute will never be returned.</p>
-| |@confirmNumber|String|*|<p>Only available in version 2014/01.</p><p>Partner confirmation number for this booking.</p><ul><li>For new reservations: this would only be available with reservations in the confirmed status. Until a reservation is confirmed, this attribute is not returned.</li><li>For modifications and cancellations in the pending or retrieved state, this attribute will contain the confirmation number supplied for the initial reservation message. For modification or cancellations in the confirmed state, it will contain the newest confirmation number received.</li></ul>
+ |@status|Enum|*|<p>Only available in version 2014/01.</p><p>Status of the booking transaction at the time of the retrieval request. Possible values are:<ul><li>pending: message is retrieved for the first time.</li><li>retrieved: message was already retrieved at least once but not confirmed yet</li><li>confirmed: message was already retrieved and confirmed via BC</li></ul><p>This attribute is listed as optional due to only being returned through the 2014/01 namespace, where it will always be returned. For requests made with the previous namespace, this attribute will never be returned.</p>
+  |@confirmNumber|String|*|<p>Only available in version 2014/01.</p><p>Partner confirmation number for this booking.</p><ul><li>For new reservations: this would only be available with reservations in the confirmed status. Until a reservation is confirmed, this attribute is not returned.</li><li>For modifications and cancellations in the pending or retrieved state, this attribute will contain the confirmation number supplied for the initial reservation message. For modification or cancellations in the confirmed state, it will contain the newest confirmation number received.</li></ul>
 3|Hotel|||Information about Hotel
 3|@id|Integer||Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.
 3|RoomStay|-||Details on the room stay including Guest Counts, Time Span of the stay, daily charge for each day of the stay and the total charge for the room stay including taxes.
@@ -144,7 +144,7 @@ OR
 3|@number|String||Customer's account no - unique ID from reward program card number <p>String length does not exceed 32 characters</p>
 3|SpecialRequest|String|*|Special Request made by the customer. Can have up to 6 different special requests, and each one can be one of 6 types:<ul><li>Bedding type</li><li>Smoking/Non-smoking</li><li>Multi-room booking</li><li>Free text (guest comments entered at booking on Expedia)</li><li>Payment instructions</li><li>Value Add Promotions</li></ul><p>Types are identified by code attribute on this element.</p><p>String length does not exceed 256 characters.</p>
 3|@code|Enum||Expedia-defined code associated to special request: <ul><li>(1.x) bedding preferences w/ different codes for beddings</li><li>(2) smoking/no smoking </li><li>(3) indication of multi room bookings</li><li>(4) free text</li><li>(5) payment instructions</li><li>(6) Value Add Promotions</li></ul><p>Please visit the “Code definition” section for a complete list of codes.</p>
----
+
 ### Booking Retrieval Response Types
 
 A booking made on Expedia can evolve over time, as many times as needed, before the customer checks in to the hotel, or even in rare cases after the check-in date. For example, the booking could be changed to remove or add a day for the stay.
@@ -192,19 +192,22 @@ To ensure the right booking is being cancelled the hotel should verify the booki
 
 ---
 
-## Guidlines and Best Practices
+## Guidlines and Best Practices 
 
 When designing the electronic interface used to connect to Expedia QuickConnect to retrieve bookings, the EQC partner should make sure to read and understand the following guidelines, recommendations and best practices.
+
 ---
 ### EQC Simulator Usage
 
 Before being allowed to connect to Expedia production systems, the EQC partner must confirm it was able to use the EQC Simulator successfully. Please read Appendix A – EQC Simulator User Guide section of this document for more details on how the EQC Simulator can be used and what kind of scenarios can be tested with it. 
+
 ---
 ### Requesting Bookings Previously Retrieved
 
 Expedia offers different ways to re-retrieve booking messages that were previously retrieved. 
 Elements can be used to refine the bookings being retrieved for specific purposes. A partner could decide that all BR requests retrieval all pending or retrieved bookings (using the Status element), or create a reconciliation job to only retrieve confirmed bookings made within the last 30 days for a specific property (using the NbOfDaysInPast, Status and Hotel ID elements).
 When implementing this function, the EQC partner should be very careful to compare the information it retrieves through Expedia QuickConnect with the information currently available in its system. The property could potentially overwrite more recent information manually entered in its system by information provided by Expedia QuickConnect. The property could also duplicate the same booking it received earlier if the Expedia booking ID is not properly implemented in the EQC partner’s system (see the Expedia Booking ID section below for details).
+
 ---
 ### Expedia Booking ID
 
@@ -216,11 +219,13 @@ It is crucial that EQC partners save this Expedia Booking ID in their systems, a
 
 By default, EQC will only return bookings which have not been previously retrieved. However, partners can create date specifc or status specifc requests (by using the NbOfDaysInPast or Status elements) which may return previously retrieved / confirmed bookings.
 EQC partners should ensure that their connectivity solutions validate booking IDs to ensure that duplicate bookings are not created within the partner system.
+
 ---
 ### Maximum Number of Bookings per BR RQ call
 
 To ensure consistent performance for both Expedia QuickConnect and the EQC partners, Expedia QuickConnect will limit the number of bookings that can be returned on a single retrieval call.
 For a retrieval of bookings, the maximum number of bookings that can be returned with one booking retrieval request is *125*.
+
 ---
 ### Retrieval & Confirmation Frequency VS Booking Expiration Delay
 
@@ -231,28 +236,34 @@ A booking electronically retrieved through Expedia QuickConnect has an expiratio
 * For any longer booking window, bookings will expire 24 hours after their creation by customer.
 To make sure that the property receives the booking, Expedia will deliver the booking by fax or email if it is not retrieved and confirmed after the expiration delay mentioned above. The fax number and email address used for fallback methods are configured in Expedia Partner Central. Once a booking falls back to fax or email, it won’t be available for electronic retrieval anymore.
 Expedia QuickConnect does not send more than 125 bookings at the same time with one booking retrieval request.
+
 ---
 ### New Reservations followed by modiciations and/or cancellation
 
 Expedia QuickConnect will issue new reservations, modifications and cancellations sequentially, and only after each transaction is confirmed via BC first.
 As an example, a guest completes a new reservation, makes a modification, and then makes a second modification. Expedia will first return the new reservation information with the next BR request. After the new reservation is confirmed via BC, the next BR request coming will return the first modification to this reservation. Once this modification is confirmed through BC, the subsequent BR request will return the second modification. Booking updates are always retrievable sequentially and after they are confirmed through BC.
+
 ---
 ### Mapping Information
 
 EQC partners will receive Expedia hotel, room type and rate plan IDs as part of the booking retrieval messages. Mapping information can be obtained via the PARR service described in section 8, or see Section 13 “Appendix B - Mapping property room and rate plan codes to Expedia IDs” for details.
+
 ---
 ### Free-form Text and Booking Modifications
 
 Hotel bookings can include a special request entered in free-form text (RequestCode=”4”). This information is included in the booking response (BR RS) message for a booking alongside all other details. However, if the booking is subsequently modified, the corresponding BR RS message will replace the original text with the modified one. In other words, booking notification responses will only send the most recent free-form text special request. It may therefore be important for EQC partners to append within their systems the new or modified special requests for a booking update if they find it valuable to keep a history of these requests.
+
 ---
 ### Receiving Child Age information in booking responses
 
 Hotel bookings can optionally include child age information; however this feature is not turned on by default. If you want to receive child age information in booking responses, please contact rollout@expedia.com.
+
 ---
 ### Alarms and Monitoring
 
 EQC partners should include monitors in their interface implementation that will allow partners to see the ratio of successful BR requests and to get detailed information on any errors. Alarms should also be created to notify concerned individuals (e.g. EQC partner tech support) when the rate of message errors returned by Expedia exceeds an accepted threshold. It is recommended that an alarm be triggered when BR messages return errors at a rate of 10% or more.
 Partners should review errors frequently to ensure that bookings are received. Failure to do so may result in overbookings.
+
 ---
 ## Handling Expeia VirtualCard through Expedia QuickConnect
 
@@ -263,6 +274,7 @@ At guest check-in, hotels use credit cards as a payment guarantee for the room s
 In most cases, the card number will remain the same for modified bookings, although the card parameters maybe adjusted to reflect the new booking rate and check-in/check-out dates. In rare cases, the card number may be changed in modified bookings.
 Cancellation-type booking responses do not include any Expedia VirtualCard details, so hoteliers need the billing information and original arrival date provided in the a booking’s last notification prior to cancellation in order to bill any applicable hotel cancellation fees.
 For additional details, see section “14 Appendix D – Learn more about Expedia VirtualCard”.
+
 ---
 ## Hotel Collect Bookings and Expedia Traveler Preference (ETP)
 
