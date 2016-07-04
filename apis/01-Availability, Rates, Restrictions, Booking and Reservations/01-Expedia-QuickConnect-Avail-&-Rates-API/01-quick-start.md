@@ -1,4 +1,4 @@
-# Quick Start
+﻿# Quick Start
 
 Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically.
 
@@ -15,7 +15,7 @@ To perform authentication, Expedia QuickConnect tries to extract the username an
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
 
-Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials necessary for authentication will be provided. For more details on how to obtain credentials, please contact your Connectivity Account Manager or email EQCSS@expedia.com.
+For partners that never worked with Expedia before, and don't know how to get started, please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/guides.html#gettingconnected).
 
 ----
 

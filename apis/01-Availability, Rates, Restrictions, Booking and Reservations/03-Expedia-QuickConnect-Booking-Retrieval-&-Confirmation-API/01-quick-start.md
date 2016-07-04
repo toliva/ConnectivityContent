@@ -1,54 +1,36 @@
 # Quick Start
 
-Expedia QuickConnect is a simple interface that allows hotel properties to: 
-* Electronically retrieve bookings made on any Expedia Inc. platform (includes all points of sales and affliates) 
-* Confrim bookings electronically retrieved 
+The Booking Retrieval and Booking Confirmation APIs are two simple interfaces that allow Expedia partners to electronically retrieve bookings made on any Expedia Inc. point of sale, and provide a confirmation number. 
 
 ----
+## Authentication
 
-## Getting Connected
+To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for BR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
 
-### 1. Development phase
-All our API specifications are on this site.  You must abide by our [terms and conditions](/terms.html).
-If you have any development related questions during this phase, please send email [eqcss@expedia.com](mailto:eqcss@expedia.com).
+```xml
+<Authentication username="EQCtest12933870" password="kh92nd29"/>
+```
 
-### 2. Test phase
-We'll send you access details for a test property in production once you send the following information to [eqcss@expedia.com](mailto:eqcss@expedia.com):
+Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
 
-* Company name
-* System Type (CRS, PMS, Channel Manager, etc)
-* System name
-* Address
-* Phone number
-* Contact information
-* Website
-* How many hotels utilize your system?
-* System description
- 
-In order to assign a property that will suit your needs we need to know more about what you have coded for. Please return a completed [interface questionnaire](/files/EQC%20Interface%20Questionnaire.docx) to [eqcss@expedia.com](mailto:eqcss@expedia.com).
- 
- 
-### 3. Beta (Soft Launch) phase
-If testing is successful, select one of your hotels to be Beta and return a completed [enrollment form](/files/EQC%20Enrollment%20Form.docx) to [eqcss@expedia.com](mailto:eqcss@expedia.com) so we can initiate the Soft Launch process (one hour phone call with testing plan, one week monitoring in production with a real hotel). There are also some [soft launch scenarios](/files/EQC%20Softlaunch%20Scenarios.docx) to view.
-      
-### 4. Go Live phase
-After soft launch is over (usually it takes one week), the connectivity will be officially up and running in production and other properties can be connected.
+Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials necessary for authentication will be provided. For partners that never worked with Expedia before, and don't know how to get started, please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/guides.html#gettingconnected)
 
----
+----
 ## Booking Retrieval Request and Response
 
 Expedia provides a program interface for EQC partners to retrieve bookings made on any Expedia Inc. Points of sale. EQC partners can retrieve pending bookings (reservations, modifications, or cancellations) as frequently as they want.
 If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by fax or email.
 
-Below is a pair of sample request/response 
+Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.
 **RQ**
 ```xml
 <BookingRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
-    <Authentication username="testuser" password="testpass"/>
+    <Authentication username="EQCtest12933870" password="kh92nd29"/>
 </BookingRetrievalRQ>
 ```
 
 **RS**
+This is what a RS could look like, should this account have hotels with pending bookings.
 ```xml
 <BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
     <Bookings>

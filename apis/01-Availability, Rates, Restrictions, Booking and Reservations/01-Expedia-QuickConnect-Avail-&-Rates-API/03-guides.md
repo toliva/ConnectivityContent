@@ -1,5 +1,5 @@
 # FAQ & Guides
-
+<a name="/gettingconnected"></a>
 ## Getting Connected with Expedia for the First Time
 
 Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:

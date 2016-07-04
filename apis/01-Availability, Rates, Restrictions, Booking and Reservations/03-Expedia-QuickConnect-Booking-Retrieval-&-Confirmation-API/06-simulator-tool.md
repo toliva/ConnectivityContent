@@ -24,12 +24,12 @@ The data set for PARR and AR interfaces:
 
 Only the latest versions of AR and PARR are supported on the EQC Simulator:
 
-| Schema | Namespace | 
+| Schema | Simulator Endpoint | 
 |--------|-----------|
-|[AvailRateupdate request](/files/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
-|[AvailRateupdate response](/files/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
-|[ProductAvailRateRetrieval request](/files/ProductAvailRateRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
-|[ProductAvailRateRetrieval response](/files/ProductAvailRateRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/PAR/2013/07|
+|[AvailRateupdate request](/files/AvailRateUpdateRQ.xsd)| https://simulator.expediaquickconnect.com/connect/ar |
+|[AvailRateupdate response](/files/AvailRateUpdateRS.xsd)| |
+|[ProductAvailRateRetrieval request](/files/ProductAvailRateRetrievalRQ.xsd)| https://simulator.expediaquickconnect.com/connect/parr |
+|[ProductAvailRateRetrieval response](/files/ProductAvailRateRetrievalRS.xsd)| |
 
 * Currency is in USD.
 * Base allocation is always=2 starting from today+2 days. Base allocation is always=0 for today and tomorrow.
@@ -572,10 +572,10 @@ This section describes how the BR simulator is configured and what kind of scena
 
 The simulator only supports the latest version of BR namespace:
 
-| Schema | Namespace |
+| Schema | Simulator Endpoint |
 |--------|-----------|
-|[Schema for BookingRetrieval request](/files/BookingRetrievalRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
-|[Schema for BookingRetrieval response](/files/BookingRetrievalRS.xsd)|http://www.expediaconnect.com/EQC/BR/2014/01|
+|[Schema for BookingRetrieval request](/files/BookingRetrievalRQ.xsd)| https://simulator.expediaquickconnect.com/connect/br |
+|[Schema for BookingRetrieval response](/files/BookingRetrievalRS.xsd)| |
 
 
 If another version is used, a message indicating that only the latest version is supported is returned, along with error code 2010.
@@ -798,8 +798,8 @@ The simulator only supports the latest version of BR namespace:
 
 | Schema | Namespace |
 |--------|-----------|
-|[BookingConfirmation request](http://www.expediaquickconnect.com/system/assets/attachments/313/BookingConfirmRQ.xsd)|http://www.expediaconnect.com/EQC/BR/2007/09|
-|[BookingConfirmation response](http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd)|http://www.expediaconnect.com/EQC/BC/2007/08|
+|[BookingConfirmation request](/files/BookingConfirmRQ.xsd)| https://simulator.expediaquickconnect.com/connect/bc |
+|[BookingConfirmation response](/files/BookingConfirmRS.xsd)| |
 
 Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:
 * One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.

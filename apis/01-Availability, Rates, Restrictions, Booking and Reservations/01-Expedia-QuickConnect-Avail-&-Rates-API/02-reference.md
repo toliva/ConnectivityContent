@@ -1,4 +1,4 @@
-# API Definition
+﻿# API Definition
 
 ## Overview
 
@@ -11,6 +11,7 @@ The communication protocol between properties and Expedia QuickConnect consists 
 - Content-Type of the HTTP Request Header should be: “text/xml”.
 - Only connecting via our URLs is supported. Expedia does not support connection directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.
 
+<a name="/schemaguidelines"></a>
 ## Schema Design Guidelines
 
 The design of Expedia QuickConnect schemas is based on the following general guidelines:  
