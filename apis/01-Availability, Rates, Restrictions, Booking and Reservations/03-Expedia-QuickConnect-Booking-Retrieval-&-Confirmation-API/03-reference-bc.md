@@ -6,13 +6,14 @@ When a customer returns to Expedia to review their reservation, or when they rec
 The Booking Confirmation (BC) API is the mechanism EQC partners are required to implement to provide Expedia with the hotel’s confirmation number for all bookings retrieved via the BR interface. Unconfirmed bookings will revert to fax or email once the booking expiration time is reached.
 
 ### Supported Features for Booking Confirmaion
-EQC partner must use the booking confirmation API to confirm bookings retrieved electronically (reservations, modifications, and cancellations):
+EQC partner must use the booking confirmation API to confirm bookings retrieved electronically (reservations, modifications, and cancellations).
 
-1. Confirmation numbers have to be received before bookings expire. Else, bookings will fall back to fax or email. Expedia’s booking expiration strategy is based on booking window:
-a. For same-day arrival (based on midnight in hotel’s local timezone): bookings will expire 30 minutes after their creation by customer.
-b. For next-day arrival (any bookings created between midnight and 23:59:59 the day before arrival, based on hotel’s local timezone): bookings will expire 60 minutes after their creation by customer.
-c. For any longer booking window, bookings will expire 24 hours after their creation by customer.
-2. Booking confirmation numbers can be updated for already confirmed bookings up to 8 days after guest’s departure date.
+Confirmation numbers have to be received before bookings expire. Else, bookings will fall back to fax or email. Expedia’s booking expiration strategy is based on booking window:
+- For same-day arrival (based on midnight in hotel’s local timezone): bookings will expire 30 minutes after their creation by customer.
+- For next-day arrival (any bookings created between midnight and 23:59:59 the day before arrival, based on hotel’s local timezone): bookings will expire 60 minutes after their creation by customer.
+- For any longer booking window, bookings will expire 24 hours after their creation by customer.
+
+Booking confirmation numbers can be updated for already confirmed bookings up to 8 days after guest’s departure date.
 
 ---
 
@@ -21,7 +22,7 @@ The booking confirmation request message (BC RQ) allows EQC partners to send hot
 
 ### Booking Confirmation Request Schema Overview
 
-insert Picture here
+![BC RQ XML MESSAGE](/images/BC-RQ-Schema.png)
 
 ### Booking Confirmation Request Schema Complete Definition
 
@@ -47,7 +48,7 @@ The booking confirmation response message (BC RS) contains a success or error me
 
 ### Booking Confirmation Response Schema Overview
 
-insert Picture here
+![BC RS XML MESSAGE](/images/BC-RS-Schema.png)
 
 ### Booking Confirmation Response Schema Complete Definition
 
@@ -64,7 +65,6 @@ insert Picture here
 1|Error|String||<p>Detailed description of an error message.</p><p>One or more of this element appears if the request failed.</p><p>If this element is present, Success node does not appear. </p><p>Maximum length: 1024 characters.</p>
 1|@code|Int||<p>Code for this error, for example: authentication, xml structure, business validation.</p><p>Code will be between 1000 and 10,000.</p>
 
-
 ### Booking Confirmation Validation Process
 To update a booking with a confirmation number successfully, the following validations are applied through EQC for each confirmation sent in the BC RQ message:
 * The username and password are valid
@@ -74,23 +74,27 @@ To update a booking with a confirmation number successfully, the following valid
 * The booking type specified in the confirmation matches the new, modified, or cancelled state of the booking. Note that if a customer modifies a booking before Expedia sends the booking details to the EQC partner in a booking retrieval message, the confirmation booking type should still be set to “Book” because the first delivery of a booking to the EQC partner is always considered a new booking. 
 An additional validation makes sure that no more than 10 confirmation numbers are sent in the BC RQ message.
 
-## Guidlines and Best Practices
+## Error Handling
+Recommendations for system and technical problems will be the same across all EQC interfaces. For more information about recommendations, please review the [corresponding EQC BR section](reference.html#errorhanlding).
 
-When designing the electronic interface used to connect to Expedia QuickConnect to confirm bookings, the EQC partner should make sure to read and understand the following guidelines, recommendations and best practices.
+### Error & Warning Codes and Descriptions for BC
 
-### EQC Simulator TOol
-
-Please see the specific section for this.
-
-### Retrieval and Confirmation Frequencey vs. Booking 
-Expedia requires that EQC partners retrieve and confirm bookings within 30 minutes of their creation by the customer. Partners connected via Expedia QuickConnect need not only retrieve bookings using BR interface, but also confirm them using the Booking Confirmation API within this delay
-
-### Booking Confirmation REsponses with Warning Require Action
-If a warning is included in the BC RS message, the hotel confirmation number could not be updated for the booking at Expedia. Efforts should be made to capture these warnings and make necessary corrections to your booking confirmation request parameters.
-
-### Alarms and Monitoring
-EQC partners should include monitors in their interface implementation that will allow partners to see the ratio of successful BC requests and to get detailed information on any errors. Alarms should also be created to notify concerned individuals (e.g. EQC partner tech support) when the rate of message errors returned by Expedia exceeds an accepted threshold. It is recommended that an alarm be triggered when BC messages return errors at a rate of 10% or more.
-Partners should review errors frequently to ensure that bookings are being confirmed
-
-
-
+Error/Warning code | Error/Warning description | Explanation and EQC partner Action
+---------- | ----------------- | -----------------------------------
+1000 | Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access. | This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
+1001 | Authentication error: invalid username or password. | This message should not be retried. Verify username and password configured in your EQC interface.  For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
+2002 | Parsing error: <parsing_error_description>. | Correct XML format to comply with Expedia QuickConnect's specification. Developers of the EQC partner system should be involved to find the problem.
+2010 | The namespace specified is invalid. | Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.
+3010 | Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema. | Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.
+3301 | Update refused. No more than 10 confirmation numbers can be sent in a single message. | Please include fewer confirmation numbers in a single BC RQ message. Please resend the numbers by splitting them across multiple requests and make sure that none of the requests contain more than 10 bookings.
+10080 | Update refused. Booking ID cannot be found.  | The EQC partner requested a booking ID that cannot be accessed by Expedia QuickConnect. Verify the booking ID and log on to Expedia Partner Central to get more information about the booking. Note that a booking will be removed from Expedia QuickConnect 8 days after the guest’s departure and won’t be available for electronic retrieval nor electronic confirmation anymore.
+10081 | Update refused. Hotel ID and Booking ID mismatch: the Hotel ID specified in the BC RQ doesn't match up with the hotel to which this booking belongs. | The EQC partner sent a confirmation number for a booking that does not belong to the hotel specified in the BC RQ. Please validate the behavior of your system or verify your Booking ID/Hotel ID mapping information.
+10100 | Update refused. The specified booking type does not match the one we have stored for this booking ID in our system (<current_booking_type_for_booking_ID>). | Please verify your implementation of QuickConnect and make sure the booking ID you specified in the message is really the one you wanted to confirm. The booking type that should be sent along with the booking ID can be found in the BR RS message.
+10101 | Update refused. Confirmation for bookings must be sent no more than 8 days after guest departure, which for this booking was on <guest’s departure date>. | Please verify your implementation of QuickConnect and make sure that the booking ID specified in the BC RQ message is appropriate.
+10102 | Booking confirmation <BC number provided in RQ> refused for booking <booking ID> because a newer version of this booking is awaiting retrieval. | Please issue a booking retrieval request to retrieve the latest version of the booking, then send the latest confirmation number for the booking. This confirmation should either be discarded if irrelevant due to the change awaiting retrieval, or resent after booking retrieval has been performed.
+10103 | Booking confirmation [confirmation number] refused for booking [booking ID] because you already confirmed this booking 3 times. Any subsequent confirmation will be refused. | You attempted to re-confirm the same booking instance more than 3 times. You can only send 3 different confirmation numbers for one booking instance (where booking instance is defined as one version of the booking, every modification or cancellation is considered a different instance). You should only send us confirmation numbers once per booking instance, or any time the actualt hotel confirmation number changes. Please contact EQCHelp if you have a need to modify the confirmation number more than 3 times for 1 booking instance.
+4000, 4004, 4007 | Internal system error, please try again in a few minutes. | Please retry.
+4001 | Internal timeout error, please try again in a few minutes. | Please retry.
+4100, 4101 | Internal System Error. Do not retry this request. Our support team was notified of the problem. | Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. 
+4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | 
+5000 | Internal database error, please try again in a few minutes.  |  

@@ -172,6 +172,7 @@ L | Data element | Data type | O | Description
 5 | @closedToArrival | Boolean | * | 
 5 | @closedToDeparture | Boolean | * | 
 
+<a href="/errorhandling"></a>
 ## Error Handling
 You may experience technical difficulties when developing and trying to connect to Expedia QuickConnect PARR. This section addresses the most common errors and problems that an EQC partner might encounter.
 
@@ -219,23 +220,15 @@ Error code | Error description | Explanation and EQC partner Action
 ---------- | ----------------- | -----------------------------------
 1000 | Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access. | This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
 1001 | Authentication error: invalid username or password. | This message should not be retried. Verify username and password configured in your EQC interface.  For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
-1003 | The user account provided doesn't have the right access level | This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.
 2002 | Parsing error: <parsing_error_description>. | Correct XML format to comply with Expedia QuickConnect's specification. Developers of the EQC partner system should be involved to find the problem.
 2010 | The namespace specified is invalid. | Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.
 3010 | Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema. | Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.
-3015 | Business validation error.  | EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect.
-3020 | Validation error: start date must not be before yesterday. | Make sure the system cannot send a date in the past, and drop this message (no retry).
-3021 | Validation error: end date must not be before start date. | Make sure the system cannot send an end date smaller than a start date, and drop this message (no retry).
-3129 | Invalid Date. | Verify the dates you provided in the AR RQ and then resubmit your message.
-3143 | There is no Product information for the hotel in the database | The hotel you requested information for has no products currently defined in Expedia system yet. This should happen for new hotels not ready to be managed by EQC partner yet. Please contact your market manager for more details.
-3144 | There is no matching product information avalable | The request you made to obtain avail and rate data didn't produce any results. This might for different reasons: You requested dates for which no avail or rates are currently defined in Expedia system, or you issued a request for all active products but there are no active products for this hotel.
-3202 | Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel. | Verify if there is a mapping issue in EQC partner's system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Expedia Partner Central).
-3203 | The following RoomTypeIDs do not belong to the given hotel : <room_type_ID> | Fix mapping in EQC partner's system.
-3204 | The following RatePlanIDs do not belong to the given hotel : <rate_plan_ID> | Fix mapping in EQC partner's system.
-3205 | Rate Plan ID <rateplanID> does not belong to Room Type ID <roomTypeID> | When requesting avail and rate data, the EQC partner provided an incorrect room type ID – rate plan ID association. Please verify your mapping and drop this message (no retry).
+3080 | Booking ID cannot be found. Please make sure you are not trying to retrieve a booking for which the guest left after <current_date_minus_8_days>. Old bookings can't be retrieved through this mechanism. | The EQC partner requested a booking ID that cannot be found in Expedia QuickConnect. EQC partner should verify the booking ID and log on Expedia Partner Central to get more information about the booking. A booking will be removed from Expedia QuickConnect 8 days after the guest’s departure and won’t be available for electronic retrieval anymore.
+3081 | Hotel ID and Booking ID mismatch: the Hotel ID specified in the BR RQ doesn't match the Booking ID for that request. | The EQC partner requested booking information for a specific hotel with a BR RQ. However, the Hotel ID in the BR RQ does not match the Hotel ID specified in the booking details of the Booking ID of the BR RQ and there is a mismatch. Please validate the behavior of your system or verify your mapping information.
+3202 | Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel. **Note:** If the system finds no hotels listed for the specified user, the error message is slightly different: ”No hotels associated with that user”. | Verify if there is a mapping issue in EQC partner’s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Expedia Partner Central).
 3210 | Communication error: exceed max number of connections allowed (1). | EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message
 4000, 4004, 4007 | Internal system error, please try again in a few minutes. | Please retry.
 4001 | Internal timeout error, please try again in a few minutes. | Please retry.
 4100, 4101 | Internal System Error. Do not retry this request. Our support team was notified of the problem. | Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. 
-4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | If AR, enter in incremental retry mode. 
-5000 | Internal database error, please try again in a few minutes.  | If AR, BC or PARR, enter in incremental retry mode. 
+4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | 
+5000 | Internal database error, please try again in a few minutes.  |  
