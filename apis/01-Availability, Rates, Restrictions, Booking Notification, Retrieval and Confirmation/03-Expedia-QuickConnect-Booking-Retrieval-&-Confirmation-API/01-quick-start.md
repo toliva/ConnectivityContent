@@ -1,4 +1,4 @@
-﻿# Quick Start
+# Quick Start
 
 The Booking Retrieval and Booking Confirmation APIs are two simple interfaces that allow Expedia partners to electronically retrieve bookings made on any Expedia Inc. point of sale, and provide a confirmation number. 
 
