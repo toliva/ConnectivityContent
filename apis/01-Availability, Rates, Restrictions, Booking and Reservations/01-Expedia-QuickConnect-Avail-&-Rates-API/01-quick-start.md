@@ -1,4 +1,4 @@
-﻿# Quick Start
+# Quick Start
 
 Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically.
 
