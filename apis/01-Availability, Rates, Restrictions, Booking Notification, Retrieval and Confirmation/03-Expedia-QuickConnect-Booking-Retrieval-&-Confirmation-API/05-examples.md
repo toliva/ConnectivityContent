@@ -1,4 +1,4 @@
-# Examples
+# Sample Messages
 
 ## Booking Retrieval API Examples
 

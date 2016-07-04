@@ -1,4 +1,4 @@
-# Quick Start
+﻿# Quick Start
 
 The Booking Retrieval and Booking Confirmation APIs are two simple interfaces that allow Expedia partners to electronically retrieve bookings made on any Expedia Inc. point of sale, and provide a confirmation number. 
 
@@ -21,7 +21,7 @@ Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials 
 Expedia provides a program interface for EQC partners to retrieve bookings made on any Expedia Inc. Points of sale. EQC partners can retrieve pending bookings (reservations, modifications, or cancellations) as frequently as they want.
 If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by fax or email.
 
-Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.
+Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API at https://services.expediapartnercentral.com/eqc/br, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.
 **RQ**
 ```xml
 <BookingRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
@@ -113,23 +113,22 @@ This is what a RS could look like, should this account have hotels with pending 
 
 The Booking Confirmation (BC) API is the mechanism EQC partners are required to implement to provide Expedia with the hotel’s confirmation number for all bookings retrieved via the BR interface. Unconfirmed bookings will revert to fax or email once the booking expiration time is reached. 
 
-Below is a pair of sample request/response messages for booking confirmation. 
+Below is a pair of sample request/response messages for booking confirmation. It could be sent to production at https://services.expediapartnercentral.com/eqc/bc if a partner has a valid test booking to confirm and changes the IDs in the sample below.
 
 **RQ**
 ```xml
 <BookingConfirmRQ xmlns="http://www.expediaconnect.com/EQC/BC/2007/09">
-	<Authentication username="testuser" password="testpass"/>
-	<Hotel id="734658"/>
-	<BookingConfirmNumbers>
-		<BookingConfirmNumber bookingID="252743459" bookingType="Book" 
-             confirmNumber="E2340589B" confirmTime="2013-12-30T23:45:00Z"/>
-	</BookingConfirmNumbers>
+    <Authentication username="EQCtest12933870" password="kh92nd29"/>
+    <Hotel id="734658"/>    
+    <BookingConfirmNumbers>
+        <BookingConfirmNumber bookingID="252743459" bookingType="Book" confirmNumber="E2340589B" confirmTime="2013-12-30T23:45:00Z"/>
+    </BookingConfirmNumbers>
 </BookingConfirmRQ>
 ``` 
 
 **RS**
 ```xml
 <BookingConfirmRS xmlns="http://www.expediaconnect.com/EQC/BC/2007/08">
-	<Success/>
+    <Success/>
 </BookingConfirmRS> 
 ``` 

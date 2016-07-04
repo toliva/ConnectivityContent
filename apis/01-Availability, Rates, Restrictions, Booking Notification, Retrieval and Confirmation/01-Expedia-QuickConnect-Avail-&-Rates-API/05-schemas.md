@@ -1,10 +1,10 @@
-# XML Schemas
+# XML Schemas & Production Endpoints
 
 Here are the schemas for messages supported by the EQC API.
 
-| Schema | Namespace | 
+| Schema | Production Endpoint | 
 |--------|-----------|
-|[AvailRateUpdate Request](/files/AvailRateUpdateRQ.xsd)|http://www.expediaconnect.com/EQC/AR/2011/06|
-|[AvailRateUpdate Response](/files/AvailRateUpdateRS.xsd)|http://www.expediaconnect.com/EQC/AR/2007/02|
+|[AvailRateUpdate Request](/files/AvailRateUpdateRQ.xsd)| https://services.expediapartnercentral.com/eqc/ar |
+|[AvailRateUpdate Response](/files/AvailRateUpdateRS.xsd)| |
 
 

@@ -1,4 +1,4 @@
-# XML Schemas
+# XML Schemas & Production Endpoints
 
 | Schema | Production Endpoint |
 |--------| ------------------- |
