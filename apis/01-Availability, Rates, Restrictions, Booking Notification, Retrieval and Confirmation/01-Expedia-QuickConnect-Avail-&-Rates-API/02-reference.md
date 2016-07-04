@@ -1,4 +1,4 @@
-﻿# API Definition
+# API Definition
 
 ## Overview
 
