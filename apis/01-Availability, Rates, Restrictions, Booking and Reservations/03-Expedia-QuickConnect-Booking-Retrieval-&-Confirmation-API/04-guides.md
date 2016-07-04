@@ -1,4 +1,4 @@
-# FAQ's and Guides
+# FAQ & Guides
 
 ## Basic Requirements
 
@@ -80,7 +80,7 @@ As an example, a guest completes a new reservation, makes a modification, and th
 
 ---
 ### Mapping Information
-EQC partners will receive Expedia hotel, room type and rate plan IDs as part of the booking retrieval messages. Mapping information can be obtained via the PARR service described in section 8, or see Section 13 “Appendix B - Mapping property room and rate plan codes to Expedia IDs” for details.
+EQC partners will receive Expedia hotel, room type and rate plan IDs as part of the booking retrieval messages. Mapping information can be obtained via the [Product API](/apis/product-management/product-api/quick-start.html).
 
 ---
 ### Free-form Text and Booking Modifications

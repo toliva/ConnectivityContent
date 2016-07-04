@@ -5,6 +5,7 @@ Expedia QuickConnect provides an electronic interface for EQC partners to send E
 This section explains authentication and how to send a request to the Expedia QuickConnect AR interface for a live test property.
 
 ----
+
 ## Authentication
 
 To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.

@@ -1,6 +1,6 @@
 # Examples
 
-## Booking Retrieval API – Examples
+## Booking Retrieval API Examples
 
 ### Booking Retrieval Request: pending bookings
 
@@ -48,7 +48,7 @@ The following is a sample booking retrieval request where the hotel requests all
 Notes:
 - Bookings that reverted to fax will not be returned by this call.
 - A hotel parameter (e.g. <Hotel id="3546"/>) may also be added in this request.
-- Expedia VirtualCard payment information is not included in the response after 48 hours of the initial booking or modification (the information can only be retrieved afterward by contacting Expedia). See section “14 Appendix D – Learn more about Expedia VirtualCard” for more information.
+- Expedia VirtualCard payment information is not included in the response after 48 hours of the initial booking or modification (the information can only be retrieved afterward by contacting Expedia).
 
 ### Booking Retrieval Response: 2 new bookings returned
 
@@ -301,7 +301,7 @@ The following is a sample RQ/RS pair showing a request to retrieve bookings that
 </BookingRetrievalRS>
 ```
 
-## Booking Confirmation API – Examples 
+## Booking Confirmation API Examples 
 
 ### Booking Confirmation Request: New/modified/cancelled booking confirmation
 
@@ -327,10 +327,7 @@ The following is a sample booking confirmation response for a new booking. The m
 ```xml
 <BookingConfirmRS xmlns="http://www.expediaconnect.com/EQC/BC/2007/08">
 	<Success>
-		<Warning code="10081" bookingID="9123" bookingType="Book” 
-          confirmNumber="7605309">
-			Update refused. Hotel ID and Booking ID mismatch: the Hotel ID specified in the BC RQ doesn't match up
-                 with the hotel to which this booking belongs.				
+		<Warning code="10081" bookingID="9123" bookingType="Book" confirmNumber="7605309"> Update refused. Hotel ID and Booking ID mismatch: the Hotel ID specified in the BC RQ doesn't match up with the hotel to which this booking belongs.
 		</Warning>
 	</Success>
 </BookingConfirmRS>

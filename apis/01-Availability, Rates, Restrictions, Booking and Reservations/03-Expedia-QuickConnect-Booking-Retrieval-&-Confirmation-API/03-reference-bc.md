@@ -29,8 +29,8 @@ The booking confirmation request message (BC RQ) allows EQC partners to send hot
  L |Data element|Data type| O |Description|EQC validations
 ---|------------|---------|---|-----------|-------------
 0|BookingConfirmRQ|-||Root element|
-0|@xmlns|URL||Namespace which belongs to this message. Also used to validate version of schema on which this message is based. <p>Namespace for BC RQ messages</p><p> http://www.expediaconnect.com/EQC/BC/2007/09</p><p> Valid namespace, defined by at least one version of BC schema.</p>
-1|Authentication|-||Required information to grant access to Expedia QuickConnect interface – stored in next two attributes.
+0|@xmlns|URL||Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for BC RQ messages: http://www.expediaconnect.com/EQC/BC/2007/09 | Valid namespace, defined by at least one version of BC schema.
+1|Authentication|-||Required information to grant access to Expedia QuickConnect interface – stored in next two attributes. | 
 1|@username|String||Username for Expedia QuickConnect login (case sensitive), provided by Expedia.|<ul><li>Minimum length: 4</li><li>Maximum length: 30</li><li>Username exists</li><li>User is allowed to access Expedia QuickConnect</li></ul>
 1|@password|String||Password for Expedia QuickConnect login (case sensitive), provided by Expedia.|<ul><li>Minimum length: 6</li><li>Maximum length: 30</li><li>Password fits with the username</li></ul>
 1|Hotel|-||Information about Hotel|
@@ -75,7 +75,7 @@ To update a booking with a confirmation number successfully, the following valid
 An additional validation makes sure that no more than 10 confirmation numbers are sent in the BC RQ message.
 
 ## Error Handling
-Recommendations for system and technical problems will be the same across all EQC interfaces. For more information about recommendations, please review the [corresponding EQC BR section](reference.html#errorhanlding).
+Recommendations for system and technical problems will be the same across all EQC interfaces. For more information about recommendations, please review the [corresponding EQC BR section](reference-br.html#errorhanlding).
 
 ### Error & Warning Codes and Descriptions for BC
 
