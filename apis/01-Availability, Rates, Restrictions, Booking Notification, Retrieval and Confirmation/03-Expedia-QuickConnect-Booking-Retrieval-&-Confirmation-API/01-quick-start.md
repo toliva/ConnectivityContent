@@ -22,14 +22,17 @@ Expedia provides a program interface for EQC partners to retrieve bookings made 
 If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by fax or email.
 
 Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API at https://services.expediapartnercentral.com/eqc/br, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.
-**RQ**
+
+**Request**
+
 ```xml
 <BookingRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
     <Authentication username="EQCtest12933870" password="kh92nd29"/>
 </BookingRetrievalRQ>
 ```
 
-**RS**
+**Response**
+
 This is what a RS could look like, should this account have hotels with pending bookings.
 ```xml
 <BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
@@ -108,6 +111,9 @@ This is what a RS could look like, should this account have hotels with pending 
     </Bookings>
 </BookingRetrievalRS>
 ```
+
+As an alternative to using a production test hotel, partners are invited to make use of the [simulator tool](simulator-tool.html) to experiment with the Booking Retrieval API.
+
 ---
 ## Booking Confirmation Request and Response
 
@@ -132,3 +138,5 @@ Below is a pair of sample request/response messages for booking confirmation. It
     <Success/>
 </BookingConfirmRS> 
 ``` 
+
+As an alternative to using a production test hotel, partners are invited to make use of the [simulator tool](simulator-tool.html) to experiment with the Booking Confirmation API.
