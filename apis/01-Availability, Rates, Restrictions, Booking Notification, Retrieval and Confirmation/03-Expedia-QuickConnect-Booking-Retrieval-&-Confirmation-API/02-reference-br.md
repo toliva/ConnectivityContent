@@ -185,7 +185,7 @@ RoomStay@ratePlanId | 0
 PerDayRate@baseRate	| 0.00
 Total@amountAfterTaxes | 0.00
 Total@amountOfTaxes	| 0.00
-_Infromation set to zero in a cancel message_
+_Information set to zero in a cancel message_
 
 In order to identify the booking to cancel in its system, the hotel should use the booking ID as the key. If this is not possible, the guest name and the dates of the stay should be identical to the latest version of the booking prior to the cancellation. 
 To ensure the right booking is being cancelled the hotel should verify the booking ID as well as the guest name and the original check-in and check-out date of the booking.If any cancellation fee is due to the hotel, the amount to be charged is based on the hotel cancellation policy the partner currently has in place for the affected rate plan, as configured by the Expedia Market Manager. This fee is also chargeable to the Expedia VirtualCard number provided in the new or modified booking response that preceded the reservation cancellation and the card can be charged on the original arrival date.
