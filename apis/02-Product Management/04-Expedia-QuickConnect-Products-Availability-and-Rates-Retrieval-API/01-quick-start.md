@@ -8,7 +8,7 @@ The Product, Availability and Rates API (PARR) was designed for any partner that
 To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called "Authentication" is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
 
 ```xml
-<Authentication username="EQCtest12933870" password="kh92nd29"/>
+<Authentication username="EQCtest12933870" password="wm47ah92"/>
 ```
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
@@ -23,7 +23,7 @@ Doing a POST of the following document (with a Content-Type: text/xml) will allo
 
 ```xml
 <ProductAvailRateRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
-    <Authentication username="EQCtest12933870" password="kh92nd29"/>
+    <Authentication username="EQCtest12933870" password="wm47ah92"/>
     <Hotel id="12933870"/>
     <ParamSet>
         <ProductRetrieval returnRateLink="true" returnRoomAttributes="true" returnRatePlanAttributes="true" returnCompensation="true" returnCancelPolicy="true" />
@@ -34,7 +34,7 @@ Doing a POST of the following document (with a Content-Type: text/xml) will allo
 Doing a POST of the following document (with a Content-Type: text/xml) will allow partners to retrieve the availability and rates currently configured for an Expedia test property in production.
 ```xml
 <ProductAvailRateRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07">
-    <Authentication username="EQCtest12933870" password="kh92nd29"/>
+    <Authentication username="EQCtest12933870" password="wm47ah92"/>
     <Hotel id="12933870"/>
     <ParamSet>
         <AvailRateRetrieval from="2017-01-11" to="2017-02-01" />
