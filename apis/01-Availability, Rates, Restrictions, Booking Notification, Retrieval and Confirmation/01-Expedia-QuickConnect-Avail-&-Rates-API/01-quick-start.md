@@ -11,7 +11,7 @@ This section explains authentication and how to send a request to the Expedia Qu
 To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
 
 ```xml
-<Authentication username="EQCtest12933870" password="kh92nd29"/>
+<Authentication username="EQCtest12933870" password="wm47ah92"/>
 ```
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
@@ -28,7 +28,7 @@ The availability and rate request (AR RQ) allows EQC partners to send Expedia up
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-  <Authentication username="EQCtest12933870" password="kh92nd29"/>
+  <Authentication username="EQCtest12933870" password="wm47ah92"/>
   <Hotel id="12933870"/>
   <AvailRateUpdate>
     <DateRange from="2017-01-01" to="2017-01-15"/>
