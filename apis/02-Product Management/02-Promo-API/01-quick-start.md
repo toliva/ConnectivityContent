@@ -17,6 +17,6 @@ The simplest way to start interacting with the Promo API is to access the
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try:
 ```
 username: EQCtest12933870
-password: kh92nd29
+password: wm47ah92
 ```
 and call this endpoint and hotel: https://services.expediapartnercentral.com/promotions/v1/hotels/12933870/promos

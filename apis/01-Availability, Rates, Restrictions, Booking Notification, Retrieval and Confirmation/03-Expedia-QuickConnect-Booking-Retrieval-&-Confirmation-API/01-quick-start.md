@@ -8,7 +8,7 @@ The Booking Retrieval and Booking Confirmation APIs are two simple interfaces th
 To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for BR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.
 
 ```xml
-<Authentication username="EQCtest12933870" password="kh92nd29"/>
+<Authentication username="EQCtest12933870" password="wm47ah92"/>
 ```
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
@@ -27,7 +27,7 @@ Below is a pair of sample request/response. The Request can be attempted against
 
 ```xml
 <BookingRetrievalRQ xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
-    <Authentication username="EQCtest12933870" password="kh92nd29"/>
+    <Authentication username="EQCtest12933870" password="wm47ah92"/>
 </BookingRetrievalRQ>
 ```
 
@@ -124,7 +124,7 @@ Below is a pair of sample request/response messages for booking confirmation. It
 **RQ**
 ```xml
 <BookingConfirmRQ xmlns="http://www.expediaconnect.com/EQC/BC/2007/09">
-    <Authentication username="EQCtest12933870" password="kh92nd29"/>
+    <Authentication username="EQCtest12933870" password="wm47ah92"/>
     <Hotel id="734658"/>    
     <BookingConfirmNumbers>
         <BookingConfirmNumber bookingID="252743459" bookingType="Book" confirmNumber="E2340589B" confirmTime="2013-12-30T23:45:00Z"/>

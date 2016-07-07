@@ -8,9 +8,9 @@ Authorization: Basic {username and password encoded by Base64}
 ```
 Example: 
 ```
-Authorization: Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5
+Authorization: Basic RVFDdGVzdDEyOTMzODcwOndtNDdhaDky
 ```
-Where "RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5" is the string "EQCtest12933870:kh92nd29" (username:password) Base64-encoded.
+Where "RVFDdGVzdDEyOTMzODcwOndtNDdhaDky" is the string "EQCtest12933870:wm47ah92" (username:password) Base64-encoded.
 
 For more information about getting started for the first time, and authorization, please refer to the FAQ & Guides section.
 
