@@ -50,9 +50,9 @@ Notes:
 - A hotel parameter (e.g. <Hotel id="3546"/>) may also be added in this request.
 - Expedia VirtualCard payment information is not included in the response after 48 hours of the initial booking or modification (the information can only be retrieved afterward by contacting Expedia).
 
-### Booking Retrieval Response: 2 new bookings returned
+### Booking Retrieval Response: 2 new bookings returned with Value Add Promotion
 
-The following is a sample booking retrieval response for a pending booking request. 2 new bookings are returned: (1) a booking for a family of 4 for a week, and (2) another booking for 1 person for 2 days.
+The following is a sample booking retrieval response for a pending booking request. 2 new bookings are returned: (1) a booking for a family of 4 for a week, and (2) another booking for 1 person for 2 days. Both bookings contain a special request with code 6 to describe a special value add promotion that was included.
 
 ```xml
 <BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
@@ -84,7 +84,7 @@ The following is a sample booking retrieval response for a pending booking reque
       <SpecialRequest code="1.23">2 Queen</SpecialRequest>
       <SpecialRequest code="2.1">Non-smoking</SpecialRequest>
       <SpecialRequest code="4">Late check-in (after 6pm)</SpecialRequest>
-       <SpecialRequest code="6">10% off Spa Package</SpecialRequest>
+      <SpecialRequest code="6">10% off Spa Package</SpecialRequest>
     </Booking>
     <Booking id="35645" type="Book" createDateTime="2006-10-25T10:19:47Z" source="Hotels.com" status="pending">
       <Hotel id="3546"/>
@@ -104,6 +104,7 @@ The following is a sample booking retrieval response for a pending booking reque
       <RewardProgram code="AJ" number="25613"/>
       <SpecialRequest code="1.14">1 king</SpecialRequest>
       <SpecialRequest code="2.2">Smoking</SpecialRequest>
+      <SpecialRequest code="6">10% off Spa Package</SpecialRequest>
     </Booking>
   </Bookings>
 </BookingRetrievalRS>
