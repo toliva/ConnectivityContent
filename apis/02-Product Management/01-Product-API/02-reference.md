@@ -798,6 +798,7 @@ Using the PATCH verb, partners can perform a partial update of a rate plan. Expe
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
 **Parameters**
+
 Parameter | Parameter Type | Description | Required | Data Type 
 --------- | -------------- | ----------- | -------- | --------- 
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
@@ -897,6 +898,7 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
 ```
 
 **Success Responses**
+
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
