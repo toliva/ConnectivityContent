@@ -1708,7 +1708,7 @@ Response would look like:
   }
 }
 ```
-### Rate Plan Modify (Name, Additional Guest Amount, Value Adds)
+### Rate Plan Modify (Name, Additional Guest Amount, Value Adds) - Full Overlay (PUT)
 In this example, the rate plan created in a previous example is modified to have a more meaningful name, lower additional guest amounts and free Internet.
 ```HTTP
 PUT https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700 
@@ -1856,6 +1856,97 @@ Response would look like:
   }
 }
 ```
+### Rate Plan Partial Update (PATCH)
+Here are a few examples of PATCH requests partners could want to make. Response examples are not included, but they would be the full rate plan resource definition with all its fields, in its final state after the partial update.
+
+#### Updating only the name
+```
+{
+  "name": "My New Rate Plan Name"
+}
+```
+
+#### Updating both the name and the status:
+```
+{
+  "name": "My New Rate Plan Name",
+  "status": "Inactive"
+}
+```
+
+#### Overriding the current list of value add inclusions to only include "Free Internet":
+```
+{
+  "valueAddInclusions": ["Free Internet"]
+}
+```
+
+#### Removing all value add inclusions and additional guest amounts:
+```
+{
+  "valueAddInclusions": [],
+  "additionalGuestAmounts": null
+}
+```
+
+#### Updating only the cancel policy:
+```
+{
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			},
+			{
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		],
+		"exceptions": [
+			{
+				"endDate": "2019-04-01",
+				"startDate": "2019-03-01",
+				"penalties": [
+					{
+						"amount": 1.0,
+						"deadline": 0,
+						"perStayFee": "1stNightRoomAndTax"
+					},
+					{
+						"amount": 1.0,
+						"deadline": 24,
+						"perStayFee": "FullCostOfStay"
+					}
+				]
+			}
+		]
+	}
+}
+```
+
+#### Updating only the cancel policy (this would remove any exceptions since they are not specified):
+```
+{
+	"cancelPolicy": {
+		"defaultPenalties": [
+			{
+				"deadline": 0,
+				"perStayFee": "1stNightRoomAndTax",
+				"amount": 0
+			},
+			{
+				"deadline": 24,
+				"perStayFee": "None",
+				"amount": 0
+			}
+		]
+	}
+}
+```
+
 ### Rate Plan Delete
 In this example, the rate plan created in a previous example is deleted.
 ```HTTP

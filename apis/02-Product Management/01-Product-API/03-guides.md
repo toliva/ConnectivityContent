@@ -124,14 +124,25 @@ This becomes quite important to understand when partners are in the process of c
 /products/v1/properties/123/roomTypes?status=all
 ```
 
-## Modify as a full overlay
-The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
+## Modify: partial or full overlay?
 
-Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.
+Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the [API Definition](reference.html#modify-an-existing-rate-plan).
+
+### Modifying with PUT
+
+The PUT modify operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
+
+When making use of the PUT method, Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.
 
 For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.
 
-It is currently not possible to make partial updates to a resource.
+### Modifying with PATCH
+
+The PATCH modify operation is a way for our partners to only send what they'd like to modify on a resource. Currently only support on the rate plan resource, but soon to be expanded on all resources. 
+
+Expedia implemented the Merge-PATCH strategy. Partners can send any of the top level elements they'd wish to modify, and omit the ones they do not want to change. Expedia will take care of merging the resource updates and preserve what was not included at the resource's top level.
+
+It is important to note that any top level object is treated as a full overlay even when using Merge-PATCH. For example, if a partner decides to include the cancelPolicy object, all the elements/values of that object need to be included as this specific object update will be treated as a full overlay.
 
 ## Understanding Expedia's Logic Around Room Names
 
