@@ -16,7 +16,7 @@ To perform authentication, Expedia QuickConnect tries to extract the username an
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
 
-For partners that never worked with Expedia before, and don't know how to get started, please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/guides.html#gettingconnected).
+For partners that never worked with Expedia before, and don't know how to get started, please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html).
 
 ----
 
