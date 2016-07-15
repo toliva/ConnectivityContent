@@ -349,8 +349,12 @@ body | body | JSON message describing the new room type | Yes | [RoomType](#/def
         "extraBedding": [
             {
                 "quantity": 1,
-                "type": "Sofa Bed",
-                "size": "Full"
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
             }
         ],
         "smokingPreferences": [
@@ -457,7 +461,11 @@ body | body | JSON message with modified room type | Yes | [RoomType](#/definiti
             {
                 "quantity": 1,
                 "type": "Sofa Bed",
-                "size": "Full"
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
             }
         ],
         "smokingPreferences": [
@@ -493,7 +501,7 @@ status | enum | No | Possible values are (Active, Inactive). Room type status is
 ageCategories | Array[[RoomTypeAgeCategory](#/definitions/RoomTypeAgeCategoryDTO)] | Yes | Array of age categories. Defines the different age categories supported by the room type. At the very least, the 'Adult' category must be defined.
 maxOccupancy | [Occupancy](#/definitions/OccupancyDTO) | No | Defines the maximum occupancy of the room in total and by age category. Always returned by room type GET. Optional for room type create and update. When not provided the Product API will calculate the occuancy based on bedding options. 
 standardBedding | [BeddingOption](#/definitions/BeddingOptionDTO) | Yes | Minimum 1 maxium 2 bedding options a room may have. Each bedding option can be with a combination of beds (type, size and quality).
-extraBedding | Array[[Bed](#/definitions/BedDTO)] | No | Defines the extra bed combination (type, size and quality) the room type may have.
+extraBedding | Array[[ExtraBed](#/definitions/ExtraBedDTO)] | No | Defines the extra bed combination (type, size and quality) the room type may have.
 smokingPreferences | Array[[smokingPreferenceEnum](#/definitions/smokingPreferenceEnum)] | Yes | Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner.
 roomSize | [RoomSize](#/definitions/RoomSizeDTO) | No | Used to define room size. When used, both size in square feet and in square meters must be specified.
 views | Array[[viewEnum](#/definitions/viewEnum)] | No | Used to define view(s) from the room. There can be up to 2 different views defined per room type.
@@ -557,6 +565,24 @@ Property Name | Type | Required | Description
 quantity | integer | Yes | Number of beds.
 type | [bedTypeEnum](#/definitions/bedTypeEnum) | Yes | Defines the bed type. Example: "King Bed", "Sofa Bed".
 size | [bedSizeEnum](#/definitions/bedSizeEnum) | No | Defines the size of the bed. Example: "King", "Queen". When specified, [only certain sizes can be used for each type](#/definitions/bedTypeAndSize). For bed types where Expedia accepts different sizes, when the size is not specific, Expedia will default to the smallest size possbile for the bed type.
+
+<a name="/definitions/ExtraBedDTO"></a>
+#### Extra Bed
+
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+quantity | integer | Yes | Number of beds.
+type | [bedTypeEnum](#/definitions/bedTypeEnum) | Yes | Defines the bed type. Example: "King Bed", "Sofa Bed".
+size | [bedSizeEnum](#/definitions/bedSizeEnum) | No | Defines the size of the bed. Example: "King", "Queen". When specified, [only certain sizes can be used for each type](#/definitions/bedTypeAndSize). For bed types where Expedia accepts different sizes, when the size is not specific, Expedia will default to the smallest size possible for the bed type.
+surcharge | [surcharge](#/definitions/SurchargeDTO) | No | Defines the surcharge of the bed. Only extra beds of type "Crib" and "Rollaway Bed" can have a surcharge defined.
+
+<a name="/definitions/SurchargeDTO"></a>
+#### Surcharge
+
+Property Name | Type | Required | Description
+------------- | ---- | -------- | -----------
+type | [surchargeTypeEnum](#/definitions/surchargeTypeEnum) | Yes | Defines the surcharge type. Example: "Free", "Per Day".
+amount | number | No | Defines the amount of the surcharge. Must be defined if type is not "Free".
 
 <a name="/definitions/RoomSizeDTO"></a>
 #### RoomSize
@@ -1400,6 +1426,17 @@ Expedia doesn't support all possible combinations of bed types and size. The tab
 | Twin Bed | Twin |
 | Twin XL Bed | TwinXL |
 | Water Bed | Full, King, Queen, Twin, TwinXL |
+
+<a name="/definitions/surchargeTypeEnum"></a>
+### surchargeTypeEnum
+
+| surchargeType |
+| ---- |
+| Free |
+| Per Day |
+| Per Night |
+| Per Week |
+| Per Stay |
 
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
