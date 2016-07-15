@@ -221,6 +221,25 @@ Response:
           ]
         }
       ],
+      "extraBedding": [
+        {
+          "quantity": 1,
+          "type": "Rollaway Bed",
+          "size": "Full",
+          "surcharge": {
+              "type": "Per Day",
+              "amount": 20
+          }
+        },
+        {
+          "quantity": 1,
+          "type": "Crib",
+          "size": "Crib",
+          "surcharge": {
+            "type": "Free"
+          }
+        }
+      ],
       "smokingPreferences": [
         "Smoking",
         "Non-Smoking"
@@ -343,6 +362,25 @@ Response:
                 ]
             }
         ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
+            }
+        ],
         "smokingPreferences": [
             "Smoking",
             "Non-Smoking"
@@ -403,6 +441,25 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         }
       ]
     }
+  ],        
+  "extraBedding": [
+    {
+      "quantity": 1,
+      "type": "Rollaway Bed",
+      "size": "Full",
+      "surcharge": {
+         "type": "Per Day",
+         "amount": 20
+      }
+    },
+    {
+      "quantity": 1,
+      "type": "Crib",
+      "size": "Crib",
+      "surcharge": {
+        "type": "Free"
+      }
+    }
   ],
   "smokingPreferences": [
     "Non-Smoking"
@@ -457,6 +514,25 @@ When successful, the API will respond with what Expedia created. Please note tha
                         "size": "Full"
                     }
                 ]
+            }
+        ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
             }
         ],
         "smokingPreferences": [
@@ -525,6 +601,25 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             ]
         }
     ],
+    "extraBedding": [
+        {
+            "quantity": 1,
+            "type": "Rollaway Bed",
+            "size": "Full",
+            "surcharge": {
+                "type": "Per Day",
+                "amount": 20
+            }
+        },
+        {
+            "quantity": 1,
+            "type": "Crib",
+            "size": "Crib",
+            "surcharge": {
+                "type": "Free"
+            }
+        }
+    ],
     "smokingPreferences": [
         "Non-Smoking"
     ],
@@ -584,6 +679,25 @@ When successful, the API will respond with what Expedia created. Please note tha
                         "size": "Full"
                     }
                 ]
+            }
+        ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
             }
         ],
         "smokingPreferences": [
@@ -654,6 +768,25 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             ]
         }
     ],
+    "extraBedding": [
+        {
+            "quantity": 1,
+            "type": "Rollaway Bed",
+            "size": "Full",
+            "surcharge": {
+                "type": "Per Day",
+                "amount": 20
+            }
+        },
+        {
+            "quantity": 1,
+            "type": "Crib",
+            "size": "Crib",
+            "surcharge": {
+                "type": "Free"
+            }
+        }
+    ],
     "smokingPreferences": [
         "Non-Smoking"
     ]
@@ -701,6 +834,25 @@ The response will not include bedroom details, view, featured amenity and area a
                         "size": "Full"
                     }
                 ]
+            }
+        ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
             }
         ],
         "smokingPreferences": [
@@ -756,6 +908,25 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             ]
         }
     ],
+    "extraBedding": [
+        {
+            "quantity": 1,
+            "type": "Rollaway Bed",
+            "size": "Full",
+            "surcharge": {
+                "type": "Per Day",
+                "amount": 20
+            }
+        },
+        {
+            "quantity": 1,
+            "type": "Crib",
+            "size": "Crib",
+            "surcharge": {
+                "type": "Free"
+            }
+        }
+    ],
     "smokingPreferences": [
         "Non-Smoking"
     ],
@@ -808,6 +979,25 @@ Response look like
                         "size": "Full"
                     }
                 ]
+            }
+        ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
             }
         ],
         "smokingPreferences": [
@@ -875,6 +1065,25 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             ]
         }
     ],
+    "extraBedding": [
+        {
+            "quantity": 1,
+            "type": "Rollaway Bed",
+            "size": "Full",
+            "surcharge": {
+                "type": "Per Day",
+                "amount": 20
+            }
+        },
+        {
+            "quantity": 1,
+            "type": "Crib",
+            "size": "Crib",
+            "surcharge": {
+                "type": "Free"
+            }
+        }
+    ],
     "smokingPreferences": [
         "Non-Smoking"
     ]
@@ -921,6 +1130,25 @@ Response looks like
                         "size": "Full"
                     }
                 ]
+            }
+        ],
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            },
+            {
+                "quantity": 1,
+                "type": "Crib",
+                "size": "Crib",
+                "surcharge": {
+                    "type": "Free"
+                }
             }
         ],
         "smokingPreferences": [
