@@ -1157,6 +1157,80 @@ Response looks like
     }
 }
 ```
+
+### Room Type Partial Update (PATCH)
+Here are a few examples of PATCH requests partners could want to make. Response examples are not included, but they would be the full room type resource definition with all its fields, in its final state after the partial update.
+
+#### Updating only the name attributes
+```
+{
+"name": {
+        "attributes": {
+          "typeOfRoom": "Penthouse",
+          "roomClass": "Executive",
+          "view": "City View",
+          "featuredAmenity": "Jetted Tub"
+        }
+      }
+}
+```
+
+#### Updating both the partner code and the age categories
+```
+{
+"partnerCode": "PatchedPartnerCode",
+"ageCategories": [
+    {
+      "category": "Adult",
+      "minAge": 18
+    },
+    {
+      "category": "ChildAgeA",
+      "minAge": 0
+    }
+  ]
+}
+```
+
+#### Updating both the maximum occupancy and the standard bedding
+```
+{
+  "maxOccupancy": {
+    "total": 3,
+    "adults": 2,
+    "children": 1
+  },
+  "standardBedding": [
+    {
+      "option": [
+        {
+          "quantity": 1,
+          "type": "King Bed",
+          "size": "King"
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### Updating only the room views
+```
+{
+  "views": [
+    "Pool View",
+    "Partial Ocean View"
+    ]
+}
+```
+
+#### Updating only the room views (this will remove views since the provided list is empty)
+```
+{
+  "views": []
+}
+```
+
 ##	Rate Plan Resource Examples
 The rate plan resource defines the configuration of a rate that a partner would like to make available to Expedia customers. It contains the more static information about the rate, for example its name, code, cancellation and change policy, what is the base compensation, what are the additional guest amounts to charge, etc.
 More dynamic information like availability and rate information per stay date is exchanged via another API, EQC AR.

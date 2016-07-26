@@ -497,7 +497,7 @@ Status Code | Description | Response Model
 
 #### Room Type Modify - Partial Update (PATCH)
 
-Expedia chose the merge-patch method for partial update, as described in https://tools.ietf.org/html/rfc7396.
+Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
 
 This method allows partners to update a room type by providing only the fields/values they need to change. This saves partners from having to first read the room type before updating it. If partners provide the complete room type data, this method essentially behaves just like the [update](#modify-an-existing-room-type) method.
 
@@ -531,7 +531,7 @@ Updating both the partner code and the name attributes:
 {
   "partnerCode": "PatchedPartnerCode",
   "name": {
-      "attributes":Code {
+      "attributes": {
         "typeOfRoom": "Loft",
         "roomClass": "Deluxe",
         "area": "Poolside"
@@ -545,8 +545,7 @@ Updating only the maximum occupancy:
 {
   "maxOccupancy": {
       "total": 3,
-      "adults": 2,
-      "children": 2
+      "adults": 2
     }
 }
 ```
@@ -998,7 +997,7 @@ Status Code | Description | Response Model
 
 #### Rate Plan Modify - Partial Update (PATCH)
 
-Expedia chose the merge-patch method for partial update, as described in https://tools.ietf.org/html/rfc7396. 
+Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
 
 This method allows partners to update a rate plan by providing only the fields/values they need to change. This saves partners from having to first read the rate plan before updating it. If partners provide the complete rate plan data, this method essentially behaves just like the [update](#modify-an-existing-rate-plan) method.
 
