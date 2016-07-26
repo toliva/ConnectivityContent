@@ -77,7 +77,6 @@ Opening and Closing – room types |
 Rate per day for base occupancy (per day pricing model) |
 Rate per day for base occupancy, per length of stay (per day length of stay pricing model) |
 Rate per day by occupancy (occupancy based pricing model) **Recommended** |
-Rate per day per person for double occupancy (per person pricing model) |
 Rates could be Net Rate, Sell Rate or Lowest Available Rate, based on product configuration in Expedia system. |
 Day-of-arrival pricing with rate change indicator |
 Minimum length of stay (based on arrival or stay through) |
