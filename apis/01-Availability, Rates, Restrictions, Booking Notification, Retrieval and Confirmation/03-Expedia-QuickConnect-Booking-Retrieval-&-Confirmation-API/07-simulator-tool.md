@@ -48,7 +48,7 @@ Only the latest versions of AR and PARR are supported on the EQC Simulator:
 * Username can be anything
 * Password should work the same as other messages supported by simulator (can take one of 3 values, else return error: ECLPASS, ECL.DELAY, ECL.TIMEOUT)
 
-Hotel ID 111 product configuration: Per Person Pricing, Day-of-Arrival pricing enabled (rateChangeIndicator flag returned), 1 Room Type, 2 rate plans, Expedia Collect-only property. 
+Hotel ID 111 product configuration: Per day pricing based on day of arrival, Day-of-Arrival pricing enabled (rateChangeIndicator flag returned), 1 Room Type, 2 rate plans, Expedia Collect-only property. 
 ```xml
 <ProductList>
     <Hotel name="Test Hotel 111" city="New York" id="111"/>
