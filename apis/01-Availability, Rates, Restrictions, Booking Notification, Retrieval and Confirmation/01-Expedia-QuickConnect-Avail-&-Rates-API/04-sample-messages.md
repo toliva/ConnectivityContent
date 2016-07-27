@@ -285,48 +285,7 @@ The following is a sample AR request message to update room allocation and per-d
     </AvailRateUpdate>
 </AvailRateUpdateRQ>
 ```
-### Update a Room Type’s Allocation and Per-Person Rate Plan’s Restrictions and Rates 
-The following is a sample AR request message to update room allocation and rate plan rates (per person for double occupancy) and restrictions for 1 room type and 1 rate plan with different values per day for the month of August 2012.
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!--Sample AR request message: updating allocation, rates (per person for double occupancy) and restrictions for 1 room type and 1 rate plan with different values for the month of August 2012-->
-<AvailRateUpdateRQ xmlns="http://www.expediaconnect.com/EQC/AR/2011/06">
-    <Authentication username="testuser" password="testpass"/>
-    <Hotel id="3546"/>
-    <AvailRateUpdate>
-        <DateRange from="2012-08-01" to="2012-08-02"/>
-        <DateRange from="2012-08-05" to="2012-08-05"/>
-        <DateRange from="2012-08-15" to="2012-08-25"/>
-        <RoomType id="558945" closed="false">
-            <Inventory totalInventoryAvailable="50"/>
-            <RatePlan id="545895" closed="false">
-                <Rate currency="EUR">
-                    <PerPerson rate="75.00"/>
-                </Rate>
-                <Restrictions minLOS="2" maxLOS="10" closedToArrival="false"/>
-            </RatePlan>
-        </RoomType>
-    </AvailRateUpdate>
-    <AvailRateUpdate>
-        <DateRange from="2012-08-03" to="2012-08-04"/>
-        <DateRange from="2012-08-06" to="2012-08-14"/>
-        <DateRange from="2012-08-26" to="2012-08-26"/>
-        <RoomType id="558945" closed="false">
-            <Inventory totalInventoryAvailable="20"/>
-            <RatePlan id="545895" closed="false">
-                <Rate currency="EUR">
-                    <PerPerson rate="65.00"/>
-                </Rate>
-                <Restrictions minLOS="2" maxLOS="7" closedToDeparture="true"/>
-            </RatePlan>
-        </RoomType>
-    </AvailRateUpdate>
-    <AvailRateUpdate>
-        <DateRange from="2012-08-27" to="2012-08-31"/>
-        <RoomType id="558945" closed="true"/>
-    </AvailRateUpdate>
-</AvailRateUpdateRQ>
-```
+
 ### Update Rates and Rate Change Indicator for Day of Arrival pricing-enabled rate plans
 The following is a sample AR request message to request a rate change on specific dates, along with a rate update, for 2 different rate plans under one room type.
 ```xml
