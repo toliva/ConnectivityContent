@@ -1164,62 +1164,62 @@ Here are a few examples of PATCH requests partners could want to make. Response 
 #### Updating only the name attributes
 ```
 {
-"name": {
+    "name": {
         "attributes": {
-          "typeOfRoom": "Penthouse",
-          "roomClass": "Executive",
-          "view": "City View",
-          "featuredAmenity": "Jetted Tub"
+            "typeOfRoom": "Penthouse",
+            "roomClass": "Executive",
+            "view": "City View",
+            "featuredAmenity": "Jetted Tub"
         }
-      }
+    }
 }
 ```
 
 #### Updating both the partner code and the age categories
 ```
 {
-"partnerCode": "PatchedPartnerCode",
-"ageCategories": [
-    {
-      "category": "Adult",
-      "minAge": 18
-    },
-    {
-      "category": "ChildAgeA",
-      "minAge": 0
-    }
-  ]
+	"partnerCode": "PatchedPartnerCode",
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        },
+        {
+            "category": "ChildAgeA",
+            "minAge": 0
+        }
+    ]
 }
 ```
 
 #### Updating both the maximum occupancy and the standard bedding
 ```
 {
-  "maxOccupancy": {
-    "total": 3,
-    "adults": 2,
-    "children": 1
-  },
-  "standardBedding": [
-    {
-      "option": [
+    "maxOccupancy": {
+        "total": 3,
+        "adults": 2,
+        "children": 1
+    },
+    "standardBedding": [
         {
-          "quantity": 1,
-          "type": "King Bed",
-          "size": "King"
+            "option": [
+                {
+                    "quantity": 1,
+                    "type": "King Bed",
+                    "size": "King"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
 #### Updating only the room views
 ```
 {
-  "views": [
-    "Pool View",
-    "Partial Ocean View"
+    "views": [
+        "Pool View",
+        "Partial Ocean View"
     ]
 }
 ```
@@ -1227,7 +1227,7 @@ Here are a few examples of PATCH requests partners could want to make. Response 
 #### Updating only the room views (this will remove views since the provided list is empty)
 ```
 {
-  "views": []
+    "views": []
 }
 ```
 
