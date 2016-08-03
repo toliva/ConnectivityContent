@@ -1474,7 +1474,7 @@ Bed types can not all be used as extra or standard beds. To understand if a bed 
 <a name="/definitions/bedTypeAndSize"></a>
 ### Valid Bed Type and Size Combinations
 
-Expedia doesn't support all possible combinations of bed types and size. The table below indicates which sizez can be used with each bed type. Partners attempting to make use of any other size will get an error back from the API when they do so.
+Expedia doesn't support all possible combinations of bed types and size. The table below indicates which sizes can be used with each bed type. Partners attempting to make use of any other size will get an error back from the API when they do so.
 
 |  bedType | bedSize |
 | ---- | ---- |
@@ -1685,13 +1685,9 @@ ROOM_MP3_PLAYER_DOCK | - | - | - |
 
 Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
 ---- | --------------------- | --------------------- | --------------- | -----
-ROOM_CRIBS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
-ROOM_EXTRA_BEDS | FREE, SURCHARGE | No | - | The actual surcharge amount cannot be room-specific. In order to define the surcharge, please use Expedia PartnerCentral.
-ROOM_SOFA_BED | SINGLE, TWIN, DOUBLE, QUEEN, KING | No | - | 
 ROOM_PREMIUM_LINENS | EGYPTIAN_COTTON_SHEETS , FRETTE_ITALIAN_SHEETS | Yes | - | 
 ROOM_HYPO_BED_AVAIL | - | - | - | 
 ROOM_PREMIUM_MATTRESS | MEMORY_FOAM, PILLOW_TOP, SLEEP_NUMBER, TEMPURPEDIC | Yes | - | 
-ROOM_DAY_BED | - | - | - | 
 ROOM_DOWN_COMFORTER | - | - | - | 
 ROOM_PILLOW_MENU | - | - | - | 
 ROOM_PREMIUM_BEDDING | - | - | - | 
