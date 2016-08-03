@@ -143,7 +143,7 @@ OR
 3|@code|Enum||Reward program code, as defined by Expedia.
 3|@number|String||Customer's account no - unique ID from reward program card number <p>String length does not exceed 32 characters</p>
 3|SpecialRequest|String|*|Special Request made by the customer. Can have up to 6 different special requests, and each one can be one of 6 types:<ul><li>Bedding type</li><li>Smoking/Non-smoking</li><li>Multi-room booking</li><li>Free text (guest comments entered at booking on Expedia)</li><li>Payment instructions</li><li>Value Add Promotions</li></ul><p>Types are identified by code attribute on this element.</p><p>String length does not exceed 256 characters.</p>
-3|@code|Enum||Expedia-defined code associated to special request: <ul><li>(1.x) bedding preferences w/ different codes for beddings</li><li>(2) smoking/no smoking </li><li>(3) indication of multi room bookings</li><li>(4) free text</li><li>(5) payment instructions</li><li>(6) Value Add Promotions</li></ul><p>Please visit the [Special Request Codes](#SpecialRequestCodes) section for an exhaustive list of possible code. .</p>
+3|@code|Enum||Expedia-defined code associated to special request: <ul><li>(1.x) bedding preferences w/ different codes for beddings</li><li>(2) smoking/no smoking </li><li>(3) indication of multi room bookings</li><li>(4) free text</li><li>(5) payment instructions</li><li>(6) Value Add Promotions</li></ul><p>Please visit the [Special Request Codes](#/SpecialRequestCodes) section for an exhaustive list of possible code. .</p>
 
 ### Booking Retrieval Response Types
 
