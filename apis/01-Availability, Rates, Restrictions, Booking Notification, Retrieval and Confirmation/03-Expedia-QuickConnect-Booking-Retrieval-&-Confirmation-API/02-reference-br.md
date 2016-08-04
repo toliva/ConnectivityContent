@@ -143,7 +143,7 @@ OR
 3|@code|Enum||Reward program code, as defined by Expedia.
 3|@number|String||Customer's account no - unique ID from reward program card number <p>String length does not exceed 32 characters</p>
 3|SpecialRequest|String|*|Special Request made by the customer. Can have up to 6 different special requests, and each one can be one of 6 types:<ul><li>Bedding type</li><li>Smoking/Non-smoking</li><li>Multi-room booking</li><li>Free text (guest comments entered at booking on Expedia)</li><li>Payment instructions</li><li>Value Add Promotions</li></ul><p>Types are identified by code attribute on this element.</p><p>String length does not exceed 256 characters.</p>
-3|@code|Enum||Expedia-defined code associated to special request: <ul><li>(1.x) bedding preferences w/ different codes for beddings</li><li>(2) smoking/no smoking </li><li>(3) indication of multi room bookings</li><li>(4) free text</li><li>(5) payment instructions</li><li>(6) Value Add Promotions</li></ul><p>Please visit the “Code definition” section for a complete list of codes.</p>
+3|@code|Enum||Expedia-defined code associated to special request: <ul><li>(1.x) bedding preferences w/ different codes for beddings</li><li>(2) smoking/no smoking </li><li>(3) indication of multi room bookings</li><li>(4) free text</li><li>(5) payment instructions</li><li>(6) Value Add Promotions</li></ul><p>Please visit the [Special Request Codes](#/SpecialRequestCodes) section for an exhaustive list of possible code. .</p>
 
 ### Booking Retrieval Response Types
 
@@ -228,6 +228,7 @@ If the EQC partner's system manages to establish a connection to Expedia QuickCo
 - Make sure that the EQC partner's system is not closing the connection too early. Some retrieval queries can take time, and Expedia will keep the connection active for up to 60 seconds. Therefore, the EQC partner should keep the connection open for at least 60 seconds.
 - Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting for bytes that never arrive, and eventually times out.
 
+
 ### Error Codes and Descriptions
 
 Error code | Error description | Explanation and EQC partner Action
@@ -254,3 +255,241 @@ Error code | Error description | Explanation and EQC partner Action
 4100, 4101 | Internal System Error. Do not retry this request. Our support team was notified of the problem. | Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. 
 4206 | Expedia QuickConnect interface is temporarily closed. Please try again shortly. | If AR, enter in incremental retry mode. 
 5000 | Internal database error, please try again in a few minutes.  | 
+
+<a name="SpecialRequestCodes"></a>
+
+## Special Request Codes
+Code | Value
+---- | -----
+1.1 | 7 beds
+1.2 | 9 beds
+1.3 | 10 beds
+1.4 | 11 beds
+1.5 | Multiple Beds
+1.13 | 1 double bed
+1.14 | 1 king bed
+1.15 | 1 queen bed
+1.18 | 1 twin bed
+1.21 | 2 double beds
+1.22 | 2 king beds
+1.23 | 2 queen beds
+1.25 | 2 twin beds
+1.30 | 3 twin beds
+1.34 | 4 twin beds
+1.40 | 1 bed
+1.41 | 2 beds
+1.42 | 1 single bed
+1.43 | 2 single beds
+1.44 | 3 single beds
+1.45 | 4 single beds
+1.46 | 1 full bed
+1.47 | 2 full beds
+1.48 | 1 trundle bed
+1.49 | 1 murphy bed
+1.50 | 1 bunk bed
+1.51 | 1 sofa bed
+1.52 | 2 sofa beds
+1.53 | 3 sofa beds
+1.54 | 1 Japanese futon
+1.55 | 3 beds
+1.56 | 3 king beds
+1.57 | 3 queen beds
+1.58 | 4 beds
+1.59 | 4 king beds
+1.60 | 4 queen beds
+1.61 | 1 king and 1 single bed
+1.62 | 1 queen and 1 single bed
+1.63 | 1 double and 1 single bed
+1.64 | 1 king and 2 single beds
+1.65 | 1 queen and 2 single beds
+1.66 | 1 double and 2 single beds
+1.67 | 1 king and 1 sofa bed
+1.68 | 1 queen and 1 sofa bed
+1.69 | 1 double and 1 sofa bed
+1.70 | 2 twin and 1 sofa bed
+1.71 | 2 single and 1 sofa bed
+1.72 | 1 king and 1 queen bed
+1.73 | 2 double and 1 single bed
+1.74 | 2 king and 1 single bed
+1.75 | 1 double and 1 twin bed
+1.76 | 6 beds
+1.77 | 5 beds
+1.78 | 2 extra-long double bed
+1.79 | 1 semi-double bed
+1.80 | 1 pullout bed
+1.81 | 4 double and 1 queen sofa bed
+1.82 | 2 king and 1 queen sofa bed
+1.83 | 2 double and 1 sofa bed
+1.84 | 4 double beds
+1.85 | 3 double beds
+1.86 | 2 double and 2 single beds
+1.87 | 1 queen and 1 double bed
+1.88 | 2 queen and 1 sofa bed
+1.89 | 4 double and 1 sofa bed
+1.90 | 2 king and 1  sofa bed
+1.91 | Quadruple Occupancy
+1.92 | Triple Occupancy
+1.93 | Double Occupancy
+1.94 | Single Occupancy
+1.96 | 1 double or 2 twin beds
+1.97 | 1 double or 1 twin bed
+1.98 | 1 king and 1 double bed
+1.99 | 1 double and 1 bunk bed
+1.100 | 1 double and 2 bunk beds
+1.101 | 1 double and 2 single sofa beds
+1.102 | 1 double and 2 sofa beds
+1.103 | 1 double and 3 single beds
+1.104 | 1 double and 3 sofa beds
+1.105 | 1 double, 1 single, and 1 bunk bed
+1.106 | 1 double, 1 single, and 1 sofa bed
+1.107 | 1 double, 1 sofa bed, and 1 bunk bed
+1.108 | 1 double, 2 single, and 1 double sofa bed
+1.109 | 1 double, 2 single, and 1 sofa bed
+1.110 | 1 double, 3 single, and 1 sofa bed
+1.111 | 1 double, 3 twin, and 3 queen beds
+1.112 | 1 king and 1 bunk bed
+1.113 | 1 king and 2 queen beds
+1.114 | 1 king and 4 single beds
+1.115 | 1 king, 1 queen, and 1 sofa bed
+1.116 | 1 king, 1 queen, and 3 single beds
+1.117 | 1 king, 1 sofa bed, and 1 murphy bed
+1.118 | 1 king, 2 double, and 1 sofa bed
+1.119 | 1 king, 2 single, and 1 sofa bed
+1.120 | 1 queen and 1 bunk bed
+1.121 | 1 queen and 1 murphy bed
+1.122 | 1 queen and 2 bunk beds
+1.123 | 1 queen and 2 double beds
+1.124 | 1 queen and 2 sofa beds
+1.125 | 1 queen and 3 single beds
+1.126 | 1 queen and 4 single beds
+1.127 | 1 queen, 1 bunk bed, and 1 sofa bed
+1.128 | 1 queen, 1 murphy bed, and 1 sofa bed
+1.129 | 1 single and 1 sofa bed
+1.130 | 1 sofa bed and 1 bunk bed
+1.131 | 2 bunk beds
+1.133 | 2 double and 2 sofa beds
+1.134 | 2 Japanese futons
+1.135 | 2 king and 1 sofa bed
+1.136 | 2 king and 2 queen beds
+1.137 | 2 king, 2 single, and 1 bunk bed
+1.138 | 2 king, 2 single, and 1 sofa bed
+1.139 | 2 queen and 1 bunk bed
+1.140 | 2 queen and 1 single bed
+1.142 | 2 queen and 1 trundle bed
+1.143 | 2 queen and 2 single beds
+1.144 | 2 single and 1 bunk bed
+1.146 | 2 single and 2 bunk beds
+1.147 | 2 single and 2 sofa beds
+1.148 | 2 single and 3 sofa beds
+1.149 | 3 double and 1 sofa bed
+1.150 | 3 Japanese futons
+1.151 | 3 queen and 1 sofa bed
+1.152 | 3 queen and 2 single beds
+1.153 | 3 queen, 2 single, and 2 bunk beds
+1.154 | 4 Japanese futons
+1.155 | 4 single and 1 sofa bed
+1.156 | 4 single and 2 sofa beds
+1.157 | 5 Japanese futons
+1.158 | 5 queen and 4 single beds
+1.159 | 6 Japanese futons
+1.160 | 7 Japanese futons
+1.161 | 8 Japanese futons
+1.163 | 3 queen, 1 double, and 3 single beds
+1.164 | 3 bunk beds
+1.165 | 4 bunk beds
+1.166 | 1 queen, 1 double, and 1 sofa bed
+1.167 | 1 queen, 2 single, and 2 sofa beds
+1.168 | 1 king, 1 queen, and 1 twin bed
+1.169 | 1 king, 1 queen, and 2 twin beds
+1.170 | 1 king, 2 queen, and 2 twin beds
+1.171 | 1 king, 4 single, and 1 sofa bed
+1.172 | 2 king, 4 single, and 1 sofa bed
+1.173 | 2 king, 2 queen, and 2 twin beds
+1.174 | 2 king, 2 double, and 1 sofa bed
+1.175 | 1 king, 1 queen, 4 single, and 1 sofa bed
+1.176 | 1 king, 2 double, 1 twin, and 2 sofa beds
+1.177 | 1 double, 2 single, and 1 bunk bed
+1.178 | 1 king, 1 queen, and 6 twin beds
+1.179 | 1 king, 2 queen, 2 full, 3 twin, and 1 bunk bed
+1.180 | 1 king, 3 queen, and 1 sofa bed
+1.181 | 2 double, 2 single, and 1 sofa bed
+1.182 | 2 king and 4 single beds
+1.183 | 2 king, 2 queen, and 1 sofa bed
+1.184 | 2 queen, 2 single, and 2 sofa beds
+1.185 | 8 beds
+1.186 | 1 double and 4 bunk beds
+1.187 | 1 double, 1 bunk, and 1 sofa bed
+1.188 | 1 double, 1 sofa bed, and 1 trundle bed
+1.189 | 1 double, 2 single, 1 sofa bed, and 1 trundle bed
+1.190 | 1 king and 1 murphy bed
+1.191 | 1 king, 1 queen, 2 full, and 1 bunk bed
+1.192 | 1 king, 1 single, and 1 sofa bed
+1.193 | 1 queen, 1 full, and 2 sofa beds
+1.194 | 1 queen, 1 full, 1 single, and 1 sofa bed
+1.195 | 1 single and 1 bunk bed
+1.196 | 2 queen, 1 full, and 1 bunk bed
+1.197 | 2 queen, 2 full, 4 bunk beds, and 1 sofa bed
+1.198 | 3 queen and 1 single bed
+1.199 | 3 single and 1 sofa bed
+1.200 | 4 single and 3 double beds
+1.201 | 2 king and 2 sofa beds
+1.202 | 1 king and 2 full beds
+1.203 | 1 single and 1 trundle bed
+1.204 | 1 double and 12 single beds
+1.205 | 1 double, 2 bunk, and 1 sofa bed
+1.206 | 1 double, 2 single, and 4 sofa beds
+1.207 | 1 double, 4 single, and 1 sofa bed
+1.208 | 1 double, 5 single, and 2 sofa beds
+1.209 | 1 king and 2 double beds
+1.210 | 1 king and 3 bunk beds
+1.211 | 1 king and 3 queen beds
+1.212 | 1 king, 1 full, and 2 bunk beds
+1.213 | 1 king, 1 full, 1 single, and 1 sofa bed
+1.214 | 1 king, 2 full, 2 single, and 1 sofa bed
+1.215 | 1 king, 2 queen, and 1 murphy bed
+1.216 | 1 king, 2 queen, 2 single, and 2 sofa beds
+1.217 | 1 queen, 1 full, 2 single, and 1 sofa bed
+1.218 | 1 queen, 1 single, and 1 sofa bed
+1.219 | 1 queen, 2 double, and 1 single bed
+1.220 | 1 queen, 2 single, and 1 sofa bed
+1.221 | 1 sofa bed and 1 murphy bed
+1.222 | 12 beds
+1.223 | 2 double and 2 bunk beds
+1.224 | 2 double, 1 single, and 1 sofa bed
+1.225 | 2 king, 1 queen, and 1 sofa bed
+1.226 | 2 king, 1 queen, and 4 single beds
+1.227 | 2 king, 2 queen, and 1 single bed
+1.228 | 2 king, 2 queen, and 4 single beds
+1.229 | 2 queen , 2 single, and 1 sofa bed
+1.230 | 2 queen and 1 murphy bed
+1.231 | 2 queen and 2 sofa beds
+1.232 | 2 queen, 2 double, and 2 single beds
+1.233 | 3 double and 1 single bed
+1.234 | 3 king, 4 single and 3 sofa beds
+1.235 | 4 double and 1 bunk bed
+1.236 | 4 double and 1 single bed
+1.237 | 4 single and 2 bunk beds
+1.238 | 1 queen, 1 double, and 1 murphy bed
+1.239 | 1 queen, 1 sofa bed, and 1 Japanese futon
+1.240 | 1 queen and 1 Japanese futon
+1.241 | 1 king and 3 double beds
+1.242 | 2 king and 3 double beds
+1.243 | 2 king and 5 double beds
+1.244 | 2 king, 5 double, and 2 single beds
+1.245 | 2 king, 6 double, and 2 single beds
+1.246 | 4 double, 2 single, and 1 sofa bed
+1.247 | 2 double, 2 single, and 2 sofa beds
+1.248 | 3 double and 2 sofa beds
+1.249 | 3 double, 5 single, and 1 sofa bed
+1.250 | 3 single and 1 bunk bed
+1.251 | 2 double and 3 single beds
+1.252 | 2 queen and 4 single beds
+1.253 | 3 queen and 4 single beds
+1.254 | 4 single and 1 double bed
+1.255 | 2 king and 1 double bed
+2.1 | Non-smoking
+2.2 | Smoking
+3 | Multi room booking and Mixed Rate Bookings
+4 | Free text
+5 | payment instruction 
+6 | Value Add Promotions

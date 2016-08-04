@@ -516,6 +516,7 @@ Code | Value
 1.2 | 9 beds
 1.3 | 10 beds
 1.4 | 11 beds
+1.5 | Multiple Beds
 1.13 | 1 double bed
 1.14 | 1 king bed
 1.15 | 1 queen bed
