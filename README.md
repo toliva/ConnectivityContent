@@ -1,5 +1,15 @@
 # Content Readme
 
+## Check for broken links
+
+Use this link to run a report to find any broken links.
+
+1. lct.teamcity.sb.karmalab.net/project.html?projectId=partner_api_web
+2. run Check Links. 
+3. view the site-link-results reports under the artifacts link in teamcity
+4. fix any broken links in your files or notify the relevant team(s) of broken links in their files
+
+
 ## Swagger Cross-Domain Support
 To use the Swagger-UI, HTTP requests from our site need to be able to hit JSON endpoints on an external server (which is hosting Swagger).  This can be a problem as these requests
 are cross-domain, which is a security measure most browsers have in place to stop malicious scripts accessing and manipulating content on another site, with the credentials of the
@@ -47,3 +57,4 @@ the following should be done:
    2.6. Swagger-UI also provide their own guide on setting up CORS (Cross-Origin Resource Sharing) available on the bottom of their [Github Page](https://github.com/swagger-api/swagger-ui#cors-support]).
    
   For more information, try the [Wiki Page](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing#Preflight_example) for it.
+  
