@@ -81,6 +81,27 @@ h2 {
         font-size: 2em;
     }
 }
+h3 {
+    color: #000000;
+    font-size: 1.2em;
+    margin: 0 0;
+    font-weight:bold;
+}
+@media only screen and (min-width: 705px) {
+    h3 {
+        font-size: 1.3em;
+    }
+}
+@media only screen and (min-width: 840px) {
+    h3 {
+        font-size: 2em;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    h3 {
+        font-size: 2.5em;
+    }
+}
 </style>
 <section class='hero hero-pool'>
     <div class='inner'>
@@ -116,7 +137,7 @@ h2 {
                 </div>
             </div>
             <div class="blog-content">
-              <h2><strong>Are your bookings failing due to outdated API schemas?</strong></h2><br/><br/>
+              <h3>Are your bookings failing due to outdated API schemas?</h3><br/><br/>
 
               <strong>What changed?</strong><br/>
               The booking schemas used by the Expedia Booking Notification and Booking Retrieval APIs have been updated to support changes to the number of Special Request fields Expedia is sending. Previously these APIs only supported up to 5 special requests, but we recently added a 6th special request to support Value Add Promotions and are expanding the schema to accommodate 99 Special Requests to avoid any issues in the future.
