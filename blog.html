@@ -87,6 +87,69 @@ h2 {
         <h1>Expedia Connectivity Blog</h1>
     </div>
 </section>
+
+<a name="booking-API-updates"></a>
+<div class="row">
+    <div class="small-8 small-centered large-10 large-centered columns">
+        <div class="blog-spacer-head">&nbsp;</div>
+    </div>
+</div>
+<div class="row">
+    <div class="small-8 small-centered large-10 large-centered columns">
+        <div class="blog-post">
+            <div class="blog-title">
+                <h2>Important updates to booking APIs</h2>
+            </div>
+            <div class="row">
+                <div class="small-4 large-5 columns">
+                    <div class="blog-date">
+                        <span title="15th of August, 2016">2016-08-15</span>
+                    </div>
+                </div>
+                <div class="small-4 large-5 columns">
+                    <div class="blog-tags">
+                        <span class="blog-tag label">Value Adds</span>
+                        <span class="blog-tag label">Booking Notifications</span>
+                        <span class="blog-tag label">Booking Retrievals</span>
+                        <span class="blog-tag label">API updates</span>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-content">
+              <strong>Are your booking failing due to outdated API schemas?</strong><br/><br/>
+
+              <strong>What changed?</strong><br/>
+              The booking schemas used by the Expedia Booking Notification and Booking Retrieval APIs have been updated to support changes to the number of Special Request fields Expedia is sending. Previously these APIs only supported up to 5 special requests, but we recently added a 6th special request to support Value Add Promotions and are expanding the schema to accommodate 99 Special Requests to avoid any issues in the future.
+              <br/><br/>
+              <strong>What do I need to do?</strong><br/>
+              If your system is using the Expedia schemas to perform schema validations on the booking notification request messages or booking retrieval response messages sent by Expedia, please download the new schemas from the developer portal to ensure all of bookings for your properties are delivered successfully.
+              <ul>
+                  <li>Expedia Booking Notification API – <a target="_blank" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/schemas.html">XML Schemas</a></li>
+                  <li>Expedia QuickConnect Booking Retrieval & Confirmation API – <a target="_blank" "https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/xml-schemas.html">XML Schemas</a></li>
+              </ul>
+              <strong>What if I have questions or feedback?</strong><br/>
+              If you’ve successfully downloaded the latest schema and aren’t facing any issues, or even if you’ve run into issues or your system is not able to accommodate our schema changes, please let us know in our partner feedback form found here(I’ll need to set up a GoogleForm to gather responses).
+              <br/><br/>
+
+              <strong>Do you support Expedia’s new configurations for bedding and occupancy?</strong>
+
+              <strong>What changed?</strong><br/>
+              Expedia is changing the bedding and occupancy configuration for the room types to make it more clear and accurate for our customers and partners. The new bedding configuration impacts the Booking Notification and Booking Retrieval APIs. Expedia will continue sending bed type information in the Special Request field, but will start sending new bed type descriptions. The new bed type descriptions will be generated from the new bedding configurations and will be in free-form text instead of the fixed values defined by the current API. We are moving to free-text descriptions over codes, so that we can better represent the diversity of lodging bedding configurations.
+              <br/><br/>
+              <strong>What does this mean and what do I need to do?</strong><br/>
+              This means that the bed type free-text descriptions will need to be passed to the PMS, so please ensure that the bed-type is passed to the PMS via string rather than by bed-type code. If your systems are using the Expedia Booking Notification API or the Expedia QuickConnect Booking Retrieval API, we need your feedback on the following questions, which can be answered in the following response form: (GoogleForm)
+              <ul>
+                <li>Is your system able to accept any bed type description (free-form text) and pass it on to the hotelier (PMS)?</li>
+                <li>Is your system able to accept any bed type code (ex. code 1.5 for multiple beds)?</li>
+                <li>There is an edge case for room types with multiple bedding options such as “1 king bed” or “2 double beds”, when the customer selects one of the bedding options to book, the accurate bed type description will be sent in the booking notification or booking retrieval message. But the bed type code may not be accurate in these multiple bedding option scenarios. Could this edge case cause any issue for you or your PMS integrations? Is your system capable of ignoring the bed type code and consume only the bed type description?</li>
+              </ul>
+              <br/><br/>
+              If you are a partner using the Product API, you can create a room type with the new bedding and occupancy configuration through the API. Please refer to the <a target="_blank" href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html">Expedia Product API documentation</a> for examples.
+             </div>
+        </div>
+    </div>
+</div>
+
 <a name="post-hackathon"></a>
 <div class="row">
     <div class="small-8 small-centered large-10 large-centered columns">
