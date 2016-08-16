@@ -26,6 +26,7 @@ For more information about getting started for the first time, and authorization
 - **Errors** : If a request produces one or more errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
 
 ## Resources & Endpoints Overview
+* All of Expedia APIs now live under the https://services.expediapartnercentral.com/ domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.
 * In order to access property information: `/product/properties/{propertyResourceId}`. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
 * Room types can be accessed in the context of a property: `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}`. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
 * Rate plans can be accessed as part of a room type (they belong to a room type): `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}`. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
