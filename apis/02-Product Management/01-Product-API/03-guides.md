@@ -33,6 +33,10 @@ With the new product API, these steps can go away. Once the room types and rate 
 
 ![Simplified Mapping Process Overview](/images/mapping-process.png)
 
+## Does Expedia Offer JSON Schema Files for Product API?
+
+Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://services.expediapartnercentral.com/products/swagger.json) file that should enable our partners to build an integration to Expedia Product API quickly. For more information, please watch our [Video Tutorial](/apis/product-management/product-api/video.html).
+
 ## Product API Versioning Documentation and Maintenance Strategy for Older Versions
 
 Product API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
