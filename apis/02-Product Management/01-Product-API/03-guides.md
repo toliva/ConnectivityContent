@@ -35,7 +35,7 @@ With the new product API, these steps can go away. Once the room types and rate 
 
 ## Does Expedia Offer JSON Schema Files for Product API?
 
-Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://services.expediapartnercentral.com/products/swagger.json) file that should enable our partners to build an integration to Expedia Product API quickly. For more information, please watch our (Video Tutorial)[/apis/product-management/product-api/video.html].
+Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://services.expediapartnercentral.com/products/swagger.json) file that should enable our partners to build an integration to Expedia Product API quickly. For more information, please watch our [Video Tutorial](/apis/product-management/product-api/video.html).
 
 ## Product API Versioning Documentation and Maintenance Strategy for Older Versions
 
