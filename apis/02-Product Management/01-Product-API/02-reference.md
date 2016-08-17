@@ -15,6 +15,10 @@ Where "RVFDdGVzdDEyOTMzODcwOndtNDdhaDky" is the string "EQCtest12933870:wm47ah92
 
 For more information about getting started for the first time, and authorization, please refer to the [FAQ & Guides section](guides.html#/howtogetstarted)
 
+## Swagger.json File for Product API
+
+To facilitate integrating with the Product API, Expedia offers a [Swagger.json](https://services.expediapartnercentral.com/products/swagger.json) file documenting the Product API model and operations. Please watch our [Video Tutorial](/apis/product-management/product-api/video.html) for more information on how developers can leverage this file to kick start development.
+
 ## API Principles & Standards
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
