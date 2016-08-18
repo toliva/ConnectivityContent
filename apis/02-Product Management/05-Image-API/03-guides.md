@@ -26,6 +26,10 @@ If the image is not corrupted, and meets the minimum size requirements, it shoul
 
 Once it is published, Expedia will audit all images within a few hours to make sure they meet [Expedia guidelines](https://expediagso.secure.force.com/kb/articles/en_US/Policy/About-Rejected-Photos/?q=Photos&l=en_US&fs=Search&pn=1). If they do not meet the guidelines, they will be rejected. This information can be found by reading the image meta data and looking for the status inactive, as well as the comments that might be included with the image.
 
+## Can I GET/Read all images that Expedia has for my property?
+
+The Image API will currently only allow partners to read the images they added via the API. Some images added via Expedia PartnerCentral might also be visible, but only if they were added recently, after June 2016. The API will soon be improved to allow Expedia Partners to read all existing images for their properties, but it is currently not possible. This documentation will be updated once this becomes possible.
+
 ## Can I Assigne an Image to One or More Room Types?
 
 By providing the roomTypes array with the room types' resource IDs, partners can tell Expedia which images belong to which room types. Expedia allows partners to specify one or more room types when they add a new images. For each room type, partners can specify wether the image should be the featured one or not.
