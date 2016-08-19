@@ -188,7 +188,25 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [ResponseWrapperImageList](#/definitions/ResponseWrapperImageList)
 
-### Adds an image to the property
+**Example**
+```
+{
+  "entity":[
+    {
+      "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
+      "status": "Active",
+      "state": "Published",
+      "categoryCode": "SUNDECK",
+      "propertyFeatured": true,
+      "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
+      "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
+    }
+  ]
+}
+```
+
+### Add an image to the property
 - Method: `POST`
 - Url: https://services.expediapartnercentral.com/properties/{propertyId}/images
 - Consumes: `application/json`
@@ -200,29 +218,19 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 propertyId | path | Expedia Property ID | true | string | 
 image | body | JSON message describing the new image | true | [Image](#/definitions/Image) | 
 
-**Examples**
+**Example**
 ```
 {
-  "categoryCode": "string",
-  "comments": [
-    {
-      "text": "string",
-      "timestamp": "string"
-    }
-  ],
-  "lastUpdateDateTime": "string",
-  "originalImageUrl": "string",
-  "propertyFeatured": false,
-  "publishedImageUrl": "string",
-  "resourceId": "string",
+  "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg",
+  "categoryCode": "HOTEL_FRONT",
+  "propertyFeatured": true,
   "roomTypes": [
     {
-      "resourceId": 0,
+      "resourceId": 12345,
       "roomTypeFeatured": false
     }
-  ],
-  "state": "NOT_FOUND",
-  "status": "Active"
+  ]
+
 }
 ```
 
@@ -251,6 +259,22 @@ guid | path | Image ResourceId. The DELETE only works on images that haven't rea
 - Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}
 - Consumes: `application/json`
 - Produces: `application/json`
+
+**Example**
+```
+{
+  "entity": {
+    "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
+    "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
+    "status": "Active",
+    "state": "Published",
+    "categoryCode": "SUNDECK",
+    "propertyFeatured": true,
+    "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
+    "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
+  }
+}
+```
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
@@ -282,25 +306,25 @@ images | Array[[Image](#/definitions/Image)] |
 
 - <a name="/definitions/Image"></a>Image
 
-Property Name | Type | Description
-------------- | ---- | -----------
-categoryCode | string | Image category code
-comments | Array[[Comment](#/definitions/Comment)] | Comments associated with this image
-lastUpdateDateTime | string | Last moment this image was updated
-originalImageUrl | string | URL of the image to be uploaded
-propertyFeatured | boolean | Determines whether or not the image should be the featured image in search results
-publishedImageUrl | string | The published derivative image URL
-resourceId | string | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-roomTypes | Array[[RoomType](#/definitions/RoomType)] | Rooms associated with this image
-state | string | Current processing state of the image
-status | string | Status of the image; Allowed values are: 'Active' (image displayed), 'Inactive' (image not displayed)
+Property Name | Type | Required/Optional In Create | Description
+------------- | ---- | --------------------------- | -----------
+categoryCode | [categoryCodeEnum](#/definitions/categoryCodeEnum) | Optional. Expedia will assign a category if not provided. | Image category code. 
+comments | Array[[Comment](#/definitions/Comment)] | Cannot be provided in Create. | Comments associated with this image, used by Expedia when images are rejected or inactivated.
+lastUpdateDateTime | string | Cannot be provided in Create. | Last moment this image was updated
+originalImageUrl | string | Required | URL of the image to be uploaded
+propertyFeatured | boolean | Optional, defaults to False if not provided. | Determines whether or not the image should be the featured image in search results
+publishedImageUrl | string | Cannot be provided in Create. | The published derivative image URL
+resourceId | string | Cannot be provided in Create. | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
+roomTypes | Array[[RoomType](#/definitions/RoomType)] | Optional. If not provided, no room will be associated to this image. | Rooms associated with this image. There can be one or more rooms assigned to the same image.
+state | string | Cannot be provided in  Create. | Current processing state of the image
+status | string | Optional. If not provided, defaults to Active. | Status of the image; Allowed values are: 'Active' (image displayed), 'Inactive' (image not displayed)
 
 - <a name="/definitions/RoomType"></a>RoomType
 
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-roomTypeFeatured | boolean | Used to pick the room image to be displayed when multiple are loaded for a given room type
+Property Name | Type | Required/Optional In Create | Description
+------------- | ---- | --------------------------- | -----------
+resourceId | integer | Required if room type object specified in create. | Expedia Resource ID for room type resource.
+roomTypeFeatured | boolean | Optional, defaults to false. | Used to pick the room image to be displayed when multiple are loaded for a given room type
 
 - <a name="/definitions/Comment"></a>Comment
 
@@ -329,6 +353,184 @@ message | string |
 | Group | Category Code |
 | ----- | ------------- |
 | Deleted | DELETED |
+| Lobby | INTERIOR\_ENTRANCE |
+| |LOBBY |
+| |RECEPTION |
+| |LOBBY\_SITTING\_AREA |
+| |CONCIERGE\_DESK |
+| |CHECK\-IN/CHECK\-OUT\_KIOSK |
+| |LOBBY\_LOUNGE |
+| Guestroom | MINIBAR |
+| |IN\-ROOM\_COFFEE |
+| |IN\-ROOM\_BUSINESS\_CENTER |
+| |GUESTROOM |
+| |CHILDRENS\_THEME\_ROOM |
+| |IN\-ROOM\_DINING |
+| |IN\-ROOM\_KITCHEN |
+| |ROOM\_SERVICE\_\-\_DINING |
+| |IN\-ROOM\_KITCHENETTE |
+| |LIVING\_AREA |
+| |LIVING\_ROOM |
+| |TERRACE/PATIO |
+| |BATHROOM |
+| |BALCONY |
+| |JETTED\_TUB |
+| |IN\-ROOM\_AMENITY |
+| |DEEP\_SOAKING\_BATHTUB |
+| |MINI\-REFRIGERATOR |
+| |BATHROOM\_SINK |
+| |MICROWAVE |
+| |BATHROOM\_SHOWER |
+| |IN\-ROOM\_SAFE |
+| |BATHROOM\_AMENITIES |
+| |GUESTROOM\_VIEW |
+| Pool | POOL |
+| |CHILDRENS\_POOL |
+| |INDOOR\_POOL |
+| |OUTDOOR\_POOL |
+| |NATURAL\_POOL |
+| |INFINITY\_POOL |
+| |WATER\_PARK |
+| |AQUA\_CENTER |
+| |WATERSLIDE |
+| |OUTDOOR\_SPA\_TUB |
+| |INDOOR\_SPA\_TUB |
+| |INDOOR/OUTDOOR\_POOL |
+| |POOL\_WATERFALL |
+| |ROOFTOP\_POOL |
+| Fitness | YOGA |
+| |PILATES |
+| |FITNESS\_FACILITY |
+| |GYM |
+| |AEROBICS\_FACILITY |
+| |FITNESS\_STUDIO |
+| |ROCK\_CLIMBING\_WALL\_\-\_INDOOR |
+| |EXERCISE/LAP\_POOL |
+| Spa | TREATMENT\_ROOM |
+| |MASSAGE |
+| |SPA\_TREATMENT |
+| |FACIAL |
+| |SPA |
+| |HAIR\_SALON |
+| |NAIL\_SALON |
+| |VICHY\_SHOWER |
+| |SAUNA |
+| |STEAM\_ROOM |
+| |TURKISH\_BATH |
+| |SPA\_RECEPTION |
+| Sports Facility | SPORTS\_FACILITY |
+| |BOATING |
+| |BICYCLING |
+| |TENNIS\_COURT |
+| |BASKETBALL\_COURT |
+| |SPORT\_COURT |
+| |FISHING |
+| |HUNTING |
+| |GOLF |
+| |ARCHERY |
+| |MINI\-GOLF |
+| |HIKING |
+| |GOLF\_CART |
+| |OUTDOOR\_ROCK\_CLIMBING |
+| |INDOOR\_GOLF\_DRIVING\_RANGE |
+| |ROPES\_COURSE\_(TEAM\_BUILDING) |
+| |PRO\_SHOP |
+| |SNOW\_AND\_SKI\_SPORTS |
+| |SKI\_HILL |
+| |SKIING |
+| |SNOWBOARDING |
+| |EQUIPMENT\_STORAGE |
+| Property Amenity | CHILDRENS\_AREA |
+| |VENDING\_MACHINE |
+| |LAUNDRY\_ROOM |
+| |CHILDRENS\_PLAY\_AREA\_\-\_INDOOR |
+| |ATM/BANKING\_ON\_SITE |
+| |DAY\_CARE |
+| |RV\_OR\_TRUCK\_PARKING |
+| |BIRTHDAY\_PARTY\_AREA |
+| |MISCELLANEOUS |
+| |CHILDRENS\_PLAY\_AREA\_\-\_OUTDOOR |
+| |PET\-FRIENDLY |
+| |CHILDRENS\_ACTIVITIES |
+| |CASINO |
+| |PROPERTY\_AMENITY |
+| |GAME\_ROOM |
+| |THEATER\_SHOW |
+| |KARAOKE\_ROOM |
+| |ARCADE |
+| |GIFT\_SHOP |
+| |BILLIARDS |
+| Dining (hotel area) | FOOD\_COURT |
+| |SNACK\_BAR |
+| |FAMILY\_DINING |
+| |COUPLES\_DINING |
+| |FOOD\_AND\_DRINK |
+| |BREAKFAST\_AREA |
+| |DINING |
+| |RESTAURANT |
+| |COFFEE\_SERVICE |
+| |DELICATESSEN |
+| |BUFFET |
+| |COFFEE\_SHOP |
+| |CAFE |
+| Bar (hotel area) | HOTEL\_LOUNGE |
+| |HOTEL\_BAR |
+| |POOLSIDE\_BAR |
+| |SPORTS\_BAR |
+| |NIGHTCLUB |
+| Interior (hotel area) | MEETING\_FACILITY |
+| |STAIRCASE |
+| |INTERIOR\_DETAIL |
+| |BUSINESS\_CENTER |
+| |EXECUTIVE\_LOUNGE |
+| |FIREPLACE |
+| |LIBRARY |
+| |HOTEL\_INTERIOR |
+| |BANQUET\_HALL |
+| |BALLROOM |
+| |CHAPEL |
+| |RECEPTION\_HALL |
+| |HALLWAY |
+| |INDOOR\_WEDDING |
+| Exterior (hotel) | PORCH |
+| |TERRACE/PATIO |
+| |OUTDOOR\_WEDDING\_AREA |
+| |GAZEBO |
+| |SUNDECK |
+| |OUTDOOR\_BANQUET\_AREA |
+| |FOUNTAIN |
+| |MARINA |
+| |LAKE |
+| |BBQ/PICNIC\_AREA |
+| |DOCK |
+| |AIRPORT\_SHUTTLE |
+| |PARKING |
+| |EXTERIOR\_DETAIL |
+| |CITY\_SHUTTLE |
+| |EXTERIOR |
+| |HOTEL\_FRONT |
+| |PROPERTY\_GROUNDS |
+| |HOTEL\_FRONT\_\-\_EVENING/NIGHT |
+| |HOTEL\_ENTRANCE |
+| |GARDEN |
+| |BEACH |
+| |OUTDOOR\_DINING |
+| |COURTYARD |
+| View (hotel) | AERIAL\_VIEW |
+| |BEACH/OCEAN\_VIEW |
+| |LAKE\_VIEW |
+| |VIEW\_FROM\_HOTEL |
+| |BALCONY\_VIEW |
+| |MOUNTAIN\_VIEW |
+| |CITY\_VIEW |
+| |STREET\_VIEW |
+| |COURTYARD\_VIEW |
+| |GARDEN\_VIEW |
+
+<a name="/definitions/categoryCodeEnum"></a>
+### Category Codes
+| Group | categoryCodeEnum Value |
+| ----- | ------------- |
 | Lobby | INTERIOR\_ENTRANCE |
 | |LOBBY |
 | |RECEPTION |
