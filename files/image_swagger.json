@@ -19,7 +19,7 @@
 		}
 	],
 	"schemes": [
-		"http"
+		"https"
 	],
 	"paths": {
 		"/properties/{propertyId}/images": {
@@ -42,8 +42,7 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					},
-					{
+					}, {
 						"name": "status",
 						"in": "query",
 						"description": "Status filter. String. Only supported value is \"all\".",
@@ -58,16 +57,12 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapperImageList"
+							"$ref": "#/definitions/ResponseWrapper«List«Image»»"
 						}
 					}
 				},
 				"security": [
-					{
-						"Basic": [
-
-						]
-					}
+					""
 				]
 			},
 			"post": {
@@ -89,8 +84,7 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					},
-					{
+					}, {
 						"in": "body",
 						"name": "image",
 						"description": "JSON message describing the new image",
@@ -104,16 +98,12 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapperImage"
+							"$ref": "#/definitions/ResponseWrapper«Image»"
 						}
 					}
 				},
 				"security": [
-					{
-						"Basic": [
-
-						]
-					}
+					""
 				]
 			}
 		},
@@ -137,8 +127,7 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					},
-					{
+					}, {
 						"name": "guid",
 						"in": "path",
 						"description": "Image GUID",
@@ -150,16 +139,12 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapperImage"
+							"$ref": "#/definitions/ResponseWrapper«Image»"
 						}
 					}
 				},
 				"security": [
-					{
-						"Basic": [
-
-						]
-					}
+					""
 				]
 			},
 			"delete": {
@@ -181,8 +166,7 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					},
-					{
+					}, {
 						"name": "guid",
 						"in": "path",
 						"description": "Image GUID",
@@ -196,11 +180,7 @@
 					}
 				},
 				"security": [
-					{
-						"Basic": [
-
-						]
-					}
+					""
 				]
 			}
 		}
@@ -211,7 +191,7 @@
 		}
 	},
 	"definitions": {
-		"ResponseWrapperImage": {
+		"ResponseWrapper«Image»": {
 			"type": "object",
 			"properties": {
 				"entity": {
@@ -238,20 +218,6 @@
 				}
 			}
 		},
-		"ResponseWrapperImageList": {
-			"type": "object",
-			"properties": {
-				"entity": {
-					"$ref": "#/definitions/ImageList"
-				},
-				"errors": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/ApiError"
-					}
-				}
-			}
-		},
 		"RoomType": {
 			"type": "object",
 			"required": [
@@ -267,6 +233,23 @@
 					"type": "boolean",
 					"example": false,
 					"description": "Used to pick the room image to be displayed when multiple are loaded for a given room type"
+				}
+			}
+		},
+		"ResponseWrapper«List«Image»»": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Image"
+					}
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ApiError"
+					}
 				}
 			}
 		},
@@ -333,32 +316,15 @@
 					"description": "Current processing state of the image",
 					"readOnly": true,
 					"enum": [
-						"NOT_FOUND",
-						"RECEIVED",
-						"DERIVATIVES_CREATED",
-						"REJECTED",
-						"DUPLICATE",
-						"PUBLISHED"
+						"NotFound", "Received", "DerivativesCreated", "Rejected", "Duplicate", "Published"
 					]
 				},
 				"status": {
 					"type": "string",
 					"description": "Status of the image; Allowed values are: 'Active' (image displayed), 'Inactive' (image not displayed)",
 					"enum": [
-						"Active",
-						"Inactive"
+						"Active", "Inactive"
 					]
-				}
-			}
-		},
-		"ImageList": {
-			"type": "object",
-			"properties": {
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Image"
-					}
 				}
 			}
 		}
