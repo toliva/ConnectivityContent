@@ -1,12 +1,67 @@
-# Content Readme
+# ConnectivityContent
+
+Markdown content for **https://ExpediaConnectivity.com**
+
+Add or edit content on a branch here and once merged to master changes will be reflected on the site within minutes.
+
+
+# To create new API Documentation
+
+There are 3 ways to get started adding your API content.
+
+1. Manually add a directory for your API and add or copy markdown files as required.  This can be done by cloning this git repo locally and editing locally or via the browser in ewegithub.
+2. Use the TeamCity build to generate an initial version of the API documentation based on a swagger endpoint then edit as for method 1.
+3. Clone the partner-api-web repo locally and then use node commands to generate the initial API documentation from swagger.
+
+
+## Method 1. Online editor
+
+- Visit the [ConnectivityContent repo](https://github.com/ExpediaInc/ConnectivityContent)
+- Ensure you are logged in
+- Navigate to the file you wish to edit
+- At the top right is an 'edit' and 'delete' button.
+- Save changes as a new branch and create a pull request (for production)
+- To create a file, click the '+' icon beside the folder name.  Use '/' to indicate a sub directory (which are auto-created).
+
+#### Previewing changes
+A preview version is generated for each branch in this repo
+- Push your work to your branch
+- Wait a few minutes (or frantically mash the refresh button)
+- Navigate to http://your-branch.partner-api-preview.test.expedia.com/
+- Bask in the glory of your changes
+
+Note that your branch name may require some transformation before it can be used as a valid preview hostname.  Any non-alphanumeric characters will be replaced with `-`.  For example, a branch called `lindsay/my-great-api` will be available at `http://my-great-api.partner-api-preview.test.expedia.com/`.
+
+=======
+## Method 2. Use TeamCity build to generate documentation from swagger URL
+
+A teamcity build can be used to generate the reference documentation file from a Swagger JSON URL [here](https://eps-teamcity.tools.expedia.com/viewType.html?buildTypeId=partner_api_web_InternalApi_SwaggerScript).
+Then you can edit as described in Method 1.
+
+![Use TeamCity to build from swagger.json](images/build-from-swagger-json.png)
+
+## Method 3. On a personal build setup
+Clone the [ConnectivityContent](https://github.com/ExpediaInc/ConnectivityContent)
+Clone the [partner-api-web](https://github.com/ExpediaInc/partner-api-web) repo and follow its README.md.
+The steps are essentially:
+- Run ```./install.sh``` from within the partner-api-web directory.
+- Create a new directory with the name of your new API under internal-api-web/apis. The generater will try and make a sensible name from your directory name. *e.g. my-great-app will be given the name My Great App*
+- Create a new **.md** file in the newly-created API directory. *e.g internal-api-web/apis/my-great-app/quick-start.md*
+- Return to the partner-api-web directory and run:
+
+  ```
+   ./build.sh --content ../ConnectivityContent/;node server.js
+  ```
+- Open [http://localhost:8080](http://localhost:8080) in your browser.
+
 
 ## Check for broken links
 
-Use this link to run a report to find any broken links.
+Use the TeamCity link to run a report to find any broken links
 
-1. lct.teamcity.sb.karmalab.net/project.html?projectId=partner_api_web
+1. Partner API Web [TeamCity](https://eps-teamcity.tools.expedia.com/project.html?projectId=partner_api_web&branch_partner_api_web1CommitPhase=__all_branches__)
 2. run Check Links. 
-3. view the site-link-results reports under the artifacts link in teamcity
+3. view the site-link-results reports under the artifacts link in TeamCity
 4. fix any broken links in your files or notify the relevant team(s) of broken links in their files
 
 
