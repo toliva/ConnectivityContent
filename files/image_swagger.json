@@ -5,12 +5,12 @@
 		"version": "1.0",
 		"title": "EPS Image API",
 		"contact": {
-			"name": "Lodging Connectivity",
-			"url": "developer.expediapartnercental.com",
-			"email": "epsimageapi@expedia.com"
+			"name": "Expedia Partner Services",
+			"url": "expediaconnectivity.com/developer",
+			"email": "eqcss@expedia.com"
 		}
 	},
-	"host": "localhost:8080",
+	"host": "services.expediapartnercentral.com",
 	"basePath": "/",
 	"tags": [
 		{
