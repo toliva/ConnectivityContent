@@ -33,7 +33,7 @@ The result will be an array of images assigned to your property. For example:
 ----
 
 ## Add a new image
-The Image API allows partners to provide references to images available on the open internet, along with some meta data. When this data is POSTED, Expedia will then try to download the image, performs the necessary processing to have it online, and publish it on its website if the image passes all of Expedia internal checks.
+The Image API allows partners to provide references to images available on the open internet, along with some meta data. When this data is sent to Expedia via a POST, Expedia will then try to download the image, perform the necessary processing to have it online, and publish it on its website if the image passes all of Expedia internal checks.
 
 In order to add a new image, partners will have to first contact Expedia to enable communication between Expedia servers and the partner image hosting solution.
 
@@ -42,8 +42,11 @@ An example of a valid POST message is provided here, but partners will not be ab
 ```JSON
 {ADD EXAMPLE HERE}
 ```
-Once POSTed, Expedia will first validate if the location is valid, and if yes, will return a successful response along with the received state and the new image resource ID. In order to confirm the processing is successful, it is recommended for partners to verify the state of the images by leveraging the resource ID:
+Once received, Expedia will first validate if the location is valid, and if yes, will return a successful response along with the RECEIVED state and the new image resource ID. In order to confirm the processing is successful, it is recommended for partners to verify the state of the images by leveraging the resource ID:
+```
 GET https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/images/[ImageResourceId]
+```
+
 ```JSON
 {ADD EXAMPLE HERE}
 ```

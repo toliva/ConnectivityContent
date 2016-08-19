@@ -1,3 +1,3 @@
 +++swagger
-https://services.expediapartnercentral.com/TBD
+/files/image_swagger.json
 +++
