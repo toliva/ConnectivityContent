@@ -72,14 +72,3 @@ The Image API only supports receiving a reference to a file available somewhere 
 ## Can Expedia support locations other than HTTP/HTTPS servers on the open internet?
 
 Expedia can also accept an Amazon Web Services (AWS) S3 location. Please contact Expedia if you'd like more details on this option. Expedia cannot currently accept other types of locations like FTP or SFTP.
-
-
-## Modifying with PATCH
-
-The PATCH modify operation is a way for our partners to only send what they'd like to modify on a resource. 
-
-Expedia implemented the Merge-PATCH strategy. Partners can send any of the top level elements they'd wish to modify, and omit the ones they do not want to change. Expedia will take care of merging the resource updates and preserve what was not included at the resource's top level.
-
-It is important to note that any top level object is treated as a full overlay even when using Merge-PATCH. For example, if a partner decides to include the roomTypes object to modify the image's room type assignment, all the elements/values of that object need to be included as this specific object update will be treated as a full overlay.
-
-
