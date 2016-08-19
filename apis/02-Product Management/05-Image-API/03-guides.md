@@ -16,6 +16,11 @@ After a partner successfully registered with Expedia (see [above section](#/howt
 
 Image API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
 
+## Can I get a JSON schema or Swagger file to Facilitate my Development?
+
+Expedia doesn't offer JSON schemas, but a swagger JSON file can be found at 
+<https://expediaconnectivity.com/files/image_swagger.json>
+
 ## How Does the Image Add (POST) work?
 
 Partners interested in uploading images to Expedia can do so using the POST feature. When a partner post a new image for a property, Expedia will first validate that the reference given is valid and can be accessed. Partners need to make sure Expedia knows about the host where images reside, as Expedia need to authorize this host first before the partner can upload images.

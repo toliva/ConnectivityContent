@@ -1,5 +1,5 @@
 # API Definition
-The Image API enables our hotels partners to add and edit Images for their properties.
+The Image API enables our hotels partners to read, add, and edit Images for their properties.
 
 <a name="authentication"></a>
 ## Authentication
@@ -20,8 +20,8 @@ For more information about getting started for the first time, and authorization
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
 - **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
 - **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocols.
-- **REST** : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.
-- **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. Partners should also be able to serve the additional data back in an update request, as our update requests are full overlay, and failure to provide additional data back in update requests could cause data to be removed.
+- **REST** : The service adheres to REST principles and exposes only one resource: Image
+- **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Image API starts returning additional data elements in responses, partners should ignore the data elements they do not need. 
 - **Entity** : All successful responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make successful responses generic across different resources and operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. 
 - **Errors** : If a request produces one or more errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.
 
@@ -168,6 +168,9 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
 
 ## Images
 
+Please note that a swagger JSON file can be obtained on this portal to facilitate development:
+<https://expediaconnectivity.com/files/image_swagger.json>
+
 ### Obtain a list of images for a given property
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/properties/{propertyId}/images
@@ -270,33 +273,12 @@ Property Name | Type | Description
 entity | [Image](#/definitions/Image) | 
 errors | Array[[ApiError](#/definitions/ApiError)] | 
 
-- <a name="/definitions/Comment"></a>Comment
+- <a name="/definitions/ImageList"></a>ImageList
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-text | string | Comment text
-timestamp | string | Moment when the comment was created
+images | Array[[Image](#/definitions/Image)] | 
 
-- <a name="/definitions/ResponseWrapperImageList"></a>ResponseWrapperImageList
-
-Property Name | Type | Description
-------------- | ---- | -----------
-entity | [ImageList](#/definitions/ImageList) | 
-errors | Array[[ApiError](#/definitions/ApiError)] | 
-
-- <a name="/definitions/RoomType"></a>RoomType
-
-Property Name | Type | Description
-------------- | ---- | -----------
-resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
-roomTypeFeatured | boolean | Used to pick the room image to be displayed when multiple are loaded for a given room type
-
-- <a name="/definitions/ApiError"></a>ApiError
-
-Property Name | Type | Description
-------------- | ---- | -----------
-code | integer | 
-message | string | 
 
 - <a name="/definitions/Image"></a>Image
 
@@ -313,12 +295,33 @@ roomTypes | Array[[RoomType](#/definitions/RoomType)] | Rooms associated with th
 state | string | Current processing state of the image
 status | string | Status of the image; Allowed values are: 'Active' (image displayed), 'Inactive' (image not displayed)
 
-- <a name="/definitions/ImageList"></a>ImageList
+- <a name="/definitions/RoomType"></a>RoomType
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-images | Array[[Image](#/definitions/Image)] | 
+resourceId | integer | Expedia ID for this resource. Generated when created. Generated on POST, required on PUT
+roomTypeFeatured | boolean | Used to pick the room image to be displayed when multiple are loaded for a given room type
 
+- <a name="/definitions/Comment"></a>Comment
+
+Property Name | Type | Description
+------------- | ---- | -----------
+text | string | Comment text
+timestamp | string | Moment when the comment was created
+
+- <a name="/definitions/ResponseWrapperImageList"></a>ResponseWrapperImageList
+
+Property Name | Type | Description
+------------- | ---- | -----------
+entity | [ImageList](#/definitions/ImageList) | 
+errors | Array[[ApiError](#/definitions/ApiError)] | 
+
+- <a name="/definitions/ApiError"></a>ApiError
+
+Property Name | Type | Description
+------------- | ---- | -----------
+code | integer | 
+message | string | 
 
 
 ## Enumerations & Domain Values
