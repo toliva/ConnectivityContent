@@ -26,7 +26,18 @@ The URL to use for this property: <https://services.expediapartnercentral.com/pr
 The result will be an array of images assigned to your property. For example:
 ```JSON
 {
-  ADD EXAMPLE HERE
+  "entity": [
+    {
+      "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
+      "displayable": true,
+      "state": "Published",
+      "categoryCode": "SUNDECK",
+      "propertyFeatured": true,
+      "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
+      "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
+    }
+  ]
 }
 ```
 
@@ -40,7 +51,17 @@ In order to add a new image, partners will have to first contact Expedia to enab
 An example of a valid POST message is provided here, but partners will not be able to try this on their own until they contact Expedia to get their domain white listed.
 
 ```JSON
-{ADD EXAMPLE HERE}
+{
+  "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg",
+  "categoryCode": "HOTEL_FRONT",
+  "propertyFeatured": true,
+  "roomTypes": [
+    {
+      "resourceId": 12345,
+      "roomTypeFeatured": false
+    }
+  ]
+}
 ```
 Once received, Expedia will first validate if the location is valid, and if yes, will return a successful response along with the RECEIVED state and the new image resource ID. In order to confirm the processing is successful, it is recommended for partners to verify the state of the images by leveraging the resource ID:
 ```
@@ -48,5 +69,16 @@ GET https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/im
 ```
 
 ```JSON
-{ADD EXAMPLE HERE}
+{
+  "entity": {
+      "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
+      "displayable": true,
+      "state": "Published",
+      "categoryCode": "SUNDECK",
+      "propertyFeatured": true,
+      "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
+      "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
+    }
+}
 ```
