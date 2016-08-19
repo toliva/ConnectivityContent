@@ -24,7 +24,13 @@ After Expedia validated that it can access the image location, a successful resp
 
 If the image is not corrupted, and meets the minimum size requirements, it should then eventually be published, within a few minutes. There is currently no mechanism to proactively inform partners of images that either went live, or failed to be published. It is the partner responsibility to verify the status of its images using either the GET images, or getting each image individually by resource ID to confirm they do get published.
 
-Once it is published, Expedia will audit all images within a few hours to make sure they meet [Expedia guidelines](https://expediagso.secure.force.com/kb/articles/en_US/Policy/About-Rejected-Photos/?q=Photos&l=en_US&fs=Search&pn=1). If they do not meet the guidelines, they will be rejected. This information can be found by reading the image meta data and looking for the status inactive, as well as the comments that might be included with the image.
+If the image is either corrupted, or doesn't meet Expedia minimum size requirements, it will be reach the REJECTED state, along with an appropriate comment explaining why it was rejected. At this point, the partner should DELETE this image and re-submit it for processing after fixing the problem (either providing a higher resolution image or a non-corrupted file).
+
+If the image is accepted, it will quickly be published. After that, Expedia will audit all images within a few hours to make sure they meet [Expedia guidelines](https://expediagso.secure.force.com/kb/articles/en_US/Policy/About-Rejected-Photos/?q=Photos&l=en_US&fs=Search&pn=1). If they do not meet the guidelines, they will be inactivated. This information can be found by reading the image meta data and looking for the status inactive, as well as the comments that might be included with the image.
+
+## Why can't I Delete a Published Image?
+
+It is currently not possible to delete published images, but it is possible to inactivate them via a status update to hide them from Expedia website. After 5 years, inactive published images will be automatically deleted by Expedia.
 
 ## Can I GET/Read all images that Expedia has for my property?
 
