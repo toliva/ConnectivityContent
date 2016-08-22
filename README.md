@@ -32,7 +32,7 @@ A preview version is generated for each branch in this repo
 - Navigate to http://your-branch.partner-api-preview.test.expedia.com/
 - Bask in the glory of your changes
 
-Note that your branch name may require some transformation before it can be used as a valid preview hostname.  Any non-alphanumeric characters will be replaced with `-`.  For example, a branch called `lindsay/my-great-api` will be available at `http://my-great-api.partner-api-preview.test.expedia.com/`.
+Note that your branch name may require some transformation before it can be used as a valid preview hostname.  Any non-alphanumeric characters will be replaced with `-`.  For example, a branch called `marvin/my-great-api` will be available at `http://marvin-my-great-api.partner-api-preview.test.expedia.com/`.
 
 =======
 ## Method 2. Use TeamCity build to generate documentation from swagger URL
