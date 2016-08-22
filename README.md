@@ -13,6 +13,8 @@ There are 3 ways to get started adding your API content.
 2. Use the TeamCity build to generate an initial version of the API documentation based on a swagger endpoint then edit as for method 1.
 3. Clone the partner-api-web repo locally and then use node commands to generate the initial API documentation from swagger.
 
+**Note: If you want an 'Experimental' tag appended to the heading on the developer API page, then you will need to append "-(Experimental)" to the directory name. **
+
 
 ## Method 1. Online editor
 
@@ -26,7 +28,7 @@ There are 3 ways to get started adding your API content.
 #### Previewing changes
 A preview version is generated for each branch in this repo
 - Push your work to your branch
-- Wait a few minutes (or frantically mash the refresh button)
+- Wait a few minutes 
 - Navigate to http://your-branch.partner-api-preview.test.expedia.com/
 - Bask in the glory of your changes
 
@@ -46,7 +48,7 @@ Clone the [partner-api-web](https://github.com/ExpediaInc/partner-api-web) repo 
 The steps are essentially:
 - Run ```./install.sh``` from within the partner-api-web directory.
 - Create a new directory with the name of your new API under internal-api-web/apis. The generater will try and make a sensible name from your directory name. *e.g. my-great-app will be given the name My Great App*
-- Create a new **.md** file in the newly-created API directory. *e.g internal-api-web/apis/my-great-app/quick-start.md*
+- Create a new **.md** file in the newly-created API directory. *e.g ConnectivityContent/apis/my-great-app/quick-start.md*
 - Return to the partner-api-web directory and run:
 
   ```
