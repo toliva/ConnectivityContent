@@ -28,6 +28,29 @@ Accept: application/json
       "state": "Published",
       "lastUpdateDateTime": "2016-08-23T21:09:00Z",
       "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/IMG_0134.JPG"
+    },
+    {
+      "resourceId": "b3626ff5-f89f-45ed-9d64-0f0285a96015",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/b3626ff5_b.jpg",
+      "status": "Active",
+      "state": "Published",
+      "categoryCode": "GUESTROOM_VIEW",
+      "roomTypes": [
+        {
+          "resourceId": 201357985,
+          "roomTypeFeatured": false
+        },
+        {
+          "resourceId": 201603136,
+          "roomTypeFeatured": true
+        },
+        {
+          "resourceId": 201357986,
+          "roomTypeFeatured": false
+        }
+      ],
+      "lastUpdateDateTime": "2016-08-24T15:05:00Z",
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/050.jpg"
     }
   ]
 }
@@ -62,12 +85,58 @@ Accept: application/json
       "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/IMG_0134.JPG"
     },
     {
-      "resourceId": "4b2ec261-83b8-4272-9ba9-2beae6f40ac4",
-      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/a54345gh_b.jpg",
+      "resourceId": "40be3cb3-ea7a-44ba-92eb-0d2682122760",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/40be3cb3_b.jpg",
+      "status": "Active",
+      "state": "Published",
+      "lastUpdateDateTime": "2016-08-24T15:23:00Z",
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/10px.png"
+    },
+    {
+      "resourceId": "a1268d71-fda9-4131-899d-dbd1c2e520c5",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/a1268d71_b.jpg",
+      "status": "Active",
+      "state": "Published",
+      "lastUpdateDateTime": "2016-08-24T15:17:00Z",
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/ExpediaLogo.gif"
+    },
+    {
+      "resourceId": "b3626ff5-f89f-45ed-9d64-0f0285a96015",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/b3626ff5_b.jpg",
+      "status": "Active",
+      "state": "Published",
+      "categoryCode": "GUESTROOM_VIEW",
+      "roomTypes": [
+        {
+          "resourceId": 201603136,
+          "roomTypeFeatured": true
+        },
+        {
+          "resourceId": 201357986,
+          "roomTypeFeatured": false
+        },
+        {
+          "resourceId": 201357985,
+          "roomTypeFeatured": false
+        }
+      ],
+      "lastUpdateDateTime": "2016-08-24T15:05:00Z",
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/050.jpg"
+    },
+    {
+      "resourceId": "e7de09f0-2eef-42e1-9950-a0c053df0ec7",
+      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/e7de09f0_b.jpg",
       "status": "Inactive",
       "state": "Published",
-      "lastUpdateDateTime": "2016-08-23T21:11:00Z",
-      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/IMG_0444.JPG"
+      "categoryCode": "GUESTROOM_VIEW",
+      "roomTypes": [
+        {
+          "resourceId": 201665161,
+          "roomTypeFeatured": true
+        }
+      ],
+      "lastUpdateDateTime": "2016-08-24T15:14:00Z",
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/064.jpg"
     }
   ]
 }
