@@ -165,7 +165,7 @@ Content-Type:  application/json; charset=UTF-8
 ```
 
 ## Adding a New Image for Multiple Room Types
-To add a new image to a property and have it assigned to some room types, an array of all the room types this image should be assigned to is needed. In this example, we assign a new image to 3 room types, using the room types resource IDs found via the Product API.
+To add a new image to a property and have it assigned to some room types, an array of all the room types this image should be assigned to is needed. In this example, we assign a new image to 3 room types, using the room types resource IDs' found via the Product API.
 ```
 POST https://services.expediapartnercentral.com/properties/12933870/images
 Accept: application/json
@@ -203,7 +203,7 @@ Content-Type:  application/json; charset=UTF-8
 ```
 
 ## Verifying State of a Newly Added Image
-To verify the status of a newly added image and make sure it gets published, a GET with the resource ID of the image would provide the information.
+To verify the state of a newly added image and make sure it gets published, a GET with the resource ID of the image will provide the information.
 
 ```
 GET https://services.expediapartnercentral.com/properties/12933870/images/b3626ff5-f89f-45ed-9d64-0f0285a96015
@@ -238,7 +238,7 @@ Accept: application/json
 }
 ```
 ## Deleting an Unpublished imnage
-When partners upload images that Expedia cannot published, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assume a partner pushes a corrupted image with a POST:
+When partners upload images that Expedia cannot publish, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assuming a partner pushes a corrupted image with a POST:
 ```
  {
       "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/invalidimage.txt"
@@ -254,7 +254,7 @@ Expedia will return the resourceId for it straight away, with the received state
 }
 ```
 
-Partners can then get state with a GET:
+The partner can then get state with a GET:
 
 ```
 GET https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
@@ -272,7 +272,7 @@ In this case, the state will be Rejected
 }
 ```
 
-Partner can then issue a Delete statement to stop seeing this image completely for this property
+The partner can then issue a Delete statement to stop seeing this image completely for this property
 ```
 DELETE https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
 Accept: application/json
