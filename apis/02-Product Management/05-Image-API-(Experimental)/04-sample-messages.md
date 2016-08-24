@@ -237,4 +237,62 @@ Accept: application/json
   }
 }
 ```
+## Deleting an Unpublished imnage
+When partners upload images that Expedia cannot published, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assume a partner pushes a corrupted image with a POST:
+```
+ {
+      "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/invalidimage.txt"
+}
+```
+Expedia will return the resourceId for it straight away, with the received state:
+```
+{
+    "entity": {
+        "resourceId": "dcb9d144-2a5c-469c-a71c-e2f69c788e26",
+        "state": "Received"
+    }
+}
+```
 
+Partners can then get state with a GET:
+
+```
+GET https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
+```
+In this case, the state will be Rejected
+```
+{
+    "entity": {
+        "resourceId": "dcb9d144-2a5c-469c-a71c-e2f69c788e26",
+        "status": "Active",
+        "state": "Rejected",
+        "lastUpdateDateTime": "2016-08-24T15:36:45.835Z",
+        "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/invalidimage.txt"
+    }
+}
+```
+
+Partner can then issue a Delete statement to stop seeing this image completely for this property
+```
+DELETE https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
+Accept: application/json
+```
+The response when successful will be a 204 No Content.
+
+## Invalid GET returning an error
+Here's an example of how EPS Image returns errors to customers. If a partner provides an invalid resourceId:
+```
+GET https://services.expediapartnercentral.com/properties/12933870/images/notavalidresourceid
+Accept: application/json
+```
+An error is returned
+```
+{
+    "errors": [
+        {
+            "code": 3802,
+            "message": "Invalid media GUID provided."
+        }
+    ]
+}
+```
