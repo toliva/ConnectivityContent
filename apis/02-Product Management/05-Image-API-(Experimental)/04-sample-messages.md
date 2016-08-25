@@ -141,6 +141,33 @@ Accept: application/json
   ]
 }
 ```
+## Reading an Image Inactivated As a Duplicate
+Expedia runs a periodic process that detects and inactivate duplicate images. When this happens, partners can find out by reading images and look for comments. 
+
+```
+GET https://services.expediapartnercentral.com/properties/12933870/images/e7b8c82b-b09f-4530-9626-31d94f218c2f
+```
+
+```
+{
+    "entity": {
+        "resourceId": "e7b8c82b-b09f-4530-9626-31d94f218c2f",
+        "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/e7b8c82b_b.jpg",
+        "status": "Inactive",
+        "state": "Published",
+        "comments": [
+            {
+                "text": "AutoDedup: 24048236,24071654",
+                "timestamp": "2016-08-25T08:13:00Z"
+            }
+        ],
+        "lastUpdateDateTime": "2016-08-25T08:13:00Z",
+        "originalImageUrl": "https://s3-us-west-2.amazonaws.com/eps-website/IMG_0134.JPG"
+    }
+}
+```
+Please note that the numbers referenced in the comments are internal IDs, and Expedia will eventually replace them with the image public resource IDs to facilitate identifying the duplicates.
+
 
 ## Adding a New Image for a Property With Minimum Data
 To add a new image to a property, only the image location is needed.
