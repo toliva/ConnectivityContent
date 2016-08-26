@@ -14,25 +14,77 @@
         max-width: 58.5rem;
         height: 115px;
         color: #ffffff;
-        font-size: 2.0rem;
+        text-align: left;
+        align-self: center;
+    }
+    .blog-banner-medium {
+        background-image: URL("/images/blog-banner-medium.png");
+        padding-left: 6.0rem;
+        padding-top: 0.5rem;
+        max-width: 40.5rem;
+        min-width: 36.5rem;
+        height: 90px;
+        color: #ffffff;
+        text-align: left;
+        align-self: center;
+    }
+    .blog-banner-small {
+        background-color: #949599;
+        padding-left: 2.0rem;
+        padding-top: 0.5rem;
+        max-width: 30.5rem;
+        min-width: 26.5rem;
+        height: 70px;
+        color: #ffffff;
         text-align: left;
         align-self: center;
     }
     .blog-subject {
         color: #ffcb00;
         text-transform: uppercase;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 4.5rem;
+        margin-right: 2rem;
+    }
+    .blog-message {
+        color: #ffffff;
+        font-size: 1.9rem;
+        text-align: left;
+        margin-left: 4.5rem;
+        margin-right: 2rem;
+    }
+    .blog-subject-medium {
+        color: #ffcb00;
+        text-transform: uppercase;
+        font-size: 1.1rem;
         text-align: left;
         margin-left: 4.5rem;
         margin-right: 2rem;
     }
 
-    .blog-message {
+    .blog-message-medium {
         color: #ffffff;
         font-size: 1.4rem;
         text-align: left;
         margin-left: 4.5rem;
         margin-right: 2rem;
+    }
+    .blog-subject-small {
+        color: #ffcb00;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .blog-message-small {
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-align: left;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 </style>
 
@@ -61,10 +113,41 @@
     </a>
 </section>
 
-<section class="row blog-banner">
+<!-- BANNER START -->
+
+<section class="row blog-banner show-for-large-up">
     <a href="/blog#booking-API-updates">
-            <div class="blog-subject">We've made changes to booking APIs</div>
-            <div class="blog-message">Learn about the updates</div>
+            <div class="blog-subject"></div>
+            <div class="blog-message"></div>
         <div class="blog-toggle"></div>
     </a>
 </section>
+
+<section class="row blog-banner-medium show-for-medium">
+    <a href="/blog#booking-API-updates">
+            <div class="blog-subject-medium"></div>
+            <div class="blog-message-medium"></div>
+        <div class="blog-toggle"></div>
+    </a>
+</section>
+
+<section class="row blog-banner-small show-for-small-only">
+    <a href="/blog#booking-API-updates">
+            <div class="blog-subject-small"></div>
+            <div class="blog-message-small"></div>
+        <div class="blog-toggle"></div>
+    </a>
+</section>
+
+<script>
+    var bannerSubject = "We've made changes to booking APIs";
+    var bannerMessage = "Learn about the updates";
+    $('.blog-subject').html(bannerSubject);
+    $('.blog-message').html(bannerMessage);
+    $('.blog-subject-medium').html(bannerSubject);
+    $('.blog-message-medium').html(bannerMessage);
+    $('.blog-subject-small').html(bannerSubject);
+    $('.blog-message-small').html(bannerMessage);
+</script>
+
+<!-- BANNER END -->
