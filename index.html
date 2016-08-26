@@ -116,7 +116,7 @@
 <!-- BANNER START -->
 
 <section class="row blog-banner show-for-large-up">
-    <a href="/blog#booking-API-updates">
+    <a href="">
             <div class="blog-subject"></div>
             <div class="blog-message"></div>
         <div class="blog-toggle"></div>
@@ -124,7 +124,7 @@
 </section>
 
 <section class="row blog-banner-medium show-for-medium">
-    <a href="/blog#booking-API-updates">
+    <a href="">
             <div class="blog-subject-medium"></div>
             <div class="blog-message-medium"></div>
         <div class="blog-toggle"></div>
@@ -132,7 +132,7 @@
 </section>
 
 <section class="row blog-banner-small show-for-small-only">
-    <a href="/blog#booking-API-updates">
+    <a href="">
             <div class="blog-subject-small"></div>
             <div class="blog-message-small"></div>
         <div class="blog-toggle"></div>
@@ -140,8 +140,14 @@
 </section>
 
 <script>
+    //EDIT these variables
+    var blogAnchor = "/blog#" + "booking-API-updates";
     var bannerSubject = "We've made changes to booking APIs";
     var bannerMessage = "Learn about the updates";
+    //EDIT END
+    $('.blog-banner a').attr('href', blogAnchor);
+    $('.blog-banner-medium a').attr('href', blogAnchor);
+    $('.blog-banner-small a').attr('href', blogAnchor);
     $('.blog-subject').html(bannerSubject);
     $('.blog-message').html(bannerMessage);
     $('.blog-subject-medium').html(bannerSubject);
