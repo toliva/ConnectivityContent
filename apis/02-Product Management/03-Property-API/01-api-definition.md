@@ -239,8 +239,8 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | Dictionary Key | Required | Notes |
 | -------------- | -------- | ----- |
 | Property | Yes |  Contact Info for the physical property |
-| ReservationManager | Yes | Email required for Electronic Booking Notification Failover.  Phone number required - used as primary contact for customer booking issues.   |
-| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. |
+| ReservationManager | Yes | firstName, lastName, email or fax required.  Property will fail onboarding if this information is not submitted.  |
+| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. |
 | GeneralManager | No | If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly. |
 | PropertyExtranetUser | No | User account for access to read and respond to user reviews and reports for the property via the Expedia Partner Central (EPC) extranet. |
 
@@ -248,7 +248,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| firstName | String | Yes | |
+| firstName | String | Yes | Required for ReservationManager, optional for others |
 | lastName | String | Yes | |
 | phoneNumbers | Array of PhoneNumbers | See Notes | Phone required for Property, ReservationManager, AlternateReservationManager, GeneralManager |
 | emails | Array of Strings | See Notes | Email required for ReservationManager |
