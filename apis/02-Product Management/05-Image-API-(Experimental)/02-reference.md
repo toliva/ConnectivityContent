@@ -243,7 +243,7 @@ Status Code | Description | Response Model
 It is important for partners to know images can only be deleted before they reach the Published state.
 
 - Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
 - Consumes: `application/json`
 - Produces: `*/*`
 
@@ -251,11 +251,11 @@ It is important for partners to know images can only be deleted before they reac
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
-guid | path | Image ResourceId. The DELETE only works on images that haven't reached the "Published" state. Once it reached "Published", it can't be deleted anymore, only inactivated. | true | string | 
+resourceId | path | Image Resource ID. The DELETE only works on images that haven't reached the "Published" state. Once it reached "Published", it can't be deleted anymore, only inactivated. | true | string | 
 
 ### Read a single image
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -279,7 +279,7 @@ guid | path | Image ResourceId. The DELETE only works on images that haven't rea
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
-guid | path | Image GUID | true | string | 
+resourceId | path | Image Resource ID | true | string | 
 
 #### Success Responses
 Status Code | Description | Response Model
