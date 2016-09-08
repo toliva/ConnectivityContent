@@ -8,7 +8,7 @@ Authorization: Basic {username and password encoded by Base64}
 ```
 Example: 
 ```
-Authorization: Basic RVFDdGVzdDEyOTMzODcwOndtNDdhaDky
+Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
 ```
 Where "RVFDdGVzdDEyOTMzODcwOmV3NjduazMz" is the string "EQCtest12933870:ew67nk33" (username:password) Base64-encoded.
 
