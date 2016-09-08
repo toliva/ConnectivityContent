@@ -19,7 +19,7 @@ The simplest way to start interacting with the Product API is to access the
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:
 ```
 username: EQCtest12933870
-password: wm47ah92
+password: ew67nk33
 ```
 
 The result will be an array of properties assigned to your account, and will do so using the latest version of the API. For example:

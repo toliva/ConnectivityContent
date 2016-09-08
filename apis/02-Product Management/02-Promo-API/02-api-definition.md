@@ -10,7 +10,7 @@ Example:
 ```
 Authorization: Basic RVFDdGVzdDEyOTMzODcwOndtNDdhaDky
 ```
-Where "RVFDdGVzdDEyOTMzODcwOndtNDdhaDky" is the string "EQCtest12933870:wm47ah92" (username:password) Base64-encoded.
+Where "RVFDdGVzdDEyOTMzODcwOmV3NjduazMz" is the string "EQCtest12933870:ew67nk33" (username:password) Base64-encoded.
 
 For more information about getting started for the first time, and authorization, please refer to the FAQ & Guides section.
 

@@ -19,7 +19,7 @@ The simplest way to start interacting with the Image API is to access the
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account:
 ```
 username: EQCtest12933870
-password: wm47ah92
+password: ew67nk33
 ```
 The URL to use for this property: <https://services.expediapartnercentral.com/properties/12933870/images>
 
