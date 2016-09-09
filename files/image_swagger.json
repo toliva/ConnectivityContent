@@ -113,7 +113,7 @@
 					"Image"
 				],
 				"summary": "Read a single image",
-				"operationId": "getImageByGuid",
+				"operationId": "getImageByResourceId",
 				"consumes": [
 					"application/json"
 				],
@@ -152,7 +152,7 @@
 					"Image"
 				],
 				"summary": "Delete an existing image",
-				"operationId": "deleteImageByGuid",
+				"operationId": "deleteImageByResourceId",
 				"consumes": [
 					"application/json"
 				],
