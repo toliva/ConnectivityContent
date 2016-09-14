@@ -5,8 +5,6 @@ var hotelAssignmentServiceUrls = {
     schedule: hotelAssignmentServiceBaseUrl + "/v1/schedule",
     factors: hotelAssignmentServiceBaseUrl + "/v1/hotels/factors",
     assign: hotelAssignmentServiceBaseUrl + "/v1/schedule/assign",
-    login: hotelAssignmentServiceBaseUrl + "/v1/properties/login",
-    login: hotelAssignmentServiceBaseUrl + "/v1/properties/login",
 
     scheduleHotel: function(hotelId) {
         return hotelAssignmentServiceUrls.schedule + "/hotelId/" + hotelId;
