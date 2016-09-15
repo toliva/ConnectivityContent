@@ -1,4 +1,4 @@
-var hotelAssignmentServiceBaseUrl = "https://hotel-assignment-service.prod-p.expedia.com";
+var hotelAssignmentServiceBaseUrl = "https://hotel-assignment-service.test.expedia.com";
 
 var hotelAssignmentServiceUrls = {
     login: hotelAssignmentServiceBaseUrl + "/v1/properties/login",
