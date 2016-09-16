@@ -198,8 +198,8 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
 | providerPropertyUrl | String | No | Yes | URL for property's website, must be submitted in Western European Character set. |
 | structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./Code-list.html#StructureType "Structure type codes") |
-| currencyCode | String | Yes | No | Currency code to be used for property's pricing. Cannot be updated after initial onboarding. Use ISO4217 |
-| billingCurrencyCode | String | Yes | No | Currency code to be used for billing. Use ISO4217. |
+| currencyCode | String | Yes | No | Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit the same ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version. |
+| billingCurrencyCode | String | Yes | No | Currency code to be used for pricing and billing. Cannot be updated after initial onboarding.  Use ISO4217. |
 | timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](./https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
 | addresses | Array of Address objects | Yes | No | See Address below. |
 | ratings | Array of Rating objects | No | No | See Rating below. |
