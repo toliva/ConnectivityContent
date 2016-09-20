@@ -512,7 +512,7 @@ The response will always be the complete image of the room type after changes ha
 
 The PATCH logic only applies to first (top) level elements/objects of the [room type](#/definitions/RoomTypeDTO). Partners can decide to include any number of these top level elements/objects, and any elements/objects not included will be ignored/untouched.  If a partner includes any array or complex object (such as name, age categories or max occupancy), these objects will need to be fully specified with all the desired elements/attributes/object changes, as they are treated as full overlay.
 
-First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provided a "null" or empty array value.
+First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provide a "null" or empty array value.
 
 Also note that all validation rules are applied on the complete updated room type data. For instance, only providing a `ageCategories` that has no "Adult" category will yield the appropriate error response.
 
