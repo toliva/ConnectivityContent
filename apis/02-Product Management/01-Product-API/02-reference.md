@@ -668,7 +668,7 @@ Amenities of a given room type can be accessed as a sub resource of a specific r
 
 ### Read a single room type's amenities
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -686,7 +686,7 @@ Status Code | Description | Response Model
 
 ### Set room type amenities to an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
