@@ -1670,7 +1670,7 @@ ROOM_DISHWARE | - | - | - |
 ROOM_DISHWASHER | - | - | - | 
 ROOM_STOVETOP |  | - | - | 
 
-#### Entertainement
+#### Entertainment
 
 Code | DetailCodes Permitted | DetailCodes Required? | Values Required | Notes 
 ---- | --------------------- | --------------------- | --------------- | -----
