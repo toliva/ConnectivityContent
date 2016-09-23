@@ -31,9 +31,10 @@ For more information about getting started for the first time, and authorization
 | Resource | Supported Operations | Production Endpoint | Parameters |
 | -------- | -------------------- | ------------------- | ---------- |
 | Image | Read Multiple Images (GET) belonging to a property | GET https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images | status=all (optional) If status is not provided, only active images are returned.  |
-| Image | Read a single Image (GET) | GET https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/images/{ImageResourceId} | None |
-| Image | Add a new Image (POST) | POST https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/images | None |
-| Image | Delete an image that hasn't reached the Published state (DELETE) | DELETE https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/images/{ImageResourceId} | None |
+| Image | Read a single Image (GET) | GET https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
+| Image | Add a new Image (POST) | POST https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images | None |
+| Image | Patch an existing image (PATCH) | PATCH https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
+| Image | Delete an image that hasn't reached the Published state (DELETE) | DELETE https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
 
 
 ## HTTP Status Code
@@ -237,6 +238,52 @@ image | body | JSON message describing the new image | true | [Image](#/definiti
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [ResponseWrapperImage](#/definitions/ResponseWrapperImage)
+
+### Modify an existing image
+
+Expedia only offers a single way to modify an image at the moment. Using the PATCH verb, partners can perform a partial update (merge-patch) of an image, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
+
+This method allows partners to update an image by providing only the fields/values they need to change. This saves partners from having to first read the image before updating it.
+
+The response will always be the complete image of the rate plan after changes have been applied.
+
+**Important**
+
+The PATCH logic only applies to first (top) level elements/objects of the [image](#/definitions/Image). Partners can decide to include any number of these top level elements/objects, and any elements/objects not included will be ignored/untouched.  If a partner includes any array or complex object (such as room types or comments), these objects will need to be fully specified with all the desired elements/attributes/object changes, as they are treated as full overlay.
+
+First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provide a "null" or empty array value.
+
+Also note that all validation rules are applied on the complete updated image data.
+
+- Method: `PATCH`
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
+- Consumes: `application/json`
+- Produces: `application/json`
+
+**Examples**
+
+Updating both the status and the category:
+```
+{
+	"status": "Inactive",
+	"categoryCode": "INTERIOR_ENTRANCE"
+}
+```
+
+Updating only the status:
+```
+{
+	"status": "Inactive"
+}
+```
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type
+--------- | -------------- | ----------- | -------- | ---------
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token
+propertyId | path | Expedia Property ID | true | string | 
+resourceId | path | Image Resource ID. | true | string | 
+body | body | JSON message of partially updated room type | Yes | [Image](#/definitions/Image)
 
 ### Delete an existing image
 

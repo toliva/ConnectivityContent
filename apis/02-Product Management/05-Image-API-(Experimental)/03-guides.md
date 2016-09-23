@@ -33,6 +33,14 @@ If the image is either corrupted, or doesn't meet Expedia minimum size requireme
 
 If the image is accepted, it will quickly be published. After that, Expedia will audit all images within a few hours to make sure they meet [Expedia guidelines](https://expediagso.secure.force.com/kb/articles/en_US/Policy/About-Rejected-Photos/?q=Photos&l=en_US&fs=Search&pn=1). If they do not meet the guidelines, they will be inactivated. This information can be found by reading the image meta data and looking for the status inactive, as well as the comments that might be included with the image.
 
+## How Does the Image Update (PATCH) work?
+
+The PATCH modify operation is a way for our partners to only send what they'd like to modify on a resource.
+
+Expedia implemented the Merge-PATCH strategy. Partners can send any of the top level elements they'd wish to modify, and omit the ones they do not want to change. Expedia will take care of merging the resource updates and preserve what was not included at the resource's top level.
+
+It is important to note that any top level object is treated as a full overlay even when using Merge-PATCH. For example, if a partner decides to include the room type object, all the elements/values of that object need to be included as this specific object update will be treated as a full overlay.
+
 ## Why can't I Delete a Published Image?
 
 It is currently not possible to delete published images, but it is possible to inactivate them via a status update to hide them from Expedia website. After 5 years, inactive published images will be automatically deleted by Expedia.

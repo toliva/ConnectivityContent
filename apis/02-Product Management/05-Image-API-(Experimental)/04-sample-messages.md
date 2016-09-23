@@ -264,6 +264,45 @@ Accept: application/json
   }
 }
 ```
+
+## Partially Updating An Existing Image (PATCH)
+
+Here are a few examples of PATCH requests partners could want to make. Response examples are not included, but they would be the full image resource definition with all its fields, in its final state after the partial update.
+
+### Updating only the status
+```
+{
+	"status": "Inactive"
+}
+```
+
+### Updating both the status and the category
+```
+{
+	"status": "Inactive",
+	"categoryCode": "INTERIOR_ENTRANCE"
+}
+```
+
+### Overriding the current list of room types to only include a specific room type
+```
+{
+	"roomTypes": [
+		{
+			"resourceId": 123,
+			"roomTypeFeatured": true			
+		}
+	]
+}
+```
+
+### Removing all the associated room types
+```
+{
+	"roomTypes": []
+}
+```
+
 ## Deleting an Unpublished imnage
 When partners upload images that Expedia cannot publish, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assuming a partner pushes a corrupted image with a POST:
 ```
