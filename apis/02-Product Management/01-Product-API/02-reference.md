@@ -1448,33 +1448,34 @@ Status Code | Description | Response Model
 Bed types can not all be used as extra or standard beds. To understand if a bed type can be used in the standard bedding configuration of the room, or can only be provided in the extra bed list, please refer to the Standard/Extra column. Trying to provide a standard-only bed as extra (or vice-versa) via the API will result in the API returning an error.
 
 | bedType | Standard/Extra |
-| ---- | ---- |
+| ------- | -------------- |
 | Bunk Bed | Standard only |
 | Full Bed | Standard only |
 | Futon |  Standard only |
 | King Bed | Standard only |
-| Murphy Bed | Standard only |
+| Murphy Bed | Standard only | 
 | Queen Bed | Standard only |
-| Trundle Bed | Standard only |
-| Twin Bed | Standard only |
-| Twin XL Bed | Standard only |
-| Water Bed | Standard only |
-| Sofa Bed | Standard and Extra |
-| Crib | Extra only |
-| Day Bed | Extra only |
-| Rollaway Bed | Extra only |
+| Trundle Bed | Standard only | 
+| Twin Bed | Standard only | 
+| Twin XL Bed | Standard only | 
+| Water Bed | Standard only | 
+| Sofa Bed | Standard and Extra | 
+| Crib | Extra only | 
+| Day Bed | Extra only | 
+| Rollaway Bed | Extra only | 
 
 <a name="/definitions/bedSizeEnum"></a>
 ### bedSizeEnum
+As guidance, size references can be found below, to help partners better understand what each type refers to. All sizes are width sizes, and both centimeters (cm) and inches (in) are provided.
 
-| bedSize |
-| ---- |
-| Crib |
-| Full |
-| King |
-| Queen |
-| Twin |
-| TwinXL |
+| bedSize | Size Reference - Centimeters | Size Reference - Inches |
+| ------- | ---------------------------- | ----------------------- | 
+| Crib | Mininum width: 40cm <br/> Maximum width: 40cm | Mininum width: 15in <br/> Maximum: 15in |
+| Full | Mininum width: 125cm <br/> Maximum width: 150cm | Mininum width: 49in <br/> Maximum width: 59in |
+| King | Mininum width: 180cm <br/> Maximum width: 210cm | Mininum width: 70in <br/> Maximum width: 82in |
+| Queen | Mininum width: 150cm <br/> Maximum width: 180cm | Mininum width: 59in <br/> Maximum width: 70in |
+| Twin | Mininum width: 74cm <br/> Maximum width: 100cm | Mininum width: 29in <br/> Maximum width: 39in |
+| TwinXL | Mininum width: 100cm <br/> Maximum width: 125cm | Mininum width: 39in <br/> Maximum width: 49in |
 
 <a name="/definitions/bedTypeAndSize"></a>
 ### Valid Bed Type and Size Combinations
