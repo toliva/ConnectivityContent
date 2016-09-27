@@ -149,11 +149,7 @@
     }
 
     function getNiceErrorText(jqxhr) {
-        try {
-            var content = jqxhr.getResponseHeader("Content-type");
-        } catch (e) {
-            var content = "text/text";
-        }
+        var content = jqxhr.getResponseHeader("Content-type");
         if (content.indexOf("json") >= 0) {
             var json;
             try {
@@ -176,7 +172,9 @@
             console.log(humanError);
             console.log(jqxhr);
         }
-        var details = getNiceErrorText(jqxhr);
+        if (jqxhr) {
+            var details = getNiceErrorText(jqxhr);
+        }
         $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
     }
 
