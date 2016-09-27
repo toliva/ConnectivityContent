@@ -1470,12 +1470,12 @@ As guidance, size references can be found below, to help partners better underst
 
 | bedSize | Size Reference - Centimeters | Size Reference - Inches |
 | ------- | ---------------------------- | ----------------------- | 
-| Crib | Mininum width: 40cm <br/> Maximum width: 40cm | Mininum width: 15in <br/> Maximum: 15in |
-| Full | Mininum width: 125cm <br/> Maximum width: 150cm | Mininum width: 49in <br/> Maximum width: 59in |
-| King | Mininum width: 180cm <br/> Maximum width: 210cm | Mininum width: 70in <br/> Maximum width: 82in |
-| Queen | Mininum width: 150cm <br/> Maximum width: 180cm | Mininum width: 59in <br/> Maximum width: 70in |
-| Twin | Mininum width: 74cm <br/> Maximum width: 100cm | Mininum width: 29in <br/> Maximum width: 39in |
-| TwinXL | Mininum width: 100cm <br/> Maximum width: 125cm | Mininum width: 39in <br/> Maximum width: 49in |
+| Crib | Minimum width: 40cm <br/> Maximum width: 40cm | Minimum width: 15in <br/> Maximum width: 15in |
+| Full | Minimum width: 125cm <br/> Maximum width: 150cm | Minimum width: 49in <br/> Maximum width: 59in |
+| King | Minimum width: 180cm <br/> Maximum width: 210cm | Minimum width: 70in <br/> Maximum width: 82in |
+| Queen | Minimum width: 150cm <br/> Maximum width: 180cm | Minimum width: 59in <br/> Maximum width: 70in |
+| Twin | Minimum width: 74cm <br/> Maximum width: 100cm | Minimum width: 29in <br/> Maximum width: 39in |
+| TwinXL | Minimum width: 100cm <br/> Maximum width: 125cm | Minimum width: 39in <br/> Maximum width: 49in |
 
 <a name="/definitions/bedTypeAndSize"></a>
 ### Valid Bed Type and Size Combinations
