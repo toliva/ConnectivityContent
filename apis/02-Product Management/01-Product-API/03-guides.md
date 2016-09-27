@@ -344,9 +344,9 @@ The create response will contain all the fields originally provided in the reque
 
 ## Understanding Occupancy and Age Category Settings in the Room Type Resource
 
-Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and child, and define additional guest amounts per age category. 
+Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and children, and define additional guest amounts per age category. 
 
-Occupancy settings call for counts of children and adults. Unlike the age categories, there's no granularity in the configuration for children. There is however a relationship between the age categories and the occupancy settings. If a room accepts children in its occupancy, and a partner wants to give a count of children under the occupancy element, Expedia will expect that the age categories define include at least one ChildAge category, or Infant. If it is not the case, Expedia will reject the message.
+Occupancy settings define the maximum occupancy of the room by number of adulds, children and total. Unlike the age categories, there's no granularity in the configuration for children. There is however a relationship between the age categories and the occupancy settings. If a room accepts children in its occupancy, and a partner wants to define a maxium number of children under the occupancy element, Expedia will expect that the age categories include at least one ChildAge category, or Infant. If it is not the case, Expedia will reject the message.
 
 When a room supports children and infants, assuming a room can accomodate up to 4 people, Expedia would expect to receive a configuration similar to this:
 ```json
