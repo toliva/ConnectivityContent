@@ -1455,14 +1455,14 @@ Bed types can not all be used as extra or standard beds. To understand if a bed 
 | King Bed | Standard only |
 | Murphy Bed | Standard only | 
 | Queen Bed | Standard only |
-| Trundle Bed | Standard only | 
-| Twin Bed | Standard only | 
-| Twin XL Bed | Standard only | 
-| Water Bed | Standard only | 
-| Sofa Bed | Standard and Extra | 
-| Crib | Extra only | 
-| Day Bed | Extra only | 
-| Rollaway Bed | Extra only | 
+| Trundle Bed | Standard only |
+| Twin Bed | Standard only |
+| Twin XL Bed | Standard only |
+| Water Bed | Standard only |
+| Sofa Bed | Standard and Extra |
+| Crib | Extra only |
+| Day Bed | Extra only |
+| Rollaway Bed | Extra only |
 
 <a name="/definitions/bedSizeEnum"></a>
 ### bedSizeEnum
