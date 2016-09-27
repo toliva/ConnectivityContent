@@ -1448,12 +1448,12 @@ Status Code | Description | Response Model
 Bed types can not all be used as extra or standard beds. To understand if a bed type can be used in the standard bedding configuration of the room, or can only be provided in the extra bed list, please refer to the Standard/Extra column. Trying to provide a standard-only bed as extra (or vice-versa) via the API will result in the API returning an error.
 
 | bedType | Standard/Extra |
-| ---- | ---- |
+| ------- | -------------- |
 | Bunk Bed | Standard only |
 | Full Bed | Standard only |
 | Futon |  Standard only |
 | King Bed | Standard only |
-| Murphy Bed | Standard only |
+| Murphy Bed | Standard only | 
 | Queen Bed | Standard only |
 | Trundle Bed | Standard only |
 | Twin Bed | Standard only |
@@ -1466,15 +1466,16 @@ Bed types can not all be used as extra or standard beds. To understand if a bed 
 
 <a name="/definitions/bedSizeEnum"></a>
 ### bedSizeEnum
+As guidance, size references can be found below, to help partners better understand what each type refers to. All sizes are width sizes, and both centimeters (cm) and inches (in) are provided.
 
-| bedSize |
-| ---- |
-| Crib |
-| Full |
-| King |
-| Queen |
-| Twin |
-| TwinXL |
+| bedSize | Size Reference - Centimeters | Size Reference - Inches |
+| ------- | ---------------------------- | ----------------------- | 
+| Crib | Minimum width: 40cm <br/> Maximum width: 40cm | Minimum width: 15in <br/> Maximum width: 15in |
+| Full | Minimum width: 125cm <br/> Maximum width: 150cm | Minimum width: 49in <br/> Maximum width: 59in |
+| King | Minimum width: 180cm <br/> Maximum width: 210cm | Minimum width: 70in <br/> Maximum width: 82in |
+| Queen | Minimum width: 150cm <br/> Maximum width: 180cm | Minimum width: 59in <br/> Maximum width: 70in |
+| Twin | Minimum width: 74cm <br/> Maximum width: 100cm | Minimum width: 29in <br/> Maximum width: 39in |
+| TwinXL | Minimum width: 100cm <br/> Maximum width: 125cm | Minimum width: 39in <br/> Maximum width: 49in |
 
 <a name="/definitions/bedTypeAndSize"></a>
 ### Valid Bed Type and Size Combinations
