@@ -64,7 +64,7 @@
                         datatable.clear().draw();
                     } else {
                         callback({data: parseData(JSON.parse(jqxhr.responseText))});
-                        datatable.order([ 2, "asc" ]).draw();
+                        datatable.order([ 3, "asc" ]).draw();
                     }
                 }, function(jqxhr) {
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
