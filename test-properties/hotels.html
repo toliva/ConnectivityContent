@@ -57,7 +57,8 @@
         { title: "Model" },
         { title: "Currency" },
         { title: "Pricing" },
-        { title: "RAT" }
+        { title: "RAT" },
+        { title: "API Username" }
     ];
 
     var buttons = [
@@ -119,7 +120,7 @@
                 for (var k in hotel.dates) {
                     var date = hotel.dates[k];
                     table.push([hotel.hotelId, hotel.hotelName, date.endDate,
-                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
+                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType, hotel.eqcAccountUsername]);
                 }
             }
         }
@@ -147,9 +148,27 @@
         }
     }
 
+    function getNiceErrorText(jqxhr) {
+        var content = jqxhr.getResponseHeader("Content-type");
+        if (content.indexOf("json") >= 0) {
+            var json;
+            try {
+                json = JSON.parse(jqxhr.responseText);
+            } catch (e) {
+                return jqxhr.responseText;
+            }
+            return json.details || json.message || json.description;
+        } else if (content.indexOf("text/text")) {
+            return jqxhr.responseText;
+        }
+
+        return false;
+    }
+
     function ajaxError(jqxhr, humanError) {
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
-        $("#result").addClass("error").text(humanError).effect( "highlight", {color:"#D62D20"}, 700 );
+        var details = getNiceErrorText(jqxhr);
+        $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
     }
 
     function addAssignmentField(request, fieldName) {
@@ -193,9 +212,7 @@
             });
         }, function(jqxhr) {
             if (jqxhr.status == 409) {
-                $("#result").addClass("error")
-                            .html("No hotels to assign which match your preferences, please email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>")
-                            .effect( "highlight", {color:"#D62D20"}, 700 );
+                ajaxError(null, "No hotels to assign which match your preferences, please email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>");;
             } else {
                 ajaxError(jqxhr, "Could not schedule a test hotel.");
             }
