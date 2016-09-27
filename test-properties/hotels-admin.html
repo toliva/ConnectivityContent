@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/dataTables.buttons.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<script src="/test-properties/urls.js"></script>
+<style>
+    .dataTables_length, .dataTables_filter {
+        display: none;
+    }
+
+    .simple-content form {
+        margin-top: 50px;
+        margin-bottom: 200px;
+    }
+
+    .dataTables_paginate,.dataTables_info {
+        display: none;
+    }
+</style>
+<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <h1>Test Property Assignment - Administration View</h1>
+    <hr/>
+    <br/>
+    <h2>Properties assigned to all accounts</h2>
+    <br/>
+    <table id="hotels" class="display" cellspacing="0" width="100%"></table>
+    <form>
+        <div id="result" class="formline center"></div>
+    </form>
+</div>
+
+<script>
+    var datatable = false;
+    var assignmentRequestFields = [];
+
+    var columns = [
+        { title: "TUID" },
+        { title: "Property ID" },
+        { title: "Name" },
+        { title: "Valid To", type: "date" },
+        { title: "Model" },
+        { title: "Currency" },
+        { title: "Pricing" },
+        { title: "RAT" },
+        { title: "API Username" }
+    ];
+
+    $(document).ready(function() {
+        datatable = $("#hotels").DataTable({
+            dom: 'frti',
+            columns: columns,
+            pageLength: 100,
+            ajax: function (data, callback, settings) {
+                jwtRequest("GET", hotelAssignmentServiceUrls.schedule(), function(data, textStatus, jqxhr) {
+                    console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+                    if ($("#result").hasClass("error")) {
+                        $("#result").removeClass("error").text("");
+                    }
+                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
+                    $(document).tooltip();
+                    if (jqxhr.responseText == "") {
+                        datatable.clear().draw();
+                    } else {
+                        callback({data: parseData(JSON.parse(jqxhr.responseText))});
+                        datatable.order([ 2, "asc" ]).draw();
+                    }
+                }, function(jqxhr) {
+                    ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
+                });
+            }
+        }).on('click', 'tr', function() {
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected");
+                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
+                console.log("disabled");
+            } else {
+                $("#hotels tr").removeClass("selected");
+                $(this).addClass("selected");
+                $(".dt-button").prop("disabled", false).removeClass("disabled").removeAttr("title");
+                console.log("enabled");
+            }
+        });
+    });
+
+    $('#requestHotelForm').submit(function (event) {
+        event.preventDefault();
+        autoAssignHotel();
+    });
+
+    function parseData(data) {
+        var table = [];
+        for (var i in data) {
+            var tuid = data[i];
+            for (var j in tuid.hotels) {
+                var hotel = tuid.hotels[j];
+                for (var k in hotel.dates) {
+                    var date = hotel.dates[k];
+                    table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.endDate,
+                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType, hotel.eqcAccountUsername]);
+                }
+            }
+        }
+        if (table.length == 0) {
+            datatable.clear().draw();
+        }
+        return table;
+    }
+
+    function getNiceErrorText(jqxhr) {
+        var content = jqxhr.getResponseHeader("Content-type");
+        if (content.indexOf("json") >= 0) {
+            var json;
+            try {
+                json = JSON.parse(jqxhr.responseText);
+            } catch (e) {
+                return jqxhr.responseText;
+            }
+            return json.details || json.message || json.description;
+        } else if (content.indexOf("text/text")) {
+            return jqxhr.responseText;
+        }
+
+        return false;
+    }
+
+    function ajaxError(jqxhr, humanError) {
+        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        var details = getNiceErrorText(jqxhr);
+        $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
+    }
+
+
+</script>
