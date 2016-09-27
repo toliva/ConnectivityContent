@@ -149,7 +149,11 @@
     }
 
     function getNiceErrorText(jqxhr) {
-        var content = jqxhr.getResponseHeader("Content-type");
+        try {
+            var content = jqxhr.getResponseHeader("Content-type");
+        } catch (e) {
+            var content = "text/text";
+        }
         if (content.indexOf("json") >= 0) {
             var json;
             try {
