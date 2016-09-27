@@ -166,7 +166,12 @@
     }
 
     function ajaxError(jqxhr, humanError) {
-        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        try {
+            console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        } catch (e) {
+            console.log(humanError);
+            console.log(jqxhr);
+        }
         var details = getNiceErrorText(jqxhr);
         $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
     }
