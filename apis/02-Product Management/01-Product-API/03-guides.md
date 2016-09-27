@@ -341,3 +341,83 @@ The create response will contain all the fields originally provided in the reque
 *About optional fields*: some optional fields may not have any values defined in the Expedia system. In this case the fields are omitted completely in the response.
 
 *About fields documented as not accepted in request, but returned in response*: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not. 
+
+## Understanding Occupancy and Age Category Settings in the Room Type Resource
+
+Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and child, and define additional guest amounts per age category. 
+
+Occupancy settings call for counts of children and adults. Unlike the age categories, there's no granularity in the configuration for children. There is however a relationship between the age categories and the occupancy settings. If a room accepts children in its occupancy, and a partner wants to give a count of children under the occupancy element, Expedia will expect that the age categories define include at least one ChildAge category, or Infant. If it is not the case, Expedia will reject the message.
+
+When a room supports children and infants, assuming a room can accomodate up to 4 people, Expedia would expect to receive a configuration similar to this:
+```json
+{
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        },
+        {
+            "category": "ChildAgeA",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 4,
+        "children": 3
+    }
+}
+```
+
+If a room doesn't support children, Expedia would expect to receive something like this:
+```json
+{
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 4
+    }
+}
+```
+
+If a room supports children, but only older children (for example 16+), Expedia would expect to receive something like this:
+```json
+{
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        },
+        {
+            "category": "ChildAgeA",
+            "minAge": 16
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 4,
+        "children": 3
+    }
+}
+```
+A partner who intends to charge children as adults and only accept older children of 16+ could consider doing something like this as well:
+```json
+{
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 16
+        }
+    ],
+    "maxOccupancy": {
+        "total": 4,
+        "adults": 4
+    }
+}
+```
+
