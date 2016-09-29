@@ -184,7 +184,7 @@ In V2, Expedia introduced the possibility to perform partial update operations o
 
 ### Cancel Policy Exceptions
 
-In V2, Expedia exposed the possibility to define cancel policy exceptions. On top of the default cancellation penalty, partners can now define exceptions (up to 500) in the future. For more informatino about cancel policy in general, including exception, please see [Understanding Change and Cancel Policy](#/cancelpolicy)
+In V2, Expedia exposed the possibility to define cancel policy exceptions. On top of the default cancellation penalty, partners can now define exceptions (up to 500) in the future. For more informatino about cancel policy in general, including exception, please see [Understanding Change and Cancel Policy](#/cancelpolicy). For information about the structure of the cancel policy, please visit [CancelPolicy](#/definitions/CancelPolicyDTO) in the API Definition section.
 
 ## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
 
