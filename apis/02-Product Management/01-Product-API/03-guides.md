@@ -55,12 +55,87 @@ More information about versioning in V2 with http headers can be found in the [r
 
 ### New Bed Type and Occupancy Definition
 
-### Smoking preference
+The way Expedia collects bedding and occupancy information has now changed in a significant way. When it came to bed type configuration for a room, in V1, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations Expedia maintained:
+```json
+"bedTypes": [{
+    "id": "1.66",
+    "name": "1 double and 2 single beds"
+}]
+```
+
+With the new bed type model, partners just have to give us a count for each bed type they support. The above example becomes:
+```json
+"standardBedding": [{
+    option": [{
+        "quantity": 1,
+        "type": "Full Bed",
+        "size": "Full"
+    },
+    {
+        "quantity": 2,
+        "type": "Twin Bed",
+        "size": "Twin"
+    }]
+}]
+```
+
+Partners now have unlimited options in defining and combining bed types available for a given room type. Please review the [BeddingOption section](reference.html#/definitions/BeddingOptionDTO) of the API Definition for more information.
+
+Another change introduced in this space is to restrict room types to only offer 2 bed type configuration options. It is not possible anymore to specify that a given room type can be offered in 3 or more possible configurations and have guest choose between 3 or more configurations at time of booking.
+
+Expedia all streamlined the management of extra bedding configuration. It used to be managed as amenities under a room type in V1. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
+
+Example of how extra beds are provided within the room type resource:
+```json
+"extraBedding": [{
+    "quantity": 1,
+    "type": "Rollaway Bed",
+    "size": "Full",
+    "surcharge": {
+        "type": "Per Day",
+        "amount": 20
+     }
+},
+{
+    "quantity": 1,
+    "type": "Crib",
+    "size": "Crib",
+    "surcharge": {
+    "type": "Free"
+    }
+}]
+```
+
+Please review the [ExtraBed section](#/definitions/ExtraBedDTO) of the API definition for more information.
+
+### Smoking Preference
+
+Within the room type resource, the structure for expressing smoking preferences was streamlined and simplied. In V1, to specify a room type supported both smoking and non-smoking configurations, a partner would specify:
+
+```json
+"smokingPreferences": [{
+    "id": "2.1",
+    "name": "Non-Smoking"
+},
+{
+    "id": "2.2",
+    "name": "Smoking"
+}]
+```
+
+In V2, it becomes simply:
+```json
+"smokingPreferences":["Smoking","Non-Smoking"]
+```
+More information about this can be found in the [API Definition](reference.html#/definitions/smokingPreferenceEnum).
 
 ### PATCH Operation
 
+In V2, Expedia introduced the possibility to perform partial update operations on all its resources. Please see [Modify: partial or full overlay?](#/update) in this section, or visit the sections about PATCH for [Room Type](reference.html#/PatchRoomType) or [Rate plan](reference.html#/PatchRatePlan) in the API Defintion for more information.
+
 ### Cancel Policy Exceptions
 
+In V2, Expedia exposed the possibility to define cancel policy exceptions. On top of the default cancellation penalty, partners can now define exceptions (up to 500) in the future. For more informatino about cancel policy in general, including exception, please see [Understanding Change and Cancel Policy](#/cancelpolicy)
 
 ## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
 
@@ -148,7 +223,7 @@ This becomes quite important to understand when partners are in the process of c
 ```HTML
 /products/v1/properties/123/roomTypes?status=all
 ```
-
+<a name="update"></a>
 ## Modify: partial or full overlay?
 
 Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the [API Definition](reference.html#modify-an-existing-rate-plan).
@@ -233,6 +308,7 @@ For partners who want more control over their names and which attributes get use
 
 For more information about the various possible values and constraints on each of these attributes, please refer to the [API Definition section](reference.html#/definitions/RnsAttributesDTO).
 
+<a name="cancelpolicy"></a>
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. For more detailed information on Cancellation & Change Policy please see the [reference](reference.html#/definitions/CancelPolicyDTO).
 
