@@ -254,15 +254,20 @@
 
     function resetPassword(e, dt, node, config) {
         var hotelid = dt.cell(".selected", 0).data();
-        $("#reset-dialogue").html("<p>Reset the password of Test Hotel ID " + hotelid + ".</p> <form id='reset'><p>New Password:</p><div class='formline'><input type='password' id='password' oninvalid=\"this.setCustomValidity('8 character minimum')\" placeholder='8+ characters' required pattern='.{8,}'/></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div></form>")
+        $("#reset-dialogue").html("<p>Reset the password of Test Hotel ID " + hotelid + ".</p> <form id='reset'><p>New Password:</p><div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div><div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div></form>")
               .dialog({
                 minWidth: 500,
                 minHeight: 300
               });
         $("#reset").submit(function() {
             console.log("reset");
+            var password = $("#reset-dialogue #password").val();
+            if (password.length < 8) {
+                $("#reset-dialogue .error").text("8 character minimum");
+                return false;
+            }
             $("#reset-dialogue").dialog("close");
-            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": $("#reset-dialogue #password").val() }), function(data, textStatus, jqxhr) {
+            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 $("#result").removeClass("error").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
             }, function(jqxhr) {
