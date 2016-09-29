@@ -41,6 +41,27 @@ Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://se
 
 Product API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
 
+## Changes between Product API V1 and V2
+
+On June 10th, a new version of the product API was released. A few non-backward compatible changes were made to the room type resource, requiring Expedia to version the API.
+
+Here's an overview of all the changes and new features contained in V2.
+
+### Versioning 
+
+Product API V1 contained the major version within the URL of all its resources. With V2, the version is moved to the content-type and accept headers, to allow for greater flexibility in the versioning of the various resources.
+
+More information about versioning in V2 with http headers can be found in the [reference section](reference.html#/versioning).
+
+### New Bed Type and Occupancy Definition
+
+### Smoking preference
+
+### PATCH Operation
+
+### Cancel Policy Exceptions
+
+
 ## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
 
 Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.
