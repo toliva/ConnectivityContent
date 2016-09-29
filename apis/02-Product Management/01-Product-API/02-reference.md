@@ -51,6 +51,7 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 | Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Delete a single rate plan (DELETE) | DELETE https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
+<a name="versioning"></a>
 ## Versioning
 
 Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independentely. 
