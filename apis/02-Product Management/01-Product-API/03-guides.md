@@ -155,7 +155,7 @@ Example of how extra beds are provided within the room type resource:
 }]
 ```
 
-Please review the [ExtraBed section](#/definitions/ExtraBedDTO) of the API definition for more information.
+Please review the [ExtraBed section](reference.html#/definitions/ExtraBedDTO) of the API definition for more information.
 
 ### Smoking Preference
 
