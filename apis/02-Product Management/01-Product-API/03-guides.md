@@ -41,7 +41,7 @@ Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://se
 
 Product API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
 
-<a name="v1v2diff"></a>
+<a name="/v1v2diff"></a>
 ## Changes between Product API V1 and V2
 
 On June 10th, a new version of the product API was released. A few non-backward compatible changes were made to the room type resource, requiring Expedia to version the API.
@@ -272,7 +272,7 @@ This becomes quite important to understand when partners are in the process of c
 ```HTML
 /products/v1/properties/123/roomTypes?status=all
 ```
-<a name="update"></a>
+<a name="/update"></a>
 ## Modify: partial or full overlay?
 
 Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the [API Definition](reference.html#modify-an-existing-rate-plan).
@@ -357,7 +357,7 @@ For partners who want more control over their names and which attributes get use
 
 For more information about the various possible values and constraints on each of these attributes, please refer to the [API Definition section](reference.html#/definitions/RnsAttributesDTO).
 
-<a name="cancelpolicy"></a>
+<a name="/cancelpolicy"></a>
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. For more detailed information on Cancellation & Change Policy please see the [reference](reference.html#/definitions/CancelPolicyDTO).
 
@@ -488,7 +488,7 @@ The create response will contain all the fields originally provided in the reque
 
 *About fields documented as not accepted in request, but returned in response*: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not. 
 
-<a name="occupancyAgeCategory"></a>
+<a name="/occupancyAgeCategory"></a>
 ## Understanding Occupancy and Age Category Settings in the Room Type Resource
 
 Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and children, and define additional guest amounts per age category. 
