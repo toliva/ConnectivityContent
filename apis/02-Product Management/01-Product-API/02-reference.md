@@ -501,6 +501,7 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RoomType](#/definitions/RoomTypeDTO)
 
+<a name="PatchRoomType"></a>
 #### Room Type Modify - Partial Update (PATCH)
 
 Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
@@ -1001,6 +1002,7 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
+<a name="PatchRatePlan"></a>
 #### Rate Plan Modify - Partial Update (PATCH)
 
 Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
