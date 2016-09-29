@@ -54,9 +54,55 @@ Product API V1 contained the major version within the URL of all its resources. 
 
 More information about versioning in V2 with http headers can be found in the [reference section](reference.html#/versioning).
 
-### New Bed Type and Occupancy Definition
+### New Occupancy Definition
 
-The way Expedia collects bedding and occupancy information has now changed in a significant way. When it came to bed type configuration for a room, in V1, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations Expedia maintained:
+The way Expedia collects occupancy information has changed significantly. In V1, partners used to give information about max occupancy of the room, and then max occupancy for up to 6 different age categories. For example, assuming a room took up to 4 guests, with some children and infant, a partner could have defined something like this:
+```json
+"maxOccupants": 4,
+"occupancyByAge": [{
+    "ageCategory": "Adult",
+    "minAge": 13,
+    "maxOccupants": 3
+},
+{
+    "ageCategory": "ChildAgeA",
+    "minAge": 5,
+    "maxOccupants": 2
+},
+{
+    "ageCategory": "Infant",
+    "minAge": 0,
+    "maxOccupants": 0
+    }
+]
+```
+
+In the new V2 model, partners need to call out which age categories are supported by the room, but only provide count for adults in children. The above example in V2 model becomes:
+```json
+"ageCategories": [{
+    "category": "Adult",
+    "minAge": 13
+},
+{
+    "category": "ChildAgeA",
+    "minAge": 5
+},
+{
+    "category": "Infant",
+    "minAge": 0
+}
+],
+"maxOccupancy": {
+    "total": 4,
+    "adults": 3,
+    "children": 2
+}
+```
+
+For more information about age categories and occupancies, please see [Understanding Occupancy and Age Category Settings in the Room Type Resource](#/occupancyAgeCategory) in this section.
+### New Bed Type Definition
+
+The way Expedia collects bedding information has now changed in a significant way. When it came to bed type configuration for a room, in V1, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations Expedia maintained:
 ```json
 "bedTypes": [{
     "id": "1.66",
@@ -84,7 +130,9 @@ Partners now have unlimited options in defining and combining bed types availabl
 
 Another change introduced in this space is to restrict room types to only offer 2 bed type configuration options. It is not possible anymore to specify that a given room type can be offered in 3 or more possible configurations and have guest choose between 3 or more configurations at time of booking.
 
-Expedia all streamlined the management of extra bedding configuration. It used to be managed as amenities under a room type in V1. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
+#### Extra Bedding Definition
+
+Expedia also streamlined the management of extra bedding configuration. It used to be managed as amenities under a room type in V1. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
 
 Example of how extra beds are provided within the room type resource:
 ```json
@@ -440,6 +488,7 @@ The create response will contain all the fields originally provided in the reque
 
 *About fields documented as not accepted in request, but returned in response*: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not. 
 
+<a name="occupancyAgeCategory"></a>
 ## Understanding Occupancy and Age Category Settings in the Room Type Resource
 
 Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and children, and define additional guest amounts per age category. 
