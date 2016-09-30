@@ -1,7 +1,7 @@
 # API Definition
 The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs, without having to use EPC or contact their market manager. The API also enables our partners to read the definition of the room types and rate plans created in the system.
 
-<a name="authentication"></a>
+<a name="/authentication"></a>
 ## Authentication
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
@@ -51,6 +51,7 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 | Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Delete a single rate plan (DELETE) | DELETE https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
+<a name="/versioning"></a>
 ## Versioning
 
 Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independentely. 
@@ -500,6 +501,7 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RoomType](#/definitions/RoomTypeDTO)
 
+<a name="/PatchRoomType"></a>
 #### Room Type Modify - Partial Update (PATCH)
 
 Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
@@ -1000,6 +1002,7 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [RatePlan](#/definitions/RatePlanDTO)
 
+<a name="/PatchRatePlan"></a>
 #### Rate Plan Modify - Partial Update (PATCH)
 
 Expedia chose the merge-patch method for partial update, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).

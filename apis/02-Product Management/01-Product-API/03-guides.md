@@ -41,6 +41,151 @@ Expedia does not offer JSON schemas, but we do offer a [Swagger.json](https://se
 
 Product API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
 
+<a name="/v1v2diff"></a>
+## Changes between Product API V1 and V2
+
+On June 10th, 2016, a new version of the product API was released. A few non-backward compatible changes.
+
+Here's an overview of all the changes and new features contained in V2.
+
+### Versioning 
+
+A new API versioning strategy was adopted. Product API V1 contained the major version within the URL of all its resources. Starting with V2, the version has been moved to the Content-Type and Accept headers, to allow for greater flexibility in the versioning of the various resources.
+
+More information about versioning in V2 with http headers can be found in the [reference section](reference.html#/versioning).
+
+### New Occupancy Definition
+
+The way Expedia collects occupancy information has changed significantly. In V1, partners used to give information about max occupancy of the room, and then max occupancy for up to 6 different age categories. For example, assuming a room accommodated up to 4 guests, with some children and infant, a partner could have defined something like this:
+```json
+"maxOccupants": 4,
+"occupancyByAge": [{
+    "ageCategory": "Adult",
+    "minAge": 13,
+    "maxOccupants": 4
+},
+{
+    "ageCategory": "ChildAgeA",
+    "minAge": 5,
+    "maxOccupants": 3
+},
+{
+    "ageCategory": "Infant",
+    "minAge": 0,
+    "maxOccupants": 3
+    }
+]
+```
+
+In the new V2 model, partners need to call out which age categories are supported by the room, but only provide count for adults and children. The above example in V2 model becomes:
+```json
+"ageCategories": [{
+    "category": "Adult",
+    "minAge": 13
+},
+{
+    "category": "ChildAgeA",
+    "minAge": 5
+},
+{
+    "category": "Infant",
+    "minAge": 0
+}
+],
+"maxOccupancy": {
+    "total": 4,
+    "adults": 4,
+    "children": 3
+}
+```
+
+For more information about age categories and occupancies, please see [Understanding Occupancy and Age Category Settings in the Room Type Resource](#/occupancyAgeCategory) in this section.
+### New Bed Type Definition
+
+The way Expedia collects bedding information has now changed in a significant way. In V1, when it came to bed type configuration for a room, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations maintained by Expedia:
+```json
+"bedTypes": [{
+    "id": "1.66",
+    "name": "1 double and 2 single beds"
+}]
+```
+
+With the new bed type model, partners just have to give us a count for each bed type they support. The above example becomes:
+```json
+"standardBedding": [{
+    option": [{
+        "quantity": 1,
+        "type": "Full Bed",
+        "size": "Full"
+    },
+    {
+        "quantity": 2,
+        "type": "Twin Bed",
+        "size": "Twin"
+    }]
+}]
+```
+
+Partners now have unlimited options in defining and combining bed types available for a given room type. Please review the [BeddingOption section](reference.html#/definitions/BeddingOptionDTO) of the API Definition for more information.
+
+Another change introduced in this space is to restrict room types to only offer 2 bed type configuration options. Partners can no longer specify that a given room type is offered in 3 or more possible configurations and have guest choose between 3 or more configurations at time of booking.
+
+#### Extra Bedding Definition
+
+Expedia also streamlined the management of extra bedding configuration. In V1, it used to be managed as amenities under a room type. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
+
+Example of how extra beds are provided within the room type resource:
+```json
+"extraBedding": [{
+    "quantity": 1,
+    "type": "Rollaway Bed",
+    "size": "Full",
+    "surcharge": {
+        "type": "Per Day",
+        "amount": 20
+     }
+},
+{
+    "quantity": 1,
+    "type": "Crib",
+    "size": "Crib",
+    "surcharge": {
+    "type": "Free"
+    }
+}]
+```
+
+Please review the [ExtraBed section](reference.html#/definitions/ExtraBedDTO) of the API definition for more information.
+
+### Smoking Preference
+
+Within the room type resource, the structure for expressing smoking preferences was streamlined and simplied. In V1, to specify a room type supported both smoking and non-smoking configurations, a partner would specify:
+
+```json
+"smokingPreferences": [{
+    "id": "2.1",
+    "name": "Non-Smoking"
+},
+{
+    "id": "2.2",
+    "name": "Smoking"
+}]
+```
+
+In V2, it becomes simply:
+```json
+"smokingPreferences":["Smoking","Non-Smoking"]
+```
+More information about this can be found in the [API Definition](reference.html#/definitions/smokingPreferenceEnum).
+
+### PATCH Operation
+
+In V2, Expedia introduced the possibility to perform partial update operations on its resources. Please see [Modify: partial or full overlay?](#/update) in this section, or visit the sections about PATCH for [Room Type](reference.html#/PatchRoomType) or [Rate plan](reference.html#/PatchRatePlan) in the API Defintion for more information.
+
+### Cancel Policy Exceptions
+
+In V2, Expedia exposed the possibility to define cancel policy exceptions. On top of the default cancellation penalty, partners can now define exceptions (up to 500) in the future. For more informatino about cancel policy in general, including exception, please see [Understanding Change and Cancel Policy](#/cancelpolicy). For information about the structure of the cancel policy, please visit [CancelPolicy](#/definitions/CancelPolicyDTO) in the API Definition section.
+
 ## Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?
 
 Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.
@@ -127,7 +272,7 @@ This becomes quite important to understand when partners are in the process of c
 ```HTML
 /products/v1/properties/123/roomTypes?status=all
 ```
-
+<a name="/update"></a>
 ## Modify: partial or full overlay?
 
 Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the [API Definition](reference.html#modify-an-existing-rate-plan).
@@ -212,6 +357,7 @@ For partners who want more control over their names and which attributes get use
 
 For more information about the various possible values and constraints on each of these attributes, please refer to the [API Definition section](reference.html#/definitions/RnsAttributesDTO).
 
+<a name="/cancelpolicy"></a>
 ## Understanding Cancellation & Change Policy
 The Cancellation & Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. For more detailed information on Cancellation & Change Policy please see the [reference](reference.html#/definitions/CancelPolicyDTO).
 
@@ -342,6 +488,7 @@ The create response will contain all the fields originally provided in the reque
 
 *About fields documented as not accepted in request, but returned in response*: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not. 
 
+<a name="/occupancyAgeCategory"></a>
 ## Understanding Occupancy and Age Category Settings in the Room Type Resource
 
 Age categories are used for 2 different things in Expedia system: confirm if the room supports adults and children, and define additional guest amounts per age category. 
