@@ -1,4 +1,4 @@
-## FAQ & Guides
+# FAQ & Guides
 This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner's intent when managing room types and rate plans.
 
 <a name="/howtogetstarted"></a>
@@ -94,15 +94,15 @@ In the new V2 model, partners need to call out which age categories are supporte
 ],
 "maxOccupancy": {
     "total": 4,
-    "adults": 3,
-    "children": 2
+    "adults": 4,
+    "children": 3
 }
 ```
 
 For more information about age categories and occupancies, please see [Understanding Occupancy and Age Category Settings in the Room Type Resource](#/occupancyAgeCategory) in this section.
 ### New Bed Type Definition
 
-The way Expedia collects bedding information has now changed in a significant way. In V1, When it came to bed type configuration for a room, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations maintained by Expedia:
+The way Expedia collects bedding information has now changed in a significant way. In V1, when it came to bed type configuration for a room, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations maintained by Expedia:
 ```json
 "bedTypes": [{
     "id": "1.66",
