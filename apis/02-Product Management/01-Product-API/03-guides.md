@@ -1,4 +1,4 @@
-# FAQ & Guides
+## FAQ & Guides
 This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner's intent when managing room types and rate plans.
 
 <a name="/howtogetstarted"></a>
@@ -44,40 +44,40 @@ Product API online documentation will only be maintained for the latest availabl
 <a name="/v1v2diff"></a>
 ## Changes between Product API V1 and V2
 
-On June 10th, a new version of the product API was released. A few non-backward compatible changes were made to the room type resource, requiring Expedia to version the API.
+On June 10th, 2016, a new version of the product API was released. A few non-backward compatible changes.
 
 Here's an overview of all the changes and new features contained in V2.
 
 ### Versioning 
 
-Product API V1 contained the major version within the URL of all its resources. With V2, the version is moved to the content-type and accept headers, to allow for greater flexibility in the versioning of the various resources.
+A new API versioning strategy was adopted. Product API V1 contained the major version within the URL of all its resources. Starting with V2, the version has been moved to the Content-Type and Accept headers, to allow for greater flexibility in the versioning of the various resources.
 
 More information about versioning in V2 with http headers can be found in the [reference section](reference.html#/versioning).
 
 ### New Occupancy Definition
 
-The way Expedia collects occupancy information has changed significantly. In V1, partners used to give information about max occupancy of the room, and then max occupancy for up to 6 different age categories. For example, assuming a room took up to 4 guests, with some children and infant, a partner could have defined something like this:
+The way Expedia collects occupancy information has changed significantly. In V1, partners used to give information about max occupancy of the room, and then max occupancy for up to 6 different age categories. For example, assuming a room accommodated up to 4 guests, with some children and infant, a partner could have defined something like this:
 ```json
 "maxOccupants": 4,
 "occupancyByAge": [{
     "ageCategory": "Adult",
     "minAge": 13,
-    "maxOccupants": 3
+    "maxOccupants": 4
 },
 {
     "ageCategory": "ChildAgeA",
     "minAge": 5,
-    "maxOccupants": 2
+    "maxOccupants": 3
 },
 {
     "ageCategory": "Infant",
     "minAge": 0,
-    "maxOccupants": 0
+    "maxOccupants": 3
     }
 ]
 ```
 
-In the new V2 model, partners need to call out which age categories are supported by the room, but only provide count for adults in children. The above example in V2 model becomes:
+In the new V2 model, partners need to call out which age categories are supported by the room, but only provide count for adults and children. The above example in V2 model becomes:
 ```json
 "ageCategories": [{
     "category": "Adult",
@@ -102,7 +102,7 @@ In the new V2 model, partners need to call out which age categories are supporte
 For more information about age categories and occupancies, please see [Understanding Occupancy and Age Category Settings in the Room Type Resource](#/occupancyAgeCategory) in this section.
 ### New Bed Type Definition
 
-The way Expedia collects bedding information has now changed in a significant way. When it came to bed type configuration for a room, in V1, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations Expedia maintained:
+The way Expedia collects bedding information has now changed in a significant way. In V1, When it came to bed type configuration for a room, partners were constrained to a list of 240 possible values, for all possible combinations of bed types. For example, a partner who needed to configure a room with 1 double bed and 2 single beds had to do it using bed type id 1.66 from the list of predefined configurations maintained by Expedia:
 ```json
 "bedTypes": [{
     "id": "1.66",
@@ -128,11 +128,11 @@ With the new bed type model, partners just have to give us a count for each bed 
 
 Partners now have unlimited options in defining and combining bed types available for a given room type. Please review the [BeddingOption section](reference.html#/definitions/BeddingOptionDTO) of the API Definition for more information.
 
-Another change introduced in this space is to restrict room types to only offer 2 bed type configuration options. It is not possible anymore to specify that a given room type can be offered in 3 or more possible configurations and have guest choose between 3 or more configurations at time of booking.
+Another change introduced in this space is to restrict room types to only offer 2 bed type configuration options. Partners can no longer specify that a given room type is offered in 3 or more possible configurations and have guest choose between 3 or more configurations at time of booking.
 
 #### Extra Bedding Definition
 
-Expedia also streamlined the management of extra bedding configuration. It used to be managed as amenities under a room type in V1. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
+Expedia also streamlined the management of extra bedding configuration. In V1, it used to be managed as amenities under a room type. It is now part of the room type resource. Partners who support extra beds like crib or rollaway can now give this information as part of the room type resource definition, along with any extra charge that customers might incur should they request these extra beds at the property.
 
 Example of how extra beds are provided within the room type resource:
 ```json
@@ -180,7 +180,7 @@ More information about this can be found in the [API Definition](reference.html#
 
 ### PATCH Operation
 
-In V2, Expedia introduced the possibility to perform partial update operations on all its resources. Please see [Modify: partial or full overlay?](#/update) in this section, or visit the sections about PATCH for [Room Type](reference.html#/PatchRoomType) or [Rate plan](reference.html#/PatchRatePlan) in the API Defintion for more information.
+In V2, Expedia introduced the possibility to perform partial update operations on its resources. Please see [Modify: partial or full overlay?](#/update) in this section, or visit the sections about PATCH for [Room Type](reference.html#/PatchRoomType) or [Rate plan](reference.html#/PatchRatePlan) in the API Defintion for more information.
 
 ### Cancel Policy Exceptions
 
