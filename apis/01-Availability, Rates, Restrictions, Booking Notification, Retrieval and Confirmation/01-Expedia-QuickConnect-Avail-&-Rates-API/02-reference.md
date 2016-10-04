@@ -26,11 +26,6 @@ The design of Expedia QuickConnect schemas is based on the following general gui
 
 
 ## Availability and Rates Request (AR RQ)
-### AR RQ Schema Overview
-Please note that this overview provides the most recent structure of EQC AR API (namespace http://www.expediaconnect.com/EQC/AR/2011/06). The API actually also supports the previous version of the schema (namespace http://www.expediaconnect.com/EQC/AR/2007/02), without the repeatable AvailRateUpdate element. The XSD file for the AR RQ API available on http://www.expediaquickconnect.com also supports both the old and new format under the new version.
-
-![AR RQ XML MESSAGE](/images/AR RQ XML MESSAGE.jpg)
-
 ### AR RQ Schema Complete Definition
 
 _Legend: O = Optional_
