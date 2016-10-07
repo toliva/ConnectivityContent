@@ -1133,6 +1133,8 @@ bookDateEnd | date | Date at which this rate plan stops being available for sear
 travelDateStart | date | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
 travelDateEnd | date | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
+ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan.
+\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource.
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
 #### AdditionalGuestAmount
@@ -1206,6 +1208,55 @@ thu | boolean | For any exception, all 7 days of week are returned with a true/f
 fri | boolean | For any exception, all 7 days of week are returned with a true/false indicator.
 sat | boolean | For any exception, all 7 days of week are returned with a true/false indicator.
 sun | boolean | For any exception, all 7 days of week are returned with a true/false indicator.
+
+<a name="/definitions/RatePlanLinkageDTO"></a>
+#### RatePlanLinkage
+
+Property Name | Type | Description
+------------- | ---- | -----------
+deriveAvailabilityStatus | boolean | Indicates if the rate plan availability status (open/close) is linked to parent or not.
+deriveLengthOfStayRestriction | boolean | Indicates if the restriction on minimum and maximum length of stay are derived from the parent Rate Plan or not.
+deriveBookingClosedToArrival | boolean | Indicates if the restriction on close to arrival is derived from the parent Rate Plan or not.
+deriveBookingClosedToDeparture | boolean | Indicates if the restriction on close to departure is derived from the parent Rate Plan or not.
+rateDerivationRules | Array[[RateDerivationRule](#/definitions/RateDerivationRuleDTO)] | Rules that describe how the rate and availability are derived from the parent Rate Plan.
+
+<a name="/definitions/RateDerivationRuleDTO"></a>
+#### RateDerivationRule
+
+Property Name | Type | Description
+------------- | ---- | -----------
+dateStart | date | Starting date of the rate derivation rule. Format is YYYY-MM-DD.
+dateEnd | date | Ending  date of the rate derivation rule. Format is YYYY-MM-DD.
+adjustmentType | [adjustmentTypeEnum](#/definitions/adjustmentTypeEnum) | Defines the type of adjustment made on the rate. Possible values are Percentage and Amount. 
+adjustmentValue | number | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied.
+exclusionDates | Array[[Period](#/definitions/PeriodDTO)] | Periods of time during which the rate derivation rule does not apply.
+
+<a name="/definitions/PeriodDTO"></a>
+#### Period
+
+Property Name | Type | Description
+------------- | ---- | -----------
+dateStart | date | Starting date of the period. Format is YYYY-MM-DD.
+dateEnd | date | Ending date of the period. Format is YYYY-MM-DD.
+
+
+<a name="/definitions/RatePlanDTO.LinksDTO"></a>
+#### RatePlanLinks
+
+Property Name | Type | Description
+------------- | ---- | -----------
+self | [Link](#/definitions/LinkDTO) | URL of the current resource.
+parentRatePlan | [Link](#/definitions/LinkDTO) | URL of the parent Rate Plan, from which this Rate Plan derives its rate and availability.
+derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that point to the derived Rate Plans. These Rate Plans have their rates and availability derived from this Rate Plan.
+
+
+<a name="/definitions/LinkDTO"></a>
+#### Link
+
+Property Name | Type | Description
+------------- | ---- | -----------
+href | string | The link's URL.
+
 
 <a name="/definitions/ErrorCodes"></a>
 ## Error codes
@@ -1631,6 +1682,15 @@ There are 2 possible enums. One applies to all rate plans of type Standalone and
 | 80PercentCostOfStay |
 | 90PercentCostOfStay |
 | FullCostOfStay |
+
+
+<a name="/definitions/adjustmentTypeEnum"></a>
+### adjustmentTypeEnum
+| Adjustment Type |
+| -------------- |
+| Percentage |
+| Amount |
+
 
 <a name="/definitions/amenityCodes"></a>
 ### amenityCodes, detailCodes and Values
