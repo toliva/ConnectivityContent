@@ -173,7 +173,12 @@ The result will be an array of active rate plans under this property and room ty
             "bookDateEnd": "2079-06-06",
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
+            "mobileOnly": false,
+            "_links": {
+                "self": {
+                    "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/206651831"
+                }
+            }
         }
     ]
 }
@@ -259,7 +264,12 @@ The response returned by the product API will contain all the default values use
         "bookDateEnd": "2079-06-06",
         "travelDateStart": "1900-01-01",
         "travelDateEnd": "2079-06-06",
-        "mobileOnly": false
+        "mobileOnly": false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/207994977"
+            }
+        }
     }
 }
 ```
