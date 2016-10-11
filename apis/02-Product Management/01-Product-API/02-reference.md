@@ -1216,8 +1216,8 @@ Property Name | Type | Description
 ------------- | ---- | -----------
 deriveAvailabilityStatus | boolean | Indicates if the rate plan availability status (open/close) is linked to parent or not.
 deriveLengthOfStayRestriction | boolean | Indicates if the restriction on minimum and maximum length of stay are derived from the parent Rate Plan or not.
-deriveBookingClosedToArrival | boolean | Indicates if the restriction on close to arrival is derived from the parent Rate Plan or not.
-deriveBookingClosedToDeparture | boolean | Indicates if the restriction on close to departure is derived from the parent Rate Plan or not.
+deriveClosedToArrival | boolean | Indicates if the restriction on close to arrival is derived from the parent Rate Plan or not.
+deriveClosedToDeparture | boolean | Indicates if the restriction on close to departure is derived from the parent Rate Plan or not.
 rateDerivationRules | Array[[RateDerivationRule](#/definitions/RateDerivationRuleDTO)] | Rules that describe how the rate and availability are derived from the parent Rate Plan.
 
 <a name="/definitions/RateDerivationRuleDTO"></a>
