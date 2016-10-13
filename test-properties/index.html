@@ -38,7 +38,7 @@
         var username = $(form).find("#username").val();
         var password = $(form).find("#password").val();
 
-        ga('send', 'event', 'login', 'request|' + username);
+        ga('send', 'event', 'login', 'request', username);
         $.ajax({
             method: "POST",
             url: hotelAssignmentServiceUrls.login(),
