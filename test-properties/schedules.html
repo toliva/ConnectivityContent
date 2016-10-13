@@ -24,7 +24,7 @@
     <hr/>
     <br/>
     <h2>Properties assigned to your account</h2>
-    <p>Once you've scheduled a hotel, you can use it with our <a href="/developer">API's</a>, or view it in Expedia Partner Central to <a href="./info">find, view or cancel bookings.</a></p>
+    <p>Once you've scheduled a hotel, you can use it with our <a href="/developer" target="_blank">API's</a>, or view it in Expedia Partner Central to <a href="./info" target="_blank">find, view or cancel bookings.</a></p>
     <br/>
     <div id="account-dialogue" title="Account Details" style="display:none;"></div>
     <div id="reset-dialogue" title="Reset Password" style="display:none;"></div>
@@ -259,7 +259,7 @@
             });
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 loadEnd();
-                $("#result").html("Successfully assigned hotel: " + hotelId + ". <a href='./info'>What's Next?</a>").effect( "highlight", {color:"#FECB2F"}, 700 );
+                $("#result").html("Successfully assigned hotel: " + hotelId + ". <a href='./info' target='_blank'>What's Next?</a>").effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
                 $("#account-dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
                               .dialog({
