@@ -282,7 +282,7 @@
                 ajaxError(jqxhr, "Could not schedule a test hotel.");
             }
 
-            ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, jqxhr.status);
+            ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
         });
     }
 
