@@ -251,7 +251,7 @@
         }
         loadStart();
         var assignmentData = getAssignmentRequest();
-        ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
+        ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
         jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), assignmentData, function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             var hotelId = JSON.parse(jqxhr.responseText).hotelId;
@@ -268,7 +268,7 @@
                                 minHeight: 300
                               });
 
-                ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
+                ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
             }, function(jqxhr) {
                 loadEnd();
                 ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
