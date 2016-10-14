@@ -271,7 +271,7 @@
                 ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
             }, function(jqxhr) {
                 loadEnd();
-                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
+                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password - please reset the password for the hotel manually.");
                 ga('send', 'event', 'assign', 'password.failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
             });
         }, function(jqxhr) {
