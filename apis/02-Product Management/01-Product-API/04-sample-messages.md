@@ -1789,7 +1789,7 @@ Response:
 }
 ```
 ### Single Rate Plan Read (with RatePlanLinkage)
-The rate plan being requested (resourceId: 208504016) derives its rate and availability from a parent rate plan (resourceId: 208503977). Note that another rate plan (resourceId: 208616685) derives its rate and availability from this rate plan (resourceId: 208504016)
+The rate plan being requested (resourceId: 208504016) derives its rate and availability from a parent rate plan (resourceId: 208503977). Note that another rate plan (resourceId: 208616685) derives its own rate and availability from this rate plan (resourceId: 208504016)
 
 Request:
 ```HTTP
