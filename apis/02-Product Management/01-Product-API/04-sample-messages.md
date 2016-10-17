@@ -1300,7 +1300,12 @@ Response:
             "bookDateEnd": "2079-06-06",
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
+            "mobileOnly": false,
+            "_links": {
+                "self": {
+                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020299"
+                }
+            }
         },
         {
             "resourceId": 205020302,
@@ -1352,8 +1357,13 @@ Response:
             "bookDateEnd": "2079-06-06",
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
-        },
+            "mobileOnly": false,
+            "_links": {
+                "self": {
+                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020302"
+                }
+            }        
+	},
         {
             "resourceId": 205833985,
             "name": "BB",
@@ -1414,8 +1424,13 @@ Response:
             "bookDateEnd": "2079-06-06",
             "travelDateStart": "1901-01-01",
             "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
-        }
+            "mobileOnly": false,
+            "_links": {
+                "self": {
+                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205833985"
+                }
+            }
+	}
     ]
 }
 ```
@@ -1509,7 +1524,12 @@ Response:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "1900-01-30",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700"
+      }
+    }    
   }
 }
 ```
@@ -1586,7 +1606,12 @@ Response:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "1900-01-30",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855"
+      }
+    }    
   }
 }
 ```
@@ -1668,7 +1693,12 @@ Response:
     "bookDateEnd": "2016-06-06",
     "travelDateStart": "2015-01-02",
     "travelDateEnd": "2016-12-31",
-    "mobileOnly": true
+    "mobileOnly": true,
+   "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248"
+      }
+    }    
   }
 }
 ```
@@ -1749,7 +1779,12 @@ Response:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "1900-01-30",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700"
+      }
+    }    
   }
 }
 ```
@@ -1884,7 +1919,12 @@ The response would look like:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "2015-03-17",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204886798"
+      }
+    } 
   }
 }
 ```
@@ -2006,7 +2046,12 @@ Response would look like:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "1900-01-30",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700"
+      }
+    }    
   }
 }
 ```
@@ -2154,7 +2199,12 @@ Response would look like:
     "bookDateEnd": "2079-06-06",
     "travelDateStart": "1900-01-30",
     "travelDateEnd": "2079-06-06",
-    "mobileOnly": false
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700"
+      }
+    }    
   }
 }
 ```
