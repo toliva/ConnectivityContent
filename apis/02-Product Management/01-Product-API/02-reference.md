@@ -1228,7 +1228,7 @@ Property Name | Type | Description
 dateStart | date | Starting date of the rate derivation rule. Format is YYYY-MM-DD.
 dateEnd | date | Ending  date of the rate derivation rule. Format is YYYY-MM-DD.
 adjustmentType | [adjustmentTypeEnum](#/definitions/adjustmentTypeEnum) | Defines the type of adjustment made on the rate. Possible values are Percentage and Amount. 
-adjustmentValue | number | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied. Percentage values should be expressed between 0.00 and 100.00, where 50.0 means 50%.
+adjustmentValue | number | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied. Percentage values are expressed as decimal numbers between 0.00 and 100.00, where 10.0 means 10%.
 exclusionDates | Array[[Period](#/definitions/PeriodDTO)] | Periods of time during which the rate plan derivation rule does not apply. When exclusion dates are specified, they apply to rate and restriction linkage. In other words, for these exclusion dates, nothing at all is linked.
 
 <a name="/definitions/PeriodDTO"></a>
