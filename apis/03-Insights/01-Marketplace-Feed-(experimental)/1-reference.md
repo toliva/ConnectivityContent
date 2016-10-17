@@ -66,38 +66,6 @@ When successful, the `/v1/messages` endpoint responds with a JSON object with `C
 
 Each message may belong to one of the following categories (as indicated by its `category` property).
 
-##### Missing Inventory
-
-Our sales forecast indicates that we can sell more inventory for the requested hotel on a certain night.
-
-###### `values` Properties
-
-| Property       | Data Type | Description                                                            | Example        |
-|----------------|-----------|------------------------------------------------------------------------|----------------|
-| `date`         | String    | The stay date the forecast applies to (YYYY-MM-DD).                    | `"2016-07-10"` |
-| `currentRooms` | Integer   | The current number of rooms available when the forecast was generated. | `3`            |
-| `roomsToAdd`   | Integer   | The number of extra rooms the forecast suggests we could sell.         | `5`            |
-| `roomTypeId`   | String    | The Expedia room type ID we suggest adding rooms to.                   | `"12345"`      |
-
-###### Example Missing Inventory Message
-
-```
-{
-    "id": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw",
-    "hotelId": "test",
-    "category": "Missing Inventory",
-    "shortMessage": "On Jan 29, 2016 you can sell 5 more rooms with Expedia. Add inventory now.",
-    "longMessage": "On Jan 29, 2016 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
-    "values": {
-        "date": "2016-01-29",
-        "currentRooms": 10,
-        "roomsToAdd": 5,
-        "roomTypeId": "12345"
-    },
-    "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
-}
-```
-
 ##### Missed Opportunities
 
 Travelers viewed the requested hotel today, but booked elsewhere.
