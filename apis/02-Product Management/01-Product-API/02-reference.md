@@ -1133,7 +1133,7 @@ bookDateEnd | date | Date at which this rate plan stops being available for sear
 travelDateStart | date | Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted
 travelDateEnd | date | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
-ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan.
+ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan. Optional, only returned on rate plans being derived from a parent rate plan via a rate linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 \_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource.
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
@@ -1214,11 +1214,11 @@ sun | boolean | For any exception, all 7 days of week are returned with a true/f
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-deriveAvailabilityStatus | boolean | Indicates if the rate plan availability status (open/close) is linked to parent or not.
-deriveLengthOfStayRestriction | boolean | Indicates if the restriction on minimum and maximum length of stay are derived from the parent Rate Plan or not.
-deriveClosedToArrival | boolean | Indicates if the restriction on close to arrival is derived from the parent Rate Plan or not.
-deriveClosedToDeparture | boolean | Indicates if the restriction on close to departure is derived from the parent Rate Plan or not.
-rateDerivationRules | Array[[RateDerivationRule](#/definitions/RateDerivationRuleDTO)] | Rules that describe how the rate and availability are derived from the parent Rate Plan.
+deriveAvailabilityStatus | boolean | Indicates if the rate plan daily availability status (open/close) is linked to parent or not.
+deriveLengthOfStayRestriction | boolean | Indicates if the daily restrictions on minimum and maximum length of stay are derived from the parent Rate Plan or not.
+deriveClosedToArrival | boolean | Indicates if the daily restriction on close to arrival is derived from the parent Rate Plan or not.
+deriveClosedToDeparture | boolean | Indicates if the daily restriction on close to departure is derived from the parent Rate Plan or not.
+rateDerivationRules | Array[[RateDerivationRule](#/definitions/RateDerivationRuleDTO)] | Rules that describe how the daily rates are derived from the parent Rate Plan.
 
 <a name="/definitions/RateDerivationRuleDTO"></a>
 #### RateDerivationRule
@@ -1228,8 +1228,8 @@ Property Name | Type | Description
 dateStart | date | Starting date of the rate derivation rule. Format is YYYY-MM-DD.
 dateEnd | date | Ending  date of the rate derivation rule. Format is YYYY-MM-DD.
 adjustmentType | [adjustmentTypeEnum](#/definitions/adjustmentTypeEnum) | Defines the type of adjustment made on the rate. Possible values are Percentage and Amount. 
-adjustmentValue | number | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied.
-exclusionDates | Array[[Period](#/definitions/PeriodDTO)] | Periods of time during which the rate derivation rule does not apply.
+adjustmentValue | number | Defines the actual adjustment being applied to the rate. Can take a positive or negative value, depending on the type of adjustment applied. Percentage values should be expressed between 0.00 and 100.00, where 50.0 means 50%.
+exclusionDates | Array[[Period](#/definitions/PeriodDTO)] | Periods of time during which the rate plan derivation rule does not apply. When exclusion dates are specified, they apply to rate and restriction linkage. In other words, for these exclusion dates, nothing at all is linked.
 
 <a name="/definitions/PeriodDTO"></a>
 #### Period
@@ -1245,9 +1245,9 @@ dateEnd | date | Ending date of the period. Format is YYYY-MM-DD.
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-self | [Link](#/definitions/LinkDTO) | URL of the current resource.
-parentRatePlan | [Link](#/definitions/LinkDTO) | URL of the parent Rate Plan, from which this Rate Plan derives its rate and availability.
-derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that point to the derived Rate Plans. These Rate Plans have their rates and availability derived from this Rate Plan.
+self | [Link](#/definitions/LinkDTO) | URL of the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
+parentRatePlan | [Link](#/definitions/LinkDTO) | URL of the parent Rate Plan, from which this Rate Plan derives its rate and availability. Optional, only returned if a rate plan is derived from a parent via a rate plan linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
+derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that point to the derived Rate Plans. These Rate Plans have their rates and availability derived from this Rate Plan. Optional, only returned if a rate plan is being derived by children rate plans via rate plan linkage rules.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 
 <a name="/definitions/LinkDTO"></a>
