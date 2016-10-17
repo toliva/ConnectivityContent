@@ -18,34 +18,6 @@ The response contains a JSON list of message objects:
 {
     "messages": [
         {
-            "id": "1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw",
-            "hotelId": "test",
-            "category": "Missing Inventory",
-            "shortMessage": "On Jan 29, 2016 you can sell 5 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On Jan 29, 2016 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.",
-            "values": {
-                "date": "2016-01-29",
-                "currentRooms": 10,
-                "roomsToAdd": 5,
-                "roomTypeId": "12345"
-            },
-            "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
-        },
-        {
-            "id": "1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94",
-            "hotelId": "test",
-            "category": "Missing Inventory",
-            "shortMessage": "On Feb 2, 2016 you can sell 7 more rooms with Expedia. Add inventory now.",
-            "longMessage": "On Feb 2, 2016 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.",
-            "values": {
-                "date": "2016-02-02",
-                "currentRooms": 12,
-                "roomsToAdd": 7,
-                "roomTypeId": "12345"
-            },
-            "actionURL": "https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&htid=test"
-        },
-        {
             "id": "1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE",
             "hotelId": "test",
             "category": "Missed Opportunities",
