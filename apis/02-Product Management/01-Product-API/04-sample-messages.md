@@ -1788,6 +1788,111 @@ Response:
   }
 }
 ```
+### Single Rate Plan Read (with RatePlanLinkage)
+The rate plan being requested (resourceId: 208504016) derives its rate and availability from a parent rate plan (resourceId: 208503977). Note that another rate plan (resourceId: 208616685) derives its rate and availability from this rate plan (resourceId: 208504016)
+
+Request:
+```HTTP
+GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+```
+Response:
+```JSON
+{
+  "entity": {
+    "resourceId": 208504016,
+    "name": "EQ1",
+    "rateAcquisitionType": "SellLAR",
+    "distributionRules": [
+      {
+        "expediaId": "208504016",
+        "partnerCode": "EQ1",
+        "distributionModel": "ExpediaCollect",
+        "manageable": false,
+        "compensation": {
+          "percent": 0.1,
+          "minAmount": 0
+        }
+      },
+      {
+        "expediaId": "208504016A",
+        "partnerCode": "EQ1HC",
+        "distributionModel": "HotelCollect",
+        "manageable": true,
+        "compensation": {
+          "percent": 0.1
+        }
+      }
+    ],
+    "status": "Active",
+    "type": "Standalone",
+    "pricingModel": "OccupancyBasedPricing",
+    "taxInclusive": false,
+    "cancelPolicy": {
+      "defaultPenalties": [
+        {
+          "deadline": 0,
+          "perStayFee": "None",
+          "amount": 0
+        }
+      ]
+    },
+    "additionalGuestAmounts": [
+      {
+        "dateStart": "2016-07-08",
+        "dateEnd": "2079-06-06",
+        "ageCategory": "Adult",
+        "amount": 40
+      },
+      {
+        "dateStart": "2016-07-08",
+        "dateEnd": "2079-06-06",
+        "ageCategory": "ChildAgeA",
+        "amount": 20
+      }
+    ],
+    "minLOSDefault": 1,
+    "maxLOSDefault": 28,
+    "minAdvBookDays": 0,
+    "maxAdvBookDays": 0,
+    "bookDateStart": "2000-01-01",
+    "bookDateEnd": "2025-05-04",
+    "travelDateStart": "2015-05-04",
+    "travelDateEnd": "2025-05-04",
+    "mobileOnly": false,
+    "ratePlanLinkage": {
+      "deriveAvailabilityStatus": false,
+      "deriveLengthOfStayRestriction": false,
+      "deriveClosedToArrival": false,
+      "deriveClosedToDeparture": false,
+      "rateDerivationRules": [
+        {
+          "dateStart": "2016-10-11",
+          "dateEnd": "2079-06-06",
+          "adjustmentType": "Amount",
+          "adjustmentValue": 5
+        }
+      ]
+    },
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016"
+      },
+      "parentRatePlan": {
+        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706774/ratePlans/208503977"
+      },
+      "derivedRatePlans": [
+        {
+          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208616685"
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Rate Plan Create (Per-day-Pricing, ExpediaCollect)
 ```HTTP
