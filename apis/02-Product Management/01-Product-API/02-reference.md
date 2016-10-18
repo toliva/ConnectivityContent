@@ -775,8 +775,8 @@ Status Code | Description | Response Model
 Property Name | Type | Description
 ------------- | ---- | -----------
 type | [rateAcquisitionTypeEnum](#/definitions/rateAcquisitionTypeEnum) | Type of the rate verification thresholds. The only supported value is: SellLAR.
-minAmount | number | Defines minimum acceptable rate, expressed as decimal number. If the rate is lower than this minimum value, the AR rate update will be ignored and a warning will be returned.
-maxAmount | number | Defines maximum acceptable rate, expressed as decimal number. If the rate is higher than this maximum value, the AR rate update will be ignored and a warning will be returned.
+minAmount | number | Defines minimum acceptable rate, expressed as a decimal number. If the rate is lower than this minimum value, the AR rate update will be ignored and a warning will be returned.
+maxAmount | number | Defines maximum acceptable rate, expressed as a decimal number. If the rate is higher than this maximum value, the AR rate update will be ignored and a warning will be returned.
 source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 reservations, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentReservation is Expedia's default method.
 
 <a name="/definitions/rateThresholdsSourceEnum"></a>
