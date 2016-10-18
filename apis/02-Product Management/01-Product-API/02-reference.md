@@ -749,7 +749,7 @@ value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to 
 
 ## Room Type Rate Thresholds
 
-Rate Thresholds defines the minimum and maximum acceptable amounts for a room night. They are used to verify that the rate given for the room are not abnormally low or abnormally high.
+Rate Thresholds defines the minimum and maximum acceptable amounts for a room night. They are used to verify that the rate being pushed for the room are not abnormally low or abnormally high.
 
 ### Obtain rate thresholds for a single room type
 - Method: `GET`
