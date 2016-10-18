@@ -749,7 +749,7 @@ value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to 
 
 ## Room Type Rate Thresholds
 
-Rate Thresholds defines the minimum and maximum acceptable amounts. They are used to verify that the rate given for the room are not unsually low or unsually high.
+Rate Thresholds defines the minimum and maximum acceptable amounts for a room night. They are used to verify that the rate given for the room are not abnormally low or abnormally high.
 
 ### Obtain rate thresholds for a single room type
 - Method: `GET`
@@ -787,16 +787,23 @@ source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | De
 | RecentBookings |
 | ManualOverride |
 
-
-
-
-
-
-
-
-
-
-
+**Example**
+GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds
+```
+{
+  "entity": {
+    "type": "SellLAR",
+    "minAmount": 98.55,
+    "maxAmount": 310.20,
+    "source": "RecentBookings",
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds"
+      }
+    }
+  }
+}
+```
 
 ## Rate plan
 ### Obtain a list of rate plans
