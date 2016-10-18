@@ -794,7 +794,7 @@ GET https://services.expediapartnercentral.com/products/properties/12933870/room
   "entity": {
     "type": "SellLAR",
     "minAmount": 98.55,
-    "maxAmount": 310.20,
+    "maxAmount": 310.2,
     "source": "RecentBookings",
     "_links": {
       "self": {
