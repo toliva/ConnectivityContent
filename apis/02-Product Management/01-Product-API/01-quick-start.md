@@ -118,64 +118,142 @@ Partners can then get to the rate plans of a room type. To find rate plans assoc
 The result will be an array of active rate plans under this property and room type. For example:
 ```JSON
 {
-    "entity": [
+  "entity": [
+    {
+      "resourceId": 208502996,
+      "name": "Non-Refundable",
+      "rateAcquisitionType": "SellLAR",
+      "distributionRules": [
         {
-            "resourceId": 206651831,
-            "name": "RoomOnly1",
-            "rateAcquisitionType": "SellLAR",
-            "distributionRules": [
-                {
-                    "expediaId": "206651831",
-                    "partnerCode": "RoomOnly1",
-                    "distributionModel": "ExpediaCollect",
-                    "manageable": false,
-                    "compensation": {
-                        "percent": 0.1,
-                        "minAmount": 0
-                    }
-                },
-                {
-                    "expediaId": "206651831A",
-                    "partnerCode": "RoomOnly1",
-                    "distributionModel": "HotelCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.1
-                    }
-                }
-            ],
-            "status": "Active",
-            "type": "Standalone",
-            "pricingModel": "OccupancyBasedPricing",
-            "taxInclusive": false,
-            "cancelPolicy": {
-                "defaultPenalties": [
-                    {
-                        "deadline": 0,
-                        "perStayFee": "None",
-                        "amount": 0
-                    }
-                ]
-            },
-            "additionalGuestAmounts": [
-                {
-                    "dateStart": "2015-11-16",
-                    "dateEnd": "2079-06-06",
-                    "ageCategory": "Adult",
-                    "amount": 10
-                }
-            ],
-            "minLOSDefault": 1,
-            "maxLOSDefault": 28,
-            "minAdvBookDays": 0,
-            "maxAdvBookDays": 500,
-            "bookDateStart": "1900-01-01",
-            "bookDateEnd": "2079-06-06",
-            "travelDateStart": "1901-01-01",
-            "travelDateEnd": "2079-06-06",
-            "mobileOnly": false
+          "expediaId": "208502996",
+          "partnerCode": "EQF",
+          "distributionModel": "ExpediaCollect",
+          "manageable": false,
+          "compensation": {
+            "percent": 0.1,
+            "minAmount": 0
+          }
+        },
+        {
+          "expediaId": "208502996A",
+          "partnerCode": "EQFHC",
+          "distributionModel": "HotelCollect",
+          "manageable": true,
+          "compensation": {
+            "percent": 0.1
+          }
         }
-    ]
+      ],
+      "status": "Active",
+      "type": "Standalone",
+      "pricingModel": "OccupancyBasedPricing",
+      "taxInclusive": false,
+      "cancelPolicy": {
+        "defaultPenalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "None",
+            "amount": 0
+          }
+        ]
+      },
+      "additionalGuestAmounts": [
+        {
+          "dateStart": "2016-07-08",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "Adult",
+          "amount": 40
+        },
+        {
+          "dateStart": "2016-07-08",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "ChildAgeA",
+          "amount": 20
+        }
+      ],
+      "minLOSDefault": 1,
+      "maxLOSDefault": 28,
+      "minAdvBookDays": 0,
+      "maxAdvBookDays": 0,
+      "bookDateStart": "2000-01-01",
+      "bookDateEnd": "2022-09-18",
+      "travelDateStart": "2012-09-18",
+      "travelDateEnd": "2022-09-18",
+      "mobileOnly": false,
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208502996"
+        }
+      }
+    },
+    {
+      "resourceId": 208503003,
+      "name": "Expedia Package Rate",
+      "rateAcquisitionType": "SellLAR",
+      "distributionRules": [
+        {
+          "expediaId": "208503003",
+          "partnerCode": "EQP",
+          "distributionModel": "ExpediaCollect",
+          "manageable": false,
+          "compensation": {
+            "percent": 0.1,
+            "minAmount": 0
+          }
+        },
+        {
+          "expediaId": "208503003A",
+          "partnerCode": "EQPHC",
+          "distributionModel": "HotelCollect",
+          "manageable": true,
+          "compensation": {
+            "percent": 0.1
+          }
+        }
+      ],
+      "status": "Active",
+      "type": "Standalone",
+      "pricingModel": "OccupancyBasedPricing",
+      "taxInclusive": false,
+      "cancelPolicy": {
+        "defaultPenalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "None",
+            "amount": 0
+          }
+        ]
+      },
+      "additionalGuestAmounts": [
+        {
+          "dateStart": "2016-07-08",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "Adult",
+          "amount": 40
+        },
+        {
+          "dateStart": "2016-07-08",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "ChildAgeA",
+          "amount": 20
+        }
+      ],
+      "minLOSDefault": 1,
+      "maxLOSDefault": 28,
+      "minAdvBookDays": 0,
+      "maxAdvBookDays": 0,
+      "bookDateStart": "2000-01-01",
+      "bookDateEnd": "2022-09-18",
+      "travelDateStart": "2012-09-18",
+      "travelDateEnd": "2022-09-18",
+      "mobileOnly": false,
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208503003"
+        }
+      }
+    }
+  ]
 }
 ```
 
@@ -259,7 +337,12 @@ The response returned by the product API will contain all the default values use
         "bookDateEnd": "2079-06-06",
         "travelDateStart": "1900-01-01",
         "travelDateEnd": "2079-06-06",
-        "mobileOnly": false
+        "mobileOnly": false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/207994977"
+            }
+        }
     }
 }
 ```
