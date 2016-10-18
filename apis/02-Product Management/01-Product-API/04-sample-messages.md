@@ -1231,6 +1231,39 @@ Here are a few examples of PATCH requests partners could want to make. Response 
 }
 ```
 
+##	Room Type Rate Thresholds Examples
+The room type's rate thresholds resource defines the configuration of the rate thresholds applicable to a room type. It defines mainly the lowest and highest acceptable rates for a room for a single night.
+
+### Rate Thresholds Read
+This example shows how to retrieve the rate thresholds for a given room type.
+
+Request:
+```HTTP
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+```
+Response:
+```JSON
+{
+  "entity": {
+    "type": "SellLAR",
+    "minAmount": 98.55,
+    "maxAmount": 310.2,
+    "source": "RecentBookings",
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds"
+      }
+    }
+  }
+}
+```
+Note: the rate thresholds creation (POST), update (PUT, PATCH) and deletion (DELETE) operations are not supported.
+
+
 ##	Rate Plan Resource Examples
 The rate plan resource defines the configuration of a rate that a partner would like to make available to Expedia customers. It contains the more static information about the rate, for example its name, code, cancellation and change policy, what is the base compensation, what are the additional guest amounts to charge, etc.
 More dynamic information like availability and rate information per stay date is exchanged via another API, EQC AR.
