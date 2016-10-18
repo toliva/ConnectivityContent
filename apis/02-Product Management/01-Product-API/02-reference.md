@@ -45,6 +45,7 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 | Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
 | Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
 | Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Rate Thresholds | Get rate thresholds for a single room type | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds | None |
 | Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
 | Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
@@ -746,6 +747,57 @@ code | [amenityCodes](#/definitions/amenityCodes) | Uniquely identifies an ameni
 detailCode | [amenityCodes](#/definitions/amenityCodes) | Adds precision or qualifies the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
 value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
 
+## Room Type Rate Thresholds
+
+Rate Thresholds defines the minimum and maximum acceptable amounts. They are used to verify that the rate given for the room are not unsually low or unsually high.
+
+### Obtain rate thresholds for a single room type
+- Method: `GET`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds
+- Consumes: `HTTP Request (GET)`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type | Default Value
+--------- | -------------- | ----------- | -------- | --------- | -------------
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string |
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | [RateThresholds](#/definitions/RateVerificationThresholdsDTO)
+
+<a name="/definitions/RateVerificationThresholdsDTO"></a>
+### RateThresholdse Resource Definition
+
+Property Name | Type | Description
+------------- | ---- | -----------
+type | [rateAcquisitionTypeEnum](#/definitions/rateAcquisitionTypeEnum) | Type of the rate verification thresholds. The only supported value is: SellLAR.
+minAmount | number | Defines minimum acceptable rates. If the rate is lower than this minimum value, the AR rate update will be ignored and a warning will be returned.
+maxAmount | number | Defines maximum acceptable rates. If the rate is higher than this maximum value, the AR rate update will be ignored and a warning will be returned.
+source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 reservations, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentReservation is Expedia's default method.
+
+<a name="/definitions/rateThresholdsSourceEnum"></a>
+### rateThresholdsSourceEnum
+
+| rateThresholdsSourceEnum |
+| ------------------ |
+| RecentBookings |
+| ManualOverride |
+
+
+
+
+
+
+
+
+
+
+
+
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
@@ -1256,6 +1308,14 @@ derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that poin
 Property Name | Type | Description
 ------------- | ---- | -----------
 href | string | The link's URL.
+
+<a name="/definitions/rateAcquisitionTypeEnum"></a>
+### rateAcquisitionTypeEnum
+
+| rateAcquisitionTypeEnum |
+| ------------------ |
+| NetRate |
+| SellLAR |
 
 
 <a name="/definitions/ErrorCodes"></a>
