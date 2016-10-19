@@ -1053,7 +1053,12 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
   "bookDateEnd": "2079-06-06",
   "travelDateStart": "1901-01-01",
   "travelDateEnd": "2079-06-06",
-  "mobileOnly": false
+  "mobileOnly": false,
+  "_links": {
+    "self": {
+      "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/205020307"
+    }
+  }
 }
 ```
 
@@ -1195,7 +1200,7 @@ travelDateStart | date | Date at which customers can start checking in for a sta
 travelDateEnd | date | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
 ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan. Optional, only returned on rate plans being derived from a parent rate plan via a rate linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
-\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource.
+\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
 #### AdditionalGuestAmount
