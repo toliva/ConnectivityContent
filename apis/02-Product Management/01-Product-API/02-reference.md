@@ -749,7 +749,9 @@ value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to 
 
 ## Room Type Rate Thresholds
 
-Rate Thresholds defines the minimum and maximum acceptable amounts for a room night. They are used to verify that the rate being pushed for the room are not abnormally low or abnormally high.
+Rate Thresholds defines the minimum and maximum acceptable amounts that can be pushed for a room night, under any rate plan of the room type. They are used to verify that the rate being pushed for the rate plans of this room are not abnormally low or abnormally high. Rate thresholds can only be read by partners, they cannot be set or changed.
+
+Room type rate thresholds can be defined by Expedia in one of 2 ways: set by a manual override, or automatically calculated from the last 10 reservations made against any rate plan of the room type. By default, the automatic method is used. Thresholds will not be returned until at least 10 reservations were made, so it is expected that newer room types will have no room type thresholds defined. When no room-specific thresholds exist, Expedia defaults to global thresholds not exposed via this API.
 
 ### Obtain rate thresholds for a single room type
 - Method: `GET`
@@ -775,9 +777,9 @@ Status Code | Description | Response Model
 Property Name | Type | Description
 ------------- | ---- | -----------
 type | [rateAcquisitionTypeEnum](#/definitions/rateAcquisitionTypeEnum) | Type of the rate verification thresholds. The only supported value is: SellLAR.
-minAmount | number | Defines minimum acceptable rate, expressed as a decimal number. If the rate is lower than this minimum value, the AR rate update will be ignored and a warning will be returned.
-maxAmount | number | Defines maximum acceptable rate, expressed as a decimal number. If the rate is higher than this maximum value, the AR rate update will be ignored and a warning will be returned.
-source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 reservations, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentReservation is Expedia's default method.
+minAmount | number | Defines minimum acceptable rate, expressed as a decimal number. If the rate is lower than this minimum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
+maxAmount | number | Defines maximum acceptable rate, expressed as a decimal number. If the rate is higher than this maximum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
+source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 bookings, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentBookings is Expedia's default method.
 
 <a name="/definitions/rateThresholdsSourceEnum"></a>
 ### rateThresholdsSourceEnum
