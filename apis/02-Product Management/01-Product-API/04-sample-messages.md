@@ -1246,6 +1246,7 @@ Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
 Authorization: Basic [your encoded username:password in Base64]
 ```
 Response:
+If there are rate thresholds defined for the room type, the response would be:
 ```JSON
 {
   "entity": {
@@ -1261,6 +1262,12 @@ Response:
   }
 }
 ```
+
+If there are no rate thresholds defined for the room type, the response will be empty:
+```JSON
+{}
+```
+
 Note: the rate thresholds creation (POST), update (PUT, PATCH) and deletion (DELETE) operations are not supported.
 
 
