@@ -1231,8 +1231,8 @@ Here are a few examples of PATCH requests partners could want to make. Response 
 }
 ```
 
-##	Room Type Rate Thresholds Examples
-The room type's rate thresholds resource defines the configuration of the rate thresholds applicable to a room type. It defines mainly the lowest and highest acceptable rates for a room for a single night.
+## Room Type Rate Thresholds Examples
+The room type's rate thresholds resource defines the configuration of the rate thresholds applicable to all rate plans of a room type. It defines the lowest and highest acceptable rates for any rate plans of a room, for a stay date.
 
 ### Rate Thresholds Read
 This example shows how to retrieve the rate thresholds for a given room type.
