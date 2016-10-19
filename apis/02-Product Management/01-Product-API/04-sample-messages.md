@@ -1271,7 +1271,7 @@ If there are no rate thresholds defined for the room type, the response will be 
 Note: the rate thresholds creation (POST), update (PUT, PATCH) and deletion (DELETE) operations are not supported.
 
 
-##	Rate Plan Resource Examples
+## Rate Plan Resource Examples
 The rate plan resource defines the configuration of a rate that a partner would like to make available to Expedia customers. It contains the more static information about the rate, for example its name, code, cancellation and change policy, what is the base compensation, what are the additional guest amounts to charge, etc.
 More dynamic information like availability and rate information per stay date is exchanged via another API, EQC AR.
 
