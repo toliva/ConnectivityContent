@@ -277,6 +277,8 @@ This becomes quite important to understand when partners are in the process of c
 
 Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the [API Definition](reference.html#modify-an-existing-rate-plan).
 
+Partners unsure of which operation to use should always favor the PATCH (partial) update feature. 
+
 ### Modifying with PUT
 
 The PUT modify operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.
