@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2016-10-20 | Released new feature to expose a room type's rate thresholds, in read-only format. Only GET operation is allowed on this sub resource.
 | 2016-10-18 | Released new feature to expose RatePlanLinkage information in read-only format in rate plan GET. Added links section to show rate plan resource's link to itself, his rate plan linkage parent if any, and/or its derived child rate plans if any. |
 | 2016-09-29 | New section documenting changes between V1 and V2 was added in the [FAQ and Guides section](guides.html#/v1v2diff). |
 | 2016-06-10 | Product API v2 now live. Versioning strategy changed from URL to using content-type and accept headers. As a result, URLs have all changed to have V1 removed when partners are ready to use V2. Room type resource changed significantly for defining bed types and occupancy. |

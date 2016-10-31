@@ -46,6 +46,7 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 | Room Type | Update a single room type (PATCH) in partial update mode | PATCH https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
 | Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
 | Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Rate Thresholds | Get rate thresholds for a single room type | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds | None |
 | Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
 | Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 | Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
@@ -748,6 +749,66 @@ code | [amenityCodes](#/definitions/amenityCodes) | Uniquely identifies an ameni
 detailCode | [amenityCodes](#/definitions/amenityCodes) | Adds precision or qualifies the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
 value | [amenityCodes](#/definitions/amenityCodes) | Integer. Adds precision to the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities.
 
+## Room Type Rate Thresholds
+
+Rate Thresholds defines the minimum and maximum acceptable amounts that can be pushed for a room night, under any rate plan of the room type. They are used to verify that the rate being pushed for the rate plans of this room are not abnormally low or abnormally high. Rate thresholds can only be read by partners, they cannot be set, changed or deleted.
+
+Room type rate thresholds can be defined by Expedia in one of 2 ways: set by a manual override, or automatically calculated from the last 10 bookings made against any rate plan of the room type. By default, the automatic method is used. Thresholds will not be returned until at least 10 reservations were made, so it is expected that newer room types will have no room type thresholds defined. When no room-specific thresholds exist, Expedia defaults to global thresholds not exposed via this API.
+
+### Obtain rate thresholds for a single room type
+- Method: `GET`
+- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds
+- Consumes: `HTTP Request (GET)`
+- Produces: `application/vnd.expedia.eps.product-v2+json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type | Default Value
+--------- | -------------- | ----------- | -------- | --------- | -------------
+Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token 
+propertyId | path | Expedia Property ID | Yes | string | 
+roomTypeId | path | Room type resource ID | Yes | string |
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | [RateThresholds](#/definitions/RateVerificationThresholdsDTO)
+
+<a name="/definitions/RateVerificationThresholdsDTO"></a>
+### RateThresholds Resource Definition
+
+Property Name | Type | Description
+------------- | ---- | -----------
+type | [rateAcquisitionTypeEnum](#/definitions/rateAcquisitionTypeEnum) | Type of the rate verification thresholds. The only supported value is: SellLAR.
+minAmount | number | Defines minimum acceptable rate, expressed as a decimal number. If the rate is lower than this minimum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
+maxAmount | number | Defines maximum acceptable rate, expressed as a decimal number. If the rate is higher than this maximum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
+source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 bookings, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentBookings is Expedia's default method.
+
+<a name="/definitions/rateThresholdsSourceEnum"></a>
+### rateThresholdsSourceEnum
+
+| rateThresholdsSourceEnum |
+| ------------------ |
+| RecentBookings |
+| ManualOverride |
+
+**Example**
+GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds
+```
+{
+  "entity": {
+    "type": "SellLAR",
+    "minAmount": 98.55,
+    "maxAmount": 310.2,
+    "source": "RecentBookings",
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds"
+      }
+    }
+  }
+}
+```
+
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
@@ -994,7 +1055,12 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
   "bookDateEnd": "2079-06-06",
   "travelDateStart": "1901-01-01",
   "travelDateEnd": "2079-06-06",
-  "mobileOnly": false
+  "mobileOnly": false,
+  "_links": {
+    "self": {
+      "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/205020307"
+    }
+  }
 }
 ```
 
@@ -1136,7 +1202,7 @@ travelDateStart | date | Date at which customers can start checking in for a sta
 travelDateEnd | date | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
 ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan. Optional, only returned on rate plans being derived from a parent rate plan via a rate linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
-\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource.
+\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collections of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
 #### AdditionalGuestAmount
@@ -1258,6 +1324,14 @@ derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that poin
 Property Name | Type | Description
 ------------- | ---- | -----------
 href | string | The link's URL.
+
+<a name="/definitions/rateAcquisitionTypeEnum"></a>
+### rateAcquisitionTypeEnum
+
+| rateAcquisitionTypeEnum |
+| ------------------ |
+| NetRate |
+| SellLAR |
 
 
 <a name="/definitions/ErrorCodes"></a>
