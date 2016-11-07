@@ -573,7 +573,7 @@ A partner who intends to charge children as adults and only accept older childre
 
 Partners should never send Expedia the infant age category definition if their room doesn't support infants. Due to the way occupancy is calculated, there's only one count for any non-adult age category: the children count. It is not possible to send a count of 0 infants. For that reason, it is critical that partners who cannot take infants in their rooms do not define the infant age category at all. 
 
-As a best practice, partners should only ever define the age categories for which they can support taking guests. The examples define in the previous section were designed with this principle in mind.
+As a best practice, partners should only ever define the age categories for which they can support taking guests. The examples defined in the previous section were designed with this principle in mind.
 
 ### Can I define a room where only Infants and Adults are accepted (no children)?
 
