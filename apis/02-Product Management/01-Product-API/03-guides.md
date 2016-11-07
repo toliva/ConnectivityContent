@@ -569,4 +569,36 @@ A partner who intends to charge children as adults and only accept older childre
     }
 }
 ```
+### Should I define the age for the Infant age category if my room doesn't support infants?
 
+Partners should never send Expedia the infant age category definition if their room doesn't support infants. Due to the way occupancy is calculated, there's only one count for any non-adult age category: the children count. It is not possible to send a count of 0 infants. For that reason, it is critical that partners who cannot take infants in their rooms do not define the infant age category at all. 
+
+As a best practice, partners should only ever define the age categories for which they can support taking guests. The examples define in the previous section were designed with this principle in mind.
+
+### Can I define a room where only Infants and Adults are accepted (no children)?
+
+Expedia doesn't support defining room configurations where no children would be allowed but it would be possible to accept infants.
+
+This should be clear for partners once they understand Expedia's logic for count of occupants and age category definition. We already explained the logic for the number of occupants in the previous section. It is also important to know that there is no "max age" explicitly defined for an age category. The max age of a given category is equivalent to the (min age-1) of the next defined category.
+
+If a partner was to send something like this:
+```json
+{
+    "ageCategories": [
+        {
+            "category": "Adult",
+            "minAge": 18
+        },
+        {
+            "category": "Infant",
+            "minAge": 0
+        }
+    ],
+    "maxOccupancy": {
+        "total": 3,
+        "adults": 2,
+        "children": 1
+    }
+}
+```
+The outcome of this request would be that any guest aged from 0 to 17 would be considered an Infant, and anyone 18 or above would be considered an adult.
