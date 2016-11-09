@@ -1310,9 +1310,9 @@ Response:
             "pricingModel": "PerDayPricing",
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
-	    "depositRequired": false,
-	    "createDateTime": "2016-10-20T21:05:12Z",
-	    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
+            "depositRequired": false,
+            "createDateTime": "2016-10-20T21:05:12Z",
+            "lastUpdateDateTime": "2016-10-21T18:37:27Z",
             "cancelPolicy": {
                 "defaultPenalties": [
                     {
