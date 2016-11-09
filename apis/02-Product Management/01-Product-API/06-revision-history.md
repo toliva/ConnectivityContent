@@ -2,7 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
-| 2016-11-09 | Released new feature to expose a rate plan's deposit required flag, create and last update dates.
+| 2016-11-09 | Released new feature to expose a rate plan's deposit required flag, create and last update dates. These are read-only information.
 | 2016-10-20 | Released new feature to expose a room type's rate thresholds, in read-only format. Only GET operation is allowed on this sub resource.
 | 2016-10-18 | Released new feature to expose RatePlanLinkage information in read-only format in rate plan GET. Added links section to show rate plan resource's link to itself, his rate plan linkage parent if any, and/or its derived child rate plans if any. |
 | 2016-09-29 | New section documenting changes between V1 and V2 was added in the [FAQ and Guides section](guides.html#/v1v2diff). |
