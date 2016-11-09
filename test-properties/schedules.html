@@ -356,29 +356,28 @@
                 .append($("<p/>").text("Reset the password of Test Hotel ID " + hotelid + "."))
                 .parent()
                 .foundation('reveal', 'open');
-        $("#reset").submit(function() {
-            console.log("reset");
-            var password = $("#reset-dialogue #password").val();
-            if (password.length < 8) {
-                $("#reset-dialogue .error").text("8 character minimum");
-                return false;
-            }
-            $("#reset-dialogue").foundation('reveal', 'close');
-            loadStartButtons();
-            ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
-            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
-                loadEndButtons();
-                $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
-                console.log(data);
-                ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
-            }, function(jqxhr) {
-                loadEndButtons();
-                ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
-                ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
-            });
-            return false;
-        });
     }
 
-
+    $("#reset").submit(function() {
+        console.log("reset");
+        var password = $("#reset-dialogue #password").val();
+        if (password.length < 8) {
+            $("#reset-dialogue .error").text("8 character minimum");
+            return false;
+        }
+        $("#reset-dialogue").foundation('reveal', 'close');
+        loadStartButtons();
+        ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
+        jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
+            loadEndButtons();
+            $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
+            console.log(data);
+            ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
+        }, function(jqxhr) {
+            loadEndButtons();
+            ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
+            ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
+        });
+        return false;
+    });
 </script>
