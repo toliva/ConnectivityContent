@@ -315,6 +315,9 @@ The response returned by the product API will contain all the default values use
         "type": "Standalone",
         "pricingModel": "OccupancyBasedPricing",
         "taxInclusive": false,
+        "depositRequired": true,
+        "createDateTime": "2014-12-01T10:08:31Z",
+        "lastUpdateDateTime": "2016-02-03T19:00:05Z",
         "cancelPolicy": {
             "defaultPenalties": [
                 {
