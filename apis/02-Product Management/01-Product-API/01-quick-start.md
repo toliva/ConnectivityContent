@@ -148,6 +148,9 @@ The result will be an array of active rate plans under this property and room ty
       "type": "Standalone",
       "pricingModel": "OccupancyBasedPricing",
       "taxInclusive": false,
+      "depositRequired": false,
+      "createDateTime": "2015-06-30T17:44:26Z",
+      "lastUpdateDateTime": "2016-10-21T18:37:27Z",
       "cancelPolicy": {
         "defaultPenalties": [
           {
