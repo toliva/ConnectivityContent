@@ -52,7 +52,8 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "providerPropertyUrl": "http://example.org",
     "structureType": "Hotel",
     "currencyCode": "USD",
-    "billingCurrencyCode": "USD",
+    "
+    Code": "USD",
     "timeZone": "America/Los_Angeles",
     "addresses": [
         {
@@ -199,7 +200,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | providerPropertyUrl | String | No | Yes | URL for property's website, must be submitted in Western European Character set. |
 | structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./Code-list.html#StructureType "Structure type codes") |
 | currencyCode | String | Yes | No | Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit the same ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version. |
-| billingCurrencyCode | String | Yes | No | Currency code to be used for pricing and billing. Cannot be updated after initial onboarding.  Use ISO4217. |
+| billingCurrencyCode | String | Yes | No | Use ISO4217.  Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding.   |
 | timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](./https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
 | addresses | Array of Address objects | Yes | No | See Address below. |
 | ratings | Array of Rating objects | No | No | See Rating below. |
