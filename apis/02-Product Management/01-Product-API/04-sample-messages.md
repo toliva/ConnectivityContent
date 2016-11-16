@@ -1311,7 +1311,7 @@ Response:
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
             "depositRequired": false,
-            "createDateTime": "2016-10-20T21:05:12Z",
+            "creationDateTime": "2016-10-20T21:05:12Z",
             "lastUpdateDateTime": "2016-10-21T18:37:27Z",
             "cancelPolicy": {
                 "defaultPenalties": [
@@ -1371,7 +1371,7 @@ Response:
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
             "depositRequired": true,
-            "createDateTime": "2015-01-17T09:11:11Z",
+            "creationDateTime": "2015-01-17T09:11:11Z",
             "lastUpdateDateTime": "2016-04-30T20:20:09Z",
             "cancelPolicy": {
                 "defaultPenalties": [
@@ -1440,7 +1440,7 @@ Response:
             "pricingModel": "PerDayPricing",
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
-            "createDateTime": "2015-06-20T21:05:12Z",
+            "creationDateTime": "2015-06-20T21:05:12Z",
             "lastUpdateDateTime": "2016-10-21T18:37:27Z",
             "cancelPolicy": {
                 "defaultPenalties": [
@@ -1534,7 +1534,7 @@ Response:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -1617,7 +1617,7 @@ Response:
     "rateAcquisitionType": "SellLAR",
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -1725,7 +1725,7 @@ Response:
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": true,
     "depositRequired": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -1801,7 +1801,7 @@ Response:
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
     "depositRequired": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -1890,7 +1890,7 @@ Response:
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": false,
     "depositRequired": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -2046,7 +2046,7 @@ The response would look like:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 2,
     "taxInclusive": false,
-    "createDateTime": "2016-11-09T12:00:00Z",
+    "creationDateTime": "2016-11-09T12:00:00Z",
     "lastUpdateDateTime": "2016-11-09T12:00:00Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -2181,7 +2181,7 @@ Response would look like:
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
     "depositRequired": false,
-    "createDateTime": "2016-11-09T21:00:00Z",
+    "creationDateTime": "2016-11-09T21:00:00Z",
     "lastUpdateDateTime": "2016-11-09T21:00:00Z",
     "cancelPolicy": {
       "defaultPenalties": [
@@ -2267,7 +2267,7 @@ Authorization: Basic [your encoded username:password in base64]
   "occupantsForBaseRate": 2,
   "taxInclusive": false,
   "depositRequired": false,
-  "createDateTime": "2016-10-20T21:05:12Z",
+  "creationDateTime": "2016-10-20T21:05:12Z",
   "lastUpdateDateTime": "2016-10-21T18:37:27Z",
   "cancelPolicy": {
     "defaultPenalties": [
@@ -2340,7 +2340,7 @@ Response would look like:
     "occupantsForBaseRate": 2,
     "taxInclusive": false,
     "depositRequired": false,
-    "createDateTime": "2016-10-20T21:05:12Z",
+    "creationDateTime": "2016-10-20T21:05:12Z",
     "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
