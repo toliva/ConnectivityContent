@@ -1000,6 +1000,9 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
   "pricingModel": "PerDayPricing",
   "occupantsForBaseRate": 2,
   "taxInclusive": false,
+  "depositRequired": false,
+  "creationDateTime": "2016-10-20T21:05:12Z",
+  "lastUpdateDateTime": "2016-10-21T18:37:27Z",
   "cancelPolicy": {
     "defaultPenalties": [
       {
@@ -1189,6 +1192,9 @@ type | enum | Rate Plan type. Defaults to Standalone if not provided during crea
 pricingModel | enum | Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model. Possible values are: PerDayPricing, PerDayPricingByDayOfArrival, PerDayPricingByLenghtOfStay, OccupancyBasedPricing, OccupancyBasedPricingByDayOfArrival, OccupancyBasedPricingByLengthOfStay.
 occupantsForBaseRate | integer | Max occupants allowed for the base rate. Min 1, Max 20. This is only applicable for per day pricing properties, and required in create requests. It indicates how many occupants the per day price applies to.
 taxInclusive | boolean | Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property's configuration.
+depositRequired | boolean | Indicates if a deposit is required upon booking. This flag is only available for Rate Plan with business models HotelCollect or ExpediaTravelerPreference. Read-only. Cannot currently be set at time of create, or changed in update call. Will be defaulted to False at time of create. Partners who need to collect deposits should contact their Expedia Market Manager.
+creationDateTime | date | Date at which the rate plan has been created. The date is formatted in the ISO 8601 format. Example: 2016-10-20T21:05:12Z. Set by Expedia at time of create, cannot be provided in create request. Cannot be changed.
+lastUpdateDateTime | date | Date of the last modifications to this rate plan. The date is formatted in the ISO 8601 format. Example: 2016-10-21T18:37:27Z. Read-only. Set by Expedia at time of Create or Update. Cannot be provided in create or changed by partner in update messages.
 cancelPolicy | [CancelPolicy](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property. If Expedia cannot identify a recently created rate plan, the policy will be defaulted to a standard cancellation policy, where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline.
 additionalGuestAmounts | Array[[AdditionalGuestAmount](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates.
 valueAddInclusions | Array[[valueAddInclusionsEnum](#/definitions/valueAddInclusionsEnum)] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones

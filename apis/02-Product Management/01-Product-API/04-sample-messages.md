@@ -1310,6 +1310,9 @@ Response:
             "pricingModel": "PerDayPricing",
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
+            "depositRequired": false,
+            "creationDateTime": "2016-10-20T21:05:12Z",
+            "lastUpdateDateTime": "2016-10-21T18:37:27Z",
             "cancelPolicy": {
                 "defaultPenalties": [
                     {
@@ -1367,6 +1370,9 @@ Response:
             "pricingModel": "PerDayPricing",
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
+            "depositRequired": true,
+            "creationDateTime": "2015-01-17T09:11:11Z",
+            "lastUpdateDateTime": "2016-04-30T20:20:09Z",
             "cancelPolicy": {
                 "defaultPenalties": [
                     {
@@ -1434,6 +1440,8 @@ Response:
             "pricingModel": "PerDayPricing",
             "occupantsForBaseRate": 2,
             "taxInclusive": false,
+            "creationDateTime": "2015-06-20T21:05:12Z",
+            "lastUpdateDateTime": "2016-10-21T18:37:27Z",
             "cancelPolicy": {
                 "defaultPenalties": [
                     {
@@ -1526,6 +1534,8 @@ Response:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -1607,6 +1617,8 @@ Response:
     "rateAcquisitionType": "SellLAR",
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -1712,6 +1724,9 @@ Response:
     "type": "Standalone",
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": true,
+    "depositRequired": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -1785,6 +1800,9 @@ Response:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
+    "depositRequired": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -1871,6 +1889,9 @@ Response:
     "type": "Standalone",
     "pricingModel": "OccupancyBasedPricing",
     "taxInclusive": false,
+    "depositRequired": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -2025,6 +2046,8 @@ The response would look like:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 2,
     "taxInclusive": false,
+    "creationDateTime": "2016-11-09T12:00:00Z",
+    "lastUpdateDateTime": "2016-11-09T12:00:00Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -2157,6 +2180,9 @@ Response would look like:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 1,
     "taxInclusive": false,
+    "depositRequired": false,
+    "creationDateTime": "2016-11-09T21:00:00Z",
+    "lastUpdateDateTime": "2016-11-09T21:00:00Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
@@ -2240,6 +2266,9 @@ Authorization: Basic [your encoded username:password in base64]
   "pricingModel": "PerDayPricing",
   "occupantsForBaseRate": 2,
   "taxInclusive": false,
+  "depositRequired": false,
+  "creationDateTime": "2016-10-20T21:05:12Z",
+  "lastUpdateDateTime": "2016-10-21T18:37:27Z",
   "cancelPolicy": {
     "defaultPenalties": [
       {
@@ -2310,6 +2339,9 @@ Response would look like:
     "pricingModel": "PerDayPricing",
     "occupantsForBaseRate": 2,
     "taxInclusive": false,
+    "depositRequired": false,
+    "creationDateTime": "2016-10-20T21:05:12Z",
+    "lastUpdateDateTime": "2016-10-21T18:37:27Z",
     "cancelPolicy": {
       "defaultPenalties": [
         {
