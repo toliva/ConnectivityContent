@@ -149,8 +149,8 @@ The result will be an array of active rate plans under this property and room ty
       "pricingModel": "OccupancyBasedPricing",
       "taxInclusive": false,
       "depositRequired": false,
-      "createDateTime": "2015-06-30T17:44:26Z",
-      "lastUpdateDateTime": "2016-10-21T18:37:27Z",
+      "creationDateTime": "2016-09-22T05:52:47Z",
+      "lastUpdateDateTime": "2016-09-22T05:52:47Z",
       "cancelPolicy": {
         "defaultPenalties": [
           {
@@ -218,9 +218,9 @@ The result will be an array of active rate plans under this property and room ty
       "type": "Standalone",
       "pricingModel": "OccupancyBasedPricing",
       "taxInclusive": false,
-      "depositRequired": true,
-      "createDateTime": "2014-12-01T10:08:31Z",
-      "lastUpdateDateTime": "2016-02-03T19:00:05Z",
+      "depositRequired": false,
+      "creationDateTime": "2016-09-22T05:56:49Z",
+      "lastUpdateDateTime": "2016-09-22T05:56:49Z",
       "cancelPolicy": {
         "defaultPenalties": [
           {
@@ -319,7 +319,7 @@ The response returned by the product API will contain all the default values use
         "pricingModel": "OccupancyBasedPricing",
         "taxInclusive": false,
         "depositRequired": true,
-        "createDateTime": "2016-11-09T15:08:31Z",
+        "creationDateTime": "2016-11-09T15:08:31Z",
         "lastUpdateDateTime": "2016-11-09T15:08:31Z",
         "cancelPolicy": {
             "defaultPenalties": [
