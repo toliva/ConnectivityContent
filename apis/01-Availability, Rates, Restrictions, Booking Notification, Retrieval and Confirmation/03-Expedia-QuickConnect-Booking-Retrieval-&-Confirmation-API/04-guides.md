@@ -26,11 +26,6 @@ The process to get connected for any Expedia QuickConnect API is the same. Pleas
 When designing the electronic interface used to connect to Expedia QuickConnect to retrieve bookings, the EQC partner should make sure to read and understand the following guidelines, recommendations and best practices.
 
 ---
-### EQC Simulator Usage
-
-Before being allowed to connect to Expedia production systems, the EQC partner must confirm it was able to use the EQC Simulator successfully. Please the [EQC Simulator User Guide](simulator-tool.html) for more details on how the EQC Simulator can be used and what kind of scenarios can be tested with it. 
-
----
 ### Requesting Bookings Previously Retrieved
 
 Expedia offers different ways to re-retrieve booking messages that were previously retrieved. 
