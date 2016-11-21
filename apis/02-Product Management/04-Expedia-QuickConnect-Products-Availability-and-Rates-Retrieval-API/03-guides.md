@@ -9,9 +9,6 @@ In order to be able to manage properties in production, partners need to be auth
 
 After a partner successfully registered with Expedia (see [above section](#/howtogetstarted) for details on how to get started), properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email notification. The email will contain the confirmation that the partner is now authorized to manage this hotel via API calls. It will also either contain a specific set of credentials for this property, or will indicate that the partner's unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.
 
-## EQC Simulator usage
-Before being allowed to connect to Expedia production systems, an EQC partner must confirm it was able to use the EQC Simulator successfully. Please visit the [EQC Simulator User Guide](/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/simulator-tool.html) section for more details on how the EQC Simulator can be used and what kind of scenarios can be tested with it.
-
 ## Rate Verification Thresholds for EQC hotels
 In order to help partners understand why Expedia will sometimes refuse specific rate updates provided in EQC AR messages, Expedia has made rate verification threshold information available in the EQC PARR message.
 
