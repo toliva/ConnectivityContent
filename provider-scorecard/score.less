@@ -1,0 +1,109 @@
+.scorecard-row {
+
+    .scorecard-category {
+        color: #0087F5;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .scorecard-category-score {
+        color: inherit;
+        margin-bottom: 3em;
+
+        .score-total {
+            background: ghostwhite;
+            padding: 2px;
+            border: 1px solid #dddddd;
+
+            .score-value {
+                background: #0087F5;
+            }
+        }
+    }
+
+    .scorecard-provider {
+        font-size: 3em;
+    }
+
+    .scorecard-rank {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .scorecard-column {
+
+        .check {
+            height: 8em !important;
+        }
+
+        .border {
+            border: 1px solid ghostwhite;
+            height: 6em;
+            padding-top: 1em;
+            margin-bottom: 50px;
+        }
+
+        * {
+            line-height: 1em;
+            margin-bottom: 10px;
+        }
+
+        .scorecard-title {
+            color: lightslategrey;
+        }
+
+        .value {
+            font-size: 2em;
+        }
+
+        .rate-change {
+            line-height: 2em;
+
+            .green {
+                color: darkgreen;
+            }
+
+            .red {
+                color: darkred;
+            }
+        }
+
+        .state {
+            font-size: 2em;
+            line-height: 2em;
+            text-align: center;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        >.green {
+            background: #cbe9cd;
+
+            .value {
+                color: darkgreen;
+            }
+
+            .state {
+                color: darkgreen;
+            }
+        }
+
+        >.red {
+            background: #F8E5D8;
+
+            .value {
+                color: #de8344;
+            }
+
+            .state {
+                color: darkred;
+            }
+        }
+    }
+}
+
+hr {
+    margin-bottom: 3em;
+}
