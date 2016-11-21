@@ -112,8 +112,6 @@ This is what a RS could look like, should this account have hotels with pending 
 </BookingRetrievalRS>
 ```
 
-As an alternative to using a production test hotel, partners are invited to make use of the [simulator tool](simulator-tool.html) to experiment with the Booking Retrieval API.
-
 ---
 ## Booking Confirmation Request and Response
 
@@ -138,5 +136,3 @@ Below is a pair of sample request/response messages for booking confirmation. It
     <Success/>
 </BookingConfirmRS> 
 ``` 
-
-As an alternative to using a production test hotel, partners are invited to make use of the [simulator tool](simulator-tool.html) to experiment with the Booking Confirmation API.
