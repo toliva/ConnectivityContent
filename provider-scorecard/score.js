@@ -94,7 +94,7 @@ function getParameterByName(name) {
 }
 
 $(document).ready(function() {
-    var hash = getParameterByName("hash");
+    var hash = getParameterByName("id");
     if (hash == null || hash == "") {
         generateScorecard(demo);
         return;
