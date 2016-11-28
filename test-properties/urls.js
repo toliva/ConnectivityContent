@@ -19,6 +19,10 @@ var hotelAssignmentServiceUrls = {
         return hotelAssignmentServiceBaseUrl() + "/v1/schedule";
     },
 
+    adminSchedule: function() {
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/all";
+    },
+
     factors: function() {
         return hotelAssignmentServiceBaseUrl() + "/v1/hotels/factors";
     },
