@@ -1,5 +1,9 @@
 function hotelAssignmentServiceBaseUrl() {
-    return environment.isProd() ? "https://hotel-assignment-service.prod-p.expedia.com" : "https://hotel-assignment-service.test.expedia.com";
+    switch (environment.env) {
+        case "prod": return "https://hotel-assignment-service.prod-p.expedia.com";
+        case "dev":  return "http://localhost:8082";
+        default:     return "https://hotel-assignment-service.test.expedia.com";
+    }
 }
 
 var hotelAssignmentServiceUrls = {
