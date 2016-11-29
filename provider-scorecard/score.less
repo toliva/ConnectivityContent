@@ -38,7 +38,7 @@
         }
 
         .border {
-            border: 1px solid ghostwhite;
+            border: 1px solid lightgrey;
             height: 6em;
             padding-top: 1em;
             margin-bottom: 50px;
@@ -92,10 +92,15 @@
 
         >.green {
             background: #cbe9cd;
+            background: linear-gradient(to right, rgba(203,233,205,1) 0%,rgba(203,233,205,1) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 
             .value {
                 color: darkgreen;
             }
+        }
+
+        >.feature-green, .solid-background.green {
+            background: #cbe9cd;
 
             .state {
                 color: darkgreen;
@@ -104,10 +109,15 @@
 
         >.red {
             background: #F8E5D8;
+            background: linear-gradient(to right, rgba(248,229,216,1) 0%,rgba(248,229,216,1) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 
             .value {
                 color: #de8344;
             }
+        }
+
+        >.feature-red, .solid-background.red {
+            background: #F8E5D8;
 
             .state {
                 color: darkred;
