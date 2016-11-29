@@ -167,7 +167,7 @@ function generateScorecardFeature(category, id) {
         var elementSelector = "#" + id + " #" + key;
         var state = category["attributes"][key];
         $(elementSelector + " .state").html(state ? "&#x2713;" : "&#x2717;");
-        $(elementSelector).addClass(state ? "green" : "red");
+        $(elementSelector).addClass(state ? "feature-green" : "feature-red");
 
     }
 }
