@@ -19,7 +19,7 @@ For partners interested in understanding what guided Expedia in its design of Ex
 
 ## Getting Connected
 
-The process to get connected for any Expedia QuickConnect API is the same. Please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/guides.html#gettingconnected) for more details.
+The process to get connected for any Expedia QuickConnect API is the same. Please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html#getting-connected-with-expedia-for-the-first-time) for more details.
 
 ## Guidlines and Best Practices 
 
