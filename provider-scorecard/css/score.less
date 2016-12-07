@@ -1,3 +1,12 @@
+@good: #0087F5;
+@bad: #f50200;
+@card-background: #f8f8f8;
+@body-background: white;
+
+body {
+    background: @body-background;
+}
+
 .scorecard-row {
 
     .scorecard-category {
@@ -46,11 +55,21 @@
             height: 6em;
             padding-top: 1em;
             margin-bottom: 50px;
+            background: @card-background;
+            box-shadow: 0px 2px #c7c7c7;
+            border-radius: 4px;
         }
 
         .border:hover {
             cursor: pointer;
-            border-color: #444;
+            box-shadow: 0px 4px 4px #ddd;
+            position: relative;
+            top: -2px;
+        }
+
+        .border:active {
+            top: 0;
+            box-shadow: 0px 2px 2px #ddd;
         }
 
         .has-tip {
@@ -95,36 +114,24 @@
         }
 
         >.green {
-            background: #cbe9cd;
-            background: linear-gradient(to right, rgba(203,233,205,1) 0%,rgba(203,233,205,1) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 
             .value {
-                color: darkgreen;
+                color: @good;
             }
-        }
-
-        >.feature-green, .solid-background.green {
-            background: #cbe9cd;
 
             .state {
-                color: darkgreen;
+                color: @good;
             }
         }
 
         >.red {
-            background: #F8E5D8;
-            background: linear-gradient(to right, rgba(248,229,216,1) 0%,rgba(248,229,216,1) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 
             .value {
-                color: #de8344;
+                color: @bad;
             }
-        }
-
-        >.feature-red, .solid-background.red {
-            background: #F8E5D8;
 
             .state {
-                color: darkred;
+                color: @bad;
             }
         }
     }
@@ -140,6 +147,8 @@ hr {
 }
 
 #top-metrics {
+    width: 700px;
+
     .top-metric-cards {
         .top-performer {
             font-size: 1.3em;
