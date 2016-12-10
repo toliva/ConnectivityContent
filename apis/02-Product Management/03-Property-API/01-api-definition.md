@@ -243,7 +243,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | ReservationManager | Yes | firstName, lastName, email or fax required.  Property will fail onboarding if this information is not submitted.  |
 | AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. |
 | GeneralManager | No | If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly. |
-| PropertyExtranetUser | No | If an email address is provided, then an account for Expedia Partner Central (EPC) will be created during the onboarding process.  This EPC account can be used by the hotel to read and respond to user reviews and reports for the property via EPC extranet. Any content updates submitted via the EPC extranet can be overwritten by an update submitted via the Property API. |
+| PropertyExtranetUser | No | First Name, Last Name, email address required.  An account for Expedia Partner Central (EPC) will be created during the onboarding process and credentials will be sent to the email address submitted.  This EPC account can be used by the hotel to read and respond to user reviews and reports for the property via EPC extranet. Any content updates submitted via the EPC extranet can be overwritten by an update submitted via the Property API. |
 
 *Description of Contact info accepted:*
 
