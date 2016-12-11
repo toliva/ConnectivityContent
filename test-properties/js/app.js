@@ -1,7 +1,6 @@
-requirejs(['unscheduled-admin'],
-    function   (unscheduled) {
-        //jQuery, canvas and the app/sub module are all
-        //loaded and can be used here now.
-
+/* schedules-admin page app */
+requirejs(['schedules-admin', 'unscheduled-admin'],
+    function   (schedules, unscheduled) {
+        schedules.init();
         unscheduled.init();
     });
