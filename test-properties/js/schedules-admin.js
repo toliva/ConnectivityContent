@@ -16,7 +16,8 @@ define( function() {
     ];
 
     var buttons = [
-        {text: "Toggle Indefinite", action: toggleIndefinite}
+        {text: "Toggle Indefinite", action: toggleIndefinite},
+        {text: "Unassign", action: unassignHotel}
     ];
 
 
@@ -94,6 +95,32 @@ define( function() {
         });
     }
 
+    function unassignHotel(e, dt, node, config) {
+        loadStartButtons();
+        var hotelId = dt.cell(".selected", 1).data();
+        var tuid = dt.cell(".selected", 0).data();
+        ga('send', 'event', 'adminUnassignHotel', 'request', localStorage.getItem('username') + "|" + hotelId);
+        jwtRequest("DELETE", hotelAssignmentServiceUrls.adminUnassign(tuid, hotelId), function (data, textStatus, jqxhr) {
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            loadEndButtons();
+            $("#result").text("Successfully unassigned " + hotelId).effect("highlight", {color: "#FECB2F"}, 700);
+            $.publish('hotel.unscheduled', [hotelId]);
+            ga('send', 'event', 'adminUnassignHotel', 'success', localStorage.getItem('username') + "|" + hotelId);
+        }, function (jqxhr) {
+            loadEndButtons();
+            ajaxError(jqxhr, "Could not unassign " + hotelId);
+            ga('send', 'event', 'adminUnassignHotel', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelId);
+        });
+    }
+
+    var onHotelScheduled = function(_, hotelId) {
+        datatable.ajax.reload();
+    }
+
+    var onHotelUnscheduled = function(_, hotelId) {
+        datatable.ajax.reload();
+    }
+
     return {
         init: function () {
             $('#requestHotelForm').submit(function (event) {
@@ -136,6 +163,9 @@ define( function() {
                     console.log("enabled");
                 }
             });
+
+            $.subscribe('hotel.scheduled', onHotelScheduled);
+            $.subscribe('hotel.unscheduled', onHotelUnscheduled);
         }
 
     }
