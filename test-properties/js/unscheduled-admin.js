@@ -46,6 +46,8 @@ define(function () {
         $("#assign-dialogue #hotelIdTxt").val(data[1]);
         $("#assign-dialogue #usernameTxt").val(data[8]);
         $("#assign-dialogue #tuidTxt").val("");
+        $("#assign-dialogue #passwordTxt").val("");
+        $("#assign-dialogue .error").empty();
         $("#assign-dialogue>div")
             .empty()
             .append($("<p/>").text("Assign test property " + data[1]))
