@@ -13,7 +13,7 @@ In order for properties to use the Expedia QuickConnect solution, they must meet
 ---
 ## Schema Design Guidelines
 
-For partners interested in understanding what guided Expedia in its design of Expedia QuickConnect schemas, please refer to the [Schema Design Guidelines](http://josheqcar1.partner-api-preview.test.expedia.com/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/reference.html#schemaguidelines) section of the Avail and Rates API. All Expedia QuickConnect APIs follow the same guidelines.
+For partners interested in understanding what guided Expedia in its design of Expedia QuickConnect schemas, please refer to the [Schema Design Guidelines](/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/reference.html#schema-design-guidelines) section of the Avail and Rates API. All Expedia QuickConnect APIs follow the same guidelines.
 
 ---
 
