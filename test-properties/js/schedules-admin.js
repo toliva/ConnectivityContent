@@ -16,8 +16,8 @@ define( function() {
     ];
 
     var buttons = [
-        {text: "Toggle Indefinite", action: toggleIndefinite},
-        {text: "Unassign", action: displayUnassignDialog}
+        {text: "Toggle Indefinite", action: toggleIndefinite}
+        //{text: "Unassign", action: displayUnassignDialog}
     ];
 
 
