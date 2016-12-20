@@ -41,7 +41,7 @@ A list of possible errors for each API can be found [here](./code-list.html "Err
 The below example is a request to onboard a new property using SetPropertyDetails.
 
 - Information for more than one property is accepted in the request, max. batch size is 50 properties per request.
-- Each property must have a unique 
+- Each property must have a unique providerPropertyId
 
 ```javascript
 [{
