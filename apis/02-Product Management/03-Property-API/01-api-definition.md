@@ -41,7 +41,7 @@ A list of possible errors for each API can be found [here](./code-list.html "Err
 The below example is a request to onboard a new property using SetPropertyDetails.
 
 - Information for more than one property is accepted in the request, max. batch size is 50 properties per request.
-- Each property must have a unique providerPropertyId
+- Each property must have a unique 
 
 ```javascript
 [{
@@ -193,7 +193,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 
 | Attribute | Type | Required for Onboarding | Updatable? | Notes |
 | --------- | ---- | ----------------------- | ---------- | ----- |
-| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. |
+| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. Must **not** contain any whitespace. |
 | name | String | Yes | Yes | Default Property Name, must be submitted in Western European Character set. |
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
@@ -235,12 +235,12 @@ Only star rating is displayed for a property. Rating data submitted will be revi
 
 **contact**
 
-Contact set data are represented as a dictionary, with the following dictionary keys.
+Contact set data are represented as a dictionary, with the following dictionary keys (strict checking against the key name).
 
 | Dictionary Key | Required | Notes |
 | -------------- | -------- | ----- |
 | Property | Yes |  Contact Info for the physical property |
-| ReservationManager | Yes | firstName, lastName, email or fax required.  Property will fail onboarding if this information is not submitted.  |
+| ReservationManager | Yes | firstName, lastName, and **either** an email or fax number is required.  Property will fail onboarding if this information is not submitted.  |
 | AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. |
 | GeneralManager | No | If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly. |
 | PropertyExtranetUser | No | First Name, Last Name, email address required.  An account for Expedia Partner Central (EPC) will be created during the onboarding process and credentials will be sent to the email address submitted.  This EPC account can be used by the hotel to read and respond to user reviews and reports for the property via EPC extranet. Any content updates submitted via the EPC extranet can be overwritten by an update submitted via the Property API. |
@@ -258,7 +258,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| phoneNumberType | String | No | See [code list](./code-list.html#phoneNumberType).  If no type submitted, then 'Undefined' used. |
+| phoneNumberType | String | No | Strict checking against [this list of phone number types](./code-list.html#phoneNumberType).  If no type submitted, then the default of 'Undefined' used. |
 | countryAccessCode | String | No | Country Calling Code. Use ITU standard E.123 / E.164. |
 | areaCode | String | No | Use Telephone numbering plan standards. |
 | number | String | Yes | Include the country and area code within the submitted number. |
