@@ -1,0 +1,1211 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "EPS Property Onboarding API",
+		"description": "The EPS Property Onboarding API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.\n\nNote: All requests should include Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.\n\nPlease contact EPS Product Support to authorize your existing EQC credentials to use the Property API OR to request a new EQC account.",
+		"contact": {
+			"name": "Expedia EPS Xpresso Team",
+			"url": "https://expediaconnectivity.com/developer",
+			"email": "EPSProductSupport@expedia.com"
+		}
+	},
+	"host": "services.expediapartnercentral.com",
+	"schemes": ["https"],
+	"paths": {
+		"/properties/v1/{provider}/{providerPropertyId}": {
+			"get": {
+				"tags": ["Properties"],
+				"summary": "Gets a specific property with a given providerPropertyId for the given provider.",
+				"operationId": "Properties_GetPropertyByProviderPropertyId",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+						"name": "providerPropertyId",
+						"in": "path",
+						"description": "The Provider's unique ID for property.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "provider",
+						"in": "path",
+						"description": "The providers' identifier.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "TUID",
+						"in": "header",
+						"description": "For Internal Use Only.",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]"
+						}
+					},
+					"400": {
+						"description": "BadRequest"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "NotFound"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["Properties"],
+				"summary": "Soft deletes a specific property with a given providerPropertyId for the given provider.",
+				"operationId": "Properties_DisableProperty",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+						"name": "provider",
+						"in": "path",
+						"description": "The providers' identifier.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "providerPropertyId",
+						"in": "path",
+						"description": "The provider's unique ID for property.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "TUID",
+						"in": "header",
+						"description": "For Internal Use Only.",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+						}
+					},
+					"400": {
+						"description": "BadRequest"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "NotFound"
+					}
+				}
+			}
+		},
+		"/properties/v1/{provider}": {
+			"put": {
+				"tags": ["Properties"],
+				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
+				"operationId": "Properties_CreateOrUpdateProperties",
+				"consumes": ["application/json", "text/json"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+						"name": "provider",
+						"in": "path",
+						"description": "The providers' identifier.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "properties",
+						"in": "body",
+						"description": "The list of properties to process.",
+						"required": true,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+							}
+						}
+					}, {
+						"name": "TUID",
+						"in": "header",
+						"description": "For Internal Use Only.",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"202": {
+						"description": "Accepted",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+						}
+					},
+					"400": {
+						"description": "BadRequest",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			},
+			"post": {
+				"tags": ["Properties"],
+				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
+				"operationId": "Properties_CreateOrUpdateProperties",
+				"consumes": ["application/json", "text/json"],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+						"name": "provider",
+						"in": "path",
+						"description": "The providers' identifier.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "properties",
+						"in": "body",
+						"description": "The list of properties to process.",
+						"required": true,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+							}
+						}
+					}, {
+						"name": "TUID",
+						"in": "header",
+						"description": "For Internal Use Only.",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"202": {
+						"description": "Accepted",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+						}
+					},
+					"400": {
+						"description": "BadRequest",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			}
+		},
+		"/properties/v1/{provider}/{providerPropertyId}/status": {
+			"get": {
+				"tags": ["PropertyStatus"],
+				"summary": "Returns the current status of a particular property.",
+				"operationId": "PropertyStatus_GetOnboardingStatusByProviderPropertyId",
+				"consumes": [],
+				"produces": ["application/json", "text/json"],
+				"parameters": [{
+						"name": "provider",
+						"in": "path",
+						"description": "The providers' identifier.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "providerPropertyId",
+						"in": "path",
+						"description": "Provider's unique property ID for property.",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "TUID",
+						"in": "header",
+						"description": "For Internal Use Only.",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus]"
+						}
+					},
+					"400": {
+						"description": "BadRequest"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"404": {
+						"description": "NotFound"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+					}
+				},
+				"pagination": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
+				},
+				"links": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Property": {
+			"type": "object",
+			"properties": {
+				"providerPropertyId": {
+					"type": "string"
+				},
+				"provider": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"expediaId": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"defaultLocale": {
+					"type": "string"
+				},
+				"latitude": {
+					"type": "string"
+				},
+				"longitude": {
+					"type": "string"
+				},
+				"createdUtc": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"modifiedUtc": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"providerPropertyUrl": {
+					"type": "string"
+				},
+				"structureType": {
+					"type": "string"
+				},
+				"currencyCode": {
+					"type": "string"
+				},
+				"billingCurrencyCode": {
+					"type": "string"
+				},
+				"timeZone": {
+					"type": "string"
+				},
+				"brandName": {
+					"type": "string"
+				},
+				"chainCode": {
+					"type": "string"
+				},
+				"addresses": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Address"
+					}
+				},
+				"ratings": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyRating"
+					},
+					"readOnly": true
+				},
+				"contacts": {
+					"type": "object",
+					"properties": {
+						"Undefined": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"Property": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"ReservationManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"AlternateReservationManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"RevenueManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"RevenueDirector": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"SalesDirector": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"GeneralManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"ARDepartmentRep": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"ARSupervisor": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"Controller": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"AssistantController": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"FrontOfficeManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"PropertyExtranetUser": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						}
+					},
+					"readOnly": true
+				},
+				"airports": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Airport"
+					},
+					"readOnly": true
+				},
+				"contents": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyContent"
+					}
+				},
+				"propertyCollectedMandatoryFees": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee"
+					},
+					"readOnly": true
+				},
+				"taxes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Tax"
+					},
+					"readOnly": true
+				},
+				"policies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Policy"
+					},
+					"readOnly": true
+				},
+				"inventorySettings": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.InventorySettings"
+				},
+				"attributes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyAttribute"
+					},
+					"readOnly": true
+				},
+				"status": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Link"
+				},
+				"contentScore": {
+					"format": "double",
+					"type": "number"
+				},
+				"roomTypes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomType"
+					}
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Error": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Pagination": {
+			"type": "object",
+			"properties": {
+				"totalCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"totalPages": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"pageNumber": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"pageSize": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Address": {
+			"type": "object",
+			"properties": {
+				"line1": {
+					"type": "string"
+				},
+				"line2": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"postalCode": {
+					"type": "string"
+				},
+				"countryCode": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PropertyRating": {
+			"type": "object",
+			"properties": {
+				"score": {
+					"format": "double",
+					"type": "number"
+				},
+				"maxScore": {
+					"format": "double",
+					"type": "number"
+				},
+				"source": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Contact": {
+			"type": "object",
+			"properties": {
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"emails": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"readOnly": true
+				},
+				"phoneNumbers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PhoneNumber"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Airport": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PropertyContent": {
+			"type": "object",
+			"properties": {
+				"locale": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"providerPropertyUrl": {
+					"type": "string"
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Image"
+					},
+					"readOnly": true
+				},
+				"amenities": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Amenity"
+					},
+					"readOnly": true
+				},
+				"paragraphs": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Paragraph"
+					},
+					"readOnly": true
+				},
+				"rooms": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomTypeContent"
+					}
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"scope": {
+					"type": "string"
+				},
+				"duration": {
+					"type": "string"
+				},
+				"value": {
+					"format": "double",
+					"type": "number"
+				},
+				"startDate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"endDate": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Tax": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"detailCode": {
+					"type": "string"
+				},
+				"value": {
+					"format": "double",
+					"type": "number"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Policy": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"detailCode": {
+					"type": "string"
+				},
+				"value": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.InventorySettings": {
+			"type": "object",
+			"properties": {
+				"rateAcquisitionType": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PropertyAttribute": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"value": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Link": {
+			"type": "object",
+			"properties": {
+				"href": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.RoomType": {
+			"type": "object",
+			"properties": {
+				"bedrooms": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"bathrooms": {
+					"format": "double",
+					"type": "number"
+				},
+				"maxOccupancy": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PhoneNumber": {
+			"type": "object",
+			"properties": {
+				"phoneNumberType": {
+					"enum": ["Undefined", "Phone", "Fax", "Mobile"],
+					"type": "string"
+				},
+				"countryAccessCode": {
+					"type": "string"
+				},
+				"areaCode": {
+					"type": "string"
+				},
+				"number": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Image": {
+			"type": "object",
+			"properties": {
+				"url": {
+					"type": "string"
+				},
+				"categoryCode": {
+					"type": "string"
+				},
+				"caption": {
+					"type": "string"
+				},
+				"width": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"height": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Amenity": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"detailCode": {
+					"type": "string"
+				},
+				"value": {
+					"format": "double",
+					"type": "number"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Paragraph": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string"
+				},
+				"value": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.RoomTypeContent": {
+			"type": "object",
+			"properties": {
+				"roomTypeId": {
+					"type": "string"
+				},
+				"images": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Image"
+					},
+					"readOnly": true
+				},
+				"amenities": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Amenity"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.PropertyResponse": {
+			"type": "object",
+			"properties": {
+				"statistics": {
+					"type": "object",
+					"additionalProperties": {
+						"format": "int32",
+						"type": "integer"
+					},
+					"readOnly": true
+				},
+				"validationErrors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.ValidationError"
+					},
+					"readOnly": true
+				},
+				"entity": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+					}
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+					}
+				},
+				"pagination": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
+				},
+				"links": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.ValidationError": {
+			"type": "object",
+			"properties": {
+				"provider": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"providerPropertyId": {
+					"type": "string"
+				},
+				"code": {
+					"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus]": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus"
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+					}
+				},
+				"pagination": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
+				},
+				"links": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus": {
+			"type": "object",
+			"properties": {
+				"provider": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"providerPropertyId": {
+					"type": "string"
+				},
+				"expediaId": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"code": {
+					"type": "string"
+				},
+				"timestampUtc": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"reasonCodes": {
+					"type": "array",
+					"items": {
+						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"type": "string"
+					}
+				},
+				"messages": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus]": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus"
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+					}
+				},
+				"pagination": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
+				},
+				"links": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					},
+					"readOnly": true
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus": {
+			"type": "object",
+			"properties": {
+				"provider": {
+					"type": "string",
+					"readOnly": true
+				},
+				"providerPropertyId": {
+					"type": "string",
+					"readOnly": true
+				},
+				"expediaId": {
+					"format": "int32",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"type": "string"
+				},
+				"publicCode": {
+					"type": "string"
+				},
+				"code": {
+					"type": "string"
+				},
+				"timestampUtc": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"publicReasonCodes": {
+					"type": "array",
+					"items": {
+						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"type": "string"
+					},
+					"readOnly": true
+				},
+				"reasonCodes": {
+					"type": "array",
+					"items": {
+						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"type": "string"
+					},
+					"readOnly": true
+				},
+				"messages": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"readOnly": true
+				},
+				"onboardingStartUtc": {
+					"format": "date-time",
+					"type": "string",
+					"readOnly": true
+				},
+				"onboardingEndUtc": {
+					"format": "date-time",
+					"type": "string",
+					"readOnly": true
+				},
+				"timeToOnboard": {
+					"type": "string",
+					"readOnly": true
+				},
+				"timeline": {
+					"type": "object",
+					"properties": {
+						"None": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ActivateContentShellFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ActivateContentShellSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ConfigureBrandFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ConfigureBrandSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ConnectivityRolloutFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ConnectivityRolloutSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ContentValidationFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateContractFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateContractSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateNotificationSettingsFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateNotificationSettingsSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreatePropertySettingsFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreatePropertySettingsSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateSupplierContactsFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"CreateSupplierContactsSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ExpediaIdAssigned": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ExpediaIdUpdated": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"FinanceSetupPending": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"LegalCheckFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"LegalCheckPassed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"LegalCheckPending": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PropertyOnboardSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PropertyOnboardValidationFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PropertyOnboardValidationPassed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PublishPropertyContentFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PublishPropertyContentSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"SavePropertySucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateTaxesFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateTaxesSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdatePointOfSaleRestrictionsSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdatePointOfSaleRestrictionsFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdatePropertySettingsFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdatePropertySettingsSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateProviderBookabilityFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateProviderBookabilitySucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UserAccountSetupFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UserAccountSetupSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"FinanceSetupSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"LegalCheckSkipped": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"DeletePropertyFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"DeletePropertySucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"InvalidateContractFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"InvalidateContractSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateActiveContentProviderSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"UpdateActiveContentProviderFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"DeleteProviderBookabilitySucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ChangeProviderFailed": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ChangeProviderSucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"PublishPropertyRequested": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"OnboardPropertyRequested": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ChangeProviderRequested": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"ExpediaIdAssignmentPending": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						},
+						"DisablePropertySucceeded": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
+						}
+					}
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem": {
+			"type": "object",
+			"properties": {
+				"timestampUtc": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"sincePrev": {
+					"type": "string"
+				},
+				"sinceStart": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"securityDefinitions": {
+		"UserSecurity": {
+			"type": "basic"
+		}
+	},
+	"security": [{
+			"UserSecurity": []
+		}
+	],
+	"tags": [{
+			"name": "Properties",
+			"description": "The properties resource"
+		}, {
+			"name": "PropertyStatus",
+			"description": "The property status resource"
+		}
+	]
+}
