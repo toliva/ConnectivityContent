@@ -899,30 +899,6 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus]": {
-			"type": "object",
-			"properties": {
-				"entity": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus"
-				},
-				"errors": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
-					}
-				},
-				"pagination": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
-				},
-				"links": {
-					"type": "object",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"readOnly": true
-				}
-			}
-		},
 		"Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus": {
 			"type": "object",
 			"properties": {
