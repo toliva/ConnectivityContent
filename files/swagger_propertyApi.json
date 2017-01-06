@@ -10,7 +10,7 @@
 			"email": "EPSProductSupport@expedia.com"
 		}
 	},
-	"host": "services.expediapartnercentral.com",
+	"host": "content.eqs.local",
 	"basePath": "/properties/v1",
 	"schemes": ["https"],
 	"paths": {
@@ -124,64 +124,6 @@
 		},
 		"/{provider}": {
 			"put": {
-				"tags": ["Properties"],
-				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
-				"operationId": "Properties_CreateOrUpdateProperties",
-				"consumes": ["application/json", "text/json"],
-				"produces": ["application/json", "text/json"],
-				"parameters": [{
-						"name": "provider",
-						"in": "path",
-						"description": "The providers' identifier.",
-						"required": true,
-						"type": "string"
-					}, {
-						"name": "properties",
-						"in": "body",
-						"description": "The list of properties to process.",
-						"required": true,
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
-							}
-						}
-					}, {
-						"name": "Authorization",
-						"in": "header",
-						"description": "Basic Http Authentication token",
-						"required": true,
-						"type": "string",
-						"format": "base64",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
-					}, {
-						"name": "TUID",
-						"in": "header",
-						"description": "For Internal Use Only.",
-						"required": false,
-						"type": "integer",
-						"format": "int32"
-					}
-				],
-				"responses": {
-					"202": {
-						"description": "Accepted",
-						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
-						}
-					},
-					"400": {
-						"description": "BadRequest",
-						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
-						}
-					},
-					"401": {
-						"description": "Unauthorized"
-					}
-				}
-			},
-			"post": {
 				"tags": ["Properties"],
 				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
 				"operationId": "Properties_CreateOrUpdateProperties",
