@@ -239,6 +239,39 @@
 		}
 	},
 	"definitions": {
+		"Expedia.Xpresso.Common.Models.Error": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"message": {
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Pagination": {
+			"type": "object",
+			"properties": {
+				"totalCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"totalPages": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"pageNumber": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"pageSize": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
 		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]": {
 			"type": "object",
 			"properties": {
@@ -435,39 +468,6 @@
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomType"
 					}
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Error": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"message": {
-					"type": "string"
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Pagination": {
-			"type": "object",
-			"properties": {
-				"totalCount": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"totalPages": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"pageNumber": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"pageSize": {
-					"format": "int32",
-					"type": "integer"
 				}
 			}
 		},
@@ -896,256 +896,6 @@
 						"type": "string"
 					},
 					"readOnly": true
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Content.Internal.PropertyStatus": {
-			"type": "object",
-			"properties": {
-				"provider": {
-					"type": "string",
-					"readOnly": true
-				},
-				"providerPropertyId": {
-					"type": "string",
-					"readOnly": true
-				},
-				"expediaId": {
-					"format": "int32",
-					"type": "integer",
-					"readOnly": true
-				},
-				"name": {
-					"type": "string"
-				},
-				"publicCode": {
-					"type": "string"
-				},
-				"code": {
-					"type": "string"
-				},
-				"timestampUtc": {
-					"format": "date-time",
-					"type": "string"
-				},
-				"publicReasonCodes": {
-					"type": "array",
-					"items": {
-						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
-						"type": "string"
-					},
-					"readOnly": true
-				},
-				"reasonCodes": {
-					"type": "array",
-					"items": {
-						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
-						"type": "string"
-					},
-					"readOnly": true
-				},
-				"messages": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					},
-					"readOnly": true
-				},
-				"onboardingStartUtc": {
-					"format": "date-time",
-					"type": "string",
-					"readOnly": true
-				},
-				"onboardingEndUtc": {
-					"format": "date-time",
-					"type": "string",
-					"readOnly": true
-				},
-				"timeToOnboard": {
-					"type": "string",
-					"readOnly": true
-				},
-				"timeline": {
-					"type": "object",
-					"properties": {
-						"None": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ActivateContentShellFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ActivateContentShellSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ConfigureBrandFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ConfigureBrandSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ConnectivityRolloutFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ConnectivityRolloutSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ContentValidationFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateContractFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateContractSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateNotificationSettingsFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateNotificationSettingsSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreatePropertySettingsFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreatePropertySettingsSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateSupplierContactsFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"CreateSupplierContactsSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ExpediaIdAssigned": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ExpediaIdUpdated": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"FinanceSetupPending": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"LegalCheckFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"LegalCheckPassed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"LegalCheckPending": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PropertyOnboardSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PropertyOnboardValidationFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PropertyOnboardValidationPassed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PublishPropertyContentFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PublishPropertyContentSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"SavePropertySucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateTaxesFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateTaxesSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdatePointOfSaleRestrictionsSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdatePointOfSaleRestrictionsFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdatePropertySettingsFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdatePropertySettingsSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateProviderBookabilityFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateProviderBookabilitySucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UserAccountSetupFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UserAccountSetupSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"FinanceSetupSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"LegalCheckSkipped": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"DeletePropertyFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"DeletePropertySucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"InvalidateContractFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"InvalidateContractSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateActiveContentProviderSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"UpdateActiveContentProviderFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"DeleteProviderBookabilitySucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ChangeProviderFailed": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ChangeProviderSucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"PublishPropertyRequested": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"OnboardPropertyRequested": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ChangeProviderRequested": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"ExpediaIdAssignmentPending": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						},
-						"DisablePropertySucceeded": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem"
-						}
-					}
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Content.Internal.TimelineItem": {
-			"type": "object",
-			"properties": {
-				"timestampUtc": {
-					"format": "date-time",
-					"type": "string"
-				},
-				"sincePrev": {
-					"type": "string"
-				},
-				"sinceStart": {
-					"type": "string"
 				}
 			}
 		}
