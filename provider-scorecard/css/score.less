@@ -1,24 +1,62 @@
-@good: #0087F5;
-@bad: #f50200;
+@good: #406f1d;
+@bad: #a92216;
+@blue: #2962b5;
+@black: #404040;
 @card-background: #f8f8f8;
 @body-background: white;
 
 body {
     background: @body-background;
+    color: @black;
+}
+
+.simple-content {
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 50px;
+
+    h1 {
+        font-size: 38px;
+        margin-bottom: 0;
+    }
+
+    .scorecard-provider {
+        font-size: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+
+    .scorecard-rank {
+        text-align: right;
+        font-size: 30px;
+        padding: 0;
+
+        .rating {
+            color: @blue;
+        }
+    }
 }
 
 .scorecard-row {
+    margin-left: 35px;
+    margin-right: 35px;
+    max-width: none;
+    background: @card-background;
+    box-shadow: 0px 2px #c7c7c7;
+    border-radius: 4px;
+    margin-bottom: 50px;
 
     .scorecard-category {
-        color: #0087F5;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 3em;
+        font-size: 2em;
+        margin-top: 1em;
+        margin-bottom: 0.7em;
     }
 
     .scorecard-category-score {
         color: inherit;
-        margin-bottom: 3em;
+        margin-top: 2em;
+        text-align: right;
 
         .score-total {
             background: ghostwhite;
@@ -26,50 +64,42 @@ body {
             border: 1px solid #dddddd;
 
             .score-value {
-                background: #0087F5;
+                background: @good;
             }
         }
     }
 
-    .scorecard-provider {
-        font-size: 3em;
-    }
-
-    .scorecard-rank {
-        text-align: center;
-        font-size: 3em;
+    .scorecard-description {
+        margin-bottom: 1em;
     }
 
     .scorecard-rank:hover {
         cursor: pointer;
     }
 
-    .scorecard-column {
+    .scorecard-cards {
+        padding: 0;
 
         .check {
-            height: 8em !important;
+            height: auto !important;
+            padding-bottom: 1em;
+            padding-top: 1em;
         }
 
         .border {
-            border: 1px solid lightgrey;
-            height: 6em;
+            border-top: 1px solid lightgrey;
+            border-right: 1px solid lightgrey;
+            border-bottom: none;
+            height: 8em;
             padding-top: 1em;
-            margin-bottom: 50px;
-            background: @card-background;
-            box-shadow: 0px 2px #c7c7c7;
-            border-radius: 4px;
+        }
+
+        .border:last-of-type {
+            border-right: none;
         }
 
         .border:hover {
             cursor: pointer;
-            box-shadow: 0px 4px 4px #ddd;
-            position: relative;
-            top: -2px;
-        }
-
-        .border:active {
-            top: 0;
-            box-shadow: 0px 2px 2px #ddd;
         }
 
         .has-tip {
@@ -80,19 +110,24 @@ body {
 
         * {
             line-height: 1em;
-            margin-bottom: 10px;
-        }
-
-        .scorecard-title {
-            color: lightslategrey;
         }
 
         .value {
-            font-size: 2em;
+            font-size: 2.5em;
+
+            .unit-top {
+                font-size: 0.5em;
+                position: relative;
+                top: -0.7em;
+            }
+
+            .unit-bottom {
+                font-size: 0.5em;
+            }
         }
 
         .rate-change {
-            line-height: 2em;
+            line-height: 1.25em;
 
             .green {
                 color: darkgreen;
@@ -104,13 +139,14 @@ body {
         }
 
         .state {
-            font-size: 2em;
-            line-height: 2em;
-            text-align: center;
+            font-size: 1.5em;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .feature {
-            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         >.green {
