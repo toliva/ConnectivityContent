@@ -10,7 +10,7 @@
 			"email": "EPSProductSupport@expedia.com"
 		}
 	},
-	"host": "content.eqs.local",
+	"host": "services.expediapartnercentral.com",
 	"basePath": "/properties/v1",
 	"schemes": ["https"],
 	"paths": {
