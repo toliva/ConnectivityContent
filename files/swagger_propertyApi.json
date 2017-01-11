@@ -34,14 +34,6 @@
 						"required": true,
 						"type": "string"
 					}, {
-						"name": "Authorization",
-						"in": "header",
-						"description": "Basic Http Authentication token",
-						"required": true,
-						"type": "string",
-						"format": "base64",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
-					}, {
 						"name": "TUID",
 						"in": "header",
 						"description": "For Internal Use Only.",
@@ -86,14 +78,6 @@
 						"description": "The provider's unique ID for property.",
 						"required": true,
 						"type": "string"
-					}, {
-						"name": "Authorization",
-						"in": "header",
-						"description": "Basic Http Authentication token",
-						"required": true,
-						"type": "string",
-						"format": "base64",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"name": "TUID",
 						"in": "header",
@@ -146,14 +130,6 @@
 								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
 							}
 						}
-					}, {
-						"name": "Authorization",
-						"in": "header",
-						"description": "Basic Http Authentication token",
-						"required": true,
-						"type": "string",
-						"format": "base64",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"name": "TUID",
 						"in": "header",
