@@ -251,27 +251,6 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Pagination": {
-			"type": "object",
-			"properties": {
-				"totalCount": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"totalPages": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"pageNumber": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"pageSize": {
-					"format": "int32",
-					"type": "integer"
-				}
-			}
-		},
 		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]": {
 			"type": "object",
 			"properties": {
@@ -283,16 +262,6 @@
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
 					}
-				},
-				"pagination": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
-				},
-				"links": {
-					"type": "object",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"readOnly": true
 				}
 			}
 		},
@@ -322,14 +291,6 @@
 				"longitude": {
 					"type": "string"
 				},
-				"createdUtc": {
-					"format": "date-time",
-					"type": "string"
-				},
-				"modifiedUtc": {
-					"format": "date-time",
-					"type": "string"
-				},
 				"providerPropertyUrl": {
 					"type": "string"
 				},
@@ -343,12 +304,6 @@
 					"type": "string"
 				},
 				"timeZone": {
-					"type": "string"
-				},
-				"brandName": {
-					"type": "string"
-				},
-				"chainCode": {
 					"type": "string"
 				},
 				"addresses": {
@@ -367,9 +322,6 @@
 				"contacts": {
 					"type": "object",
 					"properties": {
-						"Undefined": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
 						"Property": {
 							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
 						},
@@ -379,31 +331,7 @@
 						"AlternateReservationManager": {
 							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
 						},
-						"RevenueManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"RevenueDirector": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"SalesDirector": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
 						"GeneralManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"ARDepartmentRep": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"ARSupervisor": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"Controller": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"AssistantController": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"FrontOfficeManager": {
 							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
 						},
 						"PropertyExtranetUser": {
@@ -458,10 +386,6 @@
 				},
 				"status": {
 					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Link"
-				},
-				"contentScore": {
-					"format": "double",
-					"type": "number"
 				},
 				"roomTypes": {
 					"type": "array",
@@ -581,12 +505,6 @@
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Paragraph"
 					},
 					"readOnly": true
-				},
-				"rooms": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomTypeContent"
-					}
 				}
 			}
 		},
@@ -718,14 +636,6 @@
 				},
 				"caption": {
 					"type": "string"
-				},
-				"width": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"height": {
-					"format": "int32",
-					"type": "integer"
 				}
 			}
 		},
@@ -752,28 +662,6 @@
 				},
 				"value": {
 					"type": "string"
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Content.RoomTypeContent": {
-			"type": "object",
-			"properties": {
-				"roomTypeId": {
-					"type": "string"
-				},
-				"images": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Image"
-					},
-					"readOnly": true
-				},
-				"amenities": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Amenity"
-					},
-					"readOnly": true
 				}
 			}
 		},
@@ -806,16 +694,6 @@
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
 					}
-				},
-				"pagination": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
-				},
-				"links": {
-					"type": "object",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"readOnly": true
 				}
 			}
 		},
@@ -830,7 +708,7 @@
 					"type": "string"
 				},
 				"code": {
-					"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+					"enum": ["PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
 					"type": "string"
 				},
 				"message": {
@@ -849,16 +727,6 @@
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
 					}
-				},
-				"pagination": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Pagination"
-				},
-				"links": {
-					"type": "object",
-					"additionalProperties": {
-						"type": "string"
-					},
-					"readOnly": true
 				}
 			}
 		},
@@ -886,7 +754,7 @@
 				"reasonCodes": {
 					"type": "array",
 					"items": {
-						"enum": ["None", "PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"enum": ["PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
 						"type": "string"
 					}
 				},
