@@ -202,14 +202,6 @@
 						"required": true,
 						"type": "string"
 					}, {
-						"name": "Authorization",
-						"in": "header",
-						"description": "Basic Http Authentication token",
-						"required": true,
-						"type": "string",
-						"format": "base64",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
-					}, {
 						"name": "TUID",
 						"in": "header",
 						"description": "For Internal Use Only.",
@@ -773,6 +765,10 @@
 			"type": "basic"
 		}
 	},
+	"security": [{
+			"eps-security": []
+		}
+	],
 	"tags": [{
 			"name": "Properties",
 			"description": "The properties resource"
