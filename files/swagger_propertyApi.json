@@ -3,7 +3,7 @@
 	"info": {
 		"version": "v1",
 		"title": "EPS Property Onboarding API",
-		"description": "The EPS Property Onboarding API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.\n\nNote: All requests should include Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.\n\nPlease contact EPS Product Support to authorize your existing EQC credentials to use the Property API OR to request a new EQC account.",
+		"description": "The EPS Property Onboarding API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.\n\nNote: All requests should include Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.\n\nPlease contact EPS Product Support to authorize your existing EQC credentials to use the Property API OR to request a new EQC account.\n\nTo start experimenting, we've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 12933870",
 		"contact": {
 			"name": "Expedia EPS Xpresso Team",
 			"url": "https://expediaconnectivity.com/developer",
