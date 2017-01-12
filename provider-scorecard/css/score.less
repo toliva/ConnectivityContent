@@ -34,6 +34,7 @@ body {
 
         .rating {
             color: @blue;
+            cursor: pointer;
         }
     }
 }
@@ -59,9 +60,8 @@ body {
         text-align: right;
 
         .score-total {
-            background: ghostwhite;
-            padding: 2px;
-            border: 1px solid #dddddd;
+            background: #E0E0E0;
+            padding: 0;
 
             .score-value {
                 background: @good;
@@ -126,6 +126,10 @@ body {
             }
         }
 
+        .metric {
+            margin-top: 1em;
+        }
+
         .rate-change {
             line-height: 1.25em;
 
@@ -142,6 +146,7 @@ body {
             font-size: 1.5em;
             display: inline-block;
             vertical-align: middle;
+            margin-right: 0.5em;
         }
 
         .feature {
@@ -158,6 +163,10 @@ body {
             .state {
                 color: @good;
             }
+
+            .standard {
+                color: @good;
+            }
         }
 
         >.red {
@@ -167,6 +176,10 @@ body {
             }
 
             .state {
+                color: @bad;
+            }
+
+            .standard {
                 color: @bad;
             }
         }
