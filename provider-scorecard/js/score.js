@@ -8,6 +8,8 @@ function providerPortalServiceBaseUrl() {
 
 var provider = false;
 
+var foundationSize = false;
+
 var demo = {
     "provider": {
         "name": "ExpediaProvider",
@@ -292,6 +294,11 @@ function generateScorecardFeature(category, id) {
 }
 
 function createBorders() {
+    if (!foundationSize) {
+        foundationSize = Foundation.MediaQuery.current;
+    } else if (Foundation.MediaQuery.current == foundationSize) {
+        return;
+    }
     $("#optimise .border").removeAttr("style");
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");
