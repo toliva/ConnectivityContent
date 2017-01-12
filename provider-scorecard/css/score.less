@@ -80,7 +80,7 @@ body {
     .scorecard-cards {
         padding: 0;
 
-        .check {
+        .checkmark {
             height: auto !important;
             padding-bottom: 1em;
             padding-top: 1em;
@@ -143,7 +143,6 @@ body {
         }
 
         .state {
-            font-size: 1.5em;
             display: inline-block;
             vertical-align: middle;
             margin-right: 0.5em;
@@ -162,6 +161,9 @@ body {
 
             .state {
                 color: @good;
+                line-height: 1.6em;
+                margin-left: 4px;
+                margin-right: 1em;
             }
 
             .standard {
@@ -177,6 +179,7 @@ body {
 
             .state {
                 color: @bad;
+                font-size: 1.5em;
             }
 
             .standard {
