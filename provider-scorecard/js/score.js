@@ -78,7 +78,6 @@ var demo = {
                 "delta": 0.2,
                 "deltaSuccess": true,
                 "unit": "%",
-                "differenceFromStandard": 0.016783476
             },
             "onboardingSpeed": {
                 "value": "5.7",
@@ -246,21 +245,22 @@ function generateScorecardCategory(category, id) {
         var element = category["attributes"][key];
         var elementSelector = "#" + id + " #" + key;
         var value = element.value;
+        var difference = element.differenceFromStandard || 0;
 
         if (value == "") {
             value = "Not Available"
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
-            var standard = Math.abs(element.differenceFromStandard).toFixed(1) + " days ";
-            standard += (element.differenceFromStandard < 0) ? "quicker than recommended" : "longer than recommended";
+            var standard = Math.abs(difference).toFixed(1) + " days ";
+            standard += (difference < 0) ? "quicker than recommended" : "longer than recommended";
         } else if (element.unit == "%") {
             value += "<span class='unit-top'>" + element.unit + "</span>";
-            var standard = Math.abs(element.differenceFromStandard * 100).toFixed(1) + "% ";
-            standard += (element.differenceFromStandard < 0) ? "less than recommended" : "higher than recommended";
+            var standard = Math.abs(difference * 100).toFixed(1) + "% ";
+            standard += (difference < 0) ? "less than recommended" : "higher than recommended";
         }
         $(elementSelector + " .value").html(value);
         $(elementSelector).addClass(element.success ? "green" : "red");
-        if (element.success) {
+        if (element.success || !element.differenceFromStandard) {
             $(elementSelector + " .standard").remove();
         } else {
             $(elementSelector + " .standard").text(standard).addClass("red");
