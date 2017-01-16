@@ -114,6 +114,7 @@ body {
 
         .value {
             font-size: 2.5em;
+            font-family: "Helvetica Neue";
 
             .unit-top {
                 font-size: 0.5em;
@@ -132,14 +133,6 @@ body {
 
         .rate-change {
             line-height: 1.25em;
-
-            .green {
-                color: darkgreen;
-            }
-
-            .red {
-                color: darkred;
-            }
         }
 
         .state {
@@ -160,6 +153,14 @@ body {
             font-size: 2em;
         }
 
+        .rate-change.green {
+            color: @good;
+        }
+
+        .rate-change.red {
+            color: @bad;
+        }
+
         >.green {
 
             .value {
@@ -171,6 +172,10 @@ body {
                 line-height: 1.6em;
                 margin-left: 4px;
                 margin-right: 1em;
+            }
+
+            .feature {
+                color: @good;
             }
 
             .standard {
@@ -189,6 +194,10 @@ body {
                 font-size: 1.5em;
             }
 
+            .feature {
+                color: @bad;
+            }
+
             .standard {
                 color: @bad;
             }
@@ -205,8 +214,15 @@ hr {
     min-width: 200px;
 }
 
-#enhance .border:hover {
-    cursor: default;
+#enhance {
+    .border:hover {
+        cursor: default;
+    }
+
+    .border {
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
 }
 
 #top-metrics {
