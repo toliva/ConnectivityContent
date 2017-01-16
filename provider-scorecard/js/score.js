@@ -175,6 +175,9 @@ function metricClickCallback(event) {
         .done(function(jqxhr) {
             $("#top-metrics h1").text(heading);
             $("#top-metrics p").text("These are the top 5 performers in this category.");
+            if ($("#" + category).attr("title")) {
+                $("#top-metrics p").text("These are the top 5 performers in this category. " + $("#" + category).attr("title"));
+            }
             populateTopMetricsList(jqxhr, true);
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
