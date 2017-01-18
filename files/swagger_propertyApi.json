@@ -129,165 +129,165 @@
 						"in": "body",
 						"description": "The list of properties to process.",
 						"required": true,
+                        "default": [{
+                                "providerPropertyId": "12933870",
+                                "provider": "Spoofer",
+                                "expediaId": null,
+                                "name": "Property Name",
+                                "latitude": "21.3752",
+                                "longitude": "-88.3261",
+                                "createdUtc": "2017-01-18T02:16:42.5486324Z",
+                                "modifiedUtc": "2017-01-18T02:21:42.5486324Z",
+                                "providerPropertyUrl": "http://example.org",
+                                "structureType": "Hotel",
+                                "currencyCode": "GBP",
+                                "billingCurrencyCode": "GBP",
+                                "timeZone": "Europe/Dublin",
+                                "addresses": [{
+                                        "line1": "Address Line 1",
+                                        "line2": null,
+                                        "city": "City",
+                                        "state": "State or Province",
+                                        "postalCode": "77780",
+                                        "countryCode": "MEX"
+                                    }
+                                ],
+                                "ratings": [{
+                                        "score": 4.0,
+                                        "maxScore": 5.0,
+                                        "source": "AAA",
+                                        "description": "4 STARS"
+                                    }
+                                ],
+                                "contacts": {
+                                    "property": {
+                                        "phoneNumbers": [{
+                                                "phoneNumberType": "Phone",
+                                                "countryAccessCode": "1",
+                                                "areaCode": "123",
+                                                "number": "1234567"
+                                            }
+                                        ]
+                                    },
+                                    "reservationManager": {
+                                        "firstName": "First",
+                                        "lastName": "Last",
+                                        "emails": ["abc@xyz.com"],
+                                        "phoneNumbers": [{
+                                                "phoneNumberType": "Phone",
+                                                "countryAccessCode": "1",
+                                                "areaCode": "123",
+                                                "number": "4567890"
+                                            }, {
+                                                "phoneNumberType": "Fax",
+                                                "countryAccessCode": "1",
+                                                "areaCode": "123",
+                                                "number": "7890123"
+                                            }
+                                        ]
+                                    },
+                                    "alternateReservationManager": {
+                                        "phoneNumbers": [{
+                                                "phoneNumberType": "Phone",
+                                                "countryAccessCode": "1",
+                                                "areaCode": "123",
+                                                "number": "1234567"
+                                            }
+                                        ]
+                                    },
+                                    "generalManager": {
+                                        "firstName": "Property",
+                                        "lastName": "ExtranetUser",
+                                        "emails": ["abc123@xyz.com"]
+                                    }
+                                },
+                                "airports": [{
+                                        "code": "PCM",
+                                        "name": "Playa del Carmen Airport"
+                                    }
+                                ],
+                                "contents": [{
+                                        "locale": "en-US",
+                                        "name": "Localized Property Name",
+                                        "providerPropertyUrl": null,
+                                        "images": [{
+                                                "url": "http://images.xyz.com/mainImage.jpg",
+                                                "categoryCode": "FEATURED_IMAGE",
+                                                "caption": "Main Image"
+                                            }, {
+                                                "url": "http://images.xyz.com/additionalImage.jpg",
+                                                "categoryCode": null,
+                                                "caption": "Additional Image"
+                                            }
+                                        ],
+                                        "amenities": [{
+                                                "code": "BREAKFAST",
+                                                "detailCode": "FREE",
+                                                "value": null
+                                            }, {
+                                                "code": "WIFI_INTERNET",
+                                                "detailCode": "SURCHARGE_PER_STAY",
+                                                "value": 10.99
+                                            }
+                                        ],
+                                        "paragraphs": [{
+                                                "code": "DESCRIPTION",
+                                                "value": "Property description."
+                                            }, {
+                                                "code": "SPECIAL_CHECKIN_INSTRUCTIONS",
+                                                "value": "Special check-in instructions."
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "propertyCollectedMandatoryFees": [{
+                                        "code": "RESORT_FEE",
+                                        "scope": "PER_PERSON",
+                                        "duration": "PER_NIGHT",
+                                        "value": 25.99,
+                                        "startDate": null,
+                                        "endDate": null
+                                    }
+                                ],
+                                "taxes": [{
+                                        "code": "VAT",
+                                        "detailCode": "PERCENT_PER_STAY",
+                                        "value": 20.0
+                                    }
+                                ],
+                                "policies": [{
+                                        "code": "MINIMUM_CHECKIN_AGE",
+                                        "detailCode": null,
+                                        "value": "18"
+                                    }, {
+                                        "code": "CHECKIN_TIME",
+                                        "detailCode": null,
+                                        "value": "2:00 PM"
+                                    }, {
+                                        "code": "CHECKOUT_TIME",
+                                        "detailCode": null,
+                                        "value": "11:00 AM"
+                                    }, {
+                                        "code": "CANCELLATION_CUTOFF_TIME",
+                                        "detailCode": null,
+                                        "value": "6:00 PM"
+                                    }
+                                ],
+                                "inventorySettings": {
+                                    "rateAcquisitionType": "NET_RATE"
+                                },
+                                "attributes": [{
+                                        "code": "TOTAL_ROOMS",
+                                        "value": "15"
+                                    }
+                                ]
+                            }
+                        ],
 						"schema": {
 							"type": "array",
 							"items": {
 								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
-							},
-							"default": [{
-									"providerPropertyId": "12933870",
-									"provider": "Spoofer",
-									"expediaId": null,
-									"name": "Property Name",
-									"latitude": "21.3752",
-									"longitude": "-88.3261",
-									"createdUtc": "2017-01-18T02:16:42.5486324Z",
-									"modifiedUtc": "2017-01-18T02:21:42.5486324Z",
-									"providerPropertyUrl": "http://example.org",
-									"structureType": "Hotel",
-									"currencyCode": "GBP",
-									"billingCurrencyCode": "GBP",
-									"timeZone": "Europe/Dublin",
-									"addresses": [{
-											"line1": "Address Line 1",
-											"line2": null,
-											"city": "City",
-											"state": "State or Province",
-											"postalCode": "77780",
-											"countryCode": "MEX"
-										}
-									],
-									"ratings": [{
-											"score": 4.0,
-											"maxScore": 5.0,
-											"source": "AAA",
-											"description": "4 STARS"
-										}
-									],
-									"contacts": {
-										"property": {
-											"phoneNumbers": [{
-													"phoneNumberType": "Phone",
-													"countryAccessCode": "1",
-													"areaCode": "123",
-													"number": "1234567"
-												}
-											]
-										},
-										"reservationManager": {
-											"firstName": "First",
-											"lastName": "Last",
-											"emails": ["abc@xyz.com"],
-											"phoneNumbers": [{
-													"phoneNumberType": "Phone",
-													"countryAccessCode": "1",
-													"areaCode": "123",
-													"number": "4567890"
-												}, {
-													"phoneNumberType": "Fax",
-													"countryAccessCode": "1",
-													"areaCode": "123",
-													"number": "7890123"
-												}
-											]
-										},
-										"alternateReservationManager": {
-											"phoneNumbers": [{
-													"phoneNumberType": "Phone",
-													"countryAccessCode": "1",
-													"areaCode": "123",
-													"number": "1234567"
-												}
-											]
-										},
-										"generalManager": {
-											"firstName": "Property",
-											"lastName": "ExtranetUser",
-											"emails": ["abc123@xyz.com"]
-										}
-									},
-									"airports": [{
-											"code": "PCM",
-											"name": "Playa del Carmen Airport"
-										}
-									],
-									"contents": [{
-											"locale": "en-US",
-											"name": "Localized Property Name",
-											"providerPropertyUrl": null,
-											"images": [{
-													"url": "http://images.xyz.com/mainImage.jpg",
-													"categoryCode": "FEATURED_IMAGE",
-													"caption": "Main Image"
-												}, {
-													"url": "http://images.xyz.com/additionalImage.jpg",
-													"categoryCode": null,
-													"caption": "Additional Image"
-												}
-											],
-											"amenities": [{
-													"code": "BREAKFAST",
-													"detailCode": "FREE",
-													"value": null
-												}, {
-													"code": "WIFI_INTERNET",
-													"detailCode": "SURCHARGE_PER_STAY",
-													"value": 10.99
-												}
-											],
-											"paragraphs": [{
-													"code": "DESCRIPTION",
-													"value": "Property description."
-												}, {
-													"code": "SPECIAL_CHECKIN_INSTRUCTIONS",
-													"value": "Special check-in instructions."
-												}
-											]
-										}
-									],
-									"propertyCollectedMandatoryFees": [{
-											"code": "RESORT_FEE",
-											"scope": "PER_PERSON",
-											"duration": "PER_NIGHT",
-											"value": 25.99,
-											"startDate": null,
-											"endDate": null
-										}
-									],
-									"taxes": [{
-											"code": "VAT",
-											"detailCode": "PERCENT_PER_STAY",
-											"value": 20.0
-										}
-									],
-									"policies": [{
-											"code": "MINIMUM_CHECKIN_AGE",
-											"detailCode": null,
-											"value": "18"
-										}, {
-											"code": "CHECKIN_TIME",
-											"detailCode": null,
-											"value": "2:00 PM"
-										}, {
-											"code": "CHECKOUT_TIME",
-											"detailCode": null,
-											"value": "11:00 AM"
-										}, {
-											"code": "CANCELLATION_CUTOFF_TIME",
-											"detailCode": null,
-											"value": "6:00 PM"
-										}
-									],
-									"inventorySettings": {
-										"rateAcquisitionType": "NET_RATE"
-									},
-									"attributes": [{
-											"code": "TOTAL_ROOMS",
-											"value": "15"
-										}
-									]
-								}
-							]
+							}
 						}
 					}, {
 						"name": "TUID",
