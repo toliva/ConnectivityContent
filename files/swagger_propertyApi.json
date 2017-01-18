@@ -134,7 +134,7 @@
 							"items": {
 								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
 							},
-							"example": [{
+							"default": [{
 									"providerPropertyId": "12933870",
 									"provider": "Spoofer",
 									"expediaId": null,
