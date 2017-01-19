@@ -111,7 +111,7 @@
 			}
 		},
 		"/v1/{provider}": {
-			"put": {
+			"post": {
 				"tags": ["Properties"],
 				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
 				"operationId": "Properties_CreateOrUpdateProperties",
