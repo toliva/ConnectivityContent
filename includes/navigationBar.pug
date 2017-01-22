@@ -1,0 +1,29 @@
+#google_translate_element(style='display: none;')
+header#site-navigation
+    nav#nav-top.row.full-width
+        .inner
+            ul
+                li#hotelnav(style='display:none')
+                    a(href='/test-properties/schedules') Schedules
+                li#logoutnav(style='display:none')
+                    a(href='/test-properties/', onclick='logout();') Logout
+    nav#nav-main.row.full-width
+        .inner
+            a#logo(href='/')
+                img(src='/images/DevLogo_40k.png')
+            #menu-toggle.hide-for-large
+            #menu-wrap
+                .hide-for-large
+                ul
+                    li.mainlink
+                        a(href='/providers') Connectivity for Providers
+                    li.mainlink
+                        a(href='/properties') Connectivity for Properties
+                    li.mainlink
+                        a(href='/systems') Systems
+                    li.mainlink
+                        a(href='/developer') Developer APIs
+                    li.mainlink
+                        a(href='/blog') Blog
+                    li.mainlink
+                        a(href='/contact-us') Contact Us
