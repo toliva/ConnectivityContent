@@ -6,7 +6,7 @@
 @body-background: white;
 
 body {
-    background: @body-background;
+    background: @body-background !important;
     color: @black;
 }
 
@@ -34,6 +34,7 @@ body {
 
         .rating {
             color: @blue;
+            cursor: pointer;
         }
     }
 }
@@ -59,9 +60,8 @@ body {
         text-align: right;
 
         .score-total {
-            background: ghostwhite;
-            padding: 2px;
-            border: 1px solid #dddddd;
+            background: #E0E0E0;
+            padding: 0;
 
             .score-value {
                 background: @good;
@@ -80,7 +80,7 @@ body {
     .scorecard-cards {
         padding: 0;
 
-        .check {
+        .checkmark {
             height: auto !important;
             padding-bottom: 1em;
             padding-top: 1em;
@@ -114,6 +114,7 @@ body {
 
         .value {
             font-size: 2.5em;
+            font-family: "Helvetica Neue";
 
             .unit-top {
                 font-size: 0.5em;
@@ -126,27 +127,38 @@ body {
             }
         }
 
+        .metric {
+            margin-top: 1em;
+        }
+
         .rate-change {
             line-height: 1.25em;
-
-            .green {
-                color: darkgreen;
-            }
-
-            .red {
-                color: darkred;
-            }
         }
 
         .state {
-            font-size: 1.5em;
             display: inline-block;
             vertical-align: middle;
+            margin-right: 0.5em;
         }
 
         .feature {
             display: inline-block;
             vertical-align: middle;
+        }
+
+        .icon-toggle90 {
+            position: relative;
+            top: 0.5em;
+            text-align: right;
+            font-size: 2em;
+        }
+
+        .rate-change.green {
+            color: @good;
+        }
+
+        .rate-change.red {
+            color: @bad;
         }
 
         >.green {
@@ -156,6 +168,17 @@ body {
             }
 
             .state {
+                color: @good;
+                line-height: 1.6em;
+                margin-left: 4px;
+                margin-right: 1em;
+            }
+
+            .feature {
+                color: @good;
+            }
+
+            .standard {
                 color: @good;
             }
         }
@@ -167,6 +190,15 @@ body {
             }
 
             .state {
+                color: @bad;
+                font-size: 1.5em;
+            }
+
+            .feature {
+                color: @bad;
+            }
+
+            .standard {
                 color: @bad;
             }
         }
@@ -182,17 +214,55 @@ hr {
     min-width: 200px;
 }
 
+#enhance {
+    .border:hover {
+        cursor: default;
+    }
+
+    .border {
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
+}
+
 #top-metrics {
-    width: 700px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    h1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .close-button {
+        margin: 0;
+    }
 
     .top-metric-cards {
+        margin-top: 1em;
+
+        .gap {
+            height: 7px;
+            background: linear-gradient(to bottom, #c7c7c7, @card-background);
+        }
+
+        .given-provider {
+            font-family: "Helvetica Neue";
+        }
+
         .top-performer {
             font-size: 1.3em;
             line-height: 3em;
-            margin-bottom: 0.5em;
             padding-left: 1em;
             padding-right: 1em;
-            border: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
+            vertical-align: middle;
 
             .position {
                 margin-right: 1em;
@@ -201,6 +271,9 @@ hr {
 
             .name {
                 display: inline-block;
+                width: 60%;
+                vertical-align: middle;
+                line-height: 1.5em;
             }
 
             .score {
