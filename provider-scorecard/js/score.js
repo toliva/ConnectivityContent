@@ -9,6 +9,8 @@ function providerPortalServiceBaseUrl() {
 var provider = false;
 
 var foundationSize = false;
+var hasTriggeredhowToImprove = false;
+var hasTriggeredhowToEnhance = false;
 
 var demo = {
     "provider": {
@@ -178,7 +180,7 @@ function metricClickCallback(event) {
             if ($("#" + category).attr("data-description")) {
                 $("#top-metrics p").html($("#" + category).attr("data-description") + "<br/>These are the top 5 performers in this category:");
             }
-            populateTopMetricsList(jqxhr, true);
+            populateTopMetricsList(jqxhr, true, category);
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
             $("#top-metrics h1").text(heading);
@@ -189,7 +191,7 @@ function metricClickCallback(event) {
         });
 }
 
-function populateTopMetricsList(jqxhr, showValues) {
+function populateTopMetricsList(jqxhr, showValues, category) {
     $("#top-metrics .top-metric-cards").empty();
     var providers = jqxhr.topProviders;
     for (var i = 0; i < providers.length; i++) {
@@ -256,8 +258,29 @@ function populateTopMetricsList(jqxhr, showValues) {
             );
         }
         $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
+
+        if (!hasTriggeredhowToImprove) {
+            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
+            $(".improve").data("category", category);
+            $(".improve").click(howToImproveTriggered);
+        }
     }
 }
+
+
+function howToImproveTriggered() {
+    $(this).html("<div class='top-performer improve-thanks'><div class='state icon icon-success'></div>&nbsp;Thank you for your interest. We will be in contact shortly with more information on how to improve this score.</div>");
+    ga('send', 'event', 'scorecard', 'improve.score', provider + '.' + $(this).data("category"));
+    hasTriggeredhowToImprove = true;
+}
+
+function howToEnhanceTriggered() {
+    $(this).html("<div class='top-performer improve-thanks'><div class='state icon icon-success'></div>&nbsp;Thank you for your interest. We will be in contact shortly with more information on how to adopt more features. You can find implementation details for our APIs here: <a href='https://expediaconnectivity.com/developer' target='_blank'>https://expediaconnectivity.com/developer</a></div></div>");
+    ga('send', 'event', 'scorecard', 'improve.score', provider + '.' + $(this).data("category"));
+    hasTriggeredhowToEnhance = true;
+}
+
+
 
 
 function generateScorecard(scorecard) {
@@ -327,6 +350,13 @@ function generateScorecardFeature(category, id) {
         $(elementSelector).addClass(state ? "green" : "red");
 
     }
+
+    if (!hasTriggeredhowToEnhance) {
+        $("#enhance").append("<div class='scorecard-improve small-12 columns adopt'>Help me adopt a feature</div>");
+        $(".adopt").data("category", "enhance");
+        $(".adopt").click(howToEnhanceTriggered);
+    }
+
 }
 
 function createBorders() {
