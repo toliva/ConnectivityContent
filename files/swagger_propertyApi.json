@@ -656,7 +656,7 @@
 					"type": "integer"
 				},
 				"code": {
-					"enum": ["ActivateContentShellFailed", "ConfigureBrandFailed", "ConnectivityRolloutFailed", "ContentValidationFailed", "CreateContractFailed", "CreateNotificationSettingsFailed", "CreatePropertySettingsFailed", "CreateSupplierContactsFailed", "ExpediaIdAssigned", "FinanceSetupPending", "LegalCheckFailed", "OnboardingSucceeded", "PropertyOnboardValidationFailed", "PublishPropertyContentFailed", "PropertySaved", "UpdatePropertySettingsFailed", "UpdateProviderBookabilityFailed", "UserAccountSetupFailed", "FinanceSetupSucceeded", "DeletePropertyFailed", "InvalidateContractFailed", "UpdateActiveContentProviderFailed", "ChangeProviderFailed", "ExpediaIdAssignmentPending", "PropertyDisabled"],
+					"enum": ["OnboardingFailed", "ExpediaIdAssigned", "FinanceSetupPending", "OnboardingSucceeded", "PropertySaved", "FinanceSetupSucceeded", "ExpediaIdAssignmentPending", "PropertyDisabled"],
 					"type": "string"
 				},
 				"timestampUtc": {
@@ -666,7 +666,7 @@
 				"reasonCodes": {
 					"type": "array",
 					"items": {
-						"enum": ["PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"enum": ["None", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode"],
 						"type": "string"
 					}
 				},
