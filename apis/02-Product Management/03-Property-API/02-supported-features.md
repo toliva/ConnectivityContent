@@ -11,14 +11,14 @@ After a property is onboarded via the Property API, products can be defined via 
 
 The following sections indicate specific use cases that are supported or not supported by the Property API.
 
-## Business Model
+## Distribution Model
 
 | Supported | Not Supported |
 | --------- | ------------- |
 | Expedia Collect-only Properties | Hotel Collect-only Properties |
-| ETP Properties (offering both Expedia Collect and Hotel Collect products) | *Changing a property's business model via API |
+| ExpediaTravelerPreference Properties (offering both Expedia Collect and Hotel Collect products) | *Changing a property's distribution model via API |
 
-Property API supports the onboarding of new properties that offer either Expedia Collect products only OR offers both Expedia Collect and Hotel Collect products.  *Contact your account manager if you wish to support changing a property's business model via the API.   
+Property API supports the onboarding of new properties that offer either Expedia Collect products only OR offers both Expedia Collect and Hotel Collect products.  *Contact your account manager if you wish to support changing a property's distribution model via the API.   
 
 ## Billing Setup
 
