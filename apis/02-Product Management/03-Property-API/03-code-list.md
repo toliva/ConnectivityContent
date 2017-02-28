@@ -30,6 +30,15 @@
 | SELL_LAR | Rate inclusive of compensation. |
 | NET_RATE | Rate without compensation |
 
+### property.inventorySetting.distributionModels
+
+| Code |
+| ---- |
+| EXPEDIA_COLLECT |
+| HOTEL_COLLECT |
+
+Properties that have opted into the Expedia Traveler Preference program (ETP) will have both EXPEDIA_COLLECT and HOTEL_COLLECT specified.
+
 ### Content Attribute & Detail Codes
 
 A **DRAFT** version of the SetPropertyDetails code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
