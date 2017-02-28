@@ -177,7 +177,11 @@ The below example is a request to onboard a new property using SetPropertyDetail
         }
     ],
     "inventorySettings": {
-        "rateAcquisitionType": "NET_RATE"
+        "rateAcquisitionType": "NET_RATE",
+        "distributionModels": [
+            "EXPEDIA_COLLECT",
+            "HOTEL_COLLECT"
+        ]
     },
     "attributes": [
         {
@@ -318,7 +322,8 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| rateAcquisitionType | String | No | See [code list](./code-list.html#inventorySetting)|
+| rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
+| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
 
 **tax**
 
@@ -515,7 +520,11 @@ The response body will echo back the values of *the request received* and will i
                 }
             ],
             "inventorySettings": {
-                "rateAcquisitionType": "NET_RATE"
+                "rateAcquisitionType": "NET_RATE",
+                "distributionModels": [
+                    "EXPEDIA_COLLECT",
+                    "HOTEL_COLLECT"
+                ]
             },
             "attributes": [
                 {
