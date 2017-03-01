@@ -1001,9 +1001,6 @@ The response to the delete request will be a 200/OK and the response will echo b
           "value": "6:00 PM"
         }
       ],
-      "inventorySettings": {
-        "rateAcquisitionType": "NET_RATE"
-      },
       "attributes": [
         {
           "code": "TOTAL_ROOMS",
