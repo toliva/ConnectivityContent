@@ -17,10 +17,10 @@ Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) cred
 | Method | HTTP Verb | Endpoint | Description |
 | ------ | --------- | -------- | ----------- |
 | Set Property Details | PUT | /properties/v1/{EQC account id} | PUT property information to initiate onboarding. |
-| Get Property Details | GET | /properties/v1/{EQC account id}/{provider property ID} | GET property information |
+| Get Property Details | GET | /properties/v1/{EQC account id}/{provider property ID} | GET property information. {provider property ID} allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash. |
 | Update a Property | PUT | /properties/v1/{EQC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
-| Get Property Status | GET | /properties/v1/{EQC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
-| Deactivate Property | DELETE | /properties/v1/{EQC account id}/{provider property ID} | De-activates property in Expedia system |
+| Get Property Status | GET | /properties/v1/{EQC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.). {provider property ID} allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash. |
+| Deactivate Property | DELETE | /properties/v1/{EQC account id}/{provider property ID} | De-activates property in Expedia system. {provider property ID} allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash. |
 
 ## API Errors
 
@@ -197,7 +197,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 
 | Attribute | Type | Required for Onboarding | Updatable? | Notes |
 | --------- | ---- | ----------------------- | ---------- | ----- |
-| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. Must **not** contain any whitespace. |
+| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash.. |
 | name | String | Yes | Yes | Default Property Name, must be submitted in Western European Character set. |
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |

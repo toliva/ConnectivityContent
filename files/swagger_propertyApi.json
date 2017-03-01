@@ -24,7 +24,7 @@
 				"parameters": [{
 						"name": "providerPropertyId",
 						"in": "path",
-						"description": "The provider's unique ID for property.",
+						"description": "The provider's unique ID for property. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash.",
 						"required": true,
 						"type": "string",
 						"default": "12933870"
@@ -71,7 +71,7 @@
 					}, {
 						"name": "providerPropertyId",
 						"in": "path",
-						"description": "The provider's unique ID for property.",
+						"description": "The provider's unique ID for property. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash.",
 						"required": true,
 						"type": "string",
 						"default": "12933870"
@@ -160,7 +160,7 @@
 					}, {
 						"name": "providerPropertyId",
 						"in": "path",
-						"description": "The provider's unique property ID for property.",
+						"description": "The provider's unique property ID for property. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash.",
 						"required": true,
 						"type": "string",
 						"default": "12933870"
@@ -490,7 +490,8 @@
 			"type": "object",
 			"properties": {
 				"providerPropertyId": {
-					"type": "string"
+					"type": "string",
+					"description": "The provider's unique ID for property. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash."
 				},
 				"provider": {
 					"type": "string",
@@ -656,7 +657,8 @@
 					"type": "string"
 				},
 				"providerPropertyId": {
-					"type": "string"
+					"type": "string",
+					"description": "The provider's unique ID for property. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash."
 				},
 				"expediaId": {
 					"format": "int32",
