@@ -264,12 +264,12 @@ function populateTopMetricsList(jqxhr, showValues, category) {
             );
         }
         $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
+    }
 
-        if (!hasTriggeredhowToImprove) {
-            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
-            $(".improve").data("category", category);
-            $(".improve").click(howToImproveTriggered);
-        }
+    if (!hasTriggeredhowToImprove) {
+        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
+        $(".improve").data("category", category);
+        $(".improve").click(howToImproveTriggered);
     }
 }
 
