@@ -319,6 +319,7 @@ function generateScorecardCategory(category, id) {
 
         if (!element.hasOwnProperty("value") || value == null || value == "") {
             $(elementSelector).html("");
+            $(elementSelector).addClass("no-data");
             continue;
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
