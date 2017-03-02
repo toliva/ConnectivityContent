@@ -237,7 +237,7 @@ function populateTopMetricsList(jqxhr, showValues, category) {
 
     if (jqxhr.givenProviderIndex < providers.length) {
         $("#top-metrics .top-metric-cards .top-performer").eq(jqxhr.givenProviderIndex).addClass("given-provider");
-    } else {
+    } else if (jqxhr.givenProvider && jqxhr.givenProviderIndex) {
         var position = jqxhr.givenProviderIndex + 1;
         var givenProvider = jqxhr.givenProvider;
         var value = givenProvider.value;
