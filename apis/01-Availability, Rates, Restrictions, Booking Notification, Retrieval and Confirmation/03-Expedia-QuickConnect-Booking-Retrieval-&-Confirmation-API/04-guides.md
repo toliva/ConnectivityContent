@@ -68,7 +68,7 @@ To make sure that the property receives the booking, Expedia will deliver the bo
 Expedia QuickConnect does not send more than 125 bookings at the same time with one booking retrieval request.
 
 ---
-### New Reservations followed by modiciations and/or cancellation
+### New Reservations followed by modifications and/or cancellation
 
 Expedia QuickConnect will issue new reservations, modifications and cancellations sequentially, and only after each transaction is confirmed via BC first.
 As an example, a guest completes a new reservation, makes a modification, and then makes a second modification. Expedia will first return the new reservation information with the next BR request. After the new reservation is confirmed via BC, the next BR request coming will return the first modification to this reservation. Once this modification is confirmed through BC, the subsequent BR request will return the second modification. Booking updates are always retrievable sequentially and after they are confirmed through BC.
