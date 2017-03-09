@@ -124,15 +124,15 @@ $(document).ready(function() {
     }).fail(function(jqxhr) {
         $("#top-metrics h1").text("");
         if (jqxhr.status == 404) {
-            $("#top-metrics p").text("Unfortuntely we couldn't find metrics for this ID. Please check the URL provided and try again.");
+            $("#top-metrics p").text("Unfortunately we couldn't find metrics for this ID. Please check the URL provided and try again.");
         } else {
-            $("#top-metrics p").text("Unfortuntely a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
+            $("#top-metrics p").text("Unfortunately a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
         }
         $("#top-metrics").foundation('open');
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-row .border").click(metricClickCallback);
+    $(".scorecard-row .border").not("#newHotels").click(metricClickCallback);
     $(".scorecard-rank").click(overallClickCallback);
 });
 
@@ -147,7 +147,7 @@ function overallClickCallback(event) {
         .done(function(jqxhr) {
             $("#top-metrics h1").text("Overall Ranking");
             $("#top-metrics p").text("These are the top providers, ranked according to each providers overall score.");
-            populateTopMetricsList(jqxhr, false);
+            populateTopMetricsList(jqxhr, false, "overall");
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
             $("#top-metrics h1").text(heading);
@@ -237,7 +237,7 @@ function populateTopMetricsList(jqxhr, showValues, category) {
 
     if (jqxhr.givenProviderIndex < providers.length) {
         $("#top-metrics .top-metric-cards .top-performer").eq(jqxhr.givenProviderIndex).addClass("given-provider");
-    } else {
+    } else if (jqxhr.givenProvider && jqxhr.givenProviderIndex) {
         var position = jqxhr.givenProviderIndex + 1;
         var givenProvider = jqxhr.givenProvider;
         var value = givenProvider.value;
@@ -264,12 +264,12 @@ function populateTopMetricsList(jqxhr, showValues, category) {
             );
         }
         $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
+    }
 
-        if (!hasTriggeredhowToImprove) {
-            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
-            $(".improve").data("category", category);
-            $(".improve").click(howToImproveTriggered);
-        }
+    if (!hasTriggeredhowToImprove) {
+        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
+        $(".improve").data("category", category);
+        $(".improve").click(howToImproveTriggered);
     }
 }
 
@@ -319,6 +319,7 @@ function generateScorecardCategory(category, id) {
 
         if (!element.hasOwnProperty("value") || value == null || value == "") {
             $(elementSelector).html("");
+            $(elementSelector).addClass("no-data");
             continue;
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
