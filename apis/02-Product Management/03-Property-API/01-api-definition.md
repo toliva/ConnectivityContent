@@ -197,7 +197,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 
 | Attribute | Type | Required for Onboarding | Updatable? | Notes |
 | --------- | ---- | ----------------------- | ---------- | ----- |
-| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. Allowable characters include ASCII a-z,A-Z, 0-9, Underscore, Dash. |
+| providerPropertyId | String | Yes | No | Unique ID for the property from the Provider's system. Allowable characters include ASCII a-z, A-Z, 0-9, underscore, dash. |
 | name | String | Yes | Yes | Default Property Name, must be submitted in Western European Character set. |
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
