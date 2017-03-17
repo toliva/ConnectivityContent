@@ -54,14 +54,14 @@
 						]
 					}
 				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"$ref": "#/definitions/ResponseWrapperDTO«List«Image»»"
-						}
-					}
-				},
+//				"responses": {
+//					"200": {
+//						"description": "OK",
+//						"schema": {
+//							"$ref": "#/definitions/ResponseWrapperDTO«List«Image»»"
+//						}
+//					}
+//				},
 				"security": [
 					{
 						"Basic": [
