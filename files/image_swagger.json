@@ -10,7 +10,7 @@
 			"email": "eqcss@expedia.com"
 		}
 	},
-	"host": "int.services.expediapartnercentral.com",
+	"host": "localhost:8081",
 	"basePath": "/",
 	"tags": [
 		{
