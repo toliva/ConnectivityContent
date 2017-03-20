@@ -10,7 +10,7 @@
 			"email": "eqcss@expedia.com"
 		}
 	},
-	"host": "localhost:8081",
+	"host": "eps-image-service.int.expedia.com",
 	"basePath": "/",
 	"tags": [
 		{
