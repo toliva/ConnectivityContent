@@ -10,7 +10,7 @@
 			"email": "eqcss@expedia.com"
 		}
 	},
-	"host": "eps-image-service.int.expedia.com",
+	"host": "int.services.expediapartnercentral.com",
 	"basePath": "/",
 	"tags": [
 		{
@@ -19,7 +19,7 @@
 		}
 	],
 	"schemes": [
-		"http"
+		"https"
 	],
 	"paths": {
 		"/properties/{propertyId}/images": {
