@@ -12,11 +12,15 @@ Find the files you wish to contribute to in [the repository](https://github.com/
 <br/>
 ### Step 2. Making changes
 
+#### Editing a text file
+
 Once you have found the page and clicked on it a set of icons is presented to edit the page e.g `Edit this file` pencil-icon, and `Delete this file` bin-icon.  Click the `Edit this file` button to use Github's in bowser editor.  From here, you may make changes to the markdown files.  Help with writing markdown is available at the [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 To view what your changes will look like, click the `preview` button - all changes will be kept, there is no need to save your work.
 
+#### Uploading an image or file
 
+To upload an image or other file, please navigate to [/files](https://github.com/ExpediaInc/ConnectivityContent/tree/master/files) in the repo, click `Upload files` and then upload your images or files to a new branch and create a pull request. Once your branch is merged to master, it will shortly be available at http://expediaconnectivity.com/files/<your file name>
 
 
 
