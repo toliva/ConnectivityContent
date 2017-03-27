@@ -86,10 +86,19 @@ Note that the booking source information is sent under the POS element in the OT
 
 The values used currently by the interface are listed below. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by "A-" in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be "A-Hotels.com". 
 
-Interface | POS/Source/RequestorID/@ID | ExpediaCollect/HotelCollect
---------- | -------------------------- | ---------------------------
-BN | Expedia Hotels.com Expedia Affiliate Network | ExpediaCollect bookings
-BN | A-Expedia A-Hotels.com A-Expedia Affiliate Network | HotelCollect bookings
+Interface | POS/Source/RequestorID/@ID for ExpediaCollect | POS/Source/RequestorID/@ID for HotelCollect
+--------- | --------------------------------------------- | -------------------------------------------
+BN | Expedia | A-Expedia
+BN | Hotels.com | A-Hotels.com
+BN | Expedia Affiliate Network | A-Expedia Affiliate Network
+BN | Egencia | A-Egencia
+BN | Travelocity | A-Travelocity
+BN | Orbitz | A-Orbitz
+BN | Hotwire | A-Hotwire
+BN | CheapTickets | A-CheapTickets
+BN | ebookers | A-ebookers
+BN | MrJet | A-MrJet
+BN | Lastminute.au | A-Lastminute.au
 
 Hotel suppliers must ensure proper mapping is done for the new POS ID values in the hotel system so that Hotel Collect bookings can be associated with the appropriate profile.
 Note that the POS ID included in fall-back fax or email notifications will not contain "A-".
