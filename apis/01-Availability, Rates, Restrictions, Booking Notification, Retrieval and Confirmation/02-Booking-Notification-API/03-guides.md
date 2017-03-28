@@ -94,6 +94,7 @@ BN | Expedia Affiliate Network | A-Expedia Affiliate Network
 BN | Egencia | A-Egencia
 BN | Travelocity | A-Travelocity
 BN | Orbitz | A-Orbitz
+BN | Wotif | A-Wotif
 BN | Hotwire | A-Hotwire
 BN | CheapTickets | A-CheapTickets
 BN | ebookers | A-ebookers
