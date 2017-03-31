@@ -1,6 +1,6 @@
 # License Agreement
 
-Updated July 27th, 2015
+Updated March 29th, 2017
 ---
 
 This End-User License Agreement (“EULA”) is an agreement between you and Expedia, Inc. and/or its affiliates 
