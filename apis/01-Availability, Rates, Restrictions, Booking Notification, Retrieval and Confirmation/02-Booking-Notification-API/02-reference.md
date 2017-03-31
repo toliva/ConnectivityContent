@@ -503,9 +503,33 @@ BN | Outgoing (Expedia => partner | Request | ExpediaDC | PartnerID
 This attribute indicates the name of the OTA message being sent in the XML message.
 The value set used by the API is defined in the table below.
 
- Interface | OTA Payload Name Value Set (PayloadDescriptor / @Name)
----------- | ------------------------------------------------------
-BN | OTA_HotelResNotifRQ OTA_HotelResNotifRS OTA_HotelResModifyNotifRQ OTA_HotelResModifyNotifRS OTA_CancelRQ OTA_CancelRS
+ Interface | OTA Payload Name (PayloadDescriptor/@Name)
+---------- | --------------------------------------------
+BN | OTA_HotelResNotifRQ
+BN | OTA_HotelResNotifRS
+BN | OTA_HotelResModifyNotifRQ
+BN | OTA_HotelResModifyNotifRS
+BN | OTA_CancelRQ
+BN | OTA_CancelRS
+
+<a name="POSBrandList"></a>
+
+## Point of Sale Brand List
+
+Interface | POS/Source/RequestorID/@ID for ExpediaCollect | POS/Source/RequestorID/@ID for HotelCollect
+--------- | --------------------------------------------- | -------------------------------------------
+BN | Expedia | A-Expedia
+BN | Hotels.com | A-Hotels.com
+BN | Expedia Affiliate Network | A-Expedia Affiliate Network
+BN | Egencia | A-Egencia
+BN | Travelocity | A-Travelocity
+BN | Orbitz | A-Orbitz
+BN | Wotif | A-Wotif
+BN | Hotwire | A-Hotwire
+BN | CheapTickets | A-CheapTickets
+BN | ebookers | A-ebookers
+BN | MrJet | A-MrJet
+BN | Lastminute.au | A-Lastminute.au
 
 <a name="SpecialRequestCodes"></a>
 
