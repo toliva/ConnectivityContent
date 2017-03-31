@@ -145,7 +145,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 2 | Source |  | 1..2 |  | Source of the booking notification. There can be up to 2 sources, for partners who adhere to the group reconciliation process known as Partner Pay, for HotelCollect commission reconciliation. For most partners, only one source will be sent.
 3 | RequestorID |  | 1 |  | Identifier of the notification requestor. For booking notification the requestor is Expedia.
   | @Type | OTA_CodeType | 1 | 18, 5 | Reference to the type of requestor. Fixed value. 18=Other (used by all bookings) 5=Travel Agency (used by Hotel Collect booking only).
-  | @ID | String 32 | 1 | Expedia, Hotels.com, Expedia Affiliate Network | Identifier of the requestor. The ID value is within the value set listed on the left. For @Type=5, when applicable, the ID value is equal to the TIDS ID defined for the property.
+  | @ID | String 32 | 1 | | Identifier of the requestor. For @Type=18, the ID value is within the value set provided under [Point of Sale Brand List](#POSBrandList). For @Type=5, when applicable, the ID value is equal to the TIDS ID defined for the property.
 4 | BookingChannel |  | 0..1 |  | This is sent only for @Type=18. Omitted for @Type=5.
   | @ Type | Numeric 1 | 1 | 2 | The type of booking channel. Fixed value. 2= CRO (Customer Reservations Office). 
   | @Primary | Boolean | 1 | true | Indicates whether the enumerated booking channel is the primary means of connectivity used by the source. Fixed value.
@@ -503,9 +503,33 @@ BN | Outgoing (Expedia => partner | Request | ExpediaDC | PartnerID
 This attribute indicates the name of the OTA message being sent in the XML message.
 The value set used by the API is defined in the table below.
 
- Interface | OTA Payload Name Value Set (PayloadDescriptor / @Name)
----------- | ------------------------------------------------------
-BN | OTA_HotelResNotifRQ OTA_HotelResNotifRS OTA_HotelResModifyNotifRQ OTA_HotelResModifyNotifRS OTA_CancelRQ OTA_CancelRS
+ Interface | OTA Payload Name (PayloadDescriptor/@Name)
+---------- | --------------------------------------------
+BN | OTA_HotelResNotifRQ
+BN | OTA_HotelResNotifRS
+BN | OTA_HotelResModifyNotifRQ
+BN | OTA_HotelResModifyNotifRS
+BN | OTA_CancelRQ
+BN | OTA_CancelRS
+
+<a name="POSBrandList"></a>
+
+## Point of Sale Brand List
+
+Interface | POS/Source/RequestorID/@ID for ExpediaCollect | POS/Source/RequestorID/@ID for HotelCollect
+--------- | --------------------------------------------- | -------------------------------------------
+BN | Expedia | A-Expedia
+BN | Hotels.com | A-Hotels.com
+BN | Expedia Affiliate Network | A-Expedia Affiliate Network
+BN | Egencia | A-Egencia
+BN | Travelocity | A-Travelocity
+BN | Orbitz | A-Orbitz
+BN | Wotif | A-Wotif
+BN | Hotwire | A-Hotwire
+BN | CheapTickets | A-CheapTickets
+BN | ebookers | A-ebookers
+BN | MrJet | A-MrJet
+BN | Lastminute.au | A-Lastminute.au
 
 <a name="SpecialRequestCodes"></a>
 
