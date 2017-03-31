@@ -1,7 +1,7 @@
 # License Agreement
-
-Updated March 29th, 2017
 ---
+
+*Updated March 29th, 2017*
 
 This End-User License Agreement (“EULA”) is an agreement between you and Expedia, Inc. and/or its affiliates 
 (collectively, “Expedia”) for the Expedia Connectivity Services and API specifications (including for Expedia 
