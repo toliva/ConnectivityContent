@@ -139,7 +139,7 @@ Upon receiving the notification for Hotel Collect booking, partner must ensure t
 ## Guarantees/Credit Cards Included in Booking Messages
 For Expedia Collect booking paid by EVC or Hotel Collect booking paid by guest credit card, the payload for Booking or Modify request will include a <Guarantee> element as the container for credit card payment information.
 - The <Guarantee> element will contain the credit card payment information including card type, card code, card number, expiry date, card holder name.
-- For ExpediaCollect EVC bookings, CVV is not included. If CVV is required by the hotel to charge the EVC card, they should contact Expedia to obtain a default CVV value for all EVC cards. A billing address is included, which is Expedia head office address by default for all cards.
+- For ExpediaCollect EVC bookings, CVV is not included. A billing address is included, which is Expedia head office address by default for all cards.
 - For Hotel Collect bookings, depending on the hotel configuration Expedia may or may not send CVV for guest credit card, therefore the hotel booking notification interface must be able to process the booking with and without CVV. Customer billing address is not included.
 - The <Guarantee> element is optional, and will be sent only for Expedia Collect bookings paid by EVC, and for Hotel Collect bookings. For Expedia Collect bookings remaining on the standard billing process, no credit card information will be sent in the booking or modify request.
 
