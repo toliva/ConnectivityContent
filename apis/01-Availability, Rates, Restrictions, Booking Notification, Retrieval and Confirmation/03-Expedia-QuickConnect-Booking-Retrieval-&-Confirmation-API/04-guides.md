@@ -184,10 +184,18 @@ Net rate |Sell rate
 
 Expedia Collect Booking	| Hotel Collect Booking
 ---|---
-Hotels.com	| A-Hotels.com
-Expedia	| A-Expedia
+Expedia | A-Expedia
+Hotels.com | A-Hotels.com
 Expedia Affiliate Network | A-Expedia Affiliate Network
-Venere	| A-Venere
+Egencia | A-Egencia
+Travelocity | A-Travelocity
+Orbitz | A-Orbitz
+Wotif | A-Wotif
+Hotwire | A-Hotwire
+CheapTickets | A-CheapTickets
+ebookers | A-ebookers
+MrJet | A-MrJet
+Lastminute.au | A-Lastminute.au
  
 ### Different Payment card information
 
