@@ -6,7 +6,7 @@ Hotel Status Controller
 
 ### getHotelVipStatus
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/hotels/vipStatus
+- Url: https://services.expediapartnercentral.com/vip-booking/v1/hotels/vipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -22,7 +22,7 @@ Status Code | Description | Response Model
 
 ### getHotelVipStatus
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/hotels/{id}/vipStatus
+- Url: https://services.expediapartnercentral.com/vip-booking/v1/hotels/{id}/vipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -43,7 +43,7 @@ Booking Guest Status Controller
 
 ### getGuestVipTierStatus
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/bookings/guestVipStatus
+- Url: https://services.expediapartnercentral.com/vip-booking/v1/bookings/guestVipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -59,7 +59,7 @@ Status Code | Description | Response Model
 
 ### getGuestVipTierStatus
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/bookings/{id}/guestVipStatus
+- Url: https://services.expediapartnercentral.com/vip-booking/v1/bookings/{id}/guestVipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
