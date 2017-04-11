@@ -196,6 +196,9 @@ CheapTickets | A-CheapTickets
 ebookers | A-ebookers
 MrJet | A-MrJet
 Lastminute.au | A-Lastminute.au
+American Express Travel | A-American Express Travel
+Amex The Hotel Collection | A-Amex The Hotel Collection
+Amex FINE HOTELS & RESORTS | A-Amex FINE HOTELS & RESORTS
  
 ### Different Payment card information
 
