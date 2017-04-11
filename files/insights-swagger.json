@@ -7,9 +7,9 @@
       "type": "basic"
     }
   },
-  "security": [
-    ""
-  ],
+  "security": {
+    "eps-security": []
+  },
   "host": "services.expediapartnercentral.com",
   "basePath": "/insights",
   "swagger": "2.0",

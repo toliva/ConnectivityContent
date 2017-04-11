@@ -16,14 +16,14 @@
     "https"
   ],
   "securityDefinitions": {
-    "eps-security": {
+    "epsSecurity": {
       "type": "basic"
     }
   },
-  "security": [
-    ""
-  ],
-  "host": "services.expediapartnercentral.com",
+  "security": {
+    "epsSecurity": []
+  },
+  "host": "int.services.expediapartnercentral.com",
   "basePath": "/vip-booking",
   "tags": [
     {
