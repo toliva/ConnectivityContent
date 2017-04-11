@@ -1,10 +1,10 @@
-# Reference
+# Sort Rank
 ## lodging-sort/v1/hops/HopsAverageRanks
 ### hopsAverageRanks
 hopsAverageRanks
 
 - Method: `GET`
-- Url: http://localhost:8080/lodging-sort/v1/hops/HopsAverageRanks
+- Url: https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -37,7 +37,7 @@ default |  | [SortRanksApiResponse](#/definitions/SortRanksApiResponse)
 hopsAverageRanksPretty
 
 - Method: `GET`
-- Url: http://localhost:8080/lodging-sort/v1/hops/HopsAverageRanks/pretty
+- Url: https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks/pretty
 - Consumes: `application/json`
 - Produces: `text/html`
 

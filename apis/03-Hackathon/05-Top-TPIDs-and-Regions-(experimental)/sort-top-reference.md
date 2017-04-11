@@ -1,10 +1,10 @@
-# Reference
+# Top TPIDs and Regions
 ## lodging-sort/v1/hops/HopsTopTpidsAndRegions
 ### getTopTpidAndRegion
 getTopTpidAndRegion
 
 - Method: `GET`
-- Url: http://localhost:8080/lodging-sort/v1/hops/HopsTopTpidsAndRegions
+- Url: https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsTopTpidsAndRegions
 - Consumes: `application/json`
 - Produces: `application/json`
 

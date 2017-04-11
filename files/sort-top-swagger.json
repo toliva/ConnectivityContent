@@ -68,10 +68,22 @@
           "type": "TopTpidsAndRegionsApiResponse"
         }
       ],
-      "path": "/lodging-sort/v1/hops/HopsTopTpidsAndRegions"
+      "path": "/HopsTopTpidsAndRegions"
     }
   ],
-  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "eps-security": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    ""
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/lodging-sort/v1/hops/",
   "consumes": [
     "application/json"
   ],
@@ -121,6 +133,6 @@
   "produces": [
     "application/json"
   ],
-  "resourcePath": "/lodging-sort/v1/hops/HopsTopTpidsAndRegions",
+  "resourcePath": "/HopsTopTpidsAndRegions",
   "swaggerVersion": "1.2"
 }

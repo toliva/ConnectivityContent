@@ -6,14 +6,14 @@ Hotel Status Controller
 
 ### getHotelVipStatus
 - Method: `GET`
-- Url: http://localhost:8080/v1/hotels/vipStatus
+- Url: https://services.expediapartnercentral.com/v1/hotels/vipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-ids | query | ids | true | array | 
+ids | query | ids | true | array |
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -22,14 +22,14 @@ Status Code | Description | Response Model
 
 ### getHotelVipStatus
 - Method: `GET`
-- Url: http://localhost:8080/v1/hotels/{id}/vipStatus
+- Url: https://services.expediapartnercentral.com/v1/hotels/{id}/vipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-id | path | id | true | integer | 
+id | path | id | true | integer |
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -43,14 +43,14 @@ Booking Guest Status Controller
 
 ### getGuestVipTierStatus
 - Method: `GET`
-- Url: http://localhost:8080/v1/bookings/guestVipStatus
+- Url: https://services.expediapartnercentral.com/v1/bookings/guestVipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-ids | query | ids | true | array | 
+ids | query | ids | true | array |
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -59,7 +59,7 @@ Status Code | Description | Response Model
 
 ### getGuestVipTierStatus
 - Method: `GET`
-- Url: http://localhost:8080/v1/bookings/{id}/guestVipStatus
+- Url: https://services.expediapartnercentral.com/v1/bookings/{id}/guestVipStatus
 - Consumes: `application/json`
 - Produces: `application/json`
 
