@@ -1,17 +1,5 @@
 {
   "apiVersion": "1.0",
-  "schemes": [
-    "https"
-  ],
-  "securityDefinitions": {
-    "eps-security": {
-      "type": "basic"
-    }
-  },
-  "security": [
-    ""
-  ],
-  "host": "services.expediapartnercentral.com",
   "apis": [
     {
       "description": "hopsAverageRanks",
@@ -256,7 +244,7 @@
       "path": "/lodging-sort/v1/hops/HopsAverageRanks/pretty"
     }
   ],
-  "basePath": "/",
+  "basePath": "https://services.expediapartnercentral.com/",
   "consumes": [
     "application/json"
   ],

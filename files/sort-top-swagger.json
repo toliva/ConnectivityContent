@@ -71,19 +71,7 @@
       "path": "/HopsTopTpidsAndRegions"
     }
   ],
-  "schemes": [
-    "https"
-  ],
-  "securityDefinitions": {
-    "eps-security": {
-      "type": "basic"
-    }
-  },
-  "security": [
-    ""
-  ],
-  "host": "services.expediapartnercentral.com",
-  "basePath": "/lodging-sort/v1/hops/",
+  "basePath": "https://services.expediapartnercentral.com/lodging-sort/v1/hops",
   "consumes": [
     "application/json"
   ],

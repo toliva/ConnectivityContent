@@ -1,4 +1,6 @@
 # Sort Rank
+This is the Sort Ranks API, it returns the sort ranks for a given hotel id.
+
 ## lodging-sort/v1/hops/HopsAverageRanks
 ### hopsAverageRanks
 hopsAverageRanks

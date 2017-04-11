@@ -1,5 +1,5 @@
 # Reference
-A service that provides APIs for ...
+A service that provides APIs for getting the VIP status of hotels.
 
 ## hotel-status-controller
 Hotel Status Controller

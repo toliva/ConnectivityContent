@@ -1,4 +1,6 @@
 # Top TPIDs and Regions
+This is the HoPS Top TPID and Regions API - it returns the top TPIDs and region ranks for a given hotel id.
+
 ## lodging-sort/v1/hops/HopsTopTpidsAndRegions
 ### getTopTpidAndRegion
 getTopTpidAndRegion
