@@ -532,7 +532,7 @@ BN | MrJet | A-MrJet
 BN | Lastminute.au | A-Lastminute.au
 BN | American Express Travel | A-American Express Travel
 BN | Amex The Hotel Collection | A-Amex The Hotel Collection
-BN | Amex FINE HOTELS & RESORT | A-Amex FINE HOTELS & RESORT
+BN | Amex FINE HOTELS & RESORTS | A-Amex FINE HOTELS & RESORTS
 
 <a name="SpecialRequestCodes"></a>
 
