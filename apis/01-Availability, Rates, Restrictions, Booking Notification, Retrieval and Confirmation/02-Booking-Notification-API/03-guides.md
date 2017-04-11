@@ -34,7 +34,7 @@ All information sent in the notification must be passed down to the hotel's Prop
 
 ### Notification Expiration Time
 
-When Expedia initiates a booking notification and creates a request message, a notification expiration date/time is set and sent in the message header. The notification time may be set to a fixed value of 2 hours 15 minutes from the notification creation time, or calculated based on date of arrival of the booking, which is configurable per partner.
+When Expedia initiates a booking notification and creates a request message, a notification expiration date/time is set and sent in the message header. The notification time may be set to a fixed value of 2 hours 30 minutes from the notification creation time, or calculated based on date of arrival of the booking, which is configurable per partner.
 
 The purpose of the notification expiration time is to make sure that all possible message delivery attempts between systems are made before giving up on electronic delivery of the notification. 
 
