@@ -9,8 +9,8 @@
     },
     "license": {}
   },
-  "host": "cs-tcs-gateway.us-west-2.int.expedia.com",
-  "basePath": "/",
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/tcs",
   "tags": [
     {
       "name": "tcs-gateway-controller",
@@ -418,6 +418,11 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "Basic": {
+      "type": "basic"
     }
   },
   "definitions": {
