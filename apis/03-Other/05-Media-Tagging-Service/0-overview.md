@@ -35,7 +35,7 @@ Where
 
 #### Input Image 1
 
-<img src="http://payorwait.com/wp-content/uploads/2016/11/Arrival.jpg" align="left" height="250">
+![figure1](/files/imgtagging_fig1.png "Figure 1")
 
 #### Response from service
 
@@ -368,14 +368,14 @@ Where
 }
 ```
 
-#### Face detection highlight
+#### Face detection overlay
 
-![figure1](/files/imgtagging_fig1.png "Figure 1")
+![figure1](/files/imgtagging_fig2.png "Figure 2")
 
 
 #### Input Image 2
 
-<img src="http://www.gomadrid.com/sights/royal-palace.jpg" align="left" height="250">
+![figure3](/files/imgtagging_fig3.png "Figure 3")
 
 #### Response from service
 
