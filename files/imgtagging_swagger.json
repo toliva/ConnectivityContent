@@ -22,7 +22,7 @@
     "https"
   ],
   "paths": {
-    "/service/search/{apk}": {
+    "/service/search": {
       "post": {
         "tags": [
           "media-intelligence-controller"
@@ -36,13 +36,6 @@
           "*/*"
         ],
         "parameters": [
-          {
-            "name": "apk",
-            "in": "path",
-            "description": "apk",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "verbose",
             "in": "query",

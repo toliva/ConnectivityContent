@@ -20,12 +20,6 @@ TCS Gateway, out of the box, supports the following sections:
 
 # Travel Content Service Usage Guide
 
-## How can I start using the TCS API?
-In order for us to grant you access and integrate to the Travel Content Service, you will require an Application Key that is unique to you as a TCS client. To request a TCS Application Key, please contact an Expedia Content System team member.
-
-### APK Key
-The Application Key is a mandatory parameter that you pass along with each request to allow custom configurations for you as a client, traceability and debuggability of your TCS usage.
-
 ## How to use TCS?
 
 We provide two rest endpoints which covers the 2 main use cases we currently support. You’ll need to invoke either one of theses requests: “Destination Only” or “Destination + Experience”.
@@ -35,7 +29,6 @@ We provide two rest endpoints which covers the 2 main use cases we currently sup
 Path | Type | Require | Description
 --- | --- | ---
 regionID | String | Mandatory | We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.
-apk | String | Mandatory | Your unique API key.
 abacus | String | Optional | May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.
 sections | List<String> | Mandatory | Select one of the sections you want to retrieve content for, choose one of 8 supported sections: ACTIVITY, AFFINITY, ARTICLE, DESTINATION, NEIGHBORHOOD, POI, SIMILAR_DESTINATIONS and TIP.
 
@@ -45,7 +38,6 @@ sections | List<String> | Mandatory | Select one of the sections you want to ret
 Path | Type | Require | Description
 --- | --- | ---
 regionID | String | Mandatory | We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.
-apk | String | Mandatory | Your unique API key.
 abacus | String | Optional | May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.
 tag | String | Mandatory | [DesMet Tag](https://expediaconnectivity.com/apis/other/travel-content-service-tcs/desmet.html) See tip how to fetch the DesMet tag.
 sections | List<String> | Mandatory | Select one of the sections you want to retrieve content for, choose one of 8 supported sections: ACTIVITY, AFFINITY, ARTICLE, DESTINATION, NEIGHBORHOOD, POI, SIMILAR_DESTINATIONS and TIP.
@@ -72,17 +64,17 @@ Here are the different calls from the DX Pages to the TCS Gateway to retrieve co
 
 - Section "DESTINATION"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION
 ```
 
 - Section "NEIGHBORHOOD"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD
 ```
 
 - Section "SIMILAR_DESTINATION"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION
 ```
 
 ---
@@ -95,15 +87,15 @@ Here are the different calls from the DX Pages to TCS Gateway to retrieve the fo
 
 - Section "DESTINATION":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION
 ```
 
 - Section "NEIGHBORHOOD":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD
 ```
 
 - Section "SIMILAR_DESTINATION":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION
 ```

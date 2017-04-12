@@ -44,13 +44,6 @@
             "type": "string"
           },
           {
-            "name": "apk",
-            "in": "query",
-            "description": "apk",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "section",
             "in": "query",
             "description": "section",
@@ -164,13 +157,6 @@
             "format": "double"
           },
           {
-            "name": "apk",
-            "in": "query",
-            "description": "apk",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "abacus",
             "in": "query",
             "description": "abacus",
@@ -282,13 +268,6 @@
             "type": "string"
           },
           {
-            "name": "apk",
-            "in": "query",
-            "description": "apk",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "abacus",
             "in": "query",
             "description": "abacus",
@@ -391,15 +370,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "name": "apk",
-            "in": "query",
-            "description": "apk",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK",
