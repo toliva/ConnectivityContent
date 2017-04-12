@@ -35,7 +35,7 @@ Where
 
 #### Input Image 1
 
-![figure1](/files/imgtagging_fig1.png "Figure 1")
+![figure1](/files/imgtagging_fig1.jpg "Figure 1")
 
 #### Response from service
 
@@ -375,7 +375,7 @@ Where
 
 #### Input Image 2
 
-![figure3](/files/imgtagging_fig3.png "Figure 3")
+![figure3](/files/imgtagging_fig3.jpg "Figure 3")
 
 #### Response from service
 
