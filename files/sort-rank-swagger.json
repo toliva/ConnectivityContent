@@ -131,7 +131,7 @@
           "notes": "hopsAverageRanksPretty",
           "nickname": "hopsAverageRanksPretty",
           "produces": [
-            "text/html"
+            "application/json"
           ],
           "consumes": [
             "application/json"
@@ -244,7 +244,7 @@
       "path": "/lodging-sort/v1/hops/HopsAverageRanks/pretty"
     }
   ],
-  "basePath": "https://services.expediapartnercentral.com/",
+  "basePath": "http://localhost:8080/",
   "consumes": [
     "application/json"
   ],
