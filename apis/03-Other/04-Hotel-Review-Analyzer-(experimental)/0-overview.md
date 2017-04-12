@@ -4,9 +4,9 @@ This application analyze text in order to extract key group of words and assign 
 
 The application is built as a 3 step pipeline process. First step is to identify the group of interesting words. This is the **Named Entity Recognition** (a.k.a _NER_) extraction process. Then, the sentence are broken into **opinion unit**. Each unit is then attributed a **sentiment score**. Finally, each group of words is attributed the sentiment score of the opinion unit they are part of.
 
-[Pipeline](/files/htlrvw_fig1.png)
+![Pipeline](/files/htlrvw_fig1.png "Figure 1")
 
-## Named Entity Recognition]
+## Named Entity Recognition
 
 The NER model was learned using a sample of 700 Expedia User Hotel Reviews (random sample from January 2015 US Expedia.com). The reviews were manually annotated to identify 4 types of categories:
 
@@ -23,7 +23,7 @@ The NER model was learned using a sample of 700 Expedia User Hotel Reviews (rand
 
 Here is an example of concept extraction on a review. The words extracted by the NER process are colored. Each category of entity has it’s own color.
 
-[NER](/files/htlrvw_fig2.png)
+![NER](/files/htlrvw_fig2.png "Figure 2")
 
 ### Sentiment Classification
 
@@ -31,7 +31,7 @@ Once mentions have been identified in the review, the sentence is broken down in
 
 #### Example
 
-[Sentiment](/files/htlrvw_fig3.png)
+![Sentiment](/files/htlrvw_fig3.png "Figure 3")
 
 ### Getting Help
 
