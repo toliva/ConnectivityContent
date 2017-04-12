@@ -244,7 +244,7 @@
       "path": "/lodging-sort/v1/hops/HopsAverageRanks/pretty"
     }
   ],
-  "basePath": "http://localhost:8080/",
+  "basePath": "https://services.expediapartnercentral.com/gs",
   "consumes": [
     "application/json"
   ],
