@@ -72,17 +72,17 @@ Here are the different calls from the DX Pages to the TCS Gateway to retrieve co
 
 - Section "DESTINATION"
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?sections=DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION&apk=YOUR_APK
 ```
 
 - Section "NEIGHBORHOOD"
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?sections=NEIGHBORHOOD&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD&apk=YOUR_APK
 ```
 
 - Section "SIMILAR_DESTINATION"
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?sections=SIMILAR_DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION&apk=YOUR_APK
 ```
 
 ---
@@ -95,15 +95,15 @@ Here are the different calls from the DX Pages to TCS Gateway to retrieve the fo
 
 - Section "DESTINATION":
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?tag=shopping&sections=DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION&apk=YOUR_APK
 ```
 
 - Section "NEIGHBORHOOD":
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD&apk=YOUR_APK
 ```
 
 - Section "SIMILAR_DESTINATION":
 ```
-http://services.expediapartnercentral.com/tcs/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION&apk=YOUR_APK
+http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION&apk=YOUR_APK
 ```

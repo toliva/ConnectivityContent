@@ -10,7 +10,7 @@
     "license": {}
   },
   "host": "services.expediapartnercentral.com",
-  "basePath": "/tcs",
+  "basePath": "/travel-content",
   "tags": [
     {
       "name": "tcs-gateway-controller",
