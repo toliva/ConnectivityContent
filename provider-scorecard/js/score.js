@@ -24,7 +24,7 @@ var demo = {
         "attributes": {
             "availabilityLose": {
                 "value": "10.0",
-                "success": true,
+                "success": false,
                 "delta": -14,
                 "deltaSuccess": true,
                 "unit": "%",
@@ -76,7 +76,7 @@ var demo = {
             },
             "bcMessages": {
                 "value": "96.0",
-                "success": true,
+                "success": false,
                 "delta": 0.2,
                 "deltaSuccess": true,
                 "unit": "%",
