@@ -9,7 +9,7 @@ Credentials must match a valid hotelier username/password.  If data for a specif
 ## Sort Rank Endpoint
 
 ```
-GET /lodgingSort/v1/hops/HopsAverageRanks
+GET /lodging-sort/v1/hops/HopsAverageRanks
 ```
 
 The Sort Rank endpoint will return a hotel's average sort rank data for a range of check-in dates.

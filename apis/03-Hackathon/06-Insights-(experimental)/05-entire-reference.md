@@ -1,4 +1,4 @@
-# Insights Reference
+# Insights Full Reference
 API to retrieve realtime market analytics for lodging suppliers
 
 ## compression

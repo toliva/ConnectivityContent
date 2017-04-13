@@ -9,7 +9,7 @@ Credentials must match a valid hotelier username/password.  If data for a specif
 ## Top Points of Sale and Regions Endpoint
 
 ```
-GET lodgingSort/v1/hops/HopsTopTpidsAndRegions
+GET /lodging-sort/v1/hops/HopsTopTpidsAndRegions
 ```
 
 The top points of sale and regions endpoint will return a sorted list of top regions for each of the top points of sale by bookings for a specified hotel.
@@ -23,7 +23,7 @@ The top points of sale and regions endpoint will return a sorted list of top reg
 
 ##### Sample Request with all parameters specified
 ```
-https://services.expediapartnercentral.com/lodging-sort//v1/hops/HopsTopTpidsAndRegions?hotelId=1
+https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 ```
 
 ## Response Format
