@@ -6,7 +6,7 @@ API to retrieve realtime market analytics for lodging suppliers
 get compressionPercent data
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/compression/{hotelId}
+- Url: https://services.expediapartnercentral.com/insights/public/compression/{hotelId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -34,7 +34,7 @@ Status Code | Description | Response Model
 get missed opportunities for today(checkinDate is today)
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/missedOpportunitiesToday/{hotelId}
+- Url: https://services.expediapartnercentral.com/insights/public/missedOpportunitiesToday/{hotelId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -62,7 +62,7 @@ Status Code | Description | Response Model
 get missed opportunities whose checkinDate in a specified time range
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/missedOpportunitiesV2
+- Url: https://services.expediapartnercentral.com/insights/public/missedOpportunitiesV2
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -92,7 +92,7 @@ Status Code | Description | Response Model
 get newsfeed data
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/newsfeed
+- Url: https://services.expediapartnercentral.com/insights/public/newsfeed
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -125,7 +125,7 @@ Status Code | Description | Response Model
 replenish stubbedData for newsfeed api
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/replenishStubbedDataForNewsfeed
+- Url: https://services.expediapartnercentral.com/insights/public/replenishStubbedDataForNewsfeed
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -152,7 +152,7 @@ Status Code | Description | Response Model
 get current and previous average sort rank
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/sameDaySortV2/{hotelId}
+- Url: https://services.expediapartnercentral.com/insights/public/sameDaySortV2/{hotelId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -180,7 +180,7 @@ Status Code | Description | Response Model
 get competitors' room left information of tonight
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/sellTonightRoomsLeft/{hotelId}
+- Url: https://services.expediapartnercentral.com/insights/public/sellTonightRoomsLeft/{hotelId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -208,7 +208,7 @@ Status Code | Description | Response Model
 get competitors' sold out information of tonight
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/sellTonightSoldOut/{hotelId}
+- Url: https://services.expediapartnercentral.com/insights/public/sellTonightSoldOut/{hotelId}
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -236,7 +236,7 @@ Status Code | Description | Response Model
 get missed opportunities for today(book date is today)
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/missedOpportunitiesV3
+- Url: https://services.expediapartnercentral.com/insights/public/v1/missedOpportunitiesV3
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -261,7 +261,7 @@ Status Code | Description | Response Model
 Get the fair share data for the given stayDates
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/fairShare
+- Url: https://services.expediapartnercentral.com/insights/public/v1/fairShare
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -287,7 +287,7 @@ Status Code | Description | Response Model
 Get and calculate fair share for info sites views
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/fairShareInfositeViews
+- Url: https://services.expediapartnercentral.com/insights/public/v1/fairShareInfositeViews
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -312,7 +312,7 @@ Status Code | Description | Response Model
 Get the gainedOpportunities information
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/gainedOpportunities
+- Url: https://services.expediapartnercentral.com/insights/public/v1/gainedOpportunities
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -339,7 +339,7 @@ Status Code | Description | Response Model
 Get the Missed Opportunities Leaderboard Data
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/missedOpposLeaderBoard
+- Url: https://services.expediapartnercentral.com/insights/public/v1/missedOpposLeaderBoard
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -366,7 +366,7 @@ Status Code | Description | Response Model
 Get ADR (Average Daily Rate)
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/newsfeedADR
+- Url: https://services.expediapartnercentral.com/insights/public/v1/newsfeedADR
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -393,7 +393,7 @@ Status Code | Description | Response Model
 Get the Sort Rank Adjustment History
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/sameDaySortHistory
+- Url: https://services.expediapartnercentral.com/insights/public/v1/sameDaySortHistory
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -419,7 +419,7 @@ Status Code | Description | Response Model
 Get hotel and competitors' Sold Out Room Type
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/soldOutByRoomType
+- Url: https://services.expediapartnercentral.com/insights/public/v1/soldOutByRoomType
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -446,7 +446,7 @@ Status Code | Description | Response Model
 Get GEO Demand information
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/geoDemand
+- Url: https://services.expediapartnercentral.com/insights/public/v1/geoDemand
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -471,7 +471,7 @@ Status Code | Description | Response Model
 get missed opportunities from Packages for the specified booking date range
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/missedOpportunitiesInPackages
+- Url: https://services.expediapartnercentral.com/insights/public/v1/missedOpportunitiesInPackages
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -498,7 +498,7 @@ Status Code | Description | Response Model
 get a list hotels which added me as competitor
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/addCompSet
+- Url: https://services.expediapartnercentral.com/insights/public/v1/addCompSet
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -525,7 +525,7 @@ Status Code | Description | Response Model
 Get interest price range information
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/interestPriceRange
+- Url: https://services.expediapartnercentral.com/insights/public/v1/interestPriceRange
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -555,7 +555,7 @@ Status Code | Description | Response Model
 get compression data
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/compressionOutlook
+- Url: https://services.expediapartnercentral.com/insights/public/v1/compressionOutlook
 - Consumes: `application/json`
 - Produces: `application/json`
 
@@ -582,7 +582,7 @@ Status Code | Description | Response Model
 Get price distribution information
 
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/v1/priceDistribution
+- Url: https://services.expediapartnercentral.com/insights/public/v1/priceDistribution
 - Consumes: `application/json`
 - Produces: `application/json`
 
