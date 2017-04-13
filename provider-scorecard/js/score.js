@@ -31,8 +31,8 @@ var demo = {
                 "differenceFromStandard": -0.28356838
             },
             "rateLose": {
-                "value": "4.0",
-                "success": true,
+                "value": "4.1",
+                "success": false,
                 "delta": -4,
                 "deltaSuccess": true,
                 "unit": "%",
@@ -55,7 +55,7 @@ var demo = {
     "enhance": {
         "score": 1.0,
         "attributes": {
-            "productApi": true,
+            "productApi": false,
             "valueAddPromo": true,
             "rateManagement": true,
             "etp": true,
