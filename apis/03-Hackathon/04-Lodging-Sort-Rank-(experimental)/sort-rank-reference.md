@@ -1,110 +1,179 @@
-# Sort Rank
-This is the Sort Ranks API, it returns the sort ranks for a given hotel id.
+# Reference
 
-## lodging-sort/v1/hops/HopsAverageRanks
-### hopsAverageRanks
-hopsAverageRanks
+## Authentication
 
-- Method: `GET`
-- Url: https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks
-- Consumes: `application/json`
-- Produces: `application/json`
+The Sort Ranks API requires HTTP basic auth credentials to be supplied with every request.
 
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | query | hotelId | false | integer | 
-cid | query | clientId | false | string | 
-searchDate | query | givenSearchDates | false | array | 
-checkin | query | givenCheckinDate | false | string | 
-numDays | query | givenNumOfDays | false | integer | 
-currency | query | currency | false | string | 
-path | query | path | false | string | 
-Message-ID | header | msgId | false | string | 
+Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.
 
-#### Success Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-200 | OK | [SortRanksApiResponse](#/definitions/SortRanksApiResponse)
+## Sort Rank Endpoint
 
-#### Potential Error Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-401 | Unauthorized | #/definitions/undefined
-403 | Forbidden | #/definitions/undefined
-404 | Not Found | #/definitions/undefined
-default |  | [SortRanksApiResponse](#/definitions/SortRanksApiResponse)
+```
+GET /lodgingSort/v1/hops/HopsAverageRanks
+```
 
-### hopsAverageRanksPretty
-hopsAverageRanksPretty
+The Sort Rank endpoint will return a hotel's average sort rank data for a range of check-in dates.
 
-- Method: `GET`
-- Url: https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks/pretty
-- Consumes: `application/json`
-- Produces: `text/html`
+### Request Parameters
 
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | query | hotelId | false | integer | 
-cid | query | clientId | false | string | 
-searchDate | query | givenSearchDates | false | array | 
-checkin | query | givenCheckinDate | false | string | 
-numDays | query | givenNumOfDays | false | integer | 
-currency | query | currency | false | string | 
-path | query | path | false | string | 
-Message-ID | header | msgId | false | string | 
+| Name                | Parameter Type | Data Type | Example              | Description
+|---------------------|----------------|-----------|----------------------|-----------------|
+| `Authorization`     | Header         | String    | `Basic dGVzdDp0ZXN0` | Unique identifier for a property/hotel. |
+| `hotelId`           | Query          | Integer   | `123`                | Hotel identifier |
+| `cid`               | Query          | String    | `prague-hackathon`   | Client identifier |
+| `searchDate`        | Query          | String    | `2016-05-15`   | Can send in a list of search dates. Format: YYYY-MM-DD. Maximum number of search dates: 2 Each search date should be in this range: from today to previous 90 days (from today - 90 days to today) both inclusive. i.e. today-90 <= searchDate <= today, for each searchDate |
+| `checkin`           | Query          | String    | `2016-05-16`   | Checkin date starts on this day.  Checkin date range: from search date to next 90 days. i.e. searchDate<= checkIn <= searchDate+89 |
+| `numDays`           | Query          | Integer   | `1`   | Number of checkin dates. Max is 90 days and numDays + checkIn < searchDate + 90. Average sort rank/price/compensation is returned for each Checkin date, where Checkin date starts = checkIn and Checkin date ends = checkIn + numDays - 1. |
+| `currency`          | Query          | String    | `usd`   | Standard ISO currency code (for average price and average compensation). Currently only the default USD is supported
 
-#### Success Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-200 | OK | [string](#/definitions/string)
+##### Sample Request with all parameters specified
+```
+https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1&searchDate=2016-05-15&checkin=2016-05-16&numDays=2
+```
 
-#### Potential Error Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-401 | Unauthorized | #/definitions/undefined
-403 | Forbidden | #/definitions/undefined
-404 | Not Found | #/definitions/undefined
-default |  | string
+### Response
 
----
+The API returns a hotel's average sort rank, average price, and average compensation in JSON format aggregated over:
+- Search Date: A list of search date is sent in the request, and the aggregation is for each search date.
+- TPID: up to 3 TPIDs are defined for a hotel in top TPIDs and Regions list (see Sort Rank Report: Top TPIDs and Regions API), and the aggregation is over each TPID.
+- Region: up to 3 Regions are defined for each of the top TPID in top TPIDs and Regions list, and the aggregation is over each Region.
+- Checkin date: average sort rank/price/compensation is returned for each checkin date. Checkin date starts at the checkIn (as sent in the request) and ends at checkIn + numDays - 1.
 
-## Definitions
-- <a name="/definitions/TpidEntityResponse"></a>TpidEntityResponse
+### Response Format
+|Name | Type | Description|
+|-----|------|-------------|
+|hotelId | Integer | Hotel Identifier |
+|searchDate | String |  YYYY-MM-DD |
+|tpid |   Integer | Point of Sale (POSa) |
+|checkinDate |   String | YYYY-MM-DD |
+|regionId  |  Long  |  GAIA region ID |
+|avgRank | Double |  Average sort rank (for all searches done on the specified search date for the specified checkin date on the specified TPID and region).  |
+| avgPrice  |  Double | Average price is returned in USD.    |
+| avgComp | Double | Average compensation is returned in USD.  |
 
-Property Name | Type | Description
-------------- | ---- | -----------
-tpid | integer | 
-regions | Array[[RegionEntityResponse](#/definitions/RegionEntityResponse)] | 
 
-- <a name="/definitions/AverageCheckinDataEntity"></a>AverageCheckinDataEntity
+##### Sample response
 
-Property Name | Type | Description
-------------- | ---- | -----------
-checkinDate | string | 
-avgRank | number | 
-avgPrice | number | 
-avgComp | number | 
+```JSON
+{
+    "hotelId": 1,
+    "searchDates": [
+        {
+            "searchDate": "2016-05-15",
+            "tpids": [
+                {
+                    "regions": [
+                        {
+                            "data": [
+                                {
+                                    "avgComp": 76.67,
+                                    "avgPrice": 306.69,
+                                    "avgRank": 374.24,
+                                    "checkinDate": "2016-05-16"
+                                },
+                                {
+                                    "avgComp": 95.34,
+                                    "avgPrice": 381.37,
+                                    "avgRank": 272.98,
+                                    "checkinDate": "2016-05-17"
+                                }
+                            ],
+                            "regionId": 2114
+                        },
+                        {
+                            "data": [
+                                {
+                                    "avgComp": 97.66,
+                                    "avgPrice": 390.64,
+                                    "avgRank": 3.0,
+                                    "checkinDate": "2016-05-17"
+                                }
+                            ],
+                            "regionId": 800053
+                        },
+                        {
+                            "data": [],
+                            "regionId": 6144914
+                        }
+                    ],
+                    "tpid": 3101
+                },
+                {
+                    "regions": [
+                        {
+                            "data": [
+                                {
+                                    "avgComp": 79.78,
+                                    "avgPrice": 319.11,
+                                    "avgRank": 436.18,
+                                    "checkinDate": "2016-05-16"
+                                },
+                                {
+                                    "avgComp": 97.58,
+                                    "avgPrice": 390.3,
+                                    "avgRank": 387.64,
+                                    "checkinDate": "2016-05-17"
+                                }
+                            ],
+                            "regionId": 2114
+                        }
+                    ],
+                    "tpid": 3107
+                },
+                {
+                    "regions": [
+                        {
+                            "data": [
+                                {
+                                    "avgComp": 71.94,
+                                    "avgPrice": 287.75,
+                                    "avgRank": 372.18,
+                                    "checkinDate": "2016-05-16"
+                                },
+                                {
+                                    "avgComp": 93.25,
+                                    "avgPrice": 372.97,
+                                    "avgRank": 276.72,
+                                    "checkinDate": "2016-05-17"
+                                }
+                            ],
+                            "regionId": 2114
+                        }
+                    ],
+                    "tpid": 3109
+                }
+            ]
+        }
+    ]
+}
+```
 
-- <a name="/definitions/SortRanksApiResponse"></a>SortRanksApiResponse
+#### Error Messages
 
-Property Name | Type | Description
-------------- | ---- | -----------
-error | string | 
-hotelId | integer | 
-searchDates | Array[[SearchDateEntityResponse](#/definitions/SearchDateEntityResponse)] | 
+Even when there are errors, the Sort Ranks API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:
 
-- <a name="/definitions/SearchDateEntityResponse"></a>SearchDateEntityResponse
+```JSON
+{
+  "error": "No clientId specified or unknown clientId"
+}
+```
 
-Property Name | Type | Description
-------------- | ---- | -----------
-searchDate | string | 
-tpids | Array[[TpidEntityResponse](#/definitions/TpidEntityResponse)] | 
+```JSON
+{
+  "error": "No hotelId specified"
+}
+```
 
-- <a name="/definitions/RegionEntityResponse"></a>RegionEntityResponse
+```JSON
+{
+  "error": "Search Date(s) out of range",
+  "hotelId": 1
+}
+```
 
-Property Name | Type | Description
-------------- | ---- | -----------
-regionId | integer | 
-data | Array[[AverageCheckinDataEntity](#/definitions/AverageCheckinDataEntity)] | 
+```JSON
+{
+  "error": "Exceeded max. number of Search Dates",
+  "hotelId": 1
+}
+```
