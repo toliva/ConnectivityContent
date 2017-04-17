@@ -48,8 +48,15 @@ Simply POST the text to analyze to the endpoint: "/service/v1/analyze"
 #### Curl Request
 
 ```
-curl 'http://services.expediapartnercentral.com/htlrvw/service/v1/analyze' -i -X POST -H 'Accept: application/json' -d 'I love this hotel'
+curl -u [USERNAME]:[PASSWORD] -X POST -H 'Accept: application/json' -d '[TEXT]' 'http://services.expediapartnercentral.com/hotel-review/service/v1/analyze' 
 ```
+
+Where:
+
+- USERNAME: Your Partner Hackathon username
+- PASSWORD: Your Partner Hackathon password
+- TEXT: the text to send for analysis
+
 
 #### Http Request
 

@@ -10,7 +10,7 @@
     "license": {}
   },
   "host": "services.expediapartnercentral.com",
-  "basePath": "/imgtagging",
+  "basePath": "",
   "tags": [
     {
       "name": "media-intelligence-controller",
@@ -22,7 +22,7 @@
     "https"
   ],
   "paths": {
-    "/service/search": {
+    "/image-tag/v1": {
       "post": {
         "tags": [
           "media-intelligence-controller"

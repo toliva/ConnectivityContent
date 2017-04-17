@@ -18,11 +18,12 @@ Simply POST an URL or the Image binary to the REST endpoint of the service. The 
 ### Example providing the image URL
 
 ```
-curl -X POST --header 'Content-Type: multipart/form-data' --header 'Accept: */*' 'http://services.expediapartnercentral.com/imgtagging/service/search/[APK]?verbose=false&mediaUrl=[URL]'
+curl -u [USERNAME]:[PASSWORD] -X POST -F mediaUrl=[URL] 'http://services.expediapartnercentral.com/image-tag/v2'
 ```
-Where
+Where:
 
-- APK: the Application Key
+- USERNAME: Your Partner Hackathon username
+- PASSWORD: Your Partner Hackathon password
 - URL: the URL of the image to analyze
 
 ### Concrete Examples

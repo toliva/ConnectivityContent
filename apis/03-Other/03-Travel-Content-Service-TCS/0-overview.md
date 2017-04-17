@@ -52,10 +52,6 @@ Destination Experience (DX) pages have been built using TCS as content provider.
 
 Through these two use cases, you will learn how to query TCS to get content for a "Destination Only" and "Destination + Experience".
 
-##### Don't use the link as is
-**TIP**: You need to use your APK key. Replace in each link YOUR_APK by your APK key.
-
-
 ### Use Case 1 (Destination Only Content)
 
 Reference for fully rendered TCS content for Destination Only: https://www.expedia.com/lp/destinations/178307[Destination Only Content]
@@ -64,18 +60,24 @@ Here are the different calls from the DX Pages to the TCS Gateway to retrieve co
 
 - Section "DESTINATION"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION"
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION'
 ```
+
+Where:
+
+- USERNAME: Your Partner Hackathon username
+- PASSWORD: Your Partner Hackathon password
+
 
 ---
 
@@ -87,15 +89,20 @@ Here are the different calls from the DX Pages to TCS Gateway to retrieve the fo
 
 - Section "DESTINATION":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION":
 ```
-http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION'
 ```
+
+Where:
+
+- USERNAME: Your Partner Hackathon username
+- PASSWORD: Your Partner Hackathon password

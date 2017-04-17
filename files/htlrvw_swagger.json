@@ -10,7 +10,7 @@
     "license": {}
   },
   "host": "services.expediapartnercentral.com",
-  "basePath": "/htlrvw",
+  "basePath": "/hotel-review",
   "tags": [
     {
       "name": "hotel-review-controller",
