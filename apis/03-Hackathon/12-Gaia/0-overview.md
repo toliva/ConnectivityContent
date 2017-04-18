@@ -1,8 +1,6 @@
 # Overview
 
-Gaia is an Expedia internal service run by GPS that provides geographical data and geospatial selection functionality.
-
-Gaia has a large database of shapes and points representing things like cities, regions, or point of interests. Every elements is identified by a unique numerical identifier. 
+Gaia is a large database of shapes and points representing things like cities, regions, or point of interests. Every elements is identified by a unique numerical identifier. 
 
 Some of the API available via this portal uses Gaia ID has either inputs or outputs. This page explains how you can find the details attached to a Gaia ID or how you can determine the Gaia ID of a given city or point of interests.
 
