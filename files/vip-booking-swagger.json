@@ -42,7 +42,8 @@
             "responses": {"200": {
                 "description": "Ok",
                 "schema": {"$ref": "#/definitions/GuestVipTierStatus"}
-            }}
+            }},
+            "security": [{"Basic": []}]
         }},
         "/v1/bookings/{id}/guestVipStatus": {"get": {
             "tags": ["Bookings"],
@@ -62,7 +63,8 @@
             "responses": {"200": {
                 "description": "Ok",
                 "schema": {"$ref": "#/definitions/GuestVipTierStatus"}
-            }}
+            }},
+            "security": [{"Basic": []}]
         }},
         "/v1/hotels/vipStatus": {"get": {
             "tags": ["Hotels"],
@@ -86,7 +88,8 @@
             "responses": {"200": {
                 "description": "Ok",
                 "schema": {"$ref": "#/definitions/HotelVipStatus"}
-            }}
+            }},
+            "security": [{"Basic": []}]
         }},
         "/v1/hotels/{id}/vipStatus": {"get": {
             "tags": ["Hotels"],
@@ -106,7 +109,8 @@
             "responses": {"200": {
                 "description": "Ok",
                 "schema": {"$ref": "#/definitions/HotelVipStatus"}
-            }}
+            }},
+            "security": [{"Basic": []}]
         }}
     },
     "securityDefinitions": {"Basic": {"type": "basic"}},
