@@ -11,7 +11,8 @@ It was all built with mocked data and will not return real statuses. The logic t
 
 ## Requesting VIP status for hotels
 Our API can return whether a hotel, or a list of hotels, is part of the VIP program or not. As our API was build for the hackathon, there is no validation made on the hotel IDs provided. The API will return data as long as a valid integer is passed.
-In order to get a response indicating the hotel is participating in VIP program, use an even number. To get a response indicating a hotel isn't participating, use an odd number.
+
+**Mocked data logic**: In order to get a response indicating the hotel is participating in VIP program, use an even number. To get a response indicating a hotel isn't participating, use an odd number.
 
 To get the VIP status of one specific hotel:
 
@@ -51,12 +52,11 @@ https://services.expediapartnercentral.com/vip-booking/v1/hotels/vipStatus?ids=1
 ]
 ```
 
-## Request Guest Tier Level for a Booking
+## Request Guest VIP Tier Level for one or more Bookings
 Our API can return VIP tier level for a booking, or a list of bookings. As our API was built for the hackathon, it uses mocked data.
-In order to get Gold tier, the API has to be queried for a booking ID that's a multiple of 5. To get Silver status, the booking ID should be
-a multiple of 3. Any other booking ID will give the base tier.
+**Mocked Data Logic**: In order to get Gold tier, the API has to be queried for a booking ID that's a multiple of 5. To get Silver status, the booking ID should be a multiple of 3. Any other booking ID will give the base tier.
 
-To get the tier of a guest of a specific booking:
+To get the VIP tier level of a guest of a specific booking:
 https://services.expediapartnercentral.com/vip-booking/v1/bookings/12344333/guestVipStatus
 
 ```json
@@ -66,7 +66,7 @@ https://services.expediapartnercentral.com/vip-booking/v1/bookings/12344333/gues
 }
 ```
 
-to get the tier for a list of bookings:
+To get the VIP tier levels for a list of bookings:
 https://services.expediapartnercentral.com/vip-booking/v1/bookings/guestVipStatus?ids=1000000%2C3000036%2C902213212
 
 ```json
