@@ -1,3 +1,4 @@
+# Quick Start
 With the VIP Bookings experimental API, partners can query Expedia to know if hotels are participating in the VIP program or not. They can also query Expedia to know the VIP level of the main guest of any booking.
 
 ## Authentication
