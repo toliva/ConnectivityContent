@@ -9,6 +9,9 @@
     },
     "host": "services.expediapartnercentral.com",
     "basePath": "/vip-booking",
+    "schemes": [
+        "https"
+    ],
     "tags": [
         {
             "name": "Bookings",
