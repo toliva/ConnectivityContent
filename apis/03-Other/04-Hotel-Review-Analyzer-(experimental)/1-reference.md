@@ -1,6 +1,5 @@
 # API Definition
 
-<a name="authentication"></a>
 ## Authentication
 Partner must include a valid username/password in the HTTP header of the request using the below format: 
 ```
@@ -62,8 +61,88 @@ All responses provided by the API will either contain an HTTP Entity element, wh
 
 The service analyze the POST'ed text and returns it along with a list of the extracted entities. The response gives the different words with their position within the given text.
 
-#### Example of Response
+#### Example
+
+Here is the text the application analyzed:
+
+> Great location to access central Madrid overlooking Plaza de Espagne. The staff were always helpful and interested in what our plans were and offered helpful local advice. All facilities at the hotel were excellent. The wellness centre managed to revive us all after a hard day of galleries, shops and Plazas. Excellent
 
 ```json
-
+{
+  "success": true,
+  "result": {
+    "text": "Great location to access central Madrid overlooking Plaza de Espagne. The staff were always helpful and interested in what our plans were and offered helpful local advice. All facilities at the hotel were excellent. The wellness centre managed to revive us all after a hard day of galleries, shops and Plazas. Excellent",
+    "entities": [
+      {
+        "tokens": [
+          {
+            "word": "location",
+            "position": 6
+          }
+        ],
+        "type": "Miscellaneous",
+        "sentiment": 0.9982513292865749
+      },
+      {
+        "tokens": [
+          {
+            "word": "hotel",
+            "position": 194
+          }
+        ],
+        "type": "Miscellaneous",
+        "sentiment": 0.9865033927843053
+      },
+      {
+        "tokens": [
+          {
+            "word": "staff",
+            "position": 220
+          }
+        ],
+        "type": "Property",
+        "sentiment": 0.8928477090956729
+      },
+      {
+        "tokens": [
+          {
+            "word": "Plazas",
+            "position": 302
+          }
+        ],
+        "type": "Location",
+        "sentiment": 0.8928477090956729
+      }
+    ]
+  }
+}
 ```
+
+#### HotelReviewAnalysis 
+
+| Property              | Data Type | Description                                                                                             |
+|-----------------------|-----------|---------------------------------------------------------------------------------------------------------|
+| `success`             | Boolean   | True or False. Tells if the analysis completed successfully                                             |
+| `result`              | Result    | The complex object containing the result of the analysis                                                |
+
+#### Result 
+
+| Property              | Data Type | Description                                                                                             |
+|-----------------------|-----------|---------------------------------------------------------------------------------------------------------|
+| `text`                | String    | A copy of the text analyzed; source of this Result.                                                     |
+| `entities`            | List<Entity>    | The list of entities extracted from the text. An entity is a group of word identified as part of a specific category.              |
+
+#### Entity 
+
+| Property              | Data Type | Description                                                                                             |
+|-----------------------|-----------|---------------------------------------------------------------------------------------------------------|
+| `tokens`              | List<Token>    | The list of token part of this entity.                                                    |
+| `type`            | String   | The category of this entity (either Property, Room, Location or Miscellaneous. See [here](/apis/other/hotel-review-analyzer/overview.html) for more details on the categories.            |
+| `sentiment`            | Float   | Sentiment score, between 0 and 1 where 0 is very negative and 1 very positive.              |
+
+#### Token 
+
+| Property              | Data Type | Description                                                                                             |
+|-----------------------|-----------|---------------------------------------------------------------------------------------------------------|
+| `word`              | String    | Word part of the Entity                                                    |
+| `position`            | Integer   | Starting index of this word within the analyzed text.            |
