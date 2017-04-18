@@ -13,9 +13,7 @@ Delete variablemargins
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | path | Hotel ID | true | integer | 
-Client-ID | header | Client ID | true | string | 
-User-ID | header | User ID | true | integer | 
+hotelId | path | Hotel ID | true | integer |
 
 #### Potential Error Responses
 Status Code | Description | Response Model
@@ -34,9 +32,7 @@ Delete one specified variablemargin
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 hotelId | path | Hotel ID | true | integer | 
-variablemarginId | path | variablemarginId ID | true | integer | 
-Client-ID | header | Client ID | true | string | 
-User-ID | header | User ID | true | integer | 
+variablemarginId | path | variablemarginId ID | true | integer |
 
 #### Potential Error Responses
 Status Code | Description | Response Model
@@ -57,8 +53,7 @@ Get variablemargins
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | path | Hotel ID | true | integer | 
-Client-ID | header | Client ID | true | string | 
+hotelId | path | Hotel ID | true | integer |
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -79,9 +74,7 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 Content-Type | header | Request Content Type | true | integer | 
 body | body | Request Payload | true | [inline_model_2](#/definitions/inline_model_2) | 
 hotelId | path | Hotel ID | true | integer | 
-variablemarginId | path | variablemarginId ID | true | integer | 
-Client-ID | header | Client ID | true | string | 
-User-ID | header | User ID | true | integer | 
+variablemarginId | path | variablemarginId ID | true | integer |
 
 **Examples**
 ```
@@ -114,9 +107,7 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 Content-Type | header | Request Content Type | true | integer | 
 body | body | Request Payload | true | [inline_model_0](#/definitions/inline_model_0) | 
-hotelId | path | Hotel ID | true | integer | 
-Client-ID | header | Client ID | true | string | 
-User-ID | header | User ID | true | integer | 
+hotelId | path | Hotel ID | true | integer |
 
 **Examples**
 ```
@@ -149,7 +140,6 @@ Parameter | Parameter Type | Description | Required | Data Type | Default Value
 hotelId | path | Hotel ID | true | integer | 
 startDate | query | startDate | false | string | 
 endDate | query | endDate | false | string | 
-Client-ID | header | Client ID | true | string | 
 
 #### Success Responses
 Status Code | Description | Response Model
