@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "<span> The VIP Access API enables Expedia partners to pass a booking item ID list and it will return VIP tier status for each booking. The API also allows partners to pass a property ID list and it will return VIP hotel status for each property ID. <\/span> <h2>Authentication<\/h2> <span>The VIP Access Api uses Basic Authorization scheme and the same credentials used to manage properties via EPC today are compatible with the API.<\/span>\n",
+        "description": "<span> The VIP Access API enables Expedia partners to pass a booking item ID list and it will return VIP tier status for each booking. The API also allows partners to pass a property ID list and it will return VIP hotel status for each property ID. <\/span> <h2>Authentication<\/h2> <span>The VIP Access Api uses Basic Authorization scheme and the same API credentials used to manage properties via other APIs today are compatible with this API.<\/span>\n",
         "version": "1.0.0",
         "title": "Hotel and booking VIP access service",
         "contact": {},
