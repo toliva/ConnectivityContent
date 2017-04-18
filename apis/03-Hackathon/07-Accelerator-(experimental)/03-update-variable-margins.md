@@ -45,6 +45,5 @@ Example URL
 | Header | Required? | Notes |
 |---|---|---|
 | Content-Type : application/json | Required |  specifies that the response should have JSON payload |
-| User-ID: {integer} | Required | TUID assigned to the user |
 | Transaction-ID : {GUID} | Optional | guid assigned for the transaction |
 | For-Testing-Only: {boolean} | Optional | boolean-for-synthetic-test-messages<br/>(i.e. 'true' if the message is a test or synthetic request)<br/>If this header is included, then the service will log the RQ/RS in event log. |
