@@ -20,7 +20,6 @@ The Sort Rank endpoint will return a hotel's average sort rank data for a range 
 |---------------------|----------------|-----------|----------------------|-----------------|
 | `Authorization`     | Header         | String    | `Basic dGVzdDp0ZXN0` | Unique identifier for a property/hotel. |
 | `hotelId`           | Query          | Integer   | `123`                | Hotel identifier |
-| `cid`               | Query          | String    | `prague-hackathon`   | Client identifier |
 | `searchDate`        | Query          | String    | `2016-05-15`   | Can send in a list of search dates. Format: YYYY-MM-DD. Maximum number of search dates: 2 Each search date should be in this range: from today to previous 90 days (from today - 90 days to today) both inclusive. i.e. today-90 <= searchDate <= today, for each searchDate |
 | `checkin`           | Query          | String    | `2016-05-16`   | Checkin date starts on this day.  Checkin date range: from search date to next 90 days. i.e. searchDate<= checkIn <= searchDate+89 |
 | `numDays`           | Query          | Integer   | `1`   | Number of checkin dates. Max is 90 days and numDays + checkIn < searchDate + 90. Average sort rank/price/compensation is returned for each Checkin date, where Checkin date starts = checkIn and Checkin date ends = checkIn + numDays - 1. |
