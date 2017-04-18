@@ -5,12 +5,13 @@
     "version": "1.0",
     "title": "cs-htlrv-analysis",
     "contact": {
+      "name": "Guy Masse",
+      "url": "https://expediaconnectivity.com/developer",
       "email": "gmasse@expedia.com"
-    },
-    "license": {}
+    }
   },
   "host": "services.expediapartnercentral.com",
-  "basePath": "/hotel-review",
+  "basePath": "/",
   "tags": [
     {
       "name": "hotel-review-controller",
@@ -21,7 +22,7 @@
     "https"
   ],
   "paths": {
-    "/service/v1/analyze": {
+    "/hotel-review/service/v1/analyze": {
       "post": {
         "tags": [
           "hotel-review-controller"
@@ -39,7 +40,7 @@
           {
             "in": "body",
             "name": "text",
-            "description": "text",
+            "description": "text to submit for analysis",
             "required": true,
             "schema": {
               "type": "string"
@@ -53,17 +54,8 @@
               "$ref": "#/definitions/Response"
             }
           },
-          "201": {
-            "description": "Created"
-          },
           "401": {
             "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
           }
         },
         "security": [
