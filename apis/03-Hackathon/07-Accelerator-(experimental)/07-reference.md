@@ -1,49 +1,8 @@
 # Reference
-View, update and delete variable margins for hotels over specific date ranges.
+View, add, update and delete variable margins for hotels over specific date ranges.
 
-## variablemarginss
-### Deletes variablemargins under hotelid.
-Delete variablemargins
-
-- Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins
-- Consumes: `application/json`
-- Produces: `application/json`
-
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | path | Hotel ID | true | integer |
-
-#### Potential Error Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-200 | OK | #/definitions/undefined
-
-### Deletes one specified variablemargin.
-Delete one specified variablemargin
-
-- Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins/{variablemarginId}
-- Consumes: `application/json`
-- Produces: `application/json`
-
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-hotelId | path | Hotel ID | true | integer | 
-variablemarginId | path | variablemarginId ID | true | integer |
-
-#### Potential Error Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-200 | OK | #/definitions/undefined
-
----
-
-## variablemargins
-### Return variablemargins under hotel id provided.
-Get variablemargins
+## Retrieve Variable Margins
+### Return variable margins under hotel id provided.
 
 - Method: `GET`
 - Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins
@@ -60,8 +19,42 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 200 | OK | [inline_model](#/definitions/inline_model)
 
-### Update an existing variablemargin.
-Update variablemargin
+---
+
+## Add Variable Margins
+### Add a variable margin.
+Add variablemargin
+
+- Method: `POST`
+- Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins
+- Consumes: `application/json`
+- Produces: `*/*`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type | Default Value
+--------- | -------------- | ----------- | -------- | --------- | -------------
+Content-Type | header | Request Content Type | true | integer | 
+body | body | Request Payload | true | [inline_model_0](#/definitions/inline_model_0) | 
+hotelId | path | Hotel ID | true | integer |
+
+**Examples**
+```
+{
+  "StartDate": "string",
+  "EndDate": "string",
+  "VariableMarginPercentage": 0
+}
+```
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+201 | Created | [inline_model_1](#/definitions/inline_model_1)
+
+---
+
+## Update Variable Margins
+### Update an existing variable margin.
 
 - Method: `PUT`
 - Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins/{variablemarginId}
@@ -93,40 +86,46 @@ Status Code | Description | Response Model
 
 ---
 
-## variablemargin
-### Add a variablemargin.
-Add variablemargin
+## Delete Variable Margins
+### Delete variable margins under hotelid.
 
-- Method: `POST`
+- Method: `DELETE`
 - Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins
 - Consumes: `application/json`
-- Produces: `*/*`
+- Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
-Content-Type | header | Request Content Type | true | integer | 
-body | body | Request Payload | true | [inline_model_0](#/definitions/inline_model_0) | 
 hotelId | path | Hotel ID | true | integer |
 
-**Examples**
-```
-{
-  "StartDate": "string",
-  "EndDate": "string",
-  "VariableMarginPercentage": 0
-}
-```
-
-#### Success Responses
+#### Potential Error Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-201 | Created | [inline_model_1](#/definitions/inline_model_1)
+200 | OK | #/definitions/undefined
+
+### Delete a specific variable margin.
+
+- Method: `DELETE`
+- Url: https://services.expediapartnercentral.com/accelerator/v1/hotels/{hotelId}/variablemargins/{variablemarginId}
+- Consumes: `application/json`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type | Default Value
+--------- | -------------- | ----------- | -------- | --------- | -------------
+hotelId | path | Hotel ID | true | integer | 
+variablemarginId | path | variablemarginId ID | true | integer |
+
+#### Potential Error Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | OK | #/definitions/undefined
 
 ---
 
-## variablemarginsChangeHistory
-### Get variablemargin change history for a hotel id
+## Variable Margins Change History
+### Get variable margin change history for a hotel id
 Get variablemargin change history
 
 - Method: `GET`
