@@ -12,7 +12,7 @@ It was all built with mocked data and will not return real statuses. The logic t
 ## Requesting VIP status for hotels
 Our API can return whether a hotel, or a list of hotels, is part of the VIP program or not. As our API was build for the hackathon, there is no validation made on the hotel IDs provided. The API will return data as long as a valid integer is passed.
 
-**Mocked data logic**: In order to get a response indicating the hotel is participating in VIP program, use an even number. To get a response indicating a hotel isn't participating, use an odd number.
+**Mocked data logic**: In order to get a response indicating the hotel is participating in VIP program, use an **even** number. To get a response indicating a hotel isn't participating, use an **odd** number.
 
 To get the VIP status of one specific hotel:
 
