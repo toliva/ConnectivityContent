@@ -65,7 +65,14 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     }
   },

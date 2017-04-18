@@ -122,7 +122,14 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     },
     "/service/travel/latLng/{latitude}/{longitude}": {
@@ -242,7 +249,14 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     },
     "/service/travel/regionId/{regionId}": {
@@ -353,7 +367,14 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     },
     "/service/travel/sections": {
@@ -386,7 +407,14 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     }
   },

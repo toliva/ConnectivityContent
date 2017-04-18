@@ -101,7 +101,104 @@
           "404": {
             "description": "Not Found"
           }
-        }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/image-tag/v2": {
+      "post": {
+        "tags": [
+          "media-intelligence-controller"
+        ],
+        "summary": "Get tags for current image -- Includes Pollo Loco Classification",
+        "operationId": "adminSearchUsingPOST",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "verbose",
+            "in": "query",
+            "description": "verbose",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "mediaUrl",
+            "in": "query",
+            "description": "mediaUrl",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file",
+            "required": false,
+            "type": "file"
+          },
+          {
+            "name": "characteristics",
+            "in": "query",
+            "description": "characteristics",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "features",
+                "attributes",
+                "faces",
+                "landmarks"
+              ]
+            },
+            "collectionFormat": "multi",
+            "default": "features,attributes,faces,landmarks",
+            "enum": [
+              "features",
+              "attributes",
+              "faces",
+              "landmarks"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Single«MediaTagResponse»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
       }
     }
   },
