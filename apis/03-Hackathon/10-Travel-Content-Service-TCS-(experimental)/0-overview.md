@@ -29,7 +29,6 @@ We provide two rest endpoints which covers the 2 main use cases we currently sup
 Path | Type | Require | Description
 --- | --- | ---
 regionID | String | Mandatory | We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.
-abacus | String | Optional | May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.
 sections | List<String> | Mandatory | Select one of the sections you want to retrieve content for, choose one of 8 supported sections: ACTIVITY, AFFINITY, ARTICLE, DESTINATION, NEIGHBORHOOD, POI, SIMILAR_DESTINATIONS and TIP.
 
 
@@ -38,13 +37,12 @@ sections | List<String> | Mandatory | Select one of the sections you want to ret
 Path | Type | Require | Description
 --- | --- | ---
 regionID | String | Mandatory | We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.
-abacus | String | Optional | May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.
-tag | String | Mandatory | [DesMet Tag](https://expediaconnectivity.com/apis/other/travel-content-service-tcs/desmet.html) See tip how to fetch the DesMet tag.
+tag | String | Mandatory | [DesMet Tag](https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html) See tip how to fetch the DesMet tag.
 sections | List<String> | Mandatory | Select one of the sections you want to retrieve content for, choose one of 8 supported sections: ACTIVITY, AFFINITY, ARTICLE, DESTINATION, NEIGHBORHOOD, POI, SIMILAR_DESTINATIONS and TIP.
 
 >**What are DesMet tags ?**
 >
->DesMet is an internal Expedia service that allows cross-domain translation of terms. TCS uses DesMet tags to filter down content by 'experience'. See the list of DesMet tags [here](https://expediaconnectivity.com/apis/other/travel-content-service-tcs/desmet.html).
+>DesMet is an internal Expedia service that allows cross-domain translation of terms. TCS uses DesMet tags to filter down content by 'experience'. See the list of DesMet tags [here](https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html).
 
 ## Sample use cases - Real examples
 
@@ -56,53 +54,56 @@ Through these two use cases, you will learn how to query TCS to get content for 
 
 Reference for fully rendered TCS content for Destination Only: https://www.expedia.com/lp/destinations/178307[Destination Only Content]
 
-Here are the different calls from the DX Pages to the TCS Gateway to retrieve content from the following sections for London (Gaia ID: 178279):
+Here are the different calls from the DX Pages to the TCS Gateway to retrieve content from the following sections for a given Gaia ID:
 
 - Section "DESTINATION"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION'
 ```
 
 Where:
 
 - USERNAME: Your Partner Hackathon username
 - PASSWORD: Your Partner Hackathon password
+- GAIA_ID: The region ID. See the [Gaia API documentation](https://expediaconnectivity.com/apis/hackathon/gaia/overview.html) to find the right identifiers.
 
 
 ---
 
 ### Use Case 2 (Destination + Experience Content)
 
-Reference for fully rendered TCS content for Destination + Experience Content: https://www.expedia.com/lp/destinations/178307/shopping
+Reference for fully rendered TCS content for Destination + Experience Content (ex for London): https://www.expedia.com/lp/destinations/178307/shopping
 
-Here are the different calls from the DX Pages to TCS Gateway to retrieve the following sections for London (Gaia ID: 178279) and the experience (shopping):
+Here are the different calls from the DX Pages to TCS Gateway to retrieve the following sections for destination and experience:
 
 - Section "DESTINATION":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=NEIGHBORHOOD'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&sections=SIMILAR_DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=SIMILAR_DESTINATION'
 ```
 
 Where:
 
 - USERNAME: Your Partner Hackathon username
 - PASSWORD: Your Partner Hackathon password
+- GAIA_ID: The region ID. See the [Gaia API documentation](https://expediaconnectivity.com/apis/hackathon/gaia/overview.html) to find the right identifiers.
+- TAG: A [DesMet Tag](https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html) (the experience)
