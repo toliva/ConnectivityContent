@@ -12,7 +12,7 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 
 ----
 
-## Reading missed opportunities from Packages
+## Reading Missed Opportunities from Packages
 
 When someone shopped your hotel as a Package and booked someone else's hotel as a Package within 24 hour POSa (00:00 to 24:00 wall clock), missedOpportunitiesInPackages API returns all hotels by the total booking number within this time frame.
 
@@ -46,6 +46,8 @@ The response will contain a list of missed opportunities for packages.
 }
 ```
 
+----
+
 ## Reading Compression Data
 
 Compression forecasts the outlook of regional room supply (from any hotelId) by calculating the percentage of unavailable rooms to available rooms
@@ -74,6 +76,8 @@ The response will contain a list of compression data for each date in the suppli
   }
 }
 ```
+
+----
 
 ## Reading Price Distribution Information
 
