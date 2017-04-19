@@ -82,7 +82,7 @@
 <tr>
 <td colspan="2" valign="top"><strong>sections</strong></td>
 <td valign="top"><a href="#sections">sections</a></td>
-<td>List of type of section requested : "ACTIVITY", "AFFINITY", "ARTICLE", "DESTINATION", "NEIGHBORHOOD", "POI", "SIMILAR_DESTINATION", "TIP"</td>
+<td>List of type of section requested : <a href="#activitysection">"ACTIVITY"</a>, "AFFINITY", "ARTICLE", "DESTINATION", "NEIGHBORHOOD", "POI", "SIMILAR_DESTINATION", "TIP"</td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">regionId</td>
@@ -217,7 +217,7 @@ Geography information
 <tr>
 <td colspan="2" valign="top"><strong>regionId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia ID</a></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>latitude</strong></td>
