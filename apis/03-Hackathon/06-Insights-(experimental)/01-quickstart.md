@@ -50,7 +50,7 @@ The response will contain a list of missed opportunities for packages.
 
 Compression forecasts the outlook of regional room supply (from any hotelId) by calculating the percentage of unavailable rooms to available rooms
 
-To retrieve compression data simply pass a hotel id and optional start date / end date to the </insights/public/v1/compressionOutlook> endpoint via a query parameter. When dates are not specified, they will default from today to today + 28 days
+To retrieve compression data simply pass a hotel id, start date and end date to the </insights/public/v1/compressionOutlook> endpoint via a query parameter.
 
 ```
 https://services.expediapartnercentral.com/insights/public/v1/compressionOutlook?hotelId=12933870&startDate=2017-01-01&endDate=2017-04-01
