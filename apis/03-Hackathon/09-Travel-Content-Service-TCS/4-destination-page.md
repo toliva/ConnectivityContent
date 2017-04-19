@@ -4,7 +4,7 @@ TCS is used to gather/generate all the content required to generate destinations
 
 [Madrid](https://www.expedia.com/lp/destinations/178281)
 
-Here are some screenshot of pages for Chicago:
+Here are some screenshots of pages for Chicago:
 
 ![Chicago](/files/tcs_dx_fig1.png "Figure 1")
 
