@@ -82,7 +82,7 @@
 <tr>
 <td colspan="2" valign="top"><strong>sections</strong></td>
 <td valign="top"><a href="#sections">sections</a></td>
-<td>List of type of section requested : <a href="#activitysection">"ACTIVITY"</a>, "AFFINITY", "ARTICLE", "DESTINATION", "NEIGHBORHOOD", "POI", "SIMILAR_DESTINATION", "TIP"</td>
+<td>List of type of section requested : <a href="#activitysection">"ACTIVITY"</a>, <a href="#affinitysection">"AFFINITY"</a>, <a href="#articlesection">"ARTICLE"</a>, <a href="#destinationsection">"DESTINATION"</a>, <a href="#neighborhoodsection">"NEIGHBORHOOD"</a>, <a href="#poisection">"POI"</a>, <a href="#similarsection">"SIMILAR_DESTINATION"</a>, <a href="#tipsection">"TIP"</a></td>
 </tr>
 <tr>
 <td colspan="2" align="right" valign="top">regionId</td>
@@ -252,19 +252,14 @@ Activity section
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
-<td></td>
+<td>The static content associated with the data</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -286,37 +281,37 @@ Affinity description
 <tr>
 <td colspan="2" valign="top"><strong>score</strong></td>
 <td valign="top"><a href="#float">Float</a></td>
-<td></td>
+<td>Score calculated by the affinity prime service</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>image</strong></td>
 <td valign="top"><a href="#image">Image</a></td>
-<td></td>
+<td>Image representing this affinity/experience.</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>postStayEndorsements</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Number of hotels with this affinity</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>hotelCount</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Number of hotels with this affinity</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
-<td></td>
+<td>The static content associated with the data</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>reviewCount</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Number of reviews associated with this affinity</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Displayed name of the affinity</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -351,19 +346,14 @@ Affinity section
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
-<td></td>
+<td>The static content associated with the data</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -385,17 +375,12 @@ Article information
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Image(s) attached to this article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>author</strong></td>
 <td valign="top"><a href="#author">Author</a></td>
-<td></td>
+<td>Information about the author of the article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -405,27 +390,27 @@ Article information
 <tr>
 <td colspan="2" valign="top"><strong>excerpt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Excerpt of the article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Title of the article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>publicationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Publication Date of the article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>content</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Content of the article</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>url</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Url of the article</td>
 </tr>
 </tbody>
 </table>
@@ -450,19 +435,14 @@ Article section
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
-<td></td>
+<td>The static content associated with the data</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -516,7 +496,7 @@ Get the affinity information
 <tr>
 <td colspan="2" valign="top"><strong>displayedName</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>The affinity localized label</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -548,7 +528,7 @@ Description information
 <tr>
 <td colspan="2" valign="top"><strong>value</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Small or Medium text describing the destination.</td>
 </tr>
 </tbody>
 </table>
@@ -575,7 +555,7 @@ Get the geography information. Name, country, latitude, longitude
 <tr>
 <td colspan="2" valign="top"><strong>regionId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia ID</a></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>latitude</strong></td>
@@ -585,7 +565,7 @@ Get the geography information. Name, country, latitude, longitude
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Name of this geo-location</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>longitude</strong></td>
@@ -612,12 +592,7 @@ Destination Section. Retrieve Affinity, Description, Geo, Images
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Images attached to this destination.</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geo</strong></td>
@@ -632,7 +607,7 @@ Destination Section. Retrieve Affinity, Description, Geo, Images
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>affinity</strong></td>
@@ -669,22 +644,22 @@ Hotel information
 <tr>
 <td colspan="2" valign="top"><strong>price</strong></td>
 <td valign="top"><a href="#hotelpricing">HotelPricing</a></td>
-<td></td>
+<td>The price of hotel</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>recommendationScore</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>How is the hotel scored</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>destination</strong></td>
 <td valign="top"><a href="#hoteldestination">HotelDestination</a></td>
-<td></td>
+<td>Hotel information</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>hotelId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Hotel Id</td>
 </tr>
 </tbody>
 </table>
@@ -706,27 +681,22 @@ Destination information
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Images of the hotel</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geo</strong></td>
 <td valign="top"><a href="#hotelgeo">HotelGeo</a></td>
-<td></td>
+<td>Geo-Location of the hotel</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>description</strong></td>
 <td valign="top"><a href="#destdescription">DestDescription</a></td>
-<td></td>
+<td>Description of the hotel</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>title</strong></td>
 <td valign="top"><a href="#destdescription">DestDescription</a></td>
-<td></td>
+<td>Title of the hotel</td>
 </tr>
 </tbody>
 </table>
@@ -748,7 +718,7 @@ Geography information
 <tr>
 <td colspan="2" valign="top"><strong>regionId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia ID</a></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>latitude</strong></td>
@@ -837,11 +807,6 @@ Hotel section.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
 <td></td>
@@ -849,7 +814,7 @@ Hotel section.
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -886,7 +851,7 @@ Get the image information
 <tr>
 <td colspan="2" valign="top"><strong>hero</strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
-<td></td>
+<td>Is this the <a href="https://en.wikipedia.org/wiki/Hero_image">Hero</a> image ?</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -918,12 +883,7 @@ Neighborhood information.
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Image(s) for this neighborhood</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geo</strong></td>
@@ -943,7 +903,7 @@ Neighborhood information.
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top"><a href="#neighborhoodtags">NeighborhoodTags</a></td>
-<td></td>
+<td>Affinities this neighborhood is known for (DesMet Affinity Tags)</td>
 </tr>
 </tbody>
 </table>
@@ -992,7 +952,7 @@ Geography information.
 <tr>
 <td colspan="2" valign="top"><strong>regionId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia ID</a></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
@@ -1022,11 +982,6 @@ Neighborhood section.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
 <td></td>
@@ -1034,7 +989,7 @@ Neighborhood section.
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -1061,7 +1016,7 @@ Tag information.
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Name of the affinity associated with the neighborhood</td>
 </tr>
 </tbody>
 </table>
@@ -1105,12 +1060,7 @@ Poi information.
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Image(s) showcasing this point of interest</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geo</strong></td>
@@ -1130,7 +1080,7 @@ Poi information.
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top"><a href="#poitags">PoiTags</a></td>
-<td></td>
+<td>Affinities this POI is known for (DesMet Affinity Tags)</td>
 </tr>
 </tbody>
 </table>
@@ -1318,11 +1268,6 @@ Poi section.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
 <td></td>
@@ -1330,7 +1275,7 @@ Poi section.
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -1352,15 +1297,10 @@ Tag information.
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Name of the affinity associated with the neighborhood</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>category</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -1433,12 +1373,7 @@ Similar destination information.
 <tr>
 <td colspan="2" valign="top"><strong>images</strong></td>
 <td valign="top">[<a href="#image">Image</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
+<td>Image(s) of this destination</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>geo</strong></td>
@@ -1448,7 +1383,7 @@ Similar destination information.
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top"><a href="#similardestinationtags">SimilarDestinationTags</a></td>
-<td></td>
+<td>Affinities this destination is known for (DesMet Affinity Tags)</td>
 </tr>
 </tbody>
 </table>
@@ -1475,7 +1410,7 @@ Geo information.
 <tr>
 <td colspan="2" valign="top"><strong>regionId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia ID</a></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
@@ -1502,7 +1437,7 @@ Tag information.
 <tr>
 <td colspan="2" valign="top"><strong>displayedName</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Name of the affinity associated with the destination</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -1554,11 +1489,6 @@ Similar section
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
 <td></td>
@@ -1566,7 +1496,7 @@ Similar section
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -1593,17 +1523,17 @@ Tip information.
 <tr>
 <td colspan="2" valign="top"><strong>image</strong></td>
 <td valign="top"><a href="#image">Image</a></td>
-<td></td>
+<td>Image attached to this tip</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>author</strong></td>
 <td valign="top"><a href="#tipavatar">TipAvatar</a></td>
-<td></td>
+<td>Author of this tip</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>name</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Tip name</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
@@ -1613,12 +1543,12 @@ Tip information.
 <tr>
 <td colspan="2" valign="top"><strong>body</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Tip body</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>tags</strong></td>
 <td valign="top"><a href="#tiptags">TipTags</a></td>
-<td></td>
+<td>List of tags associated to the tip</td>
 </tr>
 </tbody>
 </table>
@@ -1665,7 +1595,7 @@ Tip avatar information.
 <tr>
 <td colspan="2" valign="top"><strong>avatar</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Author avatar url</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>community</strong></td>
@@ -1697,12 +1627,12 @@ Geo information.
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Gaia Id</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>type</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Type of Gaia object</td>
 </tr>
 </tbody>
 </table>
@@ -1727,11 +1657,6 @@ Tip section
 <td></td>
 </tr>
 <tr>
-<td colspan="2" align="right" valign="top">limit</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>generatedContent</strong></td>
 <td valign="top"><a href="#map">Map</a></td>
 <td></td>
@@ -1739,7 +1664,7 @@ Tip section
 <tr>
 <td colspan="2" valign="top"><strong>creationDate</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Date when the section has been generated</td>
 </tr>
 </tbody>
 </table>
@@ -1761,7 +1686,7 @@ Tag information.
 <tr>
 <td colspan="2" valign="top"><strong>displayedName</strong></td>
 <td valign="top"><a href="#string">String</a></td>
-<td></td>
+<td>Tag translated name</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
