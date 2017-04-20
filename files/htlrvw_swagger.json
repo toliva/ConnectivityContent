@@ -68,7 +68,7 @@
       }
     },
     "/hotel-review/service/v1/retrieve/{hotelId}": {
-      "post": {
+      "get": {
         "tags": [
           "hotel-review-controller"
         ],
