@@ -27,6 +27,30 @@ Status Code | Description | Response Model
 ----------- | ----------- | --------------
 400 | status: 'Error', errorCode: 3021, errorMsg: 'The endDate was not valid date, the date format should be yyyy-MM-dd.' | #/definitions/undefined
 
+### Get the fair share data for the given stayDates
+Get the fair share data for the given stayDates
+
+- Method: `GET`
+- Url: https://services.expediapartnercentral.com/insights/public/v1/fairShare
+- Consumes: `application/json`
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type | Default Value
+--------- | -------------- | ----------- | -------- | --------- | -------------
+hotelId | query | hotel ID |  | integer |
+dayNum | query | (Optional)the number of days from today to the future, default value is 1 |  | integer |
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+200 | No response was specified | [FairShareJSONResponse](#/definitions/FairShareJSONResponse)
+
+#### Potential Error Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+400 | status: 'Error', errorCode: 2002, errorMsg: 'This hotel has no competitors' | #/definitions/undefined
+
 ### get compression data between startDate and endDate
 get compression data
 
