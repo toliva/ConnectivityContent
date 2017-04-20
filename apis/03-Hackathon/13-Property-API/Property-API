@@ -1,1 +1,18 @@
+# Overview
+
+The Property API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.
+
+## Authentication
+All requests should include Basic Authentication in HTTP header using Hackathon specific (EPC) credentials. For the Hackathon, Test provider id: 1000 is available for participants to use for onboarding new properties.
+
+## Supported Features
+
+Property API supports the following use cases:
+
+    Onboard a new property into Expedia's Lodging System by submitting property-level details, such as a property's name, address, and attributes.
+    Update the record of a property that was previously onboarded by the Property API by you.
+    Retrieve a record of the property that was previously onboarded via the Property API by you.
+    Get the status of a property, e.g. Onboarding Completed, Onboarding Failed.
+
+See here for more information: https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html
 
