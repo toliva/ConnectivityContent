@@ -285,3 +285,6 @@ The response will contain a list of compression data for each date in the suppli
 
 ## Fair Share
 The Fair Share message projects a competitive metric that compares a given hotel's expected market share vs. their competitor's market share based on a given stayDate. The equation is: myRoomCount / (myRoomCount + compSetRoomCount) to compute FairShare for a given hotel for a given staydate. 
+
+**Mocked Data Warning**: This API will only returned mocked data, for the purpose of the Madrid hackathon.
+
