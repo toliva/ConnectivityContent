@@ -1,1 +1,13 @@
+# Overview
+
+Property Api enables onboarding of properties (aka hotels) and update property-level content. 
+
+Authentication
+
+Basic Authentication in HTTP header, using Hackathon specific (EPC) credentials. 
+
+
+## How to use TCS?
+
+We provide four rest end points which cover the 4 cases we support.  GetPropertyStatus, GetProperty, CreateOrUpdateProperty,  DeleteProperty.  For the Hackathon, Test provider id: 1000 is available for participants to use for onboarding new properties.
 
