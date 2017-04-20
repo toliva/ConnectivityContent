@@ -2,11 +2,11 @@
 
 Gaia is a large database of shapes and points representing things like cities, regions, or point of interests. Every elements is identified by a unique numerical identifier. 
 
-Some of the API available via this portal uses Gaia ID has either inputs or outputs. This page explains how you can find the details attached to a Gaia ID or how you can determine the Gaia ID of a given city or point of interests.
+The sort rank and Top TPID APIs uses Gaia ID in their output. This page explains how you can find the details attached to a Gaia ID or how you can determine the Gaia ID of a given city or point of interests.
 
 ## Authentication
 
-The API takes basic auth headers for authentication. The credentials expected are the same as any other public API available via this portal.
+The API takes basic auth headers for authentication. The credentials expected are the same as any other API available via this portal.
 
 ## Getting Details for a Gaia ID
 

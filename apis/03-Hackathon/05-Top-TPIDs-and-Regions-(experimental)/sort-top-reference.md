@@ -4,7 +4,7 @@
 
 The top points of sale and regions API requires HTTP basic auth credentials to be supplied with every request.
 
-Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.
+Credentials must match a valid API username/password.  the credentials must be authorized to access data for the hotel being requested.
 
 ## Top Points of Sale and Regions Endpoint
 
@@ -18,7 +18,6 @@ The top points of sale and regions endpoint will return a sorted list of top reg
 
 | Name                | Parameter Type | Data Type | Example              | Description
 |---------------------|----------------|-----------|----------------------|-----------------|
-| `Authorization`     | Header         | String    | `Basic dGVzdDp0ZXN0` | Unique identifier for a property/hotel. |
 | `hotelId`           | Query          | Integer   | `123`                | Hotel identifier |
 
 ##### Sample Request with all parameters specified
@@ -30,8 +29,8 @@ https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsTopTpidsAndR
 |Name | Type | Description|
 |-----|------|-------------|
 |hotelId | Integer | Unique identifier for a property/hotel. |
-|tpid |    Integer | Point of Sale ID |
-| regionId |   Long    | GAIA region ID |
+|tpid |    Integer | Point of Sale ID. Please refer to the mapping table below to resolve this to an expedia point of sale name. |
+| regionId |   Long    | GAIA region ID. Please use the Gaia API referenced on this developer portal to resolve this gaia ID to a region name with coordinates. |
 
 ##### Sample Response
 

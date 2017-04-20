@@ -1,18 +1,18 @@
 # Quick Start
 
-The Sort Rank API displays a hotel's average sort position for the next 90 days. Hoteliers can use this information to make informed decisions to increase visibility and/or to view/analyze the effect of an Accelerator on sort.
+The Sort Rank API displays a hotel's average sort position based on historical search information. Hoteliers can use this information to understand how well their hotel has been performing on Expedia for up to the last 90 days. The API will return average sort rank information by Expedia point of sale, for up to 3 points of sales (most popular ones).
 
 ----
 
 ## Authentication
 
-Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.
+Basic Authentication in HTTP header, using your API credentials. If you do not know your API credentials, please contact Expedia.
 
 ----
 
 ## Reading Sort Rank Data
 
-The most basic call to retreive sort rank data is to simply pass a hotel id and client id to the <lodging-sort/v1/hops/HopsAverageRanks> endpoint via a query parameter.
+The most basic call to retreive sort rank data is to simply pass a hotel id to the <lodging-sort/v1/hops/HopsAverageRanks> endpoint via a query parameter.
 
 ```
 https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1
