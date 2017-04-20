@@ -3,19 +3,20 @@ The Insights APIs will give hoteliers some valuable data about how their propert
 
 ## Authentication
 
-The Accelerator API uses a Basic Authorization scheme. The same credentials used to manage properties via EQC today are compatible with the Accelerator API. Authorization will also be performed: the hotel must be assigned to the API account being used.
+The API uses a Basic Authorization scheme. The same credentials used to manage properties via our public APIs today are compatible with the Insights API/messages. Authorization will also be performed: the hotel must be assigned to the API account being used.
 
 ## Price Distribution
-This API gives insight into the average rate of the rooms that were booked for a given hotel, along with the same info for competitors in market watch.
+Gain competitive insights by seeing the distribution of ADR of booked rooms in a given market. The market is that of the specified hotel.
 
 **Mocked Data Warning**: This API will only returned mocked data, for the purpose of the Madrid hackathon.
 
-To query this API, you need a hotel ID, a checkin date and a length of stay. For example:
+To retrieve price distribution information simply pass a hotel id, check in date, length of stay and optional range size to the </insights/public/v1/priceDistribution> endpoint via a query parameter. Range size will default to 20 when not specified. For example:
 ```
 https://services.expediapartnercentral.com/insights/public/v1/priceDistribution?hotelId=17104728&checkInDate=2017-05-01&lengthOfStay=2
 ```
 
-This will provide information like this:
+
+The response will contain 2 lists. The first list (priceDistributionArr) contains the number of rooms booked between each price interval. The second list (lowestPriceArr) shows the lowest ADR for each competitor's booked rooms
 ```json
 {
   "status": "Success",
@@ -98,17 +99,20 @@ This will provide information like this:
 }
 ```
 
-## Missed Opportunities in Packages
-When someone shopped your hotel as a Package and booked someone else's hotel as a Package within 24 hour POSa (00:00 to 24:00 wall clock), missedOpportunitiesInPackages API returns all hotels by the total booking number within this timeframe.
+## Reading Missed Opportunities from Packages
+
+When someone shopped your hotel as a Package and booked someone else's hotel as a Package within 24 hour POSa (00:00 to 24:00 wall clock), missedOpportunitiesInPackages API returns all hotels by the total booking number within this time frame.
 
 **Mocked Data Warning**: This API will only returned mocked data, for the purpose of the Madrid hackathon.
 
-To query the API, you need a hotel ID, a booking date start and end. For example:
+To retrieve missed opportunities from Packages simply pass a hotel id and optional start date / end date to the </insights/public/v1/missedOpportunitiesInPackages> endpoint via a query parameter. When dates are not specified, they will default to today.
+
+For exemple:
 ```
 https://services.expediapartnercentral.com/insights/public/v1/missedOpportunitiesInPackages?hotelId=17104728&startDate=2017-05-01&endDate=2017-05-02
 ```
 
-This will provide information like this:
+The response will contain a list of missed opportunities for packages.
 ```json
 {
   "status": "Success",
@@ -138,17 +142,18 @@ This will provide information like this:
 ```
 
 ## Compression Outlook
-Compression forecasts the outlook of regional room supply (from any hotelId) by calculating the percentage of unavailable rooms to available rooms starting from today and going into the future 28 days.
+Compression forecasts the outlook of regional room supply (from any hotelId) by calculating the percentage of unavailable rooms to available rooms.
 
 **Warning, Real Data**: Unlike the other insights messages, this one is not using mocked data. It will have some information for test hotels, but it's not guaranteed to have compression info.
 
-To query this API, you need a booking id, a start and end date to analyze. For example:
+To retrieve compression data simply pass a hotel id, start date and end date to the </insights/public/v1/compressionOutlook> endpoint via a query parameter. For example:
 
 ```
 https://services.expediapartnercentral.com/insights/public/v1/compressionOutlook?hotelId=12933870&startDate=2017-05-01&endDate=2017-05-28
 ```
 
-This will provide information like this:
+The response will contain a list of compression data for each date in the supplied date range.
+
 ```json
 {
   "status": "Success",
@@ -277,3 +282,9 @@ This will provide information like this:
   }
 }
 ```
+
+## Fair Share
+The Fair Share message projects a competitive metric that compares a given hotel's expected market share vs. their competitor's market share based on a given stayDate. The equation is: myRoomCount / (myRoomCount + compSetRoomCount) to compute FairShare for a given hotel for a given staydate. 
+
+**Mocked Data Warning**: This API will only returned mocked data, for the purpose of the Madrid hackathon.
+
