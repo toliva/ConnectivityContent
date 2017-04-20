@@ -3,7 +3,7 @@ The Insights APIs will give hoteliers some valuable data about how their propert
 
 ## Authentication
 
-The API uses a Basic Authorization scheme. The same credentials used to manage properties via EQC today are compatible with the Accelerator API. Authorization will also be performed: the hotel must be assigned to the API account being used.
+The API uses a Basic Authorization scheme. The same credentials used to manage properties via our public APIs today are compatible with the Insights API/messages. Authorization will also be performed: the hotel must be assigned to the API account being used.
 
 ## Price Distribution
 Gain competitive insights by seeing the distribution of ADR of booked rooms in a given market. The market is that of the specified hotel.
