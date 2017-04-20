@@ -20,8 +20,8 @@ For more information see [here](https://expediaconnectivity.com/apis/product-man
 
 ## Example API calls
 
-Working examples of all APIs go [here](https://expediaconnectivity.com/apis/product-management/property-api/try-it.html)
- 
+Here are ways to interact with the API.
+
 ### Get property details
 The response will echo back all details that the api has for the property
 ```
@@ -194,3 +194,6 @@ Sample Body:
     ]
 }]
 ```
+### How to easily interact with the API
+
+Go to the [try it](https://expediaconnectivity.com/apis/product-management/property-api/try-it.html) section to experience with the API at will.
