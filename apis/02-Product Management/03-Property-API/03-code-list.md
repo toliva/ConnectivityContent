@@ -1,5 +1,9 @@
 # Code Lists
 
+### Content Attribute & Detail Codes
+
+The SetPropertyDetails code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
+
 ## SetPropertyDetails Codes
 
 ### property.structureType
@@ -38,10 +42,6 @@
 | HOTEL_COLLECT |
 
 Properties that have opted into the Expedia Traveler Preference program (ETP) will have both EXPEDIA_COLLECT and HOTEL_COLLECT specified.
-
-### Content Attribute & Detail Codes
-
-A **DRAFT** version of the SetPropertyDetails code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
 
 ### SetPropertyDetails Error Codes
 
