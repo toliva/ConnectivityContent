@@ -288,3 +288,37 @@ The Fair Share message projects a competitive metric that compares a given hotel
 
 **Mocked Data Warning**: This API will only returned mocked data, for the purpose of the Madrid hackathon.
 
+```
+https://services.expediapartnercentral.com/insights/public/v1/fairShare?hotelId=17113666&dayNum=3
+```
+
+This will provide information like this:
+```json
+{
+  "status": "Success",
+  "errorCode": null,
+  "errorMsg": null,
+  "data": {
+    "roomCount": 40,
+    "compSetRoomCount": 6859,
+    "fairshare": 0.006,
+    "daily": [
+      {
+        "date": "2017-04-19",
+        "bookedRooms": 13,
+        "compSetBookedRooms": 199
+      },
+      {
+        "date": "2017-04-20",
+        "bookedRooms": 6,
+        "compSetBookedRooms": 242
+      },
+      {
+        "date": "2017-04-21",
+        "bookedRooms": 11,
+        "compSetBookedRooms": 90
+      }
+    ]
+  }
+}
+```
