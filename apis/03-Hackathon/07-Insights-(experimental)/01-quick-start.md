@@ -136,3 +136,144 @@ This will provide information like this:
   }
 }
 ```
+
+## Compression Outlook
+Compression forecasts the outlook of regional room supply (from any hotelId) by calculating the percentage of unavailable rooms to available rooms starting from today and going into the future 28 days.
+
+**Warning, Real Data**: Unlike the other insights messages, this one is not using mocked data. It will have some information for test hotels, but it's not guaranteed to have compression info.
+
+To query this API, you need a booking id, a start and end date to analyze. For example:
+
+```
+https://services.expediapartnercentral.com/insights/public/v1/compressionOutlook?hotelId=12933870&startDate=2017-05-01&endDate=2017-05-28
+```
+
+This will provide information like this:
+```json
+{
+  "status": "Success",
+  "errorCode": null,
+  "errorMsg": null,
+  "data": {
+    "regionName": "Region Test",
+    "compression": [
+      {
+        "date": "2017-05-01T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-02T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-03T00:00:00.000Z",
+        "compressionPercent": 35
+      },
+      {
+        "date": "2017-05-04T00:00:00.000Z",
+        "compressionPercent": 37
+      },
+      {
+        "date": "2017-05-05T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-06T00:00:00.000Z",
+        "compressionPercent": 36
+      },
+      {
+        "date": "2017-05-07T00:00:00.000Z",
+        "compressionPercent": 35
+      },
+      {
+        "date": "2017-05-08T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-09T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-10T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-11T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-12T00:00:00.000Z",
+        "compressionPercent": 36
+      },
+      {
+        "date": "2017-05-13T00:00:00.000Z",
+        "compressionPercent": 40
+      },
+      {
+        "date": "2017-05-14T00:00:00.000Z",
+        "compressionPercent": 37
+      },
+      {
+        "date": "2017-05-15T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-16T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-17T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-18T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-19T00:00:00.000Z",
+        "compressionPercent": 38
+      },
+      {
+        "date": "2017-05-20T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-21T00:00:00.000Z",
+        "compressionPercent": 39
+      },
+      {
+        "date": "2017-05-22T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-23T00:00:00.000Z",
+        "compressionPercent": 85
+      },
+      {
+        "date": "2017-05-24T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-25T00:00:00.000Z",
+        "compressionPercent": 34
+      },
+      {
+        "date": "2017-05-26T00:00:00.000Z",
+        "compressionPercent": 38
+      },
+      {
+        "date": "2017-05-27T00:00:00.000Z",
+        "compressionPercent": 86
+      },
+      {
+        "date": "2017-05-28T00:00:00.000Z",
+        "compressionPercent": 37
+      },
+      {
+        "date": "2017-05-29T00:00:00.000Z",
+        "compressionPercent": null
+      }
+    ]
+  }
+}
+```
