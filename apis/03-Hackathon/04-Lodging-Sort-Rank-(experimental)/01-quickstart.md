@@ -12,7 +12,7 @@ Basic Authentication in HTTP header, using your API credentials. If you do not k
 
 ## Reading Sort Rank Data
 
-The most basic call to retreive sort rank data is to simply pass a hotel id and client id to the <lodging-sort/v1/hops/HopsAverageRanks> endpoint via a query parameter.
+The most basic call to retreive sort rank data is to simply pass a hotel id to the <lodging-sort/v1/hops/HopsAverageRanks> endpoint via a query parameter.
 
 ```
 https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1
