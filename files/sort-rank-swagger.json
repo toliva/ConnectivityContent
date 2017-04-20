@@ -6,8 +6,8 @@
       "operations": [
         {
           "method": "GET",
-          "summary": "hopsAverageRanks",
-          "notes": "hopsAverageRanks",
+          "summary": "API providing average hotel ranking in customer search results, by point of sale, for searches in the last 90 days.",
+          "notes": "API providing average hotel ranking in customer search results, by point of sale, for searches in the last 90 days.",
           "nickname": "hopsAverageRanks",
           "produces": [
             "application/json"
