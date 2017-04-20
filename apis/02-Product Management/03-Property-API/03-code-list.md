@@ -26,6 +26,8 @@ The SetPropertyDetails code list is available for download [here](/files/Propert
 | MOBILE |
 | PHONE |
 | FAX |
+| USRESERVATIONSTOLLFREE |
+| INTERNATIONALRESERVATIONS |
 
 ### property.inventorySetting.rateAcquisitionType
 
