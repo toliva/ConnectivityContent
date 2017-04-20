@@ -3,16 +3,16 @@
 The Property API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition. For the Madrid Hackathon, Expedia facilitated a way to onboard properties in a special test region.
 
 ## Authentication
-All requests should include Basic Authentication in HTTP header using Hackathon specific API credentials. For the Hackathon, Test provider id: 1000 is available for participants to use for onboarding new properties.
+All requests should include Basic Authentication in HTTP header using Hackathon specific API credentials. For the Hackathon, Test provider id: "test" is available for participants to use for onboarding new properties. This provider ID needs to be provided as part of the URL for accessing the API, as demonstrated in the examples below.
 
 ## Supported Features
 
 Property API supports the following use cases:
 
-    Onboard a new property into Expedia's Lodging System by submitting property-level details, such as a property's name, address, and attributes.
-    Update the record of a property that was previously onboarded by the Property API by you.
-    Retrieve a record of the property that was previously onboarded via the Property API by you.
-    Get the status of a property, e.g. Onboarding Completed, Onboarding Failed.
+- Onboard a new property into Expedia's Lodging System by submitting property-level details, such as a property's name, address, and attributes.
+- Update the record of a property that was previously onboarded by the Property API by you.
+- Retrieve a record of the property that was previously onboarded via the Property API by you.
+- Get the status of a property, e.g. Onboarding Completed, Onboarding Failed.
 
 For the hackathon, geo information like lat/long will be ignored and will be defaulted to a special region in the middle of the ocean. Once onboarding completes, hotels will be visible in "Region Test".
 
@@ -20,19 +20,30 @@ For more information see [here](https://expediaconnectivity.com/apis/product-man
 
 ## Example API calls
 
-Dr working examples of all APIs go [here](https://expediaconnectivity.com/apis/product-management/property-api/try-it.html)
+Working examples of all APIs go [here](https://expediaconnectivity.com/apis/product-management/property-api/try-it.html)
  
-# get property details. The response will echo back all details that the api has for the property
-GET /properties/v1/test/11112
+### Get property details
+The response will echo back all details that the api has for the property
+```
+GET https://services.expediapartnercentral.com/properties/v1/test/11112
+```
+
+### Get property status
+The response will echo back the latest onboarding status for a property
+```
+GET https://services.expediapartnercentral.com/properties/v1/test/11112/status
+```
+
+### remove an existing property
+The response to the delete request will be a 200/OK and it will echo back the details of the property which was just deleted
+```
+DELETE https://services.expediapartnercentral.com/properties/v1/test/123456789
+```
  
-# get property status.  The response will echo back the latest onboarding status for a property
-GET /properties/v1/test/11112/status
- 
-# remove an existing property.  The response to the delete request will be a 200/OK and it will echo back the details of the property which was just deleted
-DELETE /properties/v1/test/123456789
- 
-# create or update a property.  Information for more than one property is accepted in the request, max. batch size is 50 properties per request. Each property must have a unique providerPropertyId
-POST /properties/v1/test/123456789
+### Create or update a property
+Information for more than one property is accepted in the request, max. batch size is 50 properties per request. Each property must have a unique providerPropertyId
+
+POST https://services.expediapartnercentral.com/properties/v1/test/123456789
  
 Sample Body:
 ```json
