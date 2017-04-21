@@ -12,6 +12,8 @@ Basic Authentication in HTTP header, using your API credentials. If you do not k
 
 ## Reading Sort Rank Data
 
+**Warning: Not Real Time, Need Top TPID Information First**: For this API to return data, a few conditions need to be met. First, the hotel needs to have data from the Top TPID API available, as this API internally relies on Top TPID information. Once that condition is met, and the API returns the hotel, the hotel needs to receive at least 5 valid searches from Expedia core points of sale (Expedia.com, Travelocity.com, Orbitz.com). The data for searches and sort rank is computed roughly every 3 hours.
+
 The most basic call to retreive sort rank data is to simply pass a hotel id to the <lodging-sort/v1/hops/HopsAverageRanks> endpoint via a query parameter.
 
 ```
