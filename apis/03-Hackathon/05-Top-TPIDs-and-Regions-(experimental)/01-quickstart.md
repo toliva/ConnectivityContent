@@ -1,6 +1,6 @@
 # Quick Start
 
-The Top Point of Sale and Regions API provides the highest booking points of sale and regions for a given hotel.  Hoteliers can use this information to determine for what point of sale and region their hotel is most popular.
+The Top TPID (aka Points of Sale) and Regions API provides the highest booking points of sale and regions for a given hotel.  Hoteliers can use this information to determine for what point of sale and region their hotel is most popular.
 
 ----
 
@@ -20,7 +20,7 @@ To retreive top point of sale and regions data simply pass a hotel id and client
 https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 ```
 
-The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel. Partners are encouraged to use the Gaia API referenced in this portal to resolve the Gaia region IDs to something more meaningful. To resolve the point of sale IDs (tpid), please refer to the reference section of this API, there is a static list of ids and names provided.
+The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel. Partners are encouraged to use the Gaia API referenced in this portal to resolve the Gaia region IDs to something more meaningful. To resolve the point of sale IDs (tpids), please refer to the reference section of this API: there is a static list of ids and names provided.
 
 ```JSON
 {
