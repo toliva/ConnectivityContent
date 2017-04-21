@@ -2,12 +2,25 @@
 @bad: #a92216;
 @blue: #2962b5;
 @black: #404040;
-@card-background: #f8f8f8;
-@body-background: white;
+@card-background: white;
+@body-background: #f8f8f8;
+@footer-background: #3f3f3f;
+
+html {
+    background: @body-background;
+}
 
 body {
     background: @body-background !important;
     color: @black;
+}
+
+.full-width {
+    background: @body-background;
+}
+
+#site-footer {
+    background: @footer-background;
 }
 
 .footnote {
@@ -50,29 +63,12 @@ body {
     margin-right: 35px;
     max-width: none;
     background: @card-background;
-    box-shadow: 0px 2px #c7c7c7;
-    border-radius: 4px;
     margin-bottom: 50px;
 
     .scorecard-category {
         font-size: 2em;
         margin-top: 1em;
         margin-bottom: 0.7em;
-    }
-
-    .scorecard-category-score {
-        color: inherit;
-        margin-top: 2em;
-        text-align: right;
-
-        .score-total {
-            background: #E0E0E0;
-            padding: 0;
-
-            .score-value {
-                background: @good;
-            }
-        }
     }
 
     .scorecard-description {
@@ -158,9 +154,17 @@ body {
         .feature {
             display: inline-block;
             vertical-align: middle;
+            margin-right: 0.5em;
         }
 
         .icon-toggle90 {
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+            font-size: 1.5em;
+        }
+
+        .toggle90-mod {
             position: relative;
             top: 0.5em;
             text-align: right;
@@ -241,7 +245,7 @@ hr {
 
 #enhance {
     .border:hover {
-        cursor: default;
+        cursor: pointer;
     }
 
     .border {
@@ -255,6 +259,40 @@ hr {
         font-size: 1em;
     }
 
+}
+
+#enhanceModal {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    h1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .close-button {
+        margin: 0;
+    }
+
+    .gap {
+        margin-top: 0.8em;
+        height: 7px;
+        background: linear-gradient(to bottom, #c7c7c7, @card-background);
+    }
+
+    .adopt {
+        margin: 0.4em;
+        text-align: right;
+        color: #2962b5;
+        cursor: pointer;
+        font-size: 1.3em;
+    }
 }
 
 #top-metrics {
@@ -314,22 +352,5 @@ hr {
             }
 
         }
-
-        .improve {
-            text-align: right;
-            color: #2962b5;
-            cursor: pointer;
-            font-size: 1.3em;
-        }
-
-        .improve-thanks {
-            text-align: left;
-            color: #406f1d;
-            line-height: 1.3em;
-            font-size: 1em;
-            padding-top: 5px;
-            padding-bottom: 6px;
-        }
-
     }
 }

@@ -130,7 +130,8 @@ $(document).ready(function() {
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-row .border").not("#newHotels").click(metricClickCallback);
+    $("#optimise .border, #grow .border").click(metricClickCallback);
+    $("#enhance .border").click(enhanceClickCallback);
     $(".scorecard-rank").click(overallClickCallback);
 });
 
@@ -154,6 +155,34 @@ function overallClickCallback(event) {
             $("#top-metrics").foundation('open');
             ga('send', 'event', 'scorecard', 'error.overall.' + provider, jqxhr.status);
         });
+}
+
+function enhanceClickCallback(event) {
+    if ($(event.target).is(".border")) {
+        var section = $(event.target).attr("id");
+    } else {
+        var section = $(event.target).parents(".border").attr("id");
+    }
+    var title = $("#" + section + " div.feature").text();
+    var heading = $("div#" + section).attr("data-title");
+
+    $("#enhanceModal h1").text(title);
+    $("#enhanceModal p#base").text(heading);
+    if (section == 'productApi') {
+        $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/product-management/product-api/quick-start.html" target=\"_blank\"" >Help me adopt this feature</a>');
+    } else if (section == 'valueAddPromo') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition"  target=\"_blank\">Adopt Value Add Promo on Expedia QuickConnect (EQC)</a><br><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq" target=\"_blank\">Adopt Value Add Promo on Booking Notification</a>');
+    } else if (section == 'etp') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#hotel-collect-bookings-and-expedia-traveler-preference-etp-" target=\"_blank\">Help me adopt this feature</a>');
+    } else if (section == 'evc') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#learn-more-about-expedia-virtualcard" target=\"_blank\">Help me adopt this feature</a>');
+    }
+
+    $("#enhanceModal").foundation('open');
 }
 
 function metricClickCallback(event) {
@@ -283,9 +312,6 @@ function generateScorecard(scorecard) {
 }
 
 function generateScorecardCategory(category, id) {
-    $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "optimise" ? "Optimize" : "Grow") + " Score: " + Math.round(category.score * 100) + "%");
-
     for (key in category["attributes"]) {
         if (key == "score") continue;
         var element = category["attributes"][key];
@@ -329,9 +355,6 @@ function generateScorecardCategory(category, id) {
 }
 
 function generateScorecardFeature(category, id) {
-    $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "enhance" ? "Enhance " : "") + "Score: " + Math.round(category.score * 100) + "%");
-
     for (key in category["attributes"]) {
         if (key == "score") continue;
         var elementSelector = "#" + id + " #" + key;
