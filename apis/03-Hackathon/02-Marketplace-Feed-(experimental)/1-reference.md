@@ -242,7 +242,7 @@ It contains information on the rates compared with competitors, content score (w
 
 
 
-###### Example Hotel Review Message
+###### Example Quality Score Message
 
 ```
 {
