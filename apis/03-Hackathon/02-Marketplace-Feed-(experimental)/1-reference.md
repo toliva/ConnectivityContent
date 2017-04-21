@@ -215,6 +215,89 @@ A guest has provided a review for the requested hotel that management has not ye
 }
 ```
 
+##### Quality Score
+
+These messages are an aggregation of several metrics which can affect a hotels search rankings in expedia.
+
+It contains information on the rates compared with competitors, content score (which is based on how much information and photos are given), and some general factors such as refunds, relocations, and rates & availability.
+
+###### `values` Properties
+
+| Property              | Data Type | Description                                                               | Example                      |
+|-----------------------|-----------|---------------------------------------------------------------------------|------------------------------|
+| `qualityScoreState`   | String    | The overall rating of quality by Expedia                                  | `"Excellent"`                |
+| `ratesAndAvailability`| Object    | Rates for periods in which a competitor beats your price, or has vacancy where you do not.                          | `"12345"`                    |
+| `contentCompletion`   | Object    | Contains Expedia's content score.   | `{ "contentScore": 96 }`               |
+| `guestExperience`     | Object    | Contains metrics on number of refunds and relocations.                            | `{ "refunds": 1, "relocations": 0 }`                          |
+| `qualityScoreFactors` | Object    | The states of rates, availability, content, refunds, and relocations                                                       | |
+
+###### `qualityScoreFactors` Properties
+| Property              | Data Type | Values                                                               |
+|-----------------------|-----------|---------------------------------------------------------------------------|
+| `ratesState`   | String    | `"Red"|"Yellow"|"Green", or "Gray" if invalid`             |
+| `availabilityState`| String    | `"Red"|"Yellow"|"Green", or "Gray" if invalid`                          |
+| `contentState`   | String    | `"Red"|"Yellow"|"Green", or "Gray" if invalid`   |
+| `refundState`     | String    | `"Red"|"Yellow"|"Green", or "Gray" if invalid`                            |
+| `relocationState`     | String    | `"Red"|"Yellow"|"Green"|"Recovering", or "Gray" if invalid`                            |
+
+
+
+###### Example Hotel Review Message
+
+```
+{
+      "id": "1.USZ0ZXN0aG90ZWwmYmQwNGI2MDEmVmVyeStwb29y.tv-i-hb3QrpZkPw53WZjog-p0sU",
+      "hotelId": "test",
+      "category": "Quality Score",
+      "shortMessage": "Your quality score is very poor",
+      "longMessage": "Your search listing has fallen significantly and its visibility has been reduced on all our websites.",
+      "values": {
+        "qualityScoreState": "Very poor",
+        "ratesAndAvailability": [
+          {
+            "checkInDate": "2017-04-23",
+            "observationDate": "2017-04-21",
+            "occupancy": 2,
+            "lengthOfStay": 3,
+            "currency": "USD",
+            "competitor": "Wotif.com",
+            "competitorPrice": 99.95,
+            "competitorRoomType": "One-Bedroom Suite",
+            "price": 100.95,
+            "roomType": "One Bedroom Suite",
+            "issueType": "Best Available Rate Issue"
+          },
+          {
+            "checkInDate": "2017-04-23",
+            "observationDate": "2017-04-21",
+            "occupancy": 2,
+            "lengthOfStay": 1,
+            "currency": "AUD",
+            "competitor": "Lastminute.com.au",
+            "competitorPrice": 123.45,
+            "competitorRoomType": "Mini Suite",
+            "issueType": "Availability Issue"
+          }
+        ],
+        "contentCompletion": {
+          "contentScore": 96
+        },
+        "guestExperience": {
+          "refunds": 1,
+          "relocations": 0
+        },
+        "qualityScoreFactors": {
+          "ratesState": "Red",
+          "availabilityState": "Yellow",
+          "contentState": "Green",
+          "refundState": "Yellow",
+          "relocationState": "Recovering"
+        }
+      },
+      "actionURL": "https://www.expediapartnercentral.com/Portal/Home.html?htid=testhotel&LinkSource=marketplace-feed.Quality+Score.test&utm_source=marketplace-feed&utm_medium=partner-link&utm_campaign=marketplace-feed.Quality+Score.test"
+    }
+```
+
 
 ## Events Endpoint
 
@@ -248,7 +331,7 @@ The top-level request object has the following properties:
 |-------------|-----------|---------------------------------------------------------------|-----------------------------------------------------------------------|
 | `messageId` | String    | A valid message ID.                                           | `"1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw"` |
 | `action`    | String    | The user action being reported.                               | `"viewed"`                                                            |
-| `timestamp` | String    | An optional event timestanp, in ISO-8601 format.              | `"2015-11-11T01:00:00.000Z"`                                          |
+| `timestamp` | String    | An optional event timestamp, in ISO-8601 format.              | `"2015-11-11T01:00:00.000Z"`                                          |
 | `userId`    | String    | An optional identifier for the user who performed the action. | `"a1b2c3d4"`                                                          |
 
 ###### Valid User Actions
