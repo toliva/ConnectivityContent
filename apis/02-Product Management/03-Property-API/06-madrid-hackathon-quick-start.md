@@ -1,6 +1,6 @@
 # Madrid Hackathon Quick Start
 
-The Property API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition. For the Madrid Hackathon, Expedia facilitated a way to onboard properties in a test region.
+The Property API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the [Supported Features] (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition. For the Madrid Hackathon, Expedia facilitated a way to onboard properties in a test region.
 
 ## Authentication
 All requests should include Basic Authentication in HTTP header using Hackathon specific API credentials. For the Hackathon, Test provider id: "test" is available for participants to use for onboarding new properties. This provider ID needs to be provided as part of the URL for accessing the API, as demonstrated in the examples below.
