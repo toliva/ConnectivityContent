@@ -209,12 +209,6 @@ When there are errors, the top points of sale and regions API always returns a 2
 
 ```JSON
 {
-    "error":"No clientId specified or unknown clientId"
-}
-```
-
-```JSON
-{
     "error":"No data found",
     "hotelId":1234567890
 }
