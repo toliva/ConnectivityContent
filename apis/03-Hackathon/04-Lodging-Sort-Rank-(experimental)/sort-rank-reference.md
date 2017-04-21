@@ -14,7 +14,7 @@ GET /lodging-sort/v1/hops/HopsAverageRanks
 
 The Sort Rank endpoint will return a hotel's average sort rank data for a range of check-in dates.
 
-The data used to power this API is precomputed on a daily basis. Every 24h, searches for the past day are aggregated and made available via this API. It is important to know that for regions with little to no searches, the API will produce very little results.
+Warning: Not Real Time, Need Top TPID Information First: For this API to return data, a few conditions need to be met. First, the hotel needs to have data from the Top TPID API available, as this API internally relies on Top TPID information. Once that condition is met, and the API returns the hotel, the hotel needs to receive at least 5 valid searches from Expedia core points of sale (Expedia.com, Travelocity.com, Orbitz.com). The data for searches and sort rank is computed roughly every 3 hours. It is important to know that for regions with little to no searches, the API will produce very little results, and users wanting to cause the system to have data populated need to know about caches and delays in getting data to surface.
 
 ### Request Parameters
 
