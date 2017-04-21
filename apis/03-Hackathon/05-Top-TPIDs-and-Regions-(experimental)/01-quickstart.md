@@ -12,6 +12,8 @@ Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) cr
 
 ## Reading Top Point of Sale and Region Data
 
+**Warning: Not Real Time**: This API is based of data being computed every 24h at 11am UTC. If hotels aren't visible after running valid searches on Expedia core points of sale, they'll become visible next day after the batch job runs.
+
 To retreive top point of sale and regions data simply pass a hotel id and client id to the </lodging-sort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.
 
 ```
