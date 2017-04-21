@@ -14,6 +14,8 @@ GET /lodging-sort/v1/hops/HopsTopTpidsAndRegions
 
 The top points of sale and regions endpoint will return a sorted list of top regions for each of the top points of sale by bookings for a specified hotel.
 
+This API is based on data that gets computed every day at 11am UTC, and uses data from the previous 24h. A hotel will only surface via this API if it received at least 5 valid searches (based on expedia prefered sort rank) on at least one of 3 Expedia core Points of Sale (Expedia.com US, Travelocity.com US and Orbitz.com US) in the 24h period before 11am UTC. Otherwise it won't surface until the next day, if it meets the criteria mentioned above.
+
 ## Request Parameters
 
 | Name                | Parameter Type | Data Type | Example              | Description
@@ -69,104 +71,131 @@ The point of sale is encoded into an ID called a tpid.  All possible values for 
 
 | Point of Sale | TPID |
 |---|---|
-|expedia.com            |       1|
-|expedia.com.br         |       69|
-|expedia.ca             |   4|
-|Expedia.com.ar         |       70|
-|Expedia.com.mx         |       12|
-|Expedia.com.au         |       25|
-|Expedia.com.hk         |       18|
-|Expedia.in             |   27|
-|Expedia.co.jp          |       28|
-|Expedia.co.kr          |       16|
-|Expedia.com.my         |       15|
-|Expedia.nz             |   29|
-|Expedia.com.ph         |       68|
-|Expedia.com.sg         |       14|
-|Expedia.com.tw         |       62|
-|Expedia.co.th          |       17|
-|Expedia.com.vn         |       71|
-|Expedia.co.id          |       61|
-|expedia.co.uk          |       3|
-|expedia.de             |   6|
-|expedia.it             |   8|
-|expedia.es             |   9|
-|expedia.fr             |   20|
-|Expedia.co.at          |       6|
-|Expedia.be             |   64|
-|Expedia.dk             |   67|
-|Expedia.ie             |   63|
-|Expedia.nl             |   11|
-|Expedia.no             |   66|
-|Expedia.se             |   65|
-|hotels.com             |   251463|
-|hoteis.com             |   86175|
-|hoteles.com            |       97815|
-|hoteles.com            |       208646|
-|hoteles.com            |       208691|
-|hoteles.com            |       133480|
-|hoteles.com            |       97814|
-|hoteles.com            |       125191|
-|hoteles.com            |       208666|
-|hoteles.com            |       208650|
-|fr.hotels.com          |       208711|
-|hoteles.com            |       140093|
-|hoteles.com            |       208703|
-|hoteles.com            |       208642|
-|hotels.com             |   70583|
-|de.hotels.com          |       71004|
-|cn.hotels.com          |       86159|
-|hotels.co.uk           |       207191|
-|de.hotels.com          |       70994|
-|it.hotels.com          |       70996|
-|hoteles.com            |       70995|
-|hotels.ca              |               70991|
-|fr.hotels.com          |       70993|
-|fr.hotels.com          |       71002|
-|hr.hotels.com          |       213609|
-|cs.hotels.com          |       213610|
-|da.hotels.com          |       70998|
-|et.hotels.com          |       213612|
-|fi.hotels.com          |       83481|
-|gr.hotels.com          |       213613|
-|zh.hotels.com          |       83786|
-|hu.hotels.com          |       213615|
-|is.hotels.com          |       213616|
-|hotels.com             |   252364|
-|id.hotels.com          |       236979|
-|hotels.com             |   207181|
-|jp.hotels.com          |       84882|
-|kr.hotels.com          |       91256|
-|lv.hotels.com          |       213617|
-|lt.hotels.com          |       213618|
-|ms.hotels.com          |       248814|
-|hoteles.com            |       91871|
-|nl.hotels.com          |       71001|
-|hotels.com             |   87703|
-|hoteles.com            |       208654|
-|no.hotels.com          |       71000|
-|hoteles.com            |       140094|
-|hoteles.com            |       208699|
-|hoteles.com            |       140095|
-|hotels.com             |   95327|
-|pl.hotels.com          |       126760|
-|hoteis.com             |   207189|
-|ru.hotels.com          |       126796|
-|hotels.com             |   84478|
-|sk.hotels.com          |       213639|
-|hotels.com             |   354116|
-|nl.hotels.com          |       208707|
-|sv.hotels.com          |       70999|
-|Fr.hotels.com          |       71003|
-|tw.hotels.com          |       91257|
-|th.hotels.com          |       248811|
-|tr.hotels.com          |       213635|
-|uk.hotels.com          |       213636|
-|hoteles.com            |       208695|
-|hoteles.com            |       133479|
-|vi.hotels.com          |       144555|
-|hotels.com             |   373527|
-|voyages-sncf.com      |           7|
+| 1 | Expedia US |
+| 3 | Expedia UK |
+| 4 | Expedia Canada |
+| 6 | Expedia.de Reisen |
+| 7 | voyages-sncf.com |
+| 8 | Expedia.it |
+| 9 | Expedia ES |
+| 10 | Expedia.se |
+| 11 | Expedia.nl |
+| 12 | Expedia Mexico |
+| 14 | Expedia.com.sg |
+| 15 | Expedia Malaysia |
+| 16 | Expedia Korea |
+| 17 | Expedia Thailand |
+| 18 | Expedia Hong Kong |
+| 20 | Expedia.fr |
+| 25 | Expedia Australia |
+| 27 | Expedia India |
+| 28 | Expedia Japan |
+| 29 | Expedia.co.nz |
+| 34 | Hotels.com en Espanol |
+| 39 | Egencia Europe |
+| 40 | Egencia UK |
+| 41 | Egencia Germany |
+| 61 | Expedia Indonesia |
+| 62 | Expedia Taiwan |
+| 63 | Expedia Ireland |
+| 64 | Expedia Belgium |
+| 65 | Expedia Sweden |
+| 66 | Expedia Norway |
+| 67 | Expedia Denmark |
+| 68 | Expedia Philippines |
+| 69 | Expedia Brazil |
+| 70 | Expedia Argentina |
+| 71 | Expedia Vietnam |
+| 72 | Switzerland |
+| 73 | Expedia Finland |
+| 74 | Expedia Russia |
+| 75 | Expedia China |
+| 3000 | Hotels LATAM USD |
+| 3001 | Hotels US USD |
+| 3002 | Hotels Canada CAD |
+| 3003 | Hotels Brazil BRL |
+| 3004 | Hotels Mexico MXN |
+| 3018 | Hotels Brazil Local |
+| 3019 | Hotels Argentina ARS |
+| 3100 | Hotels EMEA USD |
+| 3101 | Hotels UK GBP |
+| 3102 | Hotels Germany EUR |
+| 3103 | Hotels Italy EUR |
+| 3104 | Hotels Spain EUR |
+| 3105 | Hotels Netherlands EUR |
+| 3107 | Hotels Sweden SEK |
+| 3109 | Hotels Norway NOK |
+| 3110 | Hotels Denmark DEK |
+| 3111 | Hotels Switzerland CHF |
+| 3112 | Hotels Russia RUB |
+| 3113 | Hotels Israel ILS |
+| 3114 | Hotels South Africa ZAR |
+| 3115 | Hotels Turkey TRY |
+| 3116 | Hotels Poland PLN |
+| 3117 | Hotels United Arab Emirates AED |
+| 3118 | Hotels Saudi Arabia SAR |
+| 3119 | Hotels Egypt EGP |
+| 3180 | Hotels EMEA EUR |
+| 3200 | Hotels APAC USD |
+| 3201 | Hotels Australia AUD |
+| 3202 | Hotels India INR |
+| 3203 | Hotels Japan JPY |
+| 3204 | Hotels New Zealand NZD |
+| 3205 | Hotels Hong Kong HKD |
+| 3206 | Hotels Singapore SGD |
+| 3207 | Hotels Korea KRW |
+| 3208 | Hotels China CNY |
+| 3209 | Hotels Thailand THB |
+| 3210 | Hotels Malaysia MYR |
+| 3211 | Hotels Taiwan TWD |
+| 3212 | Hotels Indonesia IDR |
+| 3213 | Hotels Vietnam VND |
+| 3214 | Hotels Philippines PHP |
+| 3301 | Hotels.com Mobile US USD |
+| 3401 | Hotels.com Mobile UK GBP |
+| 3480 | Hotels.com Mobile EMEA EUR |
+| 6010 | Hotwire |
+| 7102 | Egencia Germany EUR |
+| 7103 | Egencia Italy EUR |
+| 7104 | Egencia Spain EUR |
+| 7105 | Egencia Netherlands EUR |
+| 7107 | Egencia Sweden SEK |
+| 7109 | Egencia Norway NOK |
+| 7110 | Egencia Denmark DEK |
+| 7111 | Egencia Switzerland CHF |
+| 7114 | Egencia Belgium EUR |
+| 7115 | Egencia Ireland EUR |
+| 7116 | Egencia Australia AUD |
+| 60000 | Egencia |
+| 60003 | Egencia-UK |
+| 60004 | Egencia - CA |
+| 60006 | Egencia-DE |
+| 60008 | Egencia-IT |
+| 60009 | Egencia-ES |
+| 60010 | Egencia-SE |
+| 60011 | Egencia-NL |
+| 60013 | Egencia-DK |
+| 60020 | Egencia-FR |
+| 60025 | Egencia-AU |
+| 60027 | Egencia - IN |
+| 60035 | Egencia-NO |
+| 60080 | Egencia-BE |
+| 60081 | Egencia-IE |
+| 60082 | Egencia-CH |
+| 60083 | Egencia-FI |
+| 70125 | Wotif AU |
+| 70129 | Wotif NZ |
+| 70201 | Orbitz |
+| 70301 | CheapTickets |
+| 70403 | ebookers.com |
+| 70406 | ebookers.de |
+| 70420 | ebookers.fr |
+| 70463 | ebookers.ie |
+| 70465 | MrJet.se |
+| 70472 | ebookers.ch |
+| 70473 | ebookers.fi |
+| 80001 | Travelocity.com |
+| 80004 | Travelocity.ca |
 
 ## Error Messages
 
