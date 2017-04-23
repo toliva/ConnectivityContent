@@ -62,7 +62,7 @@ body {
     margin-left: 35px;
     margin-right: 35px;
     max-width: none;
-    background: @card-background;
+    background: #f8f8f8;
     margin-bottom: 50px;
 
     .scorecard-category {
@@ -89,8 +89,8 @@ body {
         }
 
         .border {
-            border-top: 1px solid lightgrey;
-            border-right: 1px solid lightgrey;
+            border-top: 10px solid #f8f8f8;
+            border-right: 10px solid #f8f8f8;
             border-bottom: none;
             height: 8em;
             padding-top: 1em;
@@ -224,7 +224,7 @@ body {
 
     .scorecard-improve {
         margin-bottom: 1em;
-        border-top: 1px solid lightgrey;
+        border-top: 10px solid #f8f8f8;
         border-bottom: none;
         padding-top: 1em;
         text-align: right;
@@ -243,7 +243,19 @@ hr {
     min-width: 200px;
 }
 
+#optimise {
+    background: @card-background;
+
+    .border {
+        white-space: nowrap;
+        overflow-x: hidden;
+        background: @card-background;
+    }
+}
+
 #enhance {
+    background: @card-background;
+
     .border:hover {
         cursor: pointer;
     }
@@ -251,6 +263,7 @@ hr {
     .border {
         white-space: nowrap;
         overflow-x: hidden;
+        background: @card-background;
     }
 
     .improve-thanks {
@@ -258,7 +271,16 @@ hr {
         color: #406f1d;
         font-size: 1em;
     }
+}
 
+#grow  {
+    background: @card-background;
+
+    .border {
+        white-space: nowrap;
+        overflow-x: hidden;
+        background: @card-background;
+    }
 }
 
 #enhanceModal {
@@ -274,6 +296,11 @@ hr {
     p {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+
+    .adopt-message {
+        color: #b7b7b7;
+        font-side: smaller;
     }
 
     .close-button {

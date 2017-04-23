@@ -169,11 +169,11 @@ function enhanceClickCallback(event) {
     $("#enhanceModal h1").text(title);
     $("#enhanceModal p#base").text(heading);
     if (section == 'productApi') {
-        $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
+        $("p#extra").html("");
         $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/product-management/product-api/quick-start.html" target=\"_blank\"" >Help me adopt this feature</a>');
     } else if (section == 'valueAddPromo') {
-        $("p#extra").html("");
-        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition"  target=\"_blank\">Adopt Value Add Promo on Expedia QuickConnect (EQC)</a><br><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq" target=\"_blank\">Adopt Value Add Promo on Booking Notification</a>');
+        $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
+        $("div.adopt").html('<p class="adopt-message">Adopt Value Add Promo on</p><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition"  target=\"_blank\">Expedia QuickConnect (EQC)</a><br><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq" target=\"_blank\">Booking Notification</a>');
     } else if (section == 'etp') {
         $("p#extra").html("");
         $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#hotel-collect-bookings-and-expedia-traveler-preference-etp-" target=\"_blank\">Help me adopt this feature</a>');
@@ -376,10 +376,10 @@ function createBorders() {
     if (Foundation.MediaQuery.atLeast("xlarge")) {
         // placeholder for overrides
     } else if (Foundation.MediaQuery.current == "large") {
-        $("#enhance #productApi,#valueAddPromo,#etp").css("border-bottom", "1px solid lightgrey");
+        $("#enhance #productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
         $("#enhance #etp").css("border-right", "none");
         $("#enhance #evc").css("border-top", "none");
-        $("#enhance #evc").css("border-right", "1px solid lightgrey")
+        $("#enhance #evc").css("border-right", "10px solid #f8f8f8")
     } else if (Foundation.MediaQuery.current == "medium") {
         $("#optimise #bcMessages").css("border-right", "none");
         $("#enhance #valueAddPromo").css("border-right", "none");
