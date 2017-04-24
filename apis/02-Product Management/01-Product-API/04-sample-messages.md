@@ -243,7 +243,12 @@ Response:
       "smokingPreferences": [
         "Smoking",
         "Non-Smoking"
-      ]
+      ],
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/209857"
+        }
+      }
     },
     {
       "resourceId":200108425,
@@ -294,7 +299,12 @@ Response:
       "views": [
         "Beach View",
         "Bay View"
-      ]
+      ],
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/200108425"
+        }
+      }
     }        
   ]
 }
@@ -392,7 +402,12 @@ Response:
         "views": [
              "Partial Sea View"
         ],
-        "wheelchairAccessibility":false
+        "wheelchairAccessibility":false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910"
+            }
+        }
     }
 }
 ```
@@ -546,7 +561,12 @@ When successful, the API will respond with what Expedia created. Please note tha
             "Ocean View",
             "Beach View"
         ],
-        "wheelchairAccessibility": false
+        "wheelchairAccessibility": false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+            }
+        }
     }
 }
 ```
@@ -711,7 +731,12 @@ When successful, the API will respond with what Expedia created. Please note tha
             "Ocean View",
             "Beach View"
         ],
-        "wheelchairAccessibility": false
+        "wheelchairAccessibility": false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+            }
+        }
     }
 }
 ```
@@ -857,7 +882,12 @@ The response will not include bedroom details, view, featured amenity and area a
         ],
         "smokingPreferences": [
             "Non-Smoking"
-        ]
+        ],
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+            }
+        }
     }
 }
 ```
@@ -1011,7 +1041,12 @@ Response look like
             "Ocean View",
             "Beach View"
         ],
-        "wheelchairAccessibility": false
+        "wheelchairAccessibility": false,
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+            }
+        }
     }
 }
 ```
@@ -1153,7 +1188,12 @@ Response looks like
         ],
         "smokingPreferences": [
             "Non-Smoking"
-        ]
+        ],
+        "_links": {
+            "self": {
+                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+            }
+        }
     }
 }
 ```
