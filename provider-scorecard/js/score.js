@@ -376,11 +376,15 @@ function createBorders() {
     if (Foundation.MediaQuery.atLeast("xlarge")) {
         // placeholder for overrides
     } else if (Foundation.MediaQuery.current == "large") {
+        $("#bcMessages .metric").html("BC Message<br />Success Rate");
+        $("#arMessages .metric").html("AR Message<br />Success Rate");
         $("#enhance #productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
         $("#enhance #etp").css("border-right", "none");
         $("#enhance #evc").css("border-top", "none");
         $("#enhance #evc").css("border-right", "10px solid #f8f8f8")
     } else if (Foundation.MediaQuery.current == "medium") {
+        $("#bcMessages .metric").text("BC Message Success Rate");
+        $("#arMessages .metric").text("AR Message Success Rate");
         $("#optimise #bcMessages").css("border-right", "none");
         $("#enhance #valueAddPromo").css("border-right", "none");
         $("#grow #rateLose").css("border-right", "none");
