@@ -107,7 +107,12 @@ The result will be an array of active room types under this property. For exampl
             "smokingPreferences": [
                 "Smoking",
                 "Non-Smoking"
-            ]
+            ],
+            "_links": {
+                "self": {
+                    "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986"
+                }
+            }
         }
     ]
 }
