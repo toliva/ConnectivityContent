@@ -48,7 +48,7 @@ Simply POST the text to analyze to the endpoint: "/service/v1/analyze"
 #### Curl Request
 
 ```
-curl -u [USERNAME]:[PASSWORD] -X POST -H 'Accept: application/json' -d '[TEXT]' 'http://services.expediapartnercentral.com/hotel-review/service/v1/analyze' 
+curl -u [USERNAME]:[PASSWORD] -X POST -H 'Accept: application/json' -d '[TEXT]' 'https://services.expediapartnercentral.com/hotel-review/service/v1/analyze' 
 ```
 
 Where:

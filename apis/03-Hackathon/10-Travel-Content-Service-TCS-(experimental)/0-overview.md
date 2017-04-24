@@ -58,17 +58,17 @@ Here are the different calls from the DX Pages to the TCS Gateway to retrieve co
 
 - Section "DESTINATION"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION"
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION'
 ```
 
 Where:
@@ -88,17 +88,17 @@ Here are the different calls from the DX Pages to TCS Gateway to retrieve the fo
 
 - Section "DESTINATION":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=DESTINATION'
 ```
 
 - Section "NEIGHBORHOOD":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=NEIGHBORHOOD'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=NEIGHBORHOOD'
 ```
 
 - Section "SIMILAR_DESTINATION":
 ```
-curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=SIMILAR_DESTINATION'
+curl -u [USERNAME]:[PASSWORD] -X GET --compressed 'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&sections=SIMILAR_DESTINATION'
 ```
 
 Where:

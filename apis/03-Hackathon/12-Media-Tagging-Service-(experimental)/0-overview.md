@@ -18,7 +18,7 @@ Simply POST an URL or the Image binary to the REST endpoint of the service. The 
 ### Example providing the image URL
 
 ```
-curl -u [USERNAME]:[PASSWORD] -X POST -F mediaUrl=[URL] 'http://services.expediapartnercentral.com/image-tag/v2'
+curl -u [USERNAME]:[PASSWORD] -X POST -F mediaUrl=[URL] 'https://services.expediapartnercentral.com/image-tag/v2'
 ```
 Where:
 
