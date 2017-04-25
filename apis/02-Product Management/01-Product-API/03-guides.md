@@ -167,7 +167,7 @@ It is possible for a non-free extra bed to be returned with a surcharge but no a
      }
 }]
 ```
-The Product-API will not accept a surcharge of type "Unknown" during the creation of a new room type. For a PUT or PATCH, the extra surcharge needs to be fixed at the same time as the update being performed or prior to that update. The type needs to be changed and the amount set (unless the type is set to "free").
+The Product-API will not accept a surcharge of type "Unknown" during the creation of a new room type. For a PUT or PATCH, the extra surcharge needs to be fixed at the same time as the update being performed or prior to that update. The type needs to be changed and the amount set (unless the type is set to "Free").
 
 Please review the [ExtraBed section](reference.html#/definitions/ExtraBedDTO) of the API definition for more information.
 
