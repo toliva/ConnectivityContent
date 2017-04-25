@@ -211,7 +211,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
 | contents | Array of Content | Yes | Yes | See Content below. |
 | propertyCollectedMandatoryFees | Array of SupplierCollectedMandatoryFee | No | Yes | See SupplierCollectedMandatoryFee below. |
 | policies | Array of Policy | No | Yes | See Policy below. |
-| inventorySettings | Array of InventorySetting | No | Yes | See InventorySetting below. |
+| inventorySettings | Array of InventorySettings | No | Yes | See InventorySettings below. |
 | taxes | Array of Tax | No | Yes | See Tax below. |
 | attributes | Array of Attribute | No | Yes | See Attribute below |
 
