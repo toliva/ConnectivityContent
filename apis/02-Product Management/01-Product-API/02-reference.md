@@ -1655,7 +1655,7 @@ Expedia doesn't support all possible combinations of bed types and size. The tab
 | Per Week |
 | Per Stay |
 | Unknown |
-* 'Unknown' could be returned during a GET but is not accepted for a POST, PUT or PATCH. 
+Surcharge type 'Unknown' can be returned during a GET but is not accepted for a POST, PUT or PATCH. 
 
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
