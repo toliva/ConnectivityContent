@@ -52,8 +52,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "providerPropertyUrl": "http://example.org",
     "structureType": "Hotel",
     "currencyCode": "USD",
-    "
-    Code": "USD",
+    "billingCurrencyCode": "USD",
     "timeZone": "America/Los_Angeles",
     "addresses": [
         {
@@ -318,7 +317,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | code | String | Yes | See [code list](./code-list.html#policy) |
 | value | String | Yes | |
 
-**inventory setting**
+**inventorySettings**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
