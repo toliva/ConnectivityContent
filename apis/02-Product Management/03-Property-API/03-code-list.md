@@ -6,7 +6,7 @@ The SetPropertyDetails code list is available for download [here](/files/Propert
 
 ## SetPropertyDetails Codes
 
-### <a href=#property.structureType> property.structureType </a>
+### <div id=#property.structureType> property.structureType </div>
 
 | Code |
 | ---- |
