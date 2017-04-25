@@ -155,6 +155,20 @@ Example of how extra beds are provided within the room type resource:
 }]
 ```
 
+It is possible for a non-free extra bed to be returned with a surcharge, but no amount. This case could happen when the surcharge has been created or updated by other means that do not request an amount to be specified. This is an example of such a response:
+
+```json
+"extraBedding": [{
+    "quantity": 1,
+    "type": "Rollaway Bed",
+    "size": "Full",
+    "surcharge": {
+        "type": "Unknown"
+     }
+}]
+```
+The Product-API will not accept a surcharge of type "Unknown" during the creation of a new room type. For a PUT or PATCH, the extra surcharge needs to be specified at the same time as the update being performed or prior to that update. The type needs to be changed and the amount set (unless the type is set to "Free").
+
 Please review the [ExtraBed section](reference.html#/definitions/ExtraBedDTO) of the API definition for more information.
 
 ### Smoking Preference

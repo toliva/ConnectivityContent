@@ -1654,6 +1654,9 @@ Expedia doesn't support all possible combinations of bed types and size. The tab
 | Per Night |
 | Per Week |
 | Per Stay |
+| Unknown |
+
+Note: Surcharge type Unknown will be returned for any room where a surcharge cost has been specified without a type or an amount. The client is expected to add this information in such cases, and therefore, type Unknown is not supported in POST, PUT and PATCH operations.
 
 <a name="/definitions/valueAddInclusionsEnum"></a>
 ### valueAddInclusionsEnum
