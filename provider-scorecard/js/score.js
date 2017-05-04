@@ -2,7 +2,7 @@ function providerPortalServiceBaseUrl() {
     switch (environment.env) {
         case "prod": return "https://provider-portal-service.prod-p.expedia.com";
         case "dev":  return "https://provider-portal-service.us-west-2.test.expedia.com";
-        default:     return "https://provider-portal-service.prod-p.expedia.com";
+        default:     return "https://provider-portal-service.us-west-2.test.expedia.com";
     }
 }
 
