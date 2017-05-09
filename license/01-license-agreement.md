@@ -1,7 +1,7 @@
 # License Agreement
 ---
 
-*Updated March 29th, 2017*
+*updated April 4th, 2017*
 
 This End-User License Agreement (“EULA”) is an agreement between you and Expedia, Inc. and/or its affiliates 
 (collectively, “Expedia”) for the Expedia Connectivity Services and API specifications (including for Expedia 
@@ -48,9 +48,7 @@ Expedia grants you the following rights provided you comply with all terms and c
   Connectivity Services. Your continued use of the API Specifications and/or Expedia Connectivity Services signifies 
   your acceptance of the updated or modified API Specifications, Expedia Connectivity Services and EULA.
   
-  *	The current versions of the API Specifications are available at the application websites designated by Expedia from 
-  time to time, including, http://www.expediaquickconnect.com and http://www.hotwirequickconnect.com 
-  ("Application Websites").
+  *	The current versions of the API Specifications are available at the application website designated by Expedia from time to time, including https://expediaconnectivity.com/  ("Application Website").
   
   *	You are solely responsible for any and all costs and expenses you may incur in building your Connection and/or using 
   the Expedia Connectivity Services.
@@ -64,15 +62,7 @@ Expedia grants you the following rights provided you comply with all terms and c
 
   1.1 USE SIMULATOR REQUIREMENTS.
 
-   * You must test the code you developed on the use simulator made available by Expedia including at, 
-   http://www.expediaquickconnect.com or http://www.hotwirequickconnect.com (as applicable) to confirm that your code 
-   complies with the then-current API Specifications. Any Connection that does not meet Expedia's standards will be 
-   rejected.
-
-   * Once you have successfully completed your schema test on the use simulator you must use one of Expedia’s test 
-   lodgings and then proceed to the standard pre-production test plan to confirm that your code complies with the 
-   then-current API Specifications. Details on test lodgings credentials, availability and test plan will be provided 
-   by the Expedia connectivity account management team after completion of testing on the use simulator.
+   * You must use one of Expedia’s test lodgings and then proceed to the standard pre-production test plan to confirm that your code complies with the then-current API Specifications. Details on test lodgings credentials, availability and test plan will be provided by Expedia when getting connected.
 
   1.2 CONNECTION ACTIVATION.
 
