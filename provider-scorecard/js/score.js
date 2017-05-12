@@ -44,7 +44,7 @@ var demo = {
             },
             "changeInHotelsThisQuarter": {
                 "delta": 2.0,
-                "value": "3200",
+                "value": "32",
                 "floatValue": 32.0,
                 "success": true,
                 "deltaSuccess": true,
