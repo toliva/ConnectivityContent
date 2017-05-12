@@ -1,7 +1,6 @@
 # API Definition
 
 **Please note** the Property API currently only caters to limited use cases. To avoid unnecessary development effort, contact your account manager or the [EQC System Specialist Team](mailto:eqcss@expedia.com?subject=Approval%20to%20use%20Property%20API) before adopting this API.
-
 The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](http://developer.expediapartnercentral.com/apis/product-management/property-api/supported-features.html) and review the API Definition.
 
 ## Authentication
