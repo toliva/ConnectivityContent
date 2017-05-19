@@ -1512,7 +1512,9 @@ Status Code | Description | Response Model
 
 <a name="/definitions/viewEnum"></a>
 ### viewEnum
+
 Views can be used either in room name attributes, or in an array of up to 2 views defined at the room-level. The list of values supported for each is slightly different. The below table indicates where each view can be used. Most can be used in both places without problem.
+
 | view | Room Name Attribute | Room-Level |
 | ---- | ------------------- | ---------- |
 | Bay View | Yes | Yes |
