@@ -1512,36 +1512,38 @@ Status Code | Description | Response Model
 
 <a name="/definitions/viewEnum"></a>
 ### viewEnum
-| view |
-| ---- |
-| Bay View |
-| Beach View |
-| Canal View |
-| City View |
-| Courtyard View |
-| Garden View |
-| Golf View |
-| Harbor View |
-| Hill View |
-| Lagoon View |
-| Lake View |
-| Marina View |
-| Mountain View |
-| Multiple View |
-| No View |
-| Ocean View |
-| Park View |
-| Partial Lake View |
-| Partial Ocean View |
-| Partial Sea View |
-| Partial View |
-| Pool View |
-| Resort View |
-| River View |
-| Sea View |
-| Valley View |
-| View |
-| Vineyard View |
+Views can be used either in room name attributes, or in an array of up to 2 views defined at the room-level. The list of values supported for each is slightly different. The below table indicates where each view can be used. Most can be used in both places without problem.
+| view | Room Name Attribute | Room-Level |
+| ---- | ------------------- | ---------- |
+| Bay View | Yes | Yes |
+| Beach View | Yes | Yes |
+| Canal View | Yes | Yes |
+| City View | Yes | Yes |
+| Courtyard View | Yes | Yes |
+| Garden View | Yes | Yes |
+| Golf View | Yes | Yes |
+| Harbor View | Yes | Yes |
+| Hill View | Yes | Yes |
+| Lagoon View | Yes | Yes |
+| Lake View | Yes | Yes |
+| Marina View | Yes | Yes |
+| Mountain View | Yes | Yes |
+| Multiple View | Yes | No |
+| No View | Yes | No |
+| Ocean View | Yes | Yes |
+| Park View | Yes | Yes |
+| Partial Lake View | Yes | Yes |
+| Partial Ocean View | Yes | Yes |
+| Partial Sea View | Yes | Yes |
+| Partial View | Yes | No |
+| Pool View | Yes | Yes |
+| Resort View | Yes | Yes |
+| River View | Yes | Yes |
+| Sea View | Yes | Yes |
+| Valley View |  Yes | Yes |
+| View | Yes | No |
+| Vineyard View | Yes | Yes |
+| Water View  | No | Yes |
 
 <a name="/definitions/areaEnum"></a>
 ### areaEnum

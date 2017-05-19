@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2017-05-19 | Corrected list of support room views |
 | 2016-11-12 | Released new feature to expose a rate plan's deposit required flag, create and last update dates in read-only format: these attributes can be read by partners via GET. They cannot be provided with a create request (deposit is set to false by default), and they cannot be changed in update requests.
 | 2016-10-20 | Released new feature to expose a room type's rate thresholds, in read-only format. Only GET operation is allowed on this sub resource.
 | 2016-10-18 | Released new feature to expose RatePlanLinkage information in read-only format in rate plan GET. Added links section to show rate plan resource's link to itself, his rate plan linkage parent if any, and/or its derived child rate plans if any. |
