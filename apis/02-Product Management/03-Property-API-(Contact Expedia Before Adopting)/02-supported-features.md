@@ -13,12 +13,13 @@ The following sections indicate specific use cases that are supported or not sup
 
 ## Distribution Model
 
-| Supported | Not Supported |
-| --------- | ------------- |
-| Expedia Collect-only Properties | Hotel Collect-only Properties |
-| ExpediaTravelerPreference Properties (offering both Expedia Collect and Hotel Collect products) | *Changing a property's distribution model via API |
+| Supported |
+| --------- |
+| Expedia Collect-only Properties |
+| Hotel Collect-only Properties |
+| ExpediaTravelerPreference Properties (offering both Expedia Collect and Hotel Collect products) |
 
-Property API supports the onboarding of new properties that offer either Expedia Collect products only OR offers both Expedia Collect and Hotel Collect products.  *Contact your account manager if you wish to support changing a property's distribution model via the API.   
+Property API supports the onboarding of new properties that offer only products of Expedia Collect, Hotel Collect, OR both Expedia Collect and Hotel Collect.
 
 ## Billing Setup
 
