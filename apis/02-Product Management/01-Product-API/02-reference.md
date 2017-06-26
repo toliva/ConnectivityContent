@@ -57,7 +57,7 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 <a name="/versioning"></a>
 ## Versioning
 
-Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independentely. 
+Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independently. 
 
 Starting with version 2, it is now required to provide a content-type header including the version with any POST or PUT request. For example:
 
