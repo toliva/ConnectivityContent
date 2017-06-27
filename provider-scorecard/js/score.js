@@ -201,6 +201,10 @@ function enhanceClickCallback(event) {
     } else if (section == 'evc') {
         $("p#extra").html("");
         $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#learn-more-about-expedia-virtualcard" target=\"_blank\">Help me adopt this feature</a>');
+    } else if (section == 'pos') {
+        $("p#base").append($('<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q2, 2017 scorecard results.</p>'))
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
     }
 
     $("#enhanceModal").foundation('open');
@@ -400,20 +404,31 @@ function createBorders() {
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");
     if (Foundation.MediaQuery.atLeast("xlarge")) {
-        // placeholder for overrides
+        $("#pos").css("border-right", "10px solid #f8f8f8");
+        $("#pos").css("border-top", "none");
+        $("#productApi, #valueAddPromo, #etp, #evc").css("border-bottom", "10px solid #f8f8f8");
+        $("#evc").css("border-right", "none");
     } else if (Foundation.MediaQuery.current == "large") {
         $("#bcMessages .metric").html("BC Message<br />Success Rate");
         $("#arMessages .metric").html("AR Message<br />Success Rate");
-        $("#enhance #productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
+        $("#productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
         $("#enhance #etp").css("border-right", "none");
         $("#enhance #evc").css("border-top", "none");
-        $("#enhance #evc").css("border-right", "10px solid #f8f8f8")
+        $("#enhance #pos").css("border-top", "none");
+        $("#enhance #evc").css("border-right", "10px solid #f8f8f8");
+        $("#enhance #pos").css("border-right", "10px solid #f8f8f8");
+        $("#etp .feature").text("Expedia Travel Preference");
     } else if (Foundation.MediaQuery.current == "medium") {
         $("#bcMessages .metric").text("BC Message Success Rate");
         $("#arMessages .metric").text("AR Message Success Rate");
         $("#optimise #bcMessages").css("border-right", "none");
         $("#enhance #valueAddPromo").css("border-right", "none");
         $("#grow #rateLose").css("border-right", "none");
+        $("#etp .feature").text("Expedia Travel Pref.");
+        $("#evc").css("border-right", "none");
+        $("#etp, #evc").css("border-bottom", "10px solid #f8f8f8");
+        $("#pos").css("border-right", "10px solid #f8f8f8");
+        $("#pos").css("border-top", "none");
     } else if (Foundation.MediaQuery.current == "small") {
         $("#enhance .border").css("border-right", "none");
         $("#optimise .border").css("border-right", "none");
