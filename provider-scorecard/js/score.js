@@ -408,6 +408,8 @@ function createBorders() {
         $("#pos").css("border-top", "none");
         $("#productApi, #valueAddPromo, #etp, #evc").css("border-bottom", "10px solid #f8f8f8");
         $("#evc").css("border-right", "none");
+        $("#etp .feature").text("Expedia Travel Preference");
+        $("#pos .feature").text("Point of Sale Identification");
     } else if (Foundation.MediaQuery.current == "large") {
         $("#bcMessages .metric").html("BC Message<br />Success Rate");
         $("#arMessages .metric").html("AR Message<br />Success Rate");
@@ -418,6 +420,7 @@ function createBorders() {
         $("#enhance #evc").css("border-right", "10px solid #f8f8f8");
         $("#enhance #pos").css("border-right", "10px solid #f8f8f8");
         $("#etp .feature").text("Expedia Travel Preference");
+        $("#pos .feature").text("Point of Sale Identification");
     } else if (Foundation.MediaQuery.current == "medium") {
         $("#bcMessages .metric").text("BC Message Success Rate");
         $("#arMessages .metric").text("AR Message Success Rate");
@@ -425,6 +428,7 @@ function createBorders() {
         $("#enhance #valueAddPromo").css("border-right", "none");
         $("#grow #rateLose").css("border-right", "none");
         $("#etp .feature").text("Expedia Travel Pref.");
+        $("#pos .feature").text("Point of Sale ID.");
         $("#evc").css("border-right", "none");
         $("#etp, #evc").css("border-bottom", "10px solid #f8f8f8");
         $("#pos").css("border-right", "10px solid #f8f8f8");
@@ -433,6 +437,8 @@ function createBorders() {
         $("#enhance .border").css("border-right", "none");
         $("#optimise .border").css("border-right", "none");
         $("#grow .border").css("border-right", "none");
+        $("#etp .feature").text("Expedia Travel Preference");
+        $("#pos .feature").text("Point of Sale Identification");
     } else {
         console.log("Cannot detect screen size.")
     }
