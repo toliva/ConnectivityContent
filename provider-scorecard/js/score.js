@@ -205,6 +205,10 @@ function enhanceClickCallback(event) {
         $("p#base").append($('<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q2, 2017 scorecard results.</p>'))
         $("p#extra").html("");
         $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
+    } else if (section == 'pci') {
+        $("p#base").append($('<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q2, 2017 scorecard results.</p>'))
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">Email my AOC to Expedia</a>');
     }
 
     $("#enhanceModal").foundation('open');
@@ -404,21 +408,20 @@ function createBorders() {
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");
     if (Foundation.MediaQuery.atLeast("xlarge")) {
+        $("#pci, #productApi, #valueAddPromo, #etp").css("border-bottom", "10px solid #f8f8f8");
         $("#pos").css("border-right", "10px solid #f8f8f8");
-        $("#pos").css("border-top", "none");
-        $("#productApi, #valueAddPromo, #etp, #evc").css("border-bottom", "10px solid #f8f8f8");
-        $("#evc").css("border-right", "none");
+        $("#evc, #pos").css("border-top", "none");
         $("#etp .feature").text("Expedia Travel Preference");
         $("#pos .feature").text("Point of Sale Identification");
     } else if (Foundation.MediaQuery.current == "large") {
         $("#bcMessages .metric").html("BC Message<br />Success Rate");
         $("#arMessages .metric").html("AR Message<br />Success Rate");
-        $("#productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
-        $("#enhance #etp").css("border-right", "none");
-        $("#enhance #evc").css("border-top", "none");
-        $("#enhance #pos").css("border-top", "none");
-        $("#enhance #evc").css("border-right", "10px solid #f8f8f8");
-        $("#enhance #pos").css("border-right", "10px solid #f8f8f8");
+        $("#pci, #productApi, #valueAddPromo, #etp, #evc, #pos").css("border-bottom", "10px solid #f8f8f8");
+        $("#etp").css("border-right", "none");
+        $("#etp").css("border-top", "none");
+        $("#evc, #pos").css("border-top", "none");
+        $("#pos").css("border-top", "none");
+        $("#evc, #etp, #pos").css("border-right", "10px solid #f8f8f8");
         $("#etp .feature").text("Expedia Travel Preference");
         $("#pos .feature").text("Point of Sale Identification");
     } else if (Foundation.MediaQuery.current == "medium") {
@@ -430,9 +433,11 @@ function createBorders() {
         $("#etp .feature").text("Expedia Travel Pref.");
         $("#pos .feature").text("Point of Sale ID.");
         $("#evc").css("border-right", "none");
+        $("#evc").css("border-top", "none");
         $("#etp, #evc").css("border-bottom", "10px solid #f8f8f8");
-        $("#pos").css("border-right", "10px solid #f8f8f8");
+        $("#valueAddPromo, #evc, #pos").css("border-right", "10px solid #f8f8f8");
         $("#pos").css("border-top", "none");
+        $("#valueAddPromo, #pos").css("border-bottom", "10px solid #f8f8f8");
     } else if (Foundation.MediaQuery.current == "small") {
         $("#enhance .border").css("border-right", "none");
         $("#optimise .border").css("border-right", "none");
