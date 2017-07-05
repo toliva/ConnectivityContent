@@ -1329,197 +1329,200 @@ Authorization: Basic [your encoded username:password in Base64]
 Response:
 ```JSON
 {
-    "entity": [
+  "entity": [
+    {
+      "resourceId": 205020299,
+      "name": "RoomOnly22",
+      "rateAcquisitionType": "SellLAR",
+      "distributionRules": [
         {
-            "resourceId": 205020299,
-            "name": "RoomOnly22",
-            "rateAcquisitionType": "SellLAR",
-            "distributionRules": [
-                {
-                    "expediaId": "205020299A",
-                    "partnerCode": "RoomOnly22",
-                    "distributionModel": "HotelCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.1
-                    }
-                }
-            ],
-            "status": "Active",
-            "type": "Standalone",
-            "pricingModel": "PerDayPricing",
-            "occupantsForBaseRate": 2,
-            "taxInclusive": false,
-            "depositRequired": false,
-            "creationDateTime": "2016-10-20T21:05:12Z",
-            "lastUpdateDateTime": "2016-10-21T18:37:27Z",
-            "cancelPolicy": {
-                "defaultPenalties": [
-                    {
-                        "deadline": 0,
-                        "perStayFee": "1stNightRoomAndTax",
-                        "amount": 0
-                    },
-                    {
-                        "deadline": 24,
-                        "perStayFee": "None",
-                        "amount": 0
-                    }
-                ]
-            },
-            "additionalGuestAmounts": [
-                {
-                    "dateStart": "2015-07-10",
-                    "dateEnd": "2079-06-06",
-                    "ageCategory": "Adult",
-                    "amount": 0
-                }
-            ],
-            "minLOSDefault": 1,
-            "maxLOSDefault": 28,
-            "minAdvBookDays": 0,
-            "maxAdvBookDays": 500,
-            "bookDateStart": "1900-01-01",
-            "bookDateEnd": "2079-06-06",
-            "travelDateStart": "1901-01-01",
-            "travelDateEnd": "2079-06-06",
-            "mobileOnly": false,
-            "_links": {
-                "self": {
-                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020299"
-                }
-            }
+          "expediaId": "205020299A",
+          "partnerCode": "RoomOnly22",
+          "distributionModel": "HotelCollect",
+          "manageable": true,
+          "compensation": {
+            "percent": 0.1
+          }
+        }
+      ],
+      "status": "Active",
+      "type": "Standalone",
+      "pricingModel": "PerDayPricing",
+      "occupantsForBaseRate": 2,
+      "taxInclusive": false,
+      "depositRequired": false,
+      "creationDateTime": "2016-10-20T21:05:12Z",
+      "lastUpdateDateTime": "2016-10-21T18:37:27Z",
+      "cancelPolicy": {
+        "defaultPenalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "1stNightRoomAndTax",
+            "amount": 0
+          },
+          {
+            "deadline": 24,
+            "perStayFee": "None",
+            "amount": 0
+          }
+        ]
+      },
+      "additionalGuestAmounts": [
+        {
+          "dateStart": "2015-07-10",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "Adult",
+          "amount": 0
+        }
+      ],
+      "minLOSDefault": 1,
+      "maxLOSDefault": 28,
+      "minAdvBookDays": 0,
+      "maxAdvBookDays": 500,
+      "bookDateStart": "1900-01-01",
+      "bookDateEnd": "2079-06-06",
+      "travelDateStart": "1901-01-01",
+      "travelDateEnd": "2079-06-06",
+      "mobileOnly": false,
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020299"
+        }
+      }
+    },
+    {
+      "resourceId": 205020302,
+      "name": "RoomOnly11",
+      "rateAcquisitionType": "SellLAR",
+      "distributionRules": [
+        {
+          "expediaId": "205020302A",
+          "partnerCode": "RoomOnly",
+          "distributionModel": "HotelCollect",
+          "manageable": true,
+          "compensation": {
+            "percent": 0.1
+          }
+        }
+      ],
+      "status": "Active",
+      "type": "Standalone",
+      "pricingModel": "PerDayPricing",
+      "occupantsForBaseRate": 2,
+      "taxInclusive": false,
+      "depositRequired": true,
+      "creationDateTime": "2015-01-17T09:11:11Z",
+      "lastUpdateDateTime": "2016-04-30T20:20:09Z",
+      "cancelPolicy": {
+        "defaultPenalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "1stNightRoomAndTax",
+            "amount": 0
+          },
+          {
+            "deadline": 24,
+            "perStayFee": "None",
+            "amount": 0
+          }
+        ]
+      },
+      "additionalGuestAmounts": [
+        {
+          "dateStart": "2015-07-10",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "Adult",
+          "amount": 0
+        }
+      ],
+      "minLOSDefault": 1,
+      "maxLOSDefault": 28,
+      "minAdvBookDays": 0,
+      "maxAdvBookDays": 500,
+      "bookDateStart": "1900-01-01",
+      "bookDateEnd": "2079-06-06",
+      "travelDateStart": "1901-01-01",
+      "travelDateEnd": "2079-06-06",
+      "mobileOnly": false,
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020302"
+        },
+        "depositPolicy": {
+          "href": "https://services.expediapartnercentral.com/products/properties/1780044/depositPolicy"
+        }
+      }
+    },
+    {
+      "resourceId": 205833985,
+      "name": "BB",
+      "rateAcquisitionType": "SellLAR",
+      "distributionRules": [
+        {
+          "expediaId": "205833985",
+          "partnerCode": "RoomOnly",
+          "distributionModel": "ExpediaCollect",
+          "manageable": false,
+          "compensation": {
+            "percent": 0.23,
+            "minAmount": 0
+          }
         },
         {
-            "resourceId": 205020302,
-            "name": "RoomOnly11",
-            "rateAcquisitionType": "SellLAR",
-            "distributionRules": [
-                {
-                    "expediaId": "205020302A",
-                    "partnerCode": "RoomOnly",
-                    "distributionModel": "HotelCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.1
-                    }
-                }
-            ],
-            "status": "Active",
-            "type": "Standalone",
-            "pricingModel": "PerDayPricing",
-            "occupantsForBaseRate": 2,
-            "taxInclusive": false,
-            "depositRequired": true,
-            "creationDateTime": "2015-01-17T09:11:11Z",
-            "lastUpdateDateTime": "2016-04-30T20:20:09Z",
-            "cancelPolicy": {
-                "defaultPenalties": [
-                    {
-                        "deadline": 0,
-                        "perStayFee": "1stNightRoomAndTax",
-                        "amount": 0
-                    },
-                    {
-                        "deadline": 24,
-                        "perStayFee": "None",
-                        "amount": 0
-                    }
-                ]
-            },
-            "additionalGuestAmounts": [
-                {
-                    "dateStart": "2015-07-10",
-                    "dateEnd": "2079-06-06",
-                    "ageCategory": "Adult",
-                    "amount": 0
-                }
-            ],
-            "minLOSDefault": 1,
-            "maxLOSDefault": 28,
-            "minAdvBookDays": 0,
-            "maxAdvBookDays": 500,
-            "bookDateStart": "1900-01-01",
-            "bookDateEnd": "2079-06-06",
-            "travelDateStart": "1901-01-01",
-            "travelDateEnd": "2079-06-06",
-            "mobileOnly": false,
-            "_links": {
-                "self": {
-                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020302"
-                }
-            }        
-	},
+          "expediaId": "205833985A",
+          "partnerCode": "RoomOnly",
+          "distributionModel": "HotelCollect",
+          "manageable": true,
+          "compensation": {
+            "percent": 0.23
+          }
+        }
+      ],
+      "status": "Active",
+      "type": "Standalone",
+      "pricingModel": "PerDayPricing",
+      "occupantsForBaseRate": 2,
+      "taxInclusive": false,
+      "creationDateTime": "2015-06-20T21:05:12Z",
+      "lastUpdateDateTime": "2016-10-21T18:37:27Z",
+      "cancelPolicy": {
+        "defaultPenalties": [
+          {
+            "deadline": 0,
+            "perStayFee": "1stNightRoomAndTax",
+            "amount": 0
+          },
+          {
+            "deadline": 24,
+            "perStayFee": "None",
+            "amount": 0
+          }
+        ]
+      },
+      "additionalGuestAmounts": [
         {
-            "resourceId": 205833985,
-            "name": "BB",
-            "rateAcquisitionType": "SellLAR",
-            "distributionRules": [
-                {
-                    "expediaId": "205833985",
-                    "partnerCode": "RoomOnly",
-                    "distributionModel": "ExpediaCollect",
-                    "manageable": false,
-                    "compensation": {
-                        "percent": 0.23,
-                        "minAmount": 0
-                    }
-                },
-                {
-                    "expediaId": "205833985A",
-                    "partnerCode": "RoomOnly",
-                    "distributionModel": "HotelCollect",
-                    "manageable": true,
-                    "compensation": {
-                        "percent": 0.23
-                    }
-                }
-            ],
-            "status": "Active",
-            "type": "Standalone",
-            "pricingModel": "PerDayPricing",
-            "occupantsForBaseRate": 2,
-            "taxInclusive": false,
-            "creationDateTime": "2015-06-20T21:05:12Z",
-            "lastUpdateDateTime": "2016-10-21T18:37:27Z",
-            "cancelPolicy": {
-                "defaultPenalties": [
-                    {
-                        "deadline": 0,
-                        "perStayFee": "1stNightRoomAndTax",
-                        "amount": 0
-                    },
-                    {
-                        "deadline": 24,
-                        "perStayFee": "None",
-                        "amount": 0
-                    }
-                ]
-            },
-            "additionalGuestAmounts": [
-                {
-                    "dateStart": "2015-04-08",
-                    "dateEnd": "2079-06-06",
-                    "ageCategory": "Adult",
-                    "amount": 0
-                }
-            ],
-            "minLOSDefault": 1,
-            "maxLOSDefault": 28,
-            "minAdvBookDays": 0,
-            "maxAdvBookDays": 500,
-            "bookDateStart": "1900-01-01",
-            "bookDateEnd": "2079-06-06",
-            "travelDateStart": "1901-01-01",
-            "travelDateEnd": "2079-06-06",
-            "mobileOnly": false,
-            "_links": {
-                "self": {
-                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205833985"
-                }
-            }
-	}
-    ]
+          "dateStart": "2015-04-08",
+          "dateEnd": "2079-06-06",
+          "ageCategory": "Adult",
+          "amount": 0
+        }
+      ],
+      "minLOSDefault": 1,
+      "maxLOSDefault": 28,
+      "minAdvBookDays": 0,
+      "maxAdvBookDays": 500,
+      "bookDateStart": "1900-01-01",
+      "bookDateEnd": "2079-06-06",
+      "travelDateStart": "1901-01-01",
+      "travelDateEnd": "2079-06-06",
+      "mobileOnly": false,
+      "_links": {
+        "self": {
+          "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205833985"
+        }
+      }
+    }
+  ]
 }
 ```
 
@@ -1990,6 +1993,86 @@ Response:
           "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208616685"
         }
       ]
+    }
+  }
+}
+```
+
+### Single Rate Plan Read (with deposit policy)
+The rate plan being requested (resourceId: 205020302) has a deposit policy (its `depositRequired` flag is set to `true`). Therefore, it has a link to its deposit policy in the `_links` section.
+
+```HTTP
+GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020302
+Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v2+json
+Request-ID : 7804d78d-b8bb-4f9d-b4b9-7d7914cf1e73
+Authorization: Basic [your encoded username:password in Base64]
+```
+
+Response:
+```json
+{
+  "entity": {
+    "resourceId": 205020302,
+    "name": "RoomOnly11",
+    "rateAcquisitionType": "SellLAR",
+    "distributionRules": [
+      {
+        "expediaId": "205020302A",
+        "partnerCode": "RoomOnly",
+        "distributionModel": "HotelCollect",
+        "manageable": true,
+        "compensation": {
+          "percent": 0.1
+        }
+      }
+    ],
+    "status": "Active",
+    "type": "Standalone",
+    "pricingModel": "PerDayPricing",
+    "occupantsForBaseRate": 2,
+    "taxInclusive": false,
+    "depositRequired": true,
+    "creationDateTime": "2015-01-17T09:11:11Z",
+    "lastUpdateDateTime": "2016-04-30T20:20:09Z",
+    "cancelPolicy": {
+      "defaultPenalties": [
+        {
+          "deadline": 0,
+          "perStayFee": "1stNightRoomAndTax",
+          "amount": 0
+        },
+        {
+          "deadline": 24,
+          "perStayFee": "None",
+          "amount": 0
+        }
+      ]
+    },
+    "additionalGuestAmounts": [
+      {
+        "dateStart": "2015-07-10",
+        "dateEnd": "2079-06-06",
+        "ageCategory": "Adult",
+        "amount": 0
+      }
+    ],
+    "minLOSDefault": 1,
+    "maxLOSDefault": 28,
+    "minAdvBookDays": 0,
+    "maxAdvBookDays": 500,
+    "bookDateStart": "1900-01-01",
+    "bookDateEnd": "2079-06-06",
+    "travelDateStart": "1901-01-01",
+    "travelDateEnd": "2079-06-06",
+    "mobileOnly": false,
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020302"
+      },
+      "depositPolicy": {
+        "href": "https://services.expediapartnercentral.com/products/properties/1780044/depositPolicy"
+      }
     }
   }
 }
