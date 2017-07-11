@@ -114,6 +114,21 @@ h2 {
     }
 }
 </style>
+
+<script>
+function copyToClipboard(element) {
+    var ele = document.getElementById(element);
+    var link = ele.getAttribute('title')
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute("id", "dummy_id");
+    document.getElementById("dummy_id").value=link;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+</script>
+
 <section class='hero hero-pool'>
     <div class='inner'>
         <h1>Expedia Connectivity Blog</h1>
@@ -130,7 +145,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#connectivity-reporting-webinar"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="connectivity-reporting-webinar" onclick="copyToClipboard('connectivity-reporting-webinar')" title="http://expediaconnectivity.com/blog#connectivity-reporting-webinar"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>Deep Dive Into Connectivity Reporting Webinar</h2>
             </div>
             <div class="row">
@@ -173,7 +188,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#madrid-hackathon-winners"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="madrid-hackathon-winners" onclick="copyToClipboard('madrid-hackathon-winners')" title="http://expediaconnectivity.com/blog#madrid-hackathon-winners"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>2017 Expedia Madrid Hackathon Winners: Innovation We Love</h2>
             </div>
             <div class="row">
@@ -240,7 +255,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#enhanced-pos-branding"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="enhanced-pos-branding" onclick="copyToClipboard('enhanced-pos-branding')" title="http://expediaconnectivity.com/blog#enhanced-pos-branding"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h4>Support Your Hoteliers with Enhanced Point of Sale Brand Identification</h4>
             </div>
             <div class="row">
@@ -304,8 +319,8 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#bed-occ-change"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
-                <h4>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h4>
+                <span id="bed-occ-change" onclick="copyToClipboard('bed-occ-change')" title="http://expediaconnectivity.com/blog#bed-occ-change"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
+                <h5>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h5>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -356,7 +371,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#eqc-url-change"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="eqc-url-change" onclick="copyToClipboard('eqc-url-change')" title="http://expediaconnectivity.com/blog#eqc-url-change"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>Expedia QuickConnect APIs Users: Important Changes Required</h2>
             </div>
             <div class="row">
@@ -446,7 +461,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#post-hackathon"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="post-hackathon" onclick="copyToClipboard('post-hackathon')" title="http://expediaconnectivity.com/blog#post-hackathon"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>Expedia Connectivity Partner Hackathon</h2>
             </div>
             <div class="row">
@@ -505,7 +520,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#value-add-promo"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="value-add-promo" onclick="copyToClipboard('value-add-promo')" title="http://expediaconnectivity.com/blog#value-add-promo"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>Are you ready for Value Add Promotions?</h2>
             </div>
             <div class="row">
@@ -577,7 +592,7 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <a href="blog#delete-old-rate-plans"><i class="step fi-share tip-right" data-tooltip title="Share the link to this blog post"></i></a>
+                <span id="delete-old-rate-plans" onclick="copyToClipboard('delete-old-rate-plans')" title="http://expediaconnectivity.com/blog#delete-old-rate-plans"><i class="step fi-share tip-right" data-tooltip title="Click to copy link for this post"></i></span>
                 <h2>Delete those old rate plans</h2>
             </div>
             <div class="row">
