@@ -131,7 +131,7 @@ define(function() {
 
     function getVersionFromUrl() {
         var versionInUrl = getParameterByName("version");
-        var versionParam = (versionInUrl == null || versionInUrl == "") ? "" : "?version=" + encodeURIComponent(version);
+        var versionParam = (versionInUrl == null || versionInUrl == "") ? "" : "?version=" + encodeURIComponent(versionInUrl);
         return versionParam;
     }
 
