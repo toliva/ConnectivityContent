@@ -6,7 +6,7 @@
     "title": "Product API"
   },
   "host": "services.expediapartnercentral.com",
-  "basePath": "/products",
+  "basePath": "/",
   "tags": [
     {
       "name": "Property"

@@ -284,7 +284,7 @@ By default, when partners call one of the list endpoints (properties, room types
 
 This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:
 ```HTML
-/products/v1/properties/123/roomTypes?status=all
+/properties/123/roomTypes?status=all
 ```
 <a name="/update"></a>
 ## Modify: partial or full overlay?

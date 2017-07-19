@@ -13,8 +13,9 @@ For partners using Expedia APIs for the first time, please refer to the [FAQ & G
 ----
 
 ## Reading property, room type or rate plan information
-The simplest way to start interacting with the Product API is to access the 
-<https://services.expediapartnercentral.com/products/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
+Interacting with the Product API is to access the 
+<https://services.expediapartnercentral.com/products/properties> endpoint for reading property information or the 
+<https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/roomTypes> endpoint for reading room type or rate plan information in a browser, and input EQC API username and password when prompted for it.
 
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:
 ```
@@ -60,7 +61,7 @@ The result will be an array of properties assigned to your account, and will do 
 }
 ```
 Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/properties/12933870/roomTypes>
+<https://services.expediapartnercentral.com/properties/12933870/roomTypes>
 
 The result will be an array of active room types under this property. For example:
 ```JSON
@@ -110,7 +111,7 @@ The result will be an array of active room types under this property. For exampl
             ],
             "_links": {
                 "self": {
-                    "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986"
+                    "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986"
                 }
             }
         }
@@ -118,7 +119,7 @@ The result will be an array of active room types under this property. For exampl
 }
 ```
 Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-<https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans>
+<https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans>
 
 The result will be an array of active rate plans under this property and room type. For example:
 ```JSON
@@ -190,7 +191,7 @@ The result will be an array of active rate plans under this property and room ty
       "mobileOnly": false,
       "_links": {
         "self": {
-          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208502996"
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/208502996"
         }
       }
     },
@@ -260,7 +261,7 @@ The result will be an array of active rate plans under this property and room ty
       "mobileOnly": false,
       "_links": {
         "self": {
-          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208503003"
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/208503003"
         }
       }
     }
@@ -271,10 +272,10 @@ The result will be an array of active rate plans under this property and room ty
 ----
 
 ## Add a Rate Plan
-To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:
+To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <https://services.expediapartnercentral.com/properties/12933873/roomTypes/201357991/ratePlans> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:
 
 ```
-POST https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans
+POST https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
 
@@ -354,7 +355,7 @@ The response returned by the product API will contain all the default values use
         "mobileOnly": false,
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/207994977"
+                "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/207994977"
             }
         }
     }

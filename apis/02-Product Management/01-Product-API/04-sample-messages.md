@@ -169,7 +169,7 @@ This example shows how to do a read request to retrieve all room types under a g
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780041/roomTypes?status=all
+GET https://services.expediapartnercentral.com/properties/1780041/roomTypes?status=all
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
@@ -246,7 +246,7 @@ Response:
       ],
       "_links": {
         "self": {
-          "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/209857"
+          "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/209857"
         }
       }
     },
@@ -302,7 +302,7 @@ Response:
       ],
       "_links": {
         "self": {
-          "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/200108425"
+          "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/200108425"
         }
       }
     }        
@@ -315,7 +315,7 @@ This example shows how to do a read request for a single room type with 2 age ca
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200192910
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
@@ -405,7 +405,7 @@ Response:
         "wheelchairAccessibility":false,
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910"
+                "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200192910"
             }
         }
     }
@@ -417,7 +417,7 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
@@ -564,7 +564,7 @@ When successful, the API will respond with what Expedia created. Please note tha
         "wheelchairAccessibility": false,
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+                "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339"
             }
         }
     }
@@ -576,7 +576,7 @@ When creating a new room type, partners have the choice to pick a predefined nam
 
 This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking
 ```HTTP
-POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
@@ -734,7 +734,7 @@ When successful, the API will respond with what Expedia created. Please note tha
         "wheelchairAccessibility": false,
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+                "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339"
             }
         }
     }
@@ -746,7 +746,7 @@ When using room name attributes to generate a name, Expedia has specific rules a
 
 Request:
 ```HTTP
-POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
@@ -885,7 +885,7 @@ The response will not include bedroom details, view, featured amenity and area a
         ],
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+                "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339"
             }
         }
     }
@@ -896,7 +896,7 @@ The response will not include bedroom details, view, featured amenity and area a
 Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.
 
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
@@ -1044,7 +1044,7 @@ Response look like
         "wheelchairAccessibility": false,
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+                "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339"
             }
         }
     }
@@ -1055,7 +1055,7 @@ Leveraging the Create example from above, predefined name is modified to a new r
 
 The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 ```
@@ -1191,7 +1191,7 @@ Response looks like
         ],
         "_links": {
             "self": {
-                "href": "https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339"
+                "href": "https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339"
             }
         }
     }
@@ -1279,7 +1279,7 @@ This example shows how to retrieve the rate thresholds for a given room type.
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/rateThresholds
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1296,7 +1296,7 @@ If there are rate thresholds defined for the room type, the response would be:
     "source": "RecentBookings",
     "_links": {
       "self": {
-        "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds"
+        "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/rateThresholds"
       }
     }
   }
@@ -1320,7 +1320,7 @@ This example shows how to retrieve all active rate plans under a given room type
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1386,7 +1386,7 @@ Response:
             "mobileOnly": false,
             "_links": {
                 "self": {
-                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020299"
+                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020299"
                 }
             }
         },
@@ -1446,7 +1446,7 @@ Response:
             "mobileOnly": false,
             "_links": {
                 "self": {
-                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020302"
+                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020302"
                 }
             }        
 	},
@@ -1515,7 +1515,7 @@ Response:
             "mobileOnly": false,
             "_links": {
                 "self": {
-                    "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205833985"
+                    "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205833985"
                 }
             }
 	}
@@ -1528,7 +1528,7 @@ This example is for a Per Day Pricing, ExpediaCollect, Net Rate Rate Plan.
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204297188
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204297188
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1617,7 +1617,7 @@ Response:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700"
       }
     }    
   }
@@ -1627,7 +1627,7 @@ Response:
 ### Single Rate Plan Read (Occupancy-Based Pricing, ExpediaCollect, Sell Rate)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204126855
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1701,7 +1701,7 @@ Response:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204126855"
       }
     }    
   }
@@ -1711,7 +1711,7 @@ Response:
 ### Single Rate Plan Read (Occupancy-Based Pricing, HotelCollect)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204321248
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1791,7 +1791,7 @@ Response:
     "mobileOnly": true,
    "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204321248"
       }
     }    
   }
@@ -1801,7 +1801,7 @@ Response:
 ### Single Rate Plan Read (Expedia Traveler Preference)
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700
+GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1880,7 +1880,7 @@ Response:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700"
       }
     }    
   }
@@ -1891,7 +1891,7 @@ The rate plan being requested (resourceId: 208504016) derives its rate and avail
 
 Request:
 ```HTTP
-GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016
+GET https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208504016
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1980,14 +1980,14 @@ Response:
     },
     "_links": {
       "self": {
-        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016"
+        "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208504016"
       },
       "parentRatePlan": {
-        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706774/ratePlans/208503977"
+        "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706774/ratePlans/208503977"
       },
       "derivedRatePlans": [
         {
-          "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208616685"
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208616685"
         }
       ]
     }
@@ -1997,7 +1997,7 @@ Response:
 
 ### Rate Plan Create (Per-day-Pricing, ExpediaCollect)
 ```HTTP
-POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/
+POST https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
@@ -2130,7 +2130,7 @@ The response would look like:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204886798"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204886798"
       }
     } 
   }
@@ -2138,7 +2138,7 @@ The response would look like:
 ```
 ### Rate Plan Create (Expedia Traveler Preference)
 ```HTTP
-POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
+POST https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
@@ -2260,7 +2260,7 @@ Response would look like:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700"
       }
     }    
   }
@@ -2269,7 +2269,7 @@ Response would look like:
 ### Rate Plan Modify (Name, Additional Guest Amount, Value Adds) - Full Overlay (PUT)
 In this example, the rate plan created in a previous example is modified to have a more meaningful name, lower additional guest amounts and free Internet.
 ```HTTP
-PUT https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700 
+PUT https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700 
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -2419,7 +2419,7 @@ Response would look like:
     "mobileOnly": false,
     "_links": {
       "self": {
-         "href": "https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700"
+         "href": "https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700"
       }
     }    
   }
@@ -2519,7 +2519,7 @@ Here are a few examples of PATCH requests partners could want to make. Response 
 ### Rate Plan Delete
 In this example, the rate plan created in a previous example is deleted.
 ```HTTP
-DELETE https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700
+DELETE https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
