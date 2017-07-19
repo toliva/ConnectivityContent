@@ -213,7 +213,7 @@ function enhanceClickCallback(event) {
         $("p#extra").html("");
         $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
     } else if (section == 'pci') {
-        $("p#base").append($('<br><br>Thank you if you have already submitted your AOC. Please note that your PCI status will not be reflected in the scorecard until next quarter.<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q3, 2017 scorecard results.</p>'))
+        $("p#base").append($('<span> Please send your latest AOC to <a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">eqcss@expedia.com</a></span><br><br>Thank you if you have already submitted your AOC. Please note that your PCI status will not be reflected in the scorecard until next quarter.<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q3, 2017 scorecard results.</p>'))
         $("p#extra").html("");
         $("div.adopt").html('<a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">Email my AOC to Expedia</a>');
     }
