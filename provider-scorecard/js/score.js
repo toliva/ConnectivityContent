@@ -144,7 +144,7 @@ define(function() {
             return;
         }
 
-        $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash + getVersion(), function (data) {
+        $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash + getVersionFromUrl(), function (data) {
             generateScorecard(data);
         }).fail(function (jqxhr) {
             $("#top-metrics h1").text("");
