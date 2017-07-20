@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2017-07-31 | Added access to room type and rate plan resources without "/products" in endpoint path. |
 | 2017-05-19 | Corrected list of support room views |
 | 2016-11-12 | Released new feature to expose a rate plan's deposit required flag, create and last update dates in read-only format: these attributes can be read by partners via GET. They cannot be provided with a create request (deposit is set to false by default), and they cannot be changed in update requests.
 | 2016-10-20 | Released new feature to expose a room type's rate thresholds, in read-only format. Only GET operation is allowed on this sub resource.

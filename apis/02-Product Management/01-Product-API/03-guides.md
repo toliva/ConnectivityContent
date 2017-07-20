@@ -279,7 +279,7 @@ Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference
 By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:
 
 ```HTML
-/properties?status=all
+/products/properties?status=all
 ```
 
 This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:

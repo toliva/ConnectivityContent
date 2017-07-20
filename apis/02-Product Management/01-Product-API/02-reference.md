@@ -31,9 +31,9 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 
 ## Resources & Endpoints Overview
 * All of Expedia APIs now live under the https://services.expediapartnercentral.com/ domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.
-* In order to access property information: `/product/properties/{propertyResourceId}`. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
-* Room types can be accessed in the context of a property: `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}`. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
-* Rate plans can be accessed as part of a room type (they belong to a room type): `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}`. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
+* In order to access property information: `/products/properties/{propertyResourceId}`. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
+* Room types can be accessed in the context of a property: `/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}`. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
+* Rate plans can be accessed as part of a room type (they belong to a room type): `/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}`. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
 
 | Resource | Supported Operations | Production Endpoint | Parameters |
 | -------- | -------------------- | ------------------- | ---------- |
@@ -139,8 +139,8 @@ Simple entity response:
 
 ### Single Entity VS Entity Array in Read/GET Responses
 There are two different read operations available against the Product API resources:
-- To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}
-- To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. 
+- To get a specific resource, the resource ID needs to be specified on the URL. For example: /products/properties/{propertyId}
+- To get all the active resources in the system, omit the resource ID on the URL. For example: /products/properties/. 
 
 
 For example, when requesting a single property, EPS Product API will return the property resource information as part of an Entity object:
