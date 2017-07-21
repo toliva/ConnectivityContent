@@ -13,9 +13,8 @@ For partners using Expedia APIs for the first time, please refer to the [FAQ & G
 ----
 
 ## Reading property, room type or rate plan information
-Interacting with the Product API is to access the 
-<https://services.expediapartnercentral.com/products/properties> endpoint for reading property information or the 
-<https://services.expediapartnercentral.com/properties/[ExpediaPropertyId]/roomTypes> endpoint for reading room type or rate plan information in a browser, and input EQC API username and password when prompted for it.
+The simplest way to start interacting with the Product API is to access the 
+<https://services.expediapartnercentral.com/products/properties> endpoint in a browser, and input EQC API username and password when prompted for it.
 
 Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:
 ```
