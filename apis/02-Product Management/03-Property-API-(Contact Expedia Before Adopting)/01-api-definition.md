@@ -245,7 +245,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | -------------- | -------- | ----- |
 | Property | Yes |  Contact Info for the physical property |
 | ReservationManager | Yes | firstName, lastName, and **either** an email or fax number is required.  Property will fail onboarding if this information is not submitted.  |
-| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. |
+| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of "24hr- " is added to FirstName if field is not provided. |
 | GeneralManager | No | If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly. |
 | PropertyExtranetUser | No | First Name, Last Name, email address required.  An account for Expedia Partner Central (EPC) will be created during the onboarding process and credentials will be sent to the email address submitted.  This EPC account can be used by the hotel to read and respond to user reviews and reports for the property via EPC extranet. Any content updates submitted via the EPC extranet can be overwritten by an update submitted via the Property API. |
 
@@ -253,10 +253,10 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| firstName | String | Yes | Required for ReservationManager, optional for others |
-| lastName | String | Yes | |
+| firstName | String | Yes | Required for ReservationManager and PropertyExtranetUser, optional for others. Must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode. |
+| lastName | String | Yes | Required for ReservationManager and PropertyExtranetUser, optional for others. Must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode. |
 | phoneNumbers | Array of PhoneNumbers | See Notes | Phone required for Property, ReservationManager, AlternateReservationManager, GeneralManager |
-| emails | Array of Strings | See Notes | Email required for ReservationManager |
+| emails | Array of Strings | See Notes | Email required for ReservationManager. Must be well-formed Internet format and cannot contain Unicode. |
 
 **phoneNumber**
 
@@ -366,8 +366,8 @@ The response body will echo back the values of *the request received* and will i
             "modifiedUtc": "2015-09-10T23:59:48.7349626Z",
             "providerPropertyUrl": "http://example.org",
             "structureType": "Hotel",
-            "currencyCode": "GBP",
-            "billingCurrencyCode": "GBP",
+            "currencyCode": "EUR",
+            "billingCurrencyCode": "EUR",
             "timeZone": "Europe/Dublin",
             "addresses": [
                 {
