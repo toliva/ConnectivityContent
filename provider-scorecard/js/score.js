@@ -418,7 +418,6 @@ define(function() {
             var state = category["attributes"][key];
             $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
             $(elementSelector).addClass(state ? "green" : "red");
-
         }
     }
 
