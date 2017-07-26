@@ -31,28 +31,28 @@ To facilitate integrating with the Product API, Expedia offers a [Swagger.json](
 
 ## Resources & Endpoints Overview
 * All of Expedia APIs now live under the https://services.expediapartnercentral.com/ domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.
-* In order to access property information: `/product/properties/{propertyResourceId}`. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
-* Room types can be accessed in the context of a property: `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}`. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
-* Rate plans can be accessed as part of a room type (they belong to a room type): `/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}`. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
+* In order to access property information: `/products/properties/{propertyResourceId}`. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.
+* Room types can be accessed in the context of a property: `/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}`. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.
+* Rate plans can be accessed as part of a room type (they belong to a room type): `/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}`. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.
 
 | Resource | Supported Operations | Production Endpoint | Parameters |
 | -------- | -------------------- | ------------------- | ---------- |
 | Property | Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided | GET https://services.expediapartnercentral.com/products/properties/ | status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default) |
 | Property | Read a single property (GET) | GET https://services.expediapartnercentral.com/products/properties/{PropertyID} | None |
-| Room Type | Read multiple room types (GET) belonging to a single property | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/ | status=all (optional) If status is not provided, only active room types are returned.|
-| Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/ | None |
-| Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type | Update a single room type (PATCH) in partial update mode | PATCH https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
-| Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
-| Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
-| Room Type Rate Thresholds | Get rate thresholds for a single room type | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds | None |
-| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
-| Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
-| Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
-| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
-| Rate Plan | Update a single rate plan (PATCH) in partial update mode | PATCH https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
-| Rate Plan | Delete a single rate plan (DELETE) | DELETE https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Room Type | Read multiple room types (GET) belonging to a single property | GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/ | status=all (optional) If status is not provided, only active room types are returned.|
+| Room Type | Read a single room type (GET) | GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type | Create a single room type (POST) | POST https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/ | None |
+| Room Type | Update a single room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type | Update a single room type (PATCH) in partial update mode | PATCH https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId} | None |
+| Room Type Amenity | Get amenities for a single room type| GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Amenity | Set amenities for a room type (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities | None |
+| Room Type Rate Thresholds | Get rate thresholds for a single room type | GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds | None |
+| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | status=all (optional) If status is not provided, only active rate plans are returned.|
+| Rate Plan | Read a single rate plan (GET) | GET https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Rate Plan | Create a single rate plan (POST) | POST https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/ | None |
+| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Rate Plan | Update a single rate plan (PATCH) in partial update mode | PATCH https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
+| Rate Plan | Delete a single rate plan (DELETE) | DELETE https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId} | None |
 
 <a name="/versioning"></a>
 ## Versioning
@@ -139,8 +139,8 @@ Simple entity response:
 
 ### Single Entity VS Entity Array in Read/GET Responses
 There are two different read operations available against the Product API resources:
-- To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}
-- To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. 
+- To get a specific resource, the resource ID needs to be specified on the URL. For example: /products/properties/{propertyId}
+- To get all the active resources in the system, omit the resource ID on the URL. For example: /products/properties/. 
 
 
 For example, when requesting a single property, EPS Product API will return the property resource information as part of an Entity object:
@@ -284,7 +284,7 @@ countryCode | string | ISO 3166-1 Alpha 3 country code, for the country where th
 ## Room type
 ### Obtain a list of room types
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -302,7 +302,7 @@ Status Code | Description | Response Model
 
 ### Creates a new room type
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -389,7 +389,7 @@ Status Code | Description | Response Model
 
 ### Read a single room type
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -415,7 +415,7 @@ Using the PATCH verb, partners can perform a partial update of a room type. Expe
 
 #### Room Type Modify - Full Overlay (PUT)
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -523,7 +523,7 @@ First-level elements/objects not provided in the input will remain unchanged. So
 Also note that all validation rules are applied on the complete updated room type data. For instance, only providing a `ageCategories` that has no "Adult" category will yield the appropriate error response.
 
 - Method: `PATCH`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -682,7 +682,7 @@ Amenities of a given room type can be accessed as a sub resource of a specific r
 
 ### Read a single room type's amenities
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -700,7 +700,7 @@ Status Code | Description | Response Model
 
 ### Set room type amenities to an existing room type
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -766,7 +766,7 @@ Room type rate thresholds can be defined by Expedia in one of 2 ways: set by a m
 
 ### Obtain rate thresholds for a single room type
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -801,7 +801,7 @@ source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | De
 | ManualOverride |
 
 **Example**
-GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds
+GET https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/rateThresholds
 ```
 {
   "entity": {
@@ -811,7 +811,7 @@ GET https://services.expediapartnercentral.com/products/properties/12933870/room
     "source": "RecentBookings",
     "_links": {
       "self": {
-        "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds"
+        "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/rateThresholds"
       }
     }
   }
@@ -821,7 +821,7 @@ GET https://services.expediapartnercentral.com/products/properties/12933870/room
 ## Rate plan
 ### Obtain a list of rate plans
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `HTTP Request (GET)`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -841,7 +841,7 @@ Status Code | Description | Response Model
 
 ### Create a new rate plan
 - Method: `POST`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -935,7 +935,7 @@ Status Code | Description | Response Model
 
 ### Read a single rate plan
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (GET)
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -964,7 +964,7 @@ Using the PATCH verb, partners can perform a partial update of a rate plan. Expe
 #### Rate Plan Modify - Full Overlay (PUT)
 
 - Method: `PUT`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -1070,7 +1070,7 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
   "mobileOnly": false,
   "_links": {
     "self": {
-      "href": "https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/205020307"
+      "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/205020307"
     }
   }
 }
@@ -1100,7 +1100,7 @@ First-level elements/objects not provided in the input will remain unchanged. So
 Also note that all validation rules are applied on the complete updated rate plan data. For instance, only providing a `travelDateStart` that is after the current `travelDateEnd` will yield the appropriate error response.
 
 - Method: `PATCH`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: `application/vnd.expedia.eps.product-v2+json`
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
@@ -1170,7 +1170,7 @@ Status Code | Description | Response Model
 
 ### Delete an existing rate plan
 - Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}
 - Consumes: HTTP Request (DELETE)
 - Produces: `application/vnd.expedia.eps.product-v2+json`
 
