@@ -214,11 +214,11 @@ Hotel Collect bookings sourced from Hotels.com points of sales
 	</POS>
 ```
 
-Hotel Collect bookings sourced from Venere points of sales: Expedia will be used by default for any non Expedia/Hotels.com/EAN booking.
+Hotel Collect bookings sourced from Travelocity points of sales: 
 ```xml
 	<POS>
 		<Source>
-			< RequestorID Type="18" ID="A-Expedia"/>
+			< RequestorID Type="18" ID="A-Travelocity"/>
 			<BookingChannel Type="2">
 				<CompanyName>Expedia</CompanyName>
 			</BookingChannel>
