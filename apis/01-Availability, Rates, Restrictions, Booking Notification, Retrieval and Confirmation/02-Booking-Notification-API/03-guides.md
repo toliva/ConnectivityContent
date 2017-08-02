@@ -163,7 +163,7 @@ Additional POS ID values are sent in the e-notification message for Hotel Collec
 The additional POS ID 5 is used to return a TIDS for hotels participating in Expedia Group Reconciliation process. TIDS are issued and managed by the IATA group. They are used to identify the Expedia contracting entities and compensation payment currencies. Note that TIDS ID is not related to POS ID. Possible values are driven by points of supply. Your lodging connectivity account manager can provide more details about this feature.
 To help understand better the POS element, a few examples are provided here for bookings with different POS.
 
-Expedia Collect bookings sourced from Expedia points of sales 
+Expedia Collect bookings sourced from Expedia points of sale 
 ```xml
 	<POS>
 		<Source>
@@ -175,7 +175,7 @@ Expedia Collect bookings sourced from Expedia points of sales
 	</POS>
 ```
 
-Expedia Collect bookings sourced from Hotels.com points of sales 
+Expedia Collect bookings sourced from Hotels.com points of sale 
 ```xml
 	<POS>
 		<Source>
@@ -187,7 +187,18 @@ Expedia Collect bookings sourced from Hotels.com points of sales
 	</POS>
 ```
 
-Hotel Collect bookings sourced from Expedia points of sales 
+Expedia Collect bookings sourced from American Express points of sale ('American Express Travel' in this case): 
+```xml
+	<POS>
+		<Source>
+			< RequestorID Type="18" ID="American Express Travel"/>
+			<BookingChannel Type="2">
+				<CompanyName>Expedia</CompanyName>
+			</BookingChannel>
+		</Source>
+	</POS>
+```
+Hotel Collect bookings sourced from Expedia points of sale 
 ```xml
 	<POS>
 		<Source>
@@ -202,7 +213,7 @@ Hotel Collect bookings sourced from Expedia points of sales
 	</POS>
 ```
 
-Hotel Collect bookings sourced from Hotels.com points of sales
+Hotel Collect bookings sourced from Hotels.com points of sale
 ```xml
 	<POS>
 		<Source>
@@ -214,7 +225,7 @@ Hotel Collect bookings sourced from Hotels.com points of sales
 	</POS>
 ```
 
-Hotel Collect bookings sourced from Travelocity points of sales: 
+Hotel Collect bookings sourced from Travelocity points of sale: 
 ```xml
 	<POS>
 		<Source>
