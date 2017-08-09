@@ -51,8 +51,9 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 405 | Invalid/unsupported method on resource |
 | 406 | Unsupported media type for response (only application/json is supported) |
 | 415 | Unsupported media type for requests (only application/json is supported) |
-| 500 | Internal system error (shouldn’t be retried) |
-| 503 | Internal system error (should be retried) |
+| 500 | Internal system error (should not be retried) |
+| 503 | Temporary internal system error (should be retried) |
+| 504 | Timeout error (should be retried) |
 
 ## HTTP Headers
 HTTP headers are slightly different between a request made to the Deposit API, and responses returned.
@@ -77,18 +78,18 @@ HTTP headers are slightly different between a request made to the Deposit API, a
 All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. 
 
 ### Entity
-The entities supported by the Deposit API are rate plans, room types and properties.
+The only supported entity by the Deposit API is the deposit policy.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Deposit and EPS Product services. 
 
 Consider the following code in Java:
-```Java
+```java
 public class ResponseWrapperDTO<T> implements Serializable {
     private T entity;
     private List<ErrorDTO> errors;
 }
 ```
-Entities can be RatePlan/RoomType/Property/Images/Amenities etc.
+Entities can be DepositPolicy, ratePlan/RoomType/Property/Images/Amenities etc.
 Simple entity response:
 ```JSON
 {
@@ -100,12 +101,12 @@ Simple entity response:
 ```
 
 ### Single Entity VS Entity Array in Read/GET Responses
-There are two different read operations available against the Product API resources:
-- To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}/images/{ImageId}
-- To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/{propertyId}/images. 
+Although there is only a single read operation currently supported by the Deposit API, there are two different read operations that are technically available when reading resources:
+- To get a specific resource, e.g. a single deposit policy: /properties/{propertyId}/depositPolicy}
+- To get a list of resources, e.g. all the active room types of a property: /properties/{propertyId}/roomTypes 
 
 
-For example, when requesting a single image, Image API will return the Image resource information as part of an Entity object:
+For example, when requesting the deposit policy of a property, the Deposit API will return the deposit policy resource information as part of an Entity object:
 ```JSON
 {
   "entity": {
@@ -114,7 +115,7 @@ For example, when requesting a single image, Image API will return the Image res
   }
 }
 ```
-When requesting all images for a property, an array of images is returned:
+When requesting all room types for a property, an array of images is returned:
 ```JSON
 {
   "entity": [
@@ -147,8 +148,8 @@ If a response doesn’t contain an Entity, it will contain Errors:
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-code | integer | [Full list of error codes](#/definitions/ErrorCodes).
-message | string | 
+code | integer | Error code ([full error code list](#/definitions/ErrorCodes))
+message | string | Error message.
 
 ### Entity vs Errors
 Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.
@@ -156,35 +157,33 @@ Entity and errors are in the same wrapper because most frameworks will de-serial
 Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
 
 A Java implementation to handle this, using Spring’s RestTemplate, could look like this:
-```Java
-   ResponseEntity<ResponseWrapperDTO<RoomTypeDTO>> response = restTemplate.exchange(
-            "url",
-            HttpMethod.POST,
-            entity,
-            new ParameterizedTypeReference<ResponseWrapperDTO<RoomTypeDTO>>() {});
+```java
+ResponseEntity<ResponseWrapperDTO<DepositDTO>> response = restTemplate.exchange(
+    "url",
+    HttpMethod.POST,
+    entity,
+    new ParameterizedTypeReference<ResponseWrapperDTO<DepositDTO>>() {});
 ```
 
-## Images
+## Deposit
 
 Please note that a swagger JSON file can be obtained on this portal to facilitate development:
-<https://expediaconnectivity.com/files/image_swagger.json>
+<https://services.expediapartnercentral.com/properties/depositPolicy/swagger.json>
 
-### Obtain a list of images for a given property
+### Obtain the deposit policy for a given property
 - Method: `GET`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images
-- Consumes: `application/json`
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/depositPolicy
 - Produces: `application/json`
 
 #### Parameters
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
-status | query | Status filter. String. Only supported value is "all". | false | string | 
 
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [ResponseWrapperImageList](#/definitions/ResponseWrapperImageList)
+200 | OK | [SuccessfulGetResponse](#/definitions/SuccessfulGetResponse)
 
 **Example**
 ```
@@ -576,25 +575,45 @@ message | string |
 ### Error Codes
 | HTTP Status Code | Error Code | Error Description | Explanation and Recommended Action |
 | ---------------- | ---------- | ----------------- | ---------------------------------- |
-| 400 | 2002 | Bad Request | There is a problem with the submitted payload. Please make sure it's a valid JSON message. |
-| 400 | 2003 | Bad Request | The property or element "[element]" is or contains invalid/unrecognizable data. |
-| 400 | 2420 | Bad Request | Element [element] has to be a valid date formatted as YYYY-MM-DD. |
-| 400 | 2421 | Bad Request | Element [element] has to be an integer. |
-| 400 | 2422 | Bad Request | Element [element] has to be a double. |
-| 400 | 2423 | Bad Request | Invalid boolean value for element [element], has to be true or false. |
-| 400 | 2424 | Bad Request | Invalid value '[value]' for the element '[element]'. |
-| 400 | 2425 | Bad Request | Element [element] has to be a long. |
-| 400 | 2426 | Bad Request | Invalid value for element '[element]'. |
-| 400 | 2427 | Bad Request | Element [element] has to be a valid date/time formatted as yyyy-MM-dd HH:mm:ss.SSS z (e.g. 2016-01-01 08:00:00.000 America/Montreal). |
-| 400 | 3203 | Bad Request | Room type ID not found [[roomTypeId]]. You specified a room type ID that does not exist for this property. |
-| 400 | 3800 | Bad Request | Element "[element]" cannot be provided in the request for this operation. |
-| 400 | 3801 | Bad Request | Element "[element]" is missing. |
-| 400 | 3802 | Bad Request | [Media Service API validation error] |
-| 400 | 3804 | Bad Request | We couldn't access the file at location [location]. If this is the first time you use this API, please contact Expedia to insure Expedia is configured to access this location. |
-| 400 | 3805 | Bad Request | Invalid category code provided. |
-| 403 | 1000 | Forbidden | You are not authorized to view this resource. |
+| 401 | 1001 | Unauthorized | Missing or Invalid Username or Password. |
+| 403 | 1003 | Forbidden | Access to this API with a non-API account is forbidden. Please use an API account.
+| 403 | 1000 | Forbidden | Access denied: your account is not authorized to manage this property.
 | 404 | 2404 | Not Found | Resource not found: the server has not found anything matching the Request-URI. |
+| 400 | 2003 | Bad Request | The domain value in JSON is not supported by the model. |
+| 400 | 2004 | Bad Request | The JSON is missing required element. |
+| 400 | 2405 | Bad Request | Method not allowed: the method specified in the Request-Line is not allowed for the resource identified by the Request-URI. Allowed method(s): [methods]. |
+| 400 | 2406 | Bad Request | Requested response media type unsupported: the resource identified by the request is unable to generate response entities of the media type requested by the Accept header attribute in the request. |
+| 400 | 2415 | Bad Request | Request media type unsupported: the server is refusing to service the request because the media type specified in request under the Content-Type header attribute is not supported by the requested resource for the requested method. |
+| 400 | 2425 | Bad Request | Invalid CORS request. |
+| 404 | 3000 | Not Found | The property '[propertyId]' has no associated policy. |
+| 400 | 3001 | Bad Request | Request must contain a default policy or an exception policy. |
+| 400 | 3002 | Bad Request | Too many exception policies. At most 4 exception policies are allowed. |
+| 400 | 3003 | Bad Request | Policy start date is mandatory. |
+| 400 | 3004 | Bad Request | Policy end date is mandatory. |
+| 400 | 3005 | Bad Request | Policy end date must be after the start date. |
+| 400 | 3006 | Bad Request | Days of the weeks must be unique within the date range. |
+| 400 | 3007 | Bad Request | At least one date range must be defined per policy. |
+| 400 | 3008 | Bad Request | A policy contained too many date ranges. At most 15 date ranges are allowed. |
+| 400 | 3009 | Bad Request | A policy may not contain overlapping dates. |
+| 400 | 3010 | Bad Request | A policy must define at least one payment type. |
+| 400 | 3011 | Bad Request | Payment type must be specified. |
+| 400 | 3012 | Bad Request | A remainder type may not have a value field. |
+| 400 | 3013 | Bad Request | A payment type that was not a remainder was missing a value field. |
+| 400 | 3014 | Bad Request | Amount, percent or night payment value must be positive. |
+| 400 | 3015 | Bad Request | Only an Amount payment type may contain a decimal value. |
+| 400 | 3016 | Bad Request | A policy was missing a collection time. |
+| 400 | 3017 | Bad Request | "Days prior to arrival" must have a positive value. |
+| 400 | 3018 | Bad Request | Only the "Days prior to arrival" collection type may specify a value field. |
+| 400 | 3019 | Bad Request | There must be at least one payment type before the remainder payment type. |
+| 400 | 3020 | Bad Request | No payment allowed after a remainder payment type. |
+| 400 | 3021 | Bad Request | An exception policy contains too many payments. At most 4 payment types are allowed. |
+| 400 | 3022 | Bad Request | The sum of all payments exceeded 100%. |
+| 400 | 3023 | Bad Request | A policy may only contain a single NIGHT payment type. |
+| 400 | 3024 | Bad Request | Payments must be specified in chronological order: UPON_BOOKING followed by DAYS_PRIOR followed by UPON_ARRIVAL. |
+| 400 | 3025 | Bad Request | The first payment may not be of type UPON_ARRIVAL. |
+| 400 | 3026 | Bad Request | If the client specifies four percentage payments, their sum must equal to 100%. |
+| 400 | 3027 | Bad Request | Payment amounts may not contain more than 2 decimal places. |
+| 400 | 3028 | Bad Request | This property has rate plans requiring deposits. To remove the deposit policy, first update all rate plans to not require a deposit. |
+| 400 | 3029 | Bad Request | Deposit Policies cannot be set on properties with ExpediaCollect-only business model. |
 | 500 | 4100 | Internal Server Error | Internal System Error. Do not retry this request. Our support team was notified of the problem. |
-| 500 | 4101 | Internal Server Error | Internal System Error. Do not retry this request. Our support team was notified of the problem. |
 | 503 | 4000 | Service Unavailable | Internal system error, please try again in a few minutes. |
-

@@ -88,8 +88,9 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 406 | Unsupported media type for response (only application/vnd.expedia.eps.product-v2+json is supported) |
 | 409 | Conflicting data |
 | 415 | Unsupported media type for requests (only application/vnd.expedia.eps.product-v2+json is supported) |
-| 500 | Internal system error (shouldn’t be retried) |
-| 503 | Internal system error (should be retried) |
+| 500 | Internal system error (should not be retried) |
+| 503 | Temporary internal system error (should be retried) |
+| 504 | Timeout error (should be retried) |
 
 ## HTTP Headers
 HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.
@@ -117,10 +118,10 @@ All responses provided by the API will either contain an HTTP Entity element, wh
 ### Entity
 The entities supported by the product API are rate plans, room types and properties.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Image services. 
 
 Consider the following code in Java:
-```Java
+```java
 public class ResponseWrapperDTO<T> implements Serializable {
     private T entity;
     private List<ErrorDTO> errors;
@@ -194,7 +195,7 @@ Entity and errors are in the same wrapper because most frameworks will de-serial
 Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
 
 A Java implementation to handle this, using Spring’s RestTemplate, could look like this:
-```Java
+```java
    ResponseEntity<ResponseWrapperDTO<RoomTypeDTO>> response = restTemplate.exchange(
             "url",
             HttpMethod.POST,
