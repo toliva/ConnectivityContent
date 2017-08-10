@@ -30,9 +30,9 @@ For more information about getting started for the first time, and authorization
 
 | Resource | Supported Operations | Production Endpoint |
 | -------- | -------------------- | ------------------- |
-| Deposit | Read the deposit policy (GET) belonging to a property | GET https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
-| Deposit | Create/update the deposit policy (PUT) | PUT https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
-| Deposit | Delete the deposit policy (DELETE) | DELETE https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
+| Deposit | Read the deposit policy (GET) belonging to a property | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
+| Deposit | Create/update the deposit policy (PUT) | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
+| Deposit | Delete the deposit policy (DELETE) | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
 
 
 ## HTTP Status Code
