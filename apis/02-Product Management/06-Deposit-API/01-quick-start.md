@@ -1,5 +1,5 @@
 # Quick Start
-The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API rate plan's resource: first set a deposit policy with this API, then add or update rate plans indicating they should require a deposit via the depositRequired attribute.
+The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API rate plan's resource: first set a deposit policy with this API, then add or update rate plans indicating whether they should require a deposit or not via the depositRequired attribute.
 
 ----
 
@@ -13,12 +13,12 @@ For partners using Expedia APIs for the first time, please refer to the [FAQ & G
 ----
 
 ## Reading a Deposit Policy
-To obtain the deposit policy defined for a property, simply issue a GET request for the depositPolicy resource. For our test property with Expedia property ID 12933870 this would be how:
+To obtain the deposit policy defined for a property, issue a GET request for the depositPolicy resource. For our test property with Expedia property ID 12933870, this would be how:
 ```
 GET https://services.expediapartnercentral.com/properties/12933870/depositPolicy
 ```
 
-If no deposit policy was ever defined for this property, or if a previously existing deposit policy was removed, a HTTP Status Code 404 / Not Found would be returned. In the policy exists, something like this could be returned:
+If no deposit policy was ever defined for this property, or if a previously existing deposit policy was removed, a HTTP Status Code 404 / Not Found would be returned. In the policy exists, something like this would be returned:
 ```json
 {
   "entity": {
@@ -167,3 +167,6 @@ If no deposit policy was ever defined for this property, or if a previously exis
 }
 ```
 This policy defines both a default policy, applicable on any date, for any of the rate plans marked as using it. It also defines exceptions. Exceptions are overrides to the default, and will take precedence for the dates they cover.
+
+## Creating / Updating / Deleting a Deposit Policy
+It is also possible to create, update or delete a deposit policy. Our [Sample Messages](sample-messages.html) section contains examples for each scenario. Please make sure to also read our [API Definition](reference.html) and [FAQ & Guides](guides.html) sections to learn more about the API and its capabilities.
