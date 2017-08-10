@@ -89,7 +89,7 @@ public class ResponseWrapperDTO<T> implements Serializable {
     private List<ErrorDTO> errors;
 }
 ```
-Entities can be DepositPolicy, ratePlan/RoomType/Property/Images/Amenities etc.
+Entities can be deposit policy, rate plan, room type, property, images, amenities, etc.
 Simple entity response:
 ```JSON
 {
@@ -165,7 +165,7 @@ ResponseEntity<ResponseWrapperDTO<DepositDTO>> response = restTemplate.exchange(
     new ParameterizedTypeReference<ResponseWrapperDTO<DepositDTO>>() {});
 ```
 
-## Deposit
+## Deposit Policy Resource
 
 Please note that a swagger JSON file can be obtained on this portal to facilitate development:
 <https://services.expediapartnercentral.com/properties/depositPolicy/swagger.json>
@@ -176,9 +176,9 @@ Please note that a swagger JSON file can be obtained on this portal to facilitat
 - Produces: `application/json`
 
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type
+--------- | -------------- | ----------- | -------- | ---------
+propertyId | path | Expedia Property ID | true | string 
 
 #### Success Responses
 Status Code | Description | Response Model
@@ -186,215 +186,309 @@ Status Code | Description | Response Model
 200 | OK | [SuccessfulGetResponse](#/definitions/SuccessfulGetResponse)
 
 **Example**
-```
-{
-  "entity":[
-    {
-      "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
-      "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
-      "status": "Active",
-      "state": "Published",
-      "categoryCode": "SUNDECK",
-      "propertyFeatured": true,
-      "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
-      "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
-    }
-  ]
-}
-```
-
-### Add an image to the property
-- Method: `POST`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images
-- Consumes: `application/json`
-- Produces: `application/json`
-
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-image | body | JSON message describing the new image | true | [Image](#/definitions/Image) | 
-
-**Example**
-```
-{
-  "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg",
-  "categoryCode": "HOTEL_FRONT",
-  "propertyFeatured": true,
-  "roomTypes": [
-    {
-      "resourceId": 12345,
-      "roomTypeFeatured": false
-    }
-  ]
-
-}
-```
-
-#### Success Responses
-Status Code | Description | Response Model
------------ | ----------- | --------------
-200 | OK | [ResponseWrapperImage](#/definitions/ResponseWrapperImage)
-
-### Modify an existing image
-
-Expedia only offers a single way to modify an image at the moment. Using the PATCH verb, partners can perform a partial update (merge-patch) of an image, as described in [IETF RFC](https://tools.ietf.org/html/rfc7396).
-
-This method allows partners to update an image by providing only the fields/values they need to change. This saves partners from having to first read the image before updating it.
-
-The response will always be the complete image of the rate plan after changes have been applied.
-
-**Important**
-
-The PATCH logic only applies to first (top) level elements/objects of the [image](#/definitions/Image). Partners can decide to include any number of these top level elements/objects, and any elements/objects not included will be ignored/untouched.  If a partner includes any array or complex object (such as room types or comments), these objects will need to be fully specified with all the desired elements/attributes/object changes, as they are treated as full overlay.
-
-First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provide a "null" or empty array value.
-
-Also note that all validation rules are applied on the complete updated image data.
-
-- Method: `PATCH`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
-- Consumes: `application/json`
-- Produces: `application/json`
-
-**Examples**
-
-Updating both the status and the category:
-```
-{
-	"status": "Inactive",
-	"categoryCode": "INTERIOR_ENTRANCE"
-}
-```
-
-Updating only the status:
-```
-{
-	"status": "Inactive"
-}
-```
-
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type
---------- | -------------- | ----------- | -------- | ---------
-Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token
-propertyId | path | Expedia Property ID | true | string | 
-resourceId | path | Image Resource ID. | true | string | 
-body | body | JSON message of partially updated room type | Yes | [Image](#/definitions/Image)
-
-### Delete an existing image
-
-It is important for partners to know images can only be deleted before they reach the Published state.
-
-- Method: `DELETE`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
-- Consumes: `application/json`
-- Produces: `*/*`
-
-#### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-resourceId | path | Image Resource ID. The DELETE only works on images that haven't reached the "Published" state. Once it reached "Published", it can't be deleted anymore, only inactivated. | true | string | 
-
-### Read a single image
-- Method: `GET`
-- Url: https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}
-- Consumes: `application/json`
-- Produces: `application/json`
-
-**Example**
-```
+```json
 {
   "entity": {
-    "resourceId": "6d266700-f59c-4f61-be81-fd43e4da9d4e",
-    "publishedImageUrl": "https://images.trvl-media.com/hotels/13000000/12940000/12933900/12933870/6d266700_b.jpg",
-    "status": "Active",
-    "state": "Published",
-    "categoryCode": "SUNDECK",
-    "propertyFeatured": true,
-    "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
-    "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg"
+    "defaultPolicy": {
+      "payments": [
+        {
+          "type": "PERCENT",
+          "value": 10,
+          "when": {
+            "type": "UPON_BOOKING"
+          }
+        },
+        {
+          "type": "PERCENT",
+          "value": 40,
+          "when": {
+            "type": "DAYS_PRIOR",
+            "value": 30
+          }
+        },
+        {
+          "type": "PERCENT",
+          "value": 25,
+          "when": {
+            "type": "DAYS_PRIOR",
+            "value": 15
+          }
+        },
+        {
+          "type": "REMAINDER",
+          "when": {
+            "type": "UPON_ARRIVAL"
+          }
+        }
+      ]
+    },
+    "exceptionPolicies": [
+      {
+        "description": "Peak Summer Season",
+        "dateRanges": [
+          {
+            "startDate": "2017-06-25",
+            "endDate": "2017-07-31",
+            "daysOfWeek": [
+              "SUN",
+              "MON",
+              "TUE",
+              "WED",
+              "THU",
+              "FRI",
+              "SAT"
+            ]
+          },
+          {
+            "startDate": "2017-08-13",
+            "endDate": "2017-08-31",
+            "daysOfWeek": [
+              "SUN",
+              "MON",
+              "TUE",
+              "WED",
+              "THU",
+              "FRI",
+              "SAT"
+            ]
+          }
+        ],
+        "payments": [
+          {
+            "type": "PERCENT",
+            "value": 100,
+            "when": {
+              "type": "UPON_BOOKING"
+            }
+          }
+        ]
+      },
+      {
+        "description": "Low Season",
+        "dateRanges": [
+          {
+            "startDate": "2017-09-01",
+            "endDate": "2017-11-30",
+            "daysOfWeek": [
+              "SUN",
+              "FRI",
+              "SAT"
+            ]
+          }
+        ],
+        "payments": [
+          {
+            "type": "NIGHT",
+            "value": 1,
+            "when": {
+              "type": "UPON_BOOKING"
+            }
+          }
+        ]
+      }
+    ],
+    "_links": {
+      "self": {
+        "href": "https://services.expediapartnercentral.com/properties/12933870/depositPolicy"
+      },
+      "ratePlans": [
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706774/ratePlans/208503977"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706774/ratePlans/208504009"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706774/ratePlans/208537868"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706639/ratePlans/208503427"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706639/ratePlans/208511485"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706639/ratePlans/208511588"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706639/ratePlans/208537732"
+        },
+        {
+          "href": "https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706639/ratePlans/208537755"
+        }
+      ]
+    }
   }
 }
 ```
 
+### Create/update the deposit policy for a given property
+- Method: `PUT`
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/depositPolicy
+- Consumes: `application/json`
+- Produces: `application/json`
+
 #### Parameters
-Parameter | Parameter Type | Description | Required | Data Type | Default Value
---------- | -------------- | ----------- | -------- | --------- | -------------
-propertyId | path | Expedia Property ID | true | string | 
-resourceId | path | Image Resource ID | true | string | 
+Parameter | Parameter Type | Description | Required | Data Type
+--------- | -------------- | ----------- | -------- | ---------
+propertyId | path | Expedia Property ID | true | string 
+deposit | body | JSON document describing the deposit policy to be created/updated | true | [Deposit](#/definitions/Deposit)
 
 #### Success Responses
 Status Code | Description | Response Model
 ----------- | ----------- | --------------
-200 | OK | [ResponseWrapperImage](#/definitions/ResponseWrapperImage)
+201 | Created. The property didn't have a deposit policy, therefore it was created. | None
+204 | No Content. The property already had a deposit policy defined, and it was updated successfully. | None
 
----
+**Example**
+```json
+{
+  "defaultPolicy": {
+    "payments": [
+      {
+        "type": "PERCENT",
+        "value": 50.0,
+        "when": {
+          "type": "UPON_BOOKING"
+        }
+      },
+      {
+        "type": "REMAINDER",
+        "when": {
+          "type": "UPON_ARRIVAL"
+        }
+      }
+    ]
+  },
+  "exceptionPolicies": [
+    {
+      "dateRanges": [
+        {
+          "startDate": "2017-06-25",
+          "endDate": "2017-07-31",
+          "daysOfWeek": [
+            "SAT",
+            "SUN"
+          ]
+        }
+      ],
+      "description": "Peak Summer Season Weekends",
+      "payments": [
+        {
+          "type": "PERCENT",
+          "value": 100,
+          "when": {
+            "type": "UPON_BOOKING"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Delete the deposit policy for a given property
+- Method: `DELETE`
+- Url: https://services.expediapartnercentral.com/properties/{propertyId}/depositPolicy
+- Produces: `application/json`
+
+#### Parameters
+Parameter | Parameter Type | Description | Required | Data Type
+--------- | -------------- | ----------- | -------- | ---------
+propertyId | path | Expedia Property ID | true | string 
+
+#### Success Responses
+Status Code | Description | Response Model
+----------- | ----------- | --------------
+204 | The property had a deposit policy and it was successfully deleted. | None
+
 
 ## Definitions
-- <a name="/definitions/ResponseWrapperImage"></a>ResponseWrapperImage
+
+<a name="/definitions/SuccessfulGetResponse"></a>
+### Successful Get Response Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-entity | [Image](#/definitions/Image) | 
-errors | Array[[ApiError](#/definitions/ApiError)] | 
+entity | [Deposit](#/definitions/Deposit) | 
 
-- <a name="/definitions/ImageList"></a>ImageList
-
-Property Name | Type | Description
-------------- | ---- | -----------
-images | Array[[Image](#/definitions/Image)] | 
-
-
-- <a name="/definitions/Image"></a>Image
-
-Property Name | Type | Required/Optional In Create | Description
-------------- | ---- | --------------------------- | -----------
-categoryCode | [categoryCodeEnum](#/definitions/categoryCodeEnum) | Optional. Expedia will assign a category if not provided. | Image category code. 
-comments | Array[[Comment](#/definitions/Comment)] | Cannot be provided in Create. | Comments associated with this image, used by Expedia when images are rejected or inactivated.
-lastUpdateDateTime | DateTime string | Cannot be provided in Create. | Last date and time this image was updated
-originalImageUrl | URL string | Required | URL of the image to be uploaded. Supported image types are: JPEG, GIF, PNG and Bitmap.
-propertyFeatured | boolean | Optional, defaults to False if not provided. | Determines whether or not the image should be the featured image in search results
-publishedImageUrl | URL string | Cannot be provided in Create. | The URL of one of the derivatives Expedia created with the image that was provided.
-resourceId | string | Cannot be provided in Create. | Expedia ID for this resource. Generated by Expedia at time of create.
-roomTypes | Array[[RoomType](#/definitions/RoomType)] | Optional. If not provided, no room will be associated to this image. | Rooms associated with this image. There can be one or more rooms assigned to the same image.
-state | string | Cannot be provided in  Create. | Current processing state of the image. Possible value are: NotFound, Received,DerivativesCreated,Rejected,Duplicate,Published.
-status | string | Optional. If not provided, defaults to Active. | Status of the image; Possible values are: 'Active' (image displayed), 'Inactive' (image not displayed)
-
-- <a name="/definitions/RoomType"></a>RoomType
-
-Property Name | Type | Required/Optional In Create | Description
-------------- | ---- | --------------------------- | -----------
-resourceId | integer | Required if room type object specified in create. | Expedia Resource ID for room type resource. Please refer to [Product API Room Type Resource](/apis/product-management/product-api/reference.html#room-type) to find out how to identify room type resource id.
-roomTypeFeatured | boolean | Optional, defaults to false. | Used to pick the room image to be displayed when multiple are loaded for a given room type
-
-- <a name="/definitions/Comment"></a>Comment
+<a name="/definitions/Deposit"></a>
+### Deposit Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-text | string | Comment text
-timestamp | string | Moment when the comment was created
+defaultPolicy | [DefaultPolicy](#/definitions/DefaultPolicy) | Default policy. Applicable unless one or more exceptions are defined. Optional: it is possible to only define exception policies.
+exceptionPolicies | Array[[ExceptionPolicy](#/definitions/ExceptionPolicy)] | Optional. Up to 4 exception policies can be defined. List of policies that override the default policy for the date range(s) specified in the exception. Order in the array of exception policies matters. The order of the elements in this array determines the order in which the policies should be applied in case of date overlap between exceptions.
+_links | [DepositPolicyLinks](#/definitions/DepositPolicyLinks) | Object describing links to other resources to which this deposit policy is linked to. Optional (i.e. ignored) when specified on `PUT` operation.
 
-- <a name="/definitions/ResponseWrapperImageList"></a>ResponseWrapperImageList
-
-Property Name | Type | Description
-------------- | ---- | -----------
-entity | [ImageList](#/definitions/ImageList) | 
-errors | Array[[ApiError](#/definitions/ApiError)] | 
-
-- <a name="/definitions/ApiError"></a>ApiError
+<a name="/definitions/DefaultPolicy"></a>
+### Default Policy Definition
 
 Property Name | Type | Description
 ------------- | ---- | -----------
-code | integer | 
-message | string | 
+description | string | Default policy description. This field is optional.
+payments | Array[[PaymentPolicy](#/definitions/PaymentPolicy)] | List of payment policies. Up to 4 payment policies can be defined.
 
+<a name="/definitions/PaymentPolicy"></a>
+### Payment Policy Definition
+
+Property Name | Type | Description
+------------- | ---- | -----------
+type | [PaymentPolicyTypeEnum](#/definitions/PaymentPolicyTypeEnum) | Defines the type of payment policy.
+value | number (double) | Indicates the amount of money that must be paid. If type is REMAINDER, value cannot be specified. If type is either NIGHT or PERCENTAGE then the number must be whole (no fractional digits).
+when | [PaymentTime](#/definitions/PaymentTime) | Indicates when the deposit is due.
+
+<a name="/definitions/PaymentTime"></a>
+### Payment Time Definition
+
+Order of payments in the array matters. Payments must be specified in chronological order: UPON_BOOKING followed by DAYS_PRIOR followed by UPON_ARRIVAL.
+
+Property Name | Type | Description
+------------- | ---- | -----------
+type | [PaymentTimeTypeEnum](#/definitions/PaymentTimeTypeEnum) | Defines the type of payment time.
+value | number (int32) | Only present if type is DAYS_PRIOR. Indicates the number of days prior to arrival that the customer must pay the deposit.
+
+<a name="/definitions/ExceptionPolicy"></a>
+### Exception Policy Definition
+
+Property Name | Type | Description
+------------- | ---- | -----------
+description | string | Exception policy description. This field is optional.
+payments | Array[[PaymentPolicy](#/definitions/PaymentPolicy)] | List of payment policies. Up to 4 payment policies can be defined.
+dateRanges | Array[[DateRange](#/definitions/DateRange)] | List of date range during which the exception policy applies. One exception can contain from 1 to 15 date ranges maximum.
+
+<a name="/definitions/DateRange"></a>
+### Date Range Definition
+
+Property Name | Type | Description
+------------- | ---- | -----------
+startDate | date | Starting date of the exception policy. Format is YYYY-MM-DD.
+endDate | date | Ending date of the exception policy. Format is YYYY-MM-DD.
+daysOfWeek | Array[[DayOfWeekEnum](#/definitions/DayOfWeekEnum)] | List of days of the week the exception policy is applicable.
+
+<a name="/definitions/DepositPolicyLinks"></a>
+### Deposit Policy Links Definition
+
+Object describing links to other resources to which this deposit policy is linked to.
+
+Property Name | Type | Description
+------------- | ---- | -----------
+self | [Link](#/definitions/Link) | Link to the current deposit policy.
+ratePlans | Array[[Link](#/definitions/Link)] | Collection of links to the rate plans (active and inactive) on which this deposit policy is applicable.
+
+<a name="/definitions/Link"></a>
+### Link Definition
+
+Object describing a single link to a resource to which this deposit policy is linked to.
+
+Property Name | Type | Description
+------------- | ---- | -----------
+href | string (URL) | The fully-qualified URL of the resource.
 
 ## Enumerations & Domain Values
 
-<a name="/definitions/PaymentPolicyTypesEnum"></a>
-### Payment Policy Types
+<a name="/definitions/PaymentPolicyTypeEnum"></a>
+### Payment Policy Type
 | Enum Value |
 | ---------- |
 | NIGHT |
@@ -402,16 +496,16 @@ message | string |
 | PERCENTAGE |
 | REMAINDER |
 
-<a name="/definitions/PaymentTimeTypesEnum"></a>
-### Payment Time Types
+<a name="/definitions/PaymentTimeTypeEnum"></a>
+### Payment Time Type
 | Enum Value |
 | ---------- |
 | DAYS_PRIOR |
 | UPON_ARRIVAL |
 | UPON_BOOKING |
 
-<a name="/definitions/DaysOfWeekEnum"></a>
-### Days of Week
+<a name="/definitions/DayOfWeekEnum"></a>
+### Day of Week
 | Enum Value |
 | ---------- |
 | MON |
