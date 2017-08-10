@@ -37,7 +37,7 @@ Note that your branch name may require some transformation before it can be used
 =======
 ## Method 2. Use TeamCity build to generate documentation from swagger URL
 
-A teamcity build can be used to generate the reference documentation file from a Swagger JSON URL [here](https://eps-teamcity.tools.expedia.com/viewType.html?buildTypeId=partner_api_web_InternalApi_SwaggerScript).
+A teamcity build can be used to generate the reference documentation file from a Swagger JSON URL [here](https://eps-teamcity.tools.expedia.com/viewType.html?buildTypeId=partner_api_web1CommitPhase_SwaggerScript).
 Then you can edit as described in Method 1.
 
 ![Use TeamCity to build from swagger.json](https://expediaconnectivity.com/images/build-from-swagger-json.png)
