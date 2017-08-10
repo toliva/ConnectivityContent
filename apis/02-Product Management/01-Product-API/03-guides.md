@@ -620,7 +620,7 @@ The outcome of this request would be that any guest aged from 0 to 17 would be c
 <a name="/patchdepositrequired"></a>
 ## How Can I Use Product API to Update Rate Plans Requiring Deposit?
 
-With the introduction of the [Deposit API](apis/product-management/deposit-api/quickstart.html), some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans should make use of the policy, they can be PATCHed with the following operation:
+With the introduction of the [Deposit API](/apis/product-management/deposit-api/quickstart.html), some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:
 ```html
 PATCH https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes/{room type ID of the rate plan to be patched}/ratePlans/{rate plan ID to be update}
 Content-Type: application/vnd.expedia.eps.product-v2+json
@@ -638,7 +638,7 @@ If a partner doesn't know the room type or rate plan IDs, they can be discovered
 ```html
 GET https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes
 ```
-This will give back a list of active roomTypes. A query parameter (?status=all) could be added to return all room types, both active and inactive. This is not necessarily needed since inactive room types wouldn't be available to our customers, therefore updating the depositRequired flag would have no visible effect for them.
+This will give back a list of active roomTypes. A query parameter (?status=all) could be added to return all room types, both active and inactive. This shouldn't be needed since inactive room types wouldn't be available to our customers, therefore updating the depositRequired flag would have no visible effect for them.
 
 Then, to get the rate plans, partner can iterate on each room type, and request all rate plans for each room types, using:
 ```html
@@ -649,4 +649,4 @@ This will give back a list of active rate plans. A query parameter (?status=all)
 
 Once all room types/rate plans have been identified, the ones requiring a deposit could be updated with the same PATCH call as above.
 
-It is important to know that only HotelCollect or Expedia Traveler Preference (both HotelCollect and ExpediaCollect) rate plans can be updated to use deposit.
+It is important to know that only HotelCollect or Expedia Traveler Preference (HotelCollect/ExpediaCollect) rate plans can be updated to require a deposit.
