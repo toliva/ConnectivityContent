@@ -29,7 +29,7 @@ For more information about getting started for the first time, and authorization
 * All of Expedia APIs now live under the https://services.expediapartnercentral.com/ domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.
 
 | Resource | Supported Operations | Production Endpoint |
-| -------- | -------------------- | ------------------- | ---------- |
+| -------- | -------------------- | ------------------- |
 | Deposit | Read the deposit policy (GET) belonging to a property | GET https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
 | Deposit | Create/update the deposit policy (PUT) | PUT https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
 | Deposit | Delete the deposit policy (DELETE) | DELETE https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
