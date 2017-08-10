@@ -11,7 +11,7 @@ By default, properties on Expedia do not have any deposit policies. For properti
 ### What does a Deposit Policy contain?
 A deposit policy is formed of up to 2 components: a default policy, and up to 4 exception policies. It is possible to only have a default policy, or to only have exceptions.
 
-Within a policy, between 1 and 4 payment installments can be defined. It is possible to define timing of these installments as: time of booking, days prior to checkin, or time of checkin.
+Within a policy, between 1 and 4 payment installments can be defined. It is possible to define timing of these installments as: time of booking, days prior to checkin, or time of checkin. 
 
 The amounts to pay can be either fixed amounts, % of the total booking value, or a certain number of nights. For example, a property who would like to collect 10% of the booking value  at time of booking, and the reminder at time of checkin:
 ```json
@@ -29,6 +29,9 @@ The amounts to pay can be either fixed amounts, % of the total booking value, or
     ]}
 }
 ```
+
+The order in which these installments are specified in the JSON array matter. They need to be ordered chronologically, where position 0 in the array is the most immediate, and position 3 would be the further out from now. In the above example, UPON_BOOKING is at position 0, and should always be the first specified, if this type of installment is needed.
+
 
 When the policy is an exception, a start date, end date and applicable days of week need to be defined as part of the exception. Up to 15 different date ranges can be specified with any given exception. For example, if a property wants to set a Policy where there is only an exception specifying that for a the month of August 2017, the full payment needs to be made at time of booking:
 ```json
@@ -60,6 +63,134 @@ When the policy is an exception, a start date, end date and applicable days of w
     ]
 }
 ```
+
+When there are multiple exceptions specified, the order in which they are specified in the JSON array matters. Expedia allows partners to have some overlap in dates between exceptions. In case of overlap, position 0 in the array will always take precedence over position 1, etc. For example:
+
+```json
+{"exceptionPolicies": [
+    {
+        "dateRanges": [{
+            "startDate": "2017-05-01",
+            "endDate": "2017-07-15",
+            "daysOfWeek": [
+                "SUN",
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI",
+                "SAT"
+            ]
+        }],
+        "description": "Mid Season",
+        "payments": [
+            {
+                "type": "PERCENT",
+                "value": 50,
+                "when": {"type": "UPON_BOOKING"}
+            },
+            {
+                "type": "PERCENT",
+                "value": 25,
+                "when": {
+                    "type": "DAYS_PRIOR",
+                    "value": 15
+                }
+            },
+            {
+                "type": "REMAINDER",
+                "when": {"type": "UPON_ARRIVAL"}
+            }
+        ]
+    },
+    {
+        "dateRanges": [{
+            "startDate": "2017-07-01",
+            "endDate": "2017-08-30",
+            "daysOfWeek": [
+                "SUN",
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FRI",
+                "SAT"
+            ]
+        }],
+        "description": "High Season",
+        "payments": [{
+            "type": "PERCENT",
+            "value": 100,
+            "when": {"type": "UPON_BOOKING"}
+        }]
+    }
+]}
+```
+In the above example, both exceptions cover the dates from 2017-07-01 to 2017-07-15. Expedia will always start from the array position 0, and look for a match. If one is found, we stop looking. In the above example, if someone was looking to stay on July 1st, it would be the first exception in the array, the one with description "Mid Season", that would apply.
+
+### How Will Expedia Select the Policy to Apply If the Customer Books Dates That Span Across 2 or more Exceptions, or Between Default and Exceptions?
+When a customer selects dates that will span across a default policy and one or more exceptions, Expedia will use the policy exception with the lowest rank in the array. For example, assume this policy is defined for the property:
+```json
+{
+    "defaultPolicy": {"payments": [
+        {
+            "type": "AMOUNT",
+            "value": 50,
+            "when": {"type": "UPON_BOOKING"}
+        },
+        {
+            "type": "REMAINDER",
+            "when": {"type": "UPON_ARRIVAL"}
+        }
+    ]},
+    "exceptionPolicies": [
+        {
+            "dateRanges": [{
+                "startDate": "2017-05-01",
+                "endDate": "2017-05-02",
+                "daysOfWeek": [
+                    "SUN",
+                    "MON",
+                    "TUE",
+                    "WED",
+                    "THU",
+                    "FRI",
+                    "SAT"
+                ]
+            }],
+            "description": "Exception at position 0",
+            "payments": [{
+                "type": "PERCENT",
+                "value": 100,
+                "when": {"type": "UPON_BOOKING"}
+            }]
+        },
+        {
+            "dateRanges": [{
+                "startDate": "2017-05-02",
+                "endDate": "2017-05-04",
+                "daysOfWeek": [
+                    "SUN",
+                    "MON",
+                    "TUE",
+                    "WED",
+                    "THU",
+                    "FRI",
+                    "SAT"
+                ]
+            }],
+            "description": "Exception at position 1",
+            "payments": [{
+                "type": "PERCENT",
+                "value": 50,
+                "when": {"type": "UPON_BOOKING"}
+            }]
+        }
+    ]
+}
+```
+
+If a customer books a stay between 04/28 and 05/01, Expedia will select the exception policy with rank 0. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
 
 ### How should I use the Expedia APIs to manage my Deposit Policy?
 The Deposit API allows partners to manage the deposit policy defined for their properties. It is possible to set the policy (via the PUT operation), read the policy (via the GET operation), or remove the policy (via the DELETE operation).
