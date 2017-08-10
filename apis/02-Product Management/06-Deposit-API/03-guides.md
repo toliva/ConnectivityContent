@@ -129,7 +129,7 @@ When there are multiple exceptions specified, the order in which they are specif
 In the above example, both exceptions cover the dates from 2017-07-01 to 2017-07-15. Expedia will always start from the array position 0, and look for a match. If one is found, we stop looking. In the above example, if someone was looking to stay on July 1st, it would be the first exception in the array, the one with description "Mid Season", that would apply.
 
 ### How Will Expedia Select the Policy to Apply If the Customer Books Dates That Span Across 2 or more Exceptions, or Between Default and Exceptions?
-When a customer selects dates that will span across a default policy and one or more exceptions, Expedia will use the policy exception with the lowest rank in the array. For example, assume this policy is defined for the property:
+When a customer selects dates that will span across a default policy and one or more exceptions, Expedia will use the policy exception in ascending order (0..3) from the array. For example, assume this policy is defined for the property:
 ```json
 {
     "defaultPolicy": {"payments": [
@@ -190,7 +190,7 @@ When a customer selects dates that will span across a default policy and one or 
 }
 ```
 
-If a customer books a stay between 04/28 and 05/01, Expedia will select the exception policy with rank 0. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
+If a customer books a stay between 04/28 and 05/01, Expedia will select the exception policy at position 0 in the array. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
 
 ### How should I use the Expedia APIs to manage my Deposit Policy?
 The Deposit API allows partners to manage the deposit policy defined for their properties. It is possible to set the policy (via the PUT operation), read the policy (via the GET operation), or remove the policy (via the DELETE operation).
@@ -203,7 +203,6 @@ Once a policy exists, it is important to indicate which rate plans should make u
 It is **not** possible to have different deposit policies for different rate plans. The Deposit Policy is configured at the property level, and will apply to any rate plan enabled for making use of it.
 
 ## Do I need a Deposit Policy When My Cancel Policy Already States When There are Penalties Cancelling?
-
 The short answer is yes. In the Expedia system, Deposit and Cancel Policies are 2 very distinct things. For a HotelCollect booking, it is required to have a deposit policy defined and have the rate plan enabled for it, if the intent is to charge anything prior to the guest checking in to the hotel. 
 
 For example, assume a property defined a cancel policy stating that the rate is non-refundable 7 days prior to checkin. If the intent is to charge the full amount of the reservation 7 days prior to checkin, a deposit policy Defined needs to be defined, indicating that the full amount of the reservation will be charged 7 days prior to checkin.
