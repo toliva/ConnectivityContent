@@ -1,5 +1,5 @@
 # Quick Start
-The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API rate plan's resource: first set a deposit policy with this API, then add or update rate plans indicating whether they should require a deposit or not via the depositRequired attribute.
+The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API's rate plan resource: first set a deposit policy at the property level with this API, then add or update rate plans, and indicate, for each rate plan, whether they require a deposit (using the property's deposit policy) or not via the depositRequired attribute.
 
 If you are not familiar with how Expedia defines a Deposit Policy, please read the [Deposit Policy Overview in the FAQ & Guides section](guides.html#depositpolicyoverview) first, before attempting to use the API.
 
@@ -171,4 +171,4 @@ If no deposit policy was ever defined for this property, or if a previously exis
 This policy defines both a default policy, applicable on any date, for any of the rate plans marked as using it. It also defines exceptions. Exceptions are overrides to the default, and will take precedence for the dates they cover.
 
 ## Creating / Updating / Deleting a Deposit Policy
-It is also possible to create, update or delete a deposit policy. Our [Sample Messages](sample-messages.html) section contains examples for each scenario. Please make sure to also read our [API Definition](reference.html) and [FAQ & Guides](guides.html) sections to learn more about the API and its capabilities.
+It is also possible to create, update (full overlay) or delete a deposit policy. Our [Sample Messages](sample-messages.html) section contains examples for each scenario. Please make sure to also read our [API Definition](reference.html) and [FAQ & Guides](guides.html) sections to learn more about the API and its capabilities.
