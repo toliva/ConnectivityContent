@@ -1,6 +1,7 @@
 # FAQ & Guides
 This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the Deposit API.
 
+<a name="depositpolicyoverview"></a>
 ## Deposit Policy Overview
 
 ### What is a Deposit Policy?
