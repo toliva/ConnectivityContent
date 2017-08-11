@@ -1,5 +1,7 @@
 # API Definition
-The Deposit API enables Expedia partners to set, update or remove a property's deposit policy.
+The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. 
+
+If you are not familiar with how Expedia defines a Deposit Policy, please read the [Deposit Policy Overview in the FAQ & Guides section](guides.html#depositpolicyoverview) first, before attempting to use the API.
 
 <a name="authentication"></a>
 ## Authentication
