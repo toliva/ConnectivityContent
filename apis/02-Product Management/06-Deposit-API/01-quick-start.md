@@ -61,7 +61,6 @@ If no deposit policy was ever defined for this property, or if a previously exis
             }
           }
         ],
-        "rank": 0,
         "dateRanges": [
           {
             "startDate": "2017-07-30",
@@ -103,7 +102,6 @@ If no deposit policy was ever defined for this property, or if a previously exis
             }
           }
         ],
-        "rank": 1,
         "dateRanges": [
           {
             "startDate": "2017-12-17",
