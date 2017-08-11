@@ -104,7 +104,7 @@ Simple entity response:
 
 ### Single Entity VS Entity Array in Read/GET Responses
 Although there is only a single read operation currently supported by the Deposit API, there are two different read operations that are technically available when reading resources:
-- To get a specific resource, e.g. a single deposit policy: /properties/{propertyId}/depositPolicy}
+- To get a specific resource, e.g. a single deposit policy: /properties/{propertyId}/depositPolicy
 - To get a list of resources, e.g. all the active room types of a property: /properties/{propertyId}/roomTypes 
 
 
