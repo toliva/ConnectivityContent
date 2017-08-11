@@ -8,7 +8,7 @@ A deposit policy is what defines the customer's payment schedule, when the rate 
 
 By default, properties on Expedia do not have any deposit policies. For properties working on the HotelCollect model, this means that payment for a booking is expected to be 100% collected at the property, at time of checkout, from the guest directly. If the property wants to collect any amount from the customer before checkin at the property, a deposit policy needs to be defined and applied to the rate plans requiring a deposit.
 
-### What does a Deposit Policy contain?
+### What does a Deposit Policy Contain?
 A deposit policy is formed of up to 2 components: a default policy, and up to 4 exception policies. It is possible to only have a default policy, or to only have exceptions.
 
 Within a policy, between 1 and 4 payment installments can be defined. It is possible to define timing of these installments as: time of booking, days prior to checkin, or time of checkin. 
@@ -192,7 +192,7 @@ When a customer selects dates that will span across a default policy and one or 
 
 If a customer books a stay between 04/28 and 05/01, Expedia will select the exception policy at position 0 in the array. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
 
-### How should I use the Expedia APIs to manage my Deposit Policy?
+### How Should I Use the Expedia APIs to Manage my Deposit Policy?
 The Deposit API allows partners to manage the deposit policy defined for their properties. It is possible to set the policy (via the PUT operation), read the policy (via the GET operation), or remove the policy (via the DELETE operation).
 
 When using the PUT operation, it will either add the policy if none exists, or replace the existing policy if one already exists.
@@ -202,7 +202,7 @@ Once a policy exists, it is important to indicate which rate plans should make u
 ## Can I Have Different Deposit Policies Defined for Different Rate Plans of My Property?
 It is **not** possible to have different deposit policies for different rate plans. The Deposit Policy is configured at the property level, and will apply to any rate plan enabled for making use of it.
 
-## Do I need a Deposit Policy When My Cancel Policy Already States When There are Penalties Cancelling?
+## Do I need a Deposit Policy When My Cancel Policy Already States What the Penalty Is for Cancelling?
 The short answer is yes. In the Expedia system, Deposit and Cancel Policies are 2 very distinct things. For a HotelCollect booking, it is required to have a deposit policy defined and have the rate plan enabled for it, if the intent is to charge anything prior to the guest checking in to the hotel. 
 
 For example, assume a property defined a cancel policy stating that the rate is non-refundable 7 days prior to checkin. If the intent is to charge the full amount of the reservation 7 days prior to checkin, a deposit policy Defined needs to be defined, indicating that the full amount of the reservation will be charged 7 days prior to checkin.
