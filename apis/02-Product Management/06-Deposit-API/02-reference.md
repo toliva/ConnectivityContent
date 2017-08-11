@@ -33,7 +33,7 @@ For more information about getting started for the first time, and authorization
 | Resource | Supported Operations | Production Endpoint |
 | -------- | -------------------- | ------------------- |
 | Deposit | Read the deposit policy (GET) belonging to a property | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
-| Deposit | Create/update the deposit policy (PUT) | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
+| Deposit | Create/update the deposit policy (PUT): the first a policy is set is a "create"; any subsequent PUT will be considered an update. When updating, it is a full overlay operation: all the details of the desired policy need to be specified. | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
 | Deposit | Delete the deposit policy (DELETE) | https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/depositPolicy |
 
 
@@ -429,7 +429,7 @@ _links | [DepositPolicyLinks](#/definitions/DepositPolicyLinks) | Object describ
 Property Name | Type | Description
 ------------- | ---- | -----------
 description | string | Default policy description. This field is optional.
-payments | Array[[PaymentPolicy](#/definitions/PaymentPolicy)] | List of payment policies. Up to 4 payment policies can be defined.
+payments | Array[[PaymentPolicy](#/definitions/PaymentPolicy)] | List of payment policies. Up to 4 payment policies can be defined. Order of payments in the array matters. Payments must be specified in chronological order: UPON_BOOKING followed by DAYS_PRIOR followed by UPON_ARRIVAL. Also, when multiple payments with the type "percentage" are used, the sum of them cannot exceed 100.
 
 <a name="/definitions/PaymentPolicy"></a>
 ### Payment Policy Definition
@@ -437,7 +437,7 @@ payments | Array[[PaymentPolicy](#/definitions/PaymentPolicy)] | List of payment
 Property Name | Type | Description
 ------------- | ---- | -----------
 type | [PaymentPolicyTypeEnum](#/definitions/PaymentPolicyTypeEnum) | Defines the type of payment policy.
-value | number (double) | Indicates the amount of money that must be paid. If type is REMAINDER, value cannot be specified. If type is either NIGHT or PERCENTAGE then the number must be whole (no fractional digits).
+value | number (double) | Indicates the amount of money that must be paid. If type is REMAINDER, value cannot be specified. If type is either NIGHT or PERCENTAGE then the number must be whole (no fractional digits). Percentage cannot exceed 100.
 when | [PaymentTime](#/definitions/PaymentTime) | Indicates when the deposit is due.
 
 <a name="/definitions/PaymentTime"></a>
