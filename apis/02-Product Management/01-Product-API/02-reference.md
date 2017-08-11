@@ -88,8 +88,9 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 406 | Unsupported media type for response (only application/vnd.expedia.eps.product-v2+json is supported) |
 | 409 | Conflicting data |
 | 415 | Unsupported media type for requests (only application/vnd.expedia.eps.product-v2+json is supported) |
-| 500 | Internal system error (shouldn’t be retried) |
-| 503 | Internal system error (should be retried) |
+| 500 | Internal system error (should not be retried) |
+| 503 | Temporary internal system error (should be retried) |
+| 504 | Timeout error (should be retried) |
 
 ## HTTP Headers
 HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.
@@ -117,10 +118,10 @@ All responses provided by the API will either contain an HTTP Entity element, wh
 ### Entity
 The entities supported by the product API are rate plans, room types and properties.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Image services. 
 
 Consider the following code in Java:
-```Java
+```java
 public class ResponseWrapperDTO<T> implements Serializable {
     private T entity;
     private List<ErrorDTO> errors;
@@ -194,7 +195,7 @@ Entity and errors are in the same wrapper because most frameworks will de-serial
 Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
 
 A Java implementation to handle this, using Spring’s RestTemplate, could look like this:
-```Java
+```java
    ResponseEntity<ResponseWrapperDTO<RoomTypeDTO>> response = restTemplate.exchange(
             "url",
             HttpMethod.POST,
@@ -583,7 +584,7 @@ smokingPreferences | Array[[smokingPreferenceEnum](#/definitions/smokingPreferen
 roomSize | [RoomSize](#/definitions/RoomSizeDTO) | No | Used to define room size. When used, both size in square feet and in square meters must be specified.
 views | Array[[viewEnum](#/definitions/viewEnum)] | No | Used to define view(s) from the room. There can be up to 2 different views defined per room type.
 wheelchairAccessibility | boolean | No | Used to indicate whether the room is configured to be wheelchair accessible or not.
-\_links | [RoomTypeLinks](#/definitions/RoomTypeDTO.LinksDTO) | No | Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
+\_links | [RoomTypeLinks](#/definitions/RoomTypeDTOLinks) | No | Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 <a name="/definitions/RoomTypeNameDTO"></a>
 #### RoomTypeName
@@ -670,7 +671,7 @@ Property Name | Type | Required | Description
 squareFeet | integer | Yes | Room size in square feet.
 squareMeters | integer | Yes | Room size in square meters.
 
-<a name="/definitions/RoomTypeDTO.LinksDTO"></a>
+<a name="/definitions/RoomTypeDTOLinks"></a>
 #### RoomTypeLinks
 
 Property Name | Type | Description
@@ -791,6 +792,15 @@ type | [rateAcquisitionTypeEnum](#/definitions/rateAcquisitionTypeEnum) | Type o
 minAmount | number | Defines minimum acceptable rate, expressed as a decimal number. If the rate is lower than this minimum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
 maxAmount | number | Defines maximum acceptable rate, expressed as a decimal number. If the rate is higher than this maximum value, the AR rate update for any rate plans of this room type will be ignored and a warning will be returned.
 source | [rateThresholdsSourceEnum](#/definitions/rateThresholdsSourceEnum) | Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 bookings, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentBookings is Expedia's default method.
+\_links | [RateThresholdsLinks](#/definitions/RateVerificationThresholdsDTOLinks) | Collection of URLs that point to various resources related to the current resource.
+
+<a name="/definitions/RateVerificationThresholdsDTOLinks"></a>
+#### RateThresholdsLinks
+
+Property Name | Type | Description
+------------- | ---- | -----------
+self | [Link](#/definitions/LinkDTO) | URL of the current resource.
+
 
 <a name="/definitions/rateThresholdsSourceEnum"></a>
 ### rateThresholdsSourceEnum
@@ -1217,7 +1227,7 @@ travelDateStart | date | Date at which customers can start checking in for a sta
 travelDateEnd | date | Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted
 mobileOnly | boolean | Indicates this rate plan is only available through shopping done on mobile devices
 ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describes how the Rate Plan rates and availability are going to be derived from its parent Rate Plan. Optional, only returned on rate plans being derived from a parent rate plan via a rate linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
-\_links | [RatePlanLinks](#/definitions/RatePlanDTO.LinksDTO) | Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
+\_links | [RatePlanLinks](#/definitions/RatePlanDTOLinks) | Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 <a name="/definitions/AdditionalGuestAmountDTO"></a>
 #### AdditionalGuestAmount
@@ -1323,7 +1333,7 @@ dateStart | date | Starting date of the period. Format is YYYY-MM-DD.
 dateEnd | date | Ending date of the period. Format is YYYY-MM-DD.
 
 
-<a name="/definitions/RatePlanDTO.LinksDTO"></a>
+<a name="/definitions/RatePlanDTOLinks"></a>
 #### RatePlanLinks
 
 Property Name | Type | Description
@@ -1331,6 +1341,7 @@ Property Name | Type | Description
 self | [Link](#/definitions/LinkDTO) | URL of the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 parentRatePlan | [Link](#/definitions/LinkDTO) | URL of the parent Rate Plan, from which this Rate Plan derives its rate and availability. Optional, only returned if a rate plan is derived from a parent via a rate plan linkage rule.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 derivedRatePlans | Array[[Link](#/definitions/LinkDTO)] | List of URLs that point to the derived Rate Plans. These Rate Plans have their rates and availability derived from this Rate Plan. Optional, only returned if a rate plan is being derived by children rate plans via rate plan linkage rules.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
+depositPolicy | [Link](#/definitions/LinkDTO) | URL of the property deposit policy.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.
 
 
 <a name="/definitions/LinkDTO"></a>

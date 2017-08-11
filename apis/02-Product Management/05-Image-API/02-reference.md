@@ -53,8 +53,9 @@ The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More
 | 405 | Invalid/unsupported method on resource |
 | 406 | Unsupported media type for response (only application/json is supported) |
 | 415 | Unsupported media type for requests (only application/json is supported) |
-| 500 | Internal system error (shouldn’t be retried) |
-| 503 | Internal system error (should be retried) |
+| 500 | Internal system error (should not be retried) |
+| 503 | Temporary internal system error (should be retried) |
+| 504 | Timeout error (should be retried) |
 
 ## HTTP Headers
 HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.
@@ -79,12 +80,12 @@ HTTP headers are slightly different between a request made to the EPS Product AP
 All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. 
 
 ### Entity
-The entities supported by the product API are rate plans, room types and properties.
+The only supported entity by the Image API is image.
 
-The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. 
+The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Image and EPS Product services. 
 
 Consider the following code in Java:
-```Java
+```java
 public class ResponseWrapperDTO<T> implements Serializable {
     private T entity;
     private List<ErrorDTO> errors;
@@ -102,7 +103,7 @@ Simple entity response:
 ```
 
 ### Single Entity VS Entity Array in Read/GET Responses
-There are two different read operations available against the Product API resources:
+There are two different read operations available against the Image API resources:
 - To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}/images/{ImageId}
 - To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/{propertyId}/images. 
 
@@ -158,7 +159,7 @@ Entity and errors are in the same wrapper because most frameworks will de-serial
 Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
 
 A Java implementation to handle this, using Spring’s RestTemplate, could look like this:
-```Java
+```java
    ResponseEntity<ResponseWrapperDTO<RoomTypeDTO>> response = restTemplate.exchange(
             "url",
             HttpMethod.POST,
