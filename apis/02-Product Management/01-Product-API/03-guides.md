@@ -620,7 +620,7 @@ The outcome of this request would be that any guest aged from 0 to 17 would be c
 <a name="/patchdepositrequired"></a>
 ## How Can I Use Product API to Update Rate Plans Requiring Deposit?
 
-With the introduction of the [Deposit API](/apis/product-management/deposit-api/quickstart.html), some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:
+With the introduction of the [Deposit API](/apis/product-management/deposit-api/quick-start.html), some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:
 ```html
 PATCH https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes/{room type ID of the rate plan to be patched}/ratePlans/{rate plan ID to be update}
 Content-Type: application/vnd.expedia.eps.product-v2+json
