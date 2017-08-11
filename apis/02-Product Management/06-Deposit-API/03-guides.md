@@ -14,7 +14,7 @@ A deposit policy is formed of up to 2 components: a default policy, and up to 4 
 
 Within a policy, between 1 and 4 payment installments can be defined. It is possible to define timing of these installments as: time of booking, days prior to checkin, or time of checkin. 
 
-The amounts to pay can be either fixed amounts, % of the total booking value, or a certain number of nights. For example, a property who would like to collect 10% of the booking value  at time of booking, and the reminder at time of checkin:
+The amounts to pay can be either fixed amounts, % of the total booking value, or a certain number of nights. For example, a property who would like to collect 10% of the booking value  at time of booking, and the remainder at time of checkin:
 ```json
 {
     "defaultPolicy": {"payments": [
@@ -191,7 +191,7 @@ When a customer selects dates that will span across a default policy and one or 
 }
 ```
 
-If a customer books a stay between 04/28 and 05/01, Expedia will select the exception policy at position 0 in the array. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
+If a customer books a stay between 04/28 and 05/02 (effectively staying on the nights of 4/28, 4/29, 4/30 and 5/1), Expedia will select the exception policy at position 0 in the array. If a customer would book a slightly longer stay spanning across the default policy and the 2 exception, for example from 4/28 to 5/10, it would again be the exception at position 0 in the json exception policies array that would be selected.
 
 ### How Should I Use the Expedia APIs to Manage my Deposit Policy?
 The Deposit API allows partners to manage the deposit policy defined for their properties. It is possible to set the policy (via the PUT operation), read the policy (via the GET operation), or remove the policy (via the DELETE operation).
@@ -208,6 +208,35 @@ The short answer is yes. In the Expedia system, Deposit and Cancel Policies are 
 
 For example, assume a property defined a cancel policy stating that the rate is non-refundable 7 days prior to checkin. If the intent is to charge the full amount of the reservation 7 days prior to checkin, a deposit policy Defined needs to be defined, indicating that the full amount of the reservation will be charged 7 days prior to checkin.
 
+## Can I Edit the Deposit Policy I created in Expedia PartnerCentral via the Deposit API?
+Yes, the deposit policies created via Expedia PartnerCentral can be edited via the Deposit API. The opposite is also possible (creating a deposit policy via the API and edit it via Expedia PartnerCentral). It is however not recommend to mix API usage with Expedia PartnerCentral usage, to prevent concurrent, conflicting updates from either sources.
+
+## What Happens If I Provide Exception Dates and Day-of-Week Data that Results in No Overlap?
+Expedia is not confirming whether the date range and the days of the week specified intersect at all or not. Therefore, Expedia would accept partners setting an exception like this:
+```json
+{
+    "exceptionPolicies": [
+        {
+            "dateRanges": [{
+                "startDate": "2017-05-01",
+                "endDate": "2017-05-02",
+                "daysOfWeek": [
+                    "THU",
+                    "SAT"
+                ]
+            }],
+            "description": "Exception at position 0",
+            "payments": [{
+                "type": "PERCENT",
+                "value": 100,
+                "when": {"type": "UPON_BOOKING"}
+            }]
+        }
+   ]
+}
+```
+However, this would never be applied because May 1st and 2nd are a Monday and Tuesday respectively, and the dayOfWeek array only contains Thursday and Saturday as effective dates. It is the partner's responsibility to make sure that dates and day-of-week data is coherent.
+
 <a name="howtogetstarted"></a>
 ## How to Get Started for First Time API Users
 In order to get started with using the API, it is required to register with Expedia and obtain API credentials. It is also possible to obtain the rights to use a test property to run some tests before going to production with a new integration. To get started, new partners need to send an email to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.
@@ -216,6 +245,8 @@ In order to get started with using the API, it is required to register with Expe
 In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.
 
 After a partner successfully registered with Expedia (see [above section](#howtogetstarted) for details on how to get started), properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email notification. The email will contain the confirmation that the partner is now authorized to manage this hotel via API calls. It will also either contain a specific set of credentials for this property, or will indicate that the partner's unique account was authorized to manage this additional property. Whether a partner is given an unique account, or one per property, is decided at registration time.
+
+Similarily, properties can decide to opt out of using a specific partner/system. When this happens, Expedia will sent a disconnection notification to the partner via email, to inform them that they are no longer connecting this property to Expedia.
 
 ## Deposit API Versioning Documentation and Maintenance Strategy for Older Versions
 Deposit API online documentation will only be maintained for the latest available version. When a new version is published, the documentation on this portal will only reflect the latest version of the API. Moreover, older versions will be kept for at most 6 months after the release of a new version, to give partners time to migrate. Partners using older versions will be notified when versions are slated for retirement and be given time to migrate over.
