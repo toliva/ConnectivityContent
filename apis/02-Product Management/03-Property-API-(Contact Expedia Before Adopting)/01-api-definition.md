@@ -279,9 +279,15 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 **image**
 
+While a property needs at least 1 image to complete onboarding, we recommend all partners to abide to the Expedia Standards to ensure good content:
+
+Photo Quantity: A minimum of 20 property photos.
+GuestRoom Coverage: 4 photos of each roomtype including 1 photo of the bathroom
+Photo Quality: Images below 350x350 pixels will be rejected. To ensure your photos look beautiful on desktop, tablet, and mobile screens we require at least 2,880 pixels on the longest side. 
+
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| url | String | Yes | image URL.  A property needs at least 1 image to complete onboarding.  Images below 350x350 pixels will be rejected. |
+| url | String | Yes | image URL.  Please note, Expedia would first have to whitelist your image host domains; please contact us to have this completed. |
 | categoryCode | String | No | See [code list](./code-list.html#categoryCode).  If none provided, Expedia will provide categorization. |
 | name | String | No | Image Caption |
 
