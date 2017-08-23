@@ -44,7 +44,7 @@
 				<xs:element name="BookingConfirmNumbers">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="BookingConfirmNumber" maxOccurs="unbounded">
+							<xs:element name="BookingConfirmNumber" maxOccurs="10">
 								<xs:complexType>
 									<xs:attribute name="bookingType" use="required">
 										<xs:annotation>

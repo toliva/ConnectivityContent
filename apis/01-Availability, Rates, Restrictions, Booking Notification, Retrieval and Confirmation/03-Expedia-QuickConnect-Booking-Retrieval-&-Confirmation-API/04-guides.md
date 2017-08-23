@@ -52,7 +52,7 @@ For a retrieval of bookings, the maximum number of bookings that can be returned
 
 ---
 
-### Booking Confirmation REsponses with Warning Require Action
+### Booking Confirmation Responses with Warning Require Action
 If a warning is included in the BC RS message, the hotel confirmation number could not be updated for the booking at Expedia. Efforts should be made to capture these warnings and make necessary corrections to your booking confirmation request parameters.
 
 ---
