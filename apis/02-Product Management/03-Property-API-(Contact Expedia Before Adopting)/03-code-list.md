@@ -58,7 +58,6 @@ The reasonCodes field represents all the reasons the property has a particular s
 | Onboarding Failed | PropertyDisabled |
 | | MissingExpediaId |
 | | MissingContactInfo |
-| | BookableProvidersExist |
 | | InvalidPropertyName |
 | | InvalidCoordinates |
 | | NoValidAddresses |
@@ -70,7 +69,8 @@ The reasonCodes field represents all the reasons the property has a particular s
 | | OfacCheckFailed |
 | | MissingBillingCurrencyCode |
 | | InternalError |
-| PendingReview | DeclinedOnReview |
+| | DeclinedOnReview |
+| PendingReview | BookableProvidersExist |
 | PropertySaved | None |
 | ExpediaIdAssigned | None |
 | FinanceSetupPending | None |
