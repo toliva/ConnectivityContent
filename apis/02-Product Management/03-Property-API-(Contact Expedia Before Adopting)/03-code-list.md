@@ -70,6 +70,7 @@ The reasonCodes field represents all the reasons the property has a particular s
 | | OfacCheckFailed |
 | | MissingBillingCurrencyCode |
 | | InternalError |
+| PendingReview | DeclinedOnReview |
 | PropertySaved | None |
 | ExpediaIdAssigned | None |
 | FinanceSetupPending | None |
