@@ -1,33 +1,33 @@
 <style>
-#systems {
+.systems {
 background-color: #ededed;
 color: #6b6b6b;
 }
 
-#systems label {
+.systems label {
 color: #6b6b6b;
 }
 
-#systems input {
+.systems input {
 box-shadow: inset 0 1px 0 rgba(0,0,0,.1),inset 0 1px 1px rgba(0,0,0,.05);
 border-radius: 3px;
 border-color: #858585 #c2c2c2 #c2c2c2;
 }
 
-#systems span.label {
+.systems span.label {
 padding: 0.15rem 0.3rem;
 border-radius: 2px;
 }
 
-#systems .CM span.label {
+.systems .CM span.label {
 background-color: #6cc86d
 }
 
-#systems .PMS span.label {
+.systems .PMS span.label {
 background-color: #3fa0b2
 }
 
-#systems .CRS span.label {
+.systems .CRS span.label {
 background-color: #f5a362
 }
 
@@ -44,7 +44,7 @@ margin-top: 1.4rem;
 line-height: 1;
 }
 
-#systems .help-text {
+.systems .help-text {
 font-size: 0.8rem;
 color: #6b6b6b;
 font-style: normal;
@@ -80,7 +80,7 @@ vertical-align: middle;
 
 section.hero .inner h2 {
 margin: 1em auto;
-max-width: 500px;
+max-width: 32rem;
 }
 
 .provider-list .menu li {
@@ -107,15 +107,44 @@ color: #0e66b8;
 font-size: 0.9rem;
 color: #797979;
 }
+
+.systems .card {
+padding: 1rem;
+border-radius: 3px;
+}
+.systems .card .time {
+font-size: 3rem;
+}
+.systems .card-header {
+font-weight: bold;
+margin-bottom: 1rem;
+}
+.systems .card-header .float-right {
+font-size: 1.2rem;
+}
+
+.systems .items {
+margin: 0.5rem 0;
+}
+.systems .ok {
+color: #447c20;
+}
+.systems .nok {
+color: #bb202b;
+}
+
+.systems .average-time .column {
+width: 49%;
+}
 </style>
-<div id="systems">
+<div class="systems">
   <section class="hero hero-cityscape">
     <div class="inner">
       <h1>System Providers</h1>
       <h2>Find your system provider and automate your property connection</h2>
     </div>
   </section>
-  <section class="content small-12">
+  <section class="content small-12" id="systems-list">
     <div class="row column">
       <div class="small-3 column filter">
         <nav role="navigation" class="sidebar-nav">
@@ -174,7 +203,7 @@ color: #797979;
         <div class="provider-list">
           <ul class="vertical menu" data-accordion-menu>
             <li v-for="p in filteredProviders">
-              <a href="#" v-bind:class="[p.type]">
+              <a v-bind:class="[p.type]" v-on:click="show(p)">
                 <span class="system-type"><span class="label">{{p.type}}</span> &gt;</span>
                 <div class="system-name">{{p.system}}</div>
                 <div class="company-name">by {{p.company}}</div>
@@ -184,9 +213,61 @@ color: #797979;
         </div>
       </div>
     </div>
-
   </section>
 </div>
+
+<section class="systems small reveal" id="system-details" data-reveal>
+  <header class="clearfix" v-bind:class="[type]">
+    <h3>{{system}} <span class="label">CM</span></h3>
+    <p class="help-text">by {{company}}</p>
+  </header>
+  <div class="row average-time" data-equalizer>
+    <div class="card small-6 column" data-equalizer-watch>
+      <div class="ok"><span class="time">5:23</span> minute</div>
+      <p>Average Update Time</p>
+      <p class="help-text">Availability, Inventory and Rates</p>
+    </div>
+    <div class="card small-6 column" data-equalizer-watch>
+      <div class="nok"><span class="time">1:06</span> minutes</div>
+      <p>Average Booking Retrieval Time</p>
+    </div>
+  </div>
+  <div class="card row column">
+    <div class="card-header clearfix">
+      <div class="float-right">{{numFeaturesSupported}} out of {{availableFeatures.length}}</div>
+      <div>Key feature support</div>
+    </div>
+    <div class="row small-up-1 medium-up-2">
+      <div class="column items" v-for="f in availableFeatures" v-bind:class="[featureSupported(f) ? 'ok' : 'nok']">
+        <i v-bind:class="[featureSupported(f) ? 'fi-check' : 'fi-x']"></i> {{f}}
+      </div>
+    </div>
+  </div>
+  <div class="card row column">
+    <div class="card-header clearfix">
+      <div class="float-right">{{numRestrictionsSupported}} out of {{availableRestrictions.length}}</div>
+      <div>Restriction support</div>
+    </div>
+    <div class="row small-up-1 medium-up-2">
+      <div class="column items" v-for="r in availableRestrictions" v-bind:class="[restrictionSupported(r) ? 'ok' : 'nok']">
+        <i v-bind:class="[restrictionSupported(r) ? 'fi-check' : 'fi-x']"></i> {{r}}
+      </div>
+    </div>
+  </div>
+  <div class="card row column">
+    <div class="card-header clearfix">
+      <div class="float-right">Medium</div>
+      <div>Number of support requests raised to Expedia</div>
+    </div>
+    <div>
+      A low number of support requests can reflect the system's ease of use and self-service capacities.
+    </div>
+  </div>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</section>
+
 <script src="/js/vue.min.js"></script>
 <script type="text/javascript">
 var allProviders = [
@@ -216,8 +297,79 @@ var allProviders = [
   }
 ];
 $(function() {
+  var details = new Vue({
+    el: '#system-details',
+    data: {
+      system: '',
+      company: '',
+      type: '',
+      availableFeatures: [
+        "Rates and Availability",
+        "Photos",
+        "Reservation Notifications",
+        "Competitor Rates and Availability",
+        "Reservation Confirmations",
+        "Hotwire Rates and Availability",
+        "Edit Room Types and Rate Plans",
+        "Value Add Promotions",
+        "Promotions",
+        "Displays All Point of Sale Brands",
+        "Property Details",
+        "Displays Expedia VIP guests"
+      ],
+      availableRestrictions: [
+        "Minimum Length of Stay",
+        "Stop Sells as the Room Level",
+        "Maximum Length of Stay",
+        "Close Outs at the Rate Plan Level",
+        "Closed to Arrival",
+        "Full Pattern Length of Stays: Arrival",
+        "Closed to Departure",
+        "Full Pattern Length of Stays: Stay-Through",
+        "Advanced Purchase / Minimum Booking Window / Cutoff at the Rate Plan Level"
+      ]
+    },
+    computed: {
+      numFeaturesSupported: function() {
+        var n = 0;
+        for (var i in this.availableFeatures) {
+          if (this.featureSupported(this.availableFeatures[i])) {
+            n++;
+          }
+        }
+        return n;
+      },
+      numRestrictionsSupported: function() {
+        var n = 0;
+        for (var i in this.availableRestrictions) {
+          if (this.restrictionSupported(this.availableRestrictions[i])) {
+            n++;
+          }
+        }
+        return n;
+      }
+    },
+    methods: {
+      open: function(p) {
+        this.system = p['system'];
+        this.company = p['company'];
+        this.type = p['type']
+        $(this.$el).foundation('open');
+        Foundation.reInit('equalizer');
+      },
+      featureSupported: function(f) {
+        return f ? (this.system.length + f.length) % 2 : false;
+      },
+      restrictionSupported: function(r) {
+        return r ? (this.company.length + r.length) % 2 : false;
+      }
+    },
+    mounted: function() {
+      $(this.$el).foundation();
+    }
+  });
   var app = new Vue({
-    el: '#systems',
+    el: '#systems-list',
     data: {
       country: '',
       language: '',
@@ -228,11 +380,6 @@ $(function() {
       productUpdate: false,
       sortedBy: '',
       providers: allProviders
-    },
-    filters: {
-      lower: function(v) {
-        return v.toLowerCase();
-      }
     },
     methods: {
       filteredByType: function(p) {
@@ -255,6 +402,9 @@ $(function() {
         var x = parseFloat(a.score);
         var y = parseFloat(b.score);
         return y - x; // desc
+      },
+      show: function(p) {
+        details.open(p);
       }
     },
     computed: {
