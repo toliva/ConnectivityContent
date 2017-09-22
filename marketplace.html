@@ -1,6 +1,6 @@
 <style>
-.systems {
-background-color: #ededed;
+body, .systems {
+background-color: #f5f5f5;
 color: #6b6b6b;
 }
 
@@ -50,6 +50,11 @@ color: #6b6b6b;
 font-style: normal;
 }
 
+.sort-bar .show-for-small-only a {
+font-weight: bold;
+color: #0e66b8;
+}
+
 .sort-bar .button-group {
 border-top: 3px solid #c7c7c7;
 border-bottom: 2px solid #999999;
@@ -78,9 +83,17 @@ line-height: 1;
 vertical-align: middle;
 }
 
-section.hero .inner h2 {
+.systems.hero {
+margin: 0;
+}
+
+.systems.hero .inner h2 {
 margin: 1em auto;
 max-width: 32rem;
+}
+
+.systems.off-canvas-wrapper {
+padding: 1rem 0;
 }
 
 .provider-list .menu li {
@@ -132,65 +145,101 @@ color: #447c20;
 .systems .nok {
 color: #bb202b;
 }
-
 .systems .average-time .column {
 width: 49%;
 }
+
+.systems .off-canvas {
+padding: 0 1rem;
+}
+.systems .off-canvas-content {
+background: transparent;
+box-shadow: none;
+}
+
+@media screen and (min-width:40em) and (max-width:63.9375em) {
+.systems.reveal {
+width: 70%;
+}
+}
 </style>
-<div class="systems">
-  <section class="hero hero-cityscape">
-    <div class="inner">
-      <h1>System Providers</h1>
-      <h2>Find your system provider and automate your property connection</h2>
+
+<section class="systems hero hero-cityscape">
+  <div class="inner">
+    <h1>System Providers</h1>
+    <h2>Find your system provider and automate your property connection</h2>
+  </div>
+</section>
+
+<div class="systems off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="off-canvas" data-off-canvas
+         data-force-top="false" data-auto-focus="false" data-trap-focus="false">
+
+      <!-- Close button -->
+      <button class="close-button" aria-label="Close menu" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="filter"></div>
+
     </div>
-  </section>
-  <section class="content small-12" id="systems-list">
+
+  <div class="off-canvas-content small-12" id="systems-list" data-off-canvas-content>
     <div class="row column">
-      <div class="small-3 column filter">
-        <nav role="navigation" class="sidebar-nav">
+      <div class="hide-for-small-only medium-3 column">
+        <div class="filter">
           <h5>Filter by:</h5>
-          <form>
-            <dl>
-              <dt>Country</dt>
-              <dd>
-                <label><input type="text" placeholder="Enter your country" v-model="country"/></label>
-                <p class="help-text">Display providers offering service in a specific location</p>
-              </dd>
+          <dl>
+            <dt>Country</dt>
+            <dd>
+              <label><input type="text" placeholder="Enter your country" v-model="country"/></label>
+              <p class="help-text">Display providers offering service in a specific location</p>
+            </dd>
 
-              <dt>System Type</dt>
-              <dd>
-                <div><label class="CM"><input type="checkbox" v-model="typeCM"><span class="label">CM</span> Channel Manager</label></div>
-                <div><label class="PMS"><input type="checkbox" v-model="typePMS"><span class="label">PMS</span> Property Management System</label></div>
-                <div><label class="CRS"><input type="checkbox" v-model="typeCRS"><span class="label">CRS</span> Central Reservations Systems</label></div>
-              </dd>
+            <dt>System Type</dt>
+            <dd>
+              <div><label class="CM"><input type="checkbox" v-model="typeCM"><span class="label">CM</span> Channel Manager</label></div>
+              <div><label class="PMS"><input type="checkbox" v-model="typePMS"><span class="label">PMS</span> Property Management System</label></div>
+              <div><label class="CRS"><input type="checkbox" v-model="typeCRS"><span class="label">CRS</span> Central Reservations Systems</label></div>
+            </dd>
 
-              <dt>Language Supported</dt>
-              <dd>
-                <div><label><input type="text" placeholder="Enter language" v-model="language"/></label></div>
-              </dd>
+            <dt>Language Supported</dt>
+            <dd>
+              <div><label><input type="text" placeholder="Enter language" v-model="language"/></label></div>
+            </dd>
 
-              <dt>System Support</dt>
-              <dd>
-                <div><label><input type="checkbox" v-model="liveSupport"> Provide live support</label></div>
-              </dd>
+            <dt>System Support</dt>
+            <dd>
+              <div><label><input type="checkbox" v-model="liveSupport"> Provide live support</label></div>
+            </dd>
 
-              <dt>Product Updates</dt>
-              <dd>
-                <p class="help-text">Who can map property, rooms types and rate plans</p>
-                <div><label><input name="product-updates" value="provider" type="radio" v-model="productUpdate"> Provider</label></div>
-                <div><label><input name="product-updates" value="hotel" type="radio" v-model="productUpdate"> Hotel/Property</label></div>
-                <div><label><input name="product-updates" value="both" type="radio" v-model="productUpdate"> Both</label></div>
-              </dd>
-            </dl>
-          </form>
-        </nav>
+            <dt>Product Updates</dt>
+            <dd>
+              <p class="help-text">Who can map property, rooms types and rate plans</p>
+              <div><label><input name="product-updates" value="provider" type="radio" v-model="productUpdate"> Provider</label></div>
+              <div><label><input name="product-updates" value="hotel" type="radio" v-model="productUpdate"> Hotel/Property</label></div>
+              <div><label><input name="product-updates" value="both" type="radio" v-model="productUpdate"> Both</label></div>
+            </dd>
+          </dl>
+        </div>
       </div>
-      <div class="small-9 column">
+      <div class="small-12 medium-9 column">
         <p>You have many options for connecting your property to the Expedia Global Marketplace.
           Search our provider partners and find the system that best fits your needs.</p>
 
         <div class="sort-bar">
-          <div class="button-group">
+          <div class="show-for-small-only clearfix">
+            <div class="float-right">
+              <select v-model="sortedBy">
+                <option value="" disabled>Sort by:</option>
+                <option value="score">Provider Score</option>
+                <option value="system">System Name</option>
+                <option value="company">Company Name</option>
+              </select>
+            </div>
+            <a data-toggle="off-canvas">Filters</a>
+          </div>
+          <div class="button-group hide-for-small-only">
             <span class="title">Sort by:</span>
             <a class="button" v-on:click="sortedBy = 'score'" v-bind:class="{active: sortedBy == 'score'}">Provider Score</a>
             <a class="button" v-on:click="sortedBy = 'system'" v-bind:class="{active: sortedBy == 'system'}">System Name</a>
@@ -198,7 +247,9 @@ width: 49%;
           </div>
         </div>
 
-        <p class="help-text">See how we score our providers</p>
+        <div class="clearfix">
+          <p class="help-text float-right">See how we score our providers</p>
+        </div>
 
         <div class="provider-list">
           <ul class="vertical menu" data-accordion-menu>
@@ -213,10 +264,12 @@ width: 49%;
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  </div>
 </div>
 
-<section class="systems small reveal" id="system-details" data-reveal>
+<div class="systems small reveal" id="system-details" data-reveal>
   <header class="clearfix" v-bind:class="[type]">
     <h3>{{system}} <span class="label">CM</span></h3>
     <p class="help-text">by {{company}}</p>
@@ -266,7 +319,7 @@ width: 49%;
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
-</section>
+</div>
 
 <script src="/js/vue.min.js"></script>
 <script type="text/javascript">
@@ -277,7 +330,7 @@ var allProviders = [
     type: "CRS",
     language: "en",
     country: "US",
-    score: 80
+    score: 90
   },
   {
     system: "InnLink CRS",
@@ -285,7 +338,7 @@ var allProviders = [
     type: "PMS",
     language: "au",
     country: "AU",
-    score: 100
+    score: 50
   },
   {
     system: "Sirvoy Reservation System",
@@ -293,7 +346,7 @@ var allProviders = [
     type: "CM",
     language: "de",
     country: "DE",
-    score: 90
+    score: 80
   }
 ];
 $(function() {
@@ -378,8 +431,8 @@ $(function() {
       typeCRS: false,
       liveSupport: false,
       productUpdate: false,
-      sortedBy: '',
-      providers: allProviders
+      sortedBy: 'score',
+      providers: [],
     },
     methods: {
       filteredByType: function(p) {
@@ -399,12 +452,44 @@ $(function() {
         return (x < y) ? -1 : (x > y) ? 1 : 0;
       },
       sortByScore: function(a, b) {
-        var x = parseFloat(a.score);
-        var y = parseFloat(b.score);
+        var x = parseFloat(a['score']);
+        var y = parseFloat(b['score']);
         return y - x; // desc
+      },
+      setProviders: function(p) {
+        this.providers = p;
+        this.sort(this.providers, this.sortedBy);
+      },
+      sort: function(p, field) {
+        switch (field) {
+        case 'system':
+          p.sort(this.sortBySystem);
+          break;
+        case 'company':
+          p.sort(this.sortByCompany);
+          break;
+        case 'score':
+          p.sort(this.sortByScore);
+          break;
+        }
       },
       show: function(p) {
         details.open(p);
+      },
+      onResize: function() {
+        var main = $('#systems-list .filter');
+        var side = $('#off-canvas .filter');
+
+        if (main.is(":visible")) {
+           $('#off-canvas').foundation('close');
+           if (main.children().length == 0) {
+             side.children().detach().appendTo(main);
+           }
+        } else {
+          if (side.children().length == 0) {
+            main.children().detach().appendTo(side);
+          }
+        }
       }
     },
     computed: {
@@ -422,19 +507,14 @@ $(function() {
     },
     watch: {
       sortedBy: function(val) {
-        switch (val) {
-        case 'system':
-          this.providers.sort(this.sortBySystem);
-          break;
-        case 'company':
-          this.providers.sort(this.sortByCompany);
-          break;
-        case 'score':
-          this.providers.sort(this.sortByScore);
-          break;
-        }
+        this.sort(this.providers, val);
       }
+    },
+    mounted: function() {
+      this.onResize();
     }
   });
+  app.setProviders(allProviders);
+  $(window).resize(function() { app.onResize(); });
 });
 </script>
