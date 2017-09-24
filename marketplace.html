@@ -36,7 +36,7 @@ margin: 0.6rem 0.3rem;
 }
 
 .filter dl dt {
-font-size: 0.8rem;
+font-size: 0.85rem;
 margin-top: 1.4rem;
 }
 
@@ -98,6 +98,7 @@ padding: 1rem 0;
 
 .provider-list .menu li {
 background-color: #ffffff;
+box-shadow: 0px 1px #dddddd;
 margin-bottom: 2px;
 }
 
@@ -124,6 +125,7 @@ color: #797979;
 .systems .card {
 padding: 1rem;
 border-radius: 3px;
+box-shadow: 0px 1px #dddddd;
 }
 .systems .card .time {
 font-size: 3rem;
@@ -157,6 +159,33 @@ background: transparent;
 box-shadow: none;
 }
 
+.systems .survey {
+background: #ffffff;
+padding: 1rem;
+border-radius: 3px;
+box-shadow: 0px 1px #dddddd;
+}
+
+.systems .survey p {
+font-size: 0.85rem;
+font-weight: bold;
+margin-bottom: 0.5rem;
+}
+
+.systems .survey .button {
+background: linear-gradient(to bottom,#f8f8f8 0,#ededed 100%);
+border: 1px solid #999;
+border-radius: 3px;
+color: #616161;
+margin: 0.3rem;
+padding: 0.6rem 0.8rem;
+}
+
+.systems .survey .button:hover {
+border-color: #616161;
+color: #393939;
+}
+
 @media screen and (min-width:40em) and (max-width:63.9375em) {
 .systems.reveal {
 width: 70%;
@@ -172,20 +201,17 @@ width: 70%;
 </section>
 
 <div class="systems off-canvas-wrapper">
-  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper >
     <div class="off-canvas position-left" id="off-canvas" data-off-canvas
-         data-force-top="false" data-auto-focus="false" data-trap-focus="false">
-
+         data-force-top="false" data-auto-focus="false" data-close-on-click="true">
       <!-- Close button -->
       <button class="close-button" aria-label="Close menu" type="button" data-close>
         <span aria-hidden="true">&times;</span>
       </button>
       <div class="filter"></div>
-
     </div>
 
-  <div class="off-canvas-content small-12" id="systems-list" data-off-canvas-content>
-    <div class="row column">
+    <div class="off-canvas-content row column" id="systems-list" data-off-canvas-content>
       <div class="hide-for-small-only medium-3 column">
         <div class="filter">
           <h5>Filter by:</h5>
@@ -221,9 +247,15 @@ width: 70%;
               <div><label><input name="product-updates" value="both" type="radio" v-model="productUpdate"> Both</label></div>
             </dd>
           </dl>
+
+          <div class="fill"></div>
+          <div class="survey">
+            <p>Did this page help you find a system?</p>
+            <div class="text-right"><a class="button">Yes</a> <a class="button">No</a></div>
+          </div>
         </div>
       </div>
-      <div class="small-12 medium-9 column">
+      <div class="small-12 medium-9 column list">
         <p>You have many options for connecting your property to the Expedia Global Marketplace.
           Search our provider partners and find the system that best fits your needs.</p>
 
@@ -264,8 +296,6 @@ width: 70%;
         </div>
       </div>
     </div>
-  </div>
-
   </div>
 </div>
 
@@ -324,6 +354,102 @@ width: 70%;
 <script src="/js/vue.min.js"></script>
 <script type="text/javascript">
 var allProviders = [
+  {
+    system: "WebPMSpro/ColibriPMS",
+    company: "TDS network International",
+    type: "CRS",
+    language: "en",
+    country: "US",
+    score: 90
+  },
+  {
+    system: "InnLink CRS",
+    company: "Sirvoy",
+    type: "PMS",
+    language: "au",
+    country: "AU",
+    score: 50
+  },
+  {
+    system: "Sirvoy Reservation System",
+    company: "Sabre Hospitality Solutions",
+    type: "CM",
+    language: "de",
+    country: "DE",
+    score: 80
+  },
+  {
+    system: "WebPMSpro/ColibriPMS",
+    company: "TDS network International",
+    type: "CRS",
+    language: "en",
+    country: "US",
+    score: 90
+  },
+  {
+    system: "InnLink CRS",
+    company: "Sirvoy",
+    type: "PMS",
+    language: "au",
+    country: "AU",
+    score: 50
+  },
+  {
+    system: "Sirvoy Reservation System",
+    company: "Sabre Hospitality Solutions",
+    type: "CM",
+    language: "de",
+    country: "DE",
+    score: 80
+  },
+  {
+    system: "WebPMSpro/ColibriPMS",
+    company: "TDS network International",
+    type: "CRS",
+    language: "en",
+    country: "US",
+    score: 90
+  },
+  {
+    system: "InnLink CRS",
+    company: "Sirvoy",
+    type: "PMS",
+    language: "au",
+    country: "AU",
+    score: 50
+  },
+  {
+    system: "Sirvoy Reservation System",
+    company: "Sabre Hospitality Solutions",
+    type: "CM",
+    language: "de",
+    country: "DE",
+    score: 80
+  },
+  {
+    system: "WebPMSpro/ColibriPMS",
+    company: "TDS network International",
+    type: "CRS",
+    language: "en",
+    country: "US",
+    score: 90
+  },
+  {
+    system: "InnLink CRS",
+    company: "Sirvoy",
+    type: "PMS",
+    language: "au",
+    country: "AU",
+    score: 50
+  },
+  {
+    system: "Sirvoy Reservation System",
+    company: "Sabre Hospitality Solutions",
+    type: "CM",
+    language: "de",
+    country: "DE",
+    score: 80
+  },
   {
     system: "WebPMSpro/ColibriPMS",
     company: "TDS network International",
@@ -490,6 +616,22 @@ $(function() {
             main.children().detach().appendTo(side);
           }
         }
+      },
+      onScroll: function() {
+        // Can be in off-canvas
+        var fill = $('.systems .filter .fill');
+        var h = fill.height();
+        var d = 0;
+        if (fill.parents('#off-canvas').length == 0) {
+          var ref = $(this.$el).find('.list');
+          d = ref.height() - (fill.parent().height() - h);
+          if (d < 1) {
+            d = 0;
+          }
+        }
+        if (Math.abs(d - h) > 1) {
+          fill.height(d);
+        }
       }
     },
     computed: {
@@ -511,10 +653,19 @@ $(function() {
       }
     },
     mounted: function() {
+      $(this.$el).foundation();
       this.onResize();
+      this.onScroll();
     }
   });
   app.setProviders(allProviders);
-  $(window).resize(function() { app.onResize(); });
+  $(window).resize(function() {
+    clearTimeout(app.resizeTimer);
+    app.resizeTimer = setTimeout(function() { app.onResize(); }, 100);
+  });
+  $(window).scroll(function() {
+    clearTimeout(app.scrollTimer);
+    app.scrollTimer = setTimeout(function() { app.onScroll(); }, 100);
+  });
 });
 </script>
