@@ -1,5 +1,6 @@
 # Quick Start
 The Image API enables Expedia partners to add new images (one at a time), read images that currently exist for a property, and edit existing images' meta data like categories or room assignment.
+**Please note** the Image API currently only caters to limited use cases. To avoid unnecessary development effort, contact your account manager or the [EQC System Specialist Team](mailto:eqcss@expedia.com?subject=Approval%20to%20use%20Image%20API) before adopting this API.
 
 ----
 
