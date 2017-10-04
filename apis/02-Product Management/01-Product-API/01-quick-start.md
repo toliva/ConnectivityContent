@@ -48,7 +48,6 @@ The result will be an array of properties assigned to your account, and will do 
             "taxInclusive": false,
             "pricingModel": "OccupancyBasedPricing",
             "baseAllocationEnabled": false,
-            "minLOSThreshold": 1,
             "cancellationTime": "18:00",
             "timezone": "(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London",
             "reservationCutOff": {
