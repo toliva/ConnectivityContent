@@ -181,7 +181,8 @@ The below example is a request to onboard a new property using SetPropertyDetail
         "distributionModels": [
             "EXPEDIA_COLLECT",
             "HOTEL_COLLECT"
-        ]
+        ],
+        “pricingModel”:”PER_DAY”
     },
     "attributes": [
         {
@@ -330,6 +331,7 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
+| pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
 
 **tax**
 
@@ -531,6 +533,7 @@ The response body will echo back the values of *the request received* and will i
                     "EXPEDIA_COLLECT",
                     "HOTEL_COLLECT"
                 ]
+                “pricingModel”:”PER_DAY”
             },
             "attributes": [
                 {
