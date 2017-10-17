@@ -45,6 +45,14 @@ The SetPropertyDetails code list is available for download [here](/files/Propert
 
 Properties that have opted into the Expedia Traveler Preference program (ETP) will have both EXPEDIA_COLLECT and HOTEL_COLLECT specified.
 
+### property.inventorySetting.pricingModel
+
+| Code |
+| ---- |
+| PER_DAY |
+| OCCUPANCY_BASED_CHILDREN_ALWAYS_EXTRA |
+| OCCUPANCY_BASED_CHILDREN_REGULAR_OCCUPANTS |
+
 ### SetPropertyDetails Error Codes
 
 To be added.
