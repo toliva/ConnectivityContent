@@ -182,7 +182,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
             "EXPEDIA_COLLECT",
             "HOTEL_COLLECT"
         ],
-          "pricingModel": "PER_DAY"
+        "pricingModel": "PER_DAY"
     },
     "attributes": [
         {
@@ -532,7 +532,7 @@ The response body will echo back the values of *the request received* and will i
                 "distributionModels": [
                     "EXPEDIA_COLLECT",
                     "HOTEL_COLLECT"
-                ]
+                ],
                 "pricingModel": "PER_DAY"
             },
             "attributes": [
