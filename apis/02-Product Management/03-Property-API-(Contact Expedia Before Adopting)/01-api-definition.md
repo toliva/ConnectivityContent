@@ -331,7 +331,7 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
-| pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingModel)|
+| pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
 
 **tax**
 
