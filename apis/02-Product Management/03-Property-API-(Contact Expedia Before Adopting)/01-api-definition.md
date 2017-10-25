@@ -263,7 +263,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| phoneNumberType | String | No | Strict checking against [this list of phone number types](https://expediaconnectivity.com/apis/product-management/property-api-contact-expedia-before-adopting-/code-list.html#property-contact-phonenumber-phonenumbertype).  If no type submitted, then the default of 'Undefined' used. |
+| phoneNumberType | String | No | Strict checking against [this list of phone number types](./code-list.html#property-contact-phonenumber-phonenumbertype).  If no type submitted, then the default of 'Undefined' used. |
 | countryAccessCode | String | No | Country Calling Code. Use ITU standard E.123 / E.164. |
 | areaCode | String | No | Use Telephone numbering plan standards. |
 | number | String | Yes | Include the country and area code within the submitted number. |
