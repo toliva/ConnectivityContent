@@ -36,7 +36,9 @@ define(function() {
                 "rateManagement": true,
                 "etp": true,
                 "evc": true,
-                "bc": true
+                "bc": true,
+                "pci": true,
+                "pos": false
             }
         },
         "optimise": {
