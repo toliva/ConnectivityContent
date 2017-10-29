@@ -189,7 +189,6 @@ define(function() {
             $("p#extra").html("");
             $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
         } else if (section == 'pci') {
-            $("p#base").append($('<span> Please send your latest AOC to <a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">eqcss@expedia.com</a></span>'))
             $("p#extra").html("");
             $("div.adopt").html('<a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">Email my AOC to Expedia</a>');
         }
