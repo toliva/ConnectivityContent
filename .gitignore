@@ -1,5 +1,8 @@
 .DS_Store
 
+# Excel
+~$*.xlsx
+
 # intellij
 *.iml
 *.ipr
