@@ -316,9 +316,12 @@ define(function() {
             $(".scorecard-system").text(scorecard.provider.system);
             $("#systemName").removeClass("hidden");
         }
-        $(".scorecard-rank .rank").text(scorecard.provider.rank);
-        $(".scorecard-rank .total").text(scorecard.provider.total);
-        $(".scorecard-rank").removeClass("hidden");
+
+        if (scorecard.provider.rank) {
+            $(".scorecard-rank .rank").text(scorecard.provider.rank);
+            $(".scorecard-rank .total").text(scorecard.provider.total);
+            $(".scorecard-rank").removeClass("hidden");
+        }
 
         setLabel(scorecard.version.displayName);
         generateScorecardCategory(scorecard.optimise, "optimise");
