@@ -75,7 +75,7 @@ Level | Element / @Attribute | Format | Number of occur. | Description
   | @RequestId | String 20 | 1 | An end-to-end communication token used to link a request message to a response message.
   | @RequestorId | String 64 | 1 | Identifier of the party that is the source of the Request message.
   | @ResponderId | String 64 | 1 | Identifier of the party that is the source of the Response message.
-  | @ExpirationDateTime | dateTime, format YYYY MM DDThh:mm:ss [+/-]hh:mm | 0..1 | The notification expiration date and time set. Set by Expedia in the Booking Notification request.
+  | @ExpirationDateTime | dateTime | 0..1 | The notification expiration date and time set. Set by Expedia in the Booking Notification request. Format YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
   | @Location | String 4 | 1 | Indicates the Payload is sent in the SOAP body, and not as an attachment. Always set to Body.
 3 | CommDescriptor |  | 1 | This element holds the communication level information about the payload being transferred.
   | @SourceId | String 64 | 1 | Identifier of the party sending the message.
@@ -119,6 +119,29 @@ Level | Element / @Attribute | Format | Number of occur. | Description
 2 | Faultstring | String 128 | 1 | Description for the error. 
 2 | Faultactor | String 128 | 0..1 | More information about the source of the fault.
 
+## HTTP Header
+The BN request is sent via HTTP Post, and is answered back by the OTA response or Nack via HTTP Response.
+
+### HTTP POST Header
+Example: 
+POST /ServletDispatcher HTTP/1.1
+Host: https://destinationpartner.com (destination URL)
+Content-Type: text/xml; charset=”UTF-8”
+Content-Length: 1234 SOAPAction: “”
+
+### HTTP Response Header for OTA Response
+Example: 
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset=”UTF-8” Connection: close
+Content-Length: 1234
+
+### HTTP Response Header for NACK
+Example: 
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/xml; charset=”UTF-8”
+Connection: close
+Content-Length: 2291
+
 ## Hotel Reservation Notification RQ/RS
 
 The OTA_HotelResNotifRQ/RS message pair is used to send notification for reservation from Expedia to the hotel system.
@@ -153,7 +176,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 1 | HotelReservations |  | 1 |  | Collection of Hotel Reservations. Container element. Only 1 reservation will be sent per request.
 2 | HotelReservation |  | 1 |   | A single Hotel Reservation. 
   | @RoomStayReservation | Boolean  | 1 | true | Always set to "true".
-  | @CreateDateTime | YYYY-MM-DDThh:mm:ss+/-TimezoneOffset | 1 |  | Date and time stamp of when the reservation was created using ISO 8601 format.
+  | @CreateDateTime | dateTime | 1 |  | Date and time stamp of when the reservation was created. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
   | @CreatorID | String 7 | 1 | Expedia | Always set to "Expedia".
 3 | UniqueID |  | 1 |  | Unique identifier of the reservation. 
   | @Type | Numeric 2 | 1 | 14  | Always set to 14=Reservation.
@@ -208,8 +231,8 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
   | @Count | Numeric 2 | 1 |  | The number of guests for the given age category.
   | @Age | Numeric | 1 |  | The age of each children. Only set for Children age category.
 5 | TimeSpan |  | 1 |  | The Time Span that covers the entire room stay.
-  | @Start | Date format YYYY-MM-DD | 1 |  | Start date for entire room stay (aka Checkin date)
-  | @End | Date format YYYY-MM-DD | 1 |  | End date for entire room stay (aka checkout date). The maximum length of stay cannot exceed 28 nights.
+  | @Start | YYYY-MM-DD | 1 |  | Start date for entire room stay (aka Checkin date)
+  | @End | YYYY-MM-DD | 1 |  | End date for entire room stay (aka checkout date). The maximum length of stay cannot exceed 28 nights.
 5 | Guarantee |  | 0..1 |  | Container element for guarantee and/or payment information. Optional element. It is sent only for Expedia Collect bookings paid by Expedia VirtualCard, or for Hotel Collect bookings paid by the customer.
 6 | GuaranteesAccepted |  | 1 |  | Container element
 7 | GuaranteeAccepted |  | 1 |  | Container element
@@ -282,7 +305,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @ResID_Type | Numeric 1 | 1 | 3 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses "8" to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses "3" for the Holelier's confirmation number and "8" for the Expedia reservation number.
  | @ResID_Value | String 64 | 1 |  | This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. NOTE: HotelReservations/HotelReservation/UniqueId/@Id= HotelReservationID/@ResID_Value. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier's confirmation number. The Expedia reservation number is associated with ResID_Type="8" and the Hotelier's confirmation number is associated with ResID_Type="3". The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
  | @ResID_Source | String 64 | 1 |  | A unique identifier to indicate the source system that generated the ResID_Value. For the Expedia reservation number, this value will be set to "Expedia". For the Hotelier's confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system. This value should be the same as the ResponderId.
- | @ResID_Date | YYYY-MM-DDThh:mm:ss[+/-]hh:mm | 1 |  | The creation date and time of this reservation ID as the local date and time using the format specified by ISO 8601.
+ | @ResID_Date | dateTime | 1 |  | The creation date and time of this reservation ID as the local date and time. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
 
 ###	OTA_HotelResNotifRS
 There are 2 types of responses that can be returned by the hotel partner.
@@ -296,7 +319,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_HotelResNotifRS |  | 1 |  | The OTA_HotelResNotifRS is the message used to indicate the status of processing the OTA_HotelResNotifRQ message.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 2.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
@@ -310,7 +333,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @ResID_Type | Numeric 1 | 1 | 3, 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 is to be used for the Hoteliers Confirmation number, 8 is to be used for echoing back the Expedia reservation number.
  | @ResID_Value | String 64 | 1 |  | This is the actual value associated with ResID_Type. The Expedia reservation number is associated with ResID_Type=8 and the Hotelier's confirmation number is associated with ResID_Type=3. The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
  | @ResID_Source | String 64 | 1 |  | A unique identifier to indicate the source system which generated the ResID_Value. For the Expedia reservation number, this value will be set to "Expedia". For the Hotelier's confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system.
- | @ResID_Date | YYYY-MM-DDThh:mm:ss[+/-]hh:mm | 1 |  | The creation date and time of this reservation ID as the local date and time using the format specified by ISO 8601.
+ | @ResID_Date | dateTime | 1 |  | The creation date and time of this reservation ID as the local date and time. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
 
 #### Detailed Definition of an Error Response
 
@@ -319,7 +342,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_HotelResNotifRS |  | 1 |  | The OTA_HotelResNotifRS is the message used to indicate the status of processing the OTA_HotelResNotifRQ message.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 2.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
@@ -353,7 +376,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_HotelResModifyNotifRQ |  | 1 |  | The OTA_HotelResModifyNotifRQ is the message that sends the notification of a modification to a previous hotel reservation.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 1.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
@@ -363,7 +386,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 1 | HotelResModifies |  | 1 |  | Collection of Hotel Reservation Modifications. Container element.
 2 | HotelResModify |  | 1 |  | A single Hotel Reservation Modification. Single occurrence.
  | @RoomStayReservation | Boolean | 1 | true | True if this reservation is reserving rooms.
- | @CreateDateTime | Date time format YYYY MM DDT hh:mm:ss[+/-] hh:mm | 1 |  | Date and time stamp of when the modification was created using ISO 8601 format.
+ | @CreateDateTime | dateTime | 1 |  | Date and time stamp of when the modification was created. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @CreatorID | String 7 | 1 | Expedia | Person or system responsible for creating the reservation. The supported value is "Expedia".
 3 | UniqueID |  | 1 |  | Unique identifier of the reservation.
   |          |  |   |  | From this point on, repeat the same XML structure as described for the OTA_HotelResNotifRQ message.
@@ -405,7 +428,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_CancelRQ |  | 1 |  | The OTA_CancelRQ is the message that sends the notification of a cancellation to a previous hotel reservation.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 1.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
@@ -425,8 +448,8 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @Code | Numeric 1 | 1 | 1 or 2 or 3 | One of the Code values as listed above.
  | @CodeContext | String 32 | 1 |  | One of the CodeContext values as listed above.
 2 | ReservationTimeSpan |  | 1 |  | The Time Span which covers the entire room stay.
- | @Start | Date format YYYY-MM-DD | 1 |  | Start date of the entire room stay (aka Checkin date). 
- | @End | Date format YYYY-MM-DD | 1 |  | End date of the entire room stay (aka Checkout date).
+ | @Start | YYYY-MM-DD | 1 |  | Start date of the entire room stay (aka Checkin date). 
+ | @End | YYYY-MM-DD | 1 |  | End date of the entire room stay (aka Checkout date).
 2 | AssociatedQuantity |  | 1..2 |  | The AssociatedQuantity element is used to send the number of rooms and the number of guests included in the reservation. The following information will be sent under this element: 1 for Number of rooms, 2 for Number of guests
  | @Code | Numeric 1 | 1 | 1 or 2 | One of the Code values as listed above.
  | @CodeContext | String 32 | 1 |  | One of the CodeContext values as listed above.
@@ -443,7 +466,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_CancelRS |  | 1 |  | The OTA_CancelRS is the message used to indicate the status of processing the OTA_CancelRQ message.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 2.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
@@ -466,7 +489,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 0 | OTA_CancelRS |  | 1 |  | The OTA_CancelRS is the message used to indicate the status of processing the OTA_CancelRQ message.
  | @ xmlns |  | 1 | http://www.opentravel.org/OTA/2003/05 | Namespace for the OTA payload message.
  | @ EchoToken | String 20 | 1 |  | A sequence number for additional message identification, assigned by the requesting host system. It must be echoed back in the corresponding response message.
- | @ TimeStamp | YYYY MM DDT hh:mm:ss.ss[+/-] hh:mm | 1 |  | Timestamp of when this message was generated.
+ | @ TimeStamp | dateTime | 1 |  | Timestamp of when this message was generated. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 2.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
