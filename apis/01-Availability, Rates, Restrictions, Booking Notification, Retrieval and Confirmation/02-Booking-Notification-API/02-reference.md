@@ -29,7 +29,7 @@ Example:
     </Interface>
   </soap-env:Header>
   <soap-env:Body>
-...  
+...
   </soap-env:Body>
 </soap-env:Envelope>
 
@@ -56,7 +56,7 @@ Example:
     </Interface>
   </soap-env:Header>
   <soap-env:Body>
-... 
+...
   </soap-env:Body>
 </soap-env:Envelope>
 
@@ -67,7 +67,7 @@ Example:
 Level | Element / @Attribute | Format | Number of occur. | Description
 ----- | -------------------- | ------ | ---------------- | -----------
 0 | Header |  | 1 |  DC common message header structure
-1 | Interface |  | 1 | 
+1 | Interface |  | 1 |
   | @xmlns |  | 1 | Namespace for the header structure. Always set to http://www.newtrade.com/expedia/R14/header.
   | @Name | String 20 | 1 | Interface Name. Always set to ExpediaDirectConnect
   | @Version | numeric, format n.nn | 1 | API version. Only version 4.0 is supported.
@@ -93,7 +93,7 @@ Level | Element / @Attribute | Format | Number of occur. | Description
 
 
 ### Response Headers - Temporary System Failure
-In the case that a partner is experiencing temporary issues with a request sent by Expedia, the partner can return a negative acknowledgement with an empty Header element. The Fault element will still be a child of the Body element. 
+In the case that a partner is experiencing temporary issues with a request sent by Expedia, the partner can return a negative acknowledgement with an empty Header element. The Fault element will still be a child of the Body element.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
@@ -116,30 +116,30 @@ Level | Element / @Attribute | Format | Number of occur. | Description
 0 | Body |  | 1 | Container element for the business message or Fault element.
 1 | Fault |  | 0..1 | Container element for fault.
 2 | Faultcode | String 11 | 1 | Code for the error. See [Error Codes for Nack](#NackCodes) all supported codes. See [Error Handling](guides.html#ErrorHandling) for more details around error handling.
-2 | Faultstring | String 128 | 1 | Description for the error. 
+2 | Faultstring | String 128 | 1 | Description for the error.
 2 | Faultactor | String 128 | 0..1 | More information about the source of the fault.
 
 ## HTTP Header
 The BN request is sent via HTTP Post, and is answered back by the OTA response or Nack via HTTP Response.
 
 ### HTTP POST Header
-Example: 
+Example:
 POST /ServletDispatcher HTTP/1.1
-Host: https://destinationpartner.com (destination URL)
-Content-Type: text/xml; charset=”UTF-8”
-Content-Length: 1234 SOAPAction: “”
+Host: destinationpartner.com
+Content-Type: text/xml; charset=UTF-8
+Content-Length: 1234
+SOAPAction: ""
 
 ### HTTP Response Header for OTA Response
-Example: 
+Example:
 HTTP/1.1 200 OK
-Content-Type: text/xml; charset=”UTF-8” Connection: close
+Content-Type: text/xml; charset=UTF-8
 Content-Length: 1234
 
 ### HTTP Response Header for NACK
-Example: 
+Example:
 HTTP/1.1 500 Internal Server Error
-Content-Type: text/xml; charset=”UTF-8”
-Connection: close
+Content-Type: text/xml; charset=UTF-8
 Content-Length: 2291
 
 ## Hotel Reservation Notification RQ/RS
@@ -170,15 +170,15 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
   | @Type | OTA_CodeType | 1 | 18, 5 | Reference to the type of requestor. Fixed value. 18=Other (used by all bookings) 5=Travel Agency (used by Hotel Collect booking only).
   | @ID | String 32 | 1 | | Identifier of the requestor. For @Type=18, the ID value is within the value set provided under [Point of Sale Brand List](#POSBrandList). For @Type=5, when applicable, the ID value is equal to the TIDS ID defined for the property.
 4 | BookingChannel |  | 0..1 |  | This is sent only for @Type=18. Omitted for @Type=5.
-  | @ Type | Numeric 1 | 1 | 2 | The type of booking channel. Fixed value. 2= CRO (Customer Reservations Office). 
+  | @ Type | Numeric 1 | 1 | 2 | The type of booking channel. Fixed value. 2= CRO (Customer Reservations Office).
   | @Primary | Boolean | 1 | true | Indicates whether the enumerated booking channel is the primary means of connectivity used by the source. Fixed value.
 5 | CompanyName | String 64 | 1 | Expedia | Identifies the company that is associated with the source ID. For booking notification, the supported value is "Expedia".
 1 | HotelReservations |  | 1 |  | Collection of Hotel Reservations. Container element. Only 1 reservation will be sent per request.
-2 | HotelReservation |  | 1 |   | A single Hotel Reservation. 
+2 | HotelReservation |  | 1 |   | A single Hotel Reservation.
   | @RoomStayReservation | Boolean  | 1 | true | Always set to "true".
   | @CreateDateTime | dateTime | 1 |  | Date and time stamp of when the reservation was created. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
   | @CreatorID | String 7 | 1 | Expedia | Always set to "Expedia".
-3 | UniqueID |  | 1 |  | Unique identifier of the reservation. 
+3 | UniqueID |  | 1 |  | Unique identifier of the reservation.
   | @Type | Numeric 2 | 1 | 14  | Always set to 14=Reservation.
   | @ID | Numeric 10 | 1 |  | A unique identifying value assigned by the creating system to the reservation. This will be the Expedia booking ID.
 3 | RoomStays |  | 1 |  | Collection of room stays, often referred to as segments. Container element. Single occurrence.
@@ -187,7 +187,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 6 | RoomType |  | 1 |  | An individual room type. Single occurrence.
   | @IsRoom | String 4 | 1 | true | Always set to true.
   | @RoomTypeCode | String 16 | 1 |  | Room type code: will contain the Expedia room type ID.
-5 | RatePlans |  | 1 |  | Collection of Rate Plans. 
+5 | RatePlans |  | 1 |  | Collection of Rate Plans.
 6 | RatePlan |  | 1..n |  | An individual rate plan. Will be repeated once per stay date.
   | @RatePlanCode | String 20 | 1 |  | Rate plan code: will contain the Expedia rate plan ID.
   | @EffectiveDate | YYYY-MM-DD | 1 |  | Effective Date. Will be repeated for each stay date covered by the booking. Can be ignored.
@@ -208,9 +208,9 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
   | @ExpireDate | YYYY-MM-DD | 1 |  | End date for the rate.
   | @RateTimeUnit | String 3 | 1 | Day | Rate time unit. Always set to Day.
   | @UnitMultiplier | Numeric 2 | 1 |  | Indicates the number of rate time units such as "3 Days".
-9 | Base |  | 1 |  | Base rate. 
+9 | Base |  | 1 |  | Base rate.
   | @AmountBeforeTax | Money | 1 |  | Daily rate excluding taxes by default. For some suppliers it is possible that this rate would include taxes, based on how they are configured in Expedia system.
-  | @CurrencyCode | String 3 | 1 |  | Currency of the rate using ISO 4217 alphabetic code. 
+  | @CurrencyCode | String 3 | 1 |  | Currency of the rate using ISO 4217 alphabetic code.
 9 | AdditionalGuestAmounts |  | 0..1 |  | Collection of additional guest amounts. Only specified when additional guests amounts need to be charged.
 10 | AdditionalGuestAmount |  | 1..14 |  | Incremental amount charged for additional occupants per qualifying age group.
    | @AgeQualifyingCode | Numeric 2 | 0..1 | 7 8 10 | Age category. Expedia will use the following OTA codes: 7 for Infant, 8 for Child and 10 for Adult.
@@ -224,9 +224,9 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
   | @Code | Numeric 1 | 0..1 | 1 | Code identifying the fee. Expedia uses the following OTA code: 1 for Other fee
   | @Amount | Money | 0..1 |  | Fee Amount
   | @CurrencyCode | String 3 | 0..1 |  | Currency of the fee amount using ISO 4217 alphabetic code.
-5 | GuestCounts |  | 1 |  | Collection of guest counts by age categories. 
+5 | GuestCounts |  | 1 |  | Collection of guest counts by age categories.
   | @IsPerRoom | Boolean | 1 | true | Indicates the guest counts are per room. Expedia sends the guest counts by age category for a room and each reservation will be for a single room.
-6 | GuestCount |  | 1..3 |  | Guest count for a given guest type. 
+6 | GuestCount |  | 1..3 |  | Guest count for a given guest type.
   | @AgeQualifyingCode | Numeric 2 | 1 | 8 10 | Age category. Expedia uses the following OTA codes: 8 for Child and 10 for Adults. Expedia categorize infant as children for this element (unlike for additional guest amounts, where infant is differentiated with another code).
   | @Count | Numeric 2 | 1 |  | The number of guests for the given age category.
   | @Age | Numeric | 1 |  | The age of each children. Only set for Children age category.
@@ -264,12 +264,12 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @Code | Numeric 2 | 1 | 27 | Code identifying the tax. Fixed value. 27=Miscellaneous. Ref <OTA Fee Tax Types> at the end of this document. Taxes will be combined into a single total.
  | @Amount | Money | 1 |  | Tax amount.
  | @CurrencyCode | String 3 | 1 |  | Currency of the tax amount using the ISO 4217 alphabetic code.
-5 | BasicPropertyInfo |  | 1 |  | Hotel associated with the room stay. The hotel reference identifies a specific hotel by using the Chain Code, the Brand Code, and the Hotel Code. 
+5 | BasicPropertyInfo |  | 1 |  | Hotel associated with the room stay. The hotel reference identifies a specific hotel by using the Chain Code, the Brand Code, and the Hotel Code.
  | @HotelCode | String 16 | 1 |  | The code that uniquely identifies a single hotel property.  Contains the Expedia Hotel ID.
 5 | ResGuestRPHs |  | 0..1 |  | Collection of pointers (Reference Place Holders a.k.a. foreign keys) to establish a link between reservation guests and a given room stay.  Collection element.
 6 | ResGuestRPH |  | 0..1 |  | An individual guest RPH (pointer) element. Single occurrence.
  | @RPH | Numeric 1 | 0..1 | 1 | RPH is used to link the reservation guest to the room stay. Fixed value=1, as there is only one room stay per reservation and a single guest name.
-5 | SpecialRequests |  | 0..1 |  | Collection of special requests associated with the room stay. Container element. 
+5 | SpecialRequests |  | 0..1 |  | Collection of special requests associated with the room stay. Container element.
 6 | SpecialRequest |  | 0..n |  | An Individual special request. Expedia usually uses up to 6 occurrences, one for bed type, one for smoking/non-smoking preference, one for multi-room indicator, one for customer's free-form text request, one for payment instructions and one for Value Add Promotions.
  | @Language | String 5  | 0..1 |  | Language of the Text element using the RFC 3066 format. See the language code list at the end of the document. When the RequestCode="4"; (customer request to hotel), the language code will be that associated with the Expedia web site and is to be used as the language of the text found in the Text element. For all other RequestCode, the language will be set to "en-us".
  | @RequestCode | Decimal, format n.nn | 0..1 |  | Coded special request. The special request codes are defined by Expedia. The complete list is provided in the [Special Request Codes](#SpecialRequestCodes) section.
@@ -288,20 +288,20 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 9 | PersonName |  | 1 |  | Container element for full guest name.
 10 | GivenName | String 60 | 1 |  | Guest first name.
 10 | MiddleName | String 60 | 0..1 |  | Guest middle name.
-10 | Surname | String 60 | 1 |  | Guest surname. 
+10 | Surname | String 60 | 1 |  | Guest surname.
 9 | Telephone |  | 0..1 |  | Element that contains the customer phone number.
  | @CountryAccessCode | Numeric 3 | 0..1 |  | Country Code.
  | @AreaCityCode | Numeric 8 | 0..1 |  | Area/city code.
  | @PhoneNumber | String 32 | 0..1 |  | Telephone number.
  | @Extension | Numeric 5 | 0..1 |  | Extension to reach a specific party at the phone number.
-3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element. 
+3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element.
 4 | Memberships |  | 0..1 |  | A collection of Membership objects. The <Memberships> element provides a list of reward programs which may be credited with points accrued from the guest's activity. Container element. The <Memberships> element optional since only corporate reservations will include membership information
 5 | Membership |  | 1..n |  | The Membership object identifies the frequent customer reward program and (optionally) indicates points awarded for stay activity. Expedia usually uses up to 2 occurrences: one for the hotel loyalty membership program and another for the frequent flyer membership number.
  | @ProgramCode | String 6 | 1 |  | The code or name of the membership program. See <Expedia codes for Hotel Loyalty programs> and <Expedia codes for Airline Frequent Flyer Memberships> at the end of this document for complete list.
  | @AccountID | String 32 | 1 |  | The account identification number for this particular member in this particular program.
  | @TravelSector | Numeric 1 | 0..1 | 1 3 | Expedia uses the following OTA codes for travel sector: 1 for Air, 3 for Hotel
 4 | HotelReservationIDs |  | 1 |  | Collection of hotel reservation and confirmation IDs. Container element.
-5 | HotelReservationID |  | 1..2 |  | For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HortelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system's confirmation number. 
+5 | HotelReservationID |  | 1..2 |  | For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HortelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system's confirmation number.
  | @ResID_Type | Numeric 1 | 1 | 3 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses "8" to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses "3" for the Holelier's confirmation number and "8" for the Expedia reservation number.
  | @ResID_Value | String 64 | 1 |  | This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. NOTE: HotelReservations/HotelReservation/UniqueId/@Id= HotelReservationID/@ResID_Value. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier's confirmation number. The Expedia reservation number is associated with ResID_Type="8" and the Hotelier's confirmation number is associated with ResID_Type="3". The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
  | @ResID_Source | String 64 | 1 |  | A unique identifier to indicate the source system that generated the ResID_Value. For the Expedia reservation number, this value will be set to "Expedia". For the Hotelier's confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system. This value should be the same as the ResponderId.
@@ -309,8 +309,8 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 
 ###	OTA_HotelResNotifRS
 There are 2 types of responses that can be returned by the hotel partner.
-- A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response. 
-- An error response is to be returned when the notification failed to be processed by the partner system. In this case partner must include an explicit error code and a detail error message in the error response. The list of error codes are defined in the API spec. 
+- A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response.
+- An error response is to be returned when the notification failed to be processed by the partner system. In this case partner must include an explicit error code and a detail error message in the error response. The list of error codes are defined in the API spec.
 
 #### Detailed definition of a successul response
 
@@ -327,7 +327,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 1 | Success |  | 1 |  | Presence of the Success element indicates that transaction was processed successfully.
 1 | HotelReservations |  | 1 |  | Collection of Hotel Reservations. Container element.
 2 | HotelReservation |  | 1 |  | A single Hotel Reservation. Single occurrence.
-3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element. 
+3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element.
 4 | HotelReservationIDs |  | 1 |  | Collection of hotel reservation and confirmation IDs. Container element.
 5 | HotelReservationID |  | 2 |  | There will be 2 occurrences of the HotelReservationID element, one for the Expedia booking number and another for the hotelier system's confirmation number.
  | @ResID_Type | Numeric 1 | 1 | 3, 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 is to be used for the Hoteliers Confirmation number, 8 is to be used for echoing back the Expedia reservation number.
@@ -356,10 +356,10 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 
 ## Hotel Reservation Modification RQ/RS
 
-The OTA_HotelResModifyNotifRQ/RS message pair is used to send notification for reservation modification from Expedia to the hotel system. 
+The OTA_HotelResModifyNotifRQ/RS message pair is used to send notification for reservation modification from Expedia to the hotel system.
 There are two categories of reservation modifications:
 - The first type involves changing all information except the property (for example dates, room types, or other details of a stay at a particular property). This type of change will employ the use of a modification message pair.
-- The second type involves changing from staying at one property to staying at a different property. This type of change will be handled as a cancel of the original reservation and a brand new booking at the new property. 
+- The second type involves changing from staying at one property to staying at a different property. This type of change will be handled as a cancel of the original reservation and a brand new booking at the new property.
 
 The OTA 2005B spec OTA_HotelResModifyNotifRQ/RS message set will handle the full overlay of the reservation. This message resembles the OTA_HotelResNotifRQ/RS. The existing message structures are extended with new fields to identify that this is a modification to a committed reservation and to verify that the change is being done on the appropriate reservation.  In this message, the reservation content is the bulk of the message.
 Both the Expedia internal BookingItemID and the Hotel confirmation ID will be placed in the HotelReservationID element in the OTA_HotelResModifyNotifRQ message.
@@ -380,7 +380,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @ Target | NMTOKEN | 1 | Production | Indicates the message is a production message.
  | @ Version | decimal, n.nnn | 1 | 1.000 | Version of the OTA message.
  | @ PrimaryLangID | language | 1 | en-us | Primary language code.
- | @ResStatus | String 6 | 1 | Commit | An enumeration that indicates the action to be taken on the request. 
+ | @ResStatus | String 6 | 1 | Commit | An enumeration that indicates the action to be taken on the request.
 1 | POS |  | 1 |  | Container element for point of sale information.
   |     |  |   |  | Repeat the same POS structure as described for the OTA_HotelResNotifRQ message.
 1 | HotelResModifies |  | 1 |  | Collection of Hotel Reservation Modifications. Container element.
@@ -405,7 +405,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 1 | Success |  | 1 |  | Presence of the Success element indicates that transaction was processed successfully.
 1 | HotelResModifies |  | 1 |  | Collection of Hotel Reservation Modifications. Container element.
 2 | HotelResModify |  | 1 |  | A single Hotel Reservation Modification. Single occurrence.
-3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element. 
+3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element.
   |   |   |  |  | From this point on, repeat the same XML structure as described for the successful OTA_HotelResNotifRS message.
 
 #### Detail Descriptions of an Error Response
@@ -414,7 +414,7 @@ Same as the OTA_HotelResNotifRS message, except the root tag will be "OTA_HotelR
 
 ## Hotel Cancel RQ/RS
 
-The OTA_CancelRQ/RS message pair is used to send notification for cancellation from Expedia to the hotel system. 
+The OTA_CancelRQ/RS message pair is used to send notification for cancellation from Expedia to the hotel system.
 
 ### OTA_CancelRQ
 
@@ -442,12 +442,12 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 2 | PersonName |  | 1 |  | Container element for full guest name. This is the primary guest of the reservation. This information serves to validate that the correct booking is being cancelled.
 3 | GivenName | String 60 | 1 |  | Guest first name.
 3 | MiddleName | String 60 | 0..1 |  | Guest middle name.
-3 | Surname | String 60 | 1 |  | Guest last name. 
+3 | Surname | String 60 | 1 |  | Guest last name.
 2 | Vendor | String 16 | 1..3 |  | The Vendor element is used to send the hotel code. Minimum 1 occurrence for the hotel code (Code=3). 2 blank codes might also be sent.
  | @Code | Numeric 1 | 1 | 1 or 2 or 3 | One of the Code values as listed above.
  | @CodeContext | String 32 | 1 |  | One of the CodeContext values as listed above.
 2 | ReservationTimeSpan |  | 1 |  | The Time Span which covers the entire room stay.
- | @Start | YYYY-MM-DD | 1 |  | Start date of the entire room stay (aka Checkin date). 
+ | @Start | YYYY-MM-DD | 1 |  | Start date of the entire room stay (aka Checkin date).
  | @End | YYYY-MM-DD | 1 |  | End date of the entire room stay (aka Checkout date).
 2 | AssociatedQuantity |  | 1..2 |  | The AssociatedQuantity element is used to send the number of rooms and the number of guests included in the reservation. The following information will be sent under this element: 1 for Number of rooms, 2 for Number of guests
  | @Code | Numeric 1 | 1 | 1 or 2 | One of the Code values as listed above.
@@ -505,11 +505,11 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 
 Partner IDs identify partners within the Expedia system and are used in the BN messages. Expedia may assign more than one Partner ID per partner, specifically in cases where a partner uses multiple CRSs. Expedia will apply monitoring and take actions during outages (see section 14.3) based on partner IDs. To maximise partner availability on Expedia, partners should support multiple Partner IDs where appropriate.
 
-## RequestorID and ResponderID Value 
+## RequestorID and ResponderID Value
 
-For booking notification messages the requestor will always be Expedia.com, and the responder will the hotel partner unique code. 
+For booking notification messages the requestor will always be Expedia.com, and the responder will the hotel partner unique code.
 
-## SourceID and DestinationID Value 
+## SourceID and DestinationID Value
 
 Unlike requestor and responder that stay the same in all messages belonging to the same notification, the source and destination of each message change depending if it is an incoming or outgoing message and if it is a request or response message.
 
@@ -791,7 +791,7 @@ Code | Value
 2.2 | Smoking
 3 | Multi room booking and Mixed Rate Bookings
 4 | Free text
-5 | payment instruction 
+5 | payment instruction
 6 | Value Add Promotions
 
 
@@ -802,14 +802,14 @@ Error codes for Nack are generated by the partner upon receiving the BN request 
 
 After receiving a Nack from a partner, Expedia will retry to send the request until a response (success or OTA error) is received or the maximum number of retries is reached. Expedia will retry the message until it expires.
 
-Error Code | Error Text | Error Condition 
----------- | ---------- | --------------- 
-2000 | Missing header | The message receiver detected that mandatory attribute value is missing in the message header. 
-2001 | Invalid header | The message receiver detected that invalid values are sent in the message header. 
-2002 | Unable to parse the message | The message receiver is not able to parse the message header. 
-4000 | Software error | The message receiver encountered internal software error while processing the message. 
-5000 | Database error | The message receiver encountered database error while processing the message. 
-6000 | Unknown error | The message receiver encountered unknown error while processing the message. 
+Error Code | Error Text | Error Condition
+---------- | ---------- | ---------------
+2000 | Missing header | The message receiver detected that mandatory attribute value is missing in the message header.
+2001 | Invalid header | The message receiver detected that invalid values are sent in the message header.
+2002 | Unable to parse the message | The message receiver is not able to parse the message header.
+4000 | Software error | The message receiver encountered internal software error while processing the message.
+5000 | Database error | The message receiver encountered database error while processing the message.
+6000 | Unknown error | The message receiver encountered unknown error while processing the message.
 
 <a name="ErrorCodes"></a>
 ##	Error Codes for Response
@@ -830,6 +830,6 @@ Error Code | Error Text | Error Condition | Data Source | Applicable to
 3207 | The check-out date is missing or invalid | The partner system could not create, modify or cancel the booking because check-out date is not sent in notification or the check-out date is in the past. | TimeSpan/ @End | Booking, Modify, Cancel
 3208 | The guest count is missing or invalid | The partner system could not create or modify the booking because guest count is not sent in the notification, or guest count exceeds max occupancy. | GuestCount/@Count | Booking, Modify
 3209 | Duplicate booking | The partner system detected a duplicate booking based on its duplicate checking logic.  |  | Booking
-3300 | Unable to process the credit card information | Generated by hotel partner for errors encountered when processing the credit card information sent in the xml for booking or modify notifications. Card number is invalid. Card effective or expiration date is invalid. | PaymentCard | Booking, Modify 
+3300 | Unable to process the credit card information | Generated by hotel partner for errors encountered when processing the credit card information sent in the xml for booking or modify notifications. Card number is invalid. Card effective or expiration date is invalid. | PaymentCard | Booking, Modify
 3301 | Payment type not accepted or payment type change not allowed | Generated by hotel partner for the following error scenarios: If the payment type is not permitted by the hotel, for example credit card payment is not setup in the partner system for the given hotel. If the partner system cannot handle payment type change to an existing booking, for example a credit card is sent by Expedia for a booking made prior to the EVC activation. | PaymentCard | Booking, Modify
 
