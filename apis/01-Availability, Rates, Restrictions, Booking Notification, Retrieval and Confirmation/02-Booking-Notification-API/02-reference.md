@@ -401,7 +401,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 ----- | --------------------- | ------ | ---------------- | --------- | -----------
 0 | OTA_HotelResModifyNotifRS |  | 1 |  | The OTA_HotelResModifyNotifRS is the message used to indicate the status of processing the OTA_HotelResModifyNotifRQ message.
   |   |   |   |   | Repeat the same common payload attributes as described for the OTA_HotelResNotifRS message.
-  | @ResResponseType | String 9 | 1 | Modified | Status of response.
+  | @ResResponseType | String 9 | 1 | Modified |  | Status of response.
 1 | Success |  | 1 |  | Presence of the Success element indicates that transaction was processed successfully.
 1 | HotelResModifies |  | 1 |  | Collection of Hotel Reservation Modifications. Container element.
 2 | HotelResModify |  | 1 |  | A single Hotel Reservation Modification. Single occurrence.
