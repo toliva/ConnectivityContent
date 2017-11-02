@@ -122,7 +122,7 @@ define(function() {
             ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
         });
 
-        $("#optimise .border").not("#totalHotels, #changeInHotelsThisQuarter").click(metricClickCallback);
+        $("#optimise .border").click(metricClickCallback);
         $("#enhance .border").click(enhanceClickCallback);
         $(".scorecard-rank").click(overallClickCallback);
         $("#totalHotels, #changeInHotelsThisQuarter").click(onlyDescriptionClickCallback);
@@ -307,8 +307,8 @@ define(function() {
     }
 
     function generateScorecard(scorecard) {
-        var provider = scorecard.provider.name;
-        var version = scorecard.version.key;
+        provider = scorecard.provider.name;
+        version = scorecard.version.key;
         ga('send', 'event', 'scorecard', 'view', provider);
         $("title").text(provider + " Scorecard - Expedia Connectivity");
         $(".scorecard-provider").text(scorecard.provider.name);
