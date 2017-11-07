@@ -1,5 +1,5 @@
 /* scorecard page app */
-requirejs(['marketplace'],
-    function   (marketplace) {
-        marketplace.init();
+requirejs(['marketplace', 'data'],
+    function   (marketplace, data) {
+        marketplace.init(data);
     });

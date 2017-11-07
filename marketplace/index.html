@@ -40,18 +40,6 @@
               <div><label><input type="text" placeholder="Enter language" v-model="language"/></label></div>
             </dd>
 
-            <dt>System Support</dt>
-            <dd>
-              <div><label><input type="checkbox" v-model="liveSupport"> Provide live support</label></div>
-            </dd>
-
-            <dt>Product Updates</dt>
-            <dd>
-              <p class="help-text">Who can map property, rooms types and rate plans</p>
-              <div><label><input name="product-updates" value="provider" type="radio" v-model="productUpdate"> Provider</label></div>
-              <div><label><input name="product-updates" value="hotel" type="radio" v-model="productUpdate"> Hotel/Property</label></div>
-              <div><label><input name="product-updates" value="both" type="radio" v-model="productUpdate"> Both</label></div>
-            </dd>
           </dl>
 
           <div class="fill"></div>
@@ -70,7 +58,6 @@
             <div class="float-right">
               <select v-model="sortedBy">
                 <option value="" disabled>Sort by:</option>
-                <option value="score">Provider Score</option>
                 <option value="system">System Name</option>
                 <option value="vendor">Provider Name</option>
               </select>
@@ -79,9 +66,8 @@
           </div>
           <div class="button-group hide-for-small-only">
             <span class="title">Sort by:</span>
-            <a class="button" v-on:click="sortedBy = 'score'" v-bind:class="{active: sortedBy == 'score'}">Provider Score</a>
             <a class="button" v-on:click="sortedBy = 'system'" v-bind:class="{active: sortedBy == 'system'}">System Name</a>
-            <a class="button" v-on:click="sortedBy = 'company'" v-bind:class="{active: sortedBy == 'company'}">Company Name</a>
+            <a class="button" v-on:click="sortedBy = 'company'" v-bind:class="{active: sortedBy == 'company'}">Provider Name</a>
           </div>
         </div>
 
@@ -112,19 +98,17 @@
   </header>
   <div class="row average-time" data-equalizer>
     <div class="card small-6 column" data-equalizer-watch>
-      <div class="ok"><span class="time">5:23</span> minute</div>
-      <p>Average Update Time</p>
-      <p class="help-text">Availability, Inventory and Rates</p>
+      <div class=""><span class="time">{{arRate}}</span>%</div>
+      <p>AR Message Success Rate</p>
     </div>
     <div class="card small-6 column" data-equalizer-watch>
-      <div class="nok"><span class="time">1:06</span> minutes</div>
-      <p>Average Booking Retrieval Time</p>
+      <div class=""><span class="time">{{bcRate}}</span>%</div>
+      <p>BC Message Success Rate</p>
     </div>
   </div>
   <div class="card row column">
     <div class="card-header clearfix">
-      <div class="float-right">{{numFeaturesSupported}} out of {{availableFeatures.length}}</div>
-      <div>Key feature support</div>
+            <div>Key feature support</div>
     </div>
     <div class="row small-up-1 medium-up-2">
       <div class="column items" v-for="f in availableFeatures" v-bind:class="[featureSupported(f) ? 'ok' : 'nok']">
@@ -134,22 +118,12 @@
   </div>
   <div class="card row column">
     <div class="card-header clearfix">
-      <div class="float-right">{{numRestrictionsSupported}} out of {{availableRestrictions.length}}</div>
       <div>Restriction support</div>
     </div>
     <div class="row small-up-1 medium-up-2">
       <div class="column items" v-for="r in availableRestrictions" v-bind:class="[restrictionSupported(r) ? 'ok' : 'nok']">
         <i v-bind:class="[restrictionSupported(r) ? 'fi-check' : 'fi-x']"></i> {{r}}
       </div>
-    </div>
-  </div>
-  <div class="card row column">
-    <div class="card-header clearfix">
-      <div class="float-right">Medium</div>
-      <div>Number of support requests raised to Expedia</div>
-    </div>
-    <div>
-      A low number of support requests can reflect the system's ease of use and self-service capacities.
     </div>
   </div>
   <button class="close-button" data-close aria-label="Close modal" type="button">
