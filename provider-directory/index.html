@@ -29,7 +29,7 @@
             </dd>
 
             <dt>System Type</dt>
-            <dd>
+            <dd v-on:click="filterClick()" >
               <div><label class="CM"><input type="checkbox" v-model="typeCM"><span class="label">CM</span> Channel Manager</label></div>
               <div><label class="PMS"><input type="checkbox" v-model="typePMS"><span class="label">PMS</span> Property Management System</label></div>
               <div><label class="CRS"><input type="checkbox" v-model="typeCRS"><span class="label">CRS</span> Central Reservations Systems</label></div>
