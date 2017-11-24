@@ -171,7 +171,10 @@ define(function() {
                     }
                 },
                 filterClick: function () {
-                    ga('send', 'event', 'directory', 'filter', "CM=" + this.typeCM + ",PMS=" + this.typePMS + ",CRS=" + this.typeCRS);
+                    ga('send', 'event', 'directory', 'filter', "CM." + this.typeCM + ".PMS." + this.typePMS + ".CRS." + this.typeCRS);
+                },
+                surveyClick: function(useful) {
+                    ga('send', 'event', 'directory', 'survey', useful);
                 }
             },
             computed: {

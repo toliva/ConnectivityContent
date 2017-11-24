@@ -40,7 +40,7 @@
           <div class="fill"></div>
           <div class="survey">
             <p>Did this page help you find a system?</p>
-            <div class="text-right"><a class="button">Yes</a> <a class="button">No</a></div>
+            <div class="text-right"><a v-on:click="surveyClick(true)" class="button">Yes</a> <a v-on:click="surveyClick(false)" class="button" >No</a></div>
           </div>
         </div>
       </div>
