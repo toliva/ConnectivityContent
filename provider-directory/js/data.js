@@ -6,7 +6,7 @@ define({allProviders:
         "bookSuccess": 86.8, 
         "system": "1HotelRez", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -21,7 +21,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Autoupdate", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -38,7 +38,7 @@ define({allProviders:
         "bookSuccess": 99.2, 
         "system": "AccuSell", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -97,7 +97,7 @@ define({allProviders:
         "bookSuccess": 66.0, 
         "system": "Allotz Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -129,7 +129,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "ASI Front Desk (v5.3+)", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -162,7 +162,7 @@ define({allProviders:
         "bookSuccess": 98.2, 
         "system": "Arpies Yazilim", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -208,7 +208,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "HermesHotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -240,7 +240,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Availpro", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -257,7 +257,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "AVAILROOM", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -275,7 +275,7 @@ define({allProviders:
         "bookSuccess": 41.7, 
         "system": "Avantio", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -315,8 +315,8 @@ define({allProviders:
         "bookSuccess": 97.2, 
         "system": "AxisRooms", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -333,7 +333,7 @@ define({allProviders:
         "bookSuccess": 95.2, 
         "system": "B4Checkin", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -351,7 +351,7 @@ define({allProviders:
         "bookSuccess": 87.3, 
         "system": "Octorate", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -367,7 +367,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Beds24 PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -385,7 +385,7 @@ define({allProviders:
         "bookSuccess": 92.9, 
         "system": "BookinGenius", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -402,7 +402,7 @@ define({allProviders:
         "bookSuccess": 98.9, 
         "system": "Yunzhanggui", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Advanced Purchase"
@@ -444,7 +444,7 @@ define({allProviders:
         "bookSuccess": 92.6, 
         "system": "BookandLink", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -456,7 +456,7 @@ define({allProviders:
         "bookSuccess": 92.8, 
         "system": "Channel Connect", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -471,7 +471,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Booki Tech", 
         "featuresSupported": [
-            "Displays All Point of Sale Brands"
+            "Bookings include Expedia brand that traveler used"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -527,7 +527,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "BookingLite", 
         "featuresSupported": [
-            "Displays All Point of Sale Brands"
+            "Bookings include Expedia brand that traveler used"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -544,8 +544,8 @@ define({allProviders:
         "bookSuccess": 95.5, 
         "system": "BookingPal", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -573,7 +573,7 @@ define({allProviders:
         "bookSuccess": 95.9, 
         "system": "Brasil Bookings", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -589,7 +589,7 @@ define({allProviders:
         "bookSuccess": 98.9, 
         "system": "BusyRooms", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -634,7 +634,7 @@ define({allProviders:
         "bookSuccess": 85.2, 
         "system": "ChannelRUSH Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -682,7 +682,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Neppan", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -706,7 +706,7 @@ define({allProviders:
         "bookSuccess": 97.0, 
         "system": "Compusoft", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -737,7 +737,7 @@ define({allProviders:
         "bookSuccess": 99.2, 
         "system": "ORBE (ONLINE RESERVATION BOOKING ENGINE)", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -768,7 +768,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "BookOn", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -810,8 +810,8 @@ define({allProviders:
         "bookSuccess": 80.0, 
         "system": "One by DerbySoft", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -826,7 +826,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "My Allocator", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -843,7 +843,7 @@ define({allProviders:
         "bookSuccess": 96.7, 
         "system": "HotelDruid", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -860,7 +860,7 @@ define({allProviders:
         "bookSuccess": 98.8, 
         "system": "Dingus CM", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -876,7 +876,7 @@ define({allProviders:
         "bookSuccess": 89.1, 
         "system": "eGlobe Solutions", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -893,7 +893,7 @@ define({allProviders:
         "bookSuccess": 93.9, 
         "system": "DirectWithHotels System", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -907,7 +907,7 @@ define({allProviders:
         "bookSuccess": 86.1, 
         "system": "e4j - Extensionsforjoomla.com", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -976,7 +976,7 @@ define({allProviders:
         "bookSuccess": 97.9, 
         "system": "Bird iCRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -994,7 +994,7 @@ define({allProviders:
         "bookSuccess": 98.4, 
         "system": "Bird iCRS - Acta Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1025,7 +1025,7 @@ define({allProviders:
         "bookSuccess": 99.2, 
         "system": "Ericsoft ChannelManager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1056,7 +1056,7 @@ define({allProviders:
         "bookSuccess": 98.0, 
         "system": "eZee Absolute", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1072,7 +1072,7 @@ define({allProviders:
         "bookSuccess": 97.4, 
         "system": "eZee Centrix", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1111,7 +1111,7 @@ define({allProviders:
         "bookSuccess": 99.3, 
         "system": "FastBooking Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1128,7 +1128,7 @@ define({allProviders:
         "bookSuccess": 98.2, 
         "system": "Figaro - Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -1142,8 +1142,8 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "Finite Software Systems CM", 
         "featuresSupported": [
-            "Value Add Promotions", 
-            "Displays All Point of Sale Brands"
+            "Bookings include Expedia value add promotion details", 
+            "Bookings include Expedia brand that traveler used"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1171,9 +1171,9 @@ define({allProviders:
         "bookSuccess": 98.6, 
         "system": "Freetobook System", 
         "featuresSupported": [
-            "Product API", 
-            "Property API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Property content synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1230,8 +1230,8 @@ define({allProviders:
         "bookSuccess": 97.5, 
         "system": "LeoPortals Manager", 
         "featuresSupported": [
-            "Value Add Promotions", 
-            "Displays All Point of Sale Brands"
+            "Bookings include Expedia value add promotion details", 
+            "Bookings include Expedia brand that traveler used"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1314,7 +1314,7 @@ define({allProviders:
         "bookSuccess": 94.5, 
         "system": "Easy InnKeeping", 
         "featuresSupported": [
-            "PCI Attestation Supplied"
+            "Eligible to receive Expedia guest cardholder data"
         ], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -1341,7 +1341,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "AltiusPar", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1360,7 +1360,7 @@ define({allProviders:
         "bookSuccess": 97.2, 
         "system": "YieldPlanet", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1392,7 +1392,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Evolution CRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1410,7 +1410,7 @@ define({allProviders:
         "bookSuccess": 98.6, 
         "system": "GuestCentric Systems Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1427,7 +1427,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "Roomlynx", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1458,7 +1458,7 @@ define({allProviders:
         "bookSuccess": 98.8, 
         "system": "HDN Global", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1497,7 +1497,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Hisite", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -1511,7 +1511,7 @@ define({allProviders:
         "bookSuccess": 89.9, 
         "system": "eRes", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1526,7 +1526,7 @@ define({allProviders:
         "bookSuccess": 88.5, 
         "system": "eRes - ThornyBush", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1541,7 +1541,7 @@ define({allProviders:
         "bookSuccess": 92.6, 
         "system": "eRes\u00a0- Apollo Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1556,7 +1556,7 @@ define({allProviders:
         "bookSuccess": 94.8, 
         "system": "eRes\u00a0- Legend Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1571,7 +1571,7 @@ define({allProviders:
         "bookSuccess": 97.3, 
         "system": "eRes\u00a0- Tsogo Sun Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1601,7 +1601,7 @@ define({allProviders:
         "bookSuccess": 85.4, 
         "system": "Hostaway", 
         "featuresSupported": [
-            "Product API"
+            "Room type and rate plan synced with Expedia"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -1656,7 +1656,7 @@ define({allProviders:
         "bookSuccess": 98.7, 
         "system": "Rezexchange", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1673,7 +1673,7 @@ define({allProviders:
         "bookSuccess": 95.0, 
         "system": "Hotel Link Solutions", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1744,7 +1744,7 @@ define({allProviders:
         "bookSuccess": 96.6, 
         "system": "Hoteliers.Guru Channel Management", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1761,7 +1761,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Hoteliga", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1778,7 +1778,7 @@ define({allProviders:
         "bookSuccess": 99.3, 
         "system": "HotelNet CRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1812,9 +1812,9 @@ define({allProviders:
         "bookSuccess": 15.8, 
         "system": "HotelOga", 
         "featuresSupported": [
-            "Product API", 
-            "Property API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Property content synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -1840,7 +1840,7 @@ define({allProviders:
         "bookSuccess": 98.0, 
         "system": "HotelRunner", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1922,8 +1922,8 @@ define({allProviders:
         "bookSuccess": 97.3, 
         "system": "Demand Gateway", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1961,7 +1961,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Demand Gateway - Fairmont", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1988,7 +1988,7 @@ define({allProviders:
         "bookSuccess": 84.0, 
         "system": "Icnea", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2004,7 +2004,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "Idiso", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2022,7 +2022,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Sirius", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2082,7 +2082,7 @@ define({allProviders:
         "bookSuccess": 98.3, 
         "system": "TMS for Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2099,7 +2099,7 @@ define({allProviders:
         "bookSuccess": 98.2, 
         "system": "TMS for Hotels -  nhHotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2116,7 +2116,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Inn Style", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2145,7 +2145,7 @@ define({allProviders:
         "bookSuccess": 98.4, 
         "system": "Inn-Connect Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2162,7 +2162,7 @@ define({allProviders:
         "bookSuccess": 97.0, 
         "system": "roomMaster", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2179,7 +2179,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "innRoad PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2195,7 +2195,7 @@ define({allProviders:
         "bookSuccess": 94.9, 
         "system": "Check-Inn PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2226,7 +2226,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "Reservit", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2243,7 +2243,7 @@ define({allProviders:
         "bookSuccess": 99.3, 
         "system": "Reservit - Brithotel", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2260,7 +2260,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Reservit - Citotel", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2277,7 +2277,7 @@ define({allProviders:
         "bookSuccess": 99.0, 
         "system": "Reservit - FastHotel", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2294,7 +2294,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Reservit - Logis Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2311,7 +2311,7 @@ define({allProviders:
         "bookSuccess": 99.7, 
         "system": "Reservit - SEH Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2328,7 +2328,7 @@ define({allProviders:
         "bookSuccess": 97.7, 
         "system": "Reservit - Zenitude", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2345,7 +2345,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "ReservIT Softbooker Canada", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2415,7 +2415,7 @@ define({allProviders:
         "bookSuccess": 87.6, 
         "system": "RabbitJetsPMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Maximum Length of Stay"
@@ -2429,7 +2429,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Rakutsu", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2476,7 +2476,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Levart Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2492,7 +2492,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "Lodgegate PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2508,7 +2508,7 @@ define({allProviders:
         "bookSuccess": 97.2, 
         "system": "EzRes", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2568,7 +2568,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Hospitality Solutions Mantra", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2641,7 +2641,7 @@ define({allProviders:
         "bookSuccess": 99.0, 
         "system": "Misterbooking CM", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2729,7 +2729,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "Hotel.BB", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2762,7 +2762,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "BookingExpert Italy", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -2789,7 +2789,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "NightsBridge PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -2803,7 +2803,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Reseliva", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2851,7 +2851,7 @@ define({allProviders:
         "bookSuccess": 88.9, 
         "system": "Ostays", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2881,7 +2881,7 @@ define({allProviders:
         "bookSuccess": 97.4, 
         "system": "Omnibees (HoteisNet)", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2898,7 +2898,7 @@ define({allProviders:
         "bookSuccess": 99.7, 
         "system": "one UP", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2924,7 +2924,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Chart PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3031,7 +3031,7 @@ define({allProviders:
         "bookSuccess": 96.9, 
         "system": "Passepartout Welcome", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3058,7 +3058,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "PHOBS CRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3119,7 +3119,7 @@ define({allProviders:
         "bookSuccess": 97.1, 
         "system": "Prestige", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3137,7 +3137,7 @@ define({allProviders:
         "bookSuccess": 97.3, 
         "system": "Prestige - AGA Hotels", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3149,7 +3149,7 @@ define({allProviders:
         "bookSuccess": 99.7, 
         "system": "Prestige - Iberostar", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3161,7 +3161,7 @@ define({allProviders:
         "bookSuccess": null, 
         "system": "Prestige - Magic Costa Blanca", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3173,7 +3173,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Prestige - Pierre & Vacances", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3185,7 +3185,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Channels Easy", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3203,7 +3203,7 @@ define({allProviders:
         "bookSuccess": 98.2, 
         "system": "Profitroom", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3218,7 +3218,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "Roomer PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3262,7 +3262,7 @@ define({allProviders:
         "bookSuccess": 98.1, 
         "system": "Simple Booking Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3278,7 +3278,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "QuickManager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3295,7 +3295,7 @@ define({allProviders:
         "bookSuccess": 95.1, 
         "system": "Rate Tiger Connect", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3312,7 +3312,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Rate Tiger Suite", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3329,7 +3329,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "RateGain", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3346,7 +3346,7 @@ define({allProviders:
         "bookSuccess": null, 
         "system": "RateGain AR-Only", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3363,8 +3363,8 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Redawning", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3380,7 +3380,7 @@ define({allProviders:
         "bookSuccess": 96.4, 
         "system": "Rentals United", 
         "featuresSupported": [
-            "Product API"
+            "Room type and rate plan synced with Expedia"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3424,7 +3424,7 @@ define({allProviders:
         "bookSuccess": 98.9, 
         "system": "ResOnline Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3439,7 +3439,7 @@ define({allProviders:
         "bookSuccess": 98.7, 
         "system": "Resonline LLC Europe", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -3451,7 +3451,7 @@ define({allProviders:
         "bookSuccess": 89.5, 
         "system": "RDPWin", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3488,7 +3488,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "RezNext", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3534,7 +3534,7 @@ define({allProviders:
         "bookSuccess": 98.0, 
         "system": "RMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3564,7 +3564,7 @@ define({allProviders:
         "bookSuccess": 88.2, 
         "system": "Roomito Channel Manager", 
         "featuresSupported": [
-            "Product API"
+            "Room type and rate plan synced with Expedia"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3615,7 +3615,7 @@ define({allProviders:
         "bookSuccess": 93.7, 
         "system": "RuralGest", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3641,7 +3641,7 @@ define({allProviders:
         "bookSuccess": 96.6, 
         "system": "InnLink CRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -3653,7 +3653,7 @@ define({allProviders:
         "bookSuccess": 99.2, 
         "system": "SynXis CRS  - Morgans", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3672,7 +3672,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "SynXis CRS - Club Quarters", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3691,7 +3691,7 @@ define({allProviders:
         "bookSuccess": 98.9, 
         "system": "SynXis CRS - Commune", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3710,7 +3710,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "SynXis CRS - Kimpton", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3729,7 +3729,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "SynXis CRS - Loews", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3748,7 +3748,7 @@ define({allProviders:
         "bookSuccess": 98.8, 
         "system": "SynXis CRS - Noble House", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3767,7 +3767,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "SynXis CRS - Northland", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3786,7 +3786,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "SynXis CRS - Pacifica", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3805,7 +3805,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "SynXis CRS - Rosewood", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3824,7 +3824,7 @@ define({allProviders:
         "bookSuccess": 98.9, 
         "system": "SynXis CRS - Shilo Inn", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3843,7 +3843,7 @@ define({allProviders:
         "bookSuccess": 98.8, 
         "system": "SynXis CRS - Sonesta", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3862,7 +3862,7 @@ define({allProviders:
         "bookSuccess": 99.2, 
         "system": "SynXis CRS - Trump International", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3881,7 +3881,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "SynXis CRS - Vantage Hospitality", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3900,7 +3900,7 @@ define({allProviders:
         "bookSuccess": 98.4, 
         "system": "SynXis CRS - Viceroy", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3919,7 +3919,7 @@ define({allProviders:
         "bookSuccess": 98.6, 
         "system": "SynXis CRS - Westmont", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3938,7 +3938,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Sanha", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3953,7 +3953,7 @@ define({allProviders:
         "bookSuccess": null, 
         "system": "Value Place EQC", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3970,7 +3970,7 @@ define({allProviders:
         "bookSuccess": null, 
         "system": "Value Place EQC - HMC", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3987,8 +3987,8 @@ define({allProviders:
         "bookSuccess": 97.1, 
         "system": "Windsurfer CRS", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4005,7 +4005,7 @@ define({allProviders:
         "bookSuccess": 99.0, 
         "system": "SYHA", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -4017,7 +4017,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "TL Lincoln", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4034,7 +4034,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "Seekda Channel Connect", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4051,7 +4051,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "iBex Accommodation", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4077,7 +4077,7 @@ define({allProviders:
         "bookSuccess": 99.5, 
         "system": "Semper", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4094,7 +4094,7 @@ define({allProviders:
         "bookSuccess": 99.9, 
         "system": "Sysdat", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4111,7 +4111,7 @@ define({allProviders:
         "bookSuccess": 97.6, 
         "system": "Optima PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4139,7 +4139,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Sirvoy Reservation System", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4156,7 +4156,7 @@ define({allProviders:
         "bookSuccess": 99.3, 
         "system": "Siteminder RDXAmerica", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4172,7 +4172,7 @@ define({allProviders:
         "bookSuccess": 98.5, 
         "system": "Siteminder RDXAPAC", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4188,7 +4188,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Siteminder RDXEurope", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4204,7 +4204,7 @@ define({allProviders:
         "bookSuccess": 98.2, 
         "system": "fnsManager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4231,7 +4231,7 @@ define({allProviders:
         "bookSuccess": 97.9, 
         "system": "smartHOTEL.nl", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4249,7 +4249,7 @@ define({allProviders:
         "bookSuccess": 96.3, 
         "system": "Yadochokun", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -4304,7 +4304,7 @@ define({allProviders:
         "bookSuccess": 99.4, 
         "system": "STAAH", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4322,8 +4322,8 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Cubilis by Stardekk", 
         "featuresSupported": [
-            "Product API", 
-            "Value Add Promotions"
+            "Room type and rate plan synced with Expedia", 
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4365,7 +4365,7 @@ define({allProviders:
         "bookSuccess": 97.3, 
         "system": "MyUkTravel", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4381,7 +4381,7 @@ define({allProviders:
         "bookSuccess": 99.1, 
         "system": "Strait PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4398,7 +4398,7 @@ define({allProviders:
         "bookSuccess": 97.6, 
         "system": "Hotelnabe Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4429,7 +4429,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "WebPMSpro/ColibriPMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4446,7 +4446,7 @@ define({allProviders:
         "bookSuccess": 97.9, 
         "system": "RoomCloud/ParityRate", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4477,7 +4477,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Temairazu Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4509,7 +4509,7 @@ define({allProviders:
         "bookSuccess": 97.1, 
         "system": "Capitaland (Ascott) ODX", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4539,7 +4539,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Booking Evolution", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4556,7 +4556,7 @@ define({allProviders:
         "bookSuccess": 91.0, 
         "system": "Globres", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4573,7 +4573,7 @@ define({allProviders:
         "bookSuccess": 97.5, 
         "system": "Hotel-Spider", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4605,7 +4605,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "DIRS21", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4635,8 +4635,8 @@ define({allProviders:
         "bookSuccess": 99.7, 
         "system": "VRBookings", 
         "featuresSupported": [
-            "Value Add Promotions", 
-            "Displays All Point of Sale Brands"
+            "Bookings include Expedia value add promotion details", 
+            "Bookings include Expedia brand that traveler used"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4662,7 +4662,7 @@ define({allProviders:
         "bookSuccess": 97.7, 
         "system": "TravelClick Channel Management", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4677,7 +4677,7 @@ define({allProviders:
         "bookSuccess": 98.1, 
         "system": "TravelClick iHotelier CRS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4692,7 +4692,7 @@ define({allProviders:
         "bookSuccess": 99.3, 
         "system": "Travelline Channel Manager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4709,7 +4709,7 @@ define({allProviders:
         "bookSuccess": 95.8, 
         "system": "Hoteratus", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4741,7 +4741,7 @@ define({allProviders:
         "bookSuccess": 99.7, 
         "system": "Update247 CM", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4781,7 +4781,7 @@ define({allProviders:
         "bookSuccess": 99.6, 
         "system": "Vertical Booking", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4798,7 +4798,7 @@ define({allProviders:
         "bookSuccess": 99.8, 
         "system": "Viato ChannelManager", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4896,7 +4896,7 @@ define({allProviders:
         "bookSuccess": 97.2, 
         "system": "WebRezPro-PMS", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4913,7 +4913,7 @@ define({allProviders:
         "bookSuccess": 98.6, 
         "system": "WooDoo", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4959,7 +4959,7 @@ define({allProviders:
         "bookSuccess": 98.3, 
         "system": "Xotelia", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4976,7 +4976,7 @@ define({allProviders:
         "bookSuccess": 100.0, 
         "system": "Planyo", 
         "featuresSupported": [
-            "Value Add Promotions"
+            "Bookings include Expedia value add promotion details"
         ], 
         "restrictionsSupported": [], 
         "type": "CRS", 
