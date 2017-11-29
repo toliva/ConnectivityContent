@@ -21,6 +21,28 @@ define(function() {
         }
     });
 
+    var login = new Vue({
+        el: '#system-login',
+        data: {
+            system: null,
+        },
+        computed: {},
+        methods: {
+            open: function(p) {
+                this.system = p;
+                $(this.$el).foundation('open');
+                Foundation.reInit('equalizer');
+            },
+            showSystem: function() {
+                authRequired = false;
+                details.open(this.system);
+            }
+        },
+        mounted: function() {
+            $(this.$el).foundation();
+        }
+    });
+
 
     var details = new Vue({
         el: '#system-details',
@@ -120,6 +142,7 @@ define(function() {
     });
 
     var app;
+    var authRequired = true;
 
     function buildApp() {
         return new Vue({
@@ -175,7 +198,13 @@ define(function() {
                     }
                 },
                 show: function (p) {
-                    details.open(p);
+
+                    if (authRequired) {
+                        login.open(p);
+                    } else {
+                        details.open(p);
+                    }
+
                 },
                 onResize: function () {
                     var main = $('#systems-list .filter');
