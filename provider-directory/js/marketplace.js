@@ -246,7 +246,7 @@ define(function() {
                         if (margin > 0) {
                             fill.height(margin);
                         }
-                        target.parent().foundation('_calc', true);
+                        target.foundation('_calc', true);
                     }
                 },
                 filterClick: function () {
@@ -278,6 +278,9 @@ define(function() {
                 $(this.$el).foundation();
                 this.onResize();
                 this.onScroll();
+            },
+            updated: function() {
+                this.resizeFilterForm();
             }
         });
     }
