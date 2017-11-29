@@ -34,6 +34,7 @@ define(function() {
                 Foundation.reInit('equalizer');
             },
             showSystem: function() {
+                authRequired = false;
                 details.open(this.system);
             }
         },
@@ -141,6 +142,7 @@ define(function() {
     });
 
     var app;
+    var authRequired = true;
 
     function buildApp() {
         return new Vue({
@@ -196,7 +198,13 @@ define(function() {
                     }
                 },
                 show: function (p) {
-                    login.open(p);
+
+                    if (authRequired) {
+                        login.open(p);
+                    } else {
+                        details.open(p);
+                    }
+
                 },
                 onResize: function () {
                     var main = $('#systems-list .filter');
