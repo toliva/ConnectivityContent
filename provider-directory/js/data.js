@@ -3,9 +3,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 4461", 
+        "company": "Provider 7859", 
         "bookSuccess": 86.8, 
-        "system": "Black Purple", 
+        "system": "Coral Red Electric Cyan", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -18,10 +18,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8123", 
+        "country": "australia", 
+        "company": "Provider 5132", 
         "bookSuccess": 99.1, 
-        "system": "Deep Fuchsia Coral Pink", 
+        "system": "Eucalyptus Ash Gray", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -36,10 +36,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8582", 
+        "country": "australia", 
+        "company": "Provider 7284", 
         "bookSuccess": 99.2, 
-        "system": "CG Blue Field Drab", 
+        "system": "Burnt Umber Blue-Violet (Color Wheel)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -54,10 +54,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1082", 
+        "country": "united states", 
+        "company": "Provider 2228", 
         "bookSuccess": 99.2, 
-        "system": "Cadmium Orange Bistre Brown", 
+        "system": "Deep Aquamarine Android Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -69,10 +69,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5013", 
+        "country": "argentina", 
+        "company": "Provider 4593", 
         "bookSuccess": 97.2, 
-        "system": "Carnelian Falu Red", 
+        "system": "Caput Mortuum Cornflower Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -84,9 +84,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 7092", 
+        "company": "Provider 7051", 
         "bookSuccess": 98.4, 
-        "system": "Dust Storm Coral Reef", 
+        "system": "Dandelion (Crayola) Catalina Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -99,10 +99,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9973", 
+        "country": "austria", 
+        "company": "Provider 1205", 
         "bookSuccess": 66.0, 
-        "system": "Dark Khaki Deep Spring Bud", 
+        "system": "Ash Gray Deep Carmine", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -117,10 +117,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7680", 
+        "country": "canada", 
+        "company": "Provider 7034", 
         "bookSuccess": 94.9, 
-        "system": "Blue-Violet Black Olive", 
+        "system": "Bright Pink Cadmium Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -134,9 +134,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 9563", 
+        "company": "Provider 1800", 
         "bookSuccess": 99.8, 
-        "system": "Deep Space Sparkle Deep Violet", 
+        "system": "Eminence Alloy Orange", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -152,10 +152,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4720", 
+        "country": "canada", 
+        "company": "Provider 7989", 
         "bookSuccess": 97.8, 
-        "system": "Desire Fuchsia Pink", 
+        "system": "Bright Cerulean Ash Gray", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -168,10 +168,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2909", 
+        "country": "australia", 
+        "company": "Provider 5823", 
         "bookSuccess": 98.2, 
-        "system": "Caput Mortuum Dandelion", 
+        "system": "Battleship Grey Blue Yonder", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -184,10 +184,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4742", 
+        "country": "united states", 
+        "company": "Provider 7676", 
         "bookSuccess": 69.6, 
-        "system": "Burnt Orange Davy's Grey", 
+        "system": "Blueberry Dark Vanilla", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -201,10 +201,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5112", 
+        "country": "united states", 
+        "company": "Provider 1434", 
         "bookSuccess": 99.6, 
-        "system": "Brilliant Lavender Blanched Almond", 
+        "system": "Deep Space Sparkle Folly", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -217,10 +217,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7803", 
+        "country": "australia", 
+        "company": "Provider 9235", 
         "bookSuccess": 99.4, 
-        "system": "Almond Dark Tan", 
+        "system": "Amaranth Deep Purple Deep Lilac", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -234,10 +234,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2657", 
+        "country": "australia", 
+        "company": "Provider 3397", 
         "bookSuccess": 95.4, 
-        "system": "Dark Violet Blue Sapphire", 
+        "system": "Chrome Yellow Fallow", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -245,10 +245,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2309", 
+        "country": "argentina", 
+        "company": "Provider 8454", 
         "bookSuccess": 97.7, 
-        "system": "French Sky Blue Deep Ruby", 
+        "system": "Bright Cerulean Bole", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -262,10 +262,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6716", 
+        "country": "united states", 
+        "company": "Provider 1405", 
         "bookSuccess": 99.1, 
-        "system": "Cosmic Latte Castleton Green", 
+        "system": "Deep Green Amaranth", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -280,10 +280,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9034", 
+        "country": "united states", 
+        "company": "Provider 2945", 
         "bookSuccess": 99.8, 
-        "system": "Alabaster Barn Red", 
+        "system": "Fire Opal Cornsilk", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -299,10 +299,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3364", 
+        "country": "canada", 
+        "company": "Provider 2312", 
         "bookSuccess": 41.7, 
-        "system": "Dartmouth Green Cyclamen", 
+        "system": "Electric Crimson Dark Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -315,10 +315,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2136", 
+        "country": "united states", 
+        "company": "Provider 1498", 
         "bookSuccess": 97.8, 
-        "system": "Amazonite Cadet Blue", 
+        "system": "Deep Pink Cerise", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -332,9 +332,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 8163", 
+        "company": "Provider 4645", 
         "bookSuccess": 96.9, 
-        "system": "Deep Mauve Electric Indigo", 
+        "system": "Electric Yellow Fresh Air", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -342,10 +342,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4905", 
+        "country": "argentina", 
+        "company": "Provider 1419", 
         "bookSuccess": 97.2, 
-        "system": "Avocado Emerald", 
+        "system": "Dark Pink Deep Fuchsia", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -361,10 +361,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1433", 
+        "country": "argentina", 
+        "company": "Provider 7585", 
         "bookSuccess": 95.2, 
-        "system": "Amber Purple", 
+        "system": "Brilliant Rose Dodie Yellow", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -380,10 +380,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3255", 
+        "country": "austria", 
+        "company": "Provider 9338", 
         "bookSuccess": 87.3, 
-        "system": "CG Red Dark Imperial Blue", 
+        "system": "Dust Storm British Racing Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -397,10 +397,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1584", 
+        "country": "canada", 
+        "company": "Provider 5976", 
         "bookSuccess": 99.1, 
-        "system": "Brandeis Blue Amaranth Purple", 
+        "system": "Cadmium Purple Battery Charged Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -416,10 +416,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2139", 
+        "country": "australia", 
+        "company": "Provider 8433", 
         "bookSuccess": 92.9, 
-        "system": "Cadet Blue Deep Carmine", 
+        "system": "Violet Dark Jungle Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -434,10 +434,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2484", 
+        "country": "australia", 
+        "company": "Provider 9089", 
         "bookSuccess": 98.9, 
-        "system": "Bronze Antique Ruby", 
+        "system": "Cadmium Yellow Dark Powder Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -449,10 +449,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9365", 
+        "country": "united states", 
+        "company": "Provider 9330", 
         "bookSuccess": 93.5, 
-        "system": "Bluebonnet Deep Red", 
+        "system": "Camel Blackberry", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -466,9 +466,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5088", 
+        "company": "Provider 4260", 
         "bookSuccess": 80.1, 
-        "system": "Corn Fluorescent Yellow", 
+        "system": "Fuchsia Amaranth Purple", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -479,10 +479,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9548", 
+        "country": "australia", 
+        "company": "Provider 2900", 
         "bookSuccess": 84.3, 
-        "system": "Brandeis Blue Dark Pastel Blue", 
+        "system": "Fuchsia (Crayola) Cadmium Orange", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -491,9 +491,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 5465", 
+        "company": "Provider 3198", 
         "bookSuccess": 92.6, 
-        "system": "Bright Cerulean Candy Apple Red", 
+        "system": "Dark Salmon Copper", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -503,10 +503,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7551", 
+        "country": "canada", 
+        "company": "Provider 7734", 
         "bookSuccess": 92.8, 
-        "system": "Firebrick Cornsilk", 
+        "system": "Cosmic Latte Cosmic Latte", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -519,10 +519,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3705", 
+        "country": "canada", 
+        "company": "Provider 1160", 
         "bookSuccess": 99.5, 
-        "system": "Brunswick Green Bright Pink", 
+        "system": "Aureolin Dark Olive Green", 
         "featuresSupported": [
             "Bookings include Expedia brand that traveler used"
         ], 
@@ -532,10 +532,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6136", 
+        "country": "argentina", 
+        "company": "Provider 1395", 
         "bookSuccess": 95.1, 
-        "system": "Dark Terra Cotta Burlywood", 
+        "system": "Dark Yellow Fawn", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -548,10 +548,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3261", 
+        "country": "austria", 
+        "company": "Provider 5801", 
         "bookSuccess": 92.3, 
-        "system": "Fandango Pink Bottle Green", 
+        "system": "Dark Tangerine Burnt Umber", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -564,10 +564,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4358", 
+        "country": "canada", 
+        "company": "Provider 9330", 
         "bookSuccess": 99.8, 
-        "system": "Forest Green (Web) Cerulean (Crayola)", 
+        "system": "Burnt Sienna Blast-Off Bronze", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -579,10 +579,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3054", 
+        "country": "united states", 
+        "company": "Provider 5940", 
         "bookSuccess": 100.0, 
-        "system": "Dark Chocolate Bright Lavender", 
+        "system": "Diamond Dark Pastel Green", 
         "featuresSupported": [
             "Bookings include Expedia brand that traveler used"
         ], 
@@ -597,10 +597,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5942", 
+        "country": "australia", 
+        "company": "Provider 1557", 
         "bookSuccess": 95.5, 
-        "system": "Brown Bright Lilac", 
+        "system": "Cosmic Cobalt Cherry", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -618,9 +618,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 6929", 
+        "company": "Provider 6283", 
         "bookSuccess": 86.6, 
-        "system": "Burlywood Cinereous", 
+        "system": "Carmine Dark Turquoise", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -628,10 +628,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8404", 
+        "country": "united states", 
+        "company": "Provider 3664", 
         "bookSuccess": 95.9, 
-        "system": "Dark Vanilla Charm Pink", 
+        "system": "Eton Blue Dark Slate Gray", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -645,10 +645,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1623", 
+        "country": "austria", 
+        "company": "Provider 4759", 
         "bookSuccess": 98.9, 
-        "system": "Dark Imperial Blue French Beige", 
+        "system": "Arctic Lime Deep Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -663,10 +663,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7931", 
+        "country": "canada", 
+        "company": "Provider 4984", 
         "bookSuccess": 99.5, 
-        "system": "Violet Chocolate Cosmos", 
+        "system": "Fallow Carmine Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -680,10 +680,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1372", 
+        "country": "united states", 
+        "company": "Provider 9871", 
         "bookSuccess": 86.5, 
-        "system": "Amber Brunswick Green", 
+        "system": "Apricot Burnt Umber", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -694,9 +694,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 4638", 
+        "company": "Provider 5272", 
         "bookSuccess": 85.2, 
-        "system": "Dark Terra Cotta French Blue", 
+        "system": "Azure Brass", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -712,10 +712,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6833", 
+        "country": "united states", 
+        "company": "Provider 4336", 
         "bookSuccess": 19.4, 
-        "system": "Azure Mist Crimson Red", 
+        "system": "Arylide Yellow Dark Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -723,10 +723,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9107", 
+        "country": "canada", 
+        "company": "Provider 8822", 
         "bookSuccess": 90.7, 
-        "system": "Banana Yellow Citrine Brown", 
+        "system": "Asparagus Dark Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -735,9 +735,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 7801", 
+        "company": "Provider 9342", 
         "bookSuccess": 95.3, 
-        "system": "Cadmium Purple Dark Turquoise", 
+        "system": "Bubble Gum Citrine Brown", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -745,10 +745,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9731", 
+        "country": "argentina", 
+        "company": "Provider 2485", 
         "bookSuccess": 99.8, 
-        "system": "Brown Yellow Electric Yellow", 
+        "system": "Apple Green Dollar Bill", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -760,10 +760,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9550", 
+        "country": "united states", 
+        "company": "Provider 4031", 
         "bookSuccess": null, 
-        "system": "Crimson Red Bone", 
+        "system": "Crystal Dark Sienna", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -772,9 +772,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 5638", 
+        "company": "Provider 2755", 
         "bookSuccess": 97.0, 
-        "system": "Artichoke Electric Brown", 
+        "system": "Brunswick Green Dark Pastel Purple", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -789,10 +789,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1873", 
+        "country": "australia", 
+        "company": "Provider 2513", 
         "bookSuccess": 94.6, 
-        "system": "Bright Navy Blue Amaranth", 
+        "system": "Ferrari Red Cetacean Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -804,10 +804,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7635", 
+        "country": "australia", 
+        "company": "Provider 5241", 
         "bookSuccess": 99.2, 
-        "system": "Electric Lavender Fandango Pink", 
+        "system": "Fallow Dark Cerulean", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -822,10 +822,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5228", 
+        "country": "australia", 
+        "company": "Provider 8838", 
         "bookSuccess": 96.6, 
-        "system": "Flattery Byzantium", 
+        "system": "Brown Chocolate Brilliant Azure", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -838,9 +838,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 8461", 
+        "company": "Provider 1268", 
         "bookSuccess": 99.9, 
-        "system": "Bazaar Amethyst", 
+        "system": "Alice Blue Violet", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -855,10 +855,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8344", 
+        "country": "canada", 
+        "company": "Provider 5705", 
         "bookSuccess": 98.2, 
-        "system": "Cultured Citrine Brown", 
+        "system": "Auburn Desaturated Cyan", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -871,10 +871,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2327", 
+        "country": "canada", 
+        "company": "Provider 6423", 
         "bookSuccess": 94.7, 
-        "system": "Azure Electric Purple", 
+        "system": "Dark Silver Cadet Grey", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -882,10 +882,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1696", 
+        "country": "argentina", 
+        "company": "Provider 3340", 
         "bookSuccess": 80.0, 
-        "system": "Fashion Fuchsia Blue-Green (Color Wheel)", 
+        "system": "Electric Red Cornell Red", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -899,10 +899,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4296", 
+        "country": "australia", 
+        "company": "Provider 7345", 
         "bookSuccess": 99.5, 
-        "system": "Carolina Blue Bubbles", 
+        "system": "Congo Pink Brass", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -917,10 +917,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1728", 
+        "country": "australia", 
+        "company": "Provider 2520", 
         "bookSuccess": 96.7, 
-        "system": "Azure Bright Gray", 
+        "system": "Cardinal Desert", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -935,10 +935,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2805", 
+        "country": "austria", 
+        "company": "Provider 4940", 
         "bookSuccess": 98.8, 
-        "system": "China Pink Fashion Fuchsia", 
+        "system": "Burlywood Blackberry", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -952,10 +952,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8184", 
+        "country": "united states", 
+        "company": "Provider 4811", 
         "bookSuccess": 89.1, 
-        "system": "French Bistre Dark Blue", 
+        "system": "Flavescent Flattery", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -970,10 +970,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8641", 
+        "country": "argentina", 
+        "company": "Provider 8933", 
         "bookSuccess": 93.9, 
-        "system": "Chocolate Kisses Cornflower Blue", 
+        "system": "Cetacean Blue Deep Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -985,10 +985,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8728", 
+        "country": "australia", 
+        "company": "Provider 1413", 
         "bookSuccess": 86.1, 
-        "system": "Cinnabar Copper Penny", 
+        "system": "Bole Dark Spring Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1004,10 +1004,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4322", 
+        "country": "canada", 
+        "company": "Provider 6410", 
         "bookSuccess": null, 
-        "system": "Charm Pink Caribbean Green", 
+        "system": "Coral Congo Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -1017,10 +1017,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5522", 
+        "country": "austria", 
+        "company": "Provider 2221", 
         "bookSuccess": 95.8, 
-        "system": "Blackberry Eggshell", 
+        "system": "Amaranth Deep Purple Battery Charged Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -1028,10 +1028,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3982", 
+        "country": "australia", 
+        "company": "Provider 1119", 
         "bookSuccess": 93.0, 
-        "system": "Cadet Blue (Crayola) Davy's Grey", 
+        "system": "Alizarin Crimson Desert Sand", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1043,10 +1043,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1416", 
+        "country": "united states", 
+        "company": "Provider 9684", 
         "bookSuccess": 95.4, 
-        "system": "Banana Mania French Blue", 
+        "system": "Dim Gray Camel", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1059,10 +1059,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8004", 
+        "country": "united states", 
+        "company": "Provider 4371", 
         "bookSuccess": 96.7, 
-        "system": "Bitter Lime Alice Blue", 
+        "system": "Dark Pastel Green Blue Sapphire", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1074,10 +1074,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5635", 
+        "country": "argentina", 
+        "company": "Provider 7660", 
         "bookSuccess": 97.9, 
-        "system": "Bronze Yellow Dark Orchid", 
+        "system": "Dark Cornflower Blue Orchid", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1094,9 +1094,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5867", 
+        "company": "Provider 6366", 
         "bookSuccess": 98.4, 
-        "system": "Dark Khaki Aero", 
+        "system": "Earth Yellow Cyan Azure", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1113,9 +1113,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 1849", 
+        "company": "Provider 3283", 
         "bookSuccess": 98.1, 
-        "system": "Fiery Rose Carrot Orange", 
+        "system": "Blue-Gray Cadmium Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1126,10 +1126,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5810", 
+        "country": "argentina", 
+        "company": "Provider 3335", 
         "bookSuccess": 99.2, 
-        "system": "Bone Champagne Pink", 
+        "system": "Dark Terra Cotta Dark Cerulean", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1144,10 +1144,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1213", 
+        "country": "australia", 
+        "company": "Provider 6417", 
         "bookSuccess": 85.7, 
-        "system": "Camouflage Green Arylide Yellow", 
+        "system": "Chartreuse (Web) Dark Tangerine", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1159,10 +1159,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1022", 
+        "country": "canada", 
+        "company": "Provider 9966", 
         "bookSuccess": 98.0, 
-        "system": "Charcoal Cambridge Blue", 
+        "system": "Aero Deep Spring Bud", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1176,10 +1176,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6148", 
+        "country": "austria", 
+        "company": "Provider 3359", 
         "bookSuccess": 97.4, 
-        "system": "Deep Carrot Orange Citrine Brown", 
+        "system": "Dark Goldenrod Candy Apple Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1194,9 +1194,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5279", 
+        "company": "Provider 6673", 
         "bookSuccess": 99.3, 
-        "system": "Bright Gray Electric Green", 
+        "system": "Flame Eggplant", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1205,9 +1205,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 8761", 
+        "company": "Provider 7375", 
         "bookSuccess": 96.0, 
-        "system": "Dark Pink Carrot Orange", 
+        "system": "Alizarin Crimson Fire Opal", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -1216,9 +1216,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 6387", 
+        "company": "Provider 4219", 
         "bookSuccess": 36.5, 
-        "system": "Claret Cerulean", 
+        "system": "Cornflower Fashion Fuchsia", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1229,10 +1229,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7245", 
+        "country": "united states", 
+        "company": "Provider 3253", 
         "bookSuccess": 99.3, 
-        "system": "Dark Magenta Conditioner", 
+        "system": "Earth Yellow Black", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1247,10 +1247,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6703", 
+        "country": "canada", 
+        "company": "Provider 7394", 
         "bookSuccess": 98.2, 
-        "system": "Acajou Dark Magenta", 
+        "system": "Cerulean Frost Castleton Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1263,9 +1263,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 3182", 
+        "company": "Provider 8444", 
         "bookSuccess": 99.9, 
-        "system": "Electric Ultramarine Blue-Green (Color Wheel)", 
+        "system": "Cerise Coral Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -1283,9 +1283,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 2361", 
+        "company": "Provider 3286", 
         "bookSuccess": 95.3, 
-        "system": "Arylide Yellow French Plum", 
+        "system": "Bronze Yellow Electric Lime", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -1293,10 +1293,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7372", 
+        "country": "canada", 
+        "company": "Provider 8196", 
         "bookSuccess": 98.6, 
-        "system": "Chocolate Cerulean (Crayola)", 
+        "system": "Bright Yellow (Crayola) Baby Powder", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Property content synced with Expedia", 
@@ -1313,10 +1313,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3611", 
+        "country": "united states", 
+        "company": "Provider 7286", 
         "bookSuccess": 96.2, 
-        "system": "Apricot Deep Red", 
+        "system": "Copper Calamansi", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -1324,10 +1324,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5421", 
+        "country": "austria", 
+        "company": "Provider 1024", 
         "bookSuccess": 85.9, 
-        "system": "Beige Black Olive", 
+        "system": "Celadon Green Feldgrau", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1340,10 +1340,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4304", 
+        "country": "argentina", 
+        "company": "Provider 9735", 
         "bookSuccess": 99.5, 
-        "system": "Ateneo Blue Deer", 
+        "system": "Fallow Flavescent", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1356,10 +1356,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6990", 
+        "country": "australia", 
+        "company": "Provider 3430", 
         "bookSuccess": 97.5, 
-        "system": "Black Shadows Dark Salmon", 
+        "system": "Alloy Orange Forest Green (Crayola)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -1373,10 +1373,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8381", 
+        "country": "canada", 
+        "company": "Provider 5318", 
         "bookSuccess": 33.9, 
-        "system": "Flavescent Dodie Yellow", 
+        "system": "Boston University Red Cameo Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1388,10 +1388,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2159", 
+        "country": "australia", 
+        "company": "Provider 1204", 
         "bookSuccess": 99.2, 
-        "system": "Falu Red Dark Bronze", 
+        "system": "Black Olive Forest Green (Crayola)", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1400,9 +1400,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 3202", 
+        "company": "Provider 8639", 
         "bookSuccess": 99.8, 
-        "system": "Dark Orchid Deep Green-Cyan Turquoise", 
+        "system": "Baby Pink Burnt Umber", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1415,10 +1415,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5376", 
+        "country": "united states", 
+        "company": "Provider 6218", 
         "bookSuccess": 95.6, 
-        "system": "French Fuchsia Brunswick Green", 
+        "system": "Brown Yellow Cerise", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1429,10 +1429,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5633", 
+        "country": "australia", 
+        "company": "Provider 2856", 
         "bookSuccess": 99.4, 
-        "system": "Deep Chestnut Deep Carrot Orange", 
+        "system": "Calamansi Copper Rose", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1446,10 +1446,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4055", 
+        "country": "argentina", 
+        "company": "Provider 2572", 
         "bookSuccess": 94.5, 
-        "system": "Cedar Chest Cookies And Cream", 
+        "system": "Eggplant Coral Pink", 
         "featuresSupported": [
             "Eligible to receive Expedia guest cardholder data"
         ], 
@@ -1459,10 +1459,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6323", 
+        "country": "austria", 
+        "company": "Provider 5337", 
         "bookSuccess": 85.4, 
-        "system": "Copper Rose Deep Tuscan Red", 
+        "system": "Antique Brass Dark Jungle Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1475,10 +1475,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4326", 
+        "country": "canada", 
+        "company": "Provider 2888", 
         "bookSuccess": 99.5, 
-        "system": "Dust Storm Feldspar", 
+        "system": "Egyptian Blue Copper", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1496,9 +1496,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 8638", 
+        "company": "Provider 9954", 
         "bookSuccess": 97.2, 
-        "system": "Bubble Gum Bright Green", 
+        "system": "Apple Davy's Grey", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1513,10 +1513,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4784", 
+        "country": "argentina", 
+        "company": "Provider 8289", 
         "bookSuccess": 98.9, 
-        "system": "Fuchsia Rose Forest Green (Crayola)", 
+        "system": "Dark Red China Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1529,10 +1529,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7445", 
+        "country": "argentina", 
+        "company": "Provider 7234", 
         "bookSuccess": 99.5, 
-        "system": "Denim Blue Deep Amethyst", 
+        "system": "Cadet Blue Atomic Tangerine", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1548,10 +1548,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1068", 
+        "country": "austria", 
+        "company": "Provider 7419", 
         "bookSuccess": 98.6, 
-        "system": "Cyber Yellow Beau Blue", 
+        "system": "Chestnut Deep Cerise", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1566,10 +1566,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5014", 
+        "country": "united states", 
+        "company": "Provider 9697", 
         "bookSuccess": 99.9, 
-        "system": "Dollar Bill Fiery Rose", 
+        "system": "Banana Yellow Dark Yellow", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1585,10 +1585,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5391", 
+        "country": "canada", 
+        "company": "Provider 8676", 
         "bookSuccess": 98.9, 
-        "system": "Blizzard Blue Bubble Gum", 
+        "system": "Cyan Bright Turquoise", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1599,10 +1599,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1003", 
+        "country": "united states", 
+        "company": "Provider 4027", 
         "bookSuccess": 98.8, 
-        "system": "Byzantium Feldspar", 
+        "system": "Dark Imperial Blue Dodie Yellow", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1612,10 +1612,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4070", 
+        "country": "australia", 
+        "company": "Provider 4040", 
         "bookSuccess": 98.2, 
-        "system": "Dark Purple Feldgrau", 
+        "system": "Chlorophyll Green Burnished Brown", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1627,10 +1627,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9710", 
+        "country": "australia", 
+        "company": "Provider 3347", 
         "bookSuccess": 81.8, 
-        "system": "Chocolate Dark Moss Green", 
+        "system": "Cyber Grape Dark Lava", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1641,10 +1641,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9065", 
+        "country": "australia", 
+        "company": "Provider 5692", 
         "bookSuccess": 99.8, 
-        "system": "Cornflower Blue French Lime", 
+        "system": "Deep Lemon Blue Sapphire", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1656,10 +1656,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4450", 
+        "country": "australia", 
+        "company": "Provider 4114", 
         "bookSuccess": 89.9, 
-        "system": "Bistre Azure Mist", 
+        "system": "Chocolate Cosmos Deep Fuchsia", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1672,10 +1672,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7974", 
+        "country": "austria", 
+        "company": "Provider 1594", 
         "bookSuccess": 88.5, 
-        "system": "Electric Lime Cosmic Cobalt", 
+        "system": "Desaturated Cyan Blue-Gray", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1688,10 +1688,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4384", 
+        "country": "australia", 
+        "company": "Provider 9078", 
         "bookSuccess": 92.6, 
-        "system": "Deep Puce Deep Green-Cyan Turquoise", 
+        "system": "Charm Pink Denim", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1704,10 +1704,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8293", 
+        "country": "canada", 
+        "company": "Provider 7921", 
         "bookSuccess": 94.8, 
-        "system": "Dark Salmon Dark Brown-Tangelo", 
+        "system": "Eminence Blue Bolt", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1720,10 +1720,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5400", 
+        "country": "united states", 
+        "company": "Provider 1840", 
         "bookSuccess": 97.3, 
-        "system": "Deep Mauve Eggplant", 
+        "system": "Bubble Gum Cornflower Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1737,9 +1737,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 4061", 
+        "company": "Provider 2488", 
         "bookSuccess": 99.1, 
-        "system": "Conditioner Brick Red", 
+        "system": "Deep Koamaru Deep Koamaru", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1753,9 +1753,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 4878", 
+        "company": "Provider 9019", 
         "bookSuccess": 85.4, 
-        "system": "Congo Pink Blue Jeans", 
+        "system": "Dark Powder Blue Electric Crimson", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -1767,10 +1767,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4075", 
+        "country": "argentina", 
+        "company": "Provider 5420", 
         "bookSuccess": 98.4, 
-        "system": "Dandelion (Crayola) Dark Bronze", 
+        "system": "Coral Red Aero", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -1778,10 +1778,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3157", 
+        "country": "austria", 
+        "company": "Provider 3333", 
         "bookSuccess": 98.1, 
-        "system": "Celadon Green French Fuchsia", 
+        "system": "Deep Spring Bud Citron", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1796,9 +1796,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 3590", 
+        "company": "Provider 7766", 
         "bookSuccess": 99.9, 
-        "system": "Bright Cerulean Folly", 
+        "system": "Orange Alabama Crimson", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1811,10 +1811,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2386", 
+        "country": "argentina", 
+        "company": "Provider 5478", 
         "bookSuccess": 98.7, 
-        "system": "Carolina Blue Ferrari Red", 
+        "system": "Cal Poly Pomona Green Dark Spring Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1829,10 +1829,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6835", 
+        "country": "argentina", 
+        "company": "Provider 3077", 
         "bookSuccess": 95.0, 
-        "system": "French Rose Cosmic Latte", 
+        "system": "Deep Pink Dark Silver", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1848,9 +1848,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 8289", 
+        "company": "Provider 7489", 
         "bookSuccess": 87.7, 
-        "system": "Dark Puce Eucalyptus", 
+        "system": "Crystal Blue Carmine Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1862,10 +1862,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5664", 
+        "country": "argentina", 
+        "company": "Provider 8055", 
         "bookSuccess": 85.5, 
-        "system": "Charcoal Deep Coffee", 
+        "system": "Electric Purple Chartreuse", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1878,10 +1878,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6244", 
+        "country": "australia", 
+        "company": "Provider 3694", 
         "bookSuccess": 80.9, 
-        "system": "Calamansi Black Chocolate", 
+        "system": "Canary Cal Poly Pomona Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1894,10 +1894,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6417", 
+        "country": "austria", 
+        "company": "Provider 3968", 
         "bookSuccess": null, 
-        "system": "Dark Chocolate French Beige", 
+        "system": "Chocolate Brown Bright Gray", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1905,10 +1905,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9588", 
+        "country": "canada", 
+        "company": "Provider 4103", 
         "bookSuccess": 96.6, 
-        "system": "Brandeis Blue Crystal Blue", 
+        "system": "Fern Green Dark Pastel Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1923,10 +1923,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5653", 
+        "country": "canada", 
+        "company": "Provider 4980", 
         "bookSuccess": 98.0, 
-        "system": "French Puce Antique Fuchsia", 
+        "system": "Bright Ube Blue Sapphire", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -1934,10 +1934,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2420", 
+        "country": "united states", 
+        "company": "Provider 7262", 
         "bookSuccess": 99.1, 
-        "system": "Celeste Antique Fuchsia", 
+        "system": "Crystal Cool Black", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1952,10 +1952,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8375", 
+        "country": "united states", 
+        "company": "Provider 1183", 
         "bookSuccess": 99.3, 
-        "system": "Artichoke Chlorophyll Green", 
+        "system": "Bondi Blue Black Bean", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1971,10 +1971,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2150", 
+        "country": "united states", 
+        "company": "Provider 9305", 
         "bookSuccess": 98.7, 
-        "system": "Blanched Almond Aztec Gold", 
+        "system": "Baby Blue Eyes Eminence", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1988,10 +1988,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2600", 
+        "country": "canada", 
+        "company": "Provider 8356", 
         "bookSuccess": 15.8, 
-        "system": "Fire Engine Red Acid Green", 
+        "system": "Antique Brass Blue-Gray", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Property content synced with Expedia", 
@@ -2003,10 +2003,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2078", 
+        "country": "canada", 
+        "company": "Provider 7066", 
         "bookSuccess": 99.6, 
-        "system": "Bright Cerulean Deep Ruby", 
+        "system": "Blue-Green (Color Wheel) Army Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2018,10 +2018,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2025", 
+        "country": "united states", 
+        "company": "Provider 2821", 
         "bookSuccess": 98.0, 
-        "system": "Apricot Eminence", 
+        "system": "Deep Green-Cyan Turquoise Coral", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2037,10 +2037,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4182", 
+        "country": "argentina", 
+        "company": "Provider 4718", 
         "bookSuccess": 96.6, 
-        "system": "Carmine Red Dark Candy Apple Red", 
+        "system": "Fire Engine Red Deep Lemon", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2054,10 +2054,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5911", 
+        "country": "united states", 
+        "company": "Provider 3109", 
         "bookSuccess": 86.8, 
-        "system": "Alloy Orange Byzantium", 
+        "system": "Calamansi Bulgarian Rose", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -2065,10 +2065,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5587", 
+        "country": "argentina", 
+        "company": "Provider 4180", 
         "bookSuccess": 97.8, 
-        "system": "Bright Lilac Eerie Black", 
+        "system": "Dark Lavender Bistre Brown", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2080,10 +2080,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1232", 
+        "country": "canada", 
+        "company": "Provider 5712", 
         "bookSuccess": 86.2, 
-        "system": "Eton Blue Blue-Violet (Crayola)", 
+        "system": "Blue-Gray Fresh Air", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -2091,10 +2091,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4921", 
+        "country": "argentina", 
+        "company": "Provider 1864", 
         "bookSuccess": 86.2, 
-        "system": "Artichoke Cinnabar", 
+        "system": "Dark Electric Blue Antique Ruby", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2106,10 +2106,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9470", 
+        "country": "austria", 
+        "company": "Provider 4017", 
         "bookSuccess": 97.3, 
-        "system": "Brandeis Blue Chartreuse", 
+        "system": "Fuchsia (Crayola) Deep Carrot Orange", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -2129,9 +2129,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 6410", 
+        "company": "Provider 8341", 
         "bookSuccess": 97.5, 
-        "system": "Bone Maroon", 
+        "system": "Baby Blue Eyes Deep Tuscan Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2148,9 +2148,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 7605", 
+        "company": "Provider 6413", 
         "bookSuccess": 99.1, 
-        "system": "Fandango Pink Cadmium Blue", 
+        "system": "Cadmium Purple Cameo Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2160,10 +2160,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9384", 
+        "country": "canada", 
+        "company": "Provider 2813", 
         "bookSuccess": 91.6, 
-        "system": "Cadmium Orange Dark Bronze (Coin)", 
+        "system": "Emerald Green Champagne", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2176,10 +2176,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3305", 
+        "country": "austria", 
+        "company": "Provider 3194", 
         "bookSuccess": 84.0, 
-        "system": "Cotton Candy Claret", 
+        "system": "Flame Caribbean Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2193,10 +2193,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5792", 
+        "country": "australia", 
+        "company": "Provider 6555", 
         "bookSuccess": 99.4, 
-        "system": "Booger Buster Deep Chestnut", 
+        "system": "Electric Violet Cherry", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2212,10 +2212,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8764", 
+        "country": "australia", 
+        "company": "Provider 2802", 
         "bookSuccess": 99.6, 
-        "system": "Blueberry Cadet Blue", 
+        "system": "Blue-Green (Color Wheel) Dark Purple", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2231,10 +2231,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7454", 
+        "country": "argentina", 
+        "company": "Provider 7828", 
         "bookSuccess": 97.5, 
-        "system": "Deep Spring Bud Flavescent", 
+        "system": "Cheese Dark Sea Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2248,10 +2248,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9285", 
+        "country": "australia", 
+        "company": "Provider 2684", 
         "bookSuccess": 87.9, 
-        "system": "Atomic Tangerine Dark Medium Gray", 
+        "system": "Dark Olive Green Fandango Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2262,10 +2262,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1806", 
+        "country": "united states", 
+        "company": "Provider 8487", 
         "bookSuccess": 98.8, 
-        "system": "Carmine (M&P) Blood Orange", 
+        "system": "Cyan Cobalt Blue Drab", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2277,9 +2277,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 2451", 
+        "company": "Provider 8060", 
         "bookSuccess": 98.3, 
-        "system": "Cadet Blue (Crayola) Electric Crimson", 
+        "system": "Dark Moss Green Cerise", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2294,10 +2294,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2378", 
+        "country": "australia", 
+        "company": "Provider 4944", 
         "bookSuccess": 98.2, 
-        "system": "Dark Chocolate Teal", 
+        "system": "Dark Powder Blue Cyan Cornflower Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2312,10 +2312,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8994", 
+        "country": "australia", 
+        "company": "Provider 5047", 
         "bookSuccess": 99.5, 
-        "system": "French Sky Blue Crimson Red", 
+        "system": "Dark Moss Green Bronze (Metallic)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2331,9 +2331,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 6006", 
+        "company": "Provider 5060", 
         "bookSuccess": 96.4, 
-        "system": "Fuchsia Rose Blood Orange", 
+        "system": "Coral Reef Columbia Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -2343,10 +2343,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3421", 
+        "country": "united states", 
+        "company": "Provider 3888", 
         "bookSuccess": 98.4, 
-        "system": "Antique Ruby Alabama Crimson", 
+        "system": "Black Coffee Charcoal", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2361,10 +2361,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4489", 
+        "country": "australia", 
+        "company": "Provider 7804", 
         "bookSuccess": 97.0, 
-        "system": "Black Leather Jacket Chamoisee", 
+        "system": "Desaturated Cyan Bistre Brown", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2380,9 +2380,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 1922", 
+        "company": "Provider 3428", 
         "bookSuccess": 99.1, 
-        "system": "Fandango Cyan (Process)", 
+        "system": "Acajou Cyclamen", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2396,10 +2396,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8227", 
+        "country": "australia", 
+        "company": "Provider 4545", 
         "bookSuccess": 94.9, 
-        "system": "Blue Bolt Dark Slate Gray", 
+        "system": "Debian Red Bisque", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2414,10 +2414,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9946", 
+        "country": "canada", 
+        "company": "Provider 9245", 
         "bookSuccess": 99.5, 
-        "system": "Blanched Almond Chartreuse (Web)", 
+        "system": "Citrine Brown Electric Purple", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2429,10 +2429,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8842", 
+        "country": "austria", 
+        "company": "Provider 8187", 
         "bookSuccess": 99.4, 
-        "system": "Castleton Green Dark Green (X11)", 
+        "system": "Charm Pink Cal Poly Pomona Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2447,10 +2447,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4473", 
+        "country": "austria", 
+        "company": "Provider 1339", 
         "bookSuccess": 99.3, 
-        "system": "Celtic Blue Chocolate (Web)", 
+        "system": "Forest Green (Crayola) Desire", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2465,10 +2465,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6079", 
+        "country": "canada", 
+        "company": "Provider 6542", 
         "bookSuccess": 99.8, 
-        "system": "Boston University Red Bright Cerulean", 
+        "system": "Bright Pink Blackberry", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2483,10 +2483,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3841", 
+        "country": "canada", 
+        "company": "Provider 8211", 
         "bookSuccess": 99.0, 
-        "system": "Brown Coffee Cadet", 
+        "system": "Blue-Gray Amethyst", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2501,10 +2501,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6020", 
+        "country": "australia", 
+        "company": "Provider 8126", 
         "bookSuccess": 99.5, 
-        "system": "Crystal Blue Carmine (M&P)", 
+        "system": "Dark Pastel Green Crimson", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2519,10 +2519,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3220", 
+        "country": "canada", 
+        "company": "Provider 2494", 
         "bookSuccess": 99.7, 
-        "system": "Fuchsia Rose Fresh Air", 
+        "system": "Deep Amethyst Dark Violet", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2537,10 +2537,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2122", 
+        "country": "argentina", 
+        "company": "Provider 1248", 
         "bookSuccess": 97.7, 
-        "system": "Dark Raspberry Eggplant", 
+        "system": "Azure Mist Dark Tan", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2555,10 +2555,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2971", 
+        "country": "australia", 
+        "company": "Provider 2129", 
         "bookSuccess": 99.6, 
-        "system": "Aquamarine Blueberry", 
+        "system": "Dark Khaki Black Coffee", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2573,10 +2573,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7123", 
+        "country": "united states", 
+        "company": "Provider 6387", 
         "bookSuccess": 79.3, 
-        "system": "Dollar Bill Dark Moss Green", 
+        "system": "Electric Green Copper Penny", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2588,10 +2588,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4468", 
+        "country": "argentina", 
+        "company": "Provider 3035", 
         "bookSuccess": 99.9, 
-        "system": "French Rose Dogwood Rose", 
+        "system": "Desert Chocolate Cosmos", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2603,10 +2603,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3169", 
+        "country": "australia", 
+        "company": "Provider 4417", 
         "bookSuccess": 100.0, 
-        "system": "Dark Imperial Blue Carmine (M&P)", 
+        "system": "Deep Lemon China Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2619,10 +2619,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8713", 
+        "country": "united states", 
+        "company": "Provider 1228", 
         "bookSuccess": 85.2, 
-        "system": "Dark Gunmetal Deep Spring Bud", 
+        "system": "Cotton Candy Eerie Black", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -2630,10 +2630,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7435", 
+        "country": "united states", 
+        "company": "Provider 4790", 
         "bookSuccess": 87.6, 
-        "system": "Bubbles Corn", 
+        "system": "Amaranth Purple Banana Mania", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2645,10 +2645,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9073", 
+        "country": "canada", 
+        "company": "Provider 3788", 
         "bookSuccess": 100.0, 
-        "system": "Firebrick Antique Fuchsia", 
+        "system": "Dark Puce CG Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2663,10 +2663,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1615", 
+        "country": "argentina", 
+        "company": "Provider 5753", 
         "bookSuccess": 80.4, 
-        "system": "French Lime Corn", 
+        "system": "Begonia Cinnamon[Citation Needed]", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2680,9 +2680,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 8754", 
+        "company": "Provider 8389", 
         "bookSuccess": 98.6, 
-        "system": "Cyan Black Chocolate", 
+        "system": "Cyan Azure Antique Ruby", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2695,10 +2695,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7882", 
+        "country": "canada", 
+        "company": "Provider 2821", 
         "bookSuccess": 99.5, 
-        "system": "Baby Powder Cordovan", 
+        "system": "Egyptian Blue Byzantium", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2712,10 +2712,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1630", 
+        "country": "austria", 
+        "company": "Provider 6705", 
         "bookSuccess": 99.4, 
-        "system": "Dark Midnight Blue Caramel", 
+        "system": "Bright Maroon Dim Gray", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2730,9 +2730,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 1990", 
+        "company": "Provider 8984", 
         "bookSuccess": 97.2, 
-        "system": "Feldspar Dollar Bill", 
+        "system": "Blue Yonder Begonia", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2747,10 +2747,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6348", 
+        "country": "australia", 
+        "company": "Provider 7858", 
         "bookSuccess": 99.1, 
-        "system": "Antique Ruby Fandango Pink", 
+        "system": "Coquelicot China Rose", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2762,10 +2762,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4232", 
+        "country": "united states", 
+        "company": "Provider 1561", 
         "bookSuccess": 90.2, 
-        "system": "Copper Red Black Coffee", 
+        "system": "Bulgarian Rose Electric Indigo", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2778,10 +2778,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2208", 
+        "country": "canada", 
+        "company": "Provider 8456", 
         "bookSuccess": 69.1, 
-        "system": "Feldspar Coconut", 
+        "system": "Cerise Pink Cinnamon Satin", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2793,10 +2793,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4646", 
+        "country": "australia", 
+        "company": "Provider 2550", 
         "bookSuccess": 100.0, 
-        "system": "Beau Blue Bazaar", 
+        "system": "Bright Maroon Chlorophyll Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2811,10 +2811,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1449", 
+        "country": "australia", 
+        "company": "Provider 1572", 
         "bookSuccess": 85.3, 
-        "system": "Barn Red Blue Bell", 
+        "system": "Black Blanched Almond", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2829,10 +2829,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1839", 
+        "country": "australia", 
+        "company": "Provider 8218", 
         "bookSuccess": 92.1, 
-        "system": "Falu Red Conditioner", 
+        "system": "Amaranth Pink Catawba", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2845,10 +2845,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9076", 
+        "country": "argentina", 
+        "company": "Provider 6885", 
         "bookSuccess": 91.2, 
-        "system": "Dark Byzantium Dogwood Rose", 
+        "system": "Chlorophyll Green Dark Slate Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2863,9 +2863,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 4296", 
+        "company": "Provider 8223", 
         "bookSuccess": 99.8, 
-        "system": "Chlorophyll Green Dark Sienna", 
+        "system": "Black Ferrari Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -2873,10 +2873,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8140", 
+        "country": "austria", 
+        "company": "Provider 1262", 
         "bookSuccess": 99.2, 
-        "system": "Dark Moss Green Bangladesh Green", 
+        "system": "Deep Amethyst Blueberry", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2889,10 +2889,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7207", 
+        "country": "canada", 
+        "company": "Provider 2316", 
         "bookSuccess": 99.0, 
-        "system": "Button Blue Fuchsia (Crayola)", 
+        "system": "Dark Powder Blue Dutch White", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2907,10 +2907,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2673", 
+        "country": "canada", 
+        "company": "Provider 1107", 
         "bookSuccess": 82.4, 
-        "system": "Deep Lilac Bubble Gum", 
+        "system": "Electric Lavender Bright Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2923,10 +2923,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8769", 
+        "country": "united states", 
+        "company": "Provider 8970", 
         "bookSuccess": 98.3, 
-        "system": "Fluorescent Orange Copper", 
+        "system": "Dark Blue Dark Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2939,9 +2939,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 6013", 
+        "company": "Provider 4682", 
         "bookSuccess": 99.2, 
-        "system": "Cream Columbia Blue", 
+        "system": "Cyber Yellow Bulgarian Rose", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2955,10 +2955,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5979", 
+        "country": "united states", 
+        "company": "Provider 6460", 
         "bookSuccess": 97.5, 
-        "system": "Deep Amethyst Coral", 
+        "system": "Dark Lemon Lime Maroon", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2970,10 +2970,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7157", 
+        "country": "austria", 
+        "company": "Provider 5766", 
         "bookSuccess": 79.7, 
-        "system": "Dark Bronze Amaranth Deep Purple", 
+        "system": "Apricot Dark Chestnut", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -2984,9 +2984,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 8466", 
+        "company": "Provider 1109", 
         "bookSuccess": 99.4, 
-        "system": "Electric Blue Deep Koamaru", 
+        "system": "Dark Violet Brown", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3001,10 +3001,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6989", 
+        "country": "austria", 
+        "company": "Provider 3659", 
         "bookSuccess": 99.8, 
-        "system": "Flame Charm Pink", 
+        "system": "Deep Lemon Emerald", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3018,10 +3018,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2772", 
+        "country": "argentina", 
+        "company": "Provider 2765", 
         "bookSuccess": 99.6, 
-        "system": "Fallow Eminence", 
+        "system": "Cerise Cadet Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3031,10 +3031,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4478", 
+        "country": "austria", 
+        "company": "Provider 6790", 
         "bookSuccess": 99.5, 
-        "system": "Copper Penny Burnished Brown", 
+        "system": "Cal Poly Pomona Green Blood Orange", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3047,10 +3047,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7203", 
+        "country": "australia", 
+        "company": "Provider 3783", 
         "bookSuccess": 99.5, 
-        "system": "Chocolate (Web) Carmine Red", 
+        "system": "Candy Pink Amaranth Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3062,10 +3062,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5216", 
+        "country": "argentina", 
+        "company": "Provider 6451", 
         "bookSuccess": 99.6, 
-        "system": "Deep Red Firebrick", 
+        "system": "Blue Bole", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3081,10 +3081,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3901", 
+        "country": "united states", 
+        "company": "Provider 8928", 
         "bookSuccess": 97.8, 
-        "system": "Black Bean Chartreuse", 
+        "system": "Maroon Deep Amethyst", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3097,10 +3097,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2650", 
+        "country": "australia", 
+        "company": "Provider 7980", 
         "bookSuccess": 99.2, 
-        "system": "Copper Penny Coral Reef", 
+        "system": "Dark Medium Gray Brandeis Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3113,10 +3113,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6273", 
+        "country": "austria", 
+        "company": "Provider 4437", 
         "bookSuccess": 88.9, 
-        "system": "Bitter Lemon Deep Carrot Orange", 
+        "system": "Carnelian Dark Taupe", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3131,10 +3131,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9842", 
+        "country": "austria", 
+        "company": "Provider 8622", 
         "bookSuccess": 96.0, 
-        "system": "Blue-Violet (Crayola) Frostbite", 
+        "system": "Blue-Green (Color Wheel) Cool Black", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -3142,10 +3142,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7696", 
+        "country": "united states", 
+        "company": "Provider 7712", 
         "bookSuccess": 99.6, 
-        "system": "Deep Carmine Copper Penny", 
+        "system": "Cadet Grey Chocolate Kisses", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3156,10 +3156,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9541", 
+        "country": "united states", 
+        "company": "Provider 9276", 
         "bookSuccess": 97.4, 
-        "system": "Cotton Candy Blue-Magenta Violet", 
+        "system": "AuroMetalSaurus Dark Olive Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3174,10 +3174,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9250", 
+        "country": "canada", 
+        "company": "Provider 5131", 
         "bookSuccess": 99.7, 
-        "system": "French Sky Blue Indigo", 
+        "system": "Cerulean Blood Orange", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3191,10 +3191,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6125", 
+        "country": "canada", 
+        "company": "Provider 2786", 
         "bookSuccess": 81.4, 
-        "system": "Caribbean Green Bittersweet Shimmer", 
+        "system": "Brandeis Blue Deep Moss Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3202,10 +3202,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7036", 
+        "country": "canada", 
+        "company": "Provider 5854", 
         "bookSuccess": 99.6, 
-        "system": "Android Green Electric Purple", 
+        "system": "CG Blue Cambridge Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3215,10 +3215,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5180", 
+        "country": "austria", 
+        "company": "Provider 8850", 
         "bookSuccess": 99.1, 
-        "system": "Burlywood Amazonite", 
+        "system": "Deep Lemon Bistre", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3231,10 +3231,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6850", 
+        "country": "argentina", 
+        "company": "Provider 9720", 
         "bookSuccess": 99.1, 
-        "system": "French Rose French Blue", 
+        "system": "Dark Cerulean Bistre", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3248,9 +3248,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 2143", 
+        "company": "Provider 2776", 
         "bookSuccess": 99.8, 
-        "system": "French Rose Coquelicot", 
+        "system": "Antique Ruby Celestial Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3258,10 +3258,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1577", 
+        "country": "argentina", 
+        "company": "Provider 6519", 
         "bookSuccess": 99.3, 
-        "system": "Blue Bolt Cedar Chest", 
+        "system": "Cerise Crimson Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3269,10 +3269,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2749", 
+        "country": "canada", 
+        "company": "Provider 5477", 
         "bookSuccess": 99.9, 
-        "system": "Daffodil Ash Gray", 
+        "system": "Amazon Deep Carmine Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3280,10 +3280,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2482", 
+        "country": "australia", 
+        "company": "Provider 7463", 
         "bookSuccess": 86.8, 
-        "system": "French Violet Auburn", 
+        "system": "Battleship Grey Bleu De France", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -3292,9 +3292,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5087", 
+        "company": "Provider 2092", 
         "bookSuccess": 41.0, 
-        "system": "Deep Carmine Castleton Green", 
+        "system": "Battery Charged Blue Celadon Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3302,10 +3302,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5347", 
+        "country": "australia", 
+        "company": "Provider 3242", 
         "bookSuccess": 99.8, 
-        "system": "Dark Powder Blue Antique White", 
+        "system": "Fuchsia Pink Army Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3318,10 +3318,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9780", 
+        "country": "canada", 
+        "company": "Provider 2342", 
         "bookSuccess": 98.0, 
-        "system": "Fandango Pink Aztec Gold", 
+        "system": "Cameo Pink Dollar Bill", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3329,10 +3329,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5462", 
+        "country": "australia", 
+        "company": "Provider 2697", 
         "bookSuccess": 96.9, 
-        "system": "Cordovan Chartreuse (Web)", 
+        "system": "Deep Carmine Cream", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3347,10 +3347,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7030", 
+        "country": "canada", 
+        "company": "Provider 7536", 
         "bookSuccess": 96.9, 
-        "system": "Brilliant Azure French Fuchsia", 
+        "system": "Carmine Pink Aquamarine", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3358,10 +3358,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2021", 
+        "country": "united states", 
+        "company": "Provider 7778", 
         "bookSuccess": 99.6, 
-        "system": "Copper Red Fuchsia Pink", 
+        "system": "Antique Bronze Eminence", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3377,10 +3377,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4250", 
+        "country": "austria", 
+        "company": "Provider 3707", 
         "bookSuccess": 87.1, 
-        "system": "Deep Space Sparkle Carrot Orange", 
+        "system": "Avocado Candy Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3392,10 +3392,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8121", 
+        "country": "australia", 
+        "company": "Provider 9967", 
         "bookSuccess": 99.7, 
-        "system": "Deep Jungle Green Denim Blue", 
+        "system": "African Violet Bright Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3407,10 +3407,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7019", 
+        "country": "australia", 
+        "company": "Provider 9278", 
         "bookSuccess": 95.5, 
-        "system": "Fluorescent Yellow Cinnamon[Citation Needed]", 
+        "system": "Copper Penny Bisque", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3423,10 +3423,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7512", 
+        "country": "austria", 
+        "company": "Provider 3883", 
         "bookSuccess": 97.1, 
-        "system": "Aureolin Fire Opal", 
+        "system": "Dark Terra Cotta Coconut", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3443,9 +3443,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 9222", 
+        "company": "Provider 2007", 
         "bookSuccess": 97.3, 
-        "system": "Dark Pastel Purple Dark Green", 
+        "system": "Brunswick Green Cornsilk", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3456,9 +3456,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 5539", 
+        "company": "Provider 3055", 
         "bookSuccess": 99.7, 
-        "system": "Blue-Violet Electric Cyan", 
+        "system": "Electric Brown Champagne Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3468,10 +3468,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6932", 
+        "country": "canada", 
+        "company": "Provider 3243", 
         "bookSuccess": null, 
-        "system": "Army Green Avocado", 
+        "system": "Forest Green Bronze", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3481,10 +3481,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1345", 
+        "country": "austria", 
+        "company": "Provider 4534", 
         "bookSuccess": 99.8, 
-        "system": "Brilliant Rose Apricot", 
+        "system": "Dark Scarlet Cream", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3494,10 +3494,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2637", 
+        "country": "united states", 
+        "company": "Provider 4102", 
         "bookSuccess": 99.8, 
-        "system": "Brilliant Rose Blast-Off Bronze", 
+        "system": "Flame Celadon", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3513,10 +3513,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1998", 
+        "country": "united states", 
+        "company": "Provider 6257", 
         "bookSuccess": 98.2, 
-        "system": "Blast-Off Bronze Dark Khaki", 
+        "system": "Dark Taupe Black Shadows", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3529,10 +3529,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9329", 
+        "country": "argentina", 
+        "company": "Provider 6555", 
         "bookSuccess": 99.9, 
-        "system": "Carolina Blue Avocado", 
+        "system": "Atomic Tangerine Cetacean Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3548,9 +3548,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 3781", 
+        "company": "Provider 7262", 
         "bookSuccess": 98.2, 
-        "system": "Cinereous Army Green", 
+        "system": "Blue-Violet Cadmium Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3563,9 +3563,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 3976", 
+        "company": "Provider 6382", 
         "bookSuccess": 94.4, 
-        "system": "Desaturated Cyan Deep Sky Blue", 
+        "system": "Apple Blue Lagoon", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3576,10 +3576,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5656", 
+        "country": "argentina", 
+        "company": "Provider 5061", 
         "bookSuccess": 98.1, 
-        "system": "Dark Spring Green French Beige", 
+        "system": "Cherry Fandango Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3593,10 +3593,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6216", 
+        "country": "canada", 
+        "company": "Provider 9378", 
         "bookSuccess": 99.9, 
-        "system": "Candy Apple Red Blue-Violet (Color Wheel)", 
+        "system": "Blush Cookies And Cream", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3611,10 +3611,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7371", 
+        "country": "canada", 
+        "company": "Provider 9647", 
         "bookSuccess": 95.1, 
-        "system": "Desert Sand Cerise", 
+        "system": "Deep Fuchsia Dark Chestnut", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3629,10 +3629,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3225", 
+        "country": "canada", 
+        "company": "Provider 9781", 
         "bookSuccess": 99.5, 
-        "system": "Cornsilk Brilliant Rose", 
+        "system": "Cerulean Celadon", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3647,10 +3647,28 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9109", 
+        "country": "canada", 
+        "company": "Provider 3293", 
         "bookSuccess": 99.5, 
-        "system": "Beau Blue Blue Lagoon", 
+        "system": "Army Green Conditioner", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "/systems", 
+        "country": "argentina", 
+        "company": "Provider 6124", 
+        "bookSuccess": null, 
+        "system": "Deep Jungle Green Citrine Brown", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3666,27 +3684,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 9345", 
-        "bookSuccess": null, 
-        "system": "Eggplant Cardinal", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 99.6
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2352", 
+        "company": "Provider 6078", 
         "bookSuccess": 100.0, 
-        "system": "Bangladesh Green Desert Sand", 
+        "system": "Fluorescent Yellow Chocolate Brown", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -3701,10 +3701,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2393", 
+        "country": "australia", 
+        "company": "Provider 9504", 
         "bookSuccess": 96.4, 
-        "system": "Atomic Tangerine Calamansi", 
+        "system": "Ebony Cadmium Violet", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -3718,10 +3718,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8352", 
+        "country": "australia", 
+        "company": "Provider 6282", 
         "bookSuccess": 84.7, 
-        "system": "Cookies And Cream Electric Green", 
+        "system": "Brown Chocolate Electric Violet", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3734,10 +3734,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7206", 
+        "country": "australia", 
+        "company": "Provider 5253", 
         "bookSuccess": 98.3, 
-        "system": "Beau Blue Deep Carrot Orange", 
+        "system": "Brink Pink Cornsilk", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3748,10 +3748,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6623", 
+        "country": "united states", 
+        "company": "Provider 4442", 
         "bookSuccess": 98.9, 
-        "system": "Drab Classic Rose", 
+        "system": "Black Leather Jacket Bleu De France", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3764,10 +3764,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7225", 
+        "country": "australia", 
+        "company": "Provider 9606", 
         "bookSuccess": 98.7, 
-        "system": "Flavescent Antique Brass", 
+        "system": "Deep Green Bisque", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3777,10 +3777,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7486", 
+        "country": "austria", 
+        "company": "Provider 7475", 
         "bookSuccess": 89.5, 
-        "system": "Antique White Crystal Blue", 
+        "system": "Crimson Deep Maroon", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3796,9 +3796,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 4493", 
+        "company": "Provider 7713", 
         "bookSuccess": 85.0, 
-        "system": "Dark Lavender Burnt Sienna", 
+        "system": "Columbia Blue Dark Slate Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3807,9 +3807,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 4093", 
+        "company": "Provider 4158", 
         "bookSuccess": null, 
-        "system": "Deep Maroon Dark Taupe", 
+        "system": "Cadet Blue Cyan Cobalt Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -3817,10 +3817,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1711", 
+        "country": "argentina", 
+        "company": "Provider 8282", 
         "bookSuccess": 99.8, 
-        "system": "Alice Blue Aero", 
+        "system": "Aero Blue Chestnut", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3835,10 +3835,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1404", 
+        "country": "argentina", 
+        "company": "Provider 7750", 
         "bookSuccess": null, 
-        "system": "Field Drab Cosmic Cobalt", 
+        "system": "Dark Byzantium Electric Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3851,10 +3851,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3042", 
+        "country": "austria", 
+        "company": "Provider 4126", 
         "bookSuccess": 97.4, 
-        "system": "Copper Dark Gray (X11)", 
+        "system": "Auburn Brilliant Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3866,10 +3866,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4250", 
+        "country": "argentina", 
+        "company": "Provider 3780", 
         "bookSuccess": 98.0, 
-        "system": "Cobalt Blue Alloy Orange", 
+        "system": "Barn Red Button Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3883,9 +3883,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 1164", 
+        "company": "Provider 4225", 
         "bookSuccess": 99.7, 
-        "system": "Amaranth Deep Purple Dandelion", 
+        "system": "Copper Fern Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3898,10 +3898,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1904", 
+        "country": "canada", 
+        "company": "Provider 1130", 
         "bookSuccess": 88.2, 
-        "system": "Cordovan Aqua", 
+        "system": "Brown Coffee Bright Lavender", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -3911,10 +3911,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3786", 
+        "country": "austria", 
+        "company": "Provider 7034", 
         "bookSuccess": 98.3, 
-        "system": "Cinereous Alloy Orange", 
+        "system": "Aztec Gold Blue-Green (Color Wheel)", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3928,9 +3928,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 5638", 
+        "company": "Provider 2547", 
         "bookSuccess": 95.1, 
-        "system": "Ferrari Red Bubbles", 
+        "system": "Dust Storm Field Drab", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -3938,10 +3938,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2612", 
+        "country": "united states", 
+        "company": "Provider 7928", 
         "bookSuccess": 98.5, 
-        "system": "Eminence Bone", 
+        "system": "Bitter Lime Chocolate Kisses", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3953,10 +3953,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3393", 
+        "country": "austria", 
+        "company": "Provider 5163", 
         "bookSuccess": 93.7, 
-        "system": "Black Bean Fawn", 
+        "system": "Cinnamon Satin Chocolate Cosmos", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3966,10 +3966,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9492", 
+        "country": "canada", 
+        "company": "Provider 9749", 
         "bookSuccess": 99.7, 
-        "system": "Dark Jungle Green Booger Buster", 
+        "system": "Chocolate (Web) Dark Turquoise", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3981,10 +3981,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7719", 
+        "country": "canada", 
+        "company": "Provider 8870", 
         "bookSuccess": 96.6, 
-        "system": "Electric Orange Dark Bronze (Coin)", 
+        "system": "Caramel Copper Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3994,10 +3994,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8967", 
+        "country": "australia", 
+        "company": "Provider 9162", 
         "bookSuccess": 99.2, 
-        "system": "Ferrari Red Bronze", 
+        "system": "Black Olive Conditioner", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4014,10 +4014,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3447", 
+        "country": "united states", 
+        "company": "Provider 1996", 
         "bookSuccess": 99.4, 
-        "system": "Frostbite Desert Sand", 
+        "system": "Bright Ube Dark Turquoise", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4034,10 +4034,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6649", 
+        "country": "argentina", 
+        "company": "Provider 9735", 
         "bookSuccess": 98.9, 
-        "system": "Bronze Coconut", 
+        "system": "Cadmium Violet Blue-Violet", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4054,10 +4054,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2777", 
+        "country": "canada", 
+        "company": "Provider 7319", 
         "bookSuccess": 99.1, 
-        "system": "Eucalyptus Bright Turquoise", 
+        "system": "Brink Pink Deep Space Sparkle", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4075,9 +4075,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 1167", 
+        "company": "Provider 3901", 
         "bookSuccess": 99.1, 
-        "system": "Bright Green Axolotl", 
+        "system": "Electric Lavender Dark Charcoal", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4094,10 +4094,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6697", 
+        "country": "argentina", 
+        "company": "Provider 1287", 
         "bookSuccess": 98.8, 
-        "system": "Calamansi Celadon Blue", 
+        "system": "Citron Dutch White", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4114,10 +4114,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4381", 
+        "country": "australia", 
+        "company": "Provider 9743", 
         "bookSuccess": 99.6, 
-        "system": "Deep Ruby Deep Sky Blue", 
+        "system": "Champagne Pink Bazaar", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4134,10 +4134,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1643", 
+        "country": "argentina", 
+        "company": "Provider 2211", 
         "bookSuccess": 99.1, 
-        "system": "Awesome Carolina Blue", 
+        "system": "Cyber Grape Cherry Blossom Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4154,10 +4154,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2358", 
+        "country": "austria", 
+        "company": "Provider 1892", 
         "bookSuccess": 99.6, 
-        "system": "Deep Champagne French Bistre", 
+        "system": "Cyan Azure Dark Turquoise", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4175,9 +4175,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 6807", 
+        "company": "Provider 5252", 
         "bookSuccess": 98.9, 
-        "system": "Electric Orange Cerise", 
+        "system": "Auburn Brown Yellow", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4194,10 +4194,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6654", 
+        "country": "united states", 
+        "company": "Provider 1978", 
         "bookSuccess": 98.8, 
-        "system": "Chocolate Eminence", 
+        "system": "Electric Violet Bazaar", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4214,10 +4214,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1175", 
+        "country": "austria", 
+        "company": "Provider 5994", 
         "bookSuccess": 99.2, 
-        "system": "Blue Bell Field Drab", 
+        "system": "Dark Khaki Denim", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4234,10 +4234,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2432", 
+        "country": "united states", 
+        "company": "Provider 3256", 
         "bookSuccess": 99.6, 
-        "system": "Bronze (Metallic) Begonia", 
+        "system": "Flamingo Pink Black Shadows", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4255,9 +4255,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 7903", 
+        "company": "Provider 1482", 
         "bookSuccess": 98.4, 
-        "system": "Amaranth Acajou", 
+        "system": "Dodie Yellow Carrot Orange", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4274,10 +4274,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5055", 
+        "country": "argentina", 
+        "company": "Provider 3057", 
         "bookSuccess": 98.6, 
-        "system": "Cadet Blue Denim Blue", 
+        "system": "Cyan Cerise", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4294,10 +4294,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8654", 
+        "country": "australia", 
+        "company": "Provider 4478", 
         "bookSuccess": 99.6, 
-        "system": "Dark Yellow Cerise", 
+        "system": "Cinereous Conditioner", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4310,10 +4310,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7988", 
+        "country": "argentina", 
+        "company": "Provider 5347", 
         "bookSuccess": null, 
-        "system": "Ceil Maroon", 
+        "system": "Chestnut Blue Bell", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4328,10 +4328,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3088", 
+        "country": "united states", 
+        "company": "Provider 8225", 
         "bookSuccess": null, 
-        "system": "Carolina Blue Black Olive", 
+        "system": "Fresh Air Cherry", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4346,10 +4346,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5985", 
+        "country": "australia", 
+        "company": "Provider 3545", 
         "bookSuccess": 97.1, 
-        "system": "Denim Apricot", 
+        "system": "Arctic Lime Cultured", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -4365,10 +4365,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3136", 
+        "country": "canada", 
+        "company": "Provider 2797", 
         "bookSuccess": 99.0, 
-        "system": "Dark Electric Blue Aero", 
+        "system": "Beau Blue Orchid", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4378,10 +4378,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9860", 
+        "country": "australia", 
+        "company": "Provider 1132", 
         "bookSuccess": 99.9, 
-        "system": "Blue Bolt Dark Cyan", 
+        "system": "Falu Red Dark Medium Gray", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4397,9 +4397,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 7416", 
+        "company": "Provider 8260", 
         "bookSuccess": 99.9, 
-        "system": "Fuchsia (Crayola) Cornell Red", 
+        "system": "Deep Taupe Black Leather Jacket", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4414,10 +4414,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5135", 
+        "country": "austria", 
+        "company": "Provider 7604", 
         "bookSuccess": 99.4, 
-        "system": "Dim Gray Deep Ruby", 
+        "system": "Fawn Cedar Chest", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4431,10 +4431,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7503", 
+        "country": "argentina", 
+        "company": "Provider 9519", 
         "bookSuccess": 79.4, 
-        "system": "Brandeis Blue Cherry Blossom Pink", 
+        "system": "Dark Raspberry Dark Midnight Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -4442,10 +4442,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6690", 
+        "country": "australia", 
+        "company": "Provider 4961", 
         "bookSuccess": 99.5, 
-        "system": "Bronze (Metallic) Celtic Blue", 
+        "system": "Chocolate Army Green", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4460,10 +4460,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7782", 
+        "country": "australia", 
+        "company": "Provider 5364", 
         "bookSuccess": 99.9, 
-        "system": "Antique Brass Apple", 
+        "system": "Dark Scarlet Cream", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4478,10 +4478,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2162", 
+        "country": "united states", 
+        "company": "Provider 6065", 
         "bookSuccess": 97.6, 
-        "system": "Bittersweet Brass", 
+        "system": "Canary Forest Green (Crayola)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4497,10 +4497,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1519", 
+        "country": "canada", 
+        "company": "Provider 8577", 
         "bookSuccess": 90.1, 
-        "system": "Dark Pastel Red Cedar Chest", 
+        "system": "Cambridge Blue Dark Medium Gray", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -4508,10 +4508,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2171", 
+        "country": "australia", 
+        "company": "Provider 8929", 
         "bookSuccess": 99.8, 
-        "system": "Capri Forest Green (Crayola)", 
+        "system": "Forest Green (Web) Carmine (M&P)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4526,10 +4526,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5550", 
+        "country": "australia", 
+        "company": "Provider 1890", 
         "bookSuccess": 99.3, 
-        "system": "Bulgarian Rose Blackberry", 
+        "system": "Brown Coffee Floral White", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4543,10 +4543,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4682", 
+        "country": "austria", 
+        "company": "Provider 3998", 
         "bookSuccess": 98.5, 
-        "system": "Fluorescent Orange Firebrick", 
+        "system": "Champagne Electric Ultramarine", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4560,10 +4560,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6697", 
+        "country": "austria", 
+        "company": "Provider 5488", 
         "bookSuccess": 99.6, 
-        "system": "Dark Orchid Dark Yellow", 
+        "system": "Aztec Gold Dark Cornflower Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4577,10 +4577,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5530", 
+        "country": "australia", 
+        "company": "Provider 8814", 
         "bookSuccess": 98.2, 
-        "system": "Coral Pink Champagne Pink", 
+        "system": "FulvousGreen Blue-Violet (Color Wheel)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4595,10 +4595,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1934", 
+        "country": "australia", 
+        "company": "Provider 1376", 
         "bookSuccess": null, 
-        "system": "Fern Green Indigo", 
+        "system": "Dark Violet Bright Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -4607,9 +4607,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "canada", 
-        "company": "Provider 3527", 
+        "company": "Provider 4309", 
         "bookSuccess": 97.9, 
-        "system": "Flattery Fern Green", 
+        "system": "Black Leather Jacket Deer", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4625,10 +4625,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3752", 
+        "country": "australia", 
+        "company": "Provider 7292", 
         "bookSuccess": 96.3, 
-        "system": "CG Blue Amaranth", 
+        "system": "Blood Orange Cyclamen", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4638,10 +4638,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5978", 
+        "country": "canada", 
+        "company": "Provider 9486", 
         "bookSuccess": 88.4, 
-        "system": "Eggplant Fuchsia Rose", 
+        "system": "Beer Bright Yellow (Crayola)", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -4649,10 +4649,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2934", 
+        "country": "united states", 
+        "company": "Provider 1167", 
         "bookSuccess": 96.2, 
-        "system": "Cyber Yellow Deep Pink", 
+        "system": "Cyan Cornflower Blue Fluorescent Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4664,9 +4664,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 1886", 
+        "company": "Provider 1315", 
         "bookSuccess": 86.6, 
-        "system": "Carmine (M&P) Deep Green-Cyan Turquoise", 
+        "system": "Blackberry Deep Koamaru", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
@@ -4674,10 +4674,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3122", 
+        "country": "austria", 
+        "company": "Provider 7397", 
         "bookSuccess": 99.8, 
-        "system": "Copper Rose Chamoisee", 
+        "system": "Blue Cinnamon[Citation Needed]", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -4686,9 +4686,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 4328", 
+        "company": "Provider 1204", 
         "bookSuccess": 99.4, 
-        "system": "French Violet Desert", 
+        "system": "Maroon Dark Electric Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4704,10 +4704,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1060", 
+        "country": "canada", 
+        "company": "Provider 1093", 
         "bookSuccess": 99.8, 
-        "system": "Byzantium Dark Tan", 
+        "system": "Dark Byzantium Ecru", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -4723,10 +4723,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5782", 
+        "country": "united states", 
+        "company": "Provider 7364", 
         "bookSuccess": 82.6, 
-        "system": "Dandelion (Crayola) Blond", 
+        "system": "Almond Bright Ube", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4738,9 +4738,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 1104", 
+        "company": "Provider 2902", 
         "bookSuccess": 88.3, 
-        "system": "Cadmium Blue Dark Tan", 
+        "system": "Deep Magenta Eggshell", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -4751,9 +4751,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 5849", 
+        "company": "Provider 6494", 
         "bookSuccess": 97.3, 
-        "system": "Deep Coffee Dark Cerulean", 
+        "system": "Indigo Chocolate", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4767,10 +4767,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7243", 
+        "country": "austria", 
+        "company": "Provider 6592", 
         "bookSuccess": 99.1, 
-        "system": "Brown Yellow Eggshell", 
+        "system": "Dark Pastel Red Bright Pink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4785,10 +4785,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9938", 
+        "country": "canada", 
+        "company": "Provider 3176", 
         "bookSuccess": 97.6, 
-        "system": "Classic Rose Baker-Miller Pink", 
+        "system": "Cyan (Process) Bronze", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4801,10 +4801,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6637", 
+        "country": "austria", 
+        "company": "Provider 4741", 
         "bookSuccess": 98.5, 
-        "system": "Deep Lilac Coffee", 
+        "system": "Alabaster Flattery", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4818,10 +4818,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8649", 
+        "country": "canada", 
+        "company": "Provider 3970", 
         "bookSuccess": 36.3, 
-        "system": "Antique Bronze Ferrari Red", 
+        "system": "Castleton Green Cyan Azure", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -4829,10 +4829,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7250", 
+        "country": "argentina", 
+        "company": "Provider 8989", 
         "bookSuccess": 99.6, 
-        "system": "Blue-Gray Bone", 
+        "system": "Fire Opal Bronze Yellow", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4847,10 +4847,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5791", 
+        "country": "australia", 
+        "company": "Provider 1549", 
         "bookSuccess": 97.9, 
-        "system": "Cinnabar Conditioner", 
+        "system": "Avocado Baby Blue Eyes", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4865,9 +4865,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 6295", 
+        "company": "Provider 3756", 
         "bookSuccess": 98.4, 
-        "system": "Ateneo Blue Citron", 
+        "system": "Celadon Green Cerise Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4881,9 +4881,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 6882", 
+        "company": "Provider 9431", 
         "bookSuccess": 100.0, 
-        "system": "Black Olive Deep Chestnut", 
+        "system": "Deep Aquamarine Dark Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4898,10 +4898,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2269", 
+        "country": "canada", 
+        "company": "Provider 1842", 
         "bookSuccess": 96.2, 
-        "system": "Anti-Flash White Brink Pink", 
+        "system": "Burnt Umber Dark Goldenrod", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4914,10 +4914,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6314", 
+        "country": "argentina", 
+        "company": "Provider 2337", 
         "bookSuccess": 97.1, 
-        "system": "Bright Lavender Canary Yellow", 
+        "system": "Deep Chestnut Cornell Red", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4933,9 +4933,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 8979", 
+        "company": "Provider 5853", 
         "bookSuccess": 95.1, 
-        "system": "Cotton Candy Deep Pink", 
+        "system": "Celadon Barn Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4946,10 +4946,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3666", 
+        "country": "australia", 
+        "company": "Provider 7448", 
         "bookSuccess": 100.0, 
-        "system": "Citron Amaranth Red", 
+        "system": "Dark Goldenrod Cyan (Process)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4965,9 +4965,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 5446", 
+        "company": "Provider 1996", 
         "bookSuccess": 91.0, 
-        "system": "Cotton Candy Brown Chocolate", 
+        "system": "Dark Moss Green Calamansi", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4983,9 +4983,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 1081", 
+        "company": "Provider 8317", 
         "bookSuccess": 97.5, 
-        "system": "Dark Khaki Banana Mania", 
+        "system": "Black Chocolate Cosmic Latte", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5000,10 +5000,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5075", 
+        "country": "australia", 
+        "company": "Provider 6894", 
         "bookSuccess": 96.9, 
-        "system": "Carmine Pink Cedar Chest", 
+        "system": "Bright Maroon Electric Crimson", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5016,10 +5016,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4371", 
+        "country": "argentina", 
+        "company": "Provider 3430", 
         "bookSuccess": 99.6, 
-        "system": "Blackberry Copper Penny", 
+        "system": "Fawn Dark Coral", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5034,10 +5034,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3112", 
+        "country": "austria", 
+        "company": "Provider 9860", 
         "bookSuccess": 96.9, 
-        "system": "Dark Moss Green French Raspberry", 
+        "system": "Brandy Cinnamon[Citation Needed]", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5048,10 +5048,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1613", 
+        "country": "argentina", 
+        "company": "Provider 4124", 
         "bookSuccess": 99.7, 
-        "system": "French Fuchsia Cyclamen", 
+        "system": "Apple Green Bright Maroon", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -5066,10 +5066,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8709", 
+        "country": "united states", 
+        "company": "Provider 1122", 
         "bookSuccess": 97.8, 
-        "system": "Cyan Cornflower Blue Antique Brass", 
+        "system": "Deep Green Battery Charged Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -5077,10 +5077,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5799", 
+        "country": "canada", 
+        "company": "Provider 1489", 
         "bookSuccess": 97.7, 
-        "system": "Acajou Coquelicot", 
+        "system": "Burgundy Beige", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5094,9 +5094,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 2968", 
+        "company": "Provider 6423", 
         "bookSuccess": 98.1, 
-        "system": "Azure Mist FulvousGreen", 
+        "system": "Boysenberry Deep Fuchsia", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5110,9 +5110,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "austria", 
-        "company": "Provider 7912", 
+        "company": "Provider 1236", 
         "bookSuccess": 99.3, 
-        "system": "Blue Lagoon Beau Blue", 
+        "system": "Deep Chestnut Dark Brown", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5127,10 +5127,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1250", 
+        "country": "austria", 
+        "company": "Provider 8171", 
         "bookSuccess": 95.8, 
-        "system": "Fluorescent Yellow Dark Yellow", 
+        "system": "Arylide Yellow Bright Yellow (Crayola)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5145,10 +5145,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9711", 
+        "country": "united states", 
+        "company": "Provider 4685", 
         "bookSuccess": null, 
-        "system": "Dark Lemon Lime Dark Sea Green", 
+        "system": "Dark Cerulean Dark Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -5156,10 +5156,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6256", 
+        "country": "australia", 
+        "company": "Provider 9497", 
         "bookSuccess": 72.7, 
-        "system": "Bright Maroon Debian Red", 
+        "system": "Begonia Charm", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5172,10 +5172,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3740", 
+        "country": "canada", 
+        "company": "Provider 6442", 
         "bookSuccess": 99.7, 
-        "system": "Columbia Blue Dust Storm", 
+        "system": "Fallow Calamansi", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5190,10 +5190,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3587", 
+        "country": "argentina", 
+        "company": "Provider 1747", 
         "bookSuccess": 99.6, 
-        "system": "Cyber Yellow Cerulean (Crayola)", 
+        "system": "Antique Bronze Catalina Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5205,9 +5205,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 5297", 
+        "company": "Provider 1957", 
         "bookSuccess": 96.0, 
-        "system": "Bluebonnet Aztec Gold", 
+        "system": "Asparagus Dark Pastel Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -5215,10 +5215,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5473", 
+        "country": "austria", 
+        "company": "Provider 7931", 
         "bookSuccess": 99.7, 
-        "system": "Blue Bolt Cream", 
+        "system": "Electric Indigo Bondi Blue", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5233,10 +5233,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6586", 
+        "country": "argentina", 
+        "company": "Provider 7860", 
         "bookSuccess": 99.6, 
-        "system": "Deep Fuchsia Cadmium Red", 
+        "system": "Electric Brown Beige", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5252,9 +5252,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5842", 
+        "company": "Provider 7235", 
         "bookSuccess": 99.8, 
-        "system": "Cosmic Cobalt Carnation Pink", 
+        "system": "Baby Powder Dark Gunmetal", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5270,10 +5270,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5318", 
+        "country": "australia", 
+        "company": "Provider 7703", 
         "bookSuccess": 99.8, 
-        "system": "Electric Lavender Cherry Blossom Pink", 
+        "system": "Electric Indigo Apple Green", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5286,10 +5286,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8047", 
+        "country": "canada", 
+        "company": "Provider 5400", 
         "bookSuccess": 93.6, 
-        "system": "Boston University Red Bright Lilac", 
+        "system": "Bole Cadet Grey", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5302,10 +5302,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6043", 
+        "country": "united states", 
+        "company": "Provider 5598", 
         "bookSuccess": 88.1, 
-        "system": "Celestial Blue Indigo", 
+        "system": "Amazon Burgundy", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
@@ -5313,10 +5313,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5381", 
+        "country": "argentina", 
+        "company": "Provider 1265", 
         "bookSuccess": null, 
-        "system": "Indigo French Wine", 
+        "system": "Fern Green Cocoa Brown", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
@@ -5324,10 +5324,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6933", 
+        "country": "australia", 
+        "company": "Provider 6547", 
         "bookSuccess": 99.9, 
-        "system": "Carmine (M&P) Coyote Brown", 
+        "system": "Electric Lime Deep Space Sparkle", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5341,9 +5341,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 5388", 
+        "company": "Provider 7123", 
         "bookSuccess": 99.7, 
-        "system": "Dark Slate Gray Blue", 
+        "system": "Burnt Sienna Electric Lavender", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5356,10 +5356,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9941", 
+        "country": "united states", 
+        "company": "Provider 5230", 
         "bookSuccess": 97.2, 
-        "system": "Dark Olive Green Flamingo Pink", 
+        "system": "Dark Chocolate Eggshell", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5375,9 +5375,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 2798", 
+        "company": "Provider 5292", 
         "bookSuccess": 98.6, 
-        "system": "Dark Slate Blue Fuchsia Pink", 
+        "system": "Carmine (M&P) Alloy Orange", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5393,9 +5393,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "united states", 
-        "company": "Provider 4640", 
+        "company": "Provider 3488", 
         "bookSuccess": 78.3, 
-        "system": "Orange Fashion Fuchsia", 
+        "system": "Classic Rose Corn", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5409,9 +5409,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "argentina", 
-        "company": "Provider 5895", 
+        "company": "Provider 3869", 
         "bookSuccess": 90.6, 
-        "system": "Cobalt Blue Byzantine", 
+        "system": "Dark Gray (X11) Duke Blue", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5423,10 +5423,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6392", 
+        "country": "australia", 
+        "company": "Provider 4754", 
         "bookSuccess": 98.3, 
-        "system": "Citrine Brown Bistre Brown", 
+        "system": "Battery Charged Blue Dark Lavender", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5441,10 +5441,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4499", 
+        "country": "canada", 
+        "company": "Provider 7615", 
         "bookSuccess": 100.0, 
-        "system": "Antique Fuchsia Fresh Air", 
+        "system": "Bright Green Daffodil", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5454,10 +5454,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5446", 
+        "country": "argentina", 
+        "company": "Provider 3515", 
         "bookSuccess": 98.5, 
-        "system": "Cerulean Firebrick", 
+        "system": "Caput Mortuum Coral Pink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5470,10 +5470,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9864", 
+        "country": "australia", 
+        "company": "Provider 7378", 
         "bookSuccess": null, 
-        "system": "Cosmic Latte Coyote Brown", 
+        "system": "Bitter Lemon Dark Brown-Tangelo", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5486,10 +5486,10 @@ define({allProviders:
     }, 
     {
         "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6662", 
+        "country": "canada", 
+        "company": "Provider 1892", 
         "bookSuccess": 98.9, 
-        "system": "Brunswick Green French Fuchsia", 
+        "system": "Eton Blue Electric Red", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5503,9 +5503,9 @@ define({allProviders:
     {
         "website": "/systems", 
         "country": "australia", 
-        "company": "Provider 4356", 
+        "company": "Provider 6572", 
         "bookSuccess": 95.3, 
-        "system": "Alabaster Antique Fuchsia", 
+        "system": "Carmine Red Coffee", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
