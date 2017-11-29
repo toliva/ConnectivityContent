@@ -21,6 +21,27 @@ define(function() {
         }
     });
 
+    var login = new Vue({
+        el: '#system-login',
+        data: {
+            system: null,
+        },
+        computed: {},
+        methods: {
+            open: function(p) {
+                this.system = p;
+                $(this.$el).foundation('open');
+                Foundation.reInit('equalizer');
+            },
+            showSystem: function() {
+                details.open(this.system);
+            }
+        },
+        mounted: function() {
+            $(this.$el).foundation();
+        }
+    });
+
 
     var details = new Vue({
         el: '#system-details',
@@ -175,7 +196,7 @@ define(function() {
                     }
                 },
                 show: function (p) {
-                    details.open(p);
+                    login.open(p);
                 },
                 onResize: function () {
                     var main = $('#systems-list .filter');
