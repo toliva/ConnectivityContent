@@ -168,6 +168,22 @@
   </form>
 </div>
 
+<div class="systems small reveal" id="system-survey" data-reveal >
+  <form v-on:submit.prevent="send">
+    <p class="lead">Feedback</p>
+    <div class="row">
+      <input type="text" v-model="comment" placeholder="Optional comments" />
+    </div>
+    <div class="row">
+      <input type="submit" class="button" value="Send" v-bind:disabled="submitDisabled"/>
+      <span v-show="submitDisabled">Thank you for your feedback!</span>
+    </div>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </form>
+</div>
+
 <script src="/js/vue.min.js"></script>
 <script data-main="/provider-directory/js/app.js" src="/js/require.js"></script>
 
