@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="/css/he-main.css">
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <section class='hero hero-hotelroom'>
-<div class='inner'>
-    <h1>Connectivity Provider Solutions</h1>
-    <p>Access our dynamic portfolio of brands to help your customers<br>reach a global audience and generate more bookings.</p>
-</div>
+    <div class='inner'>
+        <h1>Connectivity Provider Solutions</h1>
+        <p>Access our dynamic portfolio of brands to help your customers<br>reach a global audience and generate more bookings.</p>
+    </div>
 </section>
 <div id="page-partners" class="he-active_now he-animate he-fade_in">
     <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <section id="section-intro_paragraph">
         <div class="inner">
@@ -20,15 +20,14 @@
             </div>
         </div>
     </section>
-
     <section id="section-large_image_pods">
         <div class="inner">
             <div class="row full-width">
                 <div class="four columns he-waypoint he-animate he-fade_in">
-                   <img class="pod-image show-for-medium" src="/images/global-reach.png" />
+                    <img class="pod-image show-for-medium" src="/images/global-reach.png" />
                     <div class="pod-text">
                         <h3>
-                            Global Reach
+                        Global Reach
                         </h3>
                         <p>
                             Reach travelers on over 200 travel booking sites<br>in more than 75 countries and 35 languages.
@@ -37,10 +36,10 @@
                     <div class="show-for-small-only yellow-seperator">&nbsp;</div>
                 </div>
                 <div class="four columns he-waypoint he-animate he-delay_200 he-fade_in">
-                   <img class="pod-image show-for-medium" src="/images/dynamic-reservations.png" />
+                    <img class="pod-image show-for-medium" src="/images/dynamic-reservations.png" />
                     <div class="pod-text">
                         <h3>
-                            Dynamic Reservations
+                        Dynamic Reservations
                         </h3>
                         <p>
                             Integrate with our flexible APIs to offer the right automated services to your customers.
@@ -49,10 +48,10 @@
                     <div class="show-for-small-only yellow-seperator">&nbsp;</div>
                 </div>
                 <div class="four columns he-waypoint he-animate he-delay_200 he-fade_in">
-                   <img class="pod-image show-for-medium" src="/images/greater-visibility.png" />
+                    <img class="pod-image show-for-medium" src="/images/greater-visibility.png" />
                     <div class="pod-text">
                         <h3>
-                            Greater Visibility
+                        Greater Visibility
                         </h3>
                         <p>
                             Take advantage of a dynamic two-way service to help ensure a seamless distribution process.
@@ -63,7 +62,6 @@
             </div>
         </div>
     </section>
-
     <section class="primary-box bluish-box">
         <div class="inner">
             <div class="row">
@@ -90,7 +88,6 @@
             </div>
         </div>
     </section>
-
     <section class="primary-box circuit-board">
         <div class="twelve small-centered columns center he-waypoint he-animate he-delay_100 he-fade_in">
             <h2>Ready to start working with Expedia?</h2>
@@ -112,12 +109,10 @@
 </div>
 <script>
     var captchaResponse = null;
-
     function captcha(response) {
         captchaResponse = response;
         console.log("Captcha Response: " + response);
     }
-
     function sendmail(form) {
         var data = {};
         data.name = $(form).find("#name").val();
@@ -127,12 +122,10 @@
         data.message = $(form).find("#message").val();
         data.subject = "Connectivity for Providers Contact Us Form";
         data.captchaResponse = captchaResponse;
-
         if (data.subject == "unknown") {
             alert("Please select an appropriate subject.");
             return;
         }
-
         $.ajax({
             method: "POST",
             url: "https://hotel-assignment-service.prod-p.expedia.com/v1/sendmail",
@@ -147,7 +140,6 @@
             ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
         });
     }
-
     function ajaxError(jqxhr, humanError) {
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
         $("#result").addClass("error").html(humanError);
