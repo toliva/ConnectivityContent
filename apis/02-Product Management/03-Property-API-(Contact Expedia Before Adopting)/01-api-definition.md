@@ -156,7 +156,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "propertyCollectedMandatoryFees": [
         {
             "code": "RESORT_FEE",
-            "scope": "PER_PERSON",
+            "scope": "AMOUNT_PER_PERSON",
             "duration": "PER_NIGHT",
             "value": 25.99,
             "startDate": null,
@@ -495,7 +495,7 @@ The response body will echo back the values of *the request received* and will i
             "propertyCollectedMandatoryFees": [
                 {
                     "code": "RESORT_FEE",
-                    "scope": "PER_PERSON",
+                    "scope": "AMOUNT_PER_PERSON",
                     "duration": "PER_NIGHT",
                     "value": 25.99,
                     "startDate": null,
@@ -717,7 +717,7 @@ GET /properties/v1/mycompany/1234
     "propertyCollectedMandatoryFees": [
       {
         "code": "RESORT_FEE",
-        "scope": "PER_PERSON",
+        "scope": "AMOUNT_PER_PERSON",
         "duration": "PER_NIGHT",
         "value": 25.99,
         "startDate": null,
@@ -974,7 +974,7 @@ The response to the delete request will be a 200/OK and the response will echo b
       "propertyCollectedMandatoryFees": [
         {
           "code": "RESORT_FEE",
-          "scope": "PER_PERSON",
+          "scope": "AMOUNT_PER_PERSON",
           "duration": "PER_NIGHT",
           "value": 25.99,
           "startDate": null,
