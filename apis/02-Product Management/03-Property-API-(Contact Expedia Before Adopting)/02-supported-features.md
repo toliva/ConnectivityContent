@@ -25,9 +25,11 @@ Property API supports the onboarding of new properties that offer Expedia Collec
 
 | Supported   | Not Supported |
 | ---------   | ------------- |
-| Centralized | Billing for independent properties |
+| Centralized & DeCentralized | Billing for independent properties |
 
-Property API supports clients that can centrally handle billing for its associated properties.  For Expedia Collect products, this would require that the API partner send invoices to ExpediaPay for any properties it onboards via the Property API.  Individual properties can not invoice Expedia directly.
+Property API supports clients that can centrally handle billing for its associated properties.  For Expedia Collect products, this would require that the API partner send invoices to ExpediaPay for any properties it onboards via the Property API.  DeCentralized billing is also supported - This means a Connectivity Provider can onboard multiple Property Managers on their behalf and Expedia can maintain Financial relationships with these Property Managers. 
+
+Individual properties can not invoice Expedia directly. These properties cannot be onboarded via the API. 
 
 ## Updating property content or attributes via API
 
@@ -37,7 +39,7 @@ Property API supports clients that can centrally handle billing for its associat
 | Content Attributes & Property settings         | See SetPropertyDetails documentation |
 | Update via submitting a Full Overlay           | Update via PATCH         |
 
-After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  The Property API cannot be used to update properties that were onboarded by methods other than the Property API.  After initial onboarding by the Property API some settings some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.
+After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  The Property API cannot be used to update properties that were onboarded by methods other than the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.
 
 ## Retrieving Some Types of Property Info via API
 
