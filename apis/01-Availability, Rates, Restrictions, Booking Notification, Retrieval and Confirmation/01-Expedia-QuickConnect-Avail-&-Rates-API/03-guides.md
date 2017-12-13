@@ -515,6 +515,7 @@ A request can potentially contain dozens of warnings. If a request generated too
 
 Warning Code | Error Desc | Explanation and EQC partner Action 
 ------------ | ---------- | ----------------------------------
+7000 | Default warning | Covers use cases that are not defined below. Refer warning description for a specific warning details.
 7009 | Occupancy exceeds maximum allowed value | Applicable to occupancy-based pricing hotels only. The EQC partner requested to update an occupancy level that exceeds the room’s maximum occupancy defined in Expedia system. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.
 7010 | Room type cannot be closed because there is base allocation remaining on the room. | The room type will remain available on Expedia until all base allocation is sold. For assistance, please contact your market manager, who will manage the process internally or correct the issue.
 7013 | Unable to set total allocation below the current base allocation value (XX). Update will be modified to cap reduction to base allocation level. | The EQC partner must notify the property that the requested total allocation was CHANGED by Expedia QuickConnect to match its current outstanding base allocation. For assistance, please contact your market manager, who will manage the process internally or correct the issue.
