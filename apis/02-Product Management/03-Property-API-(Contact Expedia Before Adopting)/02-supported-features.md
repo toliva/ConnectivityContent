@@ -27,9 +27,13 @@ Property API supports the onboarding of new properties that offer Expedia Collec
 | ---------   | ------------- |
 | Centralized & DeCentralized | Billing for independent properties |
 
-Property API supports clients that can centrally handle billing for its associated properties.  For Expedia Collect products, this would require that the API partner send invoices to ExpediaPay for any properties it onboards via the Property API.  DeCentralized billing is also supported - This means a Connectivity Provider can onboard multiple Property Managers on their behalf and Expedia can maintain Financial relationships with these Property Managers. 
+Property API supports two scenarios:
 
-Individual properties can not invoice Expedia directly. These properties cannot be onboarded via the API. 
+1)     Connectivity partners that can centrally handle billing and payments for their associated properties. For Expedia Collect bookings, this would require that the API partner uploads consolidated invoices via ExpediaPartnerCentral for any properties onboarded via the property API, and to be able to receive payment centrally for the net rates being invoiced for. Similarly for Hotel Collect bookings, they would be required to work with a centralized account for consolidated commission payments.
+
+2)     Decentralized billing is also supported - this means a connectivity provider can onboard multiple property managers on their behalf and Expedia can maintain financial relationships directly at the property manager level.
+
+To note, individual properties working on an individual billing/payments basis can not be onboarded via the API.
 
 ## Updating property content or attributes via API
 
