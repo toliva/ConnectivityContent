@@ -10,9 +10,9 @@ We invite you to watch this video that captures the vibe, energy and productivit
 
 <iframe width="100%" height="400" src="https://www.youtube.com/embed/9yWe6IoxuG0" frameborder="0" allowfullscreen=""></iframe>
 
-**1st Place: ![](http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg)** creating an image management tools for hotels to bulk upload, identify and categorize images.
+**1st Place: ![](/images/Hotelbeds-Logo.png)** creating an image management tools for hotels to bulk upload, identify and categorize images.
 
-**2nd Place: ![](http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png)** creating a mobile application for hotels to optimize their visibility and room production in Expedia's market place.
+**2nd Place: ![](/images/horz_logo_color.png)** creating a mobile application for hotels to optimize their visibility and room production in Expedia's market place.
 
 **3rd Place: SWITCH.CM** creating a rapid onboarding application based on externally available information about hotels.
 
