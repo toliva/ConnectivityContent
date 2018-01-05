@@ -17,11 +17,12 @@ Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) cred
 
 | Method | HTTP Verb | Endpoint | Description |
 | ------ | --------- | -------- | ----------- |
-| Set Property Details | PUT | /properties/v1/{EQC account id} | PUT property information to initiate onboarding. |
-| Get Property Details | GET | /properties/v1/{EQC account id}/{provider property ID} | GET property information |
-| Update a Property | PUT | /properties/v1/{EQC account id} | Update an existing property by sending a full overlay. PATCH is not supported.  |
-| Get Property Status | GET | /properties/v1/{EQC account id}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
-| Deactivate Property | DELETE | /properties/v1/{EQC account id}/{provider property ID} | De-activates property in Expedia system |
+| Set Property Details | PUT | /properties/v1/{provider name} | PUT property information to initiate onboarding. |
+| Get Property Details | GET | /properties/v1/{provider name}/{provider property ID} | GET property information |
+| Update a Property | PUT | /properties/v1/{provider name} | Update a property by sending a full overlay. PATCH is not supported.  |
+| Get Property Status | GET | /properties/v1/{provider name}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
+| Update by ExpediaID | PUT | /properties/v1/{ExpediaHotelID} | This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
+| Deactivate Property | DELETE | /properties/v1/{provider name}/{provider property ID} | De-activates property in Expedia system |
 
 ## API Errors
 
@@ -245,8 +246,8 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | Dictionary Key | Required | Notes |
 | -------------- | -------- | ----- |
 | Property | Yes |  Contact Info for the physical property |
-| ReservationManager | Yes | firstName, lastName, and **either** an email or fax number is required.  Property will fail onboarding if this information is not submitted.  |
-| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of "24hr- " is added to FirstName if field is not provided. |
+| ReservationManager | Yes | firstName, lastName, and **either** an email or fax number is required.  Property will fail onboarding if this information is not submitted.The firstName, lastName must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode.  |
+| AlternateReservationManager | Yes | Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of "24hr- " is added to FirstName if field is not provided. The firstName, lastName must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode. |
 | GeneralManager | No | If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly. |
 | PropertyExtranetUser | No | First Name, Last Name, email address required.  An account for Expedia Partner Central (EPC) will be created during the onboarding process and credentials will be sent to the email address submitted.  This EPC account can be used by the hotel to read and respond to user reviews and reports for the property via EPC extranet. Any content updates submitted via the EPC extranet can be overwritten by an update submitted via the Property API. |
 
@@ -304,7 +305,7 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#paragraph) Paragraph text may require review by Expedia prior to publishing. |
+| code | String | Yes | See [code list](./code-list.html#paragraph) Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead. |
 | value | String | Yes | Paragraph Text |
 
 **propertyCollectedMandatoryFee**
