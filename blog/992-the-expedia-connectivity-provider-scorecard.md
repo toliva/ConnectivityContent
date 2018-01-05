@@ -2,7 +2,7 @@
 [//]: # (Date: 2017-08-23)
 [//]: # (Category: scorecard)
 
-Hotel and lodging partners rely on our connected platforms to help power their business and attract guests. Whether you’re a channel manager, central reservation system or property management system, a strong connection to Expedia will result in happy customers and help grow your business.
+Property and lodging partners rely on our connected platforms to help power their business and attract guests. Whether you’re a channel manager, central reservation system or property management system, a strong connection to Expedia will result in happy customers and help grow your business.
 
 It’s important that all connected systems meet standards and operate at top performance. As a Connectivity partner, we want to ensure that you understand the health of your connection and are aware of opportunities for improvement.
 
