@@ -3,7 +3,7 @@
 [//]: # (Category: brand expansion)
 
 **What's New?**
-Expedia is expanding Point of Sale Brand information passed through our APIs so hotel partners can recognize the booking point of sale from our dynamic portfolio of travel brands. Without proper Point of Sale Brand information being passed to your properties, guests can be greeted as having booked from a different Point of Sale Brand upon check-in, which can lead to customer confusion and poor customer experience.
+Expedia is expanding Point of Sale Brand information passed through our APIs so property partners can recognize the booking point of sale from our dynamic portfolio of travel brands. Without proper Point of Sale Brand information being passed to your properties, guests can be greeted as having booked from a different Point of Sale Brand upon check-in, which can lead to customer confusion and poor customer experience.
 
 **When Can I See Enhanced Point of Sale Brand Identification? **
 Beginning May 1st, you can begin adopting the changes. This feature is a requirement for all connections and any future certifications, so please ensure that your system supports our enhanced list of brands in order to remain compliant with our certification standards.
