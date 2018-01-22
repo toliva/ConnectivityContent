@@ -195,6 +195,8 @@ The below example is a request to onboard a new property using SetPropertyDetail
 
 ```
 
+The property API can be utilized by both our Expedia Quick Connect (EQC) partners as well as our Direct Connect (ARI) partners. If you are a Direct Connect ARI partner, there is a small addition to the Onboarding Request - You would need to define the Brand Code and Chain Code of the property as well. You can find details [here](/files/SetPropertyARIChain.pdf).
+
 **property**
 
 | Attribute | Type | Required for Onboarding | Updatable? | Notes |
