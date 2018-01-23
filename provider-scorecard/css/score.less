@@ -57,7 +57,7 @@ body {
         padding: 0.5rem .9375rem;
         background-color: white;
         margin-bottom: 0.67rem;
-        border-right: 1px solid #f8f8f8;
+        border-right: 1px solid @body-background;
     }
 
     .scorecard-provider {
@@ -90,7 +90,7 @@ body {
     margin-left: 35px;
     margin-right: 35px;
     max-width: none;
-    background: #f8f8f8;
+    background: @body-background;
     margin-bottom: 50px;
 
     .scorecard-category {
@@ -108,6 +108,7 @@ body {
     }
 
     .scorecard-cards {
+        background: @body-background;
         padding: 0;
 
         .checkmark {
@@ -117,8 +118,9 @@ body {
         }
 
         .border {
-            border-top: 10px solid #f8f8f8;
-            border-right: 10px solid #f8f8f8;
+            flex-direction: row;
+            border-top: 10px solid @body-background;
+            border-right: 10px solid @body-background;
             border-bottom: none;
             height: 8em;
             padding-top: 1em;
@@ -170,21 +172,18 @@ body {
         }
 
         .state {
-            display: inline-block;
             vertical-align: middle;
             margin-right: 0.5em;
         }
 
         .feature {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 0.5em;
+            flex-grow: 10;
+            margin: auto 0.5em auto 0;
         }
 
         .icon-toggle90 {
-            display: inline-block;
+            align-self: flex-end;
             vertical-align: middle;
-            float: right;
             font-size: 1.5em;
         }
 
@@ -269,7 +268,7 @@ body {
 
     .scorecard-improve {
         margin-bottom: 1em;
-        border-top: 10px solid #f8f8f8;
+        border-top: 10px solid @body-background;
         border-bottom: none;
         padding-top: 1em;
         text-align: right;
@@ -309,6 +308,7 @@ hr {
         white-space: nowrap;
         overflow-x: hidden;
         background: @card-background;
+        display: flex;
     }
 
     .improve-thanks {
