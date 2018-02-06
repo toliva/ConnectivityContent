@@ -21,6 +21,7 @@ Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) cred
 | Get Property Details | GET | /properties/v1/{provider name}/{provider property ID} | GET property information |
 | Update a Property | PUT | /properties/v1/{provider name} | Update a property by sending a full overlay. PATCH is not supported.  |
 | Get Property Status | GET | /properties/v1/{provider name}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
+| Get by ExpediaID | GET | /properties/v1/{ExpediaHotelID} | This method can be used to GET Property Information for properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
 | Update by ExpediaID | PUT | /properties/v1/{ExpediaHotelID} | This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
 | Deactivate Property | DELETE | /properties/v1/{provider name}/{provider property ID} | De-activates property in Expedia system |
 
