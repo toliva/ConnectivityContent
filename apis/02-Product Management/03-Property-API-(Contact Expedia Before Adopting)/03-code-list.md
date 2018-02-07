@@ -12,12 +12,39 @@ The SetPropertyDetails code list is available for download [here](/files/Propert
 | ---- |
 | HOTEL |
 | MOTEL |
+| VILLA |
 | APART_HOTEL|
 | BED_AND_BREAKFAST |
 | INN |
 | APARTMENT |
 | CONDO |
 | COTTAGE |
+| AGRITOURISM |
+| ALL_INCLUSIVE |
+| CABIN |
+| CAMPSITE |
+| CASTLE |
+| CHALET |
+| CONDOMINIUM_RESORT |
+| COUNTRY_HOUSE |
+| CRUISE |
+| GUEST_HOUSE |
+| HOLIDAY_PARK |
+| HOSTEL |
+| HOTEL_RESORT |
+| HOUSE_BOAT |
+| LODGE |
+| PALACE |
+| PENSION |
+| PRIVATE_VACATION_HOME |
+| RANCH |
+| RESIDENCE |
+| RYOKAN |
+| RIAD |
+| SAFARI |
+| TOWNHOUSE |
+| TREE_HOUSE |
+
 
 ### property.contact.phoneNumber.phoneNumberType
 
