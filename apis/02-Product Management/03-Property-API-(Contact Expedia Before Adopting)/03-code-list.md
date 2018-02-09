@@ -102,10 +102,13 @@ The reasonCodes field represents all the reasons the property has a particular s
 | | PropertySuspended |
 | | EpcOnboardingInProgress |
 | | OfacCheckFailed |
+| | InvalidProperty |
 | | MissingBillingCurrencyCode |
 | | InternalError |
 | | DeclinedOnReview |
 | PendingReview | BookableProvidersExist |
+| | BusinessModelChanging |
+| | CurrencyCodeChanging |
 | PropertySaved | None |
 | ExpediaIdAssigned | None |
 | FinanceSetupPending | None |
