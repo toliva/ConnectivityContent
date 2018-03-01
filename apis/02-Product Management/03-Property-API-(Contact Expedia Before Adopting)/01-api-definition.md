@@ -37,7 +37,7 @@ After submitting a request for any of the endpoints listed in the section above,
 | 400 | Validation Error | No | Must address errors listed in the Validation attribute contained within the response body and resubmit. |
 | 5xx | Internal Error | Yes | Internal system error when attempting to process message. |
 
-A list of possible errors for each API can be found [here](./code-list.html "Error Code List")
+A list of possible errors for each API can be found [here](./03-code-list.md "Error Code List")
 
 ## SetPropertyDetails
 
@@ -207,7 +207,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
 | providerPropertyUrl | String | No | Yes | URL for property's website, must be submitted in Western European Character set. |
-| structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./code-list.html#property-structuretype "Structure type codes") |
+| structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./03-code-list.md#property-structuretype "Structure type codes") |
 | currencyCode | String | Yes | No | Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit the same ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version. |
 | billingCurrencyCode | String | Yes | No | Use ISO4217.  Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding.   |
 | timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
@@ -333,16 +333,16 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
-| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
-| pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
+| rateAcquisitionType | String | No | See [code list](./03-code-list.md#property-inventorysetting-rateacquisitiontype)|
+| distributionModels | String | No | See [code list](./03-code-list.md#property-inventorysetting-distributionmodels)|
+| pricingModel | String | No | See [code list](./03-code-list.html#property-inventorysetting-pricingmodel)|
 
 **tax**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#tax) |
-| detailCode | String | See [code list](./code-list.html#tax) | See [code list](./code-list.html#tax) |
+| code | String | Yes | See [code list](./03-code-list.md#tax) |
+| detailCode | String | See [code list](./03-code-list.md#tax) | See [code list](./03-code-list.md#tax) |
 | value | Number | Yes |
 
 ### SetPropertyDetails Response
@@ -838,7 +838,7 @@ GET /properties/v1/mycompany/1234/status
 }
 ```
 
-A complete list of reason codes can be found on the [code list page](./code-list.html).
+A complete list of reason codes can be found on the [code list page](./03-code-list.html).
 
 ## Update a Property
 Updating a property that is already onboarded is the same operation as the original onboarding - a full overlay update is required using the SetPropertyDetails.  It is recommended that you GET the property details first, modify the fields that you'd like to change (and/or add new), then send the entire json document as a PUT request to update the property.  Please note that PATCH is not supported at this time - a complete overlay is required for updates.
