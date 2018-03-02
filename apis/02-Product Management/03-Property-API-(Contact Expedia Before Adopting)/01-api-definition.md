@@ -1,6 +1,6 @@
 # API Definition
 
-The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](https://expediaconnectivity.com/apis/product-management/property-api-contact-expedia-before-adopting-/supported-features.html) and review the API Definition. **Please note** the Property API currently only caters to limited use cases. To avoid unnecessary development effort, contact your account manager or the [EQC System Specialist Team](mailto:eqcss@expedia.com?subject=Approval%20to%20use%20Property%20API) before adopting this API.
+The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the [Supported Features](./supported-features.html) and review the API Definition. **Please note** the Property API currently only caters to limited use cases. To avoid unnecessary development effort, contact your account manager or the [EQC System Specialist Team](mailto:eqcss@expedia.com?subject=Approval%20to%20use%20Property%20API) before adopting this API.
 
 
 ## Authentication
@@ -210,7 +210,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 | structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./code-list.html#property-structuretype "Structure type codes") |
 | currencyCode | String | Yes | No | Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit the same ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version. |
 | billingCurrencyCode | String | Yes | No | Use ISO4217.  Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding.   |
-| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Use the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) |
+| timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Specified in IANA timezone format. See the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for details.|
 | addresses | Array of Address objects | Yes | No | See Address below. |
 | ratings | Array of Rating objects | No | No | See Rating below. |
 | contacts | Dictionary of Contact objects | Yes | Yes | See Contact below. |
