@@ -282,8 +282,8 @@ Updating only the status:
 Parameter | Parameter Type | Description | Required | Data Type
 --------- | -------------- | ----------- | -------- | ---------
 Authorization | header | Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64] | Yes | Base64 encoded auth token
-propertyId | path | Expedia Property ID | true | string | 
-resourceId | path | Image Resource ID. | true | string | 
+propertyId | path | Expedia Property ID | true | string
+resourceId | path | Image Resource ID. | true | string
 body | body | JSON message of partially updated room type | Yes | [Image](#/definitions/Image)
 
 ### Delete an existing image
