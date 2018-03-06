@@ -37,7 +37,7 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 1 | Authentication | - | | Grouping of required information to grant access to Expedia QuickConnect interface.
 1 | @username | String | | Username for Expedia QuickConnect login (case sensitive), provided by Expedia. | Minimum length: 4, Maximum length: 30, Username exists, User is allowed to access Expedia QuickConnect
 1 | @password | String | | Password for Expedia QuickConnect login (case sensitive), provided by Expedia. | Minimum length: 6, Maximum length: 30, Password fits with the username
-1 | Hotel | - | | Information about Hotel
+1 | Hotel | - | | Information about Hotel |
 1 | @id | Integer | | Hotel ID defined by Expedia and uniquely identifying a property in Expedia system. | Positive integer of 14 digits or less, Hotel ID is valid, Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.
 1 | AvailRateUpdate | - | | Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges. | This element can be omitted in the request and everything brought back one level down if EQC partner doesn’t see a need to send multiple updates within same message, but also to insure backward compatibility.
 2 | DateRange | - | | Specify dates on which availability and rate information provided in this message applies. A 'from' and a 'to' date must be specified. They can be equal if the EQC partner wants to update only one date. This element can be repeated more than once if EQC partner wants to update non-consecutive dates or date ranges. | “from date” <= “to date”
@@ -48,20 +48,20 @@ If EQC partners need to use this feature, Expedia recommends specifying all seve
 
 Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC validations
 ----- | -------------------- | --------- | ---------------- | ----------- | ---------------
-2 | @sun | Boolean | O | If set to true, apply update for each Sunday in the specified date interval.
-2 | @mon | Boolean | O | If set to true, apply update for each Monday in the specified date interval.
-2 | @tue | Boolean | O | If set to true, apply update for each Tuesday in the specified date interval.
-2 | @wed | Boolean | O | If set to true, apply update for each Wednesday in the specified date interval.
-2 | @thu | Boolean | O | If set to true, apply update for each Thursday in the specified date interval.
-2 | @fri | Boolean | O | If set to true, apply update for each Friday in the specified date interval.
-2 | @sat | Boolean | O | If set to true, apply update for each Saturday in the specified date interval.
-2 | RoomType | - | | Room type to be updated by this message. This element can be repeated more than once if hotel wants to update multiple room types for the same set of dates.
+2 | @sun | Boolean | O | If set to true, apply update for each Sunday in the specified date interval. |
+2 | @mon | Boolean | O | If set to true, apply update for each Monday in the specified date interval. |
+2 | @tue | Boolean | O | If set to true, apply update for each Tuesday in the specified date interval. |
+2 | @wed | Boolean | O | If set to true, apply update for each Wednesday in the specified date interval. |
+2 | @thu | Boolean | O | If set to true, apply update for each Thursday in the specified date interval. |
+2 | @fri | Boolean | O | If set to true, apply update for each Friday in the specified date interval. |
+2 | @sat | Boolean | O | If set to true, apply update for each Saturday in the specified date interval. |
+2 | RoomType | - | | Room type to be updated by this message. This element can be repeated more than once if hotel wants to update multiple room types for the same set of dates. |
 2 | @id | String | | Room type ID (defined by Expedia). Note: mapping of Expedia IDs to hotel codes has to be done by EQC partner. | String of 50 characters or less, RoomType ID is valid only if the specified hotel has the corresponding room type defined for it in Expedia Partner Central, Room type should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this room type is inactive. 
 2 | @closed | Boolean | O | If true, the room type is no longer available on Expedia for dates specified in the request. If false, the room type is reopened if previously closed, or stays open if already open. | A close request will be refused if the room is enabled for base allocation and has base allocation left.
 3 | Inventory | - | | Number of rooms being made available for sale on Expedia. **Note:** only applies to a single room type. | Either flexibleAllocation or totalInventoryAvailable, but not both, must be sent in any message for an availability update.
 3 | @flexibleAllocation | Integer | O | In the case of a hotel using base allocation: number of additional rooms available for this room type, for each day specified by "DateRange" element. | Minimum value: 0, Maximum value: 4999
 3 | @totalInventoryAvailable | Integer | O | Total number of rooms made available via Expedia for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation. **Note:** In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, the Integer value will be **changed** by Expedia QuickConnect to equal the current base allocation amount and a warning (7013) will be returned. | Minimum value: 0, Maximum value: 4999
-3 | RatePlan | - | O | Information about a rate plan. This element can be repeated more than once if hotel wants to update multiple rate plans under this room type for the same set of dates. **Note:** Rate plans can only belong to a single room type and Rate plans should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this rate plan is inactive.
+3 | RatePlan | - | O | Information about a rate plan. This element can be repeated more than once if hotel wants to update multiple rate plans under this room type for the same set of dates. **Note:** Rate plans can only belong to a single room type and Rate plans should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this rate plan is inactive. |
 3 | @id | String | | Rate plan ID (assigned by Expedia). Unique throughout Expedia system, so the same rate plan ID cannot be associated to more than one room type. | String of 50 characters or less, RatePlan ID is valid only if the specified hotel has the corresponding rate plan defined for it in Expedia Partner Central. 
 3 | @closed | Boolean | O | If true, the rate plan is no longer available on Expedia for dates specified under the room type. If false, the rate plan is reopened if previously closed, or stays open if already open. | For hotels with base allocation contracts, if this is the last rate plan opened,  and a close request is received, it will be rejected with warning code 7014.
 4 | Rate | - | O | Room rates. The type of rate (sell, net, LAR) to include depends on the configuration for this hotel.  Up to 28 rate elements can be specified when updating per day and per length of stay rates. Else only one rate element should be defined. | Use only one pricing model, Pricing model in synch with configuration of the property on Expedia Partner Central or via the PARR interface
@@ -71,11 +71,11 @@ Level | Element / @Attribute | Data Type | Number of occur. | Description | EQC 
 5 | PerDay | - | O | To be used when property is configured with Per Day pricing on Expedia Partner Central. This rate is for base occupancy of the room. | Property is configured with per day pricing on Expedia Partner Central.
 5 | @rate | Decimal | | Rate for base occupancy, per day. When used in conjunction with length of stay pricing attribute, the rate defined is the rate per day. If the rate is for 100$ for LOS=7, then the total of this stay’s rate would be 7x100=700. | Rate has to be >= 0.000, Rate has to be <= 16 digits long
 5 | @rate | Decimal | | Rate for one person, based on double occupancy. Single person supplement and additional person fees are configured when rate plan is created and cannot be modified in this interface. | Rate has to be >= 0.000, Rate has to be <= 16 digits long
-4 | Restrictions | - | O | 
+4 | Restrictions | - | O | |
 4 | @minLOS | Integer | O | Specifies minimum length of stay required to qualify for this rate. Guest has to stay at least this number of nights to benefit from rate.  If not specified, the minimum length of stay will be set to a default value configured in Expedia systems (1 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS | Minimum value: 1, Maximum value: 28, Attempting to set MinLOS greater than Expedia’s configured value for the hotel will result in the update being refused with error code 3135.
-4 | @maxLOS | Integer | O | Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS.
-4 | @closedToArrival | Boolean | O | Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan.
-4 | @closedToDeparture | Boolean | O | Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan.
+4 | @maxLOS | Integer | O | Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS. |
+4 | @closedToArrival | Boolean | O | Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan. |
+4 | @closedToDeparture | Boolean | O | Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan. |
 
 
 ## Availability and Rate Response (AR RS)
