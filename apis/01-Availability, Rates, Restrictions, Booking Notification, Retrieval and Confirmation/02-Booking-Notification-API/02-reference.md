@@ -238,21 +238,21 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 7 | GuaranteeAccepted |  | 1 |  | Container element
 8 | PaymentCard |  | 1 |  | Container element that holds the actual credit card information.
   | @CardType | OTA_CodeType | 1 | 1 | Use "1" for Credit Card.
-  | @CardCode | PaymentCardType UpperCaseAlphaLength1to2 | 1 | AX, DN, DS, JC, MC, VI | 2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa. Note this is not a finite list and new codes maybe added or changed in the future.
- | @CardNumber | NumericStringLength1to19 | 1 |  | The 16 digit card number.
+  | @CardCode | PaymentCardType | 1 | AX, DN, DS, JC, MC, VI | 2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa. Note this is not a finite list and new codes maybe added or changed in the future.
+ | @CardNumber | Numeric String Length 1 to 19 | 1 |  | The 16 digit card number.
  | @ExpireDate | MMYY | 1 |  | Expiration date of the credit card.
  | @EffectiveDate | Date format MMYY | 0..1 |  | Starting date. Not used by EVC, Maybe used for Hotel Collect bookings, but only by certain card types.
- | @SeriesCode | NumericStringLength1to8 | 0..1 |  | CSV or CVV. Not used currently by EVC, but can be available to Hotel Collect bookings.
-9 | CardHolderName | StringLength1to64 | 0..1 |  | Container element that holds the card holder name. For EVC bookings, value will be set to "Expedia VirtualCard". For Hotel Collect bookings, value will be set to the actual card holder name.
+ | @SeriesCode | Numeric String Length 1 to 8 | 0..1 |  | CSV or CVV. Not used currently by EVC, but can be available to Hotel Collect bookings.
+9 | CardHolderName | String Length 1 to 64 | 0..1 |  | Container element that holds the card holder name. For EVC bookings, value will be set to "Expedia VirtualCard". For Hotel Collect bookings, value will be set to the actual card holder name.
 9 | Address |  | 0..1 |  | Billing address. For EVC bookings, address will be set to a static value, and may change in the future. Omitted for HotelCollect reservations, as Expedia does not collect this information anymore.
   | @FormattedInd | boolean | 0..1 | false |  Always set to false.
-10 | AddressLine | StringLength1to64 | 1 |  | Street number and street name. Set to: 333 108th Avenue NE
-10 | CityName | StringLength1to64 | 1 |  | City name. Set to: Bellevue
-10 | PostalCode | StringLength1to16 | 1 |  | Zip or postal code. Set to: 98004
-10 | StateProv | StateProvType Length0to64 | 1 |  | State or province name; .
-  | @StateCode | StringLength8 | 1 |  | State/Province codes. set to: WA
-10 | CountryName | CountryNameType Length0to64 | 1 |  | Country name.
-  | @Code | StringLenght2 | 1 |  | Two letter country codes from the ISO 3166 code list. Set to: US
+10 | AddressLine | String Length 1 to 64 | 1 |  | Street number and street name. Set to: 333 108th Avenue NE
+10 | CityName | String Length 1 to 64 | 1 |  | City name. Set to: Bellevue
+10 | PostalCode | String Length 1 to 16 | 1 |  | Zip or postal code. Set to: 98004
+10 | StateProv | StateProvType Length 0 to 64 | 1 |  | State or province name; .
+  | @StateCode | String Length 8 | 1 |  | State/Province codes. set to: WA
+10 | CountryName | CountryNameType Length 0 to 64 | 1 |  | Country name.
+  | @Code | String Length 2 | 1 |  | Two letter country codes from the ISO 3166 code list. Set to: US
 5 | Total |  | 1 |  | Total charge for the entire room stay.
   | @AmountAfterTax | Money | 1 |  | Total charge including everything (daily rate, additional guest charges, taxes, fees, etc.).
  | @CurrencyCode | String 3 | 1 |  | Currency of the total charge in the ISO 4217 alphabetic format.
@@ -301,9 +301,9 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @AccountID | String 32 | 1 |  | The account identification number for this particular member in this particular program.
  | @TravelSector | Numeric 1 | 0..1 | 1 3 | Expedia uses the following OTA codes for travel sector: 1 for Air, 3 for Hotel
 4 | HotelReservationIDs |  | 1 |  | Collection of hotel reservation and confirmation IDs. Container element.
-5 | HotelReservationID |  | 1..2 |  | For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HortelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system's confirmation number.
- | @ResID_Type | Numeric 1 | 1 | 3 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses "8" to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses "3" for the Holelier's confirmation number and "8" for the Expedia reservation number.
- | @ResID_Value | String 64 | 1 |  | This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. NOTE: HotelReservations/HotelReservation/UniqueId/@Id= HotelReservationID/@ResID_Value. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier's confirmation number. The Expedia reservation number is associated with ResID_Type="8" and the Hotelier's confirmation number is associated with ResID_Type="3". The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
+5 | HotelReservationID |  | 1..2 |  | For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system's confirmation number.
+ | @ResID_Type | Numeric 1 | 1 | 3 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses "8" to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses "3" for the Hotelier's confirmation number and "8" for the Expedia reservation number.
+ | @ResID_Value | String 64 | 1 |  | This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier's confirmation number. The Expedia reservation number is associated with ResID_Type="8" and the Hotelier's confirmation number is associated with ResID_Type="3". The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
  | @ResID_Source | String 64 | 1 |  | A unique identifier to indicate the source system that generated the ResID_Value. For the Expedia reservation number, this value will be set to "Expedia". For the Hotelier's confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system. This value should be the same as the ResponderId.
  | @ResID_Date | dateTime | 1 |  | The creation date and time of this reservation ID as the local date and time. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.
 
@@ -312,7 +312,7 @@ There are 2 types of responses that can be returned by the hotel partner.
 - A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response.
 - An error response is to be returned when the notification failed to be processed by the partner system. In this case partner must include an explicit error code and a detail error message in the error response. The list of error codes are defined in the API spec.
 
-#### Detailed definition of a successul response
+#### Detailed definition of a successful response
 
 Level | Element or @Attribute | Format | Number of occur. | Value set | Description
 ----- | --------------------- | ------ | ---------------- | --------- | -----------
