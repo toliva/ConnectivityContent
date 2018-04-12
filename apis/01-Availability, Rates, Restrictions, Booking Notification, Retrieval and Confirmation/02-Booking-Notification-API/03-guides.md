@@ -110,7 +110,7 @@ Step | Expedia | Partner
 
 ## HTTP vs HTTPS, IP Address or URL?
 
-Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.1 or above protocol.
+Expedia requires that all booking notifications be sent over an encrypted, HTTPS connection. Expedia will only support sending booking notifications using TLS v1.2.
 
 Expedia  requires that partners make URLs available, and that the SSL certificates used be registered correctly to the URL.
 
