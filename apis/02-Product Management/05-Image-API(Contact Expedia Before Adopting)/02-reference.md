@@ -19,7 +19,7 @@ For more information about getting started for the first time, and authorization
 
 - **HTTP 1.1** : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.
 - **JSON** : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.
-- **Secure HTTP w/TLS v1.1+** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocols.
+- **Secure HTTP w/TLS v1.2** : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS below v1.2 protocol. We will only establish connections with TLS v1.2 protocols.
 - **REST** : The service adheres to REST principles and exposes only one resource: Image
 - **MUST-IGNORE** : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Image API starts returning additional data elements in responses, partners should ignore the data elements they do not need. 
 - **Entity** : All successful responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make successful responses generic across different resources and operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. 
