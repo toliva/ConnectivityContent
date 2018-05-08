@@ -797,6 +797,15 @@ GET /properties/v1/mycompany/1234
         "value": null,
       }
     ],
+      "inventorySettings": {
+            "rateAcquisitionType": "SELL_LAR",
+            "distributionModels": [
+                "HOTEL_COLLECT",
+                "EXPEDIA_COLLECT"
+            ],
+            "pricingModel": "PER_DAY",
+            "onStopSell": true
+        },
     "attributes": [
       {
         "code": "TOTAL_ROOMS",
