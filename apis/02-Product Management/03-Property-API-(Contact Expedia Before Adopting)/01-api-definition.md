@@ -803,7 +803,7 @@ GET /properties/v1/mycompany/1234
                 "HOTEL_COLLECT",
                 "EXPEDIA_COLLECT"
             ],
-            "pricingModel": "OCCUPANCY_BASED_CHILDREN_ALWAYS_EXTRA",
+            "pricingModel": "PER_DAY",
             "onStopSell": true
         },
     "attributes": [
