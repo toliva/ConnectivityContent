@@ -21,7 +21,7 @@ In short, a cookie is a small text file that is placed on your computer or mobil
 
 Cookies allow us to improve the website's content, functionality and speed, while their tracking ability also helps us to understand your likes and dislikes, which means we can respond quickly and adapt the site accordingly.
 At Expedia Group, we use cookies because it's important to us that the time you spend on our website, is as useful and intuitive as possible.
-In fact without cookie placement, a website cannot remember your preferences or registration details for your next visit. 
+In fact without cookie placement, a website cannot remember your preferences or registration details for your next visit.
 The important thing to remember about all of this is that whilst some cookies are used to track your use of our website, they cannot be used to identify you personally or tell us who you are.
 Here's a snapshot of all of the cookies we use on join.expediapartnercentral.com, expediaconnectivity.com, and discover.expediapartnercentral.com  along with a snippet of information about what they do.
 
@@ -31,7 +31,7 @@ Here's a snapshot of all of the cookies we use on join.expediapartnercentral.com
 
 ### First and third-party cookies
 
-There are many different types of cookies and at join.expediapartnercentral.com, expediaconnectivity.com, and discover.expediapartnercentral.com, we use them all. Those set by us are called 'first-party cookies'. Those set by our partners and suppliers are called 'third-party cookies'. Third-party cookies enable visitors to our website to see and interact with content such as videos and advertising provided to us by other companies. The same cookies can also help us with website analytics. More on that a little later.
+There are many different types of cookies and at join.expediapartnercentral.com, expediaconnectivity.com, and discover.expediapartnercentral.com, we use them all. Those set by us are called 'first-party cookies'. Those set by our partners and suppliers are called 'third-party cookies'. Third-party cookies enable visitors to our website to see and interact with content such as videos and advertising provided to us by other companies. The same cookies can also help us with website analytics. More on that a little later.
 
 ### Session and persistent cookies
 
@@ -65,15 +65,15 @@ We hope you're now feeling confident about what cookies can do, and how we use t
 
 You can set or amend your web browser controls to accept or refuse cookies whenever you like, but please remember if you do choose to reject cookies, your access to some of the functionality and areas of our website may be restricted.
 
-Most advertising networks offer you a way to opt out of targeted and online behavioural advertising. If you'd like to find out more information on how to opt out visit Your Online Choices website or the Your Online Choices website.
+Most advertising networks offer you a way to opt out of targeted and online behavioural advertising. If you'd like to find out more information on how to opt out visit Your Online Choices website or the Your Online Choices website.
 
 [back to top](#expedia-group-cookie-policy)
 
 ## 5. Online Behavioral Advertising Cookies
 
-Expedia Group adheres to the European Interactive Digital Advertising Alliance (“EDAA”) Principles. For more information about the EDAA, you can visit the EDAA website. If you wish to make a query or complaint about our use of online behavioural advertising cookies, please use the details listed in the “How to contact us” section below.
+Expedia Group adheres to the European Interactive Digital Advertising Alliance (“EDAA”) Principles. For more information about the EDAA, you can visit the EDAA website. If you wish to make a query or complaint about our use of online behavioural advertising cookies, please use the details listed in the “How to contact us” section below.
 
-For more information on what information is collected and how it is used, please see the Privacy Policy.
+For more information on what information is collected and how it is used, please see the Privacy Policy.
 
 Expedia Group does not process sensitive personal data for the online behavioural advertising purposes. We do not target anyone under the age of 16 on our website in general, nor for online behavioural advertising purposes.
 
@@ -81,7 +81,7 @@ Expedia Group does not process sensitive personal data for the online behavioura
 
 ## 6. How to contact us
 
-If you have any questions regarding Expedia Group's use of cookies or other technologies, send us an email using our customer service and feedback form to lodgingpartnersolutions@expedia.com , and we'll do all we can to answer your questions.
+If you have any questions regarding Expedia Group's use of cookies or other technologies, send us an email using our customer service and feedback form to lodgingpartnersolutions@expedia.com , and we'll do all we can to answer your questions.
 
 Now you know almost everything there is to know about cookies...job done.
 
