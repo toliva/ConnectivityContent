@@ -2,7 +2,7 @@
 
 'People Shaped Travel' is our motto so we work hard to listen to our partners and in return to deliver a smart and engaging website that reflects their needs. One of the ways in which we do this, is through the use of cookies.
 
-Not sure what cookies are or what they do? Pay close attention; this page will tell you everything you need to know about cookies, as well as teach you how you to manage them on your computer. Let's start with the most frequently asked question…
+Not sure what cookies are or what they do? Pay close attention; this page will tell you everything you need to know about cookies, as well as teach you how you to manage them on your computer. Let's start with the most frequently asked question...
 
 1. [What is a cookie?](#1-what-is-a-cookie-)
 2. [Why does Expedia Group use cookies?](#2-why-does-expedia-group-use-cookies-)
@@ -39,7 +39,7 @@ As with most websites, we also use 'session cookies', which exist only for the l
 
 ### Essential cookies
 
-These are required to help you access secure areas (such as your partner account pages). Essential cookies are critical because you can’t access these services without them.
+These are required to help you access secure areas (such as your partner account pages). Essential cookies are critical because you can't access these services without them.
 
 ### Performance and functionality cookies
 
@@ -65,15 +65,15 @@ We hope you're now feeling confident about what cookies can do, and how we use t
 
 You can set or amend your web browser controls to accept or refuse cookies whenever you like, but please remember if you do choose to reject cookies, your access to some of the functionality and areas of our website may be restricted.
 
-Most advertising networks offer you a way to opt out of targeted and online behavioural advertising. If you'd like to find out more information on how to opt out visit Your Online Choices website or the Your Online Choices website.
+Most advertising networks offer you a way to opt out of targeted and online behavioural advertising. If you'd like to find out more information on how to opt out visit [Your Online Choices](http://youronlinechoices.eu/) website.
 
 [back to top](#expedia-group-cookie-policy)
 
 ## 5. Online Behavioral Advertising Cookies
 
-Expedia Group adheres to the European Interactive Digital Advertising Alliance (“EDAA”) Principles. For more information about the EDAA, you can visit the EDAA website. If you wish to make a query or complaint about our use of online behavioural advertising cookies, please use the details listed in the “How to contact us” section below.
+Expedia Group adheres to the European Interactive Digital Advertising Alliance ("EDAA") Principles. For more information about the EDAA, you can visit the [EDAA website](https://www.edaa.eu/edaa-for-users/). If you wish to make a query or complaint about our use of online behavioural advertising cookies, please use the details listed in the "How to contact us" section below.
 
-For more information on what information is collected and how it is used, please see the Privacy Policy.
+For more information on what information is collected and how it is used, please see the [Privacy Policy](/privacy).
 
 Expedia Group does not process sensitive personal data for the online behavioural advertising purposes. We do not target anyone under the age of 16 on our website in general, nor for online behavioural advertising purposes.
 
@@ -81,7 +81,7 @@ Expedia Group does not process sensitive personal data for the online behavioura
 
 ## 6. How to contact us
 
-If you have any questions regarding Expedia Group's use of cookies or other technologies, send us an email using our customer service and feedback form to lodgingpartnersolutions@expedia.com , and we'll do all we can to answer your questions.
+If you have any questions regarding Expedia Group's use of cookies or other technologies, send us an email using our customer service and feedback form to <lodgingpartnersolutions@expedia.com>, and we'll do all we can to answer your questions.
 
 Now you know almost everything there is to know about cookies...job done.
 
