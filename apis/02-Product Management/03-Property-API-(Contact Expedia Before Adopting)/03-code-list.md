@@ -108,7 +108,9 @@ The reasonCodes field represents all the reasons the property has a particular s
 | | DeclinedOnReview |
 | PendingReview | BookableProvidersExist |
 | | BusinessModelChanging |
+| | ContractTermsChanging |
 | | CurrencyCodeChanging |
+| | RateAcquisitionTypeChanging |
 | PropertySaved | None |
 | ExpediaIdAssigned | None |
 | FinanceSetupPending | None |
