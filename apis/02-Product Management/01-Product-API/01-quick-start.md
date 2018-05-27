@@ -1,5 +1,5 @@
 # Quick Start
-The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.
+The Product API enables Expedia Group partners to read, create, and edit room types and rate plans via the API, without having to use Expedia Group Partner Central (PC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.
 
 ----
 

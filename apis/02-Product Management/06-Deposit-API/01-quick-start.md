@@ -1,5 +1,5 @@
 # Quick Start
-The Deposit API enables Expedia partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API's rate plan resource: first set a deposit policy at the property level with this API, then add or update rate plans, and indicate, for each rate plan, whether they require a deposit (using the property's deposit policy) or not via the depositRequired attribute.
+The Deposit API enables Expedia Group partners to set, update or remove a property's deposit policy. This feature needs to be used in conjunction with the product API's rate plan resource: first set a deposit policy at the property level with this API, then add or update rate plans, and indicate, for each rate plan, whether they require a deposit (using the property's deposit policy) or not via the depositRequired attribute.
 
 If you are not familiar with how Expedia defines a Deposit Policy, please read the [Deposit Policy Overview in the FAQ & Guides section](guides.html#depositpolicyoverview) first, before attempting to use the API.
 

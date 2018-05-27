@@ -1,6 +1,6 @@
 # Quick Start
 
-The Product, Availability and Rates API (PARR) was designed for any partner that needs to connect to Expedia to read/retrieve the current product configuration (rooms and rates defined), as well as the current rates and availability loaded in the system. PLEASE NOTE: for retrieving product information, Expedia STRONGLY encourages partners to use the Product API.
+The Product, Availability and Rates API (PARR) was designed for any partner that needs to connect to Expedia to read/retrieve the current product configuration (rooms and rates defined), as well as the current rates and availability loaded in the system. PLEASE NOTE: for retrieving product information, Expedia Group STRONGLY encourages partners to use the Product API.
 
 ----
 ## Authentication
