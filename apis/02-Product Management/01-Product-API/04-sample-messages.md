@@ -1371,6 +1371,16 @@ Response:
           "amount": 0
         }
       ],
+      "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+        "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
       "minLOSDefault": 1,
       "maxLOSDefault": 28,
       "minAdvBookDays": 0,
@@ -1431,6 +1441,16 @@ Response:
           "amount": 0
         }
       ],
+    "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
       "minLOSDefault": 1,
       "maxLOSDefault": 28,
       "minAdvBookDays": 0,
@@ -1503,6 +1523,16 @@ Response:
           "amount": 0
         }
       ],
+   "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
       "minLOSDefault": 1,
       "maxLOSDefault": 28,
       "minAdvBookDays": 0,
@@ -1602,6 +1632,16 @@ Response:
         "amount": 29.7
       }
     ],
+     "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
     "valueAddInclusions": [
       "Free Parking", "Free Breakfast", "Free Internet"
     ],
@@ -1684,6 +1724,16 @@ Response:
         "dateEnd": "2079-06-06",
         "ageCategory": "ChildAgeA",
         "amount": 30
+      }
+    ],
+   "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
       }
     ],
     "valueAddInclusions": [
@@ -1776,6 +1826,16 @@ Response:
         }
       ]
     },
+     "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
     "valueAddInclusions": [
       "Free Parking", "Free Wireless Internet", "Breakfast Buffet"
     ],
@@ -1865,6 +1925,16 @@ Response:
         "amount": 29.7
       }
     ],
+    "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
     "valueAddInclusions": [
       "Free Breakfast"
     ],
@@ -1952,6 +2022,16 @@ Response:
         "dateEnd": "2079-06-06",
         "ageCategory": "ChildAgeA",
         "amount": 20
+      }
+    ],
+       "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
       }
     ],
     "minLOSDefault": 1,
@@ -2053,6 +2133,16 @@ Response:
         "amount": 0
       }
     ],
+       "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
     "minLOSDefault": 1,
     "maxLOSDefault": 28,
     "minAdvBookDays": 0,
@@ -2119,6 +2209,16 @@ Authorization: Basic [your encoded username:password in Base64]
       "amount": 10
     }
   ],
+     "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
   ]
@@ -2195,6 +2295,16 @@ The response would look like:
         "amount": 40
       }
     ],
+       "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerNight": 10.0,
+      }
+    ],
     "valueAddInclusions": [
       "Free Parking", "Free Breakfast", "Free Internet"
     ],
@@ -2261,6 +2371,17 @@ Authorization: Basic [your encoded username:password in base64]
       "amount": 29.7
     }
   ],
+     "serviceFeesPerStay": [
+      {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerStay": 10.0,
+       "percent": 0.2
+      }
+    ],
   "valueAddInclusions": [
     "Free Breakfast"
   ]
@@ -2323,6 +2444,17 @@ Response would look like:
         "dateEnd": "2079-06-06",
         "ageCategory": "ChildAgeA",
         "amount": 29.7
+      }
+    ],
+       "serviceFeesPerStay": [
+        {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
     "valueAddInclusions": [
@@ -2411,6 +2543,17 @@ Authorization: Basic [your encoded username:password in base64]
       "amount": 20
     }
   ],
+     "serviceFeesPerStay": [
+        {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerStay": 10.0,
+       "percent": 0.2
+      }
+    ],
   "valueAddInclusions": [
     "Free Breakfast", "Free Internet"
   ],
@@ -2482,6 +2625,17 @@ Response would look like:
         "dateEnd": "2079-06-06",
         "ageCategory": "ChildAgeA",
         "amount": 20
+      }
+    ],
+       "serviceFeesPerStay": [
+        {
+       "isTaxable": false,
+       "percent": 0.2
+      },
+      {
+       "isTaxable": true,
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
     "valueAddInclusions": [
