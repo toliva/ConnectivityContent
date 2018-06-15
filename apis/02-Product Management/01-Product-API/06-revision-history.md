@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2018-06-15 | Added support documentation about Per Stay Service Fees at the Rateplan level (GET,POST,PUT)
 | 2017-08-10 | Added FAQ around managing deposit required flag in conjunction with the new Deposit API |
 | 2017-08-07 | Added documentation about new `depositPolicy` link in Rate Plan's links section of the response payload on GET Rate Plan and GET Rate Plans operations. |
 | 2017-07-31 | Added access to room type and rate plan resources without "/products" in endpoint path. |
