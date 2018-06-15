@@ -1374,15 +1374,11 @@ Response:
       "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
-       "percent": 0.2
+        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
       "minLOSDefault": 1,
@@ -1448,15 +1444,11 @@ Response:
     "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
       "minLOSDefault": 1,
@@ -1534,15 +1526,11 @@ Response:
    "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
       "minLOSDefault": 1,
@@ -1647,15 +1635,11 @@ Response:
      "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "valueAddInclusions": [
@@ -1745,15 +1729,11 @@ Response:
    "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "valueAddInclusions": [
@@ -1849,15 +1829,11 @@ Response:
      "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "valueAddInclusions": [
@@ -1952,15 +1928,11 @@ Response:
     "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "valueAddInclusions": [
@@ -2055,15 +2027,11 @@ Response:
        "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "minLOSDefault": 1,
@@ -2168,15 +2136,11 @@ Response:
        "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "minLOSDefault": 1,
@@ -2248,15 +2212,11 @@ Authorization: Basic [your encoded username:password in Base64]
      "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
   "valueAddInclusions": [
@@ -2338,15 +2298,11 @@ The response would look like:
        "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
        "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
       }
     ],
     "valueAddInclusions": [
@@ -2418,15 +2374,12 @@ Authorization: Basic [your encoded username:password in base64]
      "serviceFeesPerStay": [
       {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
-       "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
   "valueAddInclusions": [
@@ -2494,17 +2447,14 @@ Response would look like:
       }
     ],
        "serviceFeesPerStay": [
-      {
+        {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
-       "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
     "valueAddInclusions": [
@@ -2594,17 +2544,14 @@ Authorization: Basic [your encoded username:password in base64]
     }
   ],
      "serviceFeesPerStay": [
-      {
+        {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
-       "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
   "valueAddInclusions": [
@@ -2681,17 +2628,14 @@ Response would look like:
       }
     ],
        "serviceFeesPerStay": [
-      {
+        {
        "isTaxable": false,
-       "amountPerNight": 0.0,
-       "amountPerStay": 0.0,
        "percent": 0.2
       },
       {
        "isTaxable": true,
-       "amountPerNight": 10.0,
-       "amountPerStay": 0.0,
-       "percent": 0.0
+       "amountPerStay": 10.0,
+       "percent": 0.2
       }
     ],
     "valueAddInclusions": [
