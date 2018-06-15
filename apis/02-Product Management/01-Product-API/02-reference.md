@@ -924,16 +924,13 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
   "serviceFeesPerStay": [
       {
     "isTaxable": false,
-    "amountPerNight": 0.0,
-    "amountPerStay": 0.0,
     "percent": 0.2
-  },
-  {
+     },
+     {
     "isTaxable": true,
-    "amountPerNight": 10.0,
-    "amountPerStay": 0.0,
-    "percent": 0.0
-  }
+    "amountPerNight": 5.0,
+    "amountPerStay": 20.0,
+     }
     ],
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
@@ -1080,18 +1077,15 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
     }
   ],
    "serviceFeesPerStay": [
-      {
+     {
     "isTaxable": false,
-    "amountPerNight": 0.0,
-    "amountPerStay": 0.0,
     "percent": 0.2
-  },
-  {
+     },
+     {
     "isTaxable": true,
-    "amountPerNight": 10.0,
-    "amountPerStay": 0.0,
-    "percent": 0.0
-  }
+    "amountPerNight": 5.0,
+    "amountPerStay": 20.0,
+     }
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
   ],
