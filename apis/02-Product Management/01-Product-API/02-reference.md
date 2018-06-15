@@ -921,6 +921,20 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
       "amount": 5
     }
   ],
+  "serviceFeesPerStay": [
+      {
+    "isTaxable": false,
+    "amountPerNight": 0.0,
+    "amountPerStay": 0.0,
+    "percent": 0.2
+  },
+  {
+    "isTaxable": true,
+    "amountPerNight": 10.0,
+    "amountPerStay": 0.0,
+    "percent": 0.0
+  }
+    ],
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
   ],
@@ -1065,6 +1079,19 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
       "amount": 5
     }
   ],
+   "serviceFeesPerStay": [
+      {
+    "isTaxable": false,
+    "amountPerNight": 0.0,
+    "amountPerStay": 0.0,
+    "percent": 0.2
+  },
+  {
+    "isTaxable": true,
+    "amountPerNight": 10.0,
+    "amountPerStay": 0.0,
+    "percent": 0.0
+  }
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
   ],
@@ -1215,6 +1242,7 @@ creationDateTime | date | Date at which the rate plan has been created. The date
 lastUpdateDateTime | date | Date of the last modifications to this rate plan. The date is formatted in the ISO 8601 format. Example: 2016-10-21T18:37:27Z. Read-only. Set by Expedia at time of Create or Update. Cannot be provided in create or changed by partner in update messages.
 cancelPolicy | [CancelPolicy](#/definitions/CancelPolicyDTO) | Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property. If Expedia cannot identify a recently created rate plan, the policy will be defaulted to a standard cancellation policy, where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline.
 additionalGuestAmounts | Array[[AdditionalGuestAmount](#/definitions/AdditionalGuestAmountDTO)] | Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates.
+serviceFeesPerStay | Array[[serviceFeesPerStay]](#/definitions/serviceFeesPerStay)] | Array of Per Stay Service Fees that are collected at the time of Booking. 
 valueAddInclusions | Array[[valueAddInclusionsEnum](#/definitions/valueAddInclusionsEnum)] | Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones
 minLOSDefault | integer | Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
 maxLOSDefault | integer | Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail
@@ -1237,6 +1265,16 @@ dateStart | date | Date at which this amount started being applicable, can be in
 dateEnd | date | Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06.
 ageCategory | enum | The age category for the additional guests. Possible values: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
 amount | number | Min value 0.000, accepts up to 3 decimal points
+
+#### serviceFeesPerStay
+
+Property Name | Type | Description
+------------- | ---- | -----------
+isTaxable | Boolean | Indicates if the Service Fees loaded is to be taxed or not.
+amountPerNight | Number | Defines the amount charged per night. Maximum possible value is 12000000
+amountPerStay | Number | Defines the amount charged for the entire stay period. Maximum possible value is 12000000
+percent | number | Percentage value (of the base rate). Values should be between 0 and 1, will return upto 4 decimal points
+
 
 <a name="/definitions/CancelPolicyDTO"></a>
 #### CancelPolicy
