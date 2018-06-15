@@ -181,14 +181,11 @@ The result will be an array of active rate plans under this property and room ty
       "serviceFeesPerStay": [
  +      {
  +    "isTaxable": false,
- +    "amountPerNight": 0.0,
- +    "amountPerStay": 0.0,
  +    "percent": 0.2
  +      },
  +     {
  +    "isTaxable": true,
- +    "amountPerNight": 10.0,
- +    "amountPerStay": 0.0,
+ +    "amountPerStay": 10.0,
  +    "percent": 0.0
  +     }
  +    ],
@@ -359,16 +356,12 @@ The response returned by the product API will contain all the default values use
         "serviceFeesPerStay": [
  +      {
  +    "isTaxable": false,
- +    "amountPerNight": 0.0,
- +    "amountPerStay": 0.0,
- +    "percent": 0.2
+ +   "percent": 0.2
  +     },
  +     {
  +    "isTaxable": true,
  +    "amountPerNight": 10.0,
- +    "amountPerStay": 0.0,
- +    "percent": 0.0
- +  }
+ +  +  }
  +    ],
         "minLOSDefault": 1,
         "maxLOSDefault": 28,
