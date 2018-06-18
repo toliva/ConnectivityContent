@@ -10,12 +10,12 @@ If an EQC partner does not retrieve the booking information electronically, Expe
 The following list is an overview of features that are are included and not included in the booking retrieval API
 
 Included
-* Frequent retrieval of pending bookings (every hour or less)
-* Retrieval of bookings by Expedia booking ID
-* Retrieval of all the bookings for a time period
-* Receive most of the information currently available on fax through an XML message 
-* Child age(s) if any child in the room (on demand)
-* Expedia VirtualCard payment details
+- Frequent retrieval of pending bookings (every hour or less)
+- Retrieval of bookings by Expedia booking ID
+- Retrieval of all the bookings for a time period
+- Receive most of the information currently available on fax through an XML message
+- Child age(s) if any child in the room (on demand)
+- Expedia VirtualCard payment details
 
 Not Included
 * Room type name (only ID's are returned)
