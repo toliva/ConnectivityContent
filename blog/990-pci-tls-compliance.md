@@ -2,7 +2,7 @@
 [//]: # (Date: 2018-06-26)
 [//]: # (Category: partner tools)
 
-Expedia Group is committed to the secure handling and transfer of traveler payment card information. Not only do we comply with PCI standards, we also require that connectivity providers who partner with us comply with industry standards before we share any payment card information with their systems. 
+Expedia Group is committed to the secure handling and transfer of traveler payment card information. We fully comply with PCI standards and also require that connectivity providers who partner with us comply with industry standards before we share any payment card information with their systems. 
 In this post, we answer a few common questions to help demystify PCI compliance, and help you understand how industry regulations may impact your connection to Expedia Group. For more information, please contact your Expedia Group account manager.
 
 **What is PCI compliance?**
@@ -15,7 +15,7 @@ The [Attestation of Compliance (AOC)](https://www.pcisecuritystandards.org/docum
 
 >A form for merchants and service providers to attest to the results of a PCI DSS assessment, as documented in the Self-Assessment Questionnaire or Report on Compliance. 
 
-In other words, proof that you comply with industry standards. Expedia Group must have a copy of a current and valid AOC on file for every connectivity system provider. 
+In other words, the AOC is proof that you comply with industry standards. Expedia Group must have a copy of a current and valid AOC on file for every connectivity system provider. 
 
 **How is that different from TLS?**
 
@@ -31,4 +31,4 @@ Failure to meet either of these requirements will result in Expedia Group blocki
 
 **Questions?**
 
-Expedia Group is committed to working with each of our connectivity providers to ensure that our systems are sharing information safely and securely. If you have questions about your connection or about the type of information that Expedia Group is sharing, or not sharing, with your system – please contact your dedicated account manager.
+The security of our customers and their data is a key priority for us and something we take seriously. Expedia Group is committed to working with each of our connectivity providers to ensure the systems we use to share information are safe and secure. If you have questions about your connection or about the type of information that Expedia Group is sharing, or not sharing, with your system – please contact your dedicated account manager. 
