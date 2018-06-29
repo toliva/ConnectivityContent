@@ -4,7 +4,7 @@
 
 ### Book with locally stored inventory and rate
 
-Expedia suppliers control availability, rates and inventory information via the EQC AR interface or Expedia Partner Central. Because suppliers are expected to provide the latest changes to availability or rate in real time via either EQC or EPC, Expedia will let customers book against the latest information received successsfully and stored locally in Expedia systems. 
+Expedia suppliers control availability, rates and inventory information via the EQC AR interface or Partner Central. Because suppliers are expected to provide the latest changes to availability or rate in real time via either EQC or Partner Central, Expedia will let customers book against the latest information received successsfully and stored locally in Expedia systems. 
 
 Expedia reservation sent via the BN API are notifications, made after the reservation was confirmed to the guest. Under no circumstances should Expedia suppliers reject these reservation notifications. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking.
 
