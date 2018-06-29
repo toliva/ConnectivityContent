@@ -201,7 +201,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
   | @RoomTypeCode | String 16 | 1 |  | Room type code: will contain the Expedia room type ID.
   | @NumberOfUnits | Numeric 1 | 1 | 1 | Number of rooms. Expedia reservation is always for a single room
   | @RatePlanCode | String 20 | 1 |  | Rate plan code: will contain the Expedia rate plan ID.
-  | @PromotionCode | String 32 | 0..1 |  | A code that identifies a special promotion. Promotions can be set via EPC to offer special discounts to Expedia customers. Another type of promotion is called an Accelerator. The string will show "EFR" when an Accelerator is applied to a stay date. The presence of an Accelerator will signify a rate change. Note: If both a promotion and Accelerator apply to the stay date, the promotion code will begin with "EFR*" and the code that follows is truncated to 28 characters.
+  | @PromotionCode | String 32 | 0..1 |  | A code that identifies a special promotion. Promotions can be set via Partner Central to offer special discounts to Expedia customers. Another type of promotion is called an Accelerator. The string will show "EFR" when an Accelerator is applied to a stay date. The presence of an Accelerator will signify a rate change. Note: If both a promotion and Accelerator apply to the stay date, the promotion code will begin with "EFR*" and the code that follows is truncated to 28 characters.
 7 | Rates |  | 1 |  | A collection of rates for a given room and rate combination. Rates can vary by date range and by age. Container element. Single occurrence.
 8 | Rate |  | 1..n |  | An individual rate.  The room rates, fees and extra person charges are as defined by the supplier.
   | @EffectiveDate | YYYY-MM-DD | 1 |  | Start date for the rate.
@@ -238,7 +238,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
 7 | GuaranteeAccepted |  | 1 |  | Container element
 8 | PaymentCard |  | 1 |  | Container element that holds the actual credit card information.
   | @CardType | OTA_CodeType | 1 | 1 | Use "1" for Credit Card.
-  | @CardCode | PaymentCardType | 1 | AX, DN, DS, JC, MC, VI | 2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa. Note this is not a finite list and new codes maybe added or changed in the future.
+  | @CardCode | PaymentCardType | 1 | AX, DN, DS, JC, MC, VI, UP, CB | 2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa, UP: China Union Pay, CB: Carte Blanche. Note this is not a finite list and new codes maybe added or changed in the future.
  | @CardNumber | Numeric String Length 1 to 19 | 1 |  | The 16 digit card number.
  | @ExpireDate | MMYY | 1 |  | Expiration date of the credit card.
  | @EffectiveDate | Date format MMYY | 0..1 |  | Starting date. Not used by EVC, Maybe used for Hotel Collect bookings, but only by certain card types.
