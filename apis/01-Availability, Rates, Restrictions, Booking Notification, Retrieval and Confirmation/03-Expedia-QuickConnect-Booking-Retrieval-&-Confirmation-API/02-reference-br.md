@@ -105,7 +105,7 @@ OR
 5|Child|-|*|<p>0 to 6 occurrences of this container.</p>This element will appear to hotels specifically enabled to see it. If you are not receiving this and are interested in getting the information, please contact rollout@expedia.com
 5|@age|Integer||<p>Age of each individual child sharing the room.</p><p>Minimum value: 0</p><p>Maximum value: 18</p>
 4|PerDayRates|-||This element appears once per day of stay and indicates the rate for each day.
-4|@currency|String||3-letter currency code assigned to property on Expedia Partner Central. Based on ISO 4217 specification.
+4|@currency|String||3-letter currency code assigned to property on Partner Central. Based on ISO 4217 specification.
 5|PerDayRate|-||1 to 28 occurrences of this container.
 5|@stayDate|Date||Date to which the room rate applies
 5|@baseRate|Decimal||<p>Base rate for one day of stay, including promotional discounts if any. Expedia always return net rate for Expedia Collect bookings, even when the propertis managing LAR.</p><p>Expedia will return sell rate for Hotel Collect bookings, even when the property is managing net rate.</p><p>Minimum value: 0</p>
@@ -115,9 +115,9 @@ OR
 4|Total|-||Container element
 4|@amountAfterTaxes|Decimal|*|Total amount inclusive of taxes. It is the sum of daily rates for each day of stay, extra person fees if any, hotel service fees if any, promotional discounts if any and taxes if applicable. Expedia always return net rates for Expedia Collect bookings, even when properties are managing LAR.<p>Minimum value: 0</p>
 4|@amountOfTaxes|Decimal|*|Amount of taxes included in the @amountAfterTaxes.<p>Minimum value: 0</p>
-4|@currency|String||3-letter currency code assigned to property on Expedia Partner Central (per ISO 4217 specification)
+4|@currency|String||3-letter currency code assigned to property on Partner Central (per ISO 4217 specification)
 4|PaymentCard|-|*|Applicable to booking paid by credit card. Contains details of the credit card, including card type, card number, expiration date and card holder name and address.<p>For Expedia Collect Booking, this node will contain the Expedia Virtual Card (EVC) information. </p><p>For Hotel Collect booking, this node will contain the customer credit card information. </p>
-4|@cardCode|String||2-letter code for the credit card type <p><table><tr><td>VI</td><td>Visa</td></tr><tr><td>MC</td><td>MastrerCard</td></tr><tr><td>AX</td><td>American Express</td></tr><tr><td>DS</td><td>Discover Card</td></tr><tr><td>CA</td><td>MasterCard</td></tr><tr><td>JC</td><td>Japan Credit Bureau</td></tr><tr><td>DN</td><td>Diners Club</td></tr></table></p>
+4|@cardCode|String||2-letter code for the credit card type <p><table><tr><td>VI</td><td>Visa</td></tr><tr><td>MC</td><td>MastrerCard</td></tr><tr><td>AX</td><td>American Express</td></tr><tr><td>DS</td><td>Discover Card</td></tr><tr><td>CA</td><td>MasterCard</td></tr><tr><td>JC</td><td>Japan Credit Bureau</td></tr><tr><td>DN</td><td>Diners Club</td></tr><tr><td>UP</td><td>China Union Pay</td></tr><tr><td>CB</td><td>Carte Blanche</td></tr></table></p>
 4|@cardNumber|String||Credit card number<p>String length 1-19</p>
 4|@seriesCode|String|*|CVV/CSV code.<p>String length 1-8</p>
 4|@expireDate|MMYY||Expiration date of the credit card.
@@ -240,7 +240,7 @@ Error code | Error description | Explanation and EQC partner Action
 2010 | The namespace specified is invalid. | Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.
 3010 | Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema. | Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.
 3015 | Business validation error.  | EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect.
-3202 | Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel. | Verify if there is a mapping issue in EQC partner's system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Expedia Partner Central).
+3202 | Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel. | Verify if there is a mapping issue in EQC partner's system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Partner Central).
 3206 | Your account is not linked to any hotels.| When calling Booking Retrieval service, ensure there is atleast one Property Associated to the EQC account.
 3207 | Hotel ID is a mandatory field for this request | Specify the Hotel ID you need to retrieve bookings for.
 3210 | Communication error: exceed max number of connections allowed (1). | EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message
