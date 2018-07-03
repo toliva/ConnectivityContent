@@ -4,20 +4,20 @@
 
 ### Book with locally stored inventory and rate
 
-Expedia suppliers control availability, rates and inventory information via the EQC AR interface or Expedia Partner Central. Because suppliers are expected to provide the latest changes to availability or rate in real time via either EQC or EPC, Expedia will let customers book against the latest information received successsfully and stored locally in Expedia systems. 
+Expedia suppliers control availability, rates and inventory information via the EQC AR interface or Partner Central. Because suppliers are expected to provide the latest changes to availability or rate in real time via either EQC or Partner Central, Expedia will let customers book against the latest information received successsfully and stored locally in Expedia systems. 
 
 Expedia reservation sent via the BN API are notifications, made after the reservation was confirmed to the guest. Under no circumstances should Expedia suppliers reject these reservation notifications. If there are (for example) inventory issues with the booking, this is not an acceptable reason to reject a booking.
 
 The reservation notification request message will contain the Hotelier's daily rates and may include taxes and extra person and extra service fees. If there are rate issues with the booking, this discrepancy should be flagged and the booking should be routed by the Hotelier to the staff that is responsible for reconciling these differences and the Expedia Market Manager should be alerted. A discrepancy in pricing is not an acceptable reason to reject a booking either. Hoteliers are responsible for keeping their inventory and rates up to date.
 
 We foresee two key standard cases where rates sent by Expedia may not match those in the hotelier system:
-- The hotel agent managing rates on the Expedia system updates rates through ARI or Expedia Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the EQC AR interface.
+- The hotel agent managing rates on the Expedia system updates rates through ARI or Partner Central does not get a chance to update the rates in the hotelier system before bookings with the new rates start to hit the system (or vice versa). When a human is entering data on two different systems that are actively sending and receiving bookings, it is not possible to ensure that the rates in every booking will be in sync. Such discrepancy should be minimized by the EQC AR interface.
 - The hotel decides to take advantage of the promotional capabilities mentioned previously for a period of time. In the Expedia system they can set up a special promotion to give "5th night free if you stay 4 nights". Those 5th nights that have a daily rate of $0.00 may not match the rate expected by the hotelier system.
 
 ### Information included in a notification
 
 - A reservation notification will be for a single room and room type.
-- A reservation notification will contain the name of the main guest, as well as up to two membership/loyalty numbers (if acceptance is pre-defined in Expedia Partner Central).
+- A reservation notification will contain the name of the main guest, as well as up to two membership/loyalty numbers (if acceptance is pre-defined in Partner Central).
 - Coded special requests will be sent for bedding type, smoking or non-smoking room preference, for adjoining rooms (with respect to another Expedia Traveler reservation), Mixed Rate Bookings, and Value Add Promotions. Special requests can also include free-form text entered by the traveler.
 - The primary language of the reservation is English, but other languages can be used in the free form text fields like the special request or the guest name. No translation of free form text fields will be provided.
 - Electronic notification for booking modification and cancellation may be sent by Expedia after check-in dates.
@@ -298,7 +298,7 @@ This ID is mandatory in all messages requests and responses. The partner must re
 Described in this section are two possible scenarios related to potential double bookings in the supplier system.
 A somewhat complex situation can arise when Expedia (being pessimistic with regards to successful message delivery) does not receive a valid response even though the supplier has received the request and successfully processed the notification. In this case Expedia will send a fax or email to the hotel.
 
-A rare condition can occur since the hotel agent who receives the fax or email will be trying to enter the reservation into his system while Expedia is attempting to deliver the same booking to the hotel. In this case the hotel agent will enter the reservation in his system, and then attempt to enter the confirmation number manually through Expedia Partner Central.
+A rare condition can occur since the hotel agent who receives the fax or email will be trying to enter the reservation into his system while Expedia is attempting to deliver the same booking to the hotel. In this case the hotel agent will enter the reservation in his system, and then attempt to enter the confirmation number manually through Partner Central.
 - If Expedia successfully delivered the booking as well (in which case we have a double booking) and the supplier has returned another confirmation number to Expedia, then the agent will see that the confirmation number for this booking already exists on the interface or tool provided by Expedia and then will be able on his own to delete the duplicate booking in his system.
 - If the agent enters the confirmation number through the Expedia interface or tool before Expedia receives a confirmation number in the electronic response from the supplier, then the system will automatically detect the double booking. Expedia Customer Operations will monitor a log and then call the hotel. They would ask the agent to look for the duplicate hotel bookings with two different confirmation numbers and delete one of them.
 

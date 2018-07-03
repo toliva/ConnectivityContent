@@ -5,6 +5,7 @@
 In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:
 * Have a reliable connection to the Internet 
 * Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)
+* Expedia will only accept request sent using TLS v1.2 protocol for PCI compliance
 * Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)
 * Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages
 * Be able to provide confirmation numbers for retrieved bookings (reservations, modifications and cancelations) using XML messages
@@ -64,7 +65,7 @@ A booking electronically retrieved through Expedia QuickConnect has an expiratio
 * For same-day arrival (based on midnight in hotel’s local timezone): bookings will expire 30 minutes after their creation by customer.
 * For next-day arrival (any bookings created between midnight and 23:59:59 the day before arrival, based on hotel’s local timezone): bookings will expire 60 minutes after their creation by customer.
 * For any longer booking window, bookings will expire 24 hours after their creation by customer.
-To make sure that the property receives the booking, Expedia will deliver the booking by fax or email if it is not retrieved and confirmed after the expiration delay mentioned above. The fax number and email address used for fallback methods are configured in Expedia Partner Central. Once a booking falls back to fax or email, it won’t be available for electronic retrieval anymore.
+To make sure that the property receives the booking, Expedia will deliver the booking by fax or email if it is not retrieved and confirmed after the expiration delay mentioned above. The fax number and email address used for fallback methods are configured in  Partner Central. Once a booking falls back to fax or email, it won’t be available for electronic retrieval anymore.
 Expedia QuickConnect does not send more than 125 bookings at the same time with one booking retrieval request.
 
 ---
@@ -97,7 +98,7 @@ Partners should review errors frequently to ensure that bookings are received. F
 ## Learn more about Expedia VirtualCard
 
 The Expedia VirtualCard allows ExpediaCollect hotels to receive payment via the virtual credit card. At the time of booking, Expedia will generate a distinct virtual credit card number that is authorized for the transaction.
-The credit card number will be available electronically to the hotel for 48 hours following a booking within the Expedia QuickConnect booking response message and should be used as payment at time of check out. 
+The virtual credit card detail will be provided electronically to the hotel within the Expedia QuickConnect booking response message and should be used as payment at time of check out. 
 
 For a successful EVC rollout, the EQC partner implementation should support communication of credit card information as described in the BR Schema.
 
@@ -106,13 +107,10 @@ After activation on the EVC program, the hotel may request that all pending book
 In such situations, booking modifications will be created containing a special request section containing this information.
 The EQC partner needs to ensure that all new bookings or pending updates for Expedia VirtualCard are communicated to the hotel effectively.
 
-Expedia VirtualCard numbers are crossed out after 48 hours of the initial booking or modification. 
-A booking request for information more than 2 days in the past will not return any Expedia VirtualCard details (the number can only be retrieved afterward by contacting Expedia or accessing Expedia Partner Central). 
-
 At guest check-in, hotels use credit cards as a payment guarantee for the room stay. 
 If the Expedia VirtualCard is not available at time of check-in, the hotel should never attempt to swipe the customers own credit card or delay guest check-in. 
 The Hotel will instead have to contact Expedia VirtualCard support to request the VirtualCard number by fax so they can charge the stay to the Expedia VirtualCard. 
-The hotel can also access Expedia Partner Central to find the VirtualCard number.
+The hotel can also access Partner Central to find the VirtualCard number.
 
 In most cases, the card number will remain the same for modified bookings, although the card parameters maybe adjusted to reflect the new booking rate and check-in/check-out dates. 
 In rare cases, the card number may be changed in modified bookings.
