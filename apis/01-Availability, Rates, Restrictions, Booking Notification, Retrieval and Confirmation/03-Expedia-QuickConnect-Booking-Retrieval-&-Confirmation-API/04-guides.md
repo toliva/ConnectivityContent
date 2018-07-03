@@ -98,7 +98,7 @@ Partners should review errors frequently to ensure that bookings are received. F
 ## Learn more about Expedia VirtualCard
 
 The Expedia VirtualCard allows ExpediaCollect hotels to receive payment via the virtual credit card. At the time of booking, Expedia will generate a distinct virtual credit card number that is authorized for the transaction.
-The credit card number will be available electronically to the hotel for 48 hours following a booking within the Expedia QuickConnect booking response message and should be used as payment at time of check out. 
+The virtual credit card detail will be provided electronically to the hotel within the Expedia QuickConnect booking response message and should be used as payment at time of check out. 
 
 For a successful EVC rollout, the EQC partner implementation should support communication of credit card information as described in the BR Schema.
 
@@ -106,9 +106,6 @@ The hotel system must support changing existing bookings from the original billi
 After activation on the EVC program, the hotel may request that all pending bookings include Expedia VirtualCard payment information. 
 In such situations, booking modifications will be created containing a special request section containing this information.
 The EQC partner needs to ensure that all new bookings or pending updates for Expedia VirtualCard are communicated to the hotel effectively.
-
-Expedia VirtualCard numbers are crossed out after 48 hours of the initial booking or modification. 
-A booking request for information more than 2 days in the past will not return any Expedia VirtualCard details (the number can only be retrieved afterward by contacting Expedia or accessing Partner Central). 
 
 At guest check-in, hotels use credit cards as a payment guarantee for the room stay. 
 If the Expedia VirtualCard is not available at time of check-in, the hotel should never attempt to swipe the customers own credit card or delay guest check-in. 
