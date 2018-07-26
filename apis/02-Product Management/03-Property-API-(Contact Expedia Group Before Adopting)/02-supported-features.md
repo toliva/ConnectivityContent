@@ -40,7 +40,6 @@ To note, individual properties working on an individual billing/payments basis c
 
 | Supported            | Not Supported |
 | ---------            | ------------- |
-| Updating properties onboarded via Property API | Updating properties that were not onboarded via Property API |
 | Content Attributes & Property settings         | See SetPropertyDetails documentation |
 | Update via submitting a Full Overlay           | Update via PATCH         |
 
