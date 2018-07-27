@@ -43,7 +43,7 @@ To note, individual properties working on an individual billing/payments basis c
 | Content Attributes & Property settings         | See SetPropertyDetails documentation |
 | Update via submitting a Full Overlay           | Update via PATCH         |
 
-After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  The Property API cannot be used to update properties that were onboarded by methods other than the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.
+After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.
 
 ## Retrieving Some Types of Property Info via API
 
