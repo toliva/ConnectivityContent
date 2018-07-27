@@ -1372,15 +1372,31 @@ Response:
         }
       ],
       "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-        "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+       "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
       "minLOSDefault": 1,
       "maxLOSDefault": 28,
       "minAdvBookDays": 0,
@@ -1523,16 +1539,32 @@ Response:
           "amount": 0
         }
       ],
-   "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+  "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+   "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
       "minLOSDefault": 1,
       "maxLOSDefault": 28,
       "minAdvBookDays": 0,
@@ -1633,15 +1665,31 @@ Response:
       }
     ],
      "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+      "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Parking", "Free Breakfast", "Free Internet"
     ],
@@ -1727,15 +1775,31 @@ Response:
       }
     ],
    "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Breakfast"
     ],
@@ -1827,15 +1891,31 @@ Response:
       ]
     },
      "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Parking", "Free Wireless Internet", "Breakfast Buffet"
     ],
@@ -1925,16 +2005,32 @@ Response:
         "amount": 29.7
       }
     ],
-    "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+   "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Breakfast"
     ],
@@ -2024,16 +2120,32 @@ Response:
         "amount": 20
       }
     ],
-       "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+     "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "minLOSDefault": 1,
     "maxLOSDefault": 28,
     "minAdvBookDays": 0,
@@ -2133,16 +2245,32 @@ Response:
         "amount": 0
       }
     ],
-       "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+     "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "minLOSDefault": 1,
     "maxLOSDefault": 28,
     "minAdvBookDays": 0,
@@ -2209,16 +2337,32 @@ Authorization: Basic [your encoded username:password in Base64]
       "amount": 10
     }
   ],
-     "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+    "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
   "valueAddInclusions": [
     "Free Parking", "Free Breakfast", "Free Internet"
   ]
@@ -2295,16 +2439,32 @@ The response would look like:
         "amount": 40
       }
     ],
-       "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerNight": 10.0,
-      }
-    ],
+     "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Parking", "Free Breakfast", "Free Internet"
     ],
@@ -2371,17 +2531,32 @@ Authorization: Basic [your encoded username:password in base64]
       "amount": 29.7
     }
   ],
-     "serviceFeesPerStay": [
-      {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerStay": 10.0,
-       "percent": 0.2
-      }
-    ],
+    "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
   "valueAddInclusions": [
     "Free Breakfast"
   ]
@@ -2446,17 +2621,32 @@ Response would look like:
         "amount": 29.7
       }
     ],
-       "serviceFeesPerStay": [
-        {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerStay": 10.0,
-       "percent": 0.2
-      }
-    ],
+    "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Breakfast"
     ],
@@ -2543,17 +2733,32 @@ Authorization: Basic [your encoded username:password in base64]
       "amount": 20
     }
   ],
-     "serviceFeesPerStay": [
-        {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerStay": 10.0,
-       "percent": 0.2
-      }
-    ],
+ "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+  "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
   "valueAddInclusions": [
     "Free Breakfast", "Free Internet"
   ],
@@ -2627,17 +2832,32 @@ Response would look like:
         "amount": 20
       }
     ],
-       "serviceFeesPerStay": [
-        {
-       "isTaxable": false,
-       "percent": 0.2
-      },
-      {
-       "isTaxable": true,
-       "amountPerStay": 10.0,
-       "percent": 0.2
-      }
-    ],
+   "serviceFeesPerStay": [
+            {
+                "isTaxable": false,
+                "amountPerStay": 10
+            },
+            {
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
+     "serviceFeesPerPerson": [
+            {
+                "dateStart": "2018-09-20",
+                "dateEnd": "2079-06-06",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerStay": 20
+            },
+            {
+                "dateStart": "2018-07-27",
+                "dateEnd": "2018-09-20",
+                "ageCategory": "Adult",
+                "isTaxable": true,
+                "amountPerNight": 12
+            }
+        ],
     "valueAddInclusions": [
       "Free Breakfast", "Free Internet"
     ],
