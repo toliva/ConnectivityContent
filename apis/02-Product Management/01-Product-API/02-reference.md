@@ -924,6 +924,7 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
   "serviceFeesPerStay": [
    {
       "isTaxable": false,
+      "percent": 0.2
       "amountPerStay": 10
    },
    {
@@ -1094,7 +1095,7 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
     "serviceFeesPerStay": [
    {
       "isTaxable": false,
-      "amountPerStay": 10
+      "percent": 0.2
    },
    {
       "isTaxable": true,
