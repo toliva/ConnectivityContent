@@ -925,6 +925,7 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
    {
       "isTaxable": false,
       "percent": 0.2
+      "amountPerStay": 10
    },
    {
       "isTaxable": true,
