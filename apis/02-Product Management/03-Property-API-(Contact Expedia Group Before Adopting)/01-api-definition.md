@@ -190,11 +190,11 @@ The below example is a request to onboard a new property using SetPropertyDetail
         {
             "code": "TOTAL_ROOMS",
             "value": "8"
-        }
+        },
         {
             "code": "NUMBER_OF_BEDROOMS",
             "value": "4"
-        }
+        },
         {
             "code": "NUMBER_OF_BATHROOMS",
             "value": "3"
@@ -551,11 +551,11 @@ The response body will echo back the values of *the request received* and will i
                  {
                  "code": "TOTAL_ROOMS",
                  "value": "8"
-                 }
+                 },
                 {
                 "code": "NUMBER_OF_BEDROOMS",
                  "value": "4"
-                 }
+                 },
                 {
                  "code": "NUMBER_OF_BATHROOMS",
                 "value": "3"
@@ -806,7 +806,7 @@ GET /properties/v1/mycompany/1234
         "code": "CATERS_TO",
         "detailCode": "NO_BACHELOR_PARTIES",
         "value": null,
-      }
+      },
       {
         "code": "CATERS_TO",
         "detailCode": "NO_BACHELORETTE_PARTIES",
@@ -826,11 +826,11 @@ GET /properties/v1/mycompany/1234
        {
             "code": "TOTAL_ROOMS",
             "value": "8"
-        }
+        },
         {
             "code": "NUMBER_OF_BEDROOMS",
             "value": "4"
-        }
+        },
         {
             "code": "NUMBER_OF_BATHROOMS",
             "value": "3"
@@ -1051,11 +1051,11 @@ The response to the delete request will be a 200/OK and the response will echo b
          {
             "code": "TOTAL_ROOMS",
             "value": "8"
-        }
+        },
         {
             "code": "NUMBER_OF_BEDROOMS",
             "value": "4"
-        }
+        },
         {
             "code": "NUMBER_OF_BATHROOMS",
             "value": "3"
