@@ -197,6 +197,11 @@ Lastminute.au | A-Lastminute.au
 American Express Travel | A-American Express Travel
 Amex The Hotel Collection | A-Amex The Hotel Collection
 Amex FINE HOTELS & RESORTS | A-Amex FINE HOTELS & RESORTS
+Thomas Cook | A-Thomas Cook
+Neckermann | A-Neckermann
+Ving | A-Ving
+Tjareborg | A-Tjareborg
+Spies | A-Spies
  
 ### Different Payment card information
 

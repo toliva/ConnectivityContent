@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2018-08-07 | Add five new POS values: Thomas Cook, etc. |
 | 2018-06-29 | Add new card type: UP - China Union Pay, CB - Carte Blanche. |
 | 2017-10-31 | Add http header information. |
 | 2017-04-11 | Add new POS Brands American Express Travel, Amex The Hotel Collection, Amex FINE HOTELS AND RESORTS.|

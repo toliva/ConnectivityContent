@@ -555,6 +555,11 @@ BN | Lastminute.au | A-Lastminute.au
 BN | American Express Travel | A-American Express Travel
 BN | Amex The Hotel Collection | A-Amex The Hotel Collection
 BN | Amex FINE HOTELS AND RESORTS | A-Amex FINE HOTELS AND RESORTS
+BN | Thomas Cook | A-Thomas Cook
+BN | Neckermann | A-Neckermann
+BN | Ving | A-Ving
+BN | Tjareborg | A-Tjareborg
+BN | Spies | A-Spies
 
 <a name="SpecialRequestCodes"></a>
 
