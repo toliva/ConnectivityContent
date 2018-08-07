@@ -942,7 +942,7 @@ body | body | JSON message describing the new rate plan | Yes | [RatePlan](#/def
       },
       {
       "dateStart": "2018-07-27",
-      "dateEnd": "2018-09-20",
+      "dateEnd": "2018-09-19",
       "ageCategory": "Adult",
       "isTaxable": true,
       "amountPerNight": 12
@@ -1113,7 +1113,7 @@ body | body | JSON message of modified rate plan | Yes | [RatePlan](#/definition
       },
       {
       "dateStart": "2018-07-27",
-      "dateEnd": "2018-09-20",
+      "dateEnd": "2018-09-19",
       "ageCategory": "Adult",
       "isTaxable": true,
       "amountPerNight": 12
@@ -1290,7 +1290,7 @@ ratePlanLinkage | [RatePlanLinkage](#/definitions/RatePlanLinkageDTO) | Describe
 Property Name | Type | Description
 ------------- | ---- | -----------
 dateStart | date | Date at which this amount started being applicable, can be in the past
-dateEnd | date | Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06.
+dateEnd | date | Date until which this amount will be applied. If no end date defined, will be returned as 2079-06-06.
 ageCategory | enum | The age category for the additional guests. Possible values: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
 amount | number | Min value 0.000, accepts up to 3 decimal points
 
@@ -1310,7 +1310,7 @@ percent | number | Percentage value (of the base rate). Values should be between
 Property Name | Type | Description
 ------------- | ---- | -----------
 dateStart | date | Date at which this amount started being applicable, can be in the past
-dateEnd | date | Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06.
+dateEnd | date | Date until which this amount will be applied. If no end date defined, will be returned as 2079-06-06.
 ageCategory | enum | The age category for the additional guests. Possible values: Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.
 isTaxable | Boolean | Indicates if the Service Fees loaded is to be taxed or not.
 amountPerNight | Number | Defines the amount charged per night. Maximum possible value is 12000000
