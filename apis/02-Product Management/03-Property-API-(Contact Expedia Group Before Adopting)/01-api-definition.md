@@ -189,7 +189,15 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "attributes": [
         {
             "code": "TOTAL_ROOMS",
-            "value": "15"
+            "value": "8"
+        },
+        {
+            "code": "NUMBER_OF_BEDROOMS",
+            "value": "4"
+        },
+        {
+            "code": "NUMBER_OF_BATHROOMS",
+            "value": "3"
         }
     ]
 }]
@@ -300,7 +308,7 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#amenityCode) |
+| code | String | Yes | See [code list](./code-list.html#amenityCode). Expedia requires atleast 10 amenities to be sent per Property |
 | detailCode | String | See [code list](./code-list.html#amenityCode) | See [code list](./code-list.html#amenityCode) |
 | value | Numeric | See [code list](./code-list.html#amenityCode) | See [code list](./code-list.html#amenityCode) |
 
@@ -315,7 +323,7 @@ While a property needs at least 1 image to complete onboarding, we recommend all
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#mandatoryfees) |
+| code | String | Yes | See [code list](./code-list.html#mandatoryfees) . Used to define Fees collected at the time of guest check-in. Please refrain from using this Property level fee attribute for fees that are to be collected at the time of Booking. If there are fees collected at the time of booking, please utilize the Rateplan level Service Fees (Refer Product API documentation for further details). |
 | scope | String | Yes | See [code list](./code-list.html#mandatoryfees) |
 | duration | String | Yes | See [code list](./code-list.html#mandatoryfees) |
 | value | String | Yes | Fee amount in the property's currency. Example: 24.99 |
@@ -540,9 +548,17 @@ The response body will echo back the values of *the request received* and will i
                 "pricingModel": "PER_DAY"
             },
             "attributes": [
+                 {
+                 "code": "TOTAL_ROOMS",
+                 "value": "8"
+                 },
                 {
-                    "code": "TOTAL_ROOMS",
-                    "value": "15"
+                "code": "NUMBER_OF_BEDROOMS",
+                 "value": "4"
+                 },
+                {
+                 "code": "NUMBER_OF_BATHROOMS",
+                "value": "3"
                 }
             ],
             "status": {
@@ -790,7 +806,7 @@ GET /properties/v1/mycompany/1234
         "code": "CATERS_TO",
         "detailCode": "NO_BACHELOR_PARTIES",
         "value": null,
-      }
+      },
       {
         "code": "CATERS_TO",
         "detailCode": "NO_BACHELORETTE_PARTIES",
@@ -807,10 +823,18 @@ GET /properties/v1/mycompany/1234
             "onStopSell": true
         },
     "attributes": [
-      {
-        "code": "TOTAL_ROOMS",
-        "value": "2"
-      }
+       {
+            "code": "TOTAL_ROOMS",
+            "value": "8"
+        },
+        {
+            "code": "NUMBER_OF_BEDROOMS",
+            "value": "4"
+        },
+        {
+            "code": "NUMBER_OF_BATHROOMS",
+            "value": "3"
+        }
     ],
     "status": {
       "href": "/properties/v1/mycompany/10/status"
@@ -1024,9 +1048,17 @@ The response to the delete request will be a 200/OK and the response will echo b
         }
       ],
       "attributes": [
+         {
+            "code": "TOTAL_ROOMS",
+            "value": "8"
+        },
         {
-          "code": "TOTAL_ROOMS",
-          "value": "15"
+            "code": "NUMBER_OF_BEDROOMS",
+            "value": "4"
+        },
+        {
+            "code": "NUMBER_OF_BATHROOMS",
+            "value": "3"
         }
       ]
     }
