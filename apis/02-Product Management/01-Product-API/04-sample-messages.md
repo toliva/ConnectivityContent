@@ -1391,7 +1391,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -1559,7 +1559,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -1684,7 +1684,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -1794,7 +1794,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -1910,7 +1910,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2025,7 +2025,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2140,7 +2140,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2265,7 +2265,7 @@ Response:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2357,7 +2357,7 @@ Authorization: Basic [your encoded username:password in Base64]
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2459,7 +2459,7 @@ The response would look like:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2551,7 +2551,7 @@ Authorization: Basic [your encoded username:password in base64]
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2641,7 +2641,7 @@ Response would look like:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2753,7 +2753,7 @@ Authorization: Basic [your encoded username:password in base64]
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
@@ -2852,7 +2852,7 @@ Response would look like:
             },
             {
                 "dateStart": "2018-07-27",
-                "dateEnd": "2018-09-20",
+                "dateEnd": "2018-09-19",
                 "ageCategory": "Adult",
                 "isTaxable": true,
                 "amountPerNight": 12
