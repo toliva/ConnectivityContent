@@ -131,13 +131,13 @@ None
 
 <a name="/definitions/PropertyAmenities"></a>
 ## Property Amenities
-The amenity codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding.
+The amenity codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding.
 
-<a name="/definitions/InternetAccess"></a>
+<a name="/definitions/internet-access"></a>
 ### Internet Access
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | WIFI_INTERNET | Yes  | FREE | No VALUE required |
 | | | SURCHARGE |  |
 | | | SURCHARGE_AMT | Send VALUE |
@@ -163,7 +163,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 | | | SURCHARGE_PER_MULTIPLE_HOURS | Send VALUE |
 | | | SURCHARGE_PER_MULTIPLE_MINUTES | Send VALUE |
 
-<a name="/definitions/Children"></a>
+<a name="/definitions/children"></a>
 ### Children
 
 | Code | DetailCodes Required? | DetailCodes Permitted | Notes |
@@ -179,11 +179,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | | | GENERIC | |
 | PLAYGROUND | No  | |  |
 
-<a name="/definitions/Accessibility"></a>
+<a name="/definitions/accessibility"></a>
 ### Accessibility
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ACCESSIBLE_BATHROOM | No  | |  |
 | BRAILLE_SIGNAGE | No  | |  |
 | EQUIPMENT_FOR_DEAF | No  | |  |
@@ -193,11 +193,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROLL_IN_SHOWER | No  | |  |
 | ELEVATOR | No  | |  |
 
-<a name="/definitions/Business"></a>
+<a name="/definitions/business"></a>
 ### Business
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | BUSINESS_CENTER | Yes  | AVAILABLE_24HOURS |  |
 | | No | GENERIC | |
 | CONFERENCE_ROOMS | Yes  | MULTIPLE |  |
@@ -210,11 +210,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | | | SURCHARGE | |
 | COMPUTER_STATION | No  |  |  |
 
-<a name="/definitions/DiningOrBreakfast"></a>
+<a name="/definitions/dining-or-breakfast"></a>
 ### Dining or Breakfast
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | LOUNGE | Yes  | MULTIPLE |  |
 | |  | SINGULAR | |
 | BREAKFAST | Yes  | FREE | No VALUE required |
@@ -241,11 +241,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | BREAKFAST_HOURS_START_TIME | No  | MULTIPLE | Send time as HH:MI AM/PM.  Example: 10:30 AM |
 | BREAKFAST_HOURS_END_TIME | No  | MULTIPLE | Send time as HH:MI AM/PM.  Example: 10:30 AM |
 
-<a name="/definitions/Fitness&Wellness"></a>
+<a name="/definitions/fitness-wellness"></a>
 ### Fitness & Wellness
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | FITNESS_FACILITIES | Yes  | AVAILABLE_24HOURS |  |
 | |  | GENERIC | |
 | HEALTH_CLUB | Yes  | AVAILABLE_24HOURS |  |
@@ -277,11 +277,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | |  | MANICURE_PEDICURE | |
 | FULL_SERVICE_SPA | No | |  |
 
-<a name="/definitions/GuestServices"></a>
+<a name="/definitions/guest-services"></a>
 ### Guest Services
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | CONCIERGE | No  |  |  |
 | DRY_CLEANING | No  |  |  |
 | LAUNDRY_FACILITIES | No  |  |  |
@@ -297,11 +297,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ATM | No  |  |  |
 | SHOPPING | No  |  |  |
 
-<a name="/definitions/OutdoorAreas"></a>
+<a name="/definitions/outdoor-areas"></a>
 ### Outdoor Areas
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | BBQ_GRILLS | No  |  |  |
 | GARDEN | No  |  |  |
 | PICNIC_AREA | No  |  |  |
@@ -309,11 +309,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | | | ROOFTOP |  |
 | MARINA | No  |  |  |
 
-<a name="/definitions/ParkingOrTransport"></a>
+<a name="/definitions/parking-or-transport"></a>
 ### Parking or Transport
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | AIRPORT_SHUTTLE_TYPE | Yes  | DROP_OFF_FREE  |  |
 |  |   | DROP_OFF_SURCHARGE |  |
 |  |   | PICKUP_FREE |  |
@@ -384,11 +384,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 |  |  | 48_HOURS_PRIOR_TO_ARRIVAL |  |
 |  |  | 72_HOURS_PRIOR_TO_ARRIVAL |  |
 
-<a name="/definitions/Pool"></a>
+<a name="/definitions/pool"></a>
 ### Pool
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | POOL_CHILDRENS | No |  |  |
 | POOL_INDOOR | Yes | MULTIPLE | Send VALUE |
 |  |  | SINGULAR |  |
@@ -397,11 +397,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | POOLSIDE_BAR | Yes | MULTIPLE | Send VALUE |
 |  |  | SINGULAR |  |
 
-<a name="/definitions/Recreation"></a>
+<a name="/definitions/recreation"></a>
 ### Recreation
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | BEACH_ACCESS | Yes | ON_PRIVATE_BEACH |  |
 | |  | NEAR_PRIVATE_BEACH |  |
 | |  | ON_PUBLIC_BEACH |  |
@@ -417,11 +417,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | TENNIS_OUTDOOR | Yes | MULTIPLE | Send VALUE |
 |  |  | SINGLE |  |  
 
-<a name="/definitions/Entertainment"></a>
+<a name="/definitions/entertainment"></a>
 ### Entertainment
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | CASINO | No | ONSITE |  |
 | NIGHTCLUB | No | ONSITE |  |
 | LIBRARY | No |  |  |
@@ -429,11 +429,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | POOL_TABLE | No |  |  |
 | WINERY | No |  |  |
 
-<a name="/definitions/View"></a>
+<a name="/definitions/view"></a>
 ### View
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | VIEW_BAY | No |  |  |
 | VIEW_BEACH | No |  |  |
 | VIEW_CANAL | No |  |  |
@@ -461,11 +461,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | VIEW_VINEYARD | No |  |  |
 | VIEW_WATER | No |  |  |
 
-<a name="/definitions/SkiingAndSnowboarding"></a>
+<a name="/definitions/skiing-snowboarding"></a>
 ### Skiing and Snowboarding
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | DOWNHILL | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 | SNOWBOARDING | Yes | NEARBY |  |
@@ -483,11 +483,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | SKI_RUNS | Yes | NEARBY |  |
 | SKIING | Yes | NEARBY |  |
 
-<a name="/definitions/Spa"></a>
+<a name="/definitions/spa"></a>
 ### Spa
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | MINERAL_HOT_SPRINGS | Yes | INDOOR |  |
 |  |  | OUTDOOR |  |
 | SPA_SERVICES_ONSITE | No |  |  |
@@ -495,38 +495,38 @@ The amenity codes/detail codes and values have been split into sub sections with
 | INDOOR_PUBLIC_BATH_(NO_MINERAL_SPRINGS) | No |  |  |
 | OUTDOOR_PUBLIC_BATH_(NO_MINERAL_SPRINGS) | No |  |  |
 
-<a name="/definitions/AdventureActivities"></a>
+<a name="/definitions/adventure-activities"></a>
 ### Adventure Activities
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | HIKING_BIKING | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 
 
-<a name="/definitions/Safari"></a>
+<a name="/definitions/safari"></a>
 ### Safari
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | SAFARI | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 
-<a name="/definitions/WaterBasedActivities"></a>
+<a name="/definitions/water-based-activities"></a>
 ### Water Based Activities
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | BOAT_TOURS | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 | SNORKELING | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 
-<a name="/definitions/LocationHighlights"></a>
+<a name="/definitions/location-highlights"></a>
 ### Location Highlights
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | PROPERTY_LOCATION | Yes | IN_BUSINESS_DISTRICT |  |
 |  |  | IN_CITY_CENTER |  |
 |  |  | IN_ENTERTAINMENT_DISTRICT |  |
@@ -556,10 +556,10 @@ The amenity codes/detail codes and values have been split into sub sections with
 |  |  | ON_THE_STRIP |  |
 |  |  | ON_WATERFRONT |  |
 
-<a name="/definitions/Languages"></a>
+<a name="/definitions/languages"></a>
 ### Languages
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | LANGUAGES_SPOKEN | Yes | CHINESE |  |
 |  |  | ENGLISH |  |
 |  |  | FRENCH |  |
@@ -622,15 +622,15 @@ The amenity codes/detail codes and values have been split into sub sections with
 |  |  | ZULU |  |
 
 
-<a name="/definitions/AllRoomAmenities"></a>
+<a name="/definitions/all-room-amenities"></a>
 ## All-Room Amenities
-The amenity codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding. The All Room Amenities are applied to all the rooms within a property.
+The amenity codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. The All Room Amenities are applied to all the rooms within a property.
 
-<a name="/definitions/InternetInRooms"></a>
+<a name="/definitions/internet-in-rooms"></a>
 ### Internet in Rooms
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_WIRED_INTERNET | Yes  | FREE |  |
 | | | SURCHARGE |  |
 | | | SURCHARGE_AMT | Send VALUE |
@@ -656,11 +656,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | | | SURCHARGE_PER_MULTIPLE_HOURS | Send VALUE |
 | | | SURCHARGE_PER_MULTIPLE_MINUTES | Send VALUE |
 
-<a name="/definitions/Bath"></a>
+<a name="/definitions/bath"></a>
 ### Bath
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_BATHROOM_TYPE | Yes  | PRIVATE_BATHROOM |  |
 |  |  | PRIVATE_BATHROOM_NOT_IN_ROOM |  |
 |  |  | SHARED_BATHROOM |  |
@@ -684,11 +684,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_SPECIAL_SHOWERHEAD | Yes  | HYDROMASSAGE_SHOWERHEAD |  |
 |  |  | RAINFALL_SHOWERHEAD |  |
 
-<a name="/definitions/Appliances"></a>
+<a name="/definitions/appliances"></a>
 ### Appliances
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_COFFEE_TEA | Yes  | COFFEE_AND_TEA_MAKER |  |
 |  |  | ESPRESSO_MAKER |  |
 | ROOM_FREE_BOTTLED_WATER | No |  |  |
@@ -718,11 +718,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_WASHER | No |  |  |
 | ROOM_DESK | No |  |  |
 
-<a name="/definitions/RoomEntertainment"></a>
+<a name="/definitions/room-entertainment"></a>
 ### Room Entertainment
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_TV_SERVICE | Yes  | CABLE |  |
 |  |  | SATELLITE |  |
 |  |  | DIGITAL |  |
@@ -745,11 +745,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_DOCKING_STATION | Yes  | IPOD_DOCKING_STATION |  |
 |  |  | MP3_PLAYER_DOCKING_STATION |  |
 
-<a name="/definitions/Beds"></a>
+<a name="/definitions/beds"></a>
 ### Beds
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_CRIBS | Yes  | FREE |  |
 |  |  | SURCHARGE |  |
 |  |  | GENERIC |  |
@@ -769,11 +769,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_DOWN_COMFORTER | No |  |  |
 | PILLOW_MENU | No |  |  |
 
-<a name="/definitions/RoomServices"></a>
+<a name="/definitions/room-services"></a>
 ### Room Services
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_HOUSEKEEPING | Yes  | DAILY |  |
 |  |  | LIMITED |  |
 |  |  | ONCE_PER_STAY |  |
@@ -793,11 +793,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_TURNDOWN | No |  |  |
 | ROOM_DINING | No |  |  |
 
-<a name="/definitions/RoomSpaces"></a>
+<a name="/definitions/room-spaces"></a>
 ### Room Spaces
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ROOM_BALCONY | Yes  | FURNISHED_BALCONY |  |
 |  |  | FURNISHED_BALCONY_OR_PATIO |  |
 |  |  | FURNISHED_LANAI |  |
@@ -819,15 +819,15 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_SOUNDPROOF | No |  |  |
 | ROOM_YARD | No |  |  |
 
-<a name="/definitions/Policies"></a>
+<a name="/definitions/policies"></a>
 ## Policies
-The Policy codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding. 
+The Policy codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. 
 
-<a name="/definitions/CheckIn-CheckOut"></a>
+<a name="/definitions/checkIn-checkOut"></a>
 ### Check-in Check-Out
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | MINIMUM_CHECKIN_AGE | No  |  | Send VALUE |
 | CHECKOUT_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
 | CHECKIN_START_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
@@ -837,11 +837,11 @@ The Policy codes/detail codes and values have been split into sub sections with 
 |  |  |  | OPEN_WEEKDAYS |
 |  |  |  | OPEN_WEEKENDS |
 
-<a name="/definitions/PaymentInformation"></a>
+<a name="/definitions/payment-information"></a>
 ### Payment Information
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | ACCEPTS_VISA | No  |  | Send VALUE |
 | ACCEPTS_MASTERCARD | No |  | Send VALUE |
 | ACCEPTS_JCB_INTERNATIONAL | No |  | Send VALUE |
@@ -853,11 +853,11 @@ The Policy codes/detail codes and values have been split into sub sections with 
 | FORMS_OF_DEPOSIT_ACCEPTED | Yes | CASH_ONLY | |
 |  |  | CREDIT_CARDS_ONLY |  |
 
-<a name="/definitions/Other"></a>
+<a name="/definitions/other"></a>
 ### Other
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | WATER_HEATER | Yes  | GAS_WATER_HEATER_IN_ROOM |  |
 |  |  | CENTRALIZED_GAS_WATER_HEATER |  |
 |  |  | NOT_GAS |  |
@@ -903,12 +903,12 @@ The Policy codes/detail codes and values have been split into sub sections with 
 |  |  | 72_HOURS_PRIOR |  |
 
 
-<a name="/definitions/Attributes"></a>
+<a name="/definitions/attributes"></a>
 ## Attributes
-The attribute codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding. 
+The attribute codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. 
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
 | TOTAL_ROOMS | No  |  | Send VALUE |
 | MULTI-LINGUAL STAFF | No |  |  |
 | FIREPLACE_IN_LOBBY | No |  |  |
@@ -918,9 +918,10 @@ The attribute codes/detail codes and values have been split into sub sections wi
 | NUMBER_OF_BATHROOMS | No |  | Send VALUE |
 | OCCUPANCY | No |  | Send VALUE |
 
-<a name="/definitions/MandatoryFees"></a>
+<a name="/definitions/mandatory-fees"></a>
 ## Mandatory Fees
-The Fee codes/detail codes and values have been split into sub sections with names to faciliate discovery and understanding. Please note, these are fees collected at the time of Check-in (not at the time of Booking). For Fees Collected at Booking, please utilize Service Fees at the Rateplan Level (Refer Product API for details).
+The Fee codes/detail codes and values have been split into sub sections with names to facilitate
+discovery and understanding. Please note, these are fees collected at the time of Check-in (not at the time of Booking). For Fees Collected at Booking, please utilize Service Fees at the Rateplan Level (Refer Product API for details).
 
 | Code | Scope | Duration | Notes |
 | ---- | ----- | -------- | ----- |
@@ -971,137 +972,137 @@ The Fee codes/detail codes and values have been split into sub sections with nam
 |  | AMOUNT_PER_PERSON | PER_WEEK | Send VALUE |
 |  | | PER_STAY | Send VALUE |
 
-<a name="/definitions/ParagraphText"></a>
+<a name="/definitions/paragraph-text"></a>
 ## Paragraph Text
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
-| ---- | --------------------- | --------------------- | ----- |
-| SPECIAL_CHECKIN_INSTRUCTIONS | No  |  | Freeform text describing special checkin instructions.  Subject to review and modification by Expedia content team.
+| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ---------------------- | ----- |
+| SPECIAL_CHECKIN_INSTRUCTIONS | No  |  | Freeform text describing special checkin instructions.  Subject to review and modification by Expedia content team. |
 
-<a name="/definitions/Taxes"></a>
+<a name="/definitions/taxes"></a>
 ## Taxes
 Always Send the Tax amount in VALUE
 
-| Code | DetailCodes Required? | 
-| ---- | --------------------- |
-| ACCOMMODATIONS_TAX | PERCENT_PER_STAY |
-|  | AMOUNT_PER_STAY |
-|  | AMOUNT_PER_NIGHT |
-| ACCOMMODATIONS_TAX_CITY |  |
-| ACCOMMODATIONS_TAX_COUNTY |  |
-| ACCOMMODATIONS_TAX_DISTRICT |  |
-| ACCOMMODATIONS_TAX_SPECIAL_PURPOSE_DISTRICT |  |
-| ACCOMMODATIONS_TAX_STATE |  |
-| ADMISSION_AMUSEMENT_TAX_CITY |  |
-| ASSESSMENT_TAX |  |
-| BATHING_TAX |  |
-| BED_TAX |  |
-| BUSINESS_IMPROVEMENT_DISTRICT_TAX |  |
-| CAPITAL_IMPROVEMENT_FUND |  |
-| CITY_TAX |  |
-| CONSUMPTION_TAX |  |
-| CONSUMPTION_TAX_ON_SERVICE_FEE |  |
-| CONVENTION_CENTER_TAX |  |
-| COUNTY_TAX |  |
-| DEPARTMENT_TAX |  |
-| DEPARTMENT_TAX_ON_TAXE_DE_SEJOUR |  |
-| DISTRICT_TAX |  |
-| ENERGY_TAX |  |
-| ENTERTAINMENT_TAX |  |
-| ENVIRONMENT_LEVY_TAX |  |
-| FACILITIES_TAX |  |
-| FEDERAL_TAX |  |
-| FEE_DISTRICT |  |
-| GENERAL_SALES_AND_USE_TAX_CITY |  |
-| GENERAL_SALES_AND_USE_TAX_COUNTY |  |
-| GENERAL_SALES_AND_USE_TAX_DISTRICT |  |
-| GENERAL_SALES_AND_USE_TAX_LOCAL_IMPROVEMENT_DISTRICT |  |
-| GENERAL_SALES_AND_USE_TAX_STATE |  |
-| GST |  |
-| GST_ON_ACCOMMODATION |  |
-| GST_ON_DMF |  |
-| GST_ON_LODGING_TAX   |  |
-| GST_ON_SERVICE_FEE |  |
-| GST_ON_TOURISM_TAX |  |
-| HOTEL_DAILY_FEE_CITY |  |
-| HOTEL_DAILY_FEE_COUNTY |  |
-| HOTEL_DAILY_FEE_DISTRICT |  |
-| HOTEL_TAX |  |
-| HOTEL_TAX_ON_SERVICE_FEE |  |
-| HOTEL_UNIT_FEE_CITY |  |
-| HST |  |
-| HST_ON_DISTRICT_TAX |  |
-| HST_ON_DMF |  |
-| HST_ON_MUNICIPAL_TAX |  |
-| HST_ON_TOURISM_TAX |  |
-| IMPOSTA_DI_SOGGIORNO |  |
-| ISH |  |
-| ISS |  |
-| ISS_ON_SERVICE_FEE |  |
-| IVA |  |
-| IVU_TAX_PUERTO_RICO |  |
-| KURTAXE |  |
-| LODGING_TAX |  |
-| LODGING_TAX_CITY |  |
-| LODGING_TAX_COUNTY |  |
-| LUXURY_TAX |  |
-| MARKETING_FEE |  |
-| MUNICIPAL_TAX |  |
-| MUNICIPAL_TAX_ON_DMF |  |
-| MUNICIPAL_TAX_ON_TOURISM_TAX |  |
-| OCCUPANCY_TAX |  |
-| OCCUPANCY_TAX_CITY |  |
-| OTHER_TAX |  |
-| OTHER_TAX_ON_SERVICE_FEE |  |
-| PARISH_TAX |  |
-| PRIVILEDGE_TAX |  |
-| PROVINCE_TAX |  |
-| PST |  |
-| PST_ON_DMF |  |
-| PST_ON_TOURISM_TAX |  |
-| PUBLIC_FACILITIES_TAX |  |
-| PUBLIC_IMPROVEMENT_TAX |  |
-| QST |  |
-| QST_ON_LODGING_TAX |  |
-| ROOM_TAX |  |
-| RST |  |
-| SALES_TAX |  |
-| SALES_TAX_ON_SERVICE_FEE |  |
-| SERVICE_FEE |  |
-| SPECIAL_TAX |  |
-| STATE_TAX |  |
-| SUPPLEMENT_TAX |  |
-| SURCHARGE_DISTRICT |  |
-| TAXE_DE_SEJOUR |  |
-| TOERISTENBELASTING |  |
-| TOURISM_ASSESSMENT_TAX |  |
-| TOURISM_BUSINESS IMPROVEMENT_DISTRICT_TAX |  |
-| TOURISM_DIRHAM |  |
-| TOURISM_IMPROVEMENT_DISTRICT_TAX |  |
-| TOURISM_MARKETING_DISTRICT_TAX |  |
-| TOURISM_TAX |  |
-| TOURISM_TAX_ON_DMF |  |
-| TPA |  |
-| TRANPORTATION_DISTRICT_TAX |  |
-| TRANSIENT_TAX |  |
-| TRANSIT_IMPROVEMENT_TAX |  |
-| TRANSPORTATION_AUTHORITY_TAX |  |
-| VAT |  |
-| VAT_ON_CITY_TAX |  |
-| VAT_ON_SERVICE_FEE |  |
-| VAT_ON_TOURISM_TAX |  |
+| Code | Detail Codes Permitted | Notes |
+| ---- | ---------------------- | ----- |
+| ACCOMMODATIONS_TAX | PERCENT_PER_STAY | The Detail Codes are applicable to all taxes below |
+|  | AMOUNT_PER_STAY |  |
+|  | AMOUNT_PER_NIGHT |  |
+| ACCOMMODATIONS_TAX_CITY |  |  |
+| ACCOMMODATIONS_TAX_COUNTY |  |  |
+| ACCOMMODATIONS_TAX_DISTRICT |  |  |
+| ACCOMMODATIONS_TAX_SPECIAL_PURPOSE_DISTRICT |  |  |
+| ACCOMMODATIONS_TAX_STATE |  |  |
+| ADMISSION_AMUSEMENT_TAX_CITY |  |  |
+| ASSESSMENT_TAX |  |  |
+| BATHING_TAX |  |  |
+| BED_TAX |  |  |
+| BUSINESS_IMPROVEMENT_DISTRICT_TAX |  |  |
+| CAPITAL_IMPROVEMENT_FUND |  |  |
+| CITY_TAX |  |  |
+| CONSUMPTION_TAX |  |  |
+| CONSUMPTION_TAX_ON_SERVICE_FEE |  |  |
+| CONVENTION_CENTER_TAX |  |  |
+| COUNTY_TAX |  |  |
+| DEPARTMENT_TAX |  |  |
+| DEPARTMENT_TAX_ON_TAXE_DE_SEJOUR |  |  |
+| DISTRICT_TAX |  |  |
+| ENERGY_TAX |  |  |
+| ENTERTAINMENT_TAX |  |  |
+| ENVIRONMENT_LEVY_TAX |  |  |
+| FACILITIES_TAX |  |  |
+| FEDERAL_TAX |  |  |
+| FEE_DISTRICT |  |  |
+| GENERAL_SALES_AND_USE_TAX_CITY |  |  |
+| GENERAL_SALES_AND_USE_TAX_COUNTY |  |  |
+| GENERAL_SALES_AND_USE_TAX_DISTRICT |  |  |
+| GENERAL_SALES_AND_USE_TAX_LOCAL_IMPROVEMENT_DISTRICT |  |  |
+| GENERAL_SALES_AND_USE_TAX_STATE |  |  |
+| GST |  |  |
+| GST_ON_ACCOMMODATION |  |  |
+| GST_ON_DMF |  |  |
+| GST_ON_LODGING_TAX |  |  |
+| GST_ON_SERVICE_FEE |  |  |
+| GST_ON_TOURISM_TAX |  |  |
+| HOTEL_DAILY_FEE_CITY |  |  |
+| HOTEL_DAILY_FEE_COUNTY |  |  |
+| HOTEL_DAILY_FEE_DISTRICT |  |  |
+| HOTEL_TAX |  |  |
+| HOTEL_TAX_ON_SERVICE_FEE |  |  |
+| HOTEL_UNIT_FEE_CIT |  |  |
+| HST |  |  |
+| HST_ON_DISTRICT_TAX |  |  |
+| HST_ON_DMF |  |  |
+| HST_ON_MUNICIPAL_TAX |  |  |
+| HST_ON_TOURISM_TAX |  |  |
+| IMPOSTA_DI_SOGGIORNO |  |  |
+| ISH |  |  |
+| ISS |  |  |
+| ISS_ON_SERVICE_FEE |  |  |
+| IVA |  |  |
+| IVU_TAX_PUERTO_RICO |  |  |
+| KURTAXE |  |  |
+| LODGING_TAX |  |  |
+| LODGING_TAX_CITY |  |  |
+| LODGING_TAX_COUNTY |  |  |
+| LUXURY_TAX |  |  |
+| MARKETING_FEE |  |  |
+| MUNICIPAL_TAX |  |  |
+| MUNICIPAL_TAX_ON_DMF |  |  |
+| MUNICIPAL_TAX_ON_TOURISM_TAX |  |  |
+| OCCUPANCY_TAX |  |  |
+| OCCUPANCY_TAX_CITY |  |  |
+| OTHER_TAX |  |  |
+| OTHER_TAX_ON_SERVICE_FEE |  |  |
+| PARISH_TAX |  |  |
+| PRIVILEDGE_TAX |  |  |
+| PROVINCE_TAX |  |  |
+| PST |  |  |
+| PST_ON_DMF |  |  |
+| PST_ON_TOURISM_TAX |  |  |
+| PUBLIC_FACILITIES_TAX |  |  |
+| PUBLIC_IMPROVEMENT_TAX |  |  |
+| QST |  |  |
+| QST_ON_LODGING_TAX |  |  |
+| ROOM_TAX |  |  |
+| RST |  |  |
+| SALES_TAX |  |  |
+| SALES_TAX_ON_SERVICE_FEE |  |  |
+| SERVICE_FEE |  |  |
+| SPECIAL_TAX |  |  |
+| STATE_TAX |  |  |
+| SUPPLEMENT_TAX |  |  |
+| SURCHARGE_DISTRICT |  |  |
+| TAXE_DE_SEJOUR |  |  |
+| TOERISTENBELASTING |  |  |
+| TOURISM_ASSESSMENT_TAX |  |  |
+| TOURISM_BUSINESS IMPROVEMENT_DISTRICT_TAX |  |  |
+| TOURISM_DIRHAM |  |  |
+| TOURISM_IMPROVEMENT_DISTRICT_TAX |  |  |
+| TOURISM_MARKETING_DISTRICT_TAX |  |  |
+| TOURISM_TAX |  |  |
+| TOURISM_TAX_ON_DMF |  |  |
+| TPA |  |  |
+| TRANPORTATION_DISTRICT_TAX |  |  |
+| TRANSIENT_TAX |  |  |
+| TRANSIT_IMPROVEMENT_TAX |  |  |
+| TRANSPORTATION_AUTHORITY_TAX |  |  |
+| VAT |  |  |
+| VAT_ON_CITY_TAX |  |  |
+| VAT_ON_SERVICE_FEE |  |  |
+| VAT_ON_TOURISM_TAX |  |  |
 
-<a name="/definitions/ImageCategories"></a>
+<a name="/definitions/image-categories"></a>
 ## Image Categories
 
-<a name="/definitions/PrimaryImage"></a>
+<a name="/definitions/primary-image"></a>
 ### Primary Image
 
 | Category Code |
 | ------------- |
 | FEATURED_IMAGE |
 
-<a name="/definitions/Lobby"></a>
+<a name="/definitions/lobby"></a>
 ### Lobby
 
 | Category Code |
@@ -1114,7 +1115,7 @@ Always Send the Tax amount in VALUE
 | CHECK_IN_CHECK_OUT_KIOSK |
 | LOBBY_LOUNGE |
 
-<a name="/definitions/RoomFacilities"></a>
+<a name="/definitions/room-facilities"></a>
 ### Room Facilities
 
 | Category Code |
@@ -1145,7 +1146,7 @@ Always Send the Tax amount in VALUE
 | BATHROOM_SHOWER |
 | BATHROOM_AMENITIES |
 
-<a name="/definitions/Pool"></a>
+<a name="/definitions/image-pool"></a>
 ### Pool
 
 | Category Code |
@@ -1165,7 +1166,7 @@ Always Send the Tax amount in VALUE
 | POOL_WATERFALL |
 | ROOFTOP_POOL |
 
-<a name="/definitions/Fitness"></a>
+<a name="/definitions/fitness"></a>
 ### Fitness
 
 | Category Code |
@@ -1179,7 +1180,7 @@ Always Send the Tax amount in VALUE
 | YOGA |
 | PILATES |
 
-<a name="/definitions/Spa"></a>
+<a name="/definitions/image-spa"></a>
 ### Spa
 
 | Category Code |
@@ -1196,9 +1197,11 @@ Always Send the Tax amount in VALUE
 | SPA_TREATMENT |
 | FACIAL |
 
-<a name="/definitions/SportsFacilities"></a>
+<a name="/definitions/sports-facilities"></a>
 ### Sports Facilities
 
+| Category Code |
+| ------------- |
 | SPORTS_FACILITY |
 | BOATING |
 | BICYCLING |
@@ -1222,9 +1225,11 @@ Always Send the Tax amount in VALUE
 | SNOWBOARDING |
 | EQUIPMENT_STORAGE |
 
-<a name="/definitions/PropertyAmenities"></a>
+<a name="/definitions/image-property-amenities"></a>
 ### Property Amenities
 
+| Category Code |
+| ------------- |
 | PROPERTY_AMENITY |
 | CASINO |
 | THEATER_SHOW |
@@ -1249,6 +1254,8 @@ Always Send the Tax amount in VALUE
 <a name="/definitions/Property Dining"></a>
 ### Property Dining
 
+| Category Code |
+| ------------- |
 | DINING |
 | BREAKFAST_AREA |
 | COFFEE_SERVICE |
@@ -1263,18 +1270,22 @@ Always Send the Tax amount in VALUE
 | FAMILY_DINING |
 | FOOD_AND_DRINK |
 
-<a name="/definitions/Bar"></a>
+<a name="/definitions/bar"></a>
 ### Bar
 
+| Category Code |
+| ------------- |
 | HOTEL_BAR |
 | HOTEL_LOUNGE |
 | SPORTS_BAR |
 | POOLSIDE_BAR |
 | NIGHTCLUB |
 
-<a name="/definitions/PropertyInterior"></a>
+<a name="/definitions/property-interior"></a>
 ### Property Interior
 
+| Category Code |
+| ------------- |
 | HOTEL_INTERIOR | 
 | LIBRARY |
 | BALLROOM |
@@ -1290,9 +1301,11 @@ Always Send the Tax amount in VALUE
 | FIREPLACE |
 | EXECUTIVE_LOUNGE |
 
-<a name="/definitions/PropertyExterior"></a>
+<a name="/definitions/property-exterior"></a>
 ### Property Exterior
 
+| Category Code |
+| ------------- |
 | PROPERTY_GROUNDS |
 | HOTEL_FRONT |
 | HOTEL_ENTRANCE |
@@ -1319,9 +1332,11 @@ Always Send the Tax amount in VALUE
 | EXTERIOR_DETAIL |
 | EXTERIOR |
 
-<a name="/definitions/PropertyView"></a>
+<a name="/definitions/property-view"></a>
 ### Property View
 
+| Category Code |
+| ------------- |
 | BEACH_OCEAN_VIEW |
 | AERIAL_VIEW |
 | VIEW_FROM_HOTEL |
