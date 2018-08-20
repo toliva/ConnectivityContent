@@ -136,7 +136,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/internet-access"></a>
 ### Internet Access
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | ---------------------- | ---------------------- | ----- |
 | WIFI_INTERNET | Yes  | FREE | No VALUE required |
 | | | SURCHARGE |  |
@@ -166,7 +166,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/children"></a>
 ### Children
 
-| Code | DetailCodes Required? | DetailCodes Permitted | Notes |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | --------------------- | --------------------- | ----- |
 | BABYSITTING | Yes  | FREE |  |
 | | | SURCHARGE | |
@@ -182,7 +182,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/accessibility"></a>
 ### Accessibility
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | ---------------------- | ---------------------- | ----- |
 | ACCESSIBLE_BATHROOM | No  | |  |
 | BRAILLE_SIGNAGE | No  | |  |
