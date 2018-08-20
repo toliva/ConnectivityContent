@@ -921,7 +921,7 @@ The attribute codes/detail codes and values have been split into sub sections wi
 <a name="/definitions/mandatory-fees"></a>
 ## Mandatory Fees
 The Fee codes/detail codes and values have been split into sub sections with names to facilitate
-discovery and understanding. Please note, these are fees collected at the time of Check-in (not at the time of Booking). For Fees Collected at Booking, please utilize Service Fees at the Rateplan Level (Refer Product API for details).
+discovery and understanding. Please note, these are fees collected at the time of Check-in (not at the time of Booking). For Fees Collected at Booking, please utilize Service Fees at the Rateplan Level (Refer to the [Product API](/apis/product-management/product-api/02-reference.md) for details).
 
 | Code | Scope | Duration | Notes |
 | ---- | ----- | -------- | ----- |
