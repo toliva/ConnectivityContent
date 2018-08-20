@@ -129,7 +129,7 @@ None
 
 None
 
-<a name="/definitions/PropertyAmenities"></a>
+<a name="/definitions/property-amenities"></a>
 ## Property Amenities
 The amenity codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding.
 
@@ -196,8 +196,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/business"></a>
 ### Business
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | BUSINESS_CENTER | Yes  | AVAILABLE_24HOURS |  |
 | | No | GENERIC | |
 | CONFERENCE_ROOMS | Yes  | MULTIPLE |  |
@@ -213,8 +213,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/dining-or-breakfast"></a>
 ### Dining or Breakfast
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | LOUNGE | Yes  | MULTIPLE |  |
 | |  | SINGULAR | |
 | BREAKFAST | Yes  | FREE | No VALUE required |
@@ -244,8 +244,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/fitness-wellness"></a>
 ### Fitness & Wellness
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | FITNESS_FACILITIES | Yes  | AVAILABLE_24HOURS |  |
 | |  | GENERIC | |
 | HEALTH_CLUB | Yes  | AVAILABLE_24HOURS |  |
@@ -280,8 +280,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/guest-services"></a>
 ### Guest Services
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | CONCIERGE | No  |  |  |
 | DRY_CLEANING | No  |  |  |
 | LAUNDRY_FACILITIES | No  |  |  |
@@ -300,8 +300,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/outdoor-areas"></a>
 ### Outdoor Areas
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | BBQ_GRILLS | No  |  |  |
 | GARDEN | No  |  |  |
 | PICNIC_AREA | No  |  |  |
@@ -312,8 +312,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/parking-or-transport"></a>
 ### Parking or Transport
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | AIRPORT_SHUTTLE_TYPE | Yes  | DROP_OFF_FREE  |  |
 |  |   | DROP_OFF_SURCHARGE |  |
 |  |   | PICKUP_FREE |  |
@@ -387,8 +387,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/pool"></a>
 ### Pool
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | POOL_CHILDRENS | No |  |  |
 | POOL_INDOOR | Yes | MULTIPLE | Send VALUE |
 |  |  | SINGULAR |  |
@@ -400,8 +400,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/recreation"></a>
 ### Recreation
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | BEACH_ACCESS | Yes | ON_PRIVATE_BEACH |  |
 | |  | NEAR_PRIVATE_BEACH |  |
 | |  | ON_PUBLIC_BEACH |  |
@@ -420,8 +420,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/entertainment"></a>
 ### Entertainment
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | CASINO | No | ONSITE |  |
 | NIGHTCLUB | No | ONSITE |  |
 | LIBRARY | No |  |  |
@@ -432,8 +432,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/view"></a>
 ### View
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | VIEW_BAY | No |  |  |
 | VIEW_BEACH | No |  |  |
 | VIEW_CANAL | No |  |  |
@@ -464,8 +464,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/skiing-snowboarding"></a>
 ### Skiing and Snowboarding
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | DOWNHILL | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 | SNOWBOARDING | Yes | NEARBY |  |
@@ -486,8 +486,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/spa"></a>
 ### Spa
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | MINERAL_HOT_SPRINGS | Yes | INDOOR |  |
 |  |  | OUTDOOR |  |
 | SPA_SERVICES_ONSITE | No |  |  |
@@ -498,8 +498,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/adventure-activities"></a>
 ### Adventure Activities
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | HIKING_BIKING | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 
@@ -507,16 +507,16 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/safari"></a>
 ### Safari
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | SAFARI | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 
 <a name="/definitions/water-based-activities"></a>
 ### Water Based Activities
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | BOAT_TOURS | Yes | NEARBY |  |
 |  |  | ONSITE |  |
 | SNORKELING | Yes | NEARBY |  |
@@ -525,8 +525,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/location-highlights"></a>
 ### Location Highlights
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | PROPERTY_LOCATION | Yes | IN_BUSINESS_DISTRICT |  |
 |  |  | IN_CITY_CENTER |  |
 |  |  | IN_ENTERTAINMENT_DISTRICT |  |
@@ -558,8 +558,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 
 <a name="/definitions/languages"></a>
 ### Languages
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | LANGUAGES_SPOKEN | Yes | CHINESE |  |
 |  |  | ENGLISH |  |
 |  |  | FRENCH |  |
@@ -629,8 +629,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/internet-in-rooms"></a>
 ### Internet in Rooms
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_WIRED_INTERNET | Yes  | FREE |  |
 | | | SURCHARGE |  |
 | | | SURCHARGE_AMT | Send VALUE |
@@ -659,8 +659,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/bath"></a>
 ### Bath
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_BATHROOM_TYPE | Yes  | PRIVATE_BATHROOM |  |
 |  |  | PRIVATE_BATHROOM_NOT_IN_ROOM |  |
 |  |  | SHARED_BATHROOM |  |
@@ -687,8 +687,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/appliances"></a>
 ### Appliances
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_COFFEE_TEA | Yes  | COFFEE_AND_TEA_MAKER |  |
 |  |  | ESPRESSO_MAKER |  |
 | ROOM_FREE_BOTTLED_WATER | No |  |  |
@@ -721,8 +721,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/room-entertainment"></a>
 ### Room Entertainment
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_TV_SERVICE | Yes  | CABLE |  |
 |  |  | SATELLITE |  |
 |  |  | DIGITAL |  |
@@ -748,8 +748,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/beds"></a>
 ### Beds
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_CRIBS | Yes  | FREE |  |
 |  |  | SURCHARGE |  |
 |  |  | GENERIC |  |
@@ -772,8 +772,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/room-services"></a>
 ### Room Services
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_HOUSEKEEPING | Yes  | DAILY |  |
 |  |  | LIMITED |  |
 |  |  | ONCE_PER_STAY |  |
@@ -796,8 +796,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 <a name="/definitions/room-spaces"></a>
 ### Room Spaces
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ROOM_BALCONY | Yes  | FURNISHED_BALCONY |  |
 |  |  | FURNISHED_BALCONY_OR_PATIO |  |
 |  |  | FURNISHED_LANAI |  |
@@ -823,11 +823,11 @@ The amenity codes/detail codes and values have been split into sub sections with
 ## Policies
 The Policy codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. 
 
-<a name="/definitions/checkIn-checkOut"></a>
+<a name="/definitions/checkin-checkout"></a>
 ### Check-in Check-Out
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | MINIMUM_CHECKIN_AGE | No  |  | Send VALUE |
 | CHECKOUT_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
 | CHECKIN_START_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
@@ -840,8 +840,8 @@ The Policy codes/detail codes and values have been split into sub sections with 
 <a name="/definitions/payment-information"></a>
 ### Payment Information
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | ACCEPTS_VISA | No  |  | Send VALUE |
 | ACCEPTS_MASTERCARD | No |  | Send VALUE |
 | ACCEPTS_JCB_INTERNATIONAL | No |  | Send VALUE |
@@ -856,8 +856,8 @@ The Policy codes/detail codes and values have been split into sub sections with 
 <a name="/definitions/other"></a>
 ### Other
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | WATER_HEATER | Yes  | GAS_WATER_HEATER_IN_ROOM |  |
 |  |  | CENTRALIZED_GAS_WATER_HEATER |  |
 |  |  | NOT_GAS |  |
@@ -907,8 +907,8 @@ The Policy codes/detail codes and values have been split into sub sections with 
 ## Attributes
 The attribute codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. 
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | TOTAL_ROOMS | No  |  | Send VALUE |
 | MULTI-LINGUAL STAFF | No |  |  |
 | FIREPLACE_IN_LOBBY | No |  |  |
@@ -975,8 +975,8 @@ discovery and understanding. Please note, these are fees collected at the time o
 <a name="/definitions/paragraph-text"></a>
 ## Paragraph Text
 
-| Code | Detail Codes Required? | Detail Codes Permitted | Notes |
-| ---- | ---------------------- | ---------------------- | ----- |
+| Code | Detail Code Required? | Detail Codes Permitted | Notes |
+| ---- | --------------------- | ---------------------- | ----- |
 | SPECIAL_CHECKIN_INSTRUCTIONS | No  |  | Freeform text describing special checkin instructions.  Subject to review and modification by Expedia content team. |
 
 <a name="/definitions/taxes"></a>
