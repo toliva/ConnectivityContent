@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2018-08-20 | Updated the Code Lists page to have all the Amenity, Attribute, Policy, Image Category codes called out
 | 2018-05-18 | Included Languages Spoken to the Code Lists for Amenities
 | 2018-05-15 | Included ContractTermsChanging and CurrencyCodeChanging to PendingReview Reason Codes
 | 2018-04-25 | Added support for Number of Bedrooms, Number of Bathrooms, Occupancy under Policies
