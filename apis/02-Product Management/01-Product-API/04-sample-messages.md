@@ -2312,7 +2312,6 @@ Authorization: Basic [your encoded username:password in Base64]
   ],
   "status": "Active",
   "type": "Standalone",
-  "distributionModel": "ExpediaCollect",
   "occupantsForBaseRate": 2,
   "taxInclusive": false,
   "cancelPolicy": {
