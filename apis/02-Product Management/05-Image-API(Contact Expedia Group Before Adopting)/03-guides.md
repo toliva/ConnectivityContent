@@ -73,7 +73,7 @@ Expedia expects the highest possible resolution for the image that gets uploaded
 
 ## What is the Optimal Image Resolution?
 
-Expedia recommends at least 2,880 pixels on the image's longest side. Images that have less than 1000 pixels on either sides will be refused.
+Expedia recommends at least 2,880 pixels on the image's longest side. Images that have less than 1000 pixels on either side will be refused.
 
 ## Can I Upload Image Files Directly to Expedia Without Having the Images Hosted Somewhere on the Internet?
 
