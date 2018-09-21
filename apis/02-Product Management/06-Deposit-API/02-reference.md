@@ -528,6 +528,8 @@ href | string (URL) | The fully-qualified URL of the resource.
 | 404 | 2404 | Not Found | Resource not found: the server has not found anything matching the Request-URI. |
 | 400 | 2003 | Bad Request | The domain value in JSON is not supported by the model. |
 | 400 | 2004 | Bad Request | The JSON is missing required element. |
+| 400 | 2005 | Bad Request | Duplicate concurrent property policy creation request sent. |
+| 400 | 2006 | Bad Request | Duplicate concurrent property policy update request sent. |
 | 400 | 2405 | Bad Request | Method not allowed: the method specified in the Request-Line is not allowed for the resource identified by the Request-URI. Allowed method(s): [methods]. |
 | 400 | 2406 | Bad Request | Requested response media type unsupported: the resource identified by the request is unable to generate response entities of the media type requested by the Accept header attribute in the request. |
 | 400 | 2415 | Bad Request | Request media type unsupported: the server is refusing to service the request because the media type specified in request under the Content-Type header attribute is not supported by the requested resource for the requested method. |
