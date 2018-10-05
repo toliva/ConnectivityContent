@@ -215,7 +215,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 | latitude | String | Yes | No | Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed. |
 | longitude | String | Yes | No | Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed. |
 | providerPropertyUrl | String | No | Yes | URL for property's website, must be submitted in Western European Character set. |
-| structureType | String | No | Yes | Must use pre-defined structureType code.  See [code list](./code-list.html#property-structuretype "Structure type codes") |
+| structureType | String | Yes | Yes | Must use pre-defined structureType code.  See [code list](./code-list.html#property-structuretype "Structure type codes") |
 | currencyCode | String | Yes | No | Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit the same ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version. |
 | billingCurrencyCode | String | Yes | No | Use ISO4217.  Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding.   |
 | timeZone | String | Yes | Yes | TimeZone for the property, used to determine cancel policies. Specified in IANA timezone format. See the [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for details.|
@@ -286,7 +286,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | --------- | ---- | -------- | ----- |
 | locale | String | Yes | Use IETF language tag standard, e.g. en-US |
 | name | String | No | Property name for specified locale, e.g. en-US.  If none provided, then default property name will be used. |
-| images | Array of Image | Yes | See Image below. |
+| images | Array of Image | Yes | See Image below. Expedia requires atleast 3 Images to be sent via Property API |
 | amenities | Array of Amenity | No | See Amenity below. |
 | paragraphs | Array of Paragraph | No | See Paragraph below. |
 
