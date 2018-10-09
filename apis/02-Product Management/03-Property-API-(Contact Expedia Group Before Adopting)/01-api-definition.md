@@ -287,7 +287,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 | locale | String | Yes | Use IETF language tag standard, e.g. en-US |
 | name | String | No | Property name for specified locale, e.g. en-US.  If none provided, then default property name will be used. |
 | images | Array of Image | Yes | See Image below. |
-| amenities | Array of Amenity | No | See Amenity below. |
+| amenities | Array of Amenity | Yes | See Amenity below. |
 | paragraphs | Array of Paragraph | No | See Paragraph below. |
 
 **image**
