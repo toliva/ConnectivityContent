@@ -180,10 +180,6 @@ The below example is a request to onboard a new property using SetPropertyDetail
     ],
     "inventorySettings": {
         "rateAcquisitionType": "NET_RATE",
-        "distributionModels": [
-            "EXPEDIA_COLLECT",
-            "HOTEL_COLLECT"
-        ],
         "pricingModel": "PER_DAY"
     },
     "attributes": [
@@ -342,7 +338,6 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
-| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
 | pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
 
 **tax**
@@ -541,10 +536,6 @@ The response body will echo back the values of *the request received* and will i
             ],
             "inventorySettings": {
                 "rateAcquisitionType": "NET_RATE",
-                "distributionModels": [
-                    "EXPEDIA_COLLECT",
-                    "HOTEL_COLLECT"
-                ],
                 "pricingModel": "PER_DAY"
             },
             "attributes": [
@@ -815,10 +806,6 @@ GET /properties/v1/mycompany/1234
     ],
       "inventorySettings": {
             "rateAcquisitionType": "SELL_LAR",
-            "distributionModels": [
-                "HOTEL_COLLECT",
-                "EXPEDIA_COLLECT"
-            ],
             "pricingModel": "PER_DAY",
             "onStopSell": true
         },
