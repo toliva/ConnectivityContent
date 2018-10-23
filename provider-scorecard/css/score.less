@@ -3,6 +3,7 @@
 @neutral: #404040;
 @blue: #2962b5;
 @black: #404040;
+@light-grey: #8a8a8a;
 @card-background: white;
 @body-background: #f8f8f8;
 @footer-background: #3f3f3f;
@@ -263,7 +264,25 @@ body {
             }
         }
 
+        >.light-grey {
+            .value {
+                color: @light-grey;
+            }
 
+            .state {
+                color: @light-grey;
+                font-size: 1.5em;
+                margin-right: 0em;
+            }
+
+            .feature {
+                color: @light-grey;
+            }
+
+            .standard {
+                color: @light-grey;
+            }
+        }
     }
 
     .scorecard-improve {
