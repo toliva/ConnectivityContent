@@ -495,7 +495,7 @@ href | string (URL) | The fully-qualified URL of the resource.
 | ---------- |
 | NIGHT |
 | AMOUNT |
-| PERCENTAGE |
+| PERCENT |
 | REMAINDER |
 
 <a name="/definitions/PaymentTimeTypeEnum"></a>
