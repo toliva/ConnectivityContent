@@ -842,14 +842,14 @@ The Policy codes/detail codes and values have been split into sub sections with 
 
 | Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | --------------------- | ---------------------- | ----- |
-| ACCEPTS_VISA | No  |  | Send VALUE |
-| ACCEPTS_MASTERCARD | No |  | Send VALUE |
-| ACCEPTS_JCB_INTERNATIONAL | No |  | Send VALUE |
-| ACCEPTS_DISCOVER | No |  | Send VALUE |
-| ACCEPTS_DINERS_CLUB | No |  | Send VALUE |
-| AACCEPTS_CARTE_BLANCHE | No |  | Send VALUE |
-| ACCEPTS_AMERICAN_EXPRESS | No |  | Send VALUE |
-| CC_NAME_MUST_MATCH | No |  | Send VALUE |
+| ACCEPTS_VISA | No  |  |  |
+| ACCEPTS_MASTERCARD | No |  |  |
+| ACCEPTS_JCB_INTERNATIONAL | No |  |  |
+| ACCEPTS_DISCOVER | No |  |  |
+| ACCEPTS_DINERS_CLUB | No |  |  |
+| AACCEPTS_CARTE_BLANCHE | No |  |  |
+| ACCEPTS_AMERICAN_EXPRESS | No |  |  |
+| CC_NAME_MUST_MATCH | No |  |  |
 | FORMS_OF_DEPOSIT_ACCEPTED | Yes | CASH_ONLY | |
 |  |  | CREDIT_CARDS_ONLY |  |
 
