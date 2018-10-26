@@ -1,1 +1,1 @@
-See internal documentation at https://confluence/x/fP3SMw 
+See internal documentation at https://confluence.expedia.biz/x/fP3SMw
