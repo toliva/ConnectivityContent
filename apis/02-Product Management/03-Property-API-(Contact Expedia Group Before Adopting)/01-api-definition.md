@@ -163,6 +163,14 @@ The below example is a request to onboard a new property using SetPropertyDetail
             "value": 25.99,
             "startDate": null,
             "endDate": null
+        },
+        {
+            "code": "DEPOSIT_OTHER",
+            "scope": "BREAKAGE",
+            "duration": "PER_DAY",
+            "startDate": "2019-09-20",
+            "endDate": "2019-09-28",
+            "value": "14.77"
         }
     ],
     "taxes": [
@@ -176,11 +184,22 @@ The below example is a request to onboard a new property using SetPropertyDetail
         {
             "code": "MINIMUM_CHECKIN_AGE",
             "value": "18"
+        },
+        {
+            "code": "FORMS_OF_DEPOSIT_ACCEPTED",
+            "detailCode": "CREDIT_CARDS_ONLY",
+            "value": null
+        },
+        {
+            "code": "DEPOSIT_OTHER",
+            "detailCode": "CASH_ONLY",
+            "value": null
         }
     ],
     "inventorySettings": {
         "rateAcquisitionType": "NET_RATE",
         "pricingModel": "PER_DAY"
+        "virtualCardEnabled":false
     },
     "attributes": [
         {
@@ -339,6 +358,8 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
+| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionModels)|
+| virtualCardEnabled | Boolean | No | |
 
 **tax**
 
