@@ -847,11 +847,16 @@ The Policy codes/detail codes and values have been split into sub sections with 
 | ACCEPTS_JCB_INTERNATIONAL | No |  |  |
 | ACCEPTS_DISCOVER | No |  |  |
 | ACCEPTS_DINERS_CLUB | No |  |  |
-| AACCEPTS_CARTE_BLANCHE | No |  |  |
+| ACCEPTS_CARTE_BLANCHE | No |  |  |
 | ACCEPTS_AMERICAN_EXPRESS | No |  |  |
 | CC_NAME_MUST_MATCH | No |  |  |
 | FORMS_OF_DEPOSIT_ACCEPTED | Yes | CASH_ONLY | |
 |  |  | CREDIT_CARDS_ONLY |  |
+|  |  | DEBIT_CARDS_ONLY |  |
+|  |  | CASH_CREDIT_CARD |  |
+| DEPOSIT_OTHER | Yes | CASH_ONLY | |
+|  |  | AGE | Send Value. The value sent would be considered the upper age limit for the deposit applied |
+
 
 <a name="/definitions/other"></a>
 ### Other
@@ -971,6 +976,14 @@ discovery and understanding. Please note, these are fees collected at the time o
 | SEASONAL_HEATING_FEE | AMOUNT_PER_ACCOMODATION | PER_NIGHT | Send VALUE |
 |  | AMOUNT_PER_PERSON | PER_WEEK | Send VALUE |
 |  | | PER_STAY | Send VALUE |
+| DEPOSIT_OTHER | BREAKAGE | PER_DAY | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_NIGHT | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_STAY | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_WEEK | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+| DEPOSIT_OTHER | CLEANING | PER_DAY | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_NIGHT | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_STAY | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
+|  | | PER_WEEK | Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year |
 
 <a name="/definitions/paragraph-text"></a>
 ## Paragraph Text
