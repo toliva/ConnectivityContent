@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2018-12-04 | Added support of specifying Tax Inclusive via the API
 | 2018-11-19 | Added support of Breakage Deposits in the Code Lists
 | 2018-08-20 | Updated the Code Lists page to have all the Amenity, Attribute, Policy, Image Category codes called out
 | 2018-05-18 | Included Languages Spoken to the Code Lists for Amenities
