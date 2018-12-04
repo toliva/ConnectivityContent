@@ -852,3 +852,28 @@ This section contains sample messages illustrating how to interact with the Book
   </soap-env:Body>
 </soap-env:Envelope>
 ```
+
+##	Sample Error Response
+
+Below is a sample error response to refer to for the negative scenarios :
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+<soap-env:Header>
+          <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
+               <PayloadInfo RequestId="33196136" RequestorId="Expedia.com" ResponderId="PartnerID" Location="Body">
+                    <CommDescriptor SourceId="PartnerID" DestinationId="ExpediaDC" RetryIndicator="false">
+                         <Authentication Username="user" Password="pass"/>
+                    </CommDescriptor>
+                    <PayloadDescriptor Name="OTA_HotelResNotifRS" >
+                    <PayloadReference SupplierChainCode="CC" SupplierBrandCode="BC" SupplierHotelCode="OH167" DistributorHotelId="18827"/> </PayloadDescriptor>
+               </PayloadInfo>
+          </Interface>
+</soap-env:Header>  <soap-env:Body>
+<OTA_HotelResNotifRS EchoToken="33196136" TimeStamp="2007-06-29T15:57:48-07:00" Target="Production" Version="2.000" PrimaryLangID="en-us" ResResponseType="Ignored" xmlns="http://www.opentravel.org/OTA/2003/05">
+               <Errors>
+   <Error Language="en-us" Type="3" ShortText="3203" Code="450">The Room Type Code is missing or invalid</Error>    </Errors>
+          </OTA_HotelResNotifRS>
+</soap-env:Body>
+</soap-env:Envelope>```
