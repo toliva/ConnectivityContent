@@ -186,6 +186,7 @@ This section contains sample messages illustrating how to interact with the Book
                         <Surname>Beaulne-Dury</Surname>
                       </PersonName>
                       <Telephone CountryAccessCode="1" AreaCityCode="321" PhoneNumber="3331112"/>
+                     <Email>customer@email.com</Email>
                     </Customer>
                   </Profile>
                 </ProfileInfo>
@@ -396,6 +397,7 @@ This section contains sample messages illustrating how to interact with the Book
                         <Surname>Beaulne-Dury</Surname>
                       </PersonName>
                       <Telephone CountryAccessCode="1" AreaCityCode="321" PhoneNumber="3331112"/>
+                     <Email>customer@email.com</Email>
                     </Customer>
                   </Profile>
                 </ProfileInfo>
@@ -721,6 +723,7 @@ This section contains sample messages illustrating how to interact with the Book
                         <Surname>Tester</Surname>
                       </PersonName>
                       <Telephone AreaCityCode="321" CountryAccessCode="1" PhoneNumber="3331111"/>
+                      <Email>customer@email.com</Email>
                     </Customer>
                   </Profile>
                 </ProfileInfo>
@@ -849,6 +852,206 @@ This section contains sample messages illustrating how to interact with the Book
         </UniqueID>
       </CancelInfoRS>
     </OTA_CancelRS>
+  </soap-env:Body>
+</soap-env:Envelope>
+```
+##	Sample No Credit Card Booking (with the Special Request to Identify) :
+
+```xml
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap-env:Header>
+    <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
+      <PayloadInfo RequestId="22922694" RequestorId="Expedia.com" ResponderId="EQCSpecTest" ExpirationDateTime="2016-05-17T20:55:00+00:00" Location="Body">
+        <CommDescriptor SourceId="ExpediaDC" DestinationId="EQCSpecTest" RetryIndicator="false">
+          <Authentication Username="Expedia" Password="Password"/>
+        </CommDescriptor>
+        <PayloadDescriptor Name="OTA_HotelResNotifRQ" Version="2003A">
+          <PayloadReference SupplierHotelCode="1154286" DistributorHotelId="1154286"/>
+        </PayloadDescriptor>
+      </PayloadInfo>
+    </Interface>
+  </soap-env:Header>
+  <soap-env:Body>
+    <OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="22922694" PrimaryLangID="en-us" ResStatus="Commit" Target="Production" TimeStamp="2016-05-17T11:25:00-07:00" Version="1.000">
+      <POS>
+        <Source>
+          <RequestorID ID="A-Expedia" Type="18"/>
+          <BookingChannel Primary="true" Type="2">
+            <CompanyName>Expedia</CompanyName>
+          </BookingChannel>
+        </Source>
+      </POS>
+      <HotelReservations>
+        <HotelReservation CreateDateTime="2016-05-17T11:25:00-07:00" CreatorID="Expedia" RoomStayReservation="true">
+          <UniqueID ID="13357309" Type="14"/>
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType IsRoom="true" RoomTypeCode="50287"/>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan EffectiveDate="2016-05-29" ExpireDate="2016-05-30" RatePlanCode="113702A">
+                  <Commission Percent="0.2000"/>
+                </RatePlan>
+                <RatePlan EffectiveDate="2016-05-30" ExpireDate="2016-05-31" RatePlanCode="113702A">
+                  <Commission Percent="0.2000"/>
+                </RatePlan>
+                <RatePlan EffectiveDate="2016-05-31" ExpireDate="2016-06-01" RatePlanCode="113702A">
+                  <Commission Percent="0.2000"/>
+                </RatePlan>
+                <RatePlan EffectiveDate="2016-06-01" ExpireDate="2016-06-02" RatePlanCode="113702A">
+                  <Commission Percent="0.2000"/>
+                </RatePlan>
+                <RatePlan EffectiveDate="2016-06-02" ExpireDate="2016-06-03" RatePlanCode="113702A">
+                  <Commission Percent="0.2000"/>
+                </RatePlan>
+              </RatePlans>
+              <RoomRates>
+                <RoomRate EffectiveDate="2016-05-29" ExpireDate="2016-05-30" NumberOfUnits="1" PromotionCode="Early Bird Summer 30  4 nights a" RatePlanCode="113702A" RoomTypeCode="50287">
+                  <Rates>
+                    <Rate EffectiveDate="2016-05-29" ExpireDate="2016-05-30" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountBeforeTax="139.30" CurrencyCode="CAD"/>
+                      <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="8">
+                          <Amount AmountBeforeTax="10.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                        <AdditionalGuestAmount AgeQualifyingCode="7">
+                          <Amount AmountBeforeTax="8.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                      </AdditionalGuestAmounts>
+                      <Fees>
+                        <Fee Amount="0.00" Code="1" CurrencyCode="CAD" TaxInclusive="false" Type="Exclusive"/>
+                      </Fees>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+                <RoomRate EffectiveDate="2016-05-30" ExpireDate="2016-05-31" NumberOfUnits="1" PromotionCode="Early Bird Summer 30  4 nights a" RatePlanCode="113702A" RoomTypeCode="50287">
+                  <Rates>
+                    <Rate EffectiveDate="2016-05-30" ExpireDate="2016-05-31" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountBeforeTax="131.25" CurrencyCode="CAD"/>
+                      <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="8">
+                          <Amount AmountBeforeTax="10.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                        <AdditionalGuestAmount AgeQualifyingCode="7">
+                          <Amount AmountBeforeTax="8.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                      </AdditionalGuestAmounts>
+                      <Fees>
+                        <Fee Amount="0.00" Code="1" CurrencyCode="CAD" TaxInclusive="false" Type="Exclusive"/>
+                      </Fees>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+                <RoomRate EffectiveDate="2016-05-31" ExpireDate="2016-06-01" NumberOfUnits="1" PromotionCode="Early Bird Summer 30  4 nights a" RatePlanCode="113702A" RoomTypeCode="50287">
+                  <Rates>
+                    <Rate EffectiveDate="2016-05-31" ExpireDate="2016-06-01" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountBeforeTax="140.00" CurrencyCode="CAD"/>
+                      <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="8">
+                          <Amount AmountBeforeTax="10.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                        <AdditionalGuestAmount AgeQualifyingCode="7">
+                          <Amount AmountBeforeTax="8.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                      </AdditionalGuestAmounts>
+                      <Fees>
+                        <Fee Amount="0.00" Code="1" CurrencyCode="CAD" TaxInclusive="false" Type="Exclusive"/>
+                      </Fees>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+                <RoomRate EffectiveDate="2016-06-01" ExpireDate="2016-06-02" NumberOfUnits="1" PromotionCode="Early Bird Summer 30  4 nights a" RatePlanCode="113702A" RoomTypeCode="50287">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-01" ExpireDate="2016-06-02" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountBeforeTax="148.75" CurrencyCode="CAD"/>
+                      <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="8">
+                          <Amount AmountBeforeTax="10.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                        <AdditionalGuestAmount AgeQualifyingCode="7">
+                          <Amount AmountBeforeTax="8.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                      </AdditionalGuestAmounts>
+                      <Fees>
+                        <Fee Amount="0.00" Code="1" CurrencyCode="CAD" TaxInclusive="false" Type="Exclusive"/>
+                      </Fees>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+                <RoomRate EffectiveDate="2016-06-02" ExpireDate="2016-06-03" NumberOfUnits="1" PromotionCode="Early Bird Summer 30  4 nights a" RatePlanCode="113702A" RoomTypeCode="50287">
+                  <Rates>
+                    <Rate EffectiveDate="2016-06-02" ExpireDate="2016-06-03" RateTimeUnit="Day" UnitMultiplier="1">
+                      <Base AmountBeforeTax="157.50" CurrencyCode="CAD"/>
+                      <AdditionalGuestAmounts>
+                        <AdditionalGuestAmount AgeQualifyingCode="8">
+                          <Amount AmountBeforeTax="10.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                        <AdditionalGuestAmount AgeQualifyingCode="7">
+                          <Amount AmountBeforeTax="8.00" CurrencyCode="CAD"/>
+                        </AdditionalGuestAmount>
+                      </AdditionalGuestAmounts>
+                      <Fees>
+                        <Fee Amount="0.00" Code="1" CurrencyCode="CAD" TaxInclusive="false" Type="Exclusive"/>
+                      </Fees>
+                    </Rate>
+                  </Rates>
+                </RoomRate>
+              </RoomRates>
+              <GuestCounts IsPerRoom="true">
+                <GuestCount AgeQualifyingCode="10" Count="2"/>
+                <GuestCount Age="9" AgeQualifyingCode="8" Count="1"/>
+                <GuestCount Age="17" AgeQualifyingCode="8" Count="1"/>
+              </GuestCounts>
+              <TimeSpan End="2016-06-03" Start="2016-05-29"/>
+              <Total AmountAfterTax="955.49" CurrencyCode="CAD">
+                <Taxes Amount="148.69" CurrencyCode="CAD">
+                  <Tax Amount="148.69" Code="27" CurrencyCode="CAD" Type="Exclusive"/>
+                </Taxes>
+              </Total>
+              <BasicPropertyInfo HotelCode="1154286"/>
+              <ResGuestRPHs>
+                <ResGuestRPH RPH="1"/>
+              </ResGuestRPHs>
+              <SpecialRequests>
+                <SpecialRequest Language="en-us" RequestCode="1.14">
+                  <Text Formatted="false" Language="en-us">1 king bed</Text>
+                </SpecialRequest>
+                <SpecialRequest Language="en-us" RequestCode="2.1">
+                  <Text Formatted="false" Language="en-us">Non-Smoking</Text>
+                </SpecialRequest>
+                <SpecialRequest Language="en-us" RequestCode="5">
+                  <Text Formatted="true" Language="en-us">This guest booked without a credit card and will pay upon arrival. Be sure to reconcile this reservation and waive the cancellation fee to avoid paying unnecessary compensation if the guest cancels or doesn t show up.</Text>
+                </SpecialRequest>
+              </SpecialRequests>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest AgeQualifyingCode="10" ResGuestRPH="1">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile ProfileType="1">
+                    <Customer>
+                      <PersonName>
+                        <GivenName>Etienne</GivenName>
+                        <Surname>Tester</Surname>
+                      </PersonName>
+                      <Telephone AreaCityCode="321" CountryAccessCode="1" PhoneNumber="3331111"/>
+                      <Email>customer@email.com</Email>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Date="2016-05-17T11:25:00-07:00" ResID_Source="Expedia" ResID_Type="8" ResID_Value="13357309"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </OTA_HotelResNotifRQ>
   </soap-env:Body>
 </soap-env:Envelope>
 ```
