@@ -301,6 +301,41 @@ The following is a sample RQ/RS pair showing a request to retrieve bookings that
   </Bookings>
 </BookingRetrievalRS>
 ```
+### Booking Retrieval Response: No Credit Card Booking returned
+
+The following is a sample booking retrieval response for a pending booking request. 1 new booking is returned for a family of 4 for a three-day stay, payable to the hotel via Expedia VirtualCard.
+
+```xml
+<BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
+  <Bookings>
+    <Booking id="477346" type="Book" createDateTime="2006-10-25T09:30:47Z" source="Expedia" status="pending">
+      <Hotel id="3546"/>
+      <RoomStay roomTypeID="965645" ratePlanID="956589">
+        <StayDate arrival="2009-12-27" departure="2009-12-30"/>
+        <GuestCount adult="2" child="2">
+          <Child age="1"/>
+          <Child age="17"/>
+        </GuestCount>
+        <PerDayRates currency="EUR">
+          <PerDayRate stayDate="2009-12-27" baseRate="155.00" extraPersonFees="25.00"/>
+          <PerDayRate stayDate="2009-12-28" baseRate="155.00" extraPersonFees="25.00"/>
+          <PerDayRate stayDate="2009-12-29" baseRate="155.00" extraPersonFees="25.00"/>
+        </PerDayRates>
+        <Total amountAfterTaxes="829.50" amountOfTaxes="199.50" currency="EUR"/>
+       </RoomStay>
+      <PrimaryGuest>
+        <Name givenName="John" middleName="F." surname="Smith"/>
+        <Phone countryCode="1" cityAreaCode="514" number="5558975" extension="3233"/>
+      </PrimaryGuest>
+      <SpecialRequest code="5">This guest booked without a credit card and will pay upon arrival. Be sure to reconcile this reservation and waive the cancellation fee to avoid paying unnecessary compensation if the guest cancels or doesn't show up. </SpecialRequest>
+      <SpecialRequest code="1.23">2 Queen</SpecialRequest>
+      <SpecialRequest code="2.1">Non-smoking</SpecialRequest>
+    </Booking>
+  </Bookings>
+</BookingRetrievalRS>
+```
+
+
 
 ## Booking Confirmation API Examples 
 
