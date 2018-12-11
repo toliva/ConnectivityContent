@@ -216,6 +216,17 @@ The below example is a request to onboard a new property using SetPropertyDetail
             "value": "3"
         }
     ]
+    "registrations": [{
+        "startDate": "2019-03-10",
+        "endDate": "2019-09-10",
+        "type": "RENTAL_REGISTRATION",
+        "code": "1234-6"
+        },{
+        "startDate": "2019-09-11",
+        "endDate": "2020-07-10",
+        "type": "RENTAL_REGISTRATION",
+        "code": "1222-6"
+        }]
 }]
 
 ```
@@ -240,6 +251,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 | contacts | Dictionary of Contact objects | Yes | Yes | See Contact below. |
 | contents | Array of Content | Yes | Yes | See Content below. |
 | propertyCollectedMandatoryFees | Array of SupplierCollectedMandatoryFee | No | Yes | See SupplierCollectedMandatoryFee below. |
+| registrations | Array of Registration/License IDs for the property | No | Yes | See registrations below. |
 | policies | Array of Policy | No | Yes | See Policy below. |
 | inventorySettings | Array of InventorySettings | No | Yes | See InventorySettings below. |
 | taxes | Array of Tax | No | Yes | See Tax below. |
@@ -343,8 +355,17 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | scope | String | Yes | See [code list](./code-list.html#mandatoryfees) |
 | duration | String | Yes | See [code list](./code-list.html#mandatoryfees) |
 | value | String | Yes | Fee amount in the property's currency. Example: 24.99 |
-| startDate | String | No | If fee is only offered on specific days during the year, provide a recurring start and end date. |
-| endDate | String | No | |
+| startDate | String | No | If fee is only offered on specific days during the year, provide a recurring start & end date. |
+| endDate | String | No |  |
+
+**registrations**
+
+| Attribute | Type | Required | Notes |
+| --------- | ---- | -------- | ----- |
+| startDate | String | No | Enter the date in yyyy-mm-dd format |
+| endDate | String | No | Enter the date in yyyy-mm-dd format |
+| type | String | No | type is RENTAL_REGISTRATION |
+| code | String | No | Please enter the registration ID/license ID for the property. Mostly used for Vacation Rental properties |
 
 **policy**
 
@@ -362,6 +383,7 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionModels)|
 | virtualCardEnabled | Boolean | No | |
 | taxInclusive | Boolean | No | Please note, you would have to specify this at Rateplan level as well when you create them using Product API. |
+
 **tax**
 
 | Attribute | Type | Required | Notes |
@@ -576,6 +598,17 @@ The response body will echo back the values of *the request received* and will i
                 "value": "3"
                 }
             ],
+            "registrations": [{
+            "startDate": "2019-03-10",
+            "endDate": "2019-09-10",
+            "type": "RENTAL_REGISTRATION",
+            "code": "1234-6"
+            },{
+            "startDate": "2019-09-11",
+            "endDate": "2020-07-10",
+            "type": "RENTAL_REGISTRATION",
+            "code": "1222-6"
+            }]
             "status": {
                 "href": "/properties/v1/provider-a/1/status"
             }
