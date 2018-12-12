@@ -301,16 +301,16 @@ The following is a sample RQ/RS pair showing a request to retrieve bookings that
   </Bookings>
 </BookingRetrievalRS>
 ```
-### Booking Retrieval Response: No Credit Card Booking returned
+### Booking Retrieval Response: Hotel Collect booking with No Credit Card Booking returned
 
 The following is a sample booking retrieval response for a pending booking request. 1 new booking is returned for a family of 4 for a three-day stay, payable to the hotel via Expedia VirtualCard.
 
 ```xml
 <BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
   <Bookings>
-    <Booking id="477346" type="Book" createDateTime="2006-10-25T09:30:47Z" source="Expedia" status="pending">
+    <Booking id="477346" type="Book" createDateTime="2006-10-25T09:30:47Z" source="A-Expedia" status="pending">
       <Hotel id="3546"/>
-      <RoomStay roomTypeID="965645" ratePlanID="956589">
+      <RoomStay roomTypeID="965645" ratePlanID="956589A">
         <StayDate arrival="2009-12-27" departure="2009-12-30"/>
         <GuestCount adult="2" child="2">
           <Child age="1"/>
