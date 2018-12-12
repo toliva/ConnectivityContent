@@ -199,7 +199,6 @@ The below example is a request to onboard a new property using SetPropertyDetail
     "inventorySettings": {
         "rateAcquisitionType": "NET_RATE",
         "pricingModel": "PER_DAY",
-        "virtualCardEnabled":false,
         "taxInclusive":false
     },
     "attributes": [
@@ -215,7 +214,7 @@ The below example is a request to onboard a new property using SetPropertyDetail
             "code": "NUMBER_OF_BATHROOMS",
             "value": "3"
         }
-    ]
+    ],
     "registrations": [{
         "startDate": "2019-03-10",
         "endDate": "2019-09-10",
@@ -381,7 +380,6 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
 | distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionModels)|
-| virtualCardEnabled | Boolean | No | |
 | taxInclusive | Boolean | No | Please note, you would have to specify this at Rateplan level as well when you create them using Product API. |
 
 **tax**
@@ -581,7 +579,6 @@ The response body will echo back the values of *the request received* and will i
             "inventorySettings": {
                 "rateAcquisitionType": "NET_RATE",
                 "pricingModel": "PER_DAY",
-                "virtualCardEnabled":false,
                 "taxInclusive":false
             },
             "attributes": [
