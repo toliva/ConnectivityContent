@@ -855,7 +855,9 @@ This section contains sample messages illustrating how to interact with the Book
   </soap-env:Body>
 </soap-env:Envelope>
 ```
-##	Sample No Credit Card Booking (with the Special Request to Identify) :
+##	Sample No Credit Card Booking
+
+Below is a sample request for booking sent with no credit card but with the Special Request to Identify :
 
 ```xml
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1053,6 +1055,111 @@ This section contains sample messages illustrating how to interact with the Book
       </HotelReservations>
     </OTA_HotelResNotifRQ>
   </soap-env:Body>
+</soap-env:Envelope>
+```
+
+##	Sample Booking with Email Alias
+
+Below is a sample request for booking sent with the Expedia email alias instead of the customer email :
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap-env:Header>
+      <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
+         <PayloadInfo ExpirationDateTime="2018-12-18T17:05:00-08:00" Location="Body" RequestId="1167803028" RequestorId="Expedia.com" ResponderId="EQCPartnerA">
+            <CommDescriptor DestinationId="EQCPartnerA" RetryIndicator="false" SourceId="ExpediaDC">
+               <Authentication Password="Pass1" Username="EQCUser1" />
+            </CommDescriptor>
+            <PayloadDescriptor Name="OTA_HotelResNotifRQ" Version="2003A">
+               <PayloadReference DistributorHotelId="12696123" SupplierHotelCode="12696123" />
+            </PayloadDescriptor>
+         </PayloadInfo>
+      </Interface>
+   </soap-env:Header>
+   <soap-env:Body>
+      <OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="1167803028" PrimaryLangID="en-us" ResStatus="Commit" Target="Production" TimeStamp="2018-12-18T14:35:00-08:00" Version="1.000">
+         <POS>
+            <Source>
+               <RequestorID ID="Hotels.com" Type="18" />
+               <BookingChannel Primary="true" Type="2">
+                  <CompanyName>Expedia</CompanyName>
+               </BookingChannel>
+            </Source>
+         </POS>
+         <HotelReservations>
+            <HotelReservation CreateDateTime="2018-12-18T14:35:00-08:00" CreatorID="Expedia" RoomStayReservation="true">
+               <UniqueID ID="1165515678" Type="14" />
+               <RoomStays>
+                  <RoomStay>
+                     <RoomTypes>
+                        <RoomType IsRoom="true" RoomTypeCode="201379456" />
+                     </RoomTypes>
+                     <RatePlans>
+                        <RatePlan EffectiveDate="2018-12-21" ExpireDate="2018-12-22" RatePlanCode="206807911" />
+                     </RatePlans>
+                     <RoomRates>
+                        <RoomRate EffectiveDate="2018-12-21" ExpireDate="2018-12-22" NumberOfUnits="1" PromotionCode="Basic 55% (18)" RatePlanCode="206807911" RoomTypeCode="201379456">
+                           <Rates>
+                              <Rate EffectiveDate="2018-12-21" ExpireDate="2018-12-22" RateTimeUnit="Day" UnitMultiplier="1">
+                                 <Base AmountBeforeTax="84870" CurrencyCode="KRW" />
+                                 <Fees>
+                                    <Fee Amount="0" Code="1" CurrencyCode="KRW" TaxInclusive="false" Type="Exclusive" />
+                                 </Fees>
+                              </Rate>
+                           </Rates>
+                        </RoomRate>
+                     </RoomRates>
+                     <GuestCounts IsPerRoom="true">
+                        <GuestCount AgeQualifyingCode="10" Count="1" />
+                     </GuestCounts>
+                     <TimeSpan End="2018-12-22" Start="2018-12-21" />
+                     <Total AmountAfterTax="93357" CurrencyCode="KRW">
+                        <Taxes Amount="8487" CurrencyCode="KRW">
+                           <Tax Amount="8487" Code="27" CurrencyCode="KRW" Type="Exclusive" />
+                        </Taxes>
+                     </Total>
+                     <BasicPropertyInfo HotelCode="12696123" />
+                     <ResGuestRPHs>
+                        <ResGuestRPH RPH="1" />
+                     </ResGuestRPHs>
+                     <SpecialRequests>
+                        <SpecialRequest Language="en-us" RequestCode="1.13">
+                           <Text Formatted="false" Language="en-us">1 double bed</Text>
+                        </SpecialRequest>
+                        <SpecialRequest Language="en-us" RequestCode="2.1">
+                           <Text Formatted="false" Language="en-us">Non-Smoking</Text>
+                        </SpecialRequest>
+                     </SpecialRequests>
+                  </RoomStay>
+               </RoomStays>
+               <ResGuests>
+                  <ResGuest AgeQualifyingCode="10" ResGuestRPH="1">
+                     <Profiles>
+                        <ProfileInfo>
+                           <Profile ProfileType="1">
+                              <Customer>
+                                 <PersonName>
+                                    <GivenName>Anna</GivenName>
+                                    <Surname>Lin</Surname>
+                                 </PersonName>
+                                 <Telephone AreaCityCode="0" CountryAccessCode="0" PhoneNumber="5144214567" />
+                                 <Email>45983018ca284823b2f893f27e4f93d8@conversationsmail.expedia.com</Email>
+                              </Customer>
+                           </Profile>
+                        </ProfileInfo>
+                     </Profiles>
+                  </ResGuest>
+               </ResGuests>
+               <ResGlobalInfo>
+                  <HotelReservationIDs>
+                     <HotelReservationID ResID_Date="2018-12-18T14:35:00-08:00" ResID_Source="Expedia" ResID_Type="8" ResID_Value="1165515678" />
+                  </HotelReservationIDs>
+               </ResGlobalInfo>
+            </HotelReservation>
+         </HotelReservations>
+      </OTA_HotelResNotifRQ>
+   </soap-env:Body>
 </soap-env:Envelope>
 ```
 
