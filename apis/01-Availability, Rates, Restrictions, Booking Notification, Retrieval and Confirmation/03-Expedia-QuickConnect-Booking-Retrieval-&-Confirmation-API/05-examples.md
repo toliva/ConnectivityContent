@@ -335,7 +335,38 @@ The following is a sample booking retrieval response for a pending booking reque
 </BookingRetrievalRS>
 ```
 
+### Booking Retrieval Response: with Expedia Email Alias
 
+The following is a sample booking retrieval response for a pending booking request. It contains the Expedia email alias that  replaces the customer email address.
+
+```xml
+<BookingRetrievalRS xmlns="http://www.expediaconnect.com/EQC/BR/2014/01">
+   <Bookings>
+      <Booking id="1164533511" type="Book" createDateTime="2018-12-17T01:37:00Z" source="Hotels.com" status="confirmed" confirmNumber="7340586333">
+         <Hotel id="32447456" />
+         <RoomStay roomTypeID="216628511" ratePlanID="264128466">
+            <StayDate arrival="2018-12-20" departure="2018-12-21" />
+            <GuestCount adult="2" child="0" />
+            <PerDayRates currency="CAD">
+               <PerDayRate stayDate="2018-12-20" baseRate="41.82" />
+            </PerDayRates>
+            <Total amountAfterTaxes="49.76" amountOfTaxes="7.94" currency="CAD" />
+            <PaymentCard cardCode="VI" cardNumber="****56789" expireDate="1220">
+               <CardHolder name="ExpediaVirtualCard" address="333 108th Avenue NE" city="Bellevue" stateProv="WA" country="US" postalCode="98004" />
+            </PaymentCard>
+         </RoomStay>
+         <PrimaryGuest>
+            <Name givenName="Allen" middleName="F." surname="Johnson" />
+            <Phone countryCode="1" cityAreaCode="514" number="3331234" extension="3233" />
+            <Email>45983018ca284823b2f893f27e4f93d8@m.expediapartnercentral.com</Email>
+         </PrimaryGuest>
+         <SpecialRequest code="1.15">1 queen bed</SpecialRequest>
+         <SpecialRequest code="2.1">Non-Smoking</SpecialRequest>
+         <SpecialRequest code="5">Expedia Virtual Card will be activated from the day of Check-in.</SpecialRequest>
+      </Booking>
+   </Bookings>
+</BookingRetrievalRS>
+```
 
 ## Booking Confirmation API Examples 
 
