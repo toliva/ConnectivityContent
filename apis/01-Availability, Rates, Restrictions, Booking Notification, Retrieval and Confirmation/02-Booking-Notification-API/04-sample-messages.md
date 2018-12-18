@@ -1060,7 +1060,7 @@ Below is a sample request for booking sent with no credit card but with the Spec
 
 ##	Sample Booking with Email Alias
 
-Below is a sample request for booking sent with the Expedia email alias instead of the customer email :
+Below is a sample request for booking sent with the Expedia email alias instead of customer email address :
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
