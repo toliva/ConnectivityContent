@@ -1062,12 +1062,11 @@ Below is a sample request for booking sent with no credit card but with the Spec
 
 Below is a sample request for booking sent with the Expedia email alias instead of customer email address :
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
+```xml
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
    <soap-env:Header>
       <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
-         <PayloadInfo ExpirationDateTime="2018-12-18T17:05:00-08:00" Location="Body" RequestId="1167803028" RequestorId="Expedia.com" ResponderId="EQCPartnerA">
+         <PayloadInfo ExpirationDateTime="2018-12-18T17:05:00-08:00" Location="Body" RequestId="1167803021" RequestorId="Expedia.com" ResponderId="EQCPartnerA">
             <CommDescriptor DestinationId="EQCPartnerA" RetryIndicator="false" SourceId="ExpediaDC">
                <Authentication Password="Pass1" Username="EQCUser1" />
             </CommDescriptor>
@@ -1078,7 +1077,7 @@ Below is a sample request for booking sent with the Expedia email alias instead 
       </Interface>
    </soap-env:Header>
    <soap-env:Body>
-      <OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="1167803028" PrimaryLangID="en-us" ResStatus="Commit" Target="Production" TimeStamp="2018-12-18T14:35:00-08:00" Version="1.000">
+      <OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="1167803021" PrimaryLangID="en-us" ResStatus="Commit" Target="Production" TimeStamp="2018-12-18T14:35:00-08:00" Version="1.000">
          <POS>
             <Source>
                <RequestorID ID="Hotels.com" Type="18" />
@@ -1167,8 +1166,7 @@ Below is a sample request for booking sent with the Expedia email alias instead 
 
 Below is a sample error response to refer to for the negative scenarios :
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
+```xml
 <soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
 <soap-env:Header>
           <Interface xmlns="http://www.newtrade.com/expedia/R14/header" Name="ExpediaDirectConnect" Version="4.0">
@@ -1186,4 +1184,5 @@ Below is a sample error response to refer to for the negative scenarios :
    <Error Language="en-us" Type="3" ShortText="3203" Code="450">The Room Type Code is missing or invalid</Error>    </Errors>
           </OTA_HotelResNotifRS>
 </soap-env:Body>
-</soap-env:Envelope>```
+</soap-env:Envelope>
+```
