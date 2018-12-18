@@ -1144,7 +1144,7 @@ Below is a sample request for booking sent with the Expedia email alias instead 
                                     <Surname>Lin</Surname>
                                  </PersonName>
                                  <Telephone AreaCityCode="514" CountryAccessCode="1" PhoneNumber="3214567" />
-                                 <Email>45983018ca284823b2f893f27e4f93d8@conversationsmail.expedia.com</Email>
+                                 <Email>45983018ca284823b2f893f27e4f93d8@m.expediapartnercentral.com</Email>
                               </Customer>
                            </Profile>
                         </ProfileInfo>
