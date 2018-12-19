@@ -2,6 +2,7 @@
 
 | Date | Changes |
 | ---- | ---------------- |
+| 2018-12-18 | Added sample message for bookings sent with Expedia email alias. |
 | 2018-12-10 | Added sample message details for No Credit Card bookings |
 | 2018-08-07 | Add five new POS values: Thomas Cook, etc. |
 | 2018-06-29 | Add new card type: UP - China Union Pay, CB - Carte Blanche. |
