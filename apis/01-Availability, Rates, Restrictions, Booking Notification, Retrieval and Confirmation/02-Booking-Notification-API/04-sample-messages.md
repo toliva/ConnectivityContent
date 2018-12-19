@@ -1182,7 +1182,8 @@ Below is a sample error response to refer to for the negative scenarios :
     <soap-env:Body>
         <OTA_HotelResNotifRS EchoToken="33196136" TimeStamp="2007-06-29T15:57:48-07:00" Target="Production" Version="2.000" PrimaryLangID="en-us" ResResponseType="Ignored" xmlns="http://www.opentravel.org/OTA/2003/05">
             <Errors>
-                <Error Language="en-us" Type="3" ShortText="3203" Code="450">The Room Type Code is missing or invalid</Error>             </Errors>
+                <Error Language="en-us" Type="3" ShortText="3203" Code="450">The Room Type Code is missing or invalid</Error>
+            </Errors>
         </OTA_HotelResNotifRS>
     </soap-env:Body>
 </soap-env:Envelope>
