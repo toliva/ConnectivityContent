@@ -260,7 +260,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| line 1 | String | Yes | <ul><li>Minimum 5 Characters.</li><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li> |
+| line 1 | String | Yes | <ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>Minimum 5 Characters Required. If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li> |
 | line 2 | String | No | |
 | city | String | Yes | Town/City |
 | postalCode | String | No | ZIP/Postal Code |
