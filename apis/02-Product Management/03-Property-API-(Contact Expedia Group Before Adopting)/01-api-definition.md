@@ -260,7 +260,7 @@ The property API can be utilized by both our Expedia Quick Connect (EQC) partner
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| line 1 | String | Yes | <ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li> |
+| line 1 | String | Yes | <ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>Minimum 5 Characters Required. If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li> |
 | line 2 | String | No | |
 | city | String | Yes | Town/City |
 | postalCode | String | No | ZIP/Postal Code |
@@ -328,31 +328,31 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
 | url | String | Yes | image URL.  Please note, Expedia would first have to whitelist your image host domains; please contact us to have this completed. |
-| categoryCode | String | No | See [code list](./code-list.html#categoryCode).  If none provided, Expedia will provide categorization. |
+| categoryCode | String | No | See [code list](./code-list.html#image-categories).  If none provided, Expedia will provide categorization. |
 | name | String | No | Image Caption |
 
 **amenity**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#amenityCode). Expedia requires atleast 10 amenities to be sent per Property |
-| detailCode | String | See [code list](./code-list.html#amenityCode) | See [code list](./code-list.html#amenityCode) |
-| value | Numeric | See [code list](./code-list.html#amenityCode) | See [code list](./code-list.html#amenityCode) |
+| code | String | Yes | See [code list](./code-list.html#property-amenities). Expedia requires atleast 10 amenities to be sent per Property |
+| detailCode | String | See [code list](./code-list.html#property-amenities) | See [code list](./code-list.html#property-amenities) |
+| value | Numeric | See [code list](./code-list.html#property-amenities) | See [code list](./code-list.html#property-amenities) |
 
 **paragraph**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#paragraph) Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead. |
+| code | String | Yes | See [code list](./code-list.html#paragraph-text) Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead. |
 | value | String | Yes | Paragraph Text |
 
 **propertyCollectedMandatoryFee**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#mandatoryfees) . Used to define Fees collected at the time of guest check-in. Please refrain from using this Property level fee attribute for fees that are to be collected at the time of Booking. If there are fees collected at the time of booking, please utilize the Rateplan level Service Fees (Refer Product API documentation for further details). |
-| scope | String | Yes | See [code list](./code-list.html#mandatoryfees) |
-| duration | String | Yes | See [code list](./code-list.html#mandatoryfees) |
+| code | String | Yes | See [code list](./code-list.html#mandatory-fees) . Used to define Fees collected at the time of guest check-in. Please refrain from using this Property level fee attribute for fees that are to be collected at the time of Booking. If there are fees collected at the time of booking, please utilize the Rateplan level Service Fees (Refer Product API documentation for further details). |
+| scope | String | Yes | See [code list](./code-list.html#mandatory-fees) |
+| duration | String | Yes | See [code list](./code-list.html#mandatory-fees) |
 | value | String | Yes | Fee amount in the property's currency. Example: 24.99 |
 | startDate | String | No | If fee is only offered on specific days during the year, provide a recurring start & end date. |
 | endDate | String | No |  |
@@ -370,7 +370,7 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#policy) |
+| code | String | Yes | See [code list](./code-list.html#policies) |
 | value | String | Yes | |
 
 **inventorySettings**
@@ -379,15 +379,15 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
-| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionModels)|
+| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
 | taxInclusive | Boolean | No | Please note, you would have to specify this at Rateplan level as well when you create them using Product API. |
 
 **tax**
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| code | String | Yes | See [code list](./code-list.html#tax) |
-| detailCode | String | See [code list](./code-list.html#tax) | See [code list](./code-list.html#tax) |
+| code | String | Yes | See [code list](./code-list.html#taxes) |
+| detailCode | String | See [code list](./code-list.html#taxes) | See [code list](./code-list.html#taxes) |
 | value | Number | Yes |
 
 ### SetPropertyDetails Response
@@ -404,7 +404,7 @@ The response body will echo back the values of *the request received* and will i
 | provider | String | Name of the provider associated with the property (this is your organization). |
 | createdUtc | DateTime | DateTime the property was created in Expedia's Lodging System. |
 | modifiedUtc	| DateTime | Last Modified time in Expedia's Lodging System. |
-| status | String | callback URL to get property status.  See [GetPropertyStatus](./api-definition.html#GetPropertyStatus) for more information. |
+| status | String | callback URL to get property status.  See [GetPropertyStatus](./api-definition.html#getpropertystatus) for more information. |
 
 **Example SetPropertyDetails Response**
 
