@@ -275,6 +275,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 | |  | MIN_AGE_ALLOWED_IN_SPA_WITH_ADULT | Send VALUE |
 | |  | ADVANCED_BOOKING | |
 | |  | MANICURE_PEDICURE | |
+| |  | SAUNA | |
 | FULL_SERVICE_SPA | No | |  |
 
 <a name="/definitions/guest-services"></a>
@@ -672,12 +673,13 @@ The amenity codes/detail codes and values have been split into sub sections with
 |  |  | BATHTUB_OR_SHOWER |  |
 |  |  | SEPARATE_BATHTUB_AND_SHOWER |  |
 |  |  | SHOWER_AND_BATHTUB_COMBO |  |
-| ROOM_BATHROOM_TYPE | No |  |  |
 | ROOM_SECOND_BATHROOM | No |  |  |
 | ROOM_BATHROBES | No |  |  |
 | ROOM_BIDET | No |  |  |
 | ROOM_DESIGNER_TOILETRIES | No |  |  |
 | ROOM_SLIPPERS | No |  |  |
+| ROOM_TOWELS_INCLUDED | No |  |  |
+| ROOM_PRIVATE_SPA_TUB | No |  |  |
 | ROOM_BATHTUB_TYPE | Yes  | DEEP_SOAKING |  |
 |  |  | JETTED |  |
 |  |  | SPRING_WATER |  |
@@ -689,8 +691,9 @@ The amenity codes/detail codes and values have been split into sub sections with
 
 | Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | --------------------- | ---------------------- | ----- |
-| ROOM_COFFEE_TEA | Yes  | COFFEE_AND_TEA_MAKER |  |
-|  |  | ESPRESSO_MAKER |  |
+| ROOM_COFFEE_TEA | Yes  | ROOM_COFFEE_TEA_MAKER |  |
+|  |  | ROOM_ESPRESSO_MAKER |  |
+|  |  | ROOM_ELECTRIC_KETTLE |  |
 | ROOM_FREE_BOTTLED_WATER | No |  |  |
 | ROOM_KITCHEN | Yes  | KITCHEN |  |
 |  |  | KITCHENETTE |  |
@@ -706,6 +709,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_DISHWARE | No |  |  |
 | ROOM_DISHWASHER | No |  |  |
 | ROOM_STOVETOP | No |  |  |
+| ROOM_HAIR_DRYER | No |  |  |
+| ROOM_HAIR_DRYER_ON_REQUEST | No |  |  |
 | ROOM_AIR_CONDITIONING | Yes  | AIR_CONDITIONING |  |
 |  |  | RESTRICTED_USAGE |  |
 | ROOM_CEILING_FAN | No |  |  |
@@ -713,9 +718,14 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_FIREPLACE | No |  |  |
 | ROOM_BLACKOUT_DRAPES | No |  |  |
 | ROOM_DECOR | No |  |  |
+| ROOM_HEATING | No |  |  |
+| ROOM_OVEN | No |  |  |
+| ROOM_TOASTER | No |  |  |
 | ROOM_FURNISHING | No |  |  |
 | ROOM_SHARED_ACCOMODATIONS | No |  |  |
-| ROOM_WASHER | No |  |  |
+| ROOM_WASHER_DRYER | No |  |  |
+| ROOM_DRYER | No |  |  |
+| ROOM_CLIMATE_CONTROL | No |  |  |
 | ROOM_DESK | No |  |  |
 
 <a name="/definitions/room-entertainment"></a>
@@ -767,6 +777,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_HYPO_BED_AVAIL | No |  |  |
 | ROOM_DAY_BED | No |  |  |
 | ROOM_DOWN_COMFORTER | No |  |  |
+| ROOM_LINENS_INCLUDED | No |  |  |
 | PILLOW_MENU | No |  |  |
 
 <a name="/definitions/room-services"></a>
@@ -792,6 +803,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 | ROOM_MASSAGE | No |  |  |
 | ROOM_TURNDOWN | No |  |  |
 | ROOM_DINING | No |  |  |
+| ROOM_HIGHCHAIR | No |  |  |
 
 <a name="/definitions/room-spaces"></a>
 ### Room Spaces
@@ -829,6 +841,13 @@ The Policy codes/detail codes and values have been split into sub sections with 
 | Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | --------------------- | ---------------------- | ----- |
 | MINIMUM_CHECKIN_AGE | No  |  | Send VALUE |
+| ALTERNATE_CHECK_IN_LOCATION | No  |  | Send VALUE. Max 64 characters |
+| CONTACT_PROPERTY | No  |  |  |
+| CONTACT_PROPERTY_AFTER_TIME | No  |  | Send VALUE. X AM/PM |
+| CONTACT_PROPERTY_ADVANCE_TIME | No  |  | Send VALUE. Only '24','48' or '72' |
+| NO_AFTER_HOURS_CHECK_IN | No  |  |  |
+| NO_FRONT_DESK | No  |  |  |
+| ALTERNATE_CHECK_IN_LOCATION | No  |  | Send VALUE. |
 | CHECKOUT_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
 | CHECKIN_START_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
 | CHECKIN_END_TIME | No  |  | Send VALUE (hh:mm AM/PM) |
@@ -851,8 +870,11 @@ The Policy codes/detail codes and values have been split into sub sections with 
 | ACCEPTS_AMERICAN_EXPRESS | No |  |  |
 | CC_NAME_MUST_MATCH | No |  |  |
 | FORMS_OF_DEPOSIT_ACCEPTED | Yes | CASH_ONLY | |
+|  |  | CASH_NOT_ACCEPTED |  |
 |  |  | CREDIT_CARDS_ONLY |  |
-|  |  | DEBIT_CARDS_ONLY |  |
+|  |  | CREDIT_CARDS_ONLY |  |
+|  |  | DEBIT_CARDS_ONLY_ACCEPTED |  |
+|  |  | DEBIT_CARDS_NOT_ACCEPTED |  |
 |  |  | CASH_CREDIT_CARD |  |
 | DEPOSIT_OTHER | Yes | CASH_ONLY | |
 |  |  | AGE | Send Value. The value sent would be considered the upper age limit for the deposit applied |
@@ -867,6 +889,7 @@ The Policy codes/detail codes and values have been split into sub sections with 
 |  |  | CENTRALIZED_GAS_WATER_HEATER |  |
 |  |  | NOT_GAS |  |
 | PET_POLICY | Yes  | PETS_ALLOWED |  |
+|  |  | PETS_NOT_ALLOWED |  |
 |  |  | PETS_ALLOWED_FREE |  |
 |  |  | SURCHARGE |  |
 |  |  | ONLY_DOGS |  |
@@ -886,6 +909,8 @@ The Policy codes/detail codes and values have been split into sub sections with 
 |  |  | FINES_APPLY |  |
 | ALCOHOL_POLICY | Yes | NO_ALCOHOL_SERVED |  |
 |  |  | NO_ALCOHOL_ALLOWED |  |
+| KBYG_REGISTERED_GUEST_ONLY | No |  |  |
+| NOISE_DISCLAIMER | No |  |  |
 | PROPERTY_ACCESS_TYPE | Yes | AIRPLANE |  |
 |  |  | AIRPLANE_AND_BOAT |  |
 |  |  | AIRPLANE_AND_SHUTTLE |  |
