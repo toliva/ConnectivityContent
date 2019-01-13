@@ -311,7 +311,7 @@ Contact set data are represented as a dictionary, with the following dictionary 
 
 | Attribute | Type | Required | Notes |
 | --------- | ---- | -------- | ----- |
-| locale | String | Yes | Use IETF language tag standard, e.g. en-US |
+| locale | String | Yes | en-US must be used, no other language tag is supported |
 | name | String | No | Property name for specified locale, e.g. en-US.  If none provided, then default property name will be used. |
 | images | Array of Image | Yes | See Image below. |
 | amenities | Array of Amenity | Yes | See Amenity below. |
@@ -720,7 +720,7 @@ GET /properties/v1/mycompany/1234
     ],
     "contents": [
       {
-        "locale": "en-GB",
+        "locale": "en-US",
         "name": null,
         "providerPropertyUrl": null,
         "images": [
