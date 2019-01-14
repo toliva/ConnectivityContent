@@ -65,7 +65,7 @@ It is currently not possible to send multiple images at once via the API. Images
 
 ## Does Expedia Provide Guidelines and Best Practices for Images?
 
-Expedia does provide a [Photo Guidelines document](https://a.travel-assets.com/epc/content-ui/trunk/9b41a87/pdf/PhotoTips.en-US.pdf) to its partners on what makes great images.
+Expedia does provide a [Photo Guidelines document](http://mslps.expedia.com/images/en_EN_Flyer_EG%20Photo%20Guidelines%20_150818.pdf) to its partners on what makes great images.
 
 ## Do I Have to Upload Various Sizes of the Same Image?
 
