@@ -691,7 +691,7 @@ The amenity codes/detail codes and values have been split into sub sections with
 
 | Code | Detail Code Required? | Detail Codes Permitted | Notes |
 | ---- | --------------------- | ---------------------- | ----- |
-| ROOM_COFFEE_TEA | Yes  | ROOM_COFFEE_TEA_MAKER |  |
+| ROOM_COFFEE_TEA_MAKER | Yes  | ROOM_COFFEE_TEA_MAKER |  |
 |  |  | ROOM_ESPRESSO_MAKER |  |
 |  |  | ROOM_ELECTRIC_KETTLE |  |
 | ROOM_FREE_BOTTLED_WATER | No |  |  |
