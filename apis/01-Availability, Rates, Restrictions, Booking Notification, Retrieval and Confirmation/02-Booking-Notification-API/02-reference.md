@@ -294,7 +294,7 @@ Level | Element or @Attribute | Format | Number of occur. | Value set | Descript
  | @AreaCityCode | Numeric 8 | 0..1 |  | Area/city code.
  | @PhoneNumber | String 32 | 0..1 |  | Telephone number.
  | @Extension | Numeric 5 | 0..1 |  | Extension to reach a specific party at the phone number.
-9 | Email |  | 0..1 |  | Element that contains the customer email address.This information is not included by default. Hotels that need to provide special check-in instructions to their guests should discuss enabling email address with their Market Manager. Max length: 128.
+9 | Email |  | 0..1 |  | Element that contains email information for contacting the customer.This information is not included by default. Hotels that need to provide special check-in instructions to their guests should discuss enabling email address with their Market Manager. Max length: 128.
 3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element.
 4 | Memberships |  | 0..1 |  | A collection of Membership objects. The <Memberships> element provides a list of reward programs which may be credited with points accrued from the guest's activity. Container element. The <Memberships> element optional since only corporate reservations will include membership information
 5 | Membership |  | 1..n |  | The Membership object identifies the frequent customer reward program and (optionally) indicates points awarded for stay activity. Expedia usually uses up to 2 occurrences: one for the hotel loyalty membership program and another for the frequent flyer membership number.
