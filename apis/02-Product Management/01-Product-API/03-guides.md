@@ -303,7 +303,7 @@ For the most part, partners are allowed to modify the same objects that are mana
 
 ### Modifying with PATCH
 
-The PATCH modify operation is a way for our partners to only send what they'd like to modify on a resource. Currently only support on the rate plan resource, but soon to be expanded on all resources. 
+The PATCH modify operation is a way for our partners to only send what they'd like to modify on a resource. 
 
 Expedia implemented the Merge-PATCH strategy. Partners can send any of the top level elements they'd wish to modify, and omit the ones they do not want to change. Expedia will take care of merging the resource updates and preserve what was not included at the resource's top level.
 
