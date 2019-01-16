@@ -275,8 +275,8 @@ The amenity codes/detail codes and values have been split into sub sections with
 | |  | MIN_AGE_ALLOWED_IN_SPA_WITH_ADULT | Send VALUE |
 | |  | ADVANCED_BOOKING | |
 | |  | MANICURE_PEDICURE | |
-| |  | SAUNA | |
 | FULL_SERVICE_SPA | No | |  |
+| SAUNA | No | |  |
 
 <a name="/definitions/guest-services"></a>
 ### Guest Services
@@ -845,6 +845,7 @@ The Policy codes/detail codes and values have been split into sub sections with 
 | CONTACT_PROPERTY | No  |  |  |
 | CONTACT_PROPERTY_AFTER_TIME | No  |  | Send VALUE. X AM/PM |
 | CONTACT_PROPERTY_ADVANCE_TIME | No  |  | Send VALUE. Only '24','48' or '72' |
+| GUEST_RECEIVE_EMAIL | No  |  | Used to specify that Guests will receive an Email for Check-in instructions  |
 | NO_AFTER_HOURS_CHECK_IN | No  |  |  |
 | NO_FRONT_DESK | No  |  |  |
 | ALTERNATE_CHECK_IN_LOCATION | No  |  | Send VALUE. |
