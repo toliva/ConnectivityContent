@@ -379,7 +379,7 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | --------- | ---- | -------- | ----- |
 | rateAcquisitionType | String | No | See [code list](./code-list.html#property-inventorysetting-rateacquisitiontype)|
 | pricingModel | String | No | See [code list](./code-list.html#property-inventorysetting-pricingmodel)|
-| distributionModels | String | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
+| distributionModels | Array | No | See [code list](./code-list.html#property-inventorysetting-distributionmodels)|
 | taxInclusive | Boolean | No | Please note, you would have to specify this at Rateplan level as well when you create them using Product API. |
 
 **tax**
