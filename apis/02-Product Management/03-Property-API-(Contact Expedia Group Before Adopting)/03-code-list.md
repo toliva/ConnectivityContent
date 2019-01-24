@@ -944,7 +944,6 @@ The attribute codes/detail codes and values have been split into sub sections wi
 | MULTI-LINGUAL STAFF | No |  |  |
 | FIREPLACE_IN_LOBBY | No |  |  |
 | TV_IN_LOBBY | No |  |  |
-| HOTEL_REGISTRY_NUMBER | No |  | Send VALUE |
 | NUMBER_OF_BEDROOMS | No |  | Send VALUE. This is a mandatory field for vacation rental properties. |
 | NUMBER_OF_BATHROOMS | No |  | Send VALUE. This is a mandatory field for vacation rental properties. |
 | OCCUPANCY | No |  | Send VALUE |
