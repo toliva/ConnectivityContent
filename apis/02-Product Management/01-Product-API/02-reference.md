@@ -1805,6 +1805,8 @@ There are 2 possible enums. One applies to all rate plans of type Standalone and
 | Slot Play |
 | Casino Credit |
 | Match Play |
+| Free 75CAD Gift Card |
+
 
 | valueAddInclusions for Corporate rate plans |
 | ------------------------------------------- |
@@ -1848,6 +1850,8 @@ There are 2 possible enums. One applies to all rate plans of type Standalone and
 | Evening Manager's Reception |
 | Egencia Exclusive Rate |
 | Food-and-Beverage Discount |
+| In-Room Dinner |
+| Resort Fee Waived |
 
 
 <a name="/definitions/perStayFeeEnum"></a>
