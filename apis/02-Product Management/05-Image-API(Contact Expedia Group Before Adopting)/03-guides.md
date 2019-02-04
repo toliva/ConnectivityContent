@@ -43,10 +43,6 @@ It is important to note that any top level object is treated as a full overlay e
 
 Please refer to the [samples section](/apis/product-management/image-api/sample-messages.html) for examples of how to use the `PATCH` operation.
 
-## Why can't I Delete a Published Image?
-
-It is currently not possible to delete published images, but it is possible to inactivate them via a status update to hide them from Expedia website. After 5 years, inactive published images will be automatically deleted by Expedia.
-
 ## Can I GET/Read all images that Expedia has for my property?
 
 The Image API will currently only allow partners to read the images that were added via the API. Some images added via Expedia PartnerCentral might also be visible, but only if they were added recently, after June 2016. The API will soon be improved to allow Expedia Partners to read all existing images for their properties, but it is currently not possible. This documentation will be updated once this becomes possible.
