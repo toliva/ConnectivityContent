@@ -34,7 +34,7 @@ For more information about getting started for the first time, and authorization
 | Image | Read a single Image (GET) | GET https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
 | Image | Add a new Image (POST) | POST https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images | None |
 | Image | Patch an existing image (PATCH) | PATCH https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
-| Image | Delete an image that hasn't reached the Published state (DELETE) | DELETE https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
+| Image | Delete an image | DELETE https://services.expediapartnercentral.com/properties/{ExpediaPropertyId}/images/{ImageResourceId} | None |
 
 
 ## HTTP Status Code
@@ -299,7 +299,7 @@ It is important for partners to know images can only be deleted before they reac
 Parameter | Parameter Type | Description | Required | Data Type | Default Value
 --------- | -------------- | ----------- | -------- | --------- | -------------
 propertyId | path | Expedia Property ID | true | string | 
-resourceId | path | Image Resource ID. The DELETE only works on images that haven't reached the "Published" state. Once it reached "Published", it can't be deleted anymore, only inactivated. | true | string | 
+resourceId | path | Image Resource ID. | true | string | 
 
 ### Read a single image
 - Method: `GET`
