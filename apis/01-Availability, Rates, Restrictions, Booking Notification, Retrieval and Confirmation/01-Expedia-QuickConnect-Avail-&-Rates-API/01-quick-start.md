@@ -4,6 +4,8 @@ Expedia QuickConnect provides an electronic interface for EQC partners to send E
 
 This section explains authentication and how to send a request to the Expedia QuickConnect AR interface for a live test property.
 
+For partners that never worked with Expedia before, and want to know how to get started, please reach us via the [Contact Page](https://expediaconnectivity.com/contact-us).
+
 ----
 
 ## Authentication
@@ -15,8 +17,6 @@ To perform authentication, Expedia QuickConnect tries to extract the username an
 ```
 
 Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.
-
-For partners that never worked with Expedia before, and don't know how to get started, please refer to the [Getting Connected section of the Avail and Rates API](/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html).
 
 ----
 
@@ -71,4 +71,4 @@ The availability and rate request (AR RQ) allows EQC partners to send Expedia up
 </AvailRateUpdateRS>
 ```
 ## Connect To Production
-When EQC partners are ready to start sending AR request messages to Expedia QuickConnect to update their rates and availability they should contact their Connectivity Account Manager or reach us at eqcss@expedia.com to obtain the right to use Expedia QuickConnect. Expedia will then provide the necessary information for connecting to our live environment.
+When EQC partners are ready to start sending AR request messages to Expedia QuickConnect to update their rates and availability they should contact their Connectivity Account Manager or reach us via the [Contact Page](https://expediaconnectivity.com/contact-us) to obtain the right to use Expedia QuickConnect. Expedia will then provide the necessary information for connecting to our live environment.
