@@ -2,7 +2,9 @@
 <a name="/gettingconnected"></a>
 ## Getting Connected with Expedia for the First Time
 
-For partners that never worked with Expedia before, and want to know how to get started, please reach us via the [Contact Page](https://expediaconnectivity.com/contact-us).
+All our API specifications are on this site and you must abide by our [terms and conditions](/terms.html).
+
+If you have any development related questions or for partners that never worked with Expedia before, and want to know how to get started, please reach us via the [Contact Page](https://expediaconnectivity.com/contact-us).
 
 ## Guidelines
 
