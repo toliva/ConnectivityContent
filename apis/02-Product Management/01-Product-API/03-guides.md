@@ -3,7 +3,7 @@ This section contains various Frequently Asked Questions, as well as documentati
 
 <a name="/howtogetstarted"></a>
 ## How to Get Started for First Time API Users
-In order to get started with using the API, it is required to register with Expedia and obtain API credentials. It is also possible to obtain the rights to use a test property to run some tests before going to production with a new integration. To get started, new partners need to send an email to eqcss@expedia.com.
+For partners that have never worked with Expedia before, and want to know how to get started, please reach us via the [Contact Page](https://expediaconnectivity.com/contact-us).
 
 ## How to Get Authorized to Access Specific Properties
 In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.
