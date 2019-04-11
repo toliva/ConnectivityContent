@@ -9,7 +9,7 @@ To help you use our brands correctly when displaying them alongside their own, w
 **About the guide**
 Our new guide outlines each of our brand’s look and feel, values, and personality to help you maintain their identity. Along with the guide, we’ve also created a toolkit of logo assets, so you’ll never have to use a low-resolution image again! 
 
-Download the [guide and logos or translated brand explanations](/files/Expedia_Group_Guidelines_and_logos.zip). 
+Download the [guide and logos](/files/Expedia Group Toolkit April_2019.zip). 
 
 **Questions?**
 If you have any questions about the guide, please reach out to your account manager. 
