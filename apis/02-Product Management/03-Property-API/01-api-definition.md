@@ -24,6 +24,7 @@ Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) cred
 | Get by ExpediaID | GET | /properties/v1/{ExpediaHotelID} | This method can be used to GET Property Information for properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
 | Update by ExpediaID | PUT | /properties/v1/{ExpediaHotelID} | This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
 | Deactivate Property | DELETE | /properties/v1/{provider name}/{provider property ID} | De-activates property in Expedia system |
+| Property Manager Readiness | GET | /providers/v1/{provider name} | This method can be used to retrieve Property Manager information for the ones configured and ready to be Onboarded on Expedia |
 
 ## API Errors
 
@@ -1107,3 +1108,43 @@ The response to the delete request will be a 200/OK and the response will echo b
 }
 
 ```
+## Property Manager Readiness
+
+Provides the Provider information on which Property Managers are configured on Expedia's end and is ready to be Onboarded. For the Centralized providers that do not require a PM level configuration on our end, an empty array would be returned.  
+
+**Example Request**
+
+GET /providers/v1/mycompany
+
+### Property Manager Readiness Response:
+
+ ```javascript
+
+ {
+       entity: {
+              "name": "mycompany",
+              "propertyManagers": [
+                    {
+                        "name": "PMname1",
+                        "billingCurrencyCode": "USD" ,
+                        "sameDayCancellationCutoffTime": "23:59:00",
+                        "cutoffDay": "SameDay",
+                        "cutoffTime": "23:59:00",
+                        "minimumCheckInAge": 21,
+                        "cutoffDefault":0
+                    }
+                ]
+       }
+}
+```
+**propertyManagers**
+
+| Attribute | Type | Notes |
+| --------- | ---- | ----- |
+| name | String | The Property Manager name as configured within the Expedia systems. This is the same name Providers should use for 'PROPERTY_MANAGER' field when Onboarding. |
+| billingCurrencyCode | String | Use ISO4217. Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. |
+| sameDayCancellationCutoffTime | String | Until what time does this Property Manager accept cancelations hh:mm:ss |
+| cutoffDay | Enum | Possible values are SameDay and NextDay.  |
+| cutoffTime | String | Time until which bookings are accepted for this Property Manager hh:mm:ss |
+| minimumCheckInAge | Number | The minimum check in age accepted for this Property Manager |
+| cutoffDefault | Number | Advanced Purchase Restrictions for this Property Manager. 0 Means SameDay bookings are possible. 5 means the property manager will only accept bookings with check-in date, 5 days from today |
