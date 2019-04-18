@@ -18,12 +18,12 @@ Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) cred
 | Method | HTTP Verb | Endpoint | Description |
 | ------ | --------- | -------- | ----------- |
 | Set Property Details | PUT | /properties/v1/{provider name} | PUT property information to initiate onboarding. |
-| Get Property Details | GET | /properties/v1/{provider name}/{provider property ID} | GET property information |
-| Update a Property | PUT | /properties/v1/{provider name} | Update a property by sending a full overlay. PATCH is not supported.  |
-| Get Property Status | GET | /properties/v1/{provider name}/{provider property ID}/status | GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.) |
-| Get by ExpediaID | GET | /properties/v1/{ExpediaHotelID} | This method can be used to GET Property Information for properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
-| Update by ExpediaID | PUT | /properties/v1/{ExpediaHotelID} | This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)
-| Deactivate Property | DELETE | /properties/v1/{provider name}/{provider property ID} | De-activates property in Expedia system |
+| Get Property Details | GET | /properties/v1/{provider name}/{provider property ID} | GET a property's information by its provider property ID|
+| Update Properties | PUT | /properties/v1/{provider name} | Update one or more properties by sending a full overlay. PATCH is not supported.  |
+| Get Property Status | GET | /properties/v1/{provider name}/{provider property ID}/status | GET current onboarding status of the specified property |
+| Get by ExpediaID | GET | /properties/v1/{ExpediaPropertyID} | GET a property's information by specifying its Expedia Property ID (assigned during onboarding)
+| Update by ExpediaID | PUT | /properties/v1/{ExpediaPropertyID} | Update a property by specifying its Expedia Property ID (assigned during onboarding)
+| Deactivate Property | DELETE | /properties/v1/{provider name}/{provider property ID} | Deactivate a property in the Expedia system |
 | Property Manager Readiness | GET | /providers/v1/{provider name} | This method can be used to retrieve Property Manager information for the ones configured and ready to be Onboarded on Expedia |
 
 ## API Errors
@@ -887,7 +887,7 @@ GET /properties/v1/mycompany/1234
 ```
 ## GetPropertyStatus
 
-The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached 'OnboardingSucceed' status.
+The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached 'OnboardingSucceeded' status.
 
 **Example Request**
 
