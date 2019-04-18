@@ -1143,8 +1143,8 @@ GET /providers/v1/mycompany
 | --------- | ---- | ----- |
 | name | String | The Property Manager name as configured within the Expedia systems. This is the same name Providers should use for 'PROPERTY_MANAGER' field when Onboarding. |
 | billingCurrencyCode | String | Use ISO4217. Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. |
-| sameDayCancellationCutoffTime | String | Until what time does this Property Manager accept cancelations hh:mm:ss |
-| cutoffDay | Enum | Possible values are SameDay and NextDay.  |
+| sameDayCancellationCutoffTime | String | Time until which cancellations are accepted for this Property Manager hh:mm:ss |
+| cutoffDay | Enum | Indicates until which day bookings can be made for this Property Manager. Possible values are SameDay and NextDay.  |
 | cutoffTime | String | Time until which bookings are accepted for this Property Manager hh:mm:ss |
 | minimumCheckInAge | Number | The minimum check in age accepted for this Property Manager |
 | cutoffDefault | Number | Advanced Purchase Restrictions for this Property Manager. 0 Means SameDay bookings are possible. 5 means the property manager will only accept bookings with check-in date, 5 days from today |
