@@ -40,12 +40,13 @@ After submitting a request for any of the endpoints listed in the section above,
 
 A list of possible errors for each API can be found [here](./code-list.html "Error Code List")
 
-## SetPropertyDetails
+## Set or Update Property Details
 
-The below example is a request to onboard a new property using SetPropertyDetails.
+This endpoint may be used to initiate onboarding for new properties or update existing properties. The request body will accept an array containing between 1 and 50 properties per request. Each property must have a unique Provider Property Id. When sending updates, a full overlay is required for each property.
 
-- Information for more than one property is accepted in the request, max. batch size is 50 properties per request.
-- Each property must have a unique providerPropertyId
+**Example Request**
+
+PUT /properties/v1/mycompany
 
 ```javascript
 [{
@@ -391,13 +392,11 @@ We recommend all partners to abide to the Expedia Standards for images to ensure
 | detailCode | String | See [code list](./code-list.html#taxes) | See [code list](./code-list.html#taxes) |
 | value | Number | Yes |
 
-### SetPropertyDetails Response
 
-After submitting a Property API request, the response will acknowledge receipt of the message or return an error.  More information can be found here.
 
 **Response Body**
 
-The response body will echo back the values of *the request received* and will include the following additional attributes:
+After submitting a Property API request, the response will acknowledge receipt of the message or return an error. The response body will echo back the values of *the request received* and will include the following additional attributes:
 
 | Attribute | Type | Description |
 | --------- | ---- | ----------- |
@@ -405,9 +404,9 @@ The response body will echo back the values of *the request received* and will i
 | provider | String | Name of the provider associated with the property (this is your organization). |
 | createdUtc | DateTime | DateTime the property was created in Expedia's Lodging System. |
 | modifiedUtc	| DateTime | Last Modified time in Expedia's Lodging System. |
-| status | String | callback URL to get property status.  See [GetPropertyStatus](./api-definition.html#getpropertystatus) for more information. |
+| status | String | callback URL to get property status.  See [Get Property Status](./api-definition.html#getpropertystatus) for more information. |
 
-**Example SetPropertyDetails Response**
+**Example Response**
 
 ```javascript
 {
@@ -614,15 +613,15 @@ The response body will echo back the values of *the request received* and will i
     ]
 }
 ```
-## GetPropertyDetails
+## Get Property Details
 
-Provides the Provider's view of the property, which can be used by the Property API client to construct an update overlay message.  The GetPropertyDetails response does not necessarily show any fields that have been moderated (modified) by Expedia, such as star rating, freeform paragraph text, taxes, latitude/longitude coordinates, or address.
+Presents the provider's view of the property, which can be used by the Property API client to construct an update overlay message.  The response does not necessarily show any fields that have been moderated (modified) by Expedia, such as star rating, freeform paragraph text, taxes, latitude/longitude coordinates, or address.
 
-**Example GetPropertyDetails Request**
+**Example Request**
 
 GET /properties/v1/mycompany/1234
 
-### GetPropertyDetails Response
+**Example Response**
 
 ```javascript
 
@@ -885,7 +884,7 @@ GET /properties/v1/mycompany/1234
 }
 
 ```
-## GetPropertyStatus
+## Get Property Status
 
 The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached 'OnboardingSucceeded' status.
 
@@ -893,7 +892,7 @@ The onboarding process is an asynchronous workflow, so this endpoint should be p
 
 GET /properties/v1/mycompany/1234/status
 
-### GetPropertyStatus Response
+**Example Response**
 
  ```javascript
 
@@ -915,19 +914,206 @@ GET /properties/v1/mycompany/1234/status
 
 A complete list of reason codes can be found on the [code list page](./code-list.html).
 
-## Update a Property
-Updating a property that is already onboarded is the same operation as the original onboarding - a full overlay update is required using the SetPropertyDetails.  It is recommended that you GET the property details first, modify the fields that you'd like to change (and/or add new), then send the entire json document as a PUT request to update the property.  Please note that PATCH is not supported at this time - a complete overlay is required for updates.
+## Update a Property by Expedia Property ID
+Updating a property that is already onboarded is a similar operation as the original onboarding - a full overlay of a single property is required.  It is recommended that you GET the property details first, modify the fields that you'd like to change (and/or add new), then send the entire json document as a PUT request to update the property.  Please note that PATCH is not supported at this time - a complete overlay is required for updates.
 
+**Example Request**
+
+PUT /properties/v1/mycompany
+```javascript
+{
+    "providerPropertyId": "1289472",
+    "name": "Peach Inn",
+    "latitude": "23.3752",
+    "longitude": "-81.3261",
+    "providerPropertyUrl": "http://example.org",
+    "structureType": "Hotel",
+    "currencyCode": "USD",
+    "billingCurrencyCode": "USD",
+    "timeZone": "America/Los_Angeles",
+    "addresses": [
+        {
+            "line1": "123 Main St.",
+            "city": "B. Hills",
+            "state": "CA",
+            "postalCode": "90210",
+            "countryCode": "USA"
+        }
+    ],
+    "ratings": [
+        {
+            "score": 4,
+            "maxScore": 5,
+            "source": "AAA",
+            "description": "STARS"
+        }
+    ],
+    "contacts": {
+        "Property": {
+            "phoneNumbers": [
+                {
+                    "phoneNumberType": "Phone",
+                    "countryAccessCode": "1",
+                    "areaCode": "123",
+                    "number": "1234567"
+                }
+            ]
+        },
+        "ReservationManager": {
+            "firstName": "First",
+            "lastName": "Last",
+            "emails": [
+                "abc@xyz.com"
+            ],
+            "phoneNumbers": [
+                {
+                    "phoneNumberType": "Phone",
+                    "countryAccessCode": "1",
+                    "areaCode": "123",
+                    "number": "4567890"
+                },
+                {
+                    "phoneNumberType": "Fax",
+                    "countryAccessCode": "1",
+                    "areaCode": "123",
+                    "number": "7890123"
+                }
+            ]
+        },
+        "AlternateReservationManager": {
+            "phoneNumbers": [
+                {
+                    "phoneNumberType": "Phone",
+                    "countryAccessCode": "1",
+                    "areaCode": "123",
+                    "number": "1234567"
+                }
+            ]
+        },
+        "GeneralManager": {
+            "firstName": "General",
+            "lastName": "Manager",
+            "emails": [
+                "abc123@xyz.com"
+            ]
+        }
+    },
+    "contents": [
+        {
+            "locale": "en-US",
+            "name": "Localized Property Name",
+            "providerPropertyUrl": null,
+            "images": [
+                {
+                    "url": "http://images.xyz.com/mainImage.jpg",
+                    "categoryCode": "FEATURED_IMAGE",
+                    "caption": "Main Image"
+                }
+            ],
+            "amenities": [
+                  {
+                    "code": "WIFI_INTERNET",
+                    "detailCode": "SURCHARGE_PER_STAY",
+                    "value": 10.99
+                }
+            ],
+            "paragraphs": [
+                {
+                    "code": "DESCRIPTION",
+                    "value": "Property description."
+                },
+                {
+                    "code": "SPECIAL_CHECKIN_INSTRUCTIONS",
+                    "value": "Special check-in instructions."
+                }
+            ]
+        }
+    ],
+    "propertyCollectedMandatoryFees": [
+        {
+            "code": "RESORT_FEE",
+            "scope": "AMOUNT_PER_PERSON",
+            "duration": "PER_NIGHT",
+            "value": 25.99,
+            "startDate": null,
+            "endDate": null
+        },
+        {
+            "code": "DEPOSIT_OTHER",
+            "scope": "BREAKAGE",
+            "duration": "PER_DAY",
+            "startDate": "2019-09-20",
+            "endDate": "2019-09-28",
+            "value": "14.77"
+        }
+    ],
+    "taxes": [
+        {
+            "code": "VAT",
+            "detailCode": "PERCENT_PER_STAY",
+            "value": 20
+        }
+    ],
+    "policies": [
+        {
+            "code": "MINIMUM_CHECKIN_AGE",
+            "value": "18"
+        },
+        {
+            "code": "FORMS_OF_DEPOSIT_ACCEPTED",
+            "detailCode": "CREDIT_CARDS_ONLY",
+            "value": null
+        },
+        {
+            "code": "DEPOSIT_OTHER",
+            "detailCode": "CASH_ONLY",
+            "value": null
+        }
+    ],
+    "inventorySettings": {
+        "rateAcquisitionType": "NET_RATE",
+        "pricingModel": "PER_DAY",
+        "taxInclusive":false
+    },
+    "attributes": [
+        {
+            "code": "TOTAL_ROOMS",
+            "value": "8"
+        },
+        {
+            "code": "NUMBER_OF_BEDROOMS",
+            "value": "4"
+        },
+        {
+            "code": "NUMBER_OF_BATHROOMS",
+            "value": "3"
+        }
+    ],
+    "registrations": [{
+        "startDate": "2019-03-10",
+        "endDate": "2019-09-10",
+        "type": "RENTAL_REGISTRATION",
+        "code": "1234-6"
+        },{
+        "startDate": "2019-09-11",
+        "endDate": "2020-07-10",
+        "type": "RENTAL_REGISTRATION",
+        "code": "1222-6"
+        }]
+}
+
+```
 
 ## Deactivate/Delete a Property
-Sending a DELETE for an onboarded property will deactivate the property in Expedia's system.  Content will not be deleted, only the property's state will be changed to inactive.  The property can later be re-enabled using the SetPropertyDetails API call.
+Sending a DELETE for an onboarded property will deactivate the property in Expedia's system.  Content will not be deleted; only the property's state will be changed to inactive.  The property can later be re-enabled using the Set Property Details API call. The response to the delete request will be a 200/OK and the response will echo back the details of the property which was just deleted.
 
-**Example**
+
+**Example Request**
 
 DELETE /properties/v1/mycompany/1234
 
-The response to the delete request will be a 200/OK and the response will echo back the details of the property which was just deleted.
 
+**Example Response**
 ```javascript
 
 {
@@ -1116,7 +1302,7 @@ Provides the Provider information on which Property Managers are configured on E
 
 GET /providers/v1/mycompany
 
-### Property Manager Readiness Response:
+**Example Response**
 
  ```javascript
 

@@ -2,9 +2,9 @@
 
 ### Content Attribute & Detail Codes
 
-The SetPropertyDetails code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
+The Set Property Details code list is available for download [here](/files/PropertyAPICodeList0.4.xlsx)
 
-## SetPropertyDetails Codes
+## Set Property Details Codes
 
 ### <div id=#property.structureType> property.structureType </div>
 
@@ -80,11 +80,7 @@ Properties that have opted into the Expedia Traveler Preference program (ETP) wi
 | OCCUPANCY_BASED_CHILDREN_ALWAYS_EXTRA |
 | OCCUPANCY_BASED_CHILDREN_REGULAR_OCCUPANTS |
 
-### SetPropertyDetails Error Codes
-
-To be added.
-
-## GetPropertyStatus Codes
+## Get Property Status Codes
 
 The reasonCodes field represents all the reasons the property has a particular status.
 
@@ -117,15 +113,15 @@ The reasonCodes field represents all the reasons the property has a particular s
 | VendorIdAssigned | None |
 | OnboardingSucceeded | None |
 
-### GetPropertyStatus Error Codes
+## Get Property Status Error Codes
 
 None
 
-## GetPropertyDetails Codes
+## Get Property Details Codes
 
 None
 
-### GetPropertyDetails Error Codes
+## Get Property Details Error Codes
 
 None
 
