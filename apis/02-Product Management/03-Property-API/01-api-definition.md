@@ -919,7 +919,7 @@ Updating a property that is already onboarded is a similar operation as the orig
 
 **Example Request**
 
-PUT /properties/v1/mycompany
+PUT /properties/v1/12345678
 ```javascript
 {
     "providerPropertyId": "1289472",
