@@ -40,10 +40,10 @@ To note, individual properties working on an individual billing/payments basis c
 
 | Supported            | Not Supported |
 | ---------            | ------------- |
-| Content Attributes & Property settings         | See SetPropertyDetails documentation |
+| Content Attributes & Property settings         | See Set Property Details documentation |
 | Update via submitting a Full Overlay           | Update via PATCH         |
 
-After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.
+After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the Set or Update Property Details documentation for a listing of attributes that are not updatable via the Property API.
 
 ## Retrieving Some Types of Property Info via API
 
@@ -51,7 +51,7 @@ After onboarding a property using the Property API, many of the attributes submi
 | --------- | ------------- |
 | Retrieve most current record of property attributes submitted | Retrieve record of attributes as seen on Expedia's websites |
 
-Sending a request to /properties/v1/myCompany/myPropertyId will provide a listing of attributes which was most recently submitted to the Property API.  The response does not represent which attributes are displayed on the website or how it is displayed.  The SetPropertyDetails documentation provides a description of attributes that may be moderated or excluded from display.
+Sending a request to /properties/v1/myCompany/myPropertyId will provide a listing of attributes which was most recently submitted to the Property API.  The response does not represent which attributes are displayed on the website or how it is displayed.  The Set Property Details documentation provides a description of attributes that may be moderated or excluded from display.
 
 
 ## Onboarding
