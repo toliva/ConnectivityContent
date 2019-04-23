@@ -953,7 +953,7 @@ discovery and understanding. Please note, these are fees collected at the time o
 | ---- | ----- | -------- | ----- |
 | CLEANING_FEE | PERCENTAGE  | PER_NIGHT | Send VALUE |
 |  | AMOUNT_PER_PERSON | PER_WEEK | Send VALUE |
-|  | AMOUNT_PER_ACCOMODATION | PER_STAY | Send VALUE |
+|  | AMOUNT_PER_ACCOMMODATION | PER_STAY | Send VALUE |
 |  | AMT_VARIES_BASED_ON_LENGTH_OF_STAY |  |  |
 |  | AMT_VARIES_BASED_ON_UNIT_SIZE  |  |  |
 | CLUB_CARD_FEE | AMOUNT_PER_PERSON  | PER_NIGHT | Send VALUE |
