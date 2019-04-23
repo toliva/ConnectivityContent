@@ -202,7 +202,7 @@ Status Code | Description | Response Model
       "propertyFeatured": true,
       "lastUpdateDateTime": "2016-08-19 15:29:00.000 GMT",
       "originalImageUrl": "https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg",
-      "fileName": "98765_14733432ABC.jpg",
+      "fileName": "98765_14733432ABC.jpg"
     }
   ]
 }
